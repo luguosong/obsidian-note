@@ -1,0 +1,141 @@
+# =============================================================================
+# Obsidian 笔记仓库
+# - 笔记内容 / 附件 / 插件配置：同步
+# - code 目录下的 Java、Node 示例项目：源码同步，依赖与编译产物不同步
+# - IDE 产物：不同步
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Obsidian
+# -----------------------------------------------------------------------------
+# 本地工作区状态（窗口布局、打开的文件等）频繁变动，会污染提交记录
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Obsidian 回收站（删除的笔记临时存放处，无需同步）
+.trash/
+
+
+# -----------------------------------------------------------------------------
+# 操作系统
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# -----------------------------------------------------------------------------
+# 编辑器 / IDE 产物（IntelliJ IDEA、Eclipse、VSCode 等）
+# -----------------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+*.ctxt
+
+
+# -----------------------------------------------------------------------------
+# Java / Maven / Gradle（code 目录下的示例项目）
+# -----------------------------------------------------------------------------
+# 编译产物
+*.class
+target/
+build/
+out/
+bin/
+
+# 打包产物
+*.jar
+*.war
+*.ear
+*.nar
+
+# Gradle
+.gradle/
+
+# Maven 临时文件
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# JVM 崩溃日志
+hs_err_pid*
+replay_pid*
+
+# BlueJ / J2ME
+.mtj.tmp/
+
+
+# -----------------------------------------------------------------------------
+# Node.js（code 目录下的示例项目）
+# -----------------------------------------------------------------------------
+# 依赖目录（关键：不要同步）
+node_modules/
+bower_components/
+jspm_packages/
+web_modules/
+.pnp.*
+
+# 构建产物 / 缓存
+dist/
+build/
+out/
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.docusaurus/
+.vuepress/dist
+.temp
+
+# 打包文件
+*.tgz
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# TypeScript 增量编译缓存
+*.tsbuildinfo
+
+# 测试 / 覆盖率
+coverage/
+*.lcov
+.nyc_output/
+
+# 运行时数据
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 缓存文件
+.eslintcache
+.stylelintcache
+.grunt
+
+# 环境变量（含密钥，不要提交）
+.env
+.env.*
+!.env.example
