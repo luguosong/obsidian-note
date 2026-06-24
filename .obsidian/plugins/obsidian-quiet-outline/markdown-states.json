@@ -1,0 +1,2927 @@
+{
+  "topic/ai/好用的扩展/个人知识库/GBrain.md": {
+    "scroll": 14.262400793650794,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 9
+      },
+      "to": {
+        "line": 10,
+        "ch": 9
+      }
+    },
+    "expandedKeys": [
+      "item-2-1",
+      "item-2-6"
+    ]
+  },
+  "topic/ai/claude code/笔记/02-快速入门.md": {
+    "scroll": 73.38136556413438,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-3-4"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/Superpowers README.md": {
+    "scroll": 155.9508670520231,
+    "cursor": {
+      "from": {
+        "line": 144,
+        "ch": 28
+      },
+      "to": {
+        "line": 144,
+        "ch": 67
+      }
+    },
+    "expandedKeys": [
+      "item-2-16"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/Superpowers 使用手册与最佳实践.md": {
+    "scroll": 176.51202863824534,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-3-8",
+      "item-2-3",
+      "item-2-8"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/gstack/gstack 使用手册与最佳实践.md": {
+    "scroll": 165.3104371825854,
+    "cursor": {
+      "from": {
+        "line": 117,
+        "ch": 0
+      },
+      "to": {
+        "line": 117,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-3-16",
+      "item-2-7"
+    ]
+  },
+  "topic/ai/claude code/相关文章/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 103,
+        "ch": 333
+      },
+      "to": {
+        "line": 103,
+        "ch": 333
+      }
+    },
+    "expandedKeys": [
+      "item-2-2"
+    ]
+  },
+  "topic/ai/claude code/相关文章/使用 Claude Code：HTML 的不可思议的有效性.md": {
+    "scroll": 45.92546293470595,
+    "cursor": {
+      "from": {
+        "line": 217,
+        "ch": 44
+      },
+      "to": {
+        "line": 217,
+        "ch": 44
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-1-7",
+      "item-1-12"
+    ]
+  },
+  "topic/ai/claude code/使用第三方模型/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 3
+      },
+      "to": {
+        "line": 8,
+        "ch": 14
+      }
+    },
+    "expandedKeys": [
+      "item-2-41",
+      "item-2-39",
+      "item-2-31"
+    ]
+  },
+  "topic/ai/claude code/使用第三方模型/Copilot API代理.md": {
+    "scroll": 14.03125,
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/gstack/gstack.md": {
+    "scroll": 445.57767669359845,
+    "cursor": {
+      "from": {
+        "line": 433,
+        "ch": 0
+      },
+      "to": {
+        "line": 433,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/gstack/gstack 深度解析：设计哲学与技术架构.md": {
+    "scroll": 61.08948661707625,
+    "cursor": {
+      "from": {
+        "line": 18,
+        "ch": 3
+      },
+      "to": {
+        "line": 18,
+        "ch": 3
+      }
+    },
+    "expandedKeys": [
+      "item-2-1",
+      "item-1-0",
+      "item-2-5",
+      "item-2-12"
+    ]
+  },
+  "topic/ai/好用的扩展/个人知识库/Karpathy llm-wiki.md": {
+    "scroll": 33.981481378728695,
+    "cursor": {
+      "from": {
+        "line": 53,
+        "ch": 8
+      },
+      "to": {
+        "line": 53,
+        "ch": 8
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/Superpowers + gstack 联合工作最佳实践.md": {
+    "scroll": 5.981538461538461,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-3"
+    ]
+  },
+  "topic/设计模式/笔记/32-MyBatis 框架.md": {
+    "scroll": 6,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "解释器模式.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/画图/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 143,
+        "ch": 76
+      },
+      "to": {
+        "line": 143,
+        "ch": 76
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/画图/drawio-mcp README.md": {
+    "scroll": 56.806549344744,
+    "cursor": {
+      "from": {
+        "line": 149,
+        "ch": 0
+      },
+      "to": {
+        "line": 149,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/obsidian相关扩展/axton-obsidian-visual-skills/axton-obsidian-visual-skills 套装总览.md": {
+    "scroll": 15.400413859764205,
+    "cursor": {
+      "from": {
+        "line": 33,
+        "ch": 36
+      },
+      "to": {
+        "line": 33,
+        "ch": 36
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/obsidian相关扩展/scholar-skill/scholar-skill 使用笔记.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/obsidian相关扩展/tutor-skills/tutor-skills 使用笔记.md": {
+    "scroll": 39.67705901370689,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/obsidian相关扩展/推荐skill.md": {
+    "scroll": 4.444444444444445,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 19
+      },
+      "to": {
+        "line": 11,
+        "ch": 27
+      }
+    },
+    "expandedKeys": [
+      "item-2-0"
+    ]
+  },
+  "topic/git/未命名.md": {
+    "scroll": 446.65133068296643,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 104
+      },
+      "to": {
+        "line": 10,
+        "ch": 104
+      }
+    },
+    "expandedKeys": [
+      "item-2-2",
+      "item-2-16",
+      "item-2-23",
+      "item-2-35",
+      "item-2-37",
+      "item-2-43",
+      "item-2-47",
+      "item-2-40"
+    ]
+  },
+  "UOCS开发/架构总览/架构总览.md": {
+    "scroll": 128.8246555328369,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/drawing-ofd/OAuth2认证体系/OAuth2认证体系设计与实现.md": {
+    "scroll": 264.39200444197667,
+    "cursor": {
+      "from": {
+        "line": 388,
+        "ch": 0
+      },
+      "to": {
+        "line": 388,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-11"
+    ]
+  },
+  "UOCS开发/upda-cloud/README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/GitHub登录原理.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 448,
+        "ch": 36
+      },
+      "to": {
+        "line": 448,
+        "ch": 36
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/端到端测试/浏览器自动化三件套：browse、chrome-devtools-cli、playwright-cli.md": {
+    "scroll": 187.97316337529062,
+    "cursor": {
+      "from": {
+        "line": 201,
+        "ch": 0
+      },
+      "to": {
+        "line": 201,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-3"
+    ]
+  },
+  "topic/oauth/相关书籍/Oauth2和OpenID专业指南.md": {
+    "scroll": 1519.4157035464332,
+    "cursor": {
+      "from": {
+        "line": 1535,
+        "ch": 0
+      },
+      "to": {
+        "line": 1535,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/oauth/相关书籍/Oauth2鍜孫penID涓撲笟鎸囧崡.md": {
+    "scroll": 15.825395856584821,
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 0
+      },
+      "to": {
+        "line": 16,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/full-workflow-4tools.md": {
+    "scroll": 222.9027512679237,
+    "cursor": {
+      "from": {
+        "line": 98,
+        "ch": 13
+      },
+      "to": {
+        "line": 98,
+        "ch": 13
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/最佳实践.md": {
+    "scroll": 18.50260265668233,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/取舍问题.md": {
+    "scroll": 72.66617002941314,
+    "cursor": {
+      "from": {
+        "line": 17,
+        "ch": 0
+      },
+      "to": {
+        "line": 17,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-2"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/gstack/gstack Skills 分类总览.md": {
+    "scroll": 2.73972602739726,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-1",
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/00-superpower.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 5,
+        "ch": 0
+      },
+      "to": {
+        "line": 5,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/Superpowers 实战：用 TDD 工作流构建生产功能.md": {
+    "scroll": 15.21577380952381,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/Superpowers：我在 2025 年 10 月如何使用编码代理.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/Superpowers Skills 分类总览.md": {
+    "scroll": 56.03025690714518,
+    "cursor": {
+      "from": {
+        "line": 70,
+        "ch": 13
+      },
+      "to": {
+        "line": 70,
+        "ch": 13
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-4"
+    ]
+  },
+  "UOCS开发/项目skill说明/reference-docs 密码学国家标准知识库.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 23,
+        "ch": 0
+      },
+      "to": {
+        "line": 23,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/Claude Code 插件总览.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-0",
+      "item-2-5"
+    ]
+  },
+  "topic/ai/好用的扩展/Copilot CLI 插件总览.md": {
+    "scroll": 81.91979812423708,
+    "cursor": {
+      "from": {
+        "line": 77,
+        "ch": 0
+      },
+      "to": {
+        "line": 77,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-4"
+    ]
+  },
+  "topic/ai/claude code/相关文章/在大型代码库中 Claude Code 的工作方式：最佳实践与从哪里开始.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-2"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/open-spec/OpenSpec  README.md": {
+    "scroll": 82.11388515896267,
+    "cursor": {
+      "from": {
+        "line": 106,
+        "ch": 38
+      },
+      "to": {
+        "line": 106,
+        "ch": 38
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/claude code/更新日志/更新日志.md": {
+    "scroll": 39.329124527748185,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-26",
+      "item-2-28",
+      "item-2-1"
+    ]
+  },
+  "topic/ai/github copilot cli/插件和扩展/已安装插件使用手册.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 447,
+        "ch": 0
+      },
+      "to": {
+        "line": 447,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-5",
+      "item-2-9",
+      "item-2-45",
+      "item-2-42",
+      "item-2-17"
+    ]
+  },
+  "topic/ai/github copilot cli/插件和扩展/Copilot CLI 扩展手册.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 323,
+        "ch": 0
+      },
+      "to": {
+        "line": 323,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/github copilot cli/笔记/04-Hook 扩展.md": {
+    "scroll": 114.13333265516493,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-5",
+      "item-2-10"
+    ]
+  },
+  "topic/ai/claude code/笔记/Claude Code.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 217,
+        "ch": 0
+      },
+      "to": {
+        "line": 217,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
+  },
+  "topic/ai/claude code/防封/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 410,
+        "ch": 71
+      },
+      "to": {
+        "line": 410,
+        "ch": 71
+      }
+    },
+    "expandedKeys": [
+      "item-1-18",
+      "item-1-15",
+      "item-1-10",
+      "item-1-4",
+      "item-1-1"
+    ]
+  },
+  "topic/ai/claude code/防封/IPRoyal SOCKS5 代理使用方案.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 4,
+        "ch": 9
+      },
+      "to": {
+        "line": 4,
+        "ch": 9
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/claude code/防封/IPRoyal静态住宅ip.md": {
+    "scroll": 90.76866602897644,
+    "cursor": {
+      "from": {
+        "line": 102,
+        "ch": 10
+      },
+      "to": {
+        "line": 102,
+        "ch": 10
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/ai/claude code/防封/防封心得.md": {
+    "scroll": 169.36068578783778,
+    "cursor": {
+      "from": {
+        "line": 283,
+        "ch": 43
+      },
+      "to": {
+        "line": 283,
+        "ch": 43
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "学习路线/零基础Linux运维工程师学习路线.md": {
+    "scroll": 42.76357169599401,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
+  },
+  "topic/ai/claude code/防封/推特文章.md": {
+    "scroll": 282.3401549677348,
+    "cursor": {
+      "from": {
+        "line": 244,
+        "ch": 15
+      },
+      "to": {
+        "line": 244,
+        "ch": 15
+      }
+    },
+    "expandedKeys": [
+      "item-1-1",
+      "item-1-4",
+      "item-1-10",
+      "item-1-15",
+      "item-1-18"
+    ]
+  },
+  "未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 5
+      },
+      "to": {
+        "line": 0,
+        "ch": 5
+      }
+    },
+    "expandedKeys": []
+  },
+  "test.md": {
+    "scroll": 224.75707651481645,
+    "cursor": {
+      "from": {
+        "line": 242,
+        "ch": 0
+      },
+      "to": {
+        "line": 242,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-3-7",
+      "item-2-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "UOCS开发/upda-cloud/电子印章管理系统搭建.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 42,
+        "ch": 0
+      },
+      "to": {
+        "line": 42,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/后端架构/Entity对照表.md": {
+    "scroll": 5.259043695466712,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "UOCS开发/upda-cloud/用户操作手册/01-快速入门.md": {
+    "scroll": 63.913411458333336,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 28
+      },
+      "to": {
+        "line": 11,
+        "ch": 28
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/02-登录与账号.md": {
+    "scroll": 73.44401041666667,
+    "cursor": {
+      "from": {
+        "line": 78,
+        "ch": 54
+      },
+      "to": {
+        "line": 78,
+        "ch": 68
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-15"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/03-系统管理.md": {
+    "scroll": 159.0955826351866,
+    "cursor": {
+      "from": {
+        "line": 187,
+        "ch": 4
+      },
+      "to": {
+        "line": 187,
+        "ch": 4
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/04-CA管理.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 26,
+        "ch": 11
+      },
+      "to": {
+        "line": 26,
+        "ch": 12
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/05-RA管理.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 58,
+        "ch": 0
+      },
+      "to": {
+        "line": 58,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/智谱的mcp/智谱提供的mcp.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/好用的扩展/开发工作流/superpower/设计文档.md": {
+    "scroll": 0.7757575988769532,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "UOCS开发/upda-cloud/用户操作手册/01-注册与登录.md": {
+    "scroll": 51.889810426540286,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/05-用章流程.md": {
+    "scroll": 7.78125,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/04-印章管理.md": {
+    "scroll": 32.75722884481135,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/00-快速开始.md": {
+    "scroll": 57.871583676525646,
+    "cursor": {
+      "from": {
+        "line": 63,
+        "ch": 0
+      },
+      "to": {
+        "line": 63,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/用户操作手册/02-申请证书与印章.md": {
+    "scroll": 24.897522385055954,
+    "cursor": {
+      "from": {
+        "line": 145,
+        "ch": 0
+      },
+      "to": {
+        "line": 145,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-3"
+    ]
+  },
+  "UOCS开发/upda-cloud/电子印章载体与分散式用章解析.md": {
+    "scroll": 38.82412580663941,
+    "cursor": {
+      "from": {
+        "line": 287,
+        "ch": 0
+      },
+      "to": {
+        "line": 287,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/drawing-ofd/README.md": {
+    "scroll": 55.70269227027893,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/github copilot cli/笔记/02-相关资源.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/ai/github copilot cli/笔记/03-社区市场 awesome-copilot.md": {
+    "scroll": 193.17901946382463,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-13"
+    ]
+  },
+  "UOCS开发/drawing-pdf/README.md": {
+    "scroll": 15.662516414208405,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/架构总览/项目简介.md": {
+    "scroll": 7.939670085906982,
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 7
+      },
+      "to": {
+        "line": 16,
+        "ch": 7
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/obsidian/Skill 快速查询表.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 17,
+        "ch": 22
+      },
+      "to": {
+        "line": 17,
+        "ch": 4
+      }
+    },
+    "expandedKeys": []
+  },
+  "UOCS开发/upda-cloud/系统架构说明.md": {
+    "scroll": 13.810045798316338,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "CLAUDE.md": {
+    "scroll": 24.593243243243244,
+    "cursor": {
+      "from": {
+        "line": 32,
+        "ch": 0
+      },
+      "to": {
+        "line": 32,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "_temp_extract.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/obsidian/Obsidian CEO Kepano 的笔记系统.md": {
+    "scroll": 8.108108108108109,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/obsidian/相关文章/Obsidian CEO Kepano 的笔记系统.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 125,
+        "ch": 164
+      },
+      "to": {
+        "line": 125,
+        "ch": 164
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "topic/windows/笔记/03-Windows.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/windows/笔记/DOS 命令.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/windows/笔记/02-WSL 使用指南.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/windows/笔记/WSL 使用指南.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/obsidian/相关文章/Obsidian Bases 数据库功能详解.md": {
+    "scroll": 475.9737942406219,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/upda-cloud/分散式用章全流程.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 35,
+        "ch": 18
+      },
+      "to": {
+        "line": 35,
+        "ch": 14
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
+  },
+  "UOCS开发/upda-cloud/集中式用章全流程.md": {
+    "scroll": 274.71508746057106,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/drawing-pdf/GM.sm2seal签章标准研究.md": {
+    "scroll": 0.0907900480139677,
+    "cursor": {
+      "from": {
+        "line": 173,
+        "ch": 92
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
+  },
+  "测试.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "topic/obsidian/相关文章/我的 Obsidian Vault.md": {
+    "scroll": 8.910891089108912,
+    "cursor": {
+      "from": {
+        "line": 100,
+        "ch": 82
+      },
+      "to": {
+        "line": 100,
+        "ch": 82
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "202606091757.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "202606091758.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "UOCS开发/drawing-cad/AI后端/ai-agent/00-ai-agent.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 5,
+        "ch": 0
+      },
+      "to": {
+        "line": 5,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/drawing-cad/WebCAD前端/功能说明/图纸比对功能介绍.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "UOCS开发/drawing-cad/WebCAD前端/设计规格/specs/2026-04-07-legend-analysis-design.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "README.md": {
+    "scroll": 16.777868693415048,
+    "cursor": {
+      "from": {
+        "line": 28,
+        "ch": 0
+      },
+      "to": {
+        "line": 28,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "Next time is next time, now is now.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "This week.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "File over app.md": {
+    "scroll": 12.491753419240316,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "Concise explanations accelerate progress.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "Notes/规则速查.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "Clippings/How I use Obsidian（示例）.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "Clippings/bases.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "Categories/Index.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 5,
+        "ch": 0
+      },
+      "to": {
+        "line": 5,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "Templates/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "References/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/GLM-5.2 Built for Long-Horizon Tasks.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/GLM-5.2 Built for Long-Horizon Tasks 1.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/GLM-5.2：为长时程任务而构建 --- GLM-5.2 Built for Long-Horizon Tasks.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 14,
+        "ch": 0
+      },
+      "to": {
+        "line": 14,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/GLM-5.2：为长时程任务而构建 --- GLM-5.2 Built for Long-Horizon Tasks 1.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/网页裁剪.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "UOCS开发笔记/电子印章管理平台/上海CA申请-密码信封序列号EnvSN.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 29,
+        "ch": 137
+      },
+      "to": {
+        "line": 29,
+        "ch": 137
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/How Claude Code works in large codebases Best practices and where to start.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/大型代码库中 Claude Code 的工作原理：最佳实践与入门指南.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/GLM-5.2：为长时程任务而构建.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "待办/当前待办.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 2,
+        "ch": 72
+      },
+      "to": {
+        "line": 2,
+        "ch": 72
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/待办.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 4,
+        "ch": 0
+      },
+      "to": {
+        "line": 4,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/wsl中运行/copilot-avx512-crash-fix.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 2,
+        "ch": 17
+      },
+      "to": {
+        "line": 2,
+        "ch": 17
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/wsl中运行/Copilot CLI 在 WSL2 崩溃（SIGILL SIGSEGV）修复笔记.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 2,
+        "ch": 17
+      },
+      "to": {
+        "line": 2,
+        "ch": 17
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "笔记/Ai/wsl中运行/browser-automation-systemd-fix.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 64
+      },
+      "to": {
+        "line": 0,
+        "ch": 64
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/wsl中运行/WSL2 浏览器自动化排障笔记（systemd 半残 chrome-devtools playwright-cli）.md": {
+    "scroll": 9.901041666666666,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 68
+      },
+      "to": {
+        "line": 12,
+        "ch": 78
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "笔记/Ai/wsl中运行/WSL 配置 GitHub Gitee SSH 证书（Windows 迁移 + 免口令）.md": {
+    "scroll": 121.48824855119125,
+    "cursor": {
+      "from": {
+        "line": 149,
+        "ch": 0
+      },
+      "to": {
+        "line": 149,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/claude code/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/测试11.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/claude code/未命名 1.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/202606201819.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/claude code/Claude Code.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/wsl中运行/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Windows/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Windows/Windows.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Windows/WSL/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Windows/WSL/WSL.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/Copilot CLI 在 WSL2 崩溃（SIGILL SIGSEGV）修复笔记.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 5,
+        "ch": 0
+      },
+      "to": {
+        "line": 5,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/github copilot cli/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Github Copilot Cli/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Github Copilot Cli/Github Copilot Cli.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 4,
+        "ch": 3
+      },
+      "to": {
+        "line": 4,
+        "ch": 3
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/WSL2 浏览器自动化排障笔记（systemd 半残 chrome-devtools playwright-cli）.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 5,
+        "ch": 0
+      },
+      "to": {
+        "line": 5,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/WSL 配置 GitHub Gitee SSH 证书（Windows 迁移 + 免口令）.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 4,
+        "ch": 0
+      },
+      "to": {
+        "line": 4,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Claude Code/Claude Code.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Ai.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/待办模版.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/luongnv89claude-howto A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/用一个周末掌握 Claude Code.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/obrasuperpowers An agentic skills framework & software development methodology that works.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/superpowers.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 0
+      },
+      "to": {
+        "line": 16,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "待办/待办任务.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 9
+      },
+      "to": {
+        "line": 3,
+        "ch": 9
+      }
+    },
+    "expandedKeys": []
+  },
+  "待办/待办任务##.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 2,
+        "ch": 0
+      },
+      "to": {
+        "line": 2,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/未命名 1.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian/Obsidian.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian Vault Skill 工具集总览.md": {
+    "scroll": 123.03359375,
+    "cursor": {
+      "from": {
+        "line": 152,
+        "ch": 0
+      },
+      "to": {
+        "line": 152,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
+  },
+  "默认笔记/Obsidian Vault Skill 工具集总览.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 150,
+        "ch": 0
+      },
+      "to": {
+        "line": 150,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "默认笔记/Obsidian相关Skill.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 148,
+        "ch": 40
+      },
+      "to": {
+        "line": 148,
+        "ch": 24
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "默认笔记/电子印章管理流程优化.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 115
+      },
+      "to": {
+        "line": 13,
+        "ch": 115
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/anthropicsskills Public repository for Agent Skills.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/anthropicsskills 用于 Agent Skills 的公共仓库.md": {
+    "scroll": 82.669921875,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/anthropics官方skill.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/vercel-labsskills The open agent skills tool.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 524,
+        "ch": 0
+      },
+      "to": {
+        "line": 524,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/vercel skill.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 526,
+        "ch": 0
+      },
+      "to": {
+        "line": 526,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-2"
+    ]
+  },
+  "默认笔记/Obsidian中使用的Skill.md": {
+    "scroll": 54.82161410649618,
+    "cursor": {
+      "from": {
+        "line": 105,
+        "ch": 0
+      },
+      "to": {
+        "line": 105,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "默认笔记/Claude Code 安装清单（plugin-skill-mcp-hook）.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Python/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/受 Karpathy 启发的 Claude Code 指南.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 32
+      },
+      "to": {
+        "line": 13,
+        "ch": 32
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Python/Python.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "默认笔记/codebase-memory-mcp：面向 AI 编码代理的代码智能引擎.md": {
+    "scroll": 28.090277353922527,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Claude Code/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 1,
+        "ch": 4
+      },
+      "to": {
+        "line": 1,
+        "ch": 4
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Claude Code/Claude Code扩展推荐.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Untitled.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/测试.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/网页裁剪模版.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 14,
+        "ch": 0
+      },
+      "to": {
+        "line": 14,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "欢迎.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "未命名 1.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 3
+      }
+    },
+    "expandedKeys": []
+  },
+  "11.md": {
+    "scroll": 6.375,
+    "cursor": {
+      "from": {
+        "line": 25,
+        "ch": 0
+      },
+      "to": {
+        "line": 25,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/代码块.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 2,
+        "ch": 3
+      },
+      "to": {
+        "line": 2,
+        "ch": 3
+      }
+    },
+    "expandedKeys": []
+  },
+  "code/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 36
+      },
+      "to": {
+        "line": 0,
+        "ch": 36
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/测试模版.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/通用笔记.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/测试笔记.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/普通笔记.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian/基本markdown语法.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 4
+      },
+      "to": {
+        "line": 8,
+        "ch": 4
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian/markdown语法.md": {
+    "scroll": 12.020809248554913,
+    "cursor": {
+      "from": {
+        "line": 51,
+        "ch": 6
+      },
+      "to": {
+        "line": 51,
+        "ch": 6
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
+  },
+  "笔记/Obsidian/Obsidian1.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian/内部链接-Wiki 链接.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Github Copilot Cil/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Github Copilot Cil/Github Copilot Cil.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/推荐扩展/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  }
+}

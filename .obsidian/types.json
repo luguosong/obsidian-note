@@ -1,0 +1,11 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "分类": "multitext",
+    "笔记类型": "multitext",
+    "待办状态": "checkbox",
+    "created": "date"
+  }
+}

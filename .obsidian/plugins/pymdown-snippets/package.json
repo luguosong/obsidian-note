@@ -1,0 +1,17 @@
+{
+  "name": "pymdown-snippets",
+  "version": "0.1.0",
+  "description": "Obsidian plugin: pymdownx snippets basic include syntax.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+  },
+  "devDependencies": {
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.23.0",
+    "obsidian": "^1.4.16",
+    "typescript": "^5.4.0"
+  }
+}

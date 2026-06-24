@@ -1,0 +1,12 @@
+{
+  "textFontFamily": "Source Code Pro,LXGW WenKai",
+  "interfaceFontFamily": "Source Code Pro,LXGW WenKai",
+  "monospaceFontFamily": "Source Code Pro,LXGW WenKai",
+  "baseFontSizeAction": true,
+  "cssTheme": "Minimal",
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "headings"
+  ],
+  "showRibbon": true
+}

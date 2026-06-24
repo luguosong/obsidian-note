@@ -1,0 +1,12 @@
+{
+  "promptDelete": false,
+  "showLineNumber": true,
+  "trashOption": "local",
+  "attachmentFolderPath": "附件",
+  "readableLineLength": false,
+  "newFileLocation": "current",
+  "newFileFolderPath": "默认笔记",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "strictLineBreaks": true
+}

@@ -1,0 +1,54 @@
+.pymdown-snippet-error {
+  border: 1px solid var(--text-error, #e05252);
+  background: var(--background-modifier-error, rgba(224, 82, 82, 0.1));
+  color: var(--text-normal);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: var(--font-smaller);
+  margin: 0.5em 0;
+}
+
+.pymdown-snippet-error strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-error, #e05252);
+}
+
+/* 实时预览 widget 容器样式 */
+/* 代码块本身的高亮/背景/内边距/复制按钮定位全部由 Obsidian 原生
+   .markdown-rendered 作用域的 CSS 提供（见 livePreview.ts 的 fill 方法
+   把 <pre> 包在 .markdown-rendered 里）。这里只重置外层边距，避免
+   与编辑器行高叠加产生多余间距。 */
+.pymdown-snippet-widget {
+  margin: 0.5em 0;
+}
+
+.pymdown-snippet-widget > .markdown-rendered {
+  margin: 0;
+}
+
+/* 语言标签：定位在代码块右上角，与复制按钮并排。
+   pre 已是定位上下文（Obsidian 原生 pre 在 .markdown-rendered 内为 relative），
+   但为确保定位生效，显式声明 pre 为 relative。 */
+.pymdown-snippet-widget > .markdown-rendered > pre {
+  position: relative;
+}
+
+.pymdown-lang-flair {
+  position: absolute;
+  top: 0;
+  right: 2.8em; /* 留出复制按钮的位置（按钮约 2em 宽 + 间距） */
+  padding: var(--size-4-1) var(--size-4-2);
+  font-size: var(--font-smallest);
+  font-family: var(--font-ui);
+  color: var(--text-muted);
+  background: transparent;
+  border-radius: var(--radius-s);
+  pointer-events: none; /* 不挡复制按钮的点击 */
+  user-select: none;
+  z-index: 1;
+}
+
+.pymdown-snippet-widget > .pymdown-snippet-error {
+  margin: 0;
+}

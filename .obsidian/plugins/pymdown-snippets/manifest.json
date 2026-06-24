@@ -1,0 +1,9 @@
+{
+  "id": "pymdown-snippets",
+  "name": "Pymdown Snippets",
+  "version": "0.1.0",
+  "description": "在阅读视图中支持 pymdownx snippets 基础包含语法（--8<-- \"path\"）。",
+  "minAppVersion": "1.4.0",
+  "author": "you",
+  "isDesktopOnly": false
+}
