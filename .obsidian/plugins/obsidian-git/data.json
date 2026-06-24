@@ -33,7 +33,7 @@
   "gitDir": "",
   "showFileMenu": true,
   "authorInHistoryView": "full",
-  "dateInHistoryView": false,
+  "dateInHistoryView": true,
   "diffStyle": "split",
   "hunks": {
     "showSigns": false,

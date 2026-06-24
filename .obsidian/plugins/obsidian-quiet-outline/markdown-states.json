@@ -2239,18 +2239,20 @@
     "expandedKeys": []
   },
   "笔记/Ai/Claude Code/Claude Code.md": {
-    "scroll": 0,
+    "scroll": 10,
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 21,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 21,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "笔记/Ai/Ai.md": {
     "scroll": 0,
@@ -2631,12 +2633,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 1,
-        "ch": 4
+        "line": 0,
+        "ch": 0
       },
       "to": {
-        "line": 1,
-        "ch": 4
+        "line": 0,
+        "ch": 0
       }
     },
     "expandedKeys": []
@@ -2841,12 +2843,12 @@
     "scroll": 12.020809248554913,
     "cursor": {
       "from": {
-        "line": 51,
-        "ch": 6
+        "line": 49,
+        "ch": 0
       },
       "to": {
-        "line": 51,
-        "ch": 6
+        "line": 49,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -2911,6 +2913,118 @@
     "expandedKeys": []
   },
   "笔记/Ai/推荐扩展/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Claude Code/相关文章/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 111,
+        "ch": 29
+      },
+      "to": {
+        "line": 111,
+        "ch": 29
+      }
+    },
+    "expandedKeys": []
+  },
+  "模版/普通笔记模版.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Ai/Claude Code/相关文章/大型代码库中 Claude Code 的工作方式：最佳实践与入门指南.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 111,
+        "ch": 29
+      },
+      "to": {
+        "line": 111,
+        "ch": 29
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/ClaudeCode在大型代码库中的工作方式：最佳实践与入门.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "待办任务/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "待办任务/待办任务.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 2,
+        "ch": 2
+      },
+      "to": {
+        "line": 2,
+        "ch": 2
+      }
+    },
+    "expandedKeys": []
+  },
+  "待办任务/待办任务1.md": {
     "scroll": 0,
     "cursor": {
       "from": {

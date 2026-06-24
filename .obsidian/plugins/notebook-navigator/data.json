@@ -12,7 +12,12 @@
       "hiddenFileProperties": [],
       "navigationBanner": null,
       "periodicNotesFolder": "",
-      "shortcuts": [],
+      "shortcuts": [
+        {
+          "type": "note",
+          "path": "待办任务/待办任务.md"
+        }
+      ],
       "navRainbow": {
         "mode": "foreground",
         "balanceHueLuminance": true,
@@ -488,7 +493,9 @@
     "code": "code",
     "模版": "templater-icon",
     "附件": "image",
-    "笔记/Obsidian": "simple-icons:obsidian"
+    "笔记/Obsidian": "simple-icons:obsidian",
+    "网页裁剪": "clipboard-list",
+    "待办任务": "list-todo"
   },
   "folderColors": {
     "网页裁剪": "#6b7280",
@@ -501,12 +508,22 @@
     "笔记/Python": "#eab308",
     "附件": "#78716c",
     "code": "#22c55e",
-    "笔记/Ai": "#3b82f6"
+    "笔记/Ai": "#3b82f6",
+    "待办任务": "#ef4444"
   },
   "folderBackgroundColors": {},
-  "folderSortOverrides": {},
+  "folderSortOverrides": {
+    "笔记/Ai/Claude Code": {
+      "option": "property-asc",
+      "propertyKey": "排序"
+    }
+  },
   "folderTreeSortOverrides": {},
-  "folderAppearances": {},
+  "folderAppearances": {
+    "网页裁剪": {
+      "groupBy": "date"
+    }
+  },
   "tagIcons": {},
   "tagColors": {},
   "tagBackgroundColors": {},
