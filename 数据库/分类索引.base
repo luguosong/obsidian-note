@@ -2,10 +2,7 @@ filters:
   and:
     - file.ext == "md"
     - file.hasLink(this)
-    # 排除子分类的文件夹笔记（文件名等于其所在目录名的笔记），
-    # 只保留普通笔记。判据：file.name == file.folder 路径的最后一段。
-    # file.folder 是路径（如 a/b/Claude Code），split 后取最后一段与 file.name 比较。
-    - 'file.name != file.folder.split("/").slice(-1).join("")'
+    - file.name != file.folder.split("/").slice(-1).join("")
 formulas:
   is_folder_note: if(file.name == this.name, "📁", "")
   created_day: if(file.ctime, file.ctime.format("YYYY-MM-DD"), "")

@@ -207,7 +207,7 @@
   "enableFolderNoteLinks": true,
   "hideFolderNoteInList": true,
   "pinCreatedFolderNote": true,
-  "folderNoteOpenLocation": "new-tab",
+  "folderNoteOpenLocation": "current-tab",
   "showNearestFolderNoteInSidebar": true,
   "showTags": false,
   "showTagIcons": true,
