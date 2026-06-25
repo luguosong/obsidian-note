@@ -2840,7 +2840,7 @@
     "expandedKeys": []
   },
   "笔记/Obsidian/markdown语法.md": {
-    "scroll": 12.020809248554913,
+    "scroll": 7.217821782178218,
     "cursor": {
       "from": {
         "line": 49,
@@ -3275,6 +3275,20 @@
       },
       "to": {
         "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/Obsidian/相关Ai skill和插件.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
         "ch": 0
       }
     },

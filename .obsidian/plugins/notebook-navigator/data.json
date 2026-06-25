@@ -201,7 +201,7 @@
   "folderNoteNamePattern": "",
   "folderNoteTemplate": "模版/普通笔记.md",
   "enableFolderNoteLinks": true,
-  "hideFolderNoteInList": false,
+  "hideFolderNoteInList": true,
   "pinCreatedFolderNote": true,
   "folderNoteOpenLocation": "new-tab",
   "showNearestFolderNoteInSidebar": true,
@@ -236,8 +236,8 @@
   "showFolderGroupPaths": true,
   "showCurrentFolderFilesAtBottom": false,
   "filterPinnedByFolder": true,
-  "compactItemHeight": 20,
-  "compactItemHeightScaleText": true,
+  "compactItemHeight": 22,
+  "compactItemHeightScaleText": false,
   "showQuickActions": true,
   "quickActionRevealInFolder": false,
   "quickActionAddTag": false,
@@ -539,6 +539,10 @@
   "folderSortOverrides": {
     "网页裁剪": "created-desc",
     "笔记/04-专项研究/Ai/Claude Code": {
+      "option": "property-asc",
+      "propertyKey": "排序"
+    },
+    "笔记/Obsidian": {
       "option": "property-asc",
       "propertyKey": "排序"
     }
