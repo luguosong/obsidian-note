@@ -3235,5 +3235,49 @@
       }
     },
     "expandedKeys": []
+  },
+  "笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 33
+      },
+      "to": {
+        "line": 15,
+        "ch": 33
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "笔记/04-专项研究/Ai/Github Copilot Cil/Github Copilot Cil.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
   }
 }
