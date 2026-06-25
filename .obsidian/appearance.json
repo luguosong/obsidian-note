@@ -6,7 +6,8 @@
   "cssTheme": "Minimal",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "headings"
+    "headings",
+    "inline-code"
   ],
   "showRibbon": true
 }

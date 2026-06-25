@@ -2384,11 +2384,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 0,
+        "line": 3,
         "ch": 0
       },
       "to": {
-        "line": 0,
+        "line": 3,
         "ch": 0
       }
     },
@@ -2840,7 +2840,7 @@
     "expandedKeys": []
   },
   "笔记/Obsidian/markdown语法.md": {
-    "scroll": 7.217821782178218,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 49,
@@ -3284,14 +3284,32 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 35,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 35,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "笔记/Obsidian/插件说明.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
   }
 }

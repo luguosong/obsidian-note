@@ -1,0 +1,27 @@
+/*
+ * 行内代码块（inline code）样式美化
+ * 适配暗色主题，文字采用淡蓝色
+ */
+
+/* ===== 阅读模式（Reading View） ===== */
+.markdown-rendered :not(pre) > code {
+  color: #7cc7ff !important;
+  background-color: rgba(124, 199, 255, 0.10) !important;
+  padding: 0.12em 0.4em !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* ===== 编辑模式（Live Preview / Source，CodeMirror 6） ===== */
+.cm-s-obsidian .cm-inline-code {
+  color: #7cc7ff !important;
+  background-color: rgba(124, 199, 255, 0.10) !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* 行内代码两侧的反引号分隔符颜色淡化 */
+.cm-s-obsidian .cm-formatting-code,
+.cm-s-obsidian .cm-formatting-code-code {
+  color: rgba(124, 199, 255, 0.45) !important;
+}
