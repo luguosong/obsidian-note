@@ -3,7 +3,7 @@
     {
       "id": "default",
       "name": "默认",
-      "fileVisibility": "supported",
+      "fileVisibility": "all",
       "propertyKeys": [],
       "hiddenFolders": [],
       "hiddenTags": [],
@@ -140,6 +140,7 @@
     "list": {
       "back": true,
       "search": true,
+      "reveal": false,
       "descendants": true,
       "sort": true,
       "appearance": true,
@@ -169,11 +170,11 @@
   "showNoteCount": true,
   "separateNoteCounts": true,
   "showIndentGuides": true,
-  "navCountLeaderStyle": "dashes",
+  "navCountLeaderStyle": "dots",
   "rootLevelSpacing": 0,
   "navIndent": 10,
   "navItemHeight": 20,
-  "navItemHeightScaleText": false,
+  "navItemHeightScaleText": true,
   "collapseBehavior": "all",
   "smartCollapse": false,
   "collapseOtherBranchesOnExpand": false,
@@ -194,14 +195,14 @@
   "showRootFolder": true,
   "inheritFolderColors": true,
   "folderSortOrder": "alpha-asc",
-  "enableFolderNotes": true,
+  "enableFolderNotes": false,
   "folderNoteType": "markdown",
   "folderNoteName": "",
   "folderNoteNamePattern": "",
   "folderNoteTemplate": "模版/普通笔记.md",
-  "enableFolderNoteLinks": true,
-  "hideFolderNoteInList": true,
-  "pinCreatedFolderNote": false,
+  "enableFolderNoteLinks": false,
+  "hideFolderNoteInList": false,
+  "pinCreatedFolderNote": true,
   "folderNoteOpenLocation": "current-tab",
   "showNearestFolderNoteInSidebar": true,
   "showTags": false,
@@ -220,7 +221,7 @@
   "scopePropertiesToCurrentContext": false,
   "defaultListMode": "compact",
   "includeDescendantNotes": false,
-  "defaultFolderSort": "modified-desc",
+  "defaultFolderSort": "filename-asc",
   "propertySortKey": "",
   "propertySortSecondary": "title",
   "manualSortPropertyKey": "排序",
@@ -234,9 +235,9 @@
   "stickyGroupHeaders": true,
   "showFolderGroupPaths": true,
   "showCurrentFolderFilesAtBottom": false,
-  "filterPinnedByFolder": false,
+  "filterPinnedByFolder": true,
   "compactItemHeight": 20,
-  "compactItemHeightScaleText": false,
+  "compactItemHeightScaleText": true,
   "showQuickActions": true,
   "quickActionRevealInFolder": false,
   "quickActionAddTag": false,
@@ -489,13 +490,15 @@
   "folderIcons": {
     "笔记": "notebook",
     "待办": "list-todo",
-    "笔记/Ai": "brain-circuit",
     "code": "code",
     "模版": "templater-icon",
     "附件": "image",
     "笔记/Obsidian": "simple-icons:obsidian",
     "网页裁剪": "clipboard-list",
-    "待办任务": "list-todo"
+    "待办任务": "list-todo",
+    "笔记/Java": "bootstrap-icons:filetype-java",
+    "笔记/专项研究/Ai": "brain-circuit",
+    "笔记/02-前端": "simple-icons:htmlacademy"
   },
   "folderColors": {
     "网页裁剪": "#6b7280",
@@ -508,12 +511,15 @@
     "笔记/Python": "#eab308",
     "附件": "#78716c",
     "code": "#22c55e",
-    "笔记/Ai": "#3b82f6",
-    "待办任务": "#ef4444"
+    "待办任务": "#ef4444",
+    "笔记/Java": "#0ea5e9",
+    "笔记/专项研究/Ai": "#3b82f6",
+    "笔记/01-基础知识": "#89d4f6",
+    "笔记/02-前端": "#ef4444"
   },
   "folderBackgroundColors": {},
   "folderSortOverrides": {
-    "笔记/Ai/Claude Code": {
+    "笔记/专项研究/Ai/Claude Code": {
       "option": "property-asc",
       "propertyKey": "排序"
     }
@@ -538,7 +544,11 @@
   "propertyAppearances": {},
   "virtualFolderColors": {},
   "virtualFolderBackgroundColors": {},
-  "navigationSeparators": {},
+  "navigationSeparators": {
+    "folder:笔记/Java": true,
+    "folder:笔记/专项研究": true,
+    "folder:笔记/02-前端": true
+  },
   "userColors": [
     "#ffffff",
     "#d9d9d9",
@@ -561,7 +571,7 @@
     "#404040",
     "#404040"
   ],
-  "lastShownVersion": "3.1.4",
+  "lastShownVersion": "3.2.0",
   "rootFolderOrder": [],
   "rootTagOrder": [],
   "rootPropertyOrder": []
