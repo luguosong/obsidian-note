@@ -10,6 +10,10 @@
 ---
 # Claude Code
 
+## 本分类下的笔记
+
+![[分类索引.base]]
+
 ## 相关资源
 
 - [官方文档](https://code.claude.com/docs/zh-CN/overview)

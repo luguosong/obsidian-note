@@ -1581,18 +1581,22 @@
     ]
   },
   "README.md": {
-    "scroll": 16.777868693415048,
+    "scroll": 9.613744075829384,
     "cursor": {
       "from": {
-        "line": 28,
-        "ch": 0
+        "line": 2,
+        "ch": 140
       },
       "to": {
-        "line": 28,
-        "ch": 0
+        "line": 2,
+        "ch": 140
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-3-2",
+      "item-2-1"
+    ]
   },
   "Next time is next time, now is now.md": {
     "scroll": 0,
@@ -2840,14 +2844,14 @@
     "expandedKeys": []
   },
   "笔记/Obsidian/markdown语法.md": {
-    "scroll": 0,
+    "scroll": 20.120535714285715,
     "cursor": {
       "from": {
-        "line": 49,
+        "line": 50,
         "ch": 0
       },
       "to": {
-        "line": 49,
+        "line": 50,
         "ch": 0
       }
     },
@@ -3281,7 +3285,7 @@
     "expandedKeys": []
   },
   "笔记/Obsidian/相关Ai skill和插件.md": {
-    "scroll": 0,
+    "scroll": 6.864988558352403,
     "cursor": {
       "from": {
         "line": 35,
@@ -3305,6 +3309,304 @@
       },
       "to": {
         "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "笔记/04-专项研究/Ai/Ai.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "AGENTS.md": {
+    "scroll": 88.24869791666667,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-7"
+    ]
+  },
+  "编程笔记/Obsidian/Obsidian.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 17,
+        "ch": 0
+      },
+      "to": {
+        "line": 17,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/Obsidian/相关Ai skill和插件.md": {
+    "scroll": 9.153318077803204,
+    "cursor": {
+      "from": {
+        "line": 34,
+        "ch": 23
+      },
+      "to": {
+        "line": 34,
+        "ch": 2
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/04-专项研究.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/02-前端/02-前端.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/Obsidian/插件说明.md": {
+    "scroll": 4.576659038901602,
+    "cursor": {
+      "from": {
+        "line": 14,
+        "ch": 7
+      },
+      "to": {
+        "line": 14,
+        "ch": 7
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/02-前端/HTML/HTML.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/02-前端/CSS/CSS.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/Java日志/Java日志.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/01-基础.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/02-前端/02-CSS/02-CSS.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/02-前端/01-HTML/01-HTML.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/02-前端/03-JavaScript/03-JavaScript.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/Obsidian/markdown语法.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
+  },
+  "编程笔记/03-Java/02-服务端开发/Java数据库/Java数据库.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Ai.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
         "ch": 0
       }
     },

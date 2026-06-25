@@ -10,3 +10,7 @@
 ---
 # Github Copilot Cil
 
+## 本分类下的笔记
+
+![[分类索引.base]]
+

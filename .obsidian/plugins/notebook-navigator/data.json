@@ -16,6 +16,10 @@
         {
           "type": "note",
           "path": "待办任务/待办任务.md"
+        },
+        {
+          "type": "note",
+          "path": "编程笔记/Obsidian/相关Ai skill和插件.md"
         }
       ],
       "navRainbow": {
@@ -171,10 +175,10 @@
   "separateNoteCounts": true,
   "showIndentGuides": true,
   "navCountLeaderStyle": "dots",
-  "rootLevelSpacing": 0,
+  "rootLevelSpacing": 6,
   "navIndent": 10,
   "navItemHeight": 20,
-  "navItemHeightScaleText": true,
+  "navItemHeightScaleText": false,
   "collapseBehavior": "all",
   "smartCollapse": false,
   "collapseOtherBranchesOnExpand": false,
@@ -482,67 +486,32 @@
     ]
   },
   "customVaultName": "",
-  "pinnedNotes": {
-    "笔记/04-专项研究/Ai/Github Copilot Cil/Github Copilot Cil.md": {
-      "folder": true,
-      "tag": false,
-      "property": false
-    },
-    "笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
-      "folder": true,
-      "tag": false,
-      "property": false
-    },
-    "笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-      "folder": true,
-      "tag": false,
-      "property": false
-    }
-  },
+  "pinnedNotes": {},
   "collapsedPinnedContexts": {},
   "fileIcons": {},
   "fileColors": {},
   "fileBackgroundColors": {},
   "folderIcons": {
-    "笔记": "notebook",
     "待办": "list-todo",
     "code": "code",
     "模版": "templater-icon",
     "附件": "image",
-    "笔记/Obsidian": "simple-icons:obsidian",
     "网页裁剪": "clipboard-list",
-    "待办任务": "list-todo",
-    "笔记/02-前端": "simple-icons:htmlacademy",
-    "笔记/03-Java": "bootstrap-icons:filetype-java",
-    "笔记/04-专项研究/Ai": "brain-circuit",
-    "笔记/04-专项研究/Ai/Claude Code": "bootstrap-icons:claude",
-    "笔记/04-专项研究/Ai/Github Copilot Cil": "simple-icons:githubcopilot"
+    "待办任务": "list-todo"
   },
   "folderColors": {
     "网页裁剪": "#6b7280",
     "模版": "#78716c",
-    "笔记": "#f97316",
     "默认笔记": "#6b7280",
     "待办": "#22c55e",
-    "笔记/Windows": "#3b82f6",
-    "笔记/Obsidian": "#8b5cf6",
-    "笔记/Python": "#eab308",
     "附件": "#78716c",
     "code": "#22c55e",
-    "待办任务": "#ef4444",
-    "笔记/01-基础知识": "#89d4f6",
-    "笔记/02-前端": "#ef4444",
-    "笔记/03-Java": "#0ea5e9",
-    "笔记/04-专项研究/Ai": "#3b82f6"
+    "待办任务": "#ef4444"
   },
   "folderBackgroundColors": {},
   "folderSortOverrides": {
     "网页裁剪": "created-desc",
-    "笔记/04-专项研究/Ai/Claude Code": {
-      "option": "property-asc",
-      "propertyKey": "排序"
-    },
-    "笔记/Obsidian": {
+    "编程笔记/Obsidian": {
       "option": "property-asc",
       "propertyKey": "排序"
     }
@@ -567,11 +536,7 @@
   "propertyAppearances": {},
   "virtualFolderColors": {},
   "virtualFolderBackgroundColors": {},
-  "navigationSeparators": {
-    "folder:笔记/02-前端": true,
-    "folder:笔记/03-Java": true,
-    "folder:笔记/04-专项研究": true
-  },
+  "navigationSeparators": {},
   "userColors": [
     "#ffffff",
     "#d9d9d9",
