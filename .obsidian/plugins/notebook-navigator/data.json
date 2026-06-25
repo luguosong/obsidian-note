@@ -482,7 +482,23 @@
     ]
   },
   "customVaultName": "",
-  "pinnedNotes": {},
+  "pinnedNotes": {
+    "笔记/04-专项研究/Ai/Github Copilot Cil/Github Copilot Cil.md": {
+      "folder": true,
+      "tag": false,
+      "property": false
+    },
+    "笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
+      "folder": true,
+      "tag": false,
+      "property": false
+    },
+    "笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
+      "folder": true,
+      "tag": false,
+      "property": false
+    }
+  },
   "collapsedPinnedContexts": {},
   "fileIcons": {},
   "fileColors": {},
@@ -496,9 +512,9 @@
     "笔记/Obsidian": "simple-icons:obsidian",
     "网页裁剪": "clipboard-list",
     "待办任务": "list-todo",
-    "笔记/Java": "bootstrap-icons:filetype-java",
-    "笔记/专项研究/Ai": "brain-circuit",
-    "笔记/02-前端": "simple-icons:htmlacademy"
+    "笔记/02-前端": "simple-icons:htmlacademy",
+    "笔记/03-Java": "bootstrap-icons:filetype-java",
+    "笔记/04-专项研究/Ai": "brain-circuit"
   },
   "folderColors": {
     "网页裁剪": "#6b7280",
@@ -512,14 +528,15 @@
     "附件": "#78716c",
     "code": "#22c55e",
     "待办任务": "#ef4444",
-    "笔记/Java": "#0ea5e9",
-    "笔记/专项研究/Ai": "#3b82f6",
     "笔记/01-基础知识": "#89d4f6",
-    "笔记/02-前端": "#ef4444"
+    "笔记/02-前端": "#ef4444",
+    "笔记/03-Java": "#0ea5e9",
+    "笔记/04-专项研究/Ai": "#3b82f6"
   },
   "folderBackgroundColors": {},
   "folderSortOverrides": {
-    "笔记/专项研究/Ai/Claude Code": {
+    "网页裁剪": "created-desc",
+    "笔记/04-专项研究/Ai/Claude Code": {
       "option": "property-asc",
       "propertyKey": "排序"
     }
@@ -545,9 +562,9 @@
   "virtualFolderColors": {},
   "virtualFolderBackgroundColors": {},
   "navigationSeparators": {
-    "folder:笔记/Java": true,
-    "folder:笔记/专项研究": true,
-    "folder:笔记/02-前端": true
+    "folder:笔记/02-前端": true,
+    "folder:笔记/03-Java": true,
+    "folder:笔记/04-专项研究": true
   },
   "userColors": [
     "#ffffff",
