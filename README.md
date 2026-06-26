@@ -108,3 +108,4 @@ obsidian-note/
 - 通过 [obsidian-git](https://github.com/Vinzent03/obsidian-git) 插件做自动备份,提交信息形如 `vault backup: YYYY-MM-DD HH:mm:ss`。
 - 手动提交使用 Conventional Commits(中文描述),如 `feat: 新增 Spring 事务笔记`。
 - `.obsidian/workspace.json`、`待办任务/`、各类编译产物与依赖(`node_modules/`、`target/`、`*.iml` 等)已通过 `.gitignore` 忽略。
+

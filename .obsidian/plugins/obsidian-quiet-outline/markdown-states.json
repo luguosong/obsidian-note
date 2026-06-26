@@ -1581,7 +1581,7 @@
     ]
   },
   "README.md": {
-    "scroll": 9.613744075829384,
+    "scroll": 91.19589345172031,
     "cursor": {
       "from": {
         "line": 2,
@@ -1593,9 +1593,7 @@
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-3-2",
-      "item-2-1"
+      "item-1-0"
     ]
   },
   "Next time is next time, now is now.md": {
@@ -3585,7 +3583,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 0,
+    "scroll": 9.084925690021231,
     "cursor": {
       "from": {
         "line": 15,
@@ -3663,14 +3661,14 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
-    "scroll": 11.402185792349727,
+    "scroll": 18.132919452403694,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 38,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 38,
         "ch": 0
       }
     },
@@ -3719,7 +3717,7 @@
     "expandedKeys": []
   },
   "网页裁剪/ponytail README.md": {
-    "scroll": 17.37400628581993,
+    "scroll": 10.440238260816981,
     "cursor": {
       "from": {
         "line": 229,
@@ -3887,14 +3885,14 @@
     ]
   },
   "编程笔记/04-专项研究/Obsidian/Obsidian.md": {
-    "scroll": 7,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 13,
+        "line": 16,
         "ch": 0
       },
       "to": {
-        "line": 13,
+        "line": 16,
         "ch": 0
       }
     },
@@ -3903,15 +3901,15 @@
     ]
   },
   "编程笔记/04-专项研究/Obsidian/相关Ai skill和插件.md": {
-    "scroll": 6.864988558352403,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 26,
-        "ch": 2
+        "line": 10,
+        "ch": 15
       },
       "to": {
-        "line": 26,
-        "ch": 12
+        "line": 10,
+        "ch": 15
       }
     },
     "expandedKeys": [
@@ -3933,19 +3931,20 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Obsidian/插件说明.md": {
-    "scroll": 9.153318077803204,
+    "scroll": 7.9862700228832955,
     "cursor": {
       "from": {
-        "line": 22,
-        "ch": 18
+        "line": 57,
+        "ch": 0
       },
       "to": {
-        "line": 22,
-        "ch": 2
+        "line": 57,
+        "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-1"
     ]
   },
   "测试笔记.md": {
@@ -4005,19 +4004,19 @@
     "expandedKeys": []
   },
   "网页裁剪/pua README.md": {
-    "scroll": 0,
+    "scroll": 265.6435387352418,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 277,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 277,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-2-0"
+      "item-2-19"
     ]
   },
   "编程笔记/04-专项研究/Redis/相关资源.md": {
@@ -4054,11 +4053,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 11,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 11,
         "ch": 0
       }
     },
@@ -4081,14 +4080,14 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
-    "scroll": 29.807942708333332,
+    "scroll": 9.496567505720824,
     "cursor": {
       "from": {
-        "line": 41,
+        "line": 42,
         "ch": 0
       },
       "to": {
-        "line": 41,
+        "line": 42,
         "ch": 0
       }
     },
@@ -4125,18 +4124,20 @@
     "expandedKeys": []
   },
   "网页裁剪/Context7 README.md": {
-    "scroll": 0,
+    "scroll": 90.76497395833333,
     "cursor": {
       "from": {
-        "line": 0,
-        "ch": 0
+        "line": 130,
+        "ch": 14
       },
       "to": {
-        "line": 0,
-        "ch": 0
+        "line": 130,
+        "ch": 14
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-2-8"
+    ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/claude-hud.md": {
     "scroll": 0,
@@ -4169,46 +4170,46 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
-    "scroll": 78.96057745696835,
+    "scroll": 38.40991428109332,
     "cursor": {
       "from": {
-        "line": 13,
-        "ch": 0
+        "line": 106,
+        "ch": 11
       },
       "to": {
-        "line": 13,
-        "ch": 0
+        "line": 106,
+        "ch": 11
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-8"
+      "item-2-1"
     ]
   },
   "网页裁剪/claude-plugins-official README.md": {
-    "scroll": 0,
+    "scroll": 1.3272311212814645,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 32,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 32,
         "ch": 0
       }
     },
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Obsidian/markdown语法.md": {
-    "scroll": 27.833333333333332,
+    "scroll": 51.081380208333336,
     "cursor": {
       "from": {
-        "line": 74,
-        "ch": 0
+        "line": 82,
+        "ch": 3
       },
       "to": {
-        "line": 74,
-        "ch": 0
+        "line": 82,
+        "ch": 3
       }
     },
     "expandedKeys": [
@@ -4226,6 +4227,84 @@
       "to": {
         "line": 11,
         "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Obsidian/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 0
+      },
+      "to": {
+        "line": 3,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Obsidian/相关资源.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 2
+      },
+      "to": {
+        "line": 16,
+        "ch": 2
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/我如何使用Obsidian.md": {
+    "scroll": 58.36328125,
+    "cursor": {
+      "from": {
+        "line": 20,
+        "ch": 0
+      },
+      "to": {
+        "line": 20,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Obsidian/IDEA风格快捷键配置.md": {
+    "scroll": 5.765350877192983,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Obsidian/skill说明.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 9
+      },
+      "to": {
+        "line": 10,
+        "ch": 9
       }
     },
     "expandedKeys": [

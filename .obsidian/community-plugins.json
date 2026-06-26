@@ -7,7 +7,8 @@
   "obsidian-image-toolkit",
   "obsidian-minimal-settings",
   "notebook-navigator",
-  "vscode-editor",
   "templater-obsidian",
-  "pymdown-snippets"
+  "pymdown-snippets",
+  "obsidian-style-settings",
+  "keyshots"
 ]
