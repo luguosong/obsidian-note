@@ -2,9 +2,9 @@
   "textFontFamily": "Source Code Pro,LXGW WenKai",
   "interfaceFontFamily": "Source Code Pro,LXGW WenKai",
   "monospaceFontFamily": "Source Code Pro,LXGW WenKai",
-  "baseFontSizeAction": true,
+  "baseFontSizeAction": false,
   "cssTheme": "Minimal",
-  "baseFontSize": 16,
+  "baseFontSize": 15,
   "enabledCssSnippets": [
     "inline-code"
   ],
