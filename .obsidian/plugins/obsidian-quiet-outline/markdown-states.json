@@ -3018,12 +3018,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 2,
-        "ch": 14
+        "line": 1,
+        "ch": 10
       },
       "to": {
-        "line": 2,
-        "ch": 14
+        "line": 1,
+        "ch": 10
       }
     },
     "expandedKeys": []
@@ -3367,12 +3367,12 @@
     "scroll": 18.299691040164777,
     "cursor": {
       "from": {
-        "line": 34,
-        "ch": 23
+        "line": 22,
+        "ch": 7
       },
       "to": {
-        "line": 34,
-        "ch": 2
+        "line": 22,
+        "ch": 7
       }
     },
     "expandedKeys": [
@@ -3422,19 +3422,20 @@
     "expandedKeys": []
   },
   "编程笔记/Obsidian/插件说明.md": {
-    "scroll": 6.864988558352403,
+    "scroll": 24.57456647398844,
     "cursor": {
       "from": {
-        "line": 22,
-        "ch": 2
+        "line": 25,
+        "ch": 20
       },
       "to": {
-        "line": 22,
-        "ch": 18
+        "line": 25,
+        "ch": 2
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-2"
     ]
   },
   "编程笔记/02-前端/HTML/HTML.md": {
@@ -3497,11 +3498,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 15,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 15,
         "ch": 0
       }
     },
@@ -3552,19 +3553,20 @@
     "expandedKeys": []
   },
   "编程笔记/Obsidian/markdown语法.md": {
-    "scroll": 0,
+    "scroll": 14.945664739884393,
     "cursor": {
       "from": {
-        "line": 9,
+        "line": 31,
         "ch": 0
       },
       "to": {
-        "line": 9,
+        "line": 31,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-1"
     ]
   },
   "编程笔记/03-Java/02-服务端开发/Java数据库/Java数据库.md": {
@@ -3582,7 +3584,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 0,
+    "scroll": 10,
     "cursor": {
       "from": {
         "line": 15,
@@ -3644,5 +3646,89 @@
     "expandedKeys": [
       "item-1-0"
     ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/gstack.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/superpowers README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/DietrichGebertponytail Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.md": {
+    "scroll": 10.805717365977499,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/ponytail.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/ponytail README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 229,
+        "ch": 0
+      },
+      "to": {
+        "line": 229,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
   }
 }

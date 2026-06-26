@@ -12,13 +12,18 @@ properties:
   formula.created_day:
     displayName: 创建
 views:
-  - type: table
+  - type: list
     name: 本分类下的笔记
+    groupBy:
+      property: 分组
+      direction: ASC
     order:
       - file.name
-      - formula.is_folder_note
+      - 关联笔记
       - 描述
-      - formula.created_day
     sort:
       - property: 排序
         direction: ASC
+    rowHeight: medium
+    indentProperties: true
+    markers: number
