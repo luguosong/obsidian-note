@@ -884,11 +884,11 @@
     "cursor": {
       "from": {
         "line": 0,
-        "ch": 5
+        "ch": 0
       },
       "to": {
         "line": 0,
-        "ch": 5
+        "ch": 0
       }
     },
     "expandedKeys": []
@@ -3018,12 +3018,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 1,
-        "ch": 10
+        "line": 8,
+        "ch": 0
       },
       "to": {
-        "line": 1,
-        "ch": 10
+        "line": 8,
+        "ch": 0
       }
     },
     "expandedKeys": []
@@ -3331,7 +3331,7 @@
     "expandedKeys": []
   },
   "AGENTS.md": {
-    "scroll": 88.24869791666667,
+    "scroll": 112.0651364764268,
     "cursor": {
       "from": {
         "line": 9,
@@ -3343,19 +3343,18 @@
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-2-7"
+      "item-1-0"
     ]
   },
   "编程笔记/Obsidian/Obsidian.md": {
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 17,
+        "line": 13,
         "ch": 0
       },
       "to": {
-        "line": 17,
+        "line": 13,
         "ch": 0
       }
     },
@@ -3364,15 +3363,15 @@
     ]
   },
   "编程笔记/Obsidian/相关Ai skill和插件.md": {
-    "scroll": 18.299691040164777,
+    "scroll": 16.6519052523172,
     "cursor": {
       "from": {
-        "line": 22,
-        "ch": 7
+        "line": 34,
+        "ch": 2
       },
       "to": {
-        "line": 22,
-        "ch": 7
+        "line": 34,
+        "ch": 23
       }
     },
     "expandedKeys": [
@@ -3495,7 +3494,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
-    "scroll": 0,
+    "scroll": 2.356979405034325,
     "cursor": {
       "from": {
         "line": 15,
@@ -3584,7 +3583,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 10,
+    "scroll": 11.325520833333334,
     "cursor": {
       "from": {
         "line": 15,
@@ -3718,7 +3717,7 @@
     "expandedKeys": []
   },
   "网页裁剪/ponytail README.md": {
-    "scroll": 0,
+    "scroll": 228.49283854166666,
     "cursor": {
       "from": {
         "line": 229,
@@ -3726,6 +3725,384 @@
       },
       "to": {
         "line": 229,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/mysql/mysql.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Docker/Docker.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Mysql/Mysql.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Windows/Windows.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/03-Java/02-服务端开发/02-Java数据库/02-Java数据库.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/03-Java/02-服务端开发/03-JavaWeb/03-JavaWeb.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/相关资源.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 24,
+        "ch": 0
+      },
+      "to": {
+        "line": 24,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Docker/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Docker/相关资源.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 18,
+        "ch": 4
+      },
+      "to": {
+        "line": 18,
+        "ch": 4
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Obsidian/Obsidian.md": {
+    "scroll": 7,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Obsidian/相关Ai skill和插件.md": {
+    "scroll": 6.864988558352403,
+    "cursor": {
+      "from": {
+        "line": 26,
+        "ch": 2
+      },
+      "to": {
+        "line": 26,
+        "ch": 12
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "模版/代码块模版.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 1,
+        "ch": 0
+      },
+      "to": {
+        "line": 1,
+        "ch": 6
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Obsidian/插件说明.md": {
+    "scroll": 9.153318077803204,
+    "cursor": {
+      "from": {
+        "line": 22,
+        "ch": 18
+      },
+      "to": {
+        "line": 22,
+        "ch": 2
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "测试笔记.md": {
+    "scroll": 3.398169336384439,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 2
+      },
+      "to": {
+        "line": 12,
+        "ch": 2
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 0
+      },
+      "to": {
+        "line": 3,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/pua.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/tanweaipua 你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/pua README.md": {
+    "scroll": 208.75372023809524,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-19"
+    ]
+  },
+  "编程笔记/04-专项研究/Redis/相关资源.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/01-JavaSE/01-JavaSE.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/03-Java/01-基础/01-JavaSE/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
+    "scroll": 29.807942708333332,
+    "cursor": {
+      "from": {
+        "line": 41,
+        "ch": 0
+      },
+      "to": {
+        "line": 41,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/Context7.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
         "ch": 0
       }
     },
