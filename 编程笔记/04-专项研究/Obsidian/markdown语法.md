@@ -54,5 +54,23 @@
 
 [Markdown链接](xxx.md)
 
+[外部链接](https://help.obsidian.md)
+
+[通过链接到 Obsidian URI 来创建指向其他仓库中文件的外部链接](obsidian://open?vault=MainVault&file=Note.md)
+
+![外部图片](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+```
+
+### 引用
+
+```
+> 人类面临越来越复杂且紧迫的问题，而其应对这些问题的有效性，关系到社会的稳定以及持续进步。
+```
+
+> 人类面临越来越复杂且紧迫的问题，而其应对这些问题的有效性，关系到社会的稳定以及持续进步。
+
+### 列表
+
+```
 
 ```

@@ -3199,18 +3199,20 @@
     "expandedKeys": []
   },
   "网页裁剪/gstack README.md": {
-    "scroll": 0,
+    "scroll": 351.3095238095238,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 332,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 332,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-2-19"
+    ]
   },
   "笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
     "scroll": 0,
@@ -3583,7 +3585,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 11.325520833333334,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 15,
@@ -3650,18 +3652,18 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 11,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 11,
         "ch": 0
       }
     },
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
-    "scroll": 0,
+    "scroll": 11.402185792349727,
     "cursor": {
       "from": {
         "line": 11,
@@ -3717,7 +3719,7 @@
     "expandedKeys": []
   },
   "网页裁剪/ponytail README.md": {
-    "scroll": 228.49283854166666,
+    "scroll": 17.37400628581993,
     "cursor": {
       "from": {
         "line": 229,
@@ -3828,11 +3830,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 0,
+        "line": 3,
         "ch": 0
       },
       "to": {
-        "line": 0,
+        "line": 3,
         "ch": 0
       }
     },
@@ -4003,7 +4005,7 @@
     "expandedKeys": []
   },
   "网页裁剪/pua README.md": {
-    "scroll": 20.636239247221383,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 10,
@@ -4098,11 +4100,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 12,
+        "line": 13,
         "ch": 0
       },
       "to": {
-        "line": 12,
+        "line": 13,
         "ch": 0
       }
     },
@@ -4121,5 +4123,113 @@
       }
     },
     "expandedKeys": []
+  },
+  "网页裁剪/Context7 README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/claude-hud.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/claude-hud README.md": {
+    "scroll": 289.9876302083333,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-7"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
+    "scroll": 78.96057745696835,
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 0
+      },
+      "to": {
+        "line": 13,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-8"
+    ]
+  },
+  "网页裁剪/claude-plugins-official README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Obsidian/markdown语法.md": {
+    "scroll": 27.833333333333332,
+    "cursor": {
+      "from": {
+        "line": 74,
+        "ch": 0
+      },
+      "to": {
+        "line": 74,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
+  },
+  "编程笔记/04-专项研究/设计模式/设计模式.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
   }
 }

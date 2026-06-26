@@ -5,18 +5,285 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
-  "colorGroups": [],
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:网页裁剪/",
+      "color": {
+        "a": 1,
+        "rgb": 7695584
+      }
+    },
+    {
+      "query": "path:编程笔记/01-基础知识/01-基础知识.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/01-基础知识/操作系统/操作系统.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/01-基础知识/数据结构/数据结构.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/01-基础知识/计算机组成原理/计算机组成原理.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/01-基础知识/计算机网络/计算机网络.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/02-前端/02-前端.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/02-前端/01-HTML/01-HTML.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/02-前端/02-CSS/02-CSS.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/02-前端/03-JavaScript/03-JavaScript.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/03-Java.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/01-基础/01-基础.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/01-基础/01-JavaSE/01-JavaSE.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/01-基础/02-JVM/02-JVM.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/01-基础/03-Maven/03-Maven.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/01-基础/04-Java测试/04-Java测试.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/01-基础/05-Java日志/05-Java日志.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/02-服务端开发/02-服务端开发.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/02-服务端开发/01-Spring/01-Spring.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/02-服务端开发/02-Java数据库/02-Java数据库.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/02-服务端开发/03-JavaWeb/03-JavaWeb.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/02-服务端开发/04-认证和鉴权/04-认证和鉴权.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/03-Java/02-服务端开发/05-微服务/05-微服务.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/04-专项研究.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Ai/Ai.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Ai/Claude Code/Claude Code.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Ai/Github Copilot Cil/Github Copilot Cil.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Docker/Docker.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Git/Git.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Linux/Linux.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Mysql/Mysql.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Obsidian/Obsidian.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Redis/Redis.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/Windows/Windows.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/密码学/密码学.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/消息队列/消息队列.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    },
+    {
+      "query": "path:编程笔记/04-专项研究/设计模式/设计模式.md",
+      "color": {
+        "a": 1,
+        "rgb": 15708001
+      }
+    }
+  ],
   "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 0.699739583333333,
+  "nodeSizeMultiplier": 1.05,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "centerStrength": 0.5546875,
+  "repelStrength": 9.01041666666667,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.7514342322277123,
-  "close": true
+  "linkDistance": 173,
+  "scale": 0.7514342322277098,
+  "close": false
 }
