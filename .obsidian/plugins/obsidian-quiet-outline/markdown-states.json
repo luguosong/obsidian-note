@@ -4003,7 +4003,7 @@
     "expandedKeys": []
   },
   "网页裁剪/pua README.md": {
-    "scroll": 208.75372023809524,
+    "scroll": 20.636239247221383,
     "cursor": {
       "from": {
         "line": 10,
@@ -4015,7 +4015,7 @@
       }
     },
     "expandedKeys": [
-      "item-2-19"
+      "item-2-0"
     ]
   },
   "编程笔记/04-专项研究/Redis/相关资源.md": {
@@ -4098,11 +4098,25 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 12,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Context7 - LLM代码文档平台.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
         "ch": 0
       }
     },
