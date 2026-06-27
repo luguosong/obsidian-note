@@ -1,57 +1,38 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Implementing a Remote Interface (The Java™ Tutorials >        
-            RMI)"
-描述: "This RMI Java tutorial describes the Java RMI system. It walks through a complete client/server example"
+标题: "实现远程接口"
+描述: "《Java 教程》RMI 课程，讲解如何实现计算引擎的 ComputeEngine 类，涵盖声明远程接口、定义构造函数、实现远程方法、RMI 中对象传递规则、安全管理与向注册表导出远程对象。"
 来源: "https://docs.oracle.com/javase/tutorial/rmi/implementing.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Implementing a Remote Interface (The Java™ Tutorials >        
-            RMI)
 
-Documentation
+# 实现远程接口
 
-[[RMI-概述|An Overview of RMI Applications]]
+> 文档说明
 
-[[RMI-服务器|Writing an RMI Server]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[RMI-设计远程接口|Designing a Remote Interface]]
+## 实现远程接口
 
-Implementing a Remote Interface
+本节讨论为计算引擎实现类的任务。通常，实现远程接口的类至少应执行以下操作：
 
-[[RMI-客户端|Creating a Client Program]]
+- 声明正在实现的远程接口
+- 为每个远程对象定义构造函数
+- 为远程接口中的每个远程方法提供实现
 
-[[RMI-示例|Compiling and Running the Example]]
+RMI 服务器程序需要创建初始远程对象并将它们*导出*到 RMI 运行时，这使它们可用于接收传入的远程调用。此设置过程可以封装在远程对象实现类本身的方法中，也可以完全包含在另一个类中。设置过程应执行以下操作：
 
-[[RMI-编译示例|Compiling the Example Programs]]
+- 创建并安装安全管理器
+- 创建并导出一个或多个远程对象
+- 在 RMI 注册表（或另一个命名服务，如可通过 Java 命名与目录接口访问的服务）中注册至少一个远程对象，以用于引导
 
-[[RMI-运行示例|Running the Example Programs]]
-
-[[RMI-设计远程接口|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/rmi/TOC.html) • [[RMI-客户端|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Implementing a Remote Interface
-
-This section discusses the task of implementing a class for the compute engine. In general, a class that implements a remote interface should at least do the following:
-
-- Declare the remote interfaces being implemented
-- Define the constructor for each remote object
-- Provide an implementation for each remote method in the remote interfaces
-
-An RMI server program needs to create the initial remote objects and *export* them to the RMI runtime, which makes them available to receive incoming remote invocations. This setup procedure can be either encapsulated in a method of the remote object implementation class itself or included in another class entirely. The setup procedure should do the following:
-
-- Create and install a security manager
-- Create and export one or more remote objects
-- Register at least one remote object with the RMI registry (or with another naming service, such as a service accessible through the Java Naming and Directory Interface) for bootstrapping purposes
-
-The complete implementation of the compute engine follows. The [`` `engine.ComputeEngine` ``](https://docs.oracle.com/javase/tutorial/rmi/examples/engine/ComputeEngine.java) class implements the remote interface `Compute` and also includes the `main` method for setting up the compute engine. Here is the source code for the `ComputeEngine` class:
+以下是计算引擎的完整实现。[`` `engine.ComputeEngine` ``](https://docs.oracle.com/javase/tutorial/rmi/examples/engine/ComputeEngine.java) 类实现远程接口 `Compute`，并包含用于设置计算引擎的 `main` 方法。以下是 `ComputeEngine` 类的源代码：
 
 ```java
 package engine;
@@ -91,25 +72,25 @@ public class ComputeEngine implements Compute {
         }
     }
 }
-```java
+```
 
-The following sections discuss each component of the compute engine implementation.
+以下各节讨论计算引擎实现的每个组件。
 
-## Declaring the Remote Interfaces Being Implemented
+## 声明正在实现的远程接口
 
-The implementation class for the compute engine is declared as follows:
+计算引擎的实现类声明如下：
 
 ```java
 public class ComputeEngine implements Compute
 ```
 
-This declaration states that the class implements the `Compute` remote interface and therefore can be used for a remote object.
+此声明说明该类实现了 `Compute` 远程接口，因此可用于远程对象。
 
-The `ComputeEngine` class defines a remote object implementation class that implements a single remote interface and no other interfaces. The `ComputeEngine` class also contains two executable program elements that can only be invoked locally. The first of these elements is a constructor for `ComputeEngine` instances. The second of these elements is a `main` method that is used to create a `ComputeEngine` instance and make it available to clients.
+`ComputeEngine` 类定义了一个实现单个远程接口而没有其他接口的远程对象实现类。`ComputeEngine` 类还包含两个只能在本地调用的可执行程序元素。其中第一个元素是 `ComputeEngine` 实例的构造函数。第二个元素是 `main` 方法，用于创建 `ComputeEngine` 实例并使其对客户端可用。
 
-## Defining the Constructor for the Remote Object
+## 定义远程对象的构造函数
 
-The `ComputeEngine` class has a single constructor that takes no arguments. The code for the constructor is as follows:
+`ComputeEngine` 类有一个不带参数的构造函数。构造函数的代码如下：
 
 ```java
 public ComputeEngine() {
@@ -117,11 +98,11 @@ public ComputeEngine() {
 }
 ```
 
-This constructor just invokes the superclass constructor, which is the no-argument constructor of the `Object` class. Although the superclass constructor gets invoked even if omitted from the `ComputeEngine` constructor, it is included for clarity.
+此构造函数只调用超类构造函数，即 `Object` 类的无参数构造函数。尽管即使从 `ComputeEngine` 构造函数中省略，超类构造函数也会被调用，但为了清晰起见，将其包含在内。
 
-## Providing Implementations for Each Remote Method
+## 为每个远程方法提供实现
 
-The class for a remote object provides implementations for each remote method specified in the remote interfaces. The `Compute` interface contains a single remote method, `executeTask`, which is implemented as follows:
+远程对象的类为远程接口中指定的每个远程方法提供实现。`Compute` 接口包含单个远程方法 `executeTask`，其实现如下：
 
 ```java
 public <T> T executeTask(Task<T> t) {
@@ -129,86 +110,86 @@ public <T> T executeTask(Task<T> t) {
 }
 ```
 
-This method implements the protocol between the `ComputeEngine` remote object and its clients. Each client provides the `ComputeEngine` with a `Task` object that has a particular implementation of the `Task` interface's `execute` method. The `ComputeEngine` executes each client's task and returns the result of the task's `execute` method directly to the client.
+此方法实现了 `ComputeEngine` 远程对象与其客户端之间的协议。每个客户端为 `ComputeEngine` 提供一个 `Task` 对象，该对象具有 `Task` 接口的 `execute` 方法的特定实现。`ComputeEngine` 执行每个客户端的任务，并将任务的 `execute` 方法的结果直接返回给客户端。
 
-## Passing Objects in RMI
+## 在 RMI 中传递对象
 
-Arguments to or return values from remote methods can be of almost any type, including local objects, remote objects, and primitive data types. More precisely, any entity of any type can be passed to or from a remote method as long as the entity is an instance of a type that is a primitive data type, a remote object, or a *serializable* object, which means that it implements the interface `java.io.Serializable.`
+远程方法的参数或返回值可以是几乎任何类型，包括本地对象、远程对象和基本数据类型。更精确地说，只要实体是基本数据类型、远程对象或*可序列化*对象（意味着它实现接口 `java.io.Serializable`）类型的实例，任何类型的实体都可以传递给或从远程方法传递。
 
-Some object types do not meet any of these criteria and thus cannot be passed to or returned from a remote method. Most of these objects, such as threads or file descriptors, encapsulate information that makes sense only within a single address space. Many of the core classes, including the classes in the packages `java.lang` and `java.util`, implement the `Serializable` interface.
+某些对象类型不满足这些标准中的任何一个，因此不能传递给或从远程方法返回。这些对象中的大多数（如线程或文件描述符）封装了仅在单个地址空间内有意义的信息。许多核心类，包括 `java.lang` 和 `java.util` 包中的类，实现了 `Serializable` 接口。
 
-The rules governing how arguments and return values are passed are as follows:
+管理参数和返回值如何传递的规则如下：
 
-- Remote objects are essentially passed by reference. A *remote object reference* is a stub, which is a client-side proxy that implements the complete set of remote interfaces that the remote object implements.
-- Local objects are passed by copy, using object serialization. By default, all fields are copied except fields that are marked `static` or `transient`. Default serialization behavior can be overridden on a class-by-class basis.
+- 远程对象实质上按引用传递。*远程对象引用*是一个桩(stub)，它是实现远程对象实现的完整远程接口集合的客户端代理。
+- 本地对象使用对象序列化按副本传递。默认情况下，复制所有字段，除了标记为 `static` 或 `transient` 的字段。默认序列化行为可以按类逐个覆盖。
 
-Passing a remote object by reference means that any changes made to the state of the object by remote method invocations are reflected in the original remote object. When a remote object is passed, only those interfaces that are remote interfaces are available to the receiver. Any methods defined in the implementation class or defined in non-remote interfaces implemented by the class are not available to that receiver.
+按引用传递远程对象意味着远程方法调用对对象状态所做的任何更改都反映在原始远程对象中。传递远程对象时，接收方只能使用那些是远程接口的接口。实现类中定义的或类实现的非远程接口中定义的任何方法对该接收方不可用。
 
-For example, if you were to pass a reference to an instance of the `ComputeEngine` class, the receiver would have access only to the compute engine's `executeTask` method. That receiver would not see the `ComputeEngine` constructor, its `main` method, or its implementation of any methods of `java.lang.Object`.
+例如，如果你传递对 `ComputeEngine` 类实例的引用，接收方将只能访问计算引擎的 `executeTask` 方法。该接收方将看不到 `ComputeEngine` 构造函数、其 `main` 方法或其对 `java.lang.Object` 的任何方法的实现。
 
-In the parameters and return values of remote method invocations, objects that are not remote objects are passed by value. Thus, a copy of the object is created in the receiving Java virtual machine. Any changes to the object's state by the receiver are reflected only in the receiver's copy, not in the sender's original instance. Any changes to the object's state by the sender are reflected only in the sender's original instance, not in the receiver's copy.
+在远程方法调用的参数和返回值中，不是远程对象的对象按值传递。因此，在接收 Java 虚拟机中创建对象的副本。接收方对对象状态所做的任何更改仅反映在接收方的副本中，而不反映在发送方的原始实例中。发送方对对象状态所做的任何更改仅反映在发送方的原始实例中，而不反映在接收方的副本中。
 
-## Implementing the Server's main Method
+## 实现服务器的 main 方法
 
-The most complex method of the `ComputeEngine` implementation is the `main` method. The `main` method is used to start the `ComputeEngine` and therefore needs to do the necessary initialization and housekeeping to prepare the server to accept calls from clients. This method is not a remote method, which means that it cannot be invoked from a different Java virtual machine. Because the `main` method is declared `static`, the method is not associated with an object at all but rather with the class `ComputeEngine`.
+`ComputeEngine` 实现中最复杂的方法是 `main` 方法。`main` 方法用于启动 `ComputeEngine`，因此需要执行必要的初始化和内务处理来准备服务器接受来自客户端的调用。此方法不是远程方法，这意味着它不能从不同的 Java 虚拟机调用。因为 `main` 方法声明为 `static`，所以该方法完全不与对象关联，而是与类 `ComputeEngine` 关联。
 
-## Creating and Installing a Security Manager
+## 创建并安装安全管理器
 
-The `main` method's first task is to create and install a security manager, which protects access to system resources from untrusted downloaded code running within the Java virtual machine. A security manager determines whether downloaded code has access to the local file system or can perform any other privileged operations.
+`main` 方法的首要任务是创建并安装安全管理器，它保护对系统资源的访问免受在 Java 虚拟机内运行的不受信任的下载代码的影响。安全管理器确定下载的代码是否有权访问本地文件系统或可以执行任何其他特权操作。
 
-If an RMI program does not install a security manager, RMI will not download classes (other than from the local class path) for objects received as arguments or return values of remote method invocations. This restriction ensures that the operations performed by downloaded code are subject to a security policy.
+如果 RMI 程序未安装安全管理器，RMI 将不会为作为远程方法调用的参数或返回值接收的对象下载类（本地类路径除外）。此限制确保下载代码执行的操作受安全策略约束。
 
-Here's the code that creates and installs a security manager:
+以下是创建并安装安全管理器的代码：
 
-```text
+```java
 if (System.getSecurityManager() == null) {
     System.setSecurityManager(new SecurityManager());
 }
 ```
 
-## Making the Remote Object Available to Clients
+## 使远程对象对客户端可用
 
-Next, the `main` method creates an instance of `ComputeEngine` and exports it to the RMI runtime with the following statements:
+接下来，`main` 方法创建 `ComputeEngine` 的实例并使用以下语句将其导出到 RMI 运行时：
 
-```text
+```java
 Compute engine = new ComputeEngine();
 Compute stub =
     (Compute) UnicastRemoteObject.exportObject(engine, 0);
 ```
 
-The static `UnicastRemoteObject.exportObject` method exports the supplied remote object so that it can receive invocations of its remote methods from remote clients. The second argument, an `int`, specifies which TCP port to use to listen for incoming remote invocation requests for the object. It is common to use the value zero, which specifies the use of an anonymous port. The actual port will then be chosen at runtime by RMI or the underlying operating system. However, a non-zero value can also be used to specify a specific port to use for listening. Once the `exportObject` invocation has returned successfully, the `ComputeEngine` remote object is ready to process incoming remote invocations.
+静态 `UnicastRemoteObject.exportObject` 方法导出提供的远程对象，以便它可以接收来自远程客户端的远程方法调用。第二个参数（一个 `int`）指定使用哪个 TCP 端口来监听对象的传入远程调用请求。通常使用值零，它指定使用匿名端口。然后，实际端口将在运行时由 RMI 或底层操作系统选择。然而，也可以使用非零值来指定用于监听的特定端口。一旦 `exportObject` 调用成功返回，`ComputeEngine` 远程对象就准备好处理传入的远程调用。
 
-The `exportObject` method returns a stub for the exported remote object. Note that the type of the variable `stub` must be `Compute`, not `ComputeEngine`, because the stub for a remote object only implements the remote interfaces that the exported remote object implements.
+`exportObject` 方法返回导出远程对象的桩。注意，变量 `stub` 的类型必须是 `Compute`，而不是 `ComputeEngine`，因为远程对象的桩只实现导出远程对象实现的远程接口。
 
-The `exportObject` method declares that it can throw a `RemoteException`, which is a checked exception type. The `main` method handles this exception with its `try` / `catch` block. If the exception were not handled in this way, `RemoteException` would have to be declared in the `throws` clause of the `main` method. An attempt to export a remote object can throw a `RemoteException` if the necessary communication resources are not available, such as if the requested port is bound for some other purpose.
+`exportObject` 方法声明它可以抛出 `RemoteException`，这是一种受检异常类型。`main` 方法用其 `try` / `catch` 块处理此异常。如果未以这种方式处理异常，则必须在 `main` 方法的 `throws` 子句中声明 `RemoteException`。如果必要的通信资源不可用（例如请求的端口已用于其他目的），则导出远程对象的尝试可能抛出 `RemoteException`。
 
-Before a client can invoke a method on a remote object, it must first obtain a reference to the remote object. Obtaining a reference can be done in the same way that any other object reference is obtained in a program, such as by getting the reference as part of the return value of a method or as part of a data structure that contains such a reference.
+在客户端可以调用远程对象的方法之前，它必须首先获取对远程对象的引用。获取引用的方式与程序中获取任何其他对象引用的方式相同，例如通过将引用作为方法返回值的一部分或作为包含此类引用的数据结构的一部分来获取。
 
-The system provides a particular type of remote object, the RMI registry, for finding references to other remote objects. The RMI registry is a simple remote object naming service that enables clients to obtain a reference to a remote object by name. The registry is typically only used to locate the first remote object that an RMI client needs to use. That first remote object might then provide support for finding other objects.
+系统提供了一种特定类型的远程对象，即 RMI 注册表，用于查找对其他远程对象的引用。RMI 注册表是一个简单的远程对象命名服务，它使客户端能够按名称获取对远程对象的引用。注册表通常仅用于定位 RMI 客户端需要使用的第一个远程对象。然后，该第一个远程对象可能提供查找其他对象的支持。
 
-The `java.rmi.registry.Registry` remote interface is the API for binding (or registering) and looking up remote objects in the registry. The `java.rmi.registry.LocateRegistry` class provides static methods for synthesizing a remote reference to a registry at a particular network address (host and port). These methods create the remote reference object containing the specified network address without performing any remote communication. `LocateRegistry` also provides static methods for creating a new registry in the current Java virtual machine, although this example does not use those methods. Once a remote object is registered with an RMI registry on the local host, clients on any host can look up the remote object by name, obtain its reference, and then invoke remote methods on the object. The registry can be shared by all servers running on a host, or an individual server process can create and use its own registry.
+`java.rmi.registry.Registry` 远程接口是在注册表中绑定（或注册）和查找远程对象的 API。`java.rmi.registry.LocateRegistry` 类提供了用于合成对特定网络地址（主机和端口）上的注册表的远程引用的静态方法。这些方法创建包含指定网络地址的远程引用对象，而不执行任何远程通信。`LocateRegistry` 还提供了用于在当前 Java 虚拟机中创建新注册表的静态方法，尽管此示例不使用这些方法。一旦远程对象在本地主机上的 RMI 注册表中注册，任何主机上的客户端都可以按名称查找远程对象，获取其引用，然后调用对象上的远程方法。注册表可以由主机上运行的所有服务器共享，或者单个服务器进程可以创建和使用自己的注册表。
 
-The `ComputeEngine` class creates a name for the object with the following statement:
+`ComputeEngine` 类使用以下语句为对象创建名称：
 
-```text
+```java
 String name = "Compute";
 ```
 
-The code then adds the name to the RMI registry running on the server. This step is done later with the following statements:
+然后代码将该名称添加到服务器上运行的 RMI 注册表。此步骤稍后使用以下语句完成：
 
-```text
+```java
 Registry registry = LocateRegistry.getRegistry();
 registry.rebind(name, stub);
 ```
 
-This `rebind` invocation makes a remote call to the RMI registry on the local host. Like any remote call, this call can result in a `RemoteException` being thrown, which is handled by the `catch` block at the end of the `main` method.
+此 `rebind` 调用对本地主机上的 RMI 注册表进行远程调用。与任何远程调用一样，此调用可能导致抛出 `RemoteException`，由 `main` 方法末尾的 `catch` 块处理。
 
-Note the following about the `Registry.rebind` invocation:
+注意以下关于 `Registry.rebind` 调用的内容：
 
-- The no-argument overload of `LocateRegistry.getRegistry` synthesizes a reference to a registry on the local host and on the default registry port, 1099. You must use an overload that has an `int` parameter if the registry is created on a port other than 1099.
-- When a remote invocation on the registry is made, a stub for the remote object is passed instead of a copy of the remote object itself. Remote implementation objects, such as instances of `ComputeEngine`, never leave the Java virtual machine in which they were created. Thus, when a client performs a lookup in a server's remote object registry, a copy of the stub is returned. Remote objects in such cases are thus effectively passed by (remote) reference rather than by value.
-- For security reasons, an application can only `bind`, `unbind`, or `rebind` remote object references with a registry running on the same host. This restriction prevents a remote client from removing or overwriting any of the entries in a server's registry. A `lookup`, however, can be requested from any host, local or remote.
+- `LocateRegistry.getRegistry` 的无参数重载合成本地主机上和默认注册表端口 1099 上的注册表引用。如果注册表创建在 1099 以外的端口上，则必须使用具有 `int` 参数的重载。
+- 对注册表进行远程调用时，传递的是远程对象的桩，而不是远程对象本身的副本。远程实现对象（如 `ComputeEngine` 的实例）永远不会离开创建它们的 Java 虚拟机。因此，当客户端在服务器的远程对象注册表中执行查找时，返回的是桩的副本。因此，在这种情况下，远程对象实际上按（远程）引用传递而不是按值传递。
+- 出于安全原因，应用程序只能 `bind`、`unbind` 或 `rebind` 远程对象引用与在同一主机上运行的注册表。此限制防止远程客户端删除或覆盖服务器注册表中的任何条目。然而，可以从任何主机（本地或远程）请求 `lookup`。
 
-Once the server has registered with the local RMI registry, it prints a message indicating that it is ready to start handling calls. Then, the `main` method completes. It is not necessary to have a thread wait to keep the server alive. As long as there is a reference to the `ComputeEngine` object in another Java virtual machine, local or remote, the `ComputeEngine` object will not be shut down or garbage collected. Because the program binds a reference to the `ComputeEngine` in the registry, it is reachable from a remote client, the registry itself. The RMI system keeps the `ComputeEngine` 's process running. The `ComputeEngine` is available to accept calls and won't be reclaimed until its binding is removed from the registry *and* no remote clients hold a remote reference to the `ComputeEngine` object.
+一旦服务器在本地 RMI 注册表中注册，它就打印一条消息，指示它已准备好开始处理调用。然后，`main` 方法完成。不需要有线程等待来保持服务器存活。只要有对 `ComputeEngine` 对象的引用存在于另一个 Java 虚拟机（本地或远程）中，`ComputeEngine` 对象就不会被关闭或被垃圾回收。因为程序在注册表中绑定对 `ComputeEngine` 的引用，所以它可以从远程客户端（注册表本身）到达。RMI 系统保持 `ComputeEngine` 的进程运行。`ComputeEngine` 可用于接受调用，并且在其绑定从注册表删除*并且*没有远程客户端持有对 `ComputeEngine` 对象的远程引用之前，不会被回收。
 
-The final piece of code in the `ComputeEngine.main` method handles any exception that might arise. The only checked exception type that could be thrown in the code is `RemoteException`, either by the `UnicastRemoteObject.exportObject` invocation or by the registry `rebind` invocation. In either case, the program cannot do much more than exit after printing an error message. In some distributed applications, recovering from the failure to make a remote invocation is possible. For example, the application could attempt to retry the operation or choose another server to continue the operation.
+`ComputeEngine.main` 方法中的最后一段代码处理可能出现的任何异常。代码中可能抛出的唯一受检异常类型是 `RemoteException`，无论是通过 `UnicastRemoteObject.exportObject` 调用还是通过注册表 `rebind` 调用。在任一情况下，程序在打印错误消息后除了退出之外做不了太多。在某些分布式应用程序中，从远程调用失败中恢复是可能的。例如，应用程序可以尝试重试操作或选择另一个服务器来继续操作。

@@ -1,51 +1,32 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Designing a Remote Interface (The Java™ Tutorials >        
-            RMI)"
-描述: "This RMI Java tutorial describes the Java RMI system. It walks through a complete client/server example"
+标题: "设计远程接口"
+描述: "《Java 教程》RMI 课程，介绍计算引擎的核心协议设计，定义 Compute 远程接口与 Task 接口，阐述远程方法、RemoteException、泛型类型参数与对象序列化要求。"
 来源: "https://docs.oracle.com/javase/tutorial/rmi/designing.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Designing a Remote Interface (The Java™ Tutorials >        
-            RMI)
 
-Documentation
+# 设计远程接口
 
-[[RMI-概述|An Overview of RMI Applications]]
+> 文档说明
 
-[[RMI-服务器|Writing an RMI Server]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Designing a Remote Interface
+## 设计远程接口
 
-[[RMI-实现远程接口|Implementing a Remote Interface]]
-
-[[RMI-客户端|Creating a Client Program]]
-
-[[RMI-示例|Compiling and Running the Example]]
-
-[[RMI-编译示例|Compiling the Example Programs]]
-
-[[RMI-运行示例|Running the Example Programs]]
-
-[[RMI-服务器|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/rmi/TOC.html) • [[RMI-实现远程接口|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Designing a Remote Interface
-
-At the core of the compute engine is a protocol that enables tasks to be submitted to the compute engine, the compute engine to run those tasks, and the results of those tasks to be returned to the client. This protocol is expressed in the interfaces that are supported by the compute engine. The remote communication for this protocol is illustrated in the following figure.
+计算引擎的核心是一个协议，它允许将任务提交给计算引擎、计算引擎运行这些任务，并将这些任务的结果返回给客户端。此协议在计算引擎支持的接口中表达。此协议的远程通信如下图所示。
 
 ![[RMI--rmi-3.gif]]
 
-Each interface contains a single method. The compute engine's remote interface, `Compute`, enables tasks to be submitted to the engine. The client interface, `Task,` defines how the compute engine executes a submitted task.
+每个接口包含一个方法。计算引擎的远程接口 `Compute` 允许将任务提交给引擎。客户端接口 `Task` 定义计算引擎如何执行提交的任务。
 
-The [`` `compute.Compute` ``](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Compute.java) interface defines the remotely accessible part, the compute engine itself. Here is the source code for the `Compute` interface:
+[`` `compute.Compute` ``](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Compute.java) 接口定义了可远程访问的部分，即计算引擎本身。以下是 `Compute` 接口的源代码：
 
 ```java
 package compute;
@@ -56,13 +37,13 @@ import java.rmi.RemoteException;
 public interface Compute extends Remote {
     <T> T executeTask(Task<T> t) throws RemoteException;
 }
-```java
+```
 
-By extending the interface `java.rmi.Remote`, the `Compute` interface identifies itself as an interface whose methods can be invoked from another Java virtual machine. Any object that implements this interface can be a remote object.
+通过扩展接口 `java.rmi.Remote`，`Compute` 接口将自己标识为一个可以从另一个 Java 虚拟机调用其方法的接口。任何实现此接口的对象都可以是远程对象。
 
-As a member of a remote interface, the `executeTask` method is a remote method. Therefore, this method must be defined as being capable of throwing a `java.rmi.RemoteException`. This exception is thrown by the RMI system from a remote method invocation to indicate that either a communication failure or a protocol error has occurred. A `RemoteException` is a checked exception, so any code invoking a remote method needs to handle this exception by either catching it or declaring it in its `throws` clause.
+作为远程接口的成员，`executeTask` 方法是远程方法。因此，此方法必须定义为能够抛出 `java.rmi.RemoteException`。当通信失败或协议错误发生时，RMI 系统从远程方法调用抛出此异常。`RemoteException` 是受检异常，因此调用远程方法的任何代码都需要通过捕获它或在 `throws` 子句中声明它来处理此异常。
 
-The second interface needed for the compute engine is the `Task` interface, which is the type of the parameter to the `executeTask` method in the `Compute` interface. The [`` `compute.Task` ``](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Task.java) interface defines the interface between the compute engine and the work that it needs to do, providing the way to start the work. Here is the source code for the `Task` interface:
+计算引擎所需的第二个接口是 `Task` 接口，它是 `Compute` 接口中 `executeTask` 方法的参数类型。[`` `compute.Task` ``](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Task.java) 接口定义了计算引擎与其需要完成的工作之间的接口，提供了启动工作的方式。以下是 `Task` 接口的源代码：
 
 ```java
 package compute;
@@ -72,16 +53,16 @@ public interface Task<T> {
 }
 ```
 
-The `Task` interface defines a single method, `execute`, which has no parameters and throws no exceptions. Because the interface does not extend `Remote`, the method in this interface doesn't need to list `java.rmi.RemoteException` in its `throws` clause.
+`Task` 接口定义了单个方法 `execute`，它没有参数也不抛出异常。因为该接口不扩展 `Remote`，所以此接口中的方法不需要在其 `throws` 子句中列出 `java.rmi.RemoteException`。
 
-The `Task` interface has a type parameter, `T`, which represents the result type of the task's computation. This interface's `execute` method returns the result of the computation and thus its return type is `T`.
+`Task` 接口有一个类型参数 `T`，它表示任务计算的结果类型。此接口的 `execute` 方法返回计算结果，因此其返回类型是 `T`。
 
-The `Compute` interface's `executeTask` method, in turn, returns the result of the execution of the `Task` instance passed to it. Thus, the `executeTask` method has its own type parameter, `T`, that associates its own return type with the result type of the passed `Task` instance.
+`Compute` 接口的 `executeTask` 方法反过来返回传递给它的 `Task` 实例执行的结果。因此，`executeTask` 方法有自己的类型参数 `T`，将其自己的返回类型与传递的 `Task` 实例的结果类型关联起来。
 
-RMI uses the Java object serialization mechanism to transport objects by value between Java virtual machines. For an object to be considered serializable, its class must implement the `java.io.Serializable` marker interface. Therefore, classes that implement the `Task` interface must also implement `Serializable`, as must the classes of objects used for task results.
+RMI 使用 Java 对象序列化机制在 Java 虚拟机之间按值传输对象。要使对象被视为可序列化，其类必须实现 `java.io.Serializable` 标记接口。因此，实现 `Task` 接口的类也必须实现 `Serializable`，用于任务结果的对象的类也必须如此。
 
-Different kinds of tasks can be run by a `Compute` object as long as they are implementations of the `Task` type. The classes that implement this interface can contain any data needed for the computation of the task and any other methods needed for the computation.
+只要任务是 `Task` 类型的实现，`Compute` 对象就可以运行不同类型的任务。实现此接口的类可以包含任务计算所需的任何数据和计算所需的任何其他方法。
 
-Here is how RMI makes this simple compute engine possible. Because RMI can assume that the `Task` objects are written in the Java programming language, implementations of the `Task` object that were previously unknown to the compute engine are downloaded by RMI into the compute engine's Java virtual machine as needed. This capability enables clients of the compute engine to define new kinds of tasks to be run on the server machine without needing the code to be explicitly installed on that machine.
+以下是 RMI 如何使这个简单的计算引擎成为可能。因为 RMI 可以假设 `Task` 对象是用 Java 编程语言编写的，所以计算引擎以前未知的 `Task` 对象的实现会根据需要由 RMI 下载到计算引擎的 Java 虚拟机中。此功能使计算引擎的客户端能够定义要在服务器机器上运行的新类型的任务，而无需在该机器上显式安装代码。
 
-The compute engine, implemented by the `ComputeEngine` class, implements the `Compute` interface, enabling different tasks to be submitted to it by calls to its `executeTask` method. These tasks are run using the task's implementation of the `execute` method and the results, are returned to the remote client.
+由 `ComputeEngine` 类实现的计算引擎实现了 `Compute` 接口，使不同的任务可以通过调用其 `executeTask` 方法提交给它。这些任务使用任务的 `execute` 方法实现运行，结果返回给远程客户端。

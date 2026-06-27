@@ -1,63 +1,54 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Writing the Server Side of a Socket (The Java™ Tutorials >        
-            Custom Networking > All About Sockets)"
-描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
+标题: "编写套接字的服务器端"
+描述: "《Java 教程》自定义网络课程，通过 KnockKnock 笑话服务器/客户端示例演示如何编写套接字服务器端，涵盖 ServerSocket、accept、协议类、多客户端支持。"
 来源: "https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Writing the Server Side of a Socket (The Java™ Tutorials >        
-            Custom Networking > All About Sockets)
 
-Documentation
+# 编写套接字的服务器端
 
-[[自定义网络-Socket-definition|What Is a Socket?]]
+> 文档说明
 
-[[自定义网络-Socket-readingWriting|Reading from and Writing to a Socket]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Writing the Server Side of a Socket
+## 编写套接字的服务器端
 
-[[自定义网络-Socket-readingWriting|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/networking/TOC.html) • [[自定义网络-datagrams|Next »]]
+本节向你展示如何编写服务器及其配套客户端。客户端/服务器对中的服务器提供 Knock Knock 笑话。Knock Knock 笑话受孩子们喜爱，通常是不太高明的双关语的载体。它们是这样的：
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+**服务器**：「Knock knock!」（咚咚！）
+**客户端**：「Who's there?」（谁呀？）
+**服务器**：「Dexter.」（德克斯特。）
+**客户端**：「Dexter who?」（哪个德克斯特？）
+**服务器**：「Dexter halls with boughs of holly.」（德克斯特用冬青枝装饰大厅。*双关*）
+**客户端**：「Groan.」（呻吟。）
 
-## Writing the Server Side of a Socket
+示例由两个独立运行的 Java 程序组成：客户端程序和服务器程序。客户端程序由单个类 [`KnockKnockClient`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockClient.java) 实现，与上一节的 [`EchoClient`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/EchoClient.java) 示例非常相似。服务器程序由两个类实现：[`KnockKnockServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockServer.java) 和 [`KnockKnockProtocol`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockProtocol.java)。`KnockKnockServer` 类似于 [`EchoServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/EchoServer.java)，包含服务器程序的 `main` 方法并执行监听端口、建立连接、读写套接字的工作。[`KnockKnockProtocol`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockProtocol.java) 类提供笑话。它跟踪当前笑话、当前状态（已发送 knock knock、已发送线索等），并根据当前状态返回笑话的各种文本片段。此对象实现了协议——客户端和服务器商定用于通信的语言。
 
-This section shows you how to write a server and the client that goes with it. The server in the client/server pair serves up Knock Knock jokes. Knock Knock jokes are favored by children and are usually vehicles for bad puns. They go like this:
+下一节详细查看客户端和服务器的每个类，然后向你展示如何运行它们。
 
-**Server**: "Knock knock!"  
-**Client**: "Who's there?"  
-**Server**: "Dexter."  
-**Client**: "Dexter who?"  
-**Server**: "Dexter halls with boughs of holly."  
-**Client**: "Groan."
+## Knock Knock 服务器
 
-The example consists of two independently running Java programs: the client program and the server program. The client program is implemented by a single class, [`KnockKnockClient`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockClient.java), and is very similar to the [`EchoClient`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/EchoClient.java) example from the previous section. The server program is implemented by two classes: [`KnockKnockServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockServer.java) and [`KnockKnockProtocol`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockProtocol.java). `KnockKnockServer`, which is similar to [`EchoServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/EchoServer.java), contains the `main` method for the server program and performs the work of listening to the port, establishing connections, and reading from and writing to the socket. The class [`KnockKnockProtocol`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockProtocol.java) serves up the jokes. It keeps track of the current joke, the current state (sent knock knock, sent clue, and so on), and returns the various text pieces of the joke depending on the current state. This object implements the protocol—the language that the client and server have agreed to use to communicate.
+本节逐步讲解实现 Knock Knock 服务器程序 [`KnockKnockServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockServer.java) 的代码。
 
-The following section looks in detail at each class in both the client and the server and then shows you how to run them.
+服务器程序首先创建一个新的 [`ServerSocket`](https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html) 对象来监听特定端口（参见以下代码段中粗体显示的语句）。运行此服务器时，选择一个尚未专用于其他服务的端口。例如，此命令启动服务器程序 `KnockKnockServer`，使其监听端口 4444：
 
-## The Knock Knock Server
-
-This section walks through the code that implements the Knock Knock server program, [`KnockKnockServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockServer.java).
-
-The server program begins by creating a new [`ServerSocket`](https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html) object to listen on a specific port (see the statement in bold in the following code segment). When running this server, choose a port that is not already dedicated to some other service. For example, this command starts the server program `KnockKnockServer` so that it listens on port 4444:
-
-```text
+```bash
 java KnockKnockServer 4444
 ```
 
-The server program creates the `ServerSocket` object in a `try` -with-resources statement:
+服务器程序在 `try` -with-resources 语句中创建 `ServerSocket` 对象：
 
-```text
+```java
 int portNumber = Integer.parseInt(args[0]);
 
-try ( 
+try (
     ServerSocket serverSocket = new ServerSocket(portNumber);
     Socket clientSocket = serverSocket.accept();
     PrintWriter out =
@@ -67,19 +58,19 @@ try (
 ) {
 ```
 
-`ServerSocket` is a [`java.net`](https://docs.oracle.com/javase/8/docs/api/java/net/package-frame.html) class that provides a system-independent implementation of the server side of a client/server socket connection. The constructor for `ServerSocket` throws an exception if it can't listen on the specified port (for example, the port is already being used). In this case, the `KnockKnockServer` has no choice but to exit.
+`ServerSocket` 是一个 [`java.net`](https://docs.oracle.com/javase/8/docs/api/java/net/package-frame.html) 类，提供客户端/服务器套接字连接服务器端的系统无关实现。如果 `ServerSocket` 的构造函数无法监听指定端口（例如，端口已被使用），则抛出异常。在这种情况下，`KnockKnockServer` 别无选择，只能退出。
 
-If the server successfully binds to its port, then the `ServerSocket` object is successfully created and the server continues to the next step—accepting a connection from a client (the next statement in the `try` -with-resources statement):
+如果服务器成功绑定到其端口，则 `ServerSocket` 对象成功创建，服务器继续下一步——接受来自客户端的连接（`try` -with-resources 语句中的下一条语句）：
 
-```text
+```java
 clientSocket = serverSocket.accept();
 ```
 
-The [`accept`](https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html#accept--) method waits until a client starts up and requests a connection on the host and port of this server. (Let's assume that you ran the server program `KnockKnockServer` on the computer named `knockknockserver.example.com`.) In this example, the server is running on the port number specified by the first command-line argument. When a connection is requested and successfully established, the accept method returns a new [`Socket`](https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html) object which is bound to the same local port and has its remote address and remote port set to that of the client. The server can communicate with the client over this new `Socket` and continue to listen for client connection requests on the original `ServerSocket` This particular version of the program doesn't listen for more client connection requests. However, a modified version of the program is provided in [Supporting Multiple Clients](#later).
+[`accept`](https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html#accept--) 方法等待直到客户端启动并在此服务器的主机和端口上请求连接。（假设你在名为 `knockknockserver.example.com` 的计算机上运行了服务器程序 `KnockKnockServer`。）在此示例中，服务器在第一个命令行参数指定的端口号上运行。当请求连接并成功建立时，accept 方法返回一个新的 [`Socket`](https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html) 对象，该对象绑定到相同的本地端口，并将其远程地址和远程端口设置为客户端的地址和端口。服务器可以通过此新 `Socket` 与客户端通信，并继续在原始 `ServerSocket` 上监听客户端连接请求。此特定版本的程序不监听更多客户端连接请求。然而，在[支持多个客户端](#later)中提供了该程序的修改版本。
 
-After the server successfully establishes a connection with a client, it communicates with the client using this code:
+服务器成功建立与客户端的连接后，它使用以下代码与客户端通信：
 
-```bash
+```java
 try (
     // ...
     PrintWriter out =
@@ -88,8 +79,8 @@ try (
         new InputStreamReader(clientSocket.getInputStream()));
 ) {
     String inputLine, outputLine;
-            
-    // Initiate conversation with client
+
+    // 发起与客户端的对话
     KnockKnockProtocol kkp = new KnockKnockProtocol();
     outputLine = kkp.processInput(null);
     out.println(outputLine);
@@ -100,35 +91,37 @@ try (
         if (outputLine.equals("Bye."))
             break;
     }
+```
 
-This code does the following:
+此代码执行以下操作：
 
-1. Gets the socket's input and output stream and opens readers and writers on them.
-2. Initiates communication with the client by writing to the socket (shown in bold).
-3. Communicates with the client by reading from and writing to the socket (the `while` loop).
+1. 获取套接字的输入和输出流，并在其上打开读取器和写入器。
+2. 通过写入套接字发起与客户端的通信（粗体显示）。
+3. 通过读取和写入套接字与客户端通信（`while` 循环）。
 
-Step 1 is already familiar. Step 2 is shown in bold and is worth a few comments. The bold statements in the code segment above initiate the conversation with the client. The code creates a `KnockKnockProtocol` object—the object that keeps track of the current joke, the current state within the joke, and so on.
+第 1 步已经很熟悉了。第 2 步以粗体显示，值得几句评论。上面代码段中的粗体语句发起与客户端的对话。代码创建一个 `KnockKnockProtocol` 对象——跟踪当前笑话、笑话内当前状态等的对象。
 
-After the `KnockKnockProtocol` is created, the code calls `KnockKnockProtocol` 's `processInput` method to get the first message that the server sends to the client. For this example, the first thing that the server says is "Knock! Knock!" Next, the server writes the information to the [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html) connected to the client socket, thereby sending the message to the client.
+创建 `KnockKnockProtocol` 后，代码调用 `KnockKnockProtocol` 的 `processInput` 方法获取服务器发送给客户端的第一条消息。对于此示例，服务器说的第一件事是「Knock! Knock!」。接下来，服务器将信息写入连接到客户端套接字的 [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html)，从而将消息发送给客户端。
 
-Step 3 is encoded in the `while` loop. As long as the client and server still have something to say to each other, the server reads from and writes to the socket, sending messages back and forth between the client and the server.
+第 3 步编码在 `while` 循环中。只要客户端和服务器仍然有话要说，服务器就读取和写入套接字，在客户端和服务器之间来回发送消息。
 
-The server initiated the conversation with a "Knock! Knock!" so afterwards the server must wait for the client to say "Who's there?" As a result, the `while` loop iterates on a read from the input stream. The `readLine` method waits until the client responds by writing something to its output stream (the server's input stream). When the client responds, the server passes the client's response to the `KnockKnockProtocol` object and asks the `KnockKnockProtocol` object for a suitable reply. The server immediately sends the reply to the client via the output stream connected to the socket, using a call to println. If the server's response generated from the `KnockKnockServer` object is "Bye." this indicates that the client doesn't want any more jokes and the loop quits.
+服务器以「Knock! Knock!」发起对话，因此之后服务器必须等待客户端说「Who's there?」。结果，`while` 循环在输入流的读取上迭代。`readLine` 方法等待直到客户端通过向其输出流（服务器的输入流）写入内容来响应。当客户端响应时，服务器将客户端的响应传递给 `KnockKnockProtocol` 对象，并向 `KnockKnockProtocol` 对象请求合适的回复。服务器立即通过调用 println 经由连接到套接字的输出流将回复发送给客户端。如果从 `KnockKnockServer` 对象生成的服务器响应是「Bye.」，这表示客户端不再需要更多笑话，循环退出。
 
-The Java runtime automatically closes the input and output streams, the client socket, and the server socket because they have been created in the `try` -with-resources statement.
+Java 运行时自动关闭输入和输出流、客户端套接字和服务器套接字，因为它们是在 `try` -with-resources 语句中创建的。
 
-## The Knock Knock Protocol
+## Knock Knock 协议
 
-The [`KnockKnockProtocol`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockProtocol.java) class implements the protocol that the client and server use to communicate. This class keeps track of where the client and the server are in their conversation and serves up the server's response to the client's statements. The `KnockKnockProtocol` object contains the text of all the jokes and makes sure that the client gives the proper response to the server's statements. It wouldn't do to have the client say "Dexter who?" when the server says "Knock! Knock!"
+[`KnockKnockProtocol`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockProtocol.java) 类实现客户端和服务器用于通信的协议。此类跟踪客户端和服务器在对话中的位置，并提供服务器对客户端语句的响应。`KnockKnockProtocol` 对象包含所有笑话的文本，并确保客户端对服务器的语句给出适当的响应。当服务器说「Knock! Knock!」时，客户端说「Dexter who?」是不行的。
 
-All client/server pairs must have some protocol by which they speak to each other; otherwise, the data that passes back and forth would be meaningless. The protocol that your own clients and servers use depends entirely on the communication required by them to accomplish the task.
+所有客户端/服务器对都必须有一些协议来相互交流；否则，来回传递的数据将毫无意义。你自己的客户端和服务器使用的协议完全取决于它们为完成任务所需的通信。
 
-## The Knock Knock Client
+## Knock Knock 客户端
 
-The [`KnockKnockClient`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockClient.java) class implements the client program that speaks to the `KnockKnockServer`. `KnockKnockClient` is based on the `EchoClient` program in the previous section, [[自定义网络-Socket-readingWriting|Reading from and Writing to a Socket]] and should be somewhat familiar to you. But we'll go over the program anyway and look at what's happening in the client in the context of what's going on in the server.
+[`KnockKnockClient`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KnockKnockClient.java) 类实现与 `KnockKnockServer` 对话的客户端程序。`KnockKnockClient` 基于上一节[[自定义网络-Socket-readingWriting|从套接字读取和写入套接字]]中的 `EchoClient` 程序，你应该有些熟悉。但我们还是会过一遍程序，并在服务器中发生的事情背景下查看客户端中发生的事情。
 
-When you start the client program, the server should already be running and listening to the port, waiting for a client to request a connection. So, the first thing the client program does is to open a socket that is connected to the server running on the specified host name and port:
+当你启动客户端程序时，服务器应该已经在运行并监听端口，等待客户端请求连接。因此，客户端程序做的第一件事是打开一个连接到在指定主机名和端口上运行的服务器的套接字：
 
+```java
 String hostName = args[0];
 int portNumber = Integer.parseInt(args[1]);
 
@@ -138,19 +131,19 @@ try (
     BufferedReader in = new BufferedReader(
         new InputStreamReader(kkSocket.getInputStream()));
 )
-```text
-
-When creating its socket, the `KnockKnockClient` example uses the host name of the first command-line argument, the name of the computer on your network that is running the server program `KnockKnockServer`.
-
-The `KnockKnockClient` example uses the second command-line argument as the port number when creating its socket. This is a *remote port number* —the number of a port on the server computer—and is the port to which `KnockKnockServer` is listening. For example, the following command runs the `KnockKnockClient` example with `knockknockserver.example.com` as the name of the computer that is running the server program `KnockKnockServer` and 4444 as the remote port number:
-
 ```
+
+创建其套接字时，`KnockKnockClient` 示例使用第一个命令行参数的主机名，即网络上运行服务器程序 `KnockKnockServer` 的计算机的名称。
+
+`KnockKnockClient` 示例在创建其套接字时使用第二个命令行参数作为端口号。这是一个*远程端口号*——服务器计算机上的端口号——是 `KnockKnockServer` 监听的端口。例如，以下命令运行 `KnockKnockClient` 示例，其中 `knockknockserver.example.com` 是运行服务器程序 `KnockKnockServer` 的计算机的名称，4444 是远程端口号：
+
+```bash
 java KnockKnockClient knockknockserver.example.com 4444
-```text
+```
 
-The client's socket is bound to any available *local port* —a port on the client computer. Remember that the server gets a new socket as well. If you run the `KnockKnockClient` example with the command-line arguments in the previous example, then this socket is bound to local port number 4444 on the computer from which you ran the `KnockKnockClient` example. The server's socket and the client's socket are connected.
+客户端的套接字绑定到任何可用的*本地端口*——客户端计算机上的端口。记住服务器也会获得一个新套接字。如果你使用上一个示例中的命令行参数运行 `KnockKnockClient` 示例，则此套接字绑定到你运行 `KnockKnockClient` 示例的计算机上的本地端口号 4444。服务器的套接字和客户端的套接字是连接的。
 
-Next comes the `while` loop that implements the communication between the client and the server. The server speaks first, so the client must listen first. The client does this by reading from the input stream attached to the socket. If the server does speak, it says "Bye." and the client exits the loop. Otherwise, the client displays the text to the standard output and then reads the response from the user, who types into the standard input. After the user types a carriage return, the client sends the text to the server through the output stream attached to the socket.
+接下来是实现客户端和服务器之间通信的 `while` 循环。服务器先说话，所以客户端必须先监听。客户端通过读取连接到套接字的输入流来做到这一点。如果服务器确实说话了，它说「Bye.」并且客户端退出循环。否则，客户端将文本显示到标准输出，然后从用户那里读取响应，用户键入标准输入。用户键入回车后，客户端通过连接到套接字的输出流将文本发送到服务器。
 
 ```java
 while ((fromServer = in.readLine()) != null) {
@@ -166,58 +159,58 @@ while ((fromServer = in.readLine()) != null) {
 }
 ```
 
-The communication ends when the server asks if the client wishes to hear another joke, the client says no, and the server says "Bye."
+当服务器询问客户端是否想听另一个笑话、客户端说不、服务器说「Bye.」时，通信结束。
 
-The client automatically closes its input and output streams and the socket because they were created in the `try` -with-resources statement.
+客户端自动关闭其输入和输出流以及套接字，因为它们是在 `try` -with-resources 语句中创建的。
 
-## Running the Programs
+## 运行程序
 
-You must start the server program first. To do this, run the server program using the Java interpreter, just as you would any other Java application. Specify as a command-line argument the port number on which the server program listens:
+你必须先启动服务器程序。为此，像运行任何其他 Java 应用程序一样，使用 Java 解释器运行服务器程序。将服务器程序监听的端口号指定为命令行参数：
 
-```text
+```bash
 java KnockKnockServer 4444
 ```
 
-Next, run the client program. Note that you can run the client on any computer on your network; it does not have to run on the same computer as the server. Specify as command-line arguments the host name and the port number of the computer running the `KnockKnockServer` server program:
+接下来，运行客户端程序。注意，你可以在网络上的任何计算机上运行客户端；它不必与服务器在同一台计算机上运行。将运行 `KnockKnockServer` 服务器程序的计算机的主机名和端口号指定为命令行参数：
 
-```text
+```bash
 java KnockKnockClient knockknockserver.example.com 4444
 ```
 
-If you are too quick, you might start the client before the server has a chance to initialize itself and begin listening on the port. If this happens, you will see a stack trace from the client. If this happens, just restart the client.
+如果你太快，可能会在服务器有机会初始化并开始在端口上监听之前启动客户端。如果发生这种情况，你将看到来自客户端的堆栈跟踪。如果发生这种情况，只需重启客户端。
 
-If you try to start a second client while the first client is connected to the server, the second client just hangs. The next section, [Supporting Multiple Clients](#later), talks about supporting multiple clients.
+如果你在第一个客户端连接到服务器时尝试启动第二个客户端，第二个客户端会挂起。下一节[支持多个客户端](#later)讨论支持多个客户端。
 
-When you successfully get a connection between the client and server, you will see the following text displayed on your screen:
+当你在客户端和服务器之间成功建立连接时，你将看到屏幕上显示以下文本：
 
 ```text
 Server: Knock! Knock!
 ```
 
-Now, you must respond with:
+现在，你必须响应：
 
 ```text
 Who's there?
 ```
 
-The client echoes what you type and sends the text to the server. The server responds with the first line of one of the many Knock Knock jokes in its repertoire. Now your screen should contain this (the text you typed is in bold):
+客户端回显你键入的内容并将文本发送到服务器。服务器以其众多 Knock Knock 笑话之一的第一行响应。现在你的屏幕应包含此内容（你键入的文本是粗体）：
 
-```yaml
+```text
 Server: Knock! Knock!
 Who's there?
 Client: Who's there?
 Server: Turnip
-```text
-
-Now, you respond with:
-
 ```
-Turnip who?
+
+现在，你响应：
+
 ```text
+Turnip who?
+```
 
-Again, the client echoes what you type and sends the text to the server. The server responds with the punch line. Now your screen should contain this:
+同样，客户端回显你键入的内容并将文本发送到服务器。服务器以笑话语回应。现在你的屏幕应包含此内容：
 
-```yaml
+```text
 Server: Knock! Knock!
 Who's there?
 Client: Who's there?
@@ -227,41 +220,41 @@ Client: Turnip who?
 Server: Turnip the heat, it's cold in here! Want another? (y/n)
 ```
 
-If you want to hear another joke, type **y**; if not, type **n**. If you type **y**, the server begins again with "Knock! Knock!" If you type **n**, the server says "Bye." thus causing both the client and the server to exit.
+如果你想听另一个笑话，键入 **y**；如果不想，键入 **n**。如果你键入 **y**，服务器再次以「Knock! Knock!」开始。如果你键入 **n**，服务器说「Bye.」，从而导致客户端和服务器都退出。
 
-If at any point you make a typing mistake, the `KnockKnockServer` object catches it and the server responds with a message similar to this:
+如果你在任何时候打错了字，`KnockKnockServer` 对象会捕获它，服务器会以类似这样的消息响应：
 
 ```text
 Server: You're supposed to say "Who's there?"!
 ```
 
-The server then starts the joke over again:
+然后服务器重新开始笑话：
 
 ```text
 Server: Try again. Knock! Knock!
 ```
 
-Note that the `KnockKnockProtocol` object is particular about spelling and punctuation but not about capitalization.
+注意，`KnockKnockProtocol` 对象对拼写和标点符号很讲究，但对大小写不介意。
 
-## Supporting Multiple Clients
+## 支持多个客户端
 
-To keep the `KnockKnockServer` example simple, we designed it to listen for and handle a single connection request. However, multiple client requests can come into the same port and, consequently, into the same `ServerSocket`. Client connection requests are queued at the port, so the server must accept the connections sequentially. However, the server can service them simultaneously through the use of threads—one thread per each client connection.
+为了保持 `KnockKnockServer` 示例简单，我们将其设计为监听和处理单个连接请求。然而，多个客户端请求可以进入同一端口，因此也进入同一个 `ServerSocket`。客户端连接请求在端口处排队，因此服务器必须按顺序接受连接。然而，服务器可以通过使用线程同时为它们服务——每个客户端连接一个线程。
 
-The basic flow of logic in such a server is this:
+此类服务器的基本逻辑流如下：
 
-```sql
+```text
 while (true) {
     accept a connection;
     create a thread to deal with the client;
 }
 ```
 
-The thread reads from and writes to the client connection as necessary.
+线程根据需要从客户端连接读取和写入。
 
 ---
 
-**Try This:**
+**试试这个：**
 
-Modify the `KnockKnockServer` so that it can service multiple clients at the same time. Two classes compose our solution: [`KKMultiServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KKMultiServer.java) and [`KKMultiServerThread`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KKMultiServerThread.java). `KKMultiServer` loops forever, listening for client connection requests on a `ServerSocket`. When a request comes in, `KKMultiServer` accepts the connection, creates a new `KKMultiServerThread` object to process it, hands it the socket returned from accept, and starts the thread. Then the server goes back to listening for connection requests. The `KKMultiServerThread` object communicates to the client by reading from and writing to the socket. Run the new Knock Knock server `KKMultiServer` and then run several clients in succession.
+修改 `KnockKnockServer` 使其可以同时为多个客户端服务。两个类组成我们的解决方案：[`KKMultiServer`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KKMultiServer.java) 和 [`KKMultiServerThread`](https://docs.oracle.com/javase/tutorial/networking/sockets/examples/KKMultiServerThread.java)。`KKMultiServer` 永远循环，监听 `ServerSocket` 上的客户端连接请求。当请求进来时，`KKMultiServer` 接受连接，创建一个新的 `KKMultiServerThread` 对象来处理它，将 accept 返回的套接字交给它，并启动线程。然后服务器回去监听连接请求。`KKMultiServerThread` 对象通过从套接字读取和写入来与客户端通信。运行新的 Knock Knock 服务器 `KKMultiServer`，然后连续运行多个客户端。
 
 ---

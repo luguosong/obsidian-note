@@ -1,48 +1,37 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Start Policy Tool (The Java™ Tutorials >        
-            Security Features in Java SE > Creating a Policy File)"
-描述: "This security Java tutorial describes usage of digital signatures, keys, and cryptography services"
+标题: "启动 Policy Tool"
+描述: "《Java 教程》安全课程，介绍如何通过命令行启动 Policy Tool 图形工具，以及用户策略文件的默认位置。"
 来源: "https://docs.oracle.com/javase/tutorial/security/tour1/wstep1.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Start Policy Tool (The Java™ Tutorials >        
-            Security Features in Java SE > Creating a Policy File)
 
-Documentation
+# 启动 Policy Tool
 
-[[安全-设置策略文件|Set up a Policy File to Grant the Required Permission]]
+> 文档说明
 
-Start Policy Tool
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[安全-策略文件-wstep2|Grant the Required Permission]]
+## 启动 Policy Tool
 
-[[安全-策略文件-wstep3|Save the Policy File]]
+要启动 Policy Tool，只需在命令行键入以下内容：
 
-[[安全-设置策略文件|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/security/TOC.html) • [[安全-策略文件-wstep2|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Start Policy Tool
-
-To start Policy Tool, simply type the following at the command line:
-
-```text
+```bash
 policytool
 ```
 
-This brings up the Policy Tool window.
+这将调出 Policy Tool 窗口。
 
-Whenever Policy Tool is started, it attempts to fill in this window with policy information from the *user policy file.* The user policy file is named `.java.policy` by default in your home directory. If Policy Tool cannot find the user policy file, it issues a warning and displays a blank Policy Tool window (a window with headings and buttons but no data in it), as shown in the following figure.
+每当 Policy Tool 启动时，它会尝试用*用户策略文件*中的策略信息填充此窗口。用户策略文件默认在你主目录中名为 `.java.policy`。如果 Policy Tool 找不到用户策略文件，它会发出警告并显示一个空白的 Policy Tool 窗口（一个有标题和按钮但没有数据的窗口），如下图所示。
 
-![a blank Policy Tool window](https://docs.oracle.com/javase/tutorial/figures/security/ptBlank1.gif)
+![空白的 Policy Tool 窗口](https://docs.oracle.com/javase/tutorial/figures/security/ptBlank1.gif)
 
-You can then proceed to either open an existing policy file or to create a new policy file.
+然后你可以继续打开现有策略文件或创建新策略文件。
 
-The first time you run the Policy Tool, you will see the blank Policy Tool window, since a user policy file does not yet exist. You can immediately proceed to create a new policy file, as described in the next step.
+第一次运行 Policy Tool 时，你将看到空白的 Policy Tool 窗口，因为用户策略文件尚不存在。你可以立即继续创建新策略文件，如下一步所述。

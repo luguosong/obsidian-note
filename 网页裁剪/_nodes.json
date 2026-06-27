@@ -1,0 +1,3434 @@
+{
+  "claude-hud README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "claude-plugins-official README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "ClaudeCode在大型代码库中的工作方式：最佳实践与入门.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Context7 README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "ext-security.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "gstack README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "HelloWorld应用程序.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JavaBeans-快速入门-使用第三方Bean.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-快速入门-创建项目.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-快速入门-按钮.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-快速入门-连接应用.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-快速入门.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JavaBeans-编写组件-事件.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-编写组件-使用BeanInfo.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-编写组件-属性.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-编写组件-方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-编写组件.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JavaBeans-高级主题-Bean定制.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-高级主题-Bean持久化.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-高级主题-长期持久化.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JavaBeans-高级主题.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JavaBeans.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "JavaFX入门.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Java入门-Java能做什么.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java入门-NetBeans版.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java入门-SolarisLinuxMac版.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java入门-Windows版.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java入门指南.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Java技术如何改变生活.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Java技术现象.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Java技术能做什么.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Java教程学习路径.md": {
+    "type": "root",
+    "status": "done"
+  },
+  "Java核心类库-基本IO-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-fileio.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-formatting.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-Path类.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-scanning.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-streams.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-summary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-什么是路径.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-其他方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-创建读取目录.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-删除文件目录.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-命令行IO对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-复制文件目录.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-字符流.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-字节流.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-对象流.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-扫描与格式化.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-数据流.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-文件操作.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-查找文件.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-检查文件目录.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-监视目录变化.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-移动文件目录.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-管理元数据.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-缓冲流.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-读写创建文件.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-路径操作.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-遍历文件树.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-遗留文件IO.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-链接.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO-随机访问文件.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-基本IO.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Java核心类库-平台环境-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-cl.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-cmdLineArgs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-env.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-other.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-PATH与CLASSPATH.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-properties.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-security.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-sysmisc.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-sysprop.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-系统实用工具.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-平台环境-配置实用工具.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Java核心类库-平台环境.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Java核心类库-异常-advantages.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-catch.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-catchOrDeclare.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-chained.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-creating.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-declaring.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-definition.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-finally.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-handling.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-putItTogether.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-runtime.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-summary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-throwing.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-try.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常-tryResourceClose.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-异常.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Java核心类库-正则表达式-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-Matcher方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-PatternSyntaxException方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-Pattern方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-unicode.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-字符串字面量.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-字符类.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-捕获组.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-测试工具.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-简介.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Java核心类库-正则表达式-边界匹配器.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-量词.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-附加资源.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式-预定义字符类.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Java核心类库-正则表达式.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Java核心类库.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "JAXP-DOM-info.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JAXP-DOM-readingXML.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JAXP-DOM-validating.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JAXP-DOM-when.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JAXP-DOM.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP-SAX-events.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JAXP-SAX-info.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JAXP-SAX-parsing.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JAXP-SAX-using.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JAXP-SAX-validation.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JAXP-SAX.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP-StAX.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP-XSLT.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP-何时使用SAX.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JAXP-处理限制.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP-新属性.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP-简介.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JAXP.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "JDBC-基础-Array对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-CachedRowSet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-Datalink对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-DataSource连接.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-DISTINCT类型.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-FilteredRowSet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-JdbcRowSet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-JDBC与GUI.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-JoinRowSet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-RowId对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-RowSet对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-SQLXML对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-WebRowSet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-事务.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-入门.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-处理SQLException.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-处理SQL语句.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-大对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-存储过程.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-建立连接.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-检索修改值.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-结构化对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-自定义类型映射.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-设置表.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-预编译语句.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础-高级数据类型.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JDBC-基础.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JDBC-概述.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JDBC数据库访问.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "JMX-MBeans-mxbeans.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JMX-MBeans-标准MBeans.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JMX-MBeans.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JMX-后续方向.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JMX-概述.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JMX-远程管理.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JMX-通知.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JMX.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "JNDI-content.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP名称操作.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-anonymous.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-authentication.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-auth_mechs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-close.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-compare.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-config.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-connect.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-create.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-digest.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-exceptions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-faq.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-jndi.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-ldap.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JNDI-LDAP高级-operations.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-pool.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-rename.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-result.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-sasl.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-security.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-simple.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-ssl.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级-unsol.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-LDAP高级.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-package.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-serial.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-列出上下文.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-创建子上下文.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-命名功能.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-序列化对象.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "JNDI-操作-attrnames.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-basicsearch.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-bindattr.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-countlimit.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-exception.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-faq.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-filter.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-getattrs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-modattrs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-scope.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-search.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作-timelimit.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-操作.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-新特性-mdsaIT.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-新特性-paged-results.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-新特性-rdn.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-新特性-sort.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-新特性.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-查找对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-标准LDAP控件.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-检索DN.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-概念.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-概述-event.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-概述.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-添加绑定.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-目录功能.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-目录对象-store.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-目录对象.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-读取超时.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI-软件设置.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "JNDI-重命名对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "JNDI.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "Lambda表达式.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "llm-wiki.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "NetBeans版HelloWorld.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "ponytail README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "pua README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "RMI-实现远程接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "RMI-客户端.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "RMI-服务器.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "RMI-概述.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "RMI-示例.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "RMI-编译示例.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "RMI-设计远程接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "RMI-运行示例.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "RMI.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "Scene Builder入门.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Solaris-Linux-Mac版HelloWorld.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "superpowers README.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "Swing-answers-ch3.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-answers-ch4.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-answers-ch5.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-answers-ch6.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-answers-concurrency.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-basicdemo.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-bound.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-cancel.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-closer.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-color.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-custom.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-cutpaste.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-dataflavor.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-defaultsupport.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-dispatch.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-dropaction.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-dropactiondemo.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-droplocation.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-dropmodedemo.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-dropmodes.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-emptytable.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-export.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-import.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-initial.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-interim.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-intro.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-listpaste.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-locsensitivedemo.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-locsensitivedrop.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-NetBeans学习.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-nimbus.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-plaf.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-problems.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-questions-ch3.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-questions-ch4.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-questions-ch5.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-questions-ch6.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-questions-concurrency.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-refining.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-showdroploc.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-simple.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-size.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-step1.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-step2.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-step3.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-summary.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-synth.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-synthExample.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-textpaste.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-together.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-toplevel.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-transferhandler.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-transfersupport.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-worker.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "Swing-_nimbusDefaults.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-actionlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-api.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-caretlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-changelistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-componentlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-containerlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-documentlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-eventsandcomponents.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-focuslistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-generalrules.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-handling.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-internalframelistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-intro.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-itemlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-keylistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-listdatalistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-listselectionlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-mouselistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-mousemotionlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-mousewheellistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-problems.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-propertychangelistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-tablemodellistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-treeexpansionlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-treemodellistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-treeselectionlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-treewillexpandlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-undoableeditlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听-windowlistener.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-事件监听.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-入门.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-其他特性-access.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-action.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-desktop.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-focus.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-jlayer.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-keybinding.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-modality.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-printtable.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-printtext.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-problems.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-splashscreen.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-systemtray.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-timer.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性-trans_shaped_windows.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-其他特性.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-外观.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-布局-border.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-box.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-card.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-custom.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-flow.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-grid.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-gridbag.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-group.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-groupExample.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-howLayoutWorks.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-layoutlist.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-none.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-problems.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-spring.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-using.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局-visual.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-布局.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-并发.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-拖放.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-拖放问题.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-按钮.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-滑块.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-applet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-border.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-buttongroup.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-colorchooser.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-combobox.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-componentlist.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-dialog.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-editorpane.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-filechooser.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-formattedtextfield.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-frame.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-generaltext.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-html.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-icon.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-internalframe.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-jcomponent.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-label.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-layeredpane.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-list.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-menu.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-model.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-panel.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-passwordfield.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-problems.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-progress.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-rootpane.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-scrollpane.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-separator.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-spinner.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-splitpane.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-tabbedpane.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-table.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-text.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-textapi.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-textarea.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-textfield.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-toolbar.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-tooltip.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-toplevel.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件-tree.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "Swing-组件.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Swing-自定义绘制.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "Windows版HelloWorld.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "_translate_spec.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-API概述.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-arbitrary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-clipping.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-complexshapes.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-compositing.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-drawmulstring.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-fontconcepts.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-images.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-primitives.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-printing.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-quality.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-renderinghints.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-strokeandfill.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-Swing打印支持.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-text.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-textattributes.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-textlayoutbidirectionaltext.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-textlayoutconcepts.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-transforming.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-user.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-几何原语.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-几何图形.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-图像.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-图形入门.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-坐标系.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-基本打印程序.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-多页文档.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-打印.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-打印GUI内容.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-打印服务.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-打印设置对话框.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-文本.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-测量文本.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-渲染.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-物理与逻辑字体.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形-高级主题.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "二维图形-高级文本显示.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "二维图形.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "使用Swing创建图形用户界面.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "全屏独占模式-双缓冲.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "全屏独占模式-显示模式.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "全屏独占模式-渲染.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "全屏独占模式-独占模式.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "全屏独占模式-示例.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "全屏独占模式-缓冲策略.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "全屏独占模式API.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "关于Java技术.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "包-createpkgs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-managingfiles.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-namingpkgs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-packages-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-packages-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-packages.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-summary-package.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "包-usepkgs.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-ctor.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-field.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-method.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-创建实例.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-字段修饰符.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-字段值.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-字段故障排除.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-字段类型.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-方法修饰符.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-方法参数名.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-方法故障排除.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-方法类型.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-构造器修饰符.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-构造器故障排除.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-查找构造器.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员-调用方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-成员.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "反射-数组与枚举-array.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-enum.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-创建新数组.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-数组值.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-数组故障排除.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-枚举字段.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-枚举故障排除.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-检查枚举.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举-识别数组类型.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-数组与枚举.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "反射-类-发现类成员.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-类-检索类对象.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-类-类修饰符类型.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-类-类故障排除.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "反射-类.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "反射.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "国际化-bidi.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-BreakIterator信息.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-BreakIterator用法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-BreakIterator简介.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-characterClass.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-convertintro.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-normalizerapi.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-shapedDigits.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-stream.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-string.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-charintro.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "国际化-text-collationintro.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-design.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-locale.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-perform.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-rule.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-supplementaryChars.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-terminology.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-text-unicode.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-区域设置.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化-单词边界.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-句子边界.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-字符边界.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-文本处理.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化-文本边界概述.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-断行.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "国际化-服务提供者.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化-格式化.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化-简介.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化-网络资源.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化-资源包.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "国际化.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "声音.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "学习Java语言-包.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "学习Java语言-数字与字符串.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "学习Java语言-泛型.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "学习Java语言-注解.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "学习Java语言-语言基础.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "学习Java语言-面向对象概念.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "学习Java语言.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "安全-交换文件.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-代码签名.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-控制应用.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-生成验证签名.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-策略文件-wstep1.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "安全-策略文件-wstep2.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "安全-策略文件-wstep3.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "安全-策略文件.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-签名与证书.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-自定义权限.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "安全-设置策略文件.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "安全.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "将程序打包为JAR文件.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "常见问题及解决方案.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "并发-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-atomic.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-atomicvars.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-deadlock.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-executors.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-exinter.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-forkjoin框架.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-further.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-guardmeth.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-highlevel.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-immutable.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-imstrat.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-interrupt.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-join.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-liveness.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-locksync.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-newlocks.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-pools.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-procthread.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "并发-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-runthread.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-simple.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-sleep.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-starvelive.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-syncmeth.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-syncrgb.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-threadlocalrandom.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-threads.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-内存一致性错误.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-同步.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-并发集合.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发-线程干扰.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "并发.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "我如何使用Obsidian.md": {
+    "type": "other",
+    "status": "done"
+  },
+  "扩展机制-download.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "扩展机制-install.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "扩展机制-load.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "扩展机制-服务提供者机制.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "扩展机制.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "接口与继承-final.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-hidevariables.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-inherit-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-inherit-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-interfaceAsType.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-interfaceDef.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-interfaces-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-multipleinheritance.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-nogrow.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-objectclass.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-override.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-polymorphism.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-subclasses.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-summary-interface.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-summaryinherit.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-super.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-usinginterface.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-创建接口.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "接口与继承-抽象方法.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "接口与继承-接口练习答案.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "接口与继承-默认方法.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "接口与继承.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "日期时间-datetime.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "日期时间-ISO标准-adjusters.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-clock.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-date.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-datetime.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-enum.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-format.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-instant.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-nonIso.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-overview.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-period.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-queries.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-summary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-temporal.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-ISO标准-timezones.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "日期时间-遗留日期时间代码.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "泛型进阶-convert.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "泛型进阶-fineprint.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "泛型进阶-morefun.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "泛型进阶-子类型.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-字符串字面量.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "泛型进阶-方法.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "泛型进阶-泛型方法.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-简介.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-简单泛型.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-类字面量.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-细节问题.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-致谢.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-转换遗留代码.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-通配符.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-通配符进阶.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶-遗留代码.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "泛型进阶.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "深入剖析HelloWorld应用程序.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "类与对象-accesscontrol.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-arguments.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-classdecl.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-classes.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-constructors.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-creating-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-enum-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-enum-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-enum.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-initial.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-innerclasses.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-Lambda表达式.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-more.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-nested-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-nested-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-objectcreation.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-objects-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-objects-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-objects.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-returnvalue.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-summaryclasses.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-thiskey.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-usingobject.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-variables.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-whentouse.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-创建类练习.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-匿名类.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "类与对象-局部类.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-嵌套类.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象-方法.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "类与对象-方法引用.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "类与对象-类成员.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "类与对象.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "聚合操作-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "聚合操作-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "聚合操作-并行.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "聚合操作-归约.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "聚合操作.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "自定义网络-cookies.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "自定义网络-datagrams.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "自定义网络-networking.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "自定义网络-Socket-clientServer.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "自定义网络-Socket-definition.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "自定义网络-Socket-readingWriting.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "自定义网络-urls.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "语言基础-answers_expressions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-answers_flow.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-answers_operators.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-answers_variables.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-arrays.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-branch.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-datatypes.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-expressions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-flow.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-flowsummary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-for.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-if.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-op1.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-op2.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-op3.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-operators.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-opsummary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-questions_expressions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-questions_flow.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-questions_operators.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-questions_variables.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-switch.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-variables.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-variablesummary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-while.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "语言基础-_keywords.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-apiindex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-appletExecutionEnv.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-appletMethods.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-appletStatus.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-browser.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-clientExample.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-data.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-deployingApplet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-developingApplet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-doingMoreWithApplets.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-draggableApplet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-examplesIndex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-getStarted.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-html.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-iac.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-invokingAppletMethodsFromJavaScript.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-invokingJavaScriptFromApplet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-lifeCycle.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-manipulatingDOMFromApplet.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-param.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-problemsindex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-server.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-showStatus.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-stdout.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-subclass.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet-安全.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-Applet.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "部署-appman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-avoidingUnnecessaryUpdateChecks.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-basicsindex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-bestPractices.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-build.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-changeLaunchButtonOfJWS.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-createWebStartLaunchButtonFunction.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-defman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-deployingWithoutCodebase.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-depltoolkit_index.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-downman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-embeddingJNLPFileInWebPage.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-ensuringJRE.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-examplesIndex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-intro.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-jarclassloader.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-jarrunner.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-jnlp.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-jnlpFileSyntax.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-jreVersionCheck.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-manifestindex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-modman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-packageman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-reducingDownloadTime.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA决策指南.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "部署-RIA进阶-accessingCookies.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-cookies.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-devGuidelines.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-examplesIndex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-jnlpAPI.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-properties.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-security.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-settingArgsProperties.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶-usingJNLPAPI.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-RIA进阶.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "部署-run.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-runAppletFunction.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-sealman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-secman.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-signindex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-signing.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-unpack.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-update.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-userAcceptance.md": {
+    "type": "leaf",
+    "status": "done"
+  },
+  "部署-verify.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-view.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-deploying.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-developing.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-examplesIndex.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-problems.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-retrievingResources.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-running.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-security.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart-settingUpWebServerMimeType.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "部署-WebStart.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "部署-深入部署.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "部署-自包含应用.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "部署.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "集合-互操作性-API设计.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-互操作性-兼容性.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-互操作性.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "集合-实现-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-convenience.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-deque.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-list.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-map.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-queue.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-set.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-summary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现-包装器实现.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-实现.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "集合-接口-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-Collection接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-Deque接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-List接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-Map接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-Queue接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-Set接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-SortedMap接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-SortedSet接口.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-summary.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口-对象排序.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "集合-接口.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "集合-简介.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "集合-算法.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "集合-自定义实现.md": {
+    "type": "lesson",
+    "status": "done"
+  },
+  "集合.md": {
+    "type": "trail",
+    "status": "done"
+  },
+  "面向对象概念-answers.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "面向对象概念-class.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "面向对象概念-inheritance.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "面向对象概念-interface.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "面向对象概念-object.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "面向对象概念-package.md": {
+    "type": "leaf",
+    "status": "todo"
+  },
+  "面向对象概念-questions.md": {
+    "type": "leaf",
+    "status": "todo"
+  }
+}

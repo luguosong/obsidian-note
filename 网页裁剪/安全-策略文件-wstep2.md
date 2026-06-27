@@ -1,64 +1,53 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Grant the Required Permission (The Java™ Tutorials >        
-            Security Features in Java SE > Creating a Policy File)"
-描述: "This security Java tutorial describes usage of digital signatures, keys, and cryptography services"
+标题: "授予所需权限"
+描述: "《Java 教程》安全课程，介绍如何在 Policy Tool 中创建策略条目，通过 CodeBase 和 SignedBy 指定代码来源并授予权限。"
 来源: "https://docs.oracle.com/javase/tutorial/security/tour1/wstep2.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Grant the Required Permission (The Java™ Tutorials >        
-            Security Features in Java SE > Creating a Policy File)
 
-Documentation
+# 授予所需权限
 
-[[安全-设置策略文件|Set up a Policy File to Grant the Required Permission]]
+> 文档说明
 
-[[安全-策略文件-wstep1|Start Policy Tool]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Grant the Required Permission
+## 授予所需权限
 
-[[安全-策略文件-wstep3|Save the Policy File]]
+要创建新条目，单击主 Policy Tool 窗口中的 **Add Policy Entry** 按钮。这将显示如下图所示的策略条目对话框。
 
-[[安全-策略文件-wstep1|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/security/TOC.html) • [[安全-策略文件-wstep3|Next »]]
+![策略条目对话框](https://docs.oracle.com/javase/tutorial/figures/security/AddEntryBlank1.gif)
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+策略条目为来自特定*代码源*的代码指定一个或多个权限——来自特定位置(URL) 的代码、由特定实体签名的代码，或两者兼有。
 
-## Grant the Required Permission
+**CodeBase** 和 **SignedBy** 文本框指定你要将要在文件中添加的权限授予哪个代码。
 
-To create a new entry, click the **Add Policy Entry** button in the main Policy Tool window. This displays the Policy Entry dialog box as shown in the following figure.
+- **CodeBase** 值指示代码源位置；你将权限授予来自该位置的代码。空的 **CodeBase** 条目表示「任何代码」——代码来自哪里无关紧要。
+- **SignedBy** 值指示存储在密钥库中的证书的别名。该证书中的公钥用于验证代码上的数字签名。你将权限授予由别名指定的密钥库条目中公钥对应的私钥签名的代码。**SignedBy** 条目是可选的；省略它表示「任何签名者」——代码是否被签名或由谁签名无关紧要。
 
-![the Policy Entry dialog](https://docs.oracle.com/javase/tutorial/figures/security/AddEntryBlank1.gif)
+如果你同时有 **CodeBase** 和 **SignedBy** 条目，则权限仅授予既来自指定位置*又*由命名别名签名的代码。
 
-A policy entry specifies one or more permissions for code from a particular *code source* - code from a particular location (URL), code signed by a particular entity, or both.
+你可以将权限授予存储示例的位置(URL) 的所有代码。
 
-The **CodeBase** and the **SignedBy** text boxes specify which code you want to grant the permission(s) you will be adding in the file.
-
-- A **CodeBase** value indicates the code source location; you grant the permission(s) to code from that location. An empty **CodeBase** entry signifies "any code" -- it does not matter where the code originates.
-- A **SignedBy** value indicates the alias for a certificate stored in a keystore. The public key within that certificate is used to verify the digital signature on the code. You grant permission to code signed by the private key corresponding to the public key in the keystore entry specified by the alias. The **SignedBy** entry is optional; omitting it signifies "any signer" -- it does not matter whether the code is signed, or by whom.
-
-If you have both a **CodeBase** and a **SignedBy** entry, the permission(s) are granted only to code that is both from the specified location *and* signed by the named alias.
-
-You can grant permission to all code from the location (URL) where examples are stored.
-
-Type the following URL into the **CodeBase** text box of the Policy Entry dialog box:
+在策略条目对话框的 **CodeBase** 文本框中键入以下 URL：
 
 ```text
 https://docs.oracle.com/javase/tutorial/security/tour1/examples/
 ```
 
-**Note:** This is a URL. Therefore, it must always use slashes as separators, not backslashes.
+**注意：** 这是一个 URL。因此，它必须始终使用斜杠作为分隔符，而不是反斜杠。
 
-Leave the **SignedBy** text box blank, since you aren't requiring the code to be signed.
+将 **SignedBy** 文本框留空，因为你没有要求代码被签名。
 
 ---
 
-**Note:** To grant the permission to any code (`.class` file) not just from the directory specified previously but from the `security` directory *and its subdirectories*, type the following URL into the **CodeBase** box:
+**注意：** 要将权限授予不仅来自前面指定目录、而且来自 `security` 目录*及其子目录*的任何代码（`.class` 文件），在 **CodeBase** 框中键入以下 URL：
 
 ```text
 https://docs.oracle.com/javase/tutorial/security/
@@ -66,10 +55,10 @@ https://docs.oracle.com/javase/tutorial/security/
 
 ---
 
-You have specified where the code comes from (the **CodeBase**), and that the code does not have to be signed (since there is no **SignedBy** value).
+你已指定代码的来源（**CodeBase**），以及代码不必被签名（因为没有 **SignedBy** 值）。
 
-You have now specified this policy entry, so click the **Done** button in the Policy Entry dialog. The Policy Tool window now contains a line representing the policy entry, showing the `CodeBase` value.
+现在你已指定此策略条目，因此单击策略条目对话框中的 **Done** 按钮。Policy Tool 窗口现在包含一行表示策略条目，显示 `CodeBase` 值。
 
-![the PolicyTool window, showing the new policy entry](https://docs.oracle.com/javase/tutorial/figures/security/WQ1ptOneCB1.gif)
+![PolicyTool 窗口，显示新策略条目](https://docs.oracle.com/javase/tutorial/figures/security/WQ1ptOneCB1.gif)
 
-**Note:** We will be granting permissions to this new policy entry in the next lesson.
+**注意：** 我们将在下一课中授予此新策略条目的权限。

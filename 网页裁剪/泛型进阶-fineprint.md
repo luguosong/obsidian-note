@@ -1,122 +1,123 @@
 ---
 分类:
   - "网页裁剪"
-标题: "The Fine Print (The Java™ Tutorials >        
-            Bonus > Generics)"
-描述: "This Java tutorial describes generics, full screen mode API, and Java certification related resources"
+标题: "细节问题"
+描述: "《Java 教程》泛型进阶课程，阐述泛型的细节：泛型类被所有调用共享、强制转换与 instanceof 的限制、数组不能使用类型变量或参数化类型作为组件类型等。"
 来源: "https://docs.oracle.com/javase/tutorial/extra/generics/fineprint.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# The Fine Print (The Java™ Tutorials >        
-            Bonus > Generics)
 
-Documentation
+# 细节问题
 
-[[泛型进阶-遗留代码|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/extra/TOC.html) • [[泛型进阶-类字面量|Next »]]
+> 文档说明
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-## The Fine Print
+## 细节问题
 
-## A Generic Class is Shared by All Its Invocations
+## 泛型类被其所有调用共享
 
-What does the following code fragment print?
+以下代码片段打印什么？
 
 ```java
 List <String> l1 = new ArrayList<String>();
 List<Integer> l2 = new ArrayList<Integer>();
 System.out.println(l1.getClass() == l2.getClass());
-
-You might be tempted to say `false`, but you'd be wrong. It prints `true`, because all instances of a generic class have the same run-time class, regardless of their actual type parameters.
-
-Indeed, what makes a class generic is the fact that it has the same behavior for all of its possible type parameters; the same class can be viewed as having many different types.
-
-As consequence, the static variables and methods of a class are also shared among all the instances. That is why it is illegal to refer to the type parameters of a type declaration in a static method or initializer, or in the declaration or initializer of a static variable.
-
-## Casts and InstanceOf
-
-Another implication of the fact that a generic class is shared among all its instances, is that it usually makes no sense to ask an instance if it is an instance of a particular invocation of a generic type:
-
-Collection cs = new ArrayList<String>();
-// Illegal.
-if (cs instanceof Collection<String>) { ... }
-```text
-
-similarly, a cast such as
-
 ```
-// Unchecked warning,
+
+你可能会说是 `false`，但你错了。它打印 `true`，因为泛型类的所有实例都具有相同的运行时类，无论它们的实际类型参数如何。
+
+事实上，使类成为泛型的原因是它对其所有可能的类型参数具有相同的行为；同一个类可以被视为具有许多不同的类型。
+
+因此，类的静态变量和方法也在所有实例之间共享。这就是为什么在静态方法或初始化器中，或在静态变量的声明或初始化器中引用类型声明的类型参数是非法的。
+
+## 强制转换和 instanceof
+
+泛型类在其所有实例之间共享的另一个含义是，询问实例是否是泛型类型特定调用的实例通常没有意义：
+
+```java
+Collection cs = new ArrayList<String>();
+// 非法。
+if (cs instanceof Collection<String>) { ... }
+```
+
+类似地，如下强制转换
+
+```java
+// 未检查警告，
 Collection<String> cstr = (Collection<String>) cs;
-```text
+```
 
-gives an unchecked warning, since this isn't something the runtime system is going to check for you.
+会产生未检查警告，因为这不是运行时系统要为你检查的东西。
 
-The same is true of type variables
+类型变量也是如此
 
-```bash
-// Unchecked warning. 
+```java
+// 未检查警告。
 <T> T badCast(T t, Object o) {
     return (T) o;
 }
+```
 
-Type variables don't exist at run time. This means that they entail no performance overhead in either time nor space, which is nice. Unfortunately, it also means that you can't reliably use them in casts.
+类型变量在运行时不存在。这意味着它们在时间和空间上都不会带来性能开销，这很好。不幸的是，这也意味着你不能在强制转换中可靠地使用它们。
 
-## Arrays
+## 数组
 
-The component type of an array object may not be a type variable or a parameterized type, unless it is an (unbounded) wildcard type.You can declare array *types* whose element type is a type variable or a parameterized type, but not array *objects*.
+数组对象的组件类型不能是类型变量或参数化类型，除非它是（无界）通配符类型。你可以声明元素类型是类型变量或参数化类型的数组*类型*，但不能声明数组*对象*。
 
-This is annoying, to be sure. This restriction is necessary to avoid situations like:
+这确实令人烦恼。此限制是必要的，以避免以下情况：
 
-```bash
-// Not really allowed.
+```java
+// 实际上不允许。
 List<String>[] lsa = new List<String>[10];
 Object o = lsa;
 Object[] oa = (Object[]) o;
 List<Integer> li = new ArrayList<Integer>();
 li.add(new Integer(3));
-// Unsound, but passes run time store check
+// 不健全，但通过运行时存储检查
 oa[1] = li;
 
-// Run-time error: ClassCastException.
+// 运行时错误：ClassCastException。
 String s = lsa[1].get(0);
+```
 
-If arrays of parameterized type were allowed, the previous example would compile without any unchecked warnings, and yet fail at run-time. We've had type-safety as a primary design goal of generics. In particular, the language is designed to guarantee that **if your entire application has been compiled without unchecked warnings using javac -source 1.5, it is type safe**.
+如果允许参数化类型的数组，上面的示例将编译时没有任何未检查警告，但会在运行时失败。我们将类型安全作为泛型的主要设计目标。特别是，该语言被设计为保证**如果你的整个应用程序已使用 javac -source 1.5 编译且没有未检查警告，则它是类型安全的**。
 
-However, you can still use wildcard arrays. The following variation on the previous code forgoes the use of both array objects and array types whose element type is parameterized. As a result, we have to cast explicitly to get a `String` out of the array.
+但是，你仍然可以使用通配符数组。以下对前面代码的变体放弃了使用元素类型被参数化的数组对象和数组类型。因此，我们必须显式强制转换才能从数组中获取 `String`。
 
-```bash
-// OK, array of unbounded wildcard type.
+```java
+// OK，无界通配符类型的数组。
 List<?>[] lsa = new List<?>[10];
 Object o = lsa;
 Object[] oa = (Object[]) o;
 List<Integer> li = new ArrayList<Integer>();
 li.add(new Integer(3));
-// Correct.
+// 正确。
 oa[1] = li;
-// Run time error, but cast is explicit.
+// 运行时错误，但强制转换是显式的。
 String s = (String) lsa[1].get(0);
-```text
+```
 
-In the next variation, which causes a compile-time error, we refrain from creating an array object whose element type is parameterized, but still use an array type with a parameterized element type.
+在下一个导致编译时错误的变体中，我们避免创建元素类型被参数化的数组对象，但仍然使用具有参数化元素类型的数组类型。
 
-```bash
-// Error.
+```java
+// 错误。
 List<String>[] lsa = new List<?>[10];
 ```
 
-Similarly, attempting to create an array object whose element type is a type variable causes a compile-time error:
+类似地，尝试创建元素类型为类型变量的数组对象会导致编译时错误：
 
-```text
+```java
 <T> T[] makeArray(T t) {
-    return new T[100]; // Error.
+    return new T[100]; // 错误。
 }
 ```
 
-Since type variables don't exist at run time, there is no way to determine what the actual array type would be.
+由于类型变量在运行时不存在，因此无法确定实际的数组类型是什么。
 
-The way to work around these kinds of limitations is to use class literals as run time type tokens, as described in the next section, [[泛型进阶-类字面量|Class Literals as Runtime-Type Tokens]].
+解决此类限制的方法是使用类字面量作为运行时类型标记，如下一节[[泛型进阶-字符串字面量|作为运行时类型标记的类字面量]]所述。

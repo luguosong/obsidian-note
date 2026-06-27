@@ -2,7 +2,7 @@
 分类:
   - "网页裁剪"
 标题: "Windows 版 Hello World"
-描述: "This beginner Java tutorial describes getting started with Java and setting up your Netbeans IDE"
+描述: "《Java 教程》入门课程，面向 Microsoft Windows 用户，逐步演示编写第一个 Java 应用程序 HelloWorldApp 的全过程：创建源文件、编译为 .class 文件、运行程序。"
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html"
 发布者: "Oracle-"
 发布时间:
@@ -11,128 +11,122 @@
 
 # Windows 版 Hello World
 
-Documentation
+> 文档说明
 
-[[NetBeans版HelloWorld|"Hello World!" for the NetBeans IDE]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-"Hello World!" for Microsoft Windows
+## Microsoft Windows 版「Hello World!」
 
-[[Solaris-Linux-Mac版HelloWorld|"Hello World!" for Solaris OS, Linux, and Mac OS X]]
+是时候编写你的第一个应用程序了！以下说明适用于 Windows Vista、Windows 7 和 Windows 8 用户。其他平台的说明在[[Solaris-Linux-Mac版HelloWorld|Solaris OS、Linux 和 Mac OS X 版「Hello World!」]]和[[NetBeans版HelloWorld|NetBeans IDE 版「Hello World!」]]中。
 
-[[NetBeans版HelloWorld|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/getStarted/TOC.html) • [[Solaris-Linux-Mac版HelloWorld|Next »]]
+如果你在遵循本页说明时遇到问题，请查阅[[常见问题及解决方案|常见问题（及其解决方案）]]。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## "Hello World!" for Microsoft Windows
-
-It's time to write your first application! The following instructions are for users of Windows Vista, Windows 7, and Windows 8. Instructions for other platforms are in [[Solaris-Linux-Mac版HelloWorld|"Hello World!" for Solaris OS, Linux, and Mac OS X]] and [[NetBeans版HelloWorld|"Hello World!" for the NetBeans IDE]].
-
-If you encounter problems with the instructions on this page, consult the [[常见问题及解决方案|Common Problems (and Their Solutions)]].
-
-- [A Checklist](#win32-1)
-- [Creating Your First Application](#win32-2)
-	- [Create a Source File](#win32-2a)
-		- [Compile the Source File into a `.class` File](#win32-2b)
-		- [Run the Program](#win32-2c)
+- [清单](#win32-1)
+- [创建你的第一个应用程序](#win32-2)
+	- [创建源文件](#win32-2a)
+		- [将源文件编译为 `.class` 文件](#win32-2b)
+		- [运行程序](#win32-2c)
 
 ---
 
-## A Checklist
+## 清单
 
-To write your first program, you'll need:
+要编写你的第一个程序，你需要：
 
-1. The Java SE Development Kit 8 (JDK 8)
-	You can [download the Windows version now](http://www.oracle.com/technetwork/java/javase/downloads/index.html). (Make sure you download the **JDK**, *not* the JRE.) Consult the [installation instructions](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html).
-2. A text editor
-	In this example, we'll use Notepad, a simple editor included with the Windows platforms. You can easily adapt these instructions if you use a different text editor.
+1. Java SE 开发工具包 8 (JDK 8)
+	你可以[立即下载 Windows 版本](http://www.oracle.com/technetwork/java/javase/downloads/index.html)。（确保你下载的是 **JDK**，*而不是* JRE。）查阅[安装说明](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html)。
+2. 文本编辑器
+	在此示例中，我们将使用记事本，Windows 平台附带的简单编辑器。如果你使用不同的文本编辑器，可以轻松调整这些说明。
 
-These two items are all you'll need to write your first application.
+这两样就是你编写第一个应用程序所需的全部。
 
 ---
 
-## Creating Your First Application
+## 创建你的第一个应用程序
 
-Your first application, `HelloWorldApp`, will simply display the greeting "Hello world!". To create this program, you will:
+你的第一个应用程序 `HelloWorldApp` 将简单地显示问候语「Hello world!」。要创建此程序，你将：
 
-- Create a source file
-	A source file contains code, written in the Java programming language, that you and other programmers can understand. You can use any text editor to create and edit source files.
-- Compile the source file into a.class file
-	The Java programming language *compiler* (`javac`) takes your source file and translates its text into instructions that the Java virtual machine can understand. The instructions contained within this file are known as *bytecodes*.
-- Run the program
-	The Java application *launcher tool* (`java`) uses the Java virtual machine to run your application.
+- 创建源文件
+	源文件包含用 Java 编程语言编写的、你和其他程序员可以理解的代码。你可以使用任何文本编辑器创建和编辑源文件。
+- 将源文件编译为 .class 文件
+	Java 编程语言*编译器*(`javac`) 接收你的源文件并将其文本翻译为 Java 虚拟机可以理解的指令。此文件中包含的指令称为*字节码*。
+- 运行程序
+	Java 应用程序*启动器工具*(`java`) 使用 Java 虚拟机运行你的应用程序。
 
-### Create a Source File
+### 创建源文件
 
-To create a source file, you have two options:
+要创建源文件，你有两个选择：
 
-- You can save the file ``  `HelloWorldApp.java` `` on your computer and avoid a lot of typing. Then, you can go straight to [Compile the Source File into a `.class` File](#win32-2b).
-- Or, you can use the following (longer) instructions.
+- 你可以将文件 ``  `HelloWorldApp.java` `` 保存在计算机上，省去大量键入。然后，你可以直接转到[将源文件编译为 `.class` 文件](#win32-2b)。
+- 或者，你可以使用以下（较长的）说明。
 
-First, start your editor. You can launch the Notepad editor from the **Start** menu by selecting **Programs > Accessories > Notepad**. In a new document, type in the following code:
+首先，启动你的编辑器。你可以通过从**开始**菜单选择**程序 > 附件 > 记事本**来启动记事本编辑器。在新文档中，键入以下代码：
 
 ```java
 /**
- * The HelloWorldApp class implements an application that
- * simply prints "Hello World!" to standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出打印 "Hello World!"。
  */
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
+```
 
-**Be Careful When You Type** ![[Java-Windows-typeA.gif]] ![[Java-Windows-typea2.gif]]
-
----
-
-**Note:** Type all code, commands, and file names exactly as shown. Both the compiler (`javac`) and launcher (`java`) are *case-sensitive*, so you must capitalize consistently.  
-  
-`HelloWorldApp` is *not* the same as `helloworldapp`.
+**键入时要小心** ![[Java-Windows-typeA.gif]] ![[Java-Windows-typea2.gif]]
 
 ---
 
-Save the code in a file with the name `HelloWorldApp.java`. To do this in Notepad, first choose the **File > Save As...** menu item. Then, in the **Save As** dialog box:
+**注意：** 完全按照所示键入所有代码、命令和文件名。编译器(`javac`) 和启动器(`java`) 都*区分大小写*，因此你必须一致地大写。
 
-1. Using the **Save in** combo box, specify the folder (directory) where you'll save your file. In this example, the directory is `myapplication` on the `C` drive.
-2. In the **File name** text field, type `"HelloWorldApp.java"`, without the quotation marks.
-3. From the **Save as type** combo box, choose **Text Documents (\*.txt)**.
-4. In the **Encoding** combo box, leave the encoding as ANSI.
+`HelloWorldApp` 与 `helloworldapp` *不*相同。
 
-When you're finished, the dialog box should look like this.
+---
+
+将代码保存在名为 `HelloWorldApp.java` 的文件中。要在记事本中执行此操作，首先选择**文件 > 另存为...**菜单项。然后，在**另存为**对话框中：
+
+1. 使用**保存在**组合框，指定要保存文件的文件夹（目录）。在此示例中，目录是 `C` 驱动器上的 `myapplication`。
+2. 在**文件名**文本字段中，键入 `"HelloWorldApp.java"`，不包括引号。
+3. 从**保存类型**组合框中，选择**文本文档(*.txt)**。
+4. 在**编码**组合框中，将编码保留为 ANSI。
+
+完成后，对话框应如下所示。
 
 ![[Java-Windows-saveas.webp]]
 
-The Save As dialog just before you click **Save**.
+单击**保存**之前的另存为对话框。
 
-Now click **Save**, and exit Notepad.
+现在单击**保存**，并退出记事本。
 
-### Compile the Source File into a.class File
+### 将源文件编译为 .class 文件
 
-Bring up a shell, or "command," window. You can do this from the **Start** menu by choosing **Run...** and then entering `cmd`. The shell window should look similar to the following figure.
+调出 shell 或「命令」窗口。你可以通过从**开始**菜单选择**运行...**然后输入 `cmd` 来执行此操作。shell 窗口应类似于下图。
 
 ![[Java-Windows-dos.png]]
 
-A shell window.
+一个 shell 窗口。
 
-The prompt shows your *current directory*. When you bring up the prompt, your current directory is usually your home directory for Windows XP (as shown in the preceding figure.
+提示符显示你的*当前目录*。当你调出提示符时，对于 Windows XP，你的当前目录通常是你的主目录（如上图所示）。
 
-To compile your source file, change your current directory to the directory where your file is located. For example, if your source directory is `myapplication` on the `C` drive, type the following command at the prompt and press **Enter**:
+要编译源文件，将当前目录更改为文件所在的目录。例如，如果你的源目录是 `C` 驱动器上的 `myapplication`，请在提示符下键入以下命令并按 **Enter**：
 
+```bash
 cd C:\myapplication
-```text
+```
 
-Now the prompt should change to `C:\myapplication>`.
+现在提示符应更改为 `C:\myapplication>`。
 
 ---
 
-**Note:**
+**注意：**
 
-To change to a directory on a different drive, you must type an extra command: the name of the drive. For example, to change to the `myapplication` directory on the `D` drive, you must enter `D:`, as follows:
+要更改为不同驱动器上的目录，你必须键入一个额外的命令：驱动器名称。例如，要更改为 `D` 驱动器上的 `myapplication` 目录，你必须输入 `D:`，如下所示：
 
-```batch
+```bash
 C:\>D:
 
 D:\>cd myapplication
@@ -142,9 +136,9 @@ D:\myapplication>
 
 ---
 
-If you enter `dir` at the prompt, you should see your source file, as follows:
+如果在提示符下输入 `dir`，你应该看到你的源文件，如下所示：
 
-```batch
+```text
 C:\>cd myapplication
 
 C:\myapplication>dir
@@ -160,17 +154,17 @@ C:\myapplication>dir
                2 Dir(s)  93,297,991,680 bytes free
 
 C:\myapplication>
-```text
+```
 
-Now you are ready to compile. At the prompt, type the following command and press **Enter**.
+现在你准备好编译了。在提示符下，键入以下命令并按 **Enter**。
 
 ```bash
 javac HelloWorldApp.java
+```
+
+编译器已生成字节码文件 `HelloWorldApp.class`。在提示符下，键入 `dir` 查看生成的新文件，如下所示：
+
 ```text
-
-The compiler has generated a bytecode file, `HelloWorldApp.class`. At the prompt, type `dir` to see the new file that was generated as follows:
-
-```bash
 C:\myapplication>javac HelloWorldApp.java
 
 C:\myapplication>dir
@@ -187,19 +181,21 @@ C:\myapplication>dir
                2 Dir(s)  93,298,032,640 bytes free
 
 C:\myapplication>
+```
 
-Now that you have a `.class` file, you can run your program.
+现在你有了 `.class` 文件，可以运行你的程序了。
 
-If you encounter problems with the instructions in this step, consult the [[常见问题及解决方案|Common Problems (and Their Solutions)]].
+如果你在此步骤的说明中遇到问题，请查阅[[常见问题及解决方案|常见问题（及其解决方案）]]。
 
-### Run the Program
+### 运行程序
 
-In the same directory, enter the following command at the prompt:
+在同一目录中，在提示符下输入以下命令：
 
+```bash
 java -cp . HelloWorldApp
-```text
+```
 
-You should see the following on your screen:
+你应该在屏幕上看到以下内容：
 
 ```text
 C:\myapplication>java -cp . HelloWorldApp
@@ -208,11 +204,11 @@ Hello World!
 C:\myapplication>
 ```
 
-Congratulations! Your program works!
+恭喜！你的程序工作了！
 
-If you encounter problems with the instructions in this step, consult the [[常见问题及解决方案|Common Problems (and Their Solutions)]].
+如果你在此步骤的说明中遇到问题，请查阅[[常见问题及解决方案|常见问题（及其解决方案）]]。
 
 ---
 
-**Previous page:** "Hello World!" for the NetBeans IDE  
-**Next page:** "Hello World!" for Solaris OS, Linux, and Mac OS X
+**上一页：** NetBeans IDE 版「Hello World!」
+**下一页：** Solaris OS、Linux 和 Mac OS X 版「Hello World!」

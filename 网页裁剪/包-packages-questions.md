@@ -1,60 +1,43 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Questions and Exercises: Creating and Using Packages (The Java™ Tutorials >        
-            Learning the Java Language > Packages)"
-描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+标题: "问题与练习：创建和使用包"
+描述: "《Java 教程》包课程，提供问题与练习，考察将类拆分到不同包、创建子目录结构、添加 package 与 import 语句等实操能力。"
 来源: "https://docs.oracle.com/javase/tutorial/java/package/QandE/packages-questions.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Questions and Exercises: Creating and Using Packages (The Java™ Tutorials >        
-            Learning the Java Language > Packages)
 
-Documentation
+# 问题与练习：创建和使用包
 
-[[包-packages|Creating and Using Packages]]
+> 文档说明
 
-[[包-createpkgs|Creating a Package]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[包-namingpkgs|Naming a Package]]
+## 问题与练习：创建和使用包
 
-[[包-usepkgs|Using Package Members]]
+## 问题
 
-[[包-managingfiles|Managing Source and Class Files]]
+假设你编写了一些类。事后，你决定将它们拆分为三个包，如下表所列。此外，假设这些类当前在默认包中（它们没有 `package` 语句）。
 
-[[包-summary-package|Summary of Creating and Using Packages]]
-
-Questions and Exercises
-
-[[包-summary-package|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/end.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Questions and Exercises: Creating and Using Packages
-
-## Questions
-
-Assume you have written some classes. Belatedly, you decide they should be split into three packages, as listed in the following table. Furthermore, assume the classes are currently in the default package (they have no `package` statements).
-
-| Package Name | Class Name |
+| 包名 | 类名 |
 | --- | --- |
 | `mygame.server` | `Server` |
 | `mygame.shared` | `Utilities` |
 | `mygame.client` | `Client` |
 
-1. Which line of code will you need to add to each source file to put each class in the right package?
-2. To adhere to the directory structure, you will need to create some subdirectories in the development directory and put source files in the correct subdirectories. What subdirectories must you create? Which subdirectory does each source file go in?
-3. Do you think you'll need to make any other changes to the source files to make them compile correctly? If so, what?
+1. 你需要在每个源文件中添加哪行代码才能将每个类放入正确的包？
+2. 为了遵守目录结构，你需要在开发目录中创建一些子目录并将源文件放在正确的子目录中。你必须创建哪些子目录？每个源文件放在哪个子目录中？
+3. 你认为是否需要对源文件进行任何其他更改才能使它们正确编译？如果是，是什么？
 
-## Exercises
+## 练习
 
-Download the source files as listed here.
+下载此处列出的源文件。
 
-1. Implement the changes you proposed in questions 1 through 3 using the source files you just downloaded.
-2. Compile the revised source files. (*Hint:* If you're invoking the compiler from the command line (as opposed to using a builder), invoke the compiler from the directory that contains the `mygame` directory you just created.)
-[[包-packages-answers|Check your answers.]]
+1. 使用你刚下载的源文件实现你在问题 1 到 3 中提出的更改。
+2. 编译修订后的源文件。（*提示：* 如果你从命令行调用编译器（而不是使用构建器），请从包含你刚创建的 `mygame` 目录的目录调用编译器。）
+[[包-packages-answers|检查你的答案。]]

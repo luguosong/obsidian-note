@@ -1,84 +1,69 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Using the <tt>DTDHandler</tt> and <tt>EntityResolver</tt> (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Simple API for XML)"
-描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+标题: "使用 DTDHandler 和 EntityResolver"
+描述: "《Java 教程》JAXP SAX 课程，介绍两个剩余的 SAX 事件处理器：DTDHandler（处理未解析实体和表示法声明）与 EntityResolver（将公共 ID 解析为系统 ID）。"
 来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/using.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Using the <tt>DTDHandler</tt> and <tt>EntityResolver</tt> (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Simple API for XML)
 
-Documentation
+# 使用 DTDHandler 和 EntityResolver
 
-[[JAXP-何时使用SAX|When to Use SAX]]
+> 文档说明
 
-[[JAXP-SAX-parsing|Parsing an XML File Using SAX]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[JAXP-SAX-validation|Implementing SAX Validation]]
+## 使用 DTDHandler 和 EntityResolver
 
-[[JAXP-SAX-events|Handling Lexical Events]]
+本节介绍两个剩余的 SAX 事件处理器：DTDHandler 和 EntityResolver。当 DTD 遇到未解析实体或表示法声明时，调用 DTDHandler。当必须将 URN（公共 ID）解析为 URL（系统 ID）时，EntityResolver 发挥作用。
 
-Using the DTDHandler and EntityResolver
+## DTDHandler API
 
-[[JAXP-SAX-info|Further Information]]
+[[JAXP-SAX-validation|选择解析器实现]]展示了一种使用 MIME 数据类型引用包含二进制数据（如图像文件）的文件的方法。那是最简单、最可扩展的机制。不过，为了与旧的 SGML 风格数据兼容，也可以定义未解析实体。
 
-[[JAXP-SAX-events|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-SAX-info|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Using the DTDHandler and EntityResolver
-
-This section presents the two remaining SAX event handlers: DTDHandler and EntityResolver. The DTDHandler is invoked when the DTD encounters an unparsed entity or a notation declaration. The EntityResolver comes into play when a URN (public ID) must be resolved to a URL (system ID).
-
-## The DTDHandler API
-
-[[JAXP-SAX-validation|Choosing the Parser Implementation]] showed a method for referencing a file that contains binary data, such as an image file, using MIME data types. That is the simplest, most extensible mechanism. For compatibility with older SGML-style data, though, it is also possible to define an unparsed entity.
-
-The NDATA keyword defines an unparsed entity:
+NDATA 关键字定义未解析实体：
 
 `<!ENTITY myEntity SYSTEM "..URL.." NDATA gif>`
 
-The NDATA keyword says that the data in this entity is not parseable XML data but instead is data that uses some other notation. In this case, the notation is named gif. The DTD must then include a declaration for that notation, which would look something like the following.
+NDATA 关键字表示此实体中的数据不是可解析的 XML 数据，而是使用某种其他表示法的数据。在此例中，表示法名为 gif。然后 DTD 必须包含该表示法的声明，看起来类似以下内容。
 
 `<!NOTATION gif SYSTEM "..URL..">`
 
-When the parser sees an unparsed entity or a notation declaration, it does nothing with the information except to pass it along to the application using the DTDHandler interface. That interface defines two methods.
+当解析器看到未解析实体或表示法声明时，它不对信息做任何处理，只是使用 DTDHandler 接口将其传递给应用程序。该接口定义了两个方法。
 
 - notationDecl(String name, String publicId, String systemId)
 - unparsedEntityDecl(String name, String publicId, String systemId, String notationName
 
-The notationDecl method is passed the name of the notation and either the public or the system identifier, or both, depending on which is declared in the DTD. The unparsedEntityDecl method is passed the name of the entity, the appropriate identifiers, and the name of the notation it uses.
+notationDecl 方法被传递表示法的名称以及公共或系统标识符，或两者，取决于 DTD 中声明了哪个。unparsedEntityDecl 方法被传递实体的名称、适当的标识符以及它使用的表示法名称。
 
 ---
 
-**Note -** The DTDHandler interface is implemented by the DefaultHandler class.
+**注意 -** DTDHandler 接口由 DefaultHandler 类实现。
 
 ---
 
-Notations can also be used in attribute declarations. For example, the following declaration requires notations for the GIF and PNG image-file formats.
+表示法也可用于属性声明。例如，以下声明要求为 GIF 和 PNG 图像文件格式提供表示法。
 
 ```text
 <!ENTITY image EMPTY>
 <!ATTLIST image ...  type  NOTATION  (gif | png) "gif">
 ```
 
-Here, the type is declared as being either gif or png. The default, if neither is specified, is gif.
+这里，type 被声明为 gif 或 png。如果两者都未指定，默认为 gif。
 
-Whether the notation reference is used to describe an unparsed entity or an attribute, it is up to the application to do the appropriate processing. The parser knows nothing at all about the semantics of the notations. It only passes on the declarations.
+无论表示法引用是用于描述未解析实体还是属性，都由应用程序执行适当的处理。解析器对表示法的语义一无所知。它只传递声明。
 
-## The EntityResolver API
+## EntityResolver API
 
-The EntityResolver API lets you convert a public ID (URN) into a system ID (URL). Your application may need to do that, for example, to convert something like href="urn:/someName" into "http://someURL".
+EntityResolver API 让你将公共 ID(URN) 转换为系统 ID(URL)。你的应用程序可能需要这样做，例如，将类似 href="urn:/someName" 的内容转换为 "http://someURL"。
 
-The EntityResolver interface defines a single method:
+EntityResolver 接口定义了单个方法：
 
 `resolveEntity(String publicId, String systemId)`
 
-This method returns an InputSource object, which can be used to access the entity's contents. Converting a URL into an InputSource is easy enough. But the URL that is passed as the system ID will be the location of the original document which is, as likely as not, somewhere out on the web. To access a local copy, if there is one, you must maintain a catalog somewhere on the system that maps names (public IDs) into local URLs.
+此方法返回一个 InputSource 对象，可用于访问实体的内容。将 URL 转换为 InputSource 足够简单。但作为系统 ID 传递的 URL 将是原始文档的位置，而该文档很可能位于网络上的某处。要访问本地副本（如果有的话），你必须在系统某处维护一个将名称（公共 ID）映射到本地 URL 的目录。

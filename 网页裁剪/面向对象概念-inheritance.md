@@ -1,62 +1,47 @@
 ---
 分类:
   - "网页裁剪"
-标题: "What Is Inheritance? (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)"
-描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+标题: "什么是继承？"
+描述: "《Java 教程》面向对象编程概念课程，介绍继承的概念——子类通过 extends 关键字从超类继承常用的状态和行为，并展示自行车类的继承层次。"
 来源: "https://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# What Is Inheritance? (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)
 
-Documentation
+# 什么是继承？
 
-[[面向对象概念-object|What Is an Object?]]
+> 文档说明
 
-[[面向对象概念-class|What Is a Class?]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-What Is Inheritance?
+## 什么是继承？
 
-[[面向对象概念-interface|What Is an Interface?]]
+不同种类的对象通常彼此有一定程度的共同点。例如，山地自行车、公路自行车和双人自行车都共享自行车的特征（当前速度、当前踏板节奏、当前档位）。然而，每个也定义了使它们不同的附加特征：双人自行车有两个座椅和两套车把；公路自行车有下弯式车把；一些山地自行车有额外的链轮，使它们具有较低的齿比。
 
-[[面向对象概念-package|What Is a Package?]]
+面向对象编程允许类从其他类*继承*常用的状态和行为。在这个示例中，`Bicycle` 现在成为 `MountainBike`、`RoadBike` 和 `TandemBike` 的*超类*。在 Java 编程语言中，每个类允许有一个直接超类，每个超类都有可能拥有无限数量的*子类*：
 
-[[面向对象概念-questions|Questions and Exercises]]
+![类层次结构图。](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bikeHierarchy.gif)
 
-[[面向对象概念-class|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[面向对象概念-interface|Next »]]
+自行车类的层次结构。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## What Is Inheritance?
-
-Different kinds of objects often have a certain amount in common with each other. Mountain bikes, road bikes, and tandem bikes, for example, all share the characteristics of bicycles (current speed, current pedal cadence, current gear). Yet each also defines additional features that make them different: tandem bicycles have two seats and two sets of handlebars; road bikes have drop handlebars; some mountain bikes have an additional chain ring, giving them a lower gear ratio.
-
-Object-oriented programming allows classes to *inherit* commonly used state and behavior from other classes. In this example, `Bicycle` now becomes the *superclass* of `MountainBike`, `RoadBike`, and `TandemBike`. In the Java programming language, each class is allowed to have one direct superclass, and each superclass has the potential for an unlimited number of *subclasses*:
-
-![A diagram of classes in a hierarchy.](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bikeHierarchy.gif)
-
-A hierarchy of bicycle classes.
-
-The syntax for creating a subclass is simple. At the beginning of your class declaration, use the `extends` keyword, followed by the name of the class to inherit from:
+创建子类的语法很简单。在类声明的开头，使用 `extends` 关键字，后跟要继承的类的名称：
 
 ```java
 class MountainBike extends Bicycle {
 
-    // new fields and methods defining 
-    // a mountain bike would go here
+    // 定义山地自行车的新字段和方法
+    // 将放在这里
 
 }
 ```
 
-This gives `MountainBike` all the same fields and methods as `Bicycle`, yet allows its code to focus exclusively on the features that make it unique. This makes code for your subclasses easy to read. However, you must take care to properly document the state and behavior that each superclass defines, since that code will not appear in the source file of each subclass.
+这使 `MountainBike` 拥有与 `Bicycle` 相同的所有字段和方法，同时允许其代码专注于使其独特的特性。这使得子类的代码易于阅读。但是，你必须注意正确记录每个超类定义的状态和行为，因为该代码不会出现在每个子类的源文件中。
 
 ---
 
-**Previous page:** What Is a Class?  
-**Next page:** What Is an Interface?
+**上一页：** 什么是类？
+**下一页：** 什么是接口？

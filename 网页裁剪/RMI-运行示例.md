@@ -1,45 +1,28 @@
 ---
 分类:
   - "网页裁剪"
-标题: "RMI-运行示例"
-描述: "This RMI Java tutorial describes the Java RMI system. It walks through a complete client/server example"
+标题: "运行示例程序"
+描述: "《Java 教程》RMI 课程，演示如何配置安全策略文件、启动 RMI 注册表、启动计算引擎服务器与客户端，阐述 java.rmi.server.codebase 等系统属性的作用。"
 来源: "https://docs.oracle.com/javase/tutorial/rmi/running.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# RMI-运行示例
 
-Documentation
+# 运行示例程序
 
-[[RMI-概述|An Overview of RMI Applications]]
+> 文档说明
 
-[[RMI-服务器|Writing an RMI Server]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[RMI-设计远程接口|Designing a Remote Interface]]
+## 运行示例程序
 
-[[RMI-实现远程接口|Implementing a Remote Interface]]
+## 关于安全的说明
 
-[[RMI-客户端|Creating a Client Program]]
-
-[[RMI-示例|Compiling and Running the Example]]
-
-[[RMI-编译示例|Compiling the Example Programs]]
-
-Running the Example Programs
-
-[[RMI-编译示例|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/rmi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/rmi/end.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Running the Example Programs
-
-## A Note About Security
-
-The server and client programs run with a security manager installed. When you run either program, you need to specify a security policy file so that the code is granted the security permissions it needs to run. Here is an example policy file, [`server.policy`](https://docs.oracle.com/javase/tutorial/rmi/examples/server.policy) to use with the server program running on Solaris or Linux:
+服务器和客户端程序在安装了安全管理器的情况下运行。当你运行任一程序时，你需要指定安全策略文件，以便代码被授予运行所需的安全权限。以下是示例策略文件 [`server.policy`](https://docs.oracle.com/javase/tutorial/rmi/examples/server.policy)，用于在 Solaris 或 Linux 上运行的服务器程序：
 
 ```text
 grant codeBase "file:///home/ann/src/" {
@@ -47,7 +30,7 @@ grant codeBase "file:///home/ann/src/" {
 };
 ```
 
-Here is an example policy file, [`client.policy`](https://docs.oracle.com/javase/tutorial/rmi/examples/client.policy) to use with the client program running on Solaris or Linux:
+以下是示例策略文件 [`client.policy`](https://docs.oracle.com/javase/tutorial/rmi/examples/client.policy)，用于在 Solaris 或 Linux 上运行的客户端程序：
 
 ```text
 grant codeBase "file:///home/jones/src/" {
@@ -55,7 +38,7 @@ grant codeBase "file:///home/jones/src/" {
 };
 ```
 
-Here is an example `server.policy` file for Windows:
+以下是 Windows 的示例 `server.policy` 文件：
 
 ```text
 grant codeBase "file://C:/home/ann/src/" {
@@ -63,7 +46,7 @@ grant codeBase "file://C:/home/ann/src/" {
 };
 ```
 
-Here is an example `client.policy` file for Windows:
+以下是 Windows 的示例 `client.policy` 文件：
 
 ```text
 grant codeBase "file://C:/home/jones/src/" {
@@ -73,57 +56,57 @@ grant codeBase "file://C:/home/jones/src/" {
 
 ---
 
-**Note:** The exact meaning of a `codeBase` value depends on the characters at the end. A `codeBase` with a trailing `/` matches all class files (not JAR files) in the specified directory. A `codeBase` with a trailing `/*` matches all files (both class and JAR files) contained in that directory. A `codeBase` with a trailing `/-` matches all files (both class and JAR files) in the directory and recursively all files in subdirectories contained in that directory. See [Default Policy Implementation and Policy File Syntax](https://docs.oracle.com/javase/8/docs/technotes/guides/security/PolicyFiles.html) for more information.
+**注意：** `codeBase` 值的确切含义取决于末尾的字符。带尾随 `/` 的 `codeBase` 匹配指定目录中的所有类文件（不匹配 JAR 文件）。带尾随 `/*` 的 `codeBase` 匹配该目录中包含的所有文件（类文件和 JAR 文件）。带尾随 `/-` 的 `codeBase` 匹配目录中的所有文件（类文件和 JAR 文件）以及递归地匹配该目录中包含的子目录中的所有文件。有关更多信息，请参阅[默认策略实现和策略文件语法](https://docs.oracle.com/javase/8/docs/technotes/guides/security/PolicyFiles.html)。
 
 ---
 
-For these example policy files, all permissions are granted to the classes in the program's local class path, because the local application code is trusted, but no permissions are granted to code downloaded from other locations. Therefore, the compute engine server restricts the tasks that it executes (whose code is not known to be trusted and might be hostile) from performing any operations that require security permissions. The example client's `Pi` task does not require any permissions to execute.
+对于这些示例策略文件，程序本地类路径中的类被授予所有权限，因为本地应用程序代码是受信任的，但从其他位置下载的代码不授予任何权限。因此，计算引擎服务器限制它执行的任务（其代码未知是否受信任，可能是恶意的）执行任何需要安全权限的操作。示例客户端的 `Pi` 任务不需要任何权限来执行。
 
-In this example, the policy file for the server program is named `server.policy`, and the policy file for the client program is named `client.policy`.
+在此示例中，服务器程序的策略文件名为 `server.policy`，客户端程序的策略文件名为 `client.policy`。
 
-## Starting the Server
+## 启动服务器
 
-Before starting the compute engine, you need to start the RMI registry. The RMI registry is a simple server-side bootstrap naming facility that enables remote clients to obtain a reference to an initial remote object. It can be started with the `rmiregistry` command. Before you execute `rmiregistry`, you must make sure that the shell or window in which you will run `rmiregistry` either has no `CLASSPATH` environment variable set or has a `CLASSPATH` environment variable that does not include the path to any classes that you want downloaded to clients of your remote objects.
+启动计算引擎之前，你需要启动 RMI 注册表。RMI 注册表是一个简单的服务器端引导命名设施，它使远程客户端能够获取对初始远程对象的引用。它可以用 `rmiregistry` 命令启动。在执行 `rmiregistry` 之前，你必须确保你将在其中运行 `rmiregistry` 的 shell 或窗口没有设置 `CLASSPATH` 环境变量，或者有 `CLASSPATH` 环境变量但不包含你要下载到远程对象客户端的任何类的路径。
 
-To start the registry on the server, execute the `rmiregistry` command. This command produces no output and is typically run in the background. For this example, the registry is started on the host `mycomputer`.
+要在服务器上启动注册表，执行 `rmiregistry` 命令。此命令不产生输出，通常在后台运行。对于此示例，注册表在主机 `mycomputer` 上启动。
 
-**Microsoft Windows**:
+**Microsoft Windows**：
 
-```text
+```bash
 javaw rmiregistry -J-Djava.rmi.server.codebase=file://C:/home/ann/public_html/classes/
 ```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
-```text
+```bash
 rmiregistry -J-Djava.rmi.server.codebase=file:///home/ann/public_html/classes/ &
 ```
 
-As these examples demonstrate, when you start the registry on the server, you must specify where the server's classes are network accessible with the `java.rmi.server.codebase` property. You can also use an HTTP URL instead:
+如这些示例所示，在服务器上启动注册表时，你必须使用 `java.rmi.server.codebase` 属性指定服务器的类在网络上的可访问位置。你也可以使用 HTTP URL：
 
-```text
+```bash
 javaw rmiregistry -J-Djava.rmi.server.codebase=http://mycomputer.example.com/~ann/classes/
 ```
 
-See [`java.rmi` Properties](https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/javarmiproperties.html) for more information about the `java.rmi.server.codebase` and other RMI system properties.
+有关 `java.rmi.server.codebase` 和其他 RMI 系统属性的更多信息，请参阅 [`java.rmi` 属性](https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/javarmiproperties.html)。
 
-By default, the registry runs on port 1099. To start the registry on a different port, specify the port number on the command line. Do not forget to unset your `CLASSPATH` environment variable.
+默认情况下，注册表在端口 1099 上运行。要在不同端口上启动注册表，请在命令行上指定端口号。不要忘记取消设置 `CLASSPATH` 环境变量。
 
-**Microsoft Windows**:
+**Microsoft Windows**：
 
-```text
+```bash
 javaw rmiregistry -J-Djava.rmi.server.codebase=file://C:/home/ann/public_html/classes/ 2001
 ```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
-```text
+```bash
 rmiregistry -J-Djava.rmi.server.codebase=file:///home/ann/public_html/classes/ 2001 &
 ```
 
-Once the registry is started, you can start the server. You need to make sure that both the `compute.jar` file and the remote object implementation class are in your class path. When you start the compute engine, you need to specify, using the `java.rmi.server.codebase` property, where the server's classes are network accessible. In this example, the server-side classes to be made available for downloading are the `Compute` and `Task` interfaces, which are available in the `compute.jar` file in the `public_html\classes` directory of user `ann`. The compute engine server is started on the host `mycomputer`, the same host on which the registry was started.
+注册表启动后，你可以启动服务器。你需要确保 `compute.jar` 文件和远程对象实现类都在你的类路径中。启动计算引擎时，你需要使用 `java.rmi.server.codebase` 属性指定服务器的类在网络上的可访问位置。在此示例中，可供下载的服务器端类是 `Compute` 和 `Task` 接口，它们在用户 `ann` 的 `public_html\classes` 目录中的 `compute.jar` 文件中可用。计算引擎服务器在主机 `mycomputer` 上启动，与启动注册表的主机相同。
 
-**Microsoft Windows**:
+**Microsoft Windows**：
 
 ```bash
 java -cp C:\home\ann\src;C:\home\ann\public_html\classes\compute.jar ^
@@ -131,9 +114,9 @@ java -cp C:\home\ann\src;C:\home\ann\public_html\classes\compute.jar ^
      -Djava.rmi.server.hostname=mycomputer.example.com ^
      -Djava.security.policy=server.policy ^
         engine.ComputeEngine
-```text
+```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
 ```bash
 java -cp /home/ann/src:/home/ann/public_html/classes/compute.jar \
@@ -143,60 +126,60 @@ java -cp /home/ann/src:/home/ann/public_html/classes/compute.jar \
         engine.ComputeEngine
 ```
 
-The above `java` command defines the following system properties:
+上面的 `java` 命令定义了以下系统属性：
 
-- The `java.rmi.server.codebase` property specifies the location, a codebase URL, from which the definitions for classes originating *from* this server can be downloaded. If the codebase specifies a directory hierarchy (as opposed to a JAR file), you must include a trailing slash at the end of the codebase URL.
-- The `java.rmi.server.hostname` property specifies the host name or address to put in the stubs for remote objects exported in this Java virtual machine. This value is the host name or address used by clients when they attempt to communicate remote method invocations. By default, the RMI implementation uses the server's IP address as indicated by the `java.net.InetAddress.getLocalHost` API. However, sometimes, this address is not appropriate for all clients and a fully qualified host name would be more effective. To ensure that RMI uses a host name (or IP address) for the server that is routable from all potential clients, set the `java.rmi.server.hostname` property.
-- The `java.security.policy` property is used to specify the policy file that contains the permissions you intend to grant.
+- `java.rmi.server.codebase` 属性指定位置（代码库 URL），可以从该位置下载源自*此*服务器的类的定义。如果代码库指定目录层次结构（而不是 JAR 文件），则必须在代码库 URL 的末尾包含尾随斜杠。
+- `java.rmi.server.hostname` 属性指定要放入此 Java 虚拟机中导出的远程对象的桩中的主机名或地址。此值是客户端尝试通信远程方法调用时使用的主机名或地址。默认情况下，RMI 实现使用 `java.net.InetAddress.getLocalHost` API 指示的服务器 IP 地址。然而，有时此地址不适用于所有客户端，完全限定的主机名会更有效。为确保 RMI 使用可从所有潜在客户端路由到的服务器主机名（或 IP 地址），请设置 `java.rmi.server.hostname` 属性。
+- `java.security.policy` 属性用于指定包含你打算授予的权限的策略文件。
 
-## Starting the Client
+## 启动客户端
 
-Once the registry and the compute engine are running, you can start the client, specifying the following:
+注册表和计算引擎运行后，你可以启动客户端，指定以下内容：
 
-- The location where the client serves its classes (the `Pi` class) by using the `java.rmi.server.codebase` property
-- The `java.security.policy` property, which is used to specify the security policy file that contains the permissions you intend to grant to various pieces of code
-- As command-line arguments, the host name of the server (so that the client knows where to locate the `Compute` remote object) and the number of decimal places to use in the calculation
+- 客户端使用 `java.rmi.server.codebase` 属性提供其类（`Pi` 类）的位置
+- `java.security.policy` 属性，用于指定包含你打算授予各种代码片段的权限的安全策略文件
+- 作为命令行参数，服务器的主机名（以便客户端知道在哪里定位 `Compute` 远程对象）和计算中要使用的小数位数
 
-Start the client on another host (a host named `mysecondcomputer`, for example) as follows:
+在另一台主机上启动客户端（例如名为 `mysecondcomputer` 的主机），如下所示：
 
 ---
 
-**Microsoft Windows**:
+**Microsoft Windows**：
 
-```text
+```bash
 java -cp C:\home\jones\src;C:\home\jones\public_html\classes\compute.jar ^
      -Djava.security.policy=client.policy ^
         client.ComputePi mycomputer.example.com 45
 ```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
 ```bash
 java -cp /home/jones/src:/home/jones/public_html/classes/compute.jar \
      -Djava.security.policy=client.policy \
         client.ComputePi mycomputer.example.com 45
-```text
+```
 
-Note that the class path is set on the command line so that the interpreter can find the client classes and the JAR file containing the interfaces.
+注意，类路径在命令行上设置，以便解释器可以找到客户端类和包含接口的 JAR 文件。
 
-After you start the client, the following output is displayed:
+启动客户端后，显示以下输出：
 
 ```text
 3.141592653589793238462643383279502884197169399
 ```
 
-The following figure illustrates where the `rmiregistry`, the `ComputeEngine` server, and the `ComputePi` client obtain classes during program execution.
+下图说明了 `rmiregistry`、`ComputeEngine` 服务器和 `ComputePi` 客户端在程序执行期间从何处获取类。
 
 ![[RMI--rmi-5.gif]]
 
-When the `ComputeEngine` server binds its remote object reference in the registry, the registry downloads the `Compute` and `Task` interfaces on which the stub class depends. These classes are downloaded from either the `ComputeEngine` server's web server or file system, depending on the type of codebase URL used when starting the server.
+当 `ComputeEngine` 服务器在注册表中绑定其远程对象引用时，注册表下载桩类所依赖的 `Compute` 和 `Task` 接口。这些类从 `ComputeEngine` 服务器的 Web 服务器或文件系统下载，具体取决于启动服务器时使用的代码库 URL 类型。
 
-Because the `ComputePi` client has both the `Compute` and the `Task` interfaces available in its class path, it loads their definitions from its class path, not from the server's codebase.
+因为 `ComputePi` 客户端的类路径中有 `Compute` 和 `Task` 接口，所以它从其类路径加载它们的定义，而不是从服务器的代码库。
 
-Finally, the `Pi` class is loaded into the `ComputeEngine` server's Java virtual machine when the `Pi` object is passed in the `executeTask` remote call to the `ComputeEngine` object. The `Pi` class is loaded by the server from either the client's web server or file system, depending on the type of codebase URL used when starting the client.
+最后，当 `Pi` 对象通过 `executeTask` 远程调用传递给 `ComputeEngine` 对象时，`Pi` 类被加载到 `ComputeEngine` 服务器的 Java 虚拟机中。服务器从客户端的 Web 服务器或文件系统加载 `Pi` 类，具体取决于启动客户端时使用的代码库 URL 类型。
 
 ---
 
-**Note:** See [RMI Security Recommendations](https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/rmi_security_recommendations.html) to improve the security of your RMI applications.
+**注意：** 参阅 [RMI 安全建议](https://docs.oracle.com/javase/8/docs/technotes/guides/rmi/rmi_security_recommendations.html)以改进 RMI 应用程序的安全性。
 
 ---

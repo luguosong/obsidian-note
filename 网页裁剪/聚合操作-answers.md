@@ -1,124 +1,121 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Answers to Questions and Exercises: Aggregate Operations (The Java™ Tutorials > Collections >
-            Aggregate Operations)"
-描述: ""
+标题: "问题与练习答案：聚合操作"
+描述: "《Java 教程》聚合操作课程，提供「聚合操作」一章问题与练习的答案，涵盖流水线、中间/终端操作、lambda、方法引用、reduce 与 collect 的区别。"
 来源: "https://docs.oracle.com/javase/tutorial/collections/streams/QandE/answers.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Answers to Questions and Exercises: Aggregate Operations (The Java™ Tutorials > Collections >
-            Aggregate Operations)
 
-Documentation
+# 问题与练习答案：聚合操作
 
-[[聚合操作-questions|« Previous]] • [TOC](https://docs.oracle.com/javase/tutorial/collections/TOC.html)
+> 文档说明
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-## Answers to Questions and Exercises: Aggregate Operations
+## 问题与练习答案：聚合操作
 
-## Questions
+## 问题
 
-1. Q: A sequence of aggregate operations is known as a \_\_\_.  
-	A: Pipeline
-2. Q: Each pipeline contains zero or more \_\_\_ operations.  
-	A: Intermediate
-3. Q: Each pipeline ends with a \_\_\_ operation.  
-	A: Terminal
-4. Q: What kind of operation produces another stream as its output?  
-	A: Intermediate
-5. Q: Describe one way in which the `forEach` aggregate operation differs from the enhanced `for` statement or iterators.  
-	A: The `forEach` aggregate operation lets the system decide "how" the iteration takes place. Using aggregate operations lets you focus on "what" instead of "how."
-6. Q: True or False: A stream is similar to a collection in that it is a data structure that stores elements.  
-	A: False. Unlike a collection, a stream is not a data structure. It instead carries values from a source through a pipeline.
-7. Q: Identify the intermediate and terminal operations in this code:
+1. 问：聚合操作序列称为 \_\_\_。
+	答：流水线(Pipeline)
+2. 问：每个流水线包含零个或多个 \_\_\_ 操作。
+	答：中间(Intermediate)
+3. 问：每个流水线以 \_\_\_ 操作结束。
+	答：终端(Terminal)
+4. 问：哪种操作产生另一个流作为其输出？
+	答：中间操作
+5. 问：描述 `forEach` 聚合操作与增强 `for` 语句或迭代器的一个不同之处。
+	答：`forEach` 聚合操作让系统决定迭代「如何」进行。使用聚合操作让你专注于「做什么」而不是「如何做」。
+6. 问：判断正误：流类似于集合，它也是存储元素的数据结构。
+	答：错误。与集合不同，流不是数据结构。它通过流水线从源传递值。
+7. 问：识别此代码中的中间操作和终端操作：
 ```text
-	double average = roster
-	    .stream()
-	    .filter(p -> p.getGender() == Person.Sex.MALE)
-	    .mapToInt(Person::getAge)
-	    .average()
-	    .getAsDouble();
+double average = roster
+    .stream()
+    .filter(p -> p.getGender() == Person.Sex.MALE)
+    .mapToInt(Person::getAge)
+    .average()
+    .getAsDouble();
 ```
-	  
-	A: Intermediate: `filter`, `mapToInt`  
-	Terminal: `average`  
-	The terminal operation `average` returns an `OptionalDouble`. The `getAsDouble` method is then invoked on that returned object. It is always a good idea to consult the [API Specification](https://docs.oracle.com/javase/8/docs/api/index.html) for information about whether an operation is intermediate or terminal.
-8. Q: The code `  p -> p.getGender() == Person.Sex.MALE  ` is an example of what?  
-	A: A lambda expression.
-9. Q: The code `  Person::getAge  ` is an example of what?  
-	A: A method reference.
-10. Q: Terminal operations that combine the contents of a stream and return one value are known as what?  
-	A: Reduction operations.
-11. Q: Name one important difference between the `Stream.reduce` method and the `Stream.collect` method.  
-	A: `Stream.reduce` always creates a new value when it processes an element. `Stream.collect` modifies (or mutates) the existing value.
-12. Q: If you wanted to process a stream of names, extract the male names, and store them in a new `List`, would `Stream.reduce` or `Stream.collect` be the most appropriate operation to use?  
-	A: The collect operation is most appropriate for collecting into a `List`.  
-	  
-	Example:
-```text
-	List<String> namesOfMaleMembersCollect = roster
-	    .stream()
-	    .filter(p -> p.getGender() == Person.Sex.MALE)
-	    .map(p -> p.getName())
-	    .collect(Collectors.toList());
+
+	答：中间操作：`filter`、`mapToInt`
+	终端操作：`average`
+	终端操作 `average` 返回一个 `OptionalDouble`。然后在该返回对象上调用 `getAsDouble` 方法。查阅 [API 规范](https://docs.oracle.com/javase/8/docs/api/index.html) 了解某操作是中间还是终端操作始终是个好主意。
+8. 问：代码 `  p -> p.getGender() == Person.Sex.MALE  ` 是什么的示例？
+	答：lambda 表达式。
+9. 问：代码 `  Person::getAge  ` 是什么的示例？
+	答：方法引用。
+10. 问：合并流的内容并返回一个值的终端操作称为什么？
+	答：归约操作。
+11. 问：说出 `Stream.reduce` 方法和 `Stream.collect` 方法之间的一个重要区别。
+	答：`Stream.reduce` 在处理元素时总是创建新值。`Stream.collect` 修改（或变异）现有值。
+12. 问：如果你想处理一个名称流，提取男性名称，并将它们存储在新的 `List` 中，使用 `Stream.reduce` 还是 `Stream.collect` 更合适？
+	答：collect 操作最适合收集到 `List` 中。
+
+	示例：
+```java
+List<String> namesOfMaleMembersCollect = roster
+    .stream()
+    .filter(p -> p.getGender() == Person.Sex.MALE)
+    .map(p -> p.getName())
+    .collect(Collectors.toList());
 ```
-13. Q: True or False: Aggregate operations make it possible to implement parallelism with non-thread-safe collections.  
-	A: True, provided that you do not modify (mutate) the underlying collection while you are operating on it.
-14. Q: Streams are always serial unless otherwise specified. How do you request that a stream be processed in parallel?  
-	A: Obtain the parallel stream by invoking `parallelStream()` instead of `stream()`.
+13. 问：判断正误：聚合操作使得可以用非线程安全的集合实现并行。
+	答：正确，前提是你在操作时不修改（变异）底层集合。
+14. 问：除非另有指定，流总是串行的。你如何请求并行处理流？
+	答：通过调用 `parallelStream()` 而不是 `stream()` 获取并行流。
 
-## Exercises
+## 练习
 
-1. Exercise: Write the following enhanced `for` statement as a pipeline with lambda expressions. Hint: Use the `filter` intermediate operation and the `forEach` terminal operation.  
+1. 练习：将以下增强 `for` 语句编写为带 lambda 表达式的流水线。提示：使用 `filter` 中间操作和 `forEach` 终端操作。
 	```java
 	for (Person p : roster) {
 	    if (p.getGender() == Person.Sex.MALE) {
 	        System.out.println(p.getName());
 	    }
 	}
-```text
-	  
-	Answer:
+	```
+
+	答案：
 	```java
 	roster
 	    .stream()
 	    .filter(e -> e.getGender() == Person.Sex.MALE)
 	    .forEach(e -> System.out.println(e.getName());
-```
-2. Convert the following code into a new implementation that uses lambda expressions and aggregate operations instead of nested `for` loops. Hint: Make a pipeline that invokes the `filter`, `sorted`, and `collect` operations, in that order.
+	```
+2. 将以下代码转换为使用 lambda 表达式和聚合操作而不是嵌套 `for` 循环的新实现。提示：创建一个依次调用 `filter`、`sorted` 和 `collect` 操作的流水线。
 ```java
-	List<Album> favs = new ArrayList<>();
-	for (Album a : albums) {
-	    boolean hasFavorite = false;
-	    for (Track t : a.tracks) {
-	        if (t.rating >= 4) {
-	            hasFavorite = true;
-	            break;
-	        }
-	    }
-	    if (hasFavorite)
-	        favs.add(a);
-	}
-	Collections.sort(favs, new Comparator<Album>() {
-	                           public int compare(Album a1, Album a2) {
-	                               return a1.name.compareTo(a2.name);
-	                           }});
+List<Album> favs = new ArrayList<>();
+for (Album a : albums) {
+    boolean hasFavorite = false;
+    for (Track t : a.tracks) {
+        if (t.rating >= 4) {
+            hasFavorite = true;
+            break;
+        }
+    }
+    if (hasFavorite)
+        favs.add(a);
+}
+Collections.sort(favs, new Comparator<Album>() {
+                       public int compare(Album a1, Album a2) {
+                           return a1.name.compareTo(a2.name);
+                       }});
 ```
-	  
-	Answer:
-```text
-	List<Album> sortedFavs =
-	  albums.stream()
-	        .filter(a -> a.tracks.anyMatch(t -> (t.rating >= 4)))
-	        .sorted(Comparator.comparing(a -> a.name))
-	        .collect(Collectors.toList());
+
+	答案：
+```java
+List<Album> sortedFavs =
+  albums.stream()
+        .filter(a -> a.tracks.anyMatch(t -> (t.rating >= 4)))
+        .sorted(Comparator.comparing(a -> a.name))
+        .collect(Collectors.toList());
 ```
-	  
-	Here we have used the stream operations to simplify each of the three major steps -- identification of whether any track in an album has a rating of at least 4 (`anyMatch`), the sorting, and the collection of albums matching our criteria into a `List`. The `Comparator.comparing()` method takes a function that extracts a `Comparable` sort key, and returns a `Comparator` that compares on that key.
+
+	这里我们使用流操作简化了三个主要步骤——识别专辑中是否有任何曲目的评分至少为 4（`anyMatch`）、排序，以及将符合我们标准的专辑收集到 `List` 中。`Comparator.comparing()` 方法接受一个提取 `Comparable` 排序键的函数，并返回一个基于该键进行比较的 `Comparator`。

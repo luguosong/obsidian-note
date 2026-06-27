@@ -1,45 +1,30 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Parsing an XML File Using SAX (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Simple API for XML)"
-描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+标题: "使用 SAX 解析 XML 文件"
+描述: "《Java 教程》JAXP SAX 课程，通过 SAXLocalNameCount 示例演示如何用 SAX 解析器处理 XML 数据，涵盖创建骨架、导入类、设置 I/O、实现 ContentHandler、处理内容事件、设置解析器与错误处理。"
 来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Parsing an XML File Using SAX (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Simple API for XML)
 
-Documentation
+# 使用 SAX 解析 XML 文件
 
-[[JAXP-何时使用SAX|When to Use SAX]]
+> 文档说明
 
-Parsing an XML File Using SAX
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[JAXP-SAX-validation|Implementing SAX Validation]]
+## 使用 SAX 解析 XML 文件
 
-[[JAXP-SAX-events|Handling Lexical Events]]
+在实际应用程序中，你会希望使用 SAX 解析器处理 XML 数据并用它做一些有用的事情。本节考察一个示例 JAXP 程序 SAXLocalNameCount，它在一个 XML 文档中仅使用元素的 localName 组件来计算元素数量。为简化起见，命名空间名称被忽略。此示例还展示了如何使用 SAX ErrorHandler。
 
-[[JAXP-SAX-using|Using the DTDHandler and EntityResolver]]
+## 创建骨架
 
-[[JAXP-SAX-info|Further Information]]
-
-[[JAXP-何时使用SAX|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-SAX-validation|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Parsing an XML File Using SAX
-
-In real-life applications, you will want to use the SAX parser to process XML data and do something useful with it. This section examines an example JAXP program, SAXLocalNameCount, that counts the number of elements using only the localName component of the element, in an XML document. Namespace names are ignored for simplicity. This example also shows how to use a SAX ErrorHandler.
-
-## Creating the Skeleton
-
-The SAXLocalNameCount program is created in a file named SAXLocalNameCount.java.
+SAXLocalNameCount 程序创建在一个名为 SAXLocalNameCount.java 的文件中。
 
 ```java
 public class SAXLocalNameCount {
@@ -47,13 +32,13 @@ public class SAXLocalNameCount {
         // ...
     }
 }
-```java
+```
 
-Because you will run it standalone, you need a main() method. And you need command-line arguments so that you can tell the application which file to process. Find the example's complete code in the [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) file.
+因为你将独立运行它，所以需要一个 main() 方法。而且你需要命令行参数，以便告诉应用程序要处理哪个文件。在 [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) 文件中找到示例的完整代码。
 
-## Importing Classes
+## 导入类
 
-The import statements for the classes the application will use are the following.
+应用程序将使用的类的导入语句如下。
 
 ```java
 package sax;
@@ -69,11 +54,11 @@ public class SAXLocalNameCount {
 }
 ```
 
-The javax.xml.parsers package contains the SAXParserFactory class that creates the parser instance used. It throws a ParserConfigurationException if it cannot produce a parser that matches the specified configuration of options. (Later, you will see more about the configuration options). The javax.xml.parsers package also contains the SAXParser class, which is what the factory returns for parsing. The org.xml.sax package defines all the interfaces used for the SAX parser. The org.xml.sax.helpers package contains DefaultHandler, which defines the class that will handle the SAX events that the parser generates. The classes in java.util and java.io, are needed to provide hash tables and output.
+javax.xml.parsers 包包含 SAXParserFactory 类，它创建所使用的解析器实例。如果它无法生成与指定配置选项匹配的解析器，则抛出 ParserConfigurationException。（稍后你将看到更多关于配置选项的内容）。javax.xml.parsers 包还包含 SAXParser 类，这是工厂为解析返回的类。org.xml.sax 包定义了 SAX 解析器使用的所有接口。org.xml.sax.helpers 包包含 DefaultHandler，它定义了将处理解析器生成的 SAX 事件的类。java.util 和 java.io 中的类是提供哈希表和输出所需的。
 
-## Setting Up I/O
+## 设置 I/O
 
-The first order of business is to process the command-line arguments, which at this stage only serve to get the name of the file to process. The following code in the main method tells the application what file you want SAXLocalNameCount to process.
+首要任务是处理命令行参数，在此阶段它们仅用于获取要处理的文件名。main 方法中的以下代码告诉应用程序你希望 SAXLocalNameCount 处理哪个文件。
 
 ```java
 static public void main(String[] args) throws Exception {
@@ -88,13 +73,13 @@ static public void main(String[] args) throws Exception {
 
     if (filename == null) {
         usage();
-    } 
+    }
 }
-```java
+```
 
-This code sets the main method to throw an Exception when it encounters problems, and defines the command-line options which are required to tell the application the name of the XML file to be processed. Other command line arguments in this part of the code will be examined later in this lesson, when we start looking at validation.
+这段代码将 main 方法设置为在遇到问题时抛出 Exception，并定义了告诉应用程序要处理的 XML 文件名所需的命令行选项。代码这部分的其他命令行参数将在本课后面查看验证时讨论。
 
-The filename String that you give when you run the application will be converted to a java.io.File URL by an internal method, convertToFileURL(). This is done by the following code in SAXLocalNameCount.
+你运行应用程序时给出的 filename 字符串将被内部方法 convertToFileURL() 转换为 java.io.File URL。这由 SAXLocalNameCount 中的以下代码完成。
 
 ```java
 public class SAXLocalNameCount {
@@ -114,7 +99,7 @@ public class SAXLocalNameCount {
 }
 ```
 
-If the incorrect command-line arguments are specified when the program is run, then the SAXLocalNameCount application's usage() method is invoked, to print out the correct options onscreen.
+如果运行程序时指定了不正确的命令行参数，则会调用 SAXLocalNameCount 应用程序的 usage() 方法，在屏幕上打印出正确的选项。
 
 ```java
 private static void usage() {
@@ -122,15 +107,15 @@ private static void usage() {
     System.err.println("       -usage or -help = this message");
     System.exit(1);
 }
-```java
+```
 
-Further usage() options will be examined later in this lesson, when validation is addressed.
+更多 usage() 选项将在本课后面讨论验证时查看。
 
-## Implementing the ContentHandler Interface
+## 实现 ContentHandler 接口
 
-The most important interface in SAXLocalNameCount is ContentHandler. This interface requires a number of methods that the SAX parser invokes in response to various parsing events. The major event-handling methods are: startDocument, endDocument, startElement, and endElement.
+SAXLocalNameCount 中最重要的接口是 ContentHandler。此接口需要一些方法，SAX 解析器调用这些方法以响应各种解析事件。主要的事件处理方法是：startDocument、endDocument、startElement 和 endElement。
 
-The easiest way to implement this interface is to extend the DefaultHandler class, defined in the org.xml.sax.helpers package. That class provides do-nothing methods for all the ContentHandler events. The example program extends that class.
+实现此接口最简单的方法是扩展 org.xml.sax.helpers 包中定义的 DefaultHandler 类。该类为所有 ContentHandler 事件提供空操作方法。示例程序扩展了该类。
 
 ```java
 public class SAXLocalNameCount extends DefaultHandler {
@@ -140,25 +125,25 @@ public class SAXLocalNameCount extends DefaultHandler {
 
 ---
 
-**Note -** DefaultHandler also defines do-nothing methods for the other major events, defined in the DTDHandler, EntityResolver, and ErrorHandler interfaces. You will learn more about those methods later in this lesson.
+**注意 -** DefaultHandler 还为 DTDHandler、EntityResolver 和 ErrorHandler 接口中定义的其他主要事件定义了空操作方法。你将在本课后面了解更多关于这些方法的内容。
 
 ---
 
-Each of these methods is required by the interface to throw a SAXException. An exception thrown here is sent back to the parser, which sends it on to the code that invoked the parser.
+接口要求这些方法中的每一个都抛出 SAXException。此处抛出的异常被发送回解析器，解析器再将其发送给调用解析器的代码。
 
-## Handling Content Events
+## 处理内容事件
 
-This section shows the code that processes the ContentHandler events.
+本节展示处理 ContentHandler 事件的代码。
 
-When a start tag or end tag is encountered, the name of the tag is passed as a String to the startElement or the endElement method, as appropriate. When a start tag is encountered, any attributes it defines are also passed in an Attributes list. Characters found within the element are passed as an array of characters, along with the number of characters (length) and an offset into the array that points to the first character.
+当遇到开始标记或结束标记时，标记的名称作为字符串传递给 startElement 或 endElement 方法（视情况而定）。当遇到开始标记时，它定义的任何属性也会在 Attributes 列表中传递。在元素中找到的字符作为字符数组传递，同时传递字符数量（长度）和指向第一个字符的数组偏移量。
 
-### Document Events
+### 文档事件
 
-The following code handles the start-document and end-document events:
+以下代码处理开始文档和结束文档事件：
 
 ```java
 public class SAXLocalNameCount extends DefaultHandler {
-    
+
     private Hashtable tags;
 
     public void startDocument() throws SAXException {
@@ -170,26 +155,26 @@ public class SAXLocalNameCount extends DefaultHandler {
         while (e.hasMoreElements()) {
             String tag = (String)e.nextElement();
             int count = ((Integer)tags.get(tag)).intValue();
-            System.out.println("Local Name \"" + tag + "\" occurs " 
+            System.out.println("Local Name \"" + tag + "\" occurs "
                                + count + " times");
-        }    
+        }
     }
- 
+
     private static String convertToFileURL(String filename) {
         // ...
     }
 
     // ...
 }
-```java
+```
 
-This code defines what the application does when the parser encounters the start and end points of the document being parsed. The ContentHandler interface's startDocument() method creates a java.util.Hashtable instance, which in [Element Events](#gclmm) will be populated with the XML elements the parser finds in the document. When the parser reaches the end of the document, the endDocument() method is invoked, to get the names and counts of the elements contained in the hash table, and print out a message onscreen to tell the user how many incidences of each element were found.
+这段代码定义了当解析器遇到被解析文档的开始点和结束点时应用程序做什么。ContentHandler 接口的 startDocument() 方法创建一个 java.util.Hashtable 实例，在元素事件中它将被解析器在文档中找到的 XML 元素填充。当解析器到达文档末尾时，调用 endDocument() 方法，获取哈希表中包含的元素名称和计数，并在屏幕上打印消息告诉用户每种元素被找到多少次。
 
-Both of these ContentHandler methods throw SAXException s. You will learn more about SAX exceptions in [Setting up Error Handling](#gcnsr).
+这两个 ContentHandler 方法都抛出 SAXException。你将在设置错误处理中了解更多关于 SAX 异常的内容。
 
-### Element Events
+### 元素事件
 
-As mentioned in [Document Events](#gclmb), the hash table created by the startDocument method needs to be populated with the various elements that the parser finds in the document. The following code processes the start-element event:
+如文档事件中所述，startDocument 方法创建的哈希表需要用解析器在文档中找到的各种元素填充。以下代码处理开始元素事件：
 
 ```java
 public void startDocument() throws SAXException {
@@ -198,7 +183,7 @@ public void startDocument() throws SAXException {
 
 public void startElement(String namespaceURI,
                          String localName,
-                         String qName, 
+                         String qName,
                          Attributes atts)
     throws SAXException {
 
@@ -207,109 +192,109 @@ public void startElement(String namespaceURI,
 
     if (value == null) {
         tags.put(key, new Integer(1));
-    } 
+    }
     else {
         int count = ((Integer)value).intValue();
         count++;
         tags.put(key, new Integer(count));
     }
 }
- 
+
 public void endDocument() throws SAXException {
     // ...
 }
 ```
 
-This code processes the element tags, including any attributes defined in the start tag, to obtain the namespace universal resource identifier (URI), the local name and the qualified name of that element. The startElement() method then populates the hash map created by startDocument() with the local names and the counts thereof, for each type of element. Note that when the startElement() method is invoked, if namespace processing is not enabled, then the local name for elements and attributes could turn out to be an empty string. The code handles that case by using the qualified name whenever the simple name is an empty string.
+这段代码处理元素标记，包括开始标记中定义的任何属性，以获取命名空间通用资源标识符(URI)、本地名称和该元素的限定名称。然后 startElement() 方法用每种元素类型的本地名称及其计数填充 startDocument() 创建的哈希映射。注意，当调用 startElement() 方法时，如果未启用命名空间处理，则元素和属性的本地名称可能为空字符串。代码通过在简单名称为空字符串时使用限定名称来处理这种情况。
 
-### Character Events
+### 字符事件
 
-The JAXP SAX API also allows you to handle the characters that the parser delivers to your application, using the ContentHandler.characters() method.
-
----
-
-**Note -** Character events are not demonstrated in the SAXLocalNameCount example, but a brief description is included in this section, for completeness.
+JAXP SAX API 还允许你使用 ContentHandler.characters() 方法处理解析器传递给应用程序的字符。
 
 ---
 
-Parsers are not required to return any particular number of characters at one time. A parser can return anything from a single character at a time up to several thousand and still be a standard-conforming implementation. So if your application needs to process the characters it sees, it is wise to have the characters() method accumulate the characters in a java.lang.StringBuffer and operate on them only when you are sure that all of them have been found.
+**注意 -** 字符事件未在 SAXLocalNameCount 示例中演示，但为完整性起见，本节包含简要描述。
 
-You finish parsing text when an element ends, so you normally perform your character processing at that point. But you might also want to process text when an element starts. This is necessary for document-style data, which can contain XML elements that are intermixed with text. For example, consider this document fragment:
+---
+
+解析器不要求一次返回任何特定数量的字符。解析器可以一次返回单个字符到数千个字符，仍然是符合标准的实现。因此，如果你的应用程序需要处理它看到的字符，明智的做法是让 characters() 方法将字符累积在 java.lang.StringBuffer 中，并仅在你确定所有字符都已找到时才对它们进行操作。
+
+当元素结束时你完成文本解析，因此通常在此时执行字符处理。但你也可能希望在元素开始时处理文本。这对于文档式数据是必要的，这类数据可以包含与文本混合的 XML 元素。例如，考虑这个文档片段：
 
 `**<para>**This paragraph contains **<bold>**important**</bold>** ideas.**</para>**`
 
-The initial text, This paragraph contains, is terminated by the start of the <bold> element. The text important is terminated by the end tag, </bold>, and the final text, ideas., is terminated by the end tag, </para>.
+初始文本 This paragraph contains 被开始 <bold> 元素终止。文本 important 被结束标记 </bold> 终止，而最终文本 ideas. 被结束标记 </para> 终止。
 
-To be strictly accurate, the character handler should scan for ampersand characters (&) and left-angle bracket characters (<) and replace them with the strings &amp; or &lt;, as appropriate. This is explained in the next section.
+严格来说，字符处理器应该扫描与号字符(&)和左尖括号字符(<)，并用字符串 &amp; 或 &lt; 适当地替换它们。这在下一节中解释。
 
-### Handling Special Characters
+### 处理特殊字符
 
-In XML, an entity is an XML structure (or plain text) that has a name. Referencing the entity by name causes it to be inserted into the document in place of the entity reference. To create an entity reference, you surround the entity name with an ampersand and a semicolon:
+在 XML 中，实体是一个有名称的 XML 结构（或纯文本）。通过名称引用实体会导致它被插入到文档中实体引用的位置。要创建实体引用，你用与号和分号包围实体名称：
 
 `&entityName;`
 
-When you are handling large blocks of XML or HTML that include many special characters, you can use a CDATA section. A CDATA section works like <code>...</code> in HTML, only more so: all white space in a CDATA section is significant, and characters in it are not interpreted as XML. A CDATA section starts with <!\[\[CDATA\[ and ends with \]\]>.
+当你处理包含许多特殊字符的大块 XML 或 HTML 时，可以使用 CDATA 部分。CDATA 部分的作用类似于 HTML 中的 <code>...</code>，甚至更强：CDATA 部分中的所有空白都是重要的，其中的字符不被解释为 XML。CDATA 部分以 <!\[\[CDATA\[ 开始，以 \]\]> 结束。
 
-An example of a CDATA section is shown below.
+CDATA 部分的示例如下所示。
 
 `<p><termdef id="dt-cdsection" term="CDATA Section"<<term>CDATA sections</term> may occur anywhere character data may occur; they are used to escape blocks of text containing characters which would otherwise be recognized as markup. CDATA sections begin with the string "<code>&lt;![CDATA[</code>" and end with the string "<code>]]&gt;</code>"`
 
-Once parsed, this text would be displayed as follows:
+解析后，此文本将显示如下：
 
-CDATA sections may occur anywhere character data may occur; they are used to escape blocks of text containing characters which would otherwise be recognized as markup. CDATA sections begin with the string " <!\[CDATA\[" and end with the string "\]\]> ".
+CDATA sections may occur anywhere character data may occur; they are used to escape blocks of text containing characters which would otherwise be recognized as markup. CDATA sections begin with the string " <!\[CDATA\[" and end with the string "\]\]> "。
 
-The existence of CDATA makes the proper echoing of XML a bit tricky. If the text to be output is not in a CDATA section, then any angle brackets, ampersands, and other special characters in the text should be replaced with the appropriate entity reference. (Replacing left angle brackets and ampersands is most important, other characters will be interpreted properly without misleading the parser.) But if the output text is in a CDATA section, then the substitutions should not occur, resulting in text like that in the earlier example. In a simple program such as our SAXLocalNameCount application, this is not particularly serious. But many XML-filtering applications will want to keep track of whether the text appears in a CDATA section, so that they can treat special characters properly.
+CDATA 的存在使得正确回显 XML 有点棘手。如果要输出的文本不在 CDATA 部分中，则文本中的任何尖括号、与号和其他特殊字符都应替换为适当的实体引用。（替换左尖括号和与号最重要，其他字符将被正确解释而不会误导解析器。）但如果输出文本在 CDATA 部分中，则不应进行替换，从而产生类似前面示例中的文本。在诸如我们的 SAXLocalNameCount 应用程序这样的简单程序中，这并不特别严重。但许多 XML 过滤应用程序会希望跟踪文本是否出现在 CDATA 部分中，以便它们能正确处理特殊字符。
 
-## Setting up the Parser
+## 设置解析器
 
-The following code sets up the parser and gets it started:
+以下代码设置解析器并启动它：
 
 ```java
 static public void main(String[] args) throws Exception {
 
-    // Code to parse command-line arguments 
-    //(shown above)
+    // 解析命令行参数的代码
+    //（如上所示）
     // ...
 
     SAXParserFactory spf = SAXParserFactory.newInstance();
     spf.setNamespaceAware(true);
     SAXParser saxParser = spf.newSAXParser();
 }
-```text
-
-These lines of code create a SAXParserFactory instance, as determined by the setting of the javax.xml.parsers.SAXParserFactory system property. The factory to be created is set up to support XML namespaces by setting setNamespaceAware to true, and then a SAXParser instance is obtained from the factory by invoking its newSAXParser() method.
-
----
-
-**Note -** The javax.xml.parsers.SAXParser class is a wrapper that defines a number of convenience methods. It wraps the (somewhat less friendly) org.xml.sax.Parser object. If needed, you can obtain that parser using the getParser() method of the SAXParser class.
-
----
-
-You now need to implement the XMLReader that all parsers must implement. The XMLReader is used by the application to tell the SAX parser what processing it is to perform on the document in question. The XMLReader is implemented by the following code in the main method.
-
 ```
+
+这些代码行创建一个 SAXParserFactory 实例，由 javax.xml.parsers.SAXParserFactory 系统属性的设置决定。要创建的工厂通过将 setNamespaceAware 设置为 true 来支持 XML 命名空间，然后通过调用其 newSAXParser() 方法从工厂获取 SAXParser 实例。
+
+---
+
+**注意 -** javax.xml.parsers.SAXParser 类是一个包装器，定义了许多便利方法。它包装（不太友好的）org.xml.sax.Parser 对象。如果需要，你可以使用 SAXParser 类的 getParser() 方法获取该解析器。
+
+---
+
+你现在需要实现所有解析器必须实现的 XMLReader。应用程序使用 XMLReader 告诉 SAX 解析器要对相关文档执行什么处理。XMLReader 由 main 方法中的以下代码实现。
+
+```java
 // ...
 SAXParser saxParser = spf.newSAXParser();
 XMLReader xmlReader = saxParser.getXMLReader();
 xmlReader.setContentHandler(new SAXLocalNameCount());
 xmlReader.parse(convertToFileURL(filename));
-```java
+```
 
-Here, you obtain an XMLReader instance for your parser by invoking your SAXParser instance's getXMLReader() method. The XMLReader then registers the SAXLocalNameCount class as its content handler, so that the actions performed by the parser will be those of the startDocument(), startElement(), and endDocument() methods shown in [Handling Content Events](#gclnc). Finally, the XMLReader tells the parser which document to parse by passing it the location of the XML file in question, in the form of the File URL generated by the convertToFileURL() method defined in [Setting Up I/O](#gcnsk).
+这里，你通过调用 SAXParser 实例的 getXMLReader() 方法为解析器获取 XMLReader 实例。然后 XMLReader 将 SAXLocalNameCount 类注册为其内容处理器，以便解析器执行的操作将是处理内容事件中所示 startDocument()、startElement() 和 endDocument() 方法的操作。最后，XMLReader 通过以设置 I/O 中定义的 convertToFileURL() 方法生成的 File URL 形式传递相关 XML 文件的位置，告诉解析器要解析哪个文档。
 
-## Setting up Error Handling
+## 设置错误处理
 
-You could start using your parser now, but it is safer to implement some error handling. The parser can generate three kinds of errors: a fatal error, an error, and a warning. When a fatal error occurs, the parser cannot continue. So if the application does not generate an exception, then the default error-event handler generates one. But for nonfatal errors and warnings, exceptions are never generated by the default error handler, and no messages are displayed.
+你现在可以开始使用解析器了，但实现一些错误处理更安全。解析器可以生成三种错误：致命错误、错误和警告。当发生致命错误时，解析器无法继续。因此，如果应用程序不生成异常，则默认错误事件处理器会生成一个。但对于非致命错误和警告，默认错误处理器从不生成异常，也不显示任何消息。
 
-As shown in [Document Events](#gclmb), the application's event handling methods throw SAXException. For example, the signature of the startDocument() method in the ContentHandler interface is defined as returning a SAXException.
+如文档事件中所示，应用程序的事件处理方法抛出 SAXException。例如，ContentHandler 接口中 startDocument() 方法的签名定义为返回 SAXException。
 
 ```java
 public void startDocument() throws SAXException { /* ... */ }
 ```
 
-A SAXException can be constructed using a message, another exception, or both.
+SAXException 可以使用消息、另一个异常或两者构造。
 
-Because the default parser only generates exceptions for fatal errors, and because the information about the errors provided by the default parser is somewhat limited, the SAXLocalNameCount program defines its own error handling, through the MyErrorHandler class.
+因为默认解析器仅为致命错误生成异常，并且默认解析器提供的错误信息有些有限，所以 SAXLocalNameCount 程序通过 MyErrorHandler 类定义了自己的错误处理。
 
 ```java
 xmlReader.setErrorHandler(new MyErrorHandler(System.err));
@@ -330,7 +315,7 @@ private static class MyErrorHandler implements ErrorHandler {
             systemId = "null";
         }
 
-        String info = "URI=" + systemId + " Line=" 
+        String info = "URI=" + systemId + " Line="
             + spe.getLineNumber() + ": " + spe.getMessage();
 
         return info;
@@ -339,7 +324,7 @@ private static class MyErrorHandler implements ErrorHandler {
     public void warning(SAXParseException spe) throws SAXException {
         out.println("Warning: " + getParseExceptionInfo(spe));
     }
-        
+
     public void error(SAXParseException spe) throws SAXException {
         String message = "Error: " + getParseExceptionInfo(spe);
         throw new SAXException(message);
@@ -350,45 +335,47 @@ private static class MyErrorHandler implements ErrorHandler {
         throw new SAXException(message);
     }
 }
+```
 
-In the same way as in [Setting up the Parser](#gclmt), which showed the XMLReader being pointed to the correct content handler, here the XMLReader is pointed to the new error handler by calling its setErrorHandler() method.
+与设置解析器中所示 XMLReader 被指向正确的内容处理器的方式相同，这里通过调用 XMLReader 的 setErrorHandler() 方法将其指向新的错误处理器。
 
-The MyErrorHandler class implements the standard org.xml.sax.ErrorHandler interface, and defines a method to obtain the exception information that is provided by any SAXParseException instances generated by the parser. This method, getParseExceptionInfo(), simply obtains the line number at which the error occurs in the XML document and the identifier of the system on which it is running by calling the standard SAXParseException methods getLineNumber() and getSystemId(). This exception information is then fed into implementations of the basic SAX error handling methods error(), warning(), and fatalError(), which are updated to send the appropriate messages about the nature and location of the errors in the document.
+MyErrorHandler 类实现了标准的 org.xml.sax.ErrorHandler 接口，并定义了一个方法来获取解析器生成的任何 SAXParseException 实例提供的异常信息。此方法 getParseExceptionInfo() 只是通过调用标准 SAXParseException 方法 getLineNumber() 和 getSystemId() 获取 XML 文档中发生错误的行号和运行它的系统的标识符。然后将此异常信息馈送到基本 SAX 错误处理方法 error()、warning() 和 fatalError() 的实现中，这些方法被更新以发送关于文档中错误的性质和位置的适当消息。
 
-### Handling NonFatal Errors
+### 处理非致命错误
 
-A nonfatal error occurs when an XML document fails a validity constraint. If the parser finds that the document is not valid, then an error event is generated. Such errors are generated by a validating parser, given a document type definition (DTD) or schema, when a document has an invalid tag, when a tag is found where it is not allowed, or (in the case of a schema) when the element contains invalid data.
+当 XML 文档未通过有效性约束时，会发生非致命错误。如果解析器发现文档无效，则生成错误事件。此类错误由验证解析器在给定文档类型定义(DTD)或模式时生成，当文档具有无效标记、在不允许的位置找到标记或（在模式的情况下）当元素包含无效数据时。
 
-The most important principle to understand about nonfatal errors is that they are ignored by default. But if a validation error occurs in a document, you probably do not want to continue processing it. You probably want to treat such errors as fatal.
+关于非致命错误需要理解的最重要的原则是它们默认被忽略。但如果文档中发生验证错误，你可能不希望继续处理它。你可能希望将此类错误视为致命的。
 
-To take over error handling, you override the DefaultHandler methods that handle fatal errors, nonfatal errors, and warnings as part of the ErrorHandler interface. As shown in the code extract in the previous section, the SAX parser delivers a SAXParseException to each of these methods, so generating an exception when an error occurs is as simple as throwing it back.
-
----
-
-**Note -** It can be instructive to examine the error-handling methods defined in org.xml.sax.helpers.DefaultHandler. You will see that the error() and warning() methods do nothing, whereas fatalError() throws an exception. Of course, you could always override the fatalError() method to throw a different exception. But if your code does not throw an exception when a fatal error occurs, then the SAX parser will. The XML specification requires it.
+要接管错误处理，你重写 DefaultHandler 中作为 ErrorHandler 接口一部分处理致命错误、非致命错误和警告的方法。如上一节代码摘录所示，SAX 解析器向这些方法中的每一个传递 SAXParseException，因此在发生错误时生成异常就像将其抛回一样简单。
 
 ---
 
-### Handling Warnings
+**注意 -** 检查 org.xml.sax.helpers.DefaultHandler 中定义的错误处理方法可能很有启发。你会看到 error() 和 warning() 方法什么也不做，而 fatalError() 抛出异常。当然，你总是可以重写 fatalError() 方法以抛出不同的异常。但如果你的代码在发生致命错误时不抛出异常，则 SAX 解析器会抛出。XML 规范要求如此。
 
-Warnings, too, are ignored by default. Warnings are informative and can only be generated in the presence of a DTD or schema. For example, if an element is defined twice in a DTD, a warning is generated. It is not illegal, and it does not cause problems, but it is something you might like to know about because it might not have been intentional. Validating an XML document against a DTD will be shown in the section.
+---
 
-## Running the SAX Parser Example without Validation
+### 处理警告
 
-The following steps explain how to run the SAX parser example without validation.
+警告也默认被忽略。警告是信息性的，只能在存在 DTD 或模式时生成。例如，如果元素在 DTD 中被定义两次，则生成警告。它不是非法的，也不会导致问题，但你可能想知道它，因为它可能不是有意的。针对 DTD 验证 XML 文档将在本节中展示。
 
-### To Run the SAXLocalNameCount Example without Validation
+## 不带验证运行 SAX 解析器示例
 
-1. Save the [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) file in a directory named `sax`.
-2. Compile the file as follows:
+以下步骤说明如何在不带验证的情况下运行 SAX 解析器示例。
+
+### 不带验证运行 SAXLocalNameCount 示例
+
+1. 将 [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) 文件保存在名为 `sax` 的目录中。
+2. 按如下方式编译文件：
 	javac sax/SAXLocalNameCount.java
-3. Save the example XML files [`` `rich_iii.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/rich_iii.xml) and [`` `two_gent.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/two_gent.xml) in the `data` directory.
-4. Run the SAXLocalNameCount program on an XML file.
-	Choose one of the XML files in the data directory and run the SAXLocalNameCount program on it. Here, we have chosen to run the program on the file rich\_iii.xml.
+3. 将示例 XML 文件 [`` `rich_iii.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/rich_iii.xml) 和 [`` `two_gent.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/two_gent.xml) 保存在 `data` 目录中。
+4. 在 XML 文件上运行 SAXLocalNameCount 程序。
+	选择 data 目录中的一个 XML 文件并在其上运行 SAXLocalNameCount 程序。这里，我们选择在文件 rich\_iii.xml 上运行程序。
 	java sax/SAXLocalNameCount data/rich_iii.xml
-```text
+	```text
 	The XML file rich\_iii.xml contains an XML version of William Shakespeare's play *Richard III*. When you run the SAXLocalNameCount on it, you should see the following output.
-```sql
+	```
+	```text
 	Local Name "STAGEDIR" occurs 230 times
 	Local Name "PERSONA" occurs 39 times
 	Local Name "SPEECH" occurs 1089 times
@@ -405,12 +392,12 @@ The following steps explain how to run the SAX parser example without validation
 	Local Name "SCNDESCR" occurs 1 times
 	Local Name "PERSONAE" occurs 1 times
 	Local Name "LINE" occurs 3696 times
-	The SAXLocalNameCount program parses the XML file, and provides a count of the number of instances of each type of XML tag that it contains.
-5. **Open the file data/rich\_iii.xml in a text editor.**
-	To check that the error handling is working, delete the closing tag from an entry in the XML file, for example the closing tag </PERSONA>, from line 21, shown below.
-	`21 <PERSONA>EDWARD, Prince of Wales, afterwards King Edward V.</PERSONA>`
-6. **Run SAXLocalNameCount again.**
-	This time, you should see the following fatal error message.
-	Exception in thread "main" org.xml.sax.SAXException: Fatal Error: URI=file:data/rich_iii.xml Line=21: The element type "PERSONA" must be terminated by the matching end-tag "</PERSONA>".
 	```
-	As you can see, when the error was encountered, the parser generated a SAXParseException, a subclass of SAXException that identifies the file and the location where the error occurred.
+	SAXLocalNameCount 程序解析 XML 文件，并提供它包含的每种类型 XML 标记实例数量的计数。
+5. **在文本编辑器中打开文件 data/rich\_iii.xml。**
+	要检查错误处理是否工作，从 XML 文件中的条目删除结束标记，例如从第 21 行删除结束标记 </PERSONA>，如下所示。
+	`21 <PERSONA>EDWARD, Prince of Wales, afterwards King Edward V.</PERSONA>`
+6. **再次运行 SAXLocalNameCount。**
+	这次，你应该看到以下致命错误消息。
+	Exception in thread "main" org.xml.sax.SAXException: Fatal Error: URI=file:data/rich_iii.xml Line=21: The element type "PERSONA" must be terminated by the matching end-tag "</PERSONA>".
+	如你所见，当遇到错误时，解析器生成了 SAXParseException，它是 SAXException 的子类，标识了发生错误的文件和位置。

@@ -37,3 +37,12 @@
 - **相同的错误处理**：SAX 和 DOM API 生成相同类型的异常，因此错误处理代码几乎相同。
 - **处理验证错误**：默认情况下，规范要求忽略验证错误。如果你想在验证错误时抛出异常（你可能想这样做），那么你需要了解 SAX 错误处理的工作原理。
 - **转换现有数据**：正如你将在[[JAXP-DOM|文档对象模型]]中看到的，有一种机制可以用来将现有数据集转换为 XML。然而，利用该机制需要理解 SAX 模型。
+
+## 本课内容
+
+- [[JAXP-何时使用SAX|何时使用 SAX]] —— 何时选择 SAX 解析器，与 StAX、DOM 的对比。
+- [[JAXP-SAX-parsing|使用 SAX 解析 XML 文件]] —— 通过 SAXLocalNameCount 示例演示解析、ContentHandler、内容事件与错误处理。
+- [[JAXP-SAX-validation|实现 SAX 验证]] —— 启用 DTD 与 XML Schema 验证、配置工厂、处理验证错误。
+- [[JAXP-SAX-events|处理词法事件]] —— 使用 LexicalHandler 识别注释、CDATA 部分和已解析实体引用。
+- [[JAXP-SAX-using|使用 DTDHandler 和 EntityResolver]] —— 处理未解析实体、表示法声明，解析公共 ID。
+- [[JAXP-SAX-info|SAX 进一步信息]] —— SAX 标准、StAX、模式验证机制的参考链接。

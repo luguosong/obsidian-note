@@ -1,70 +1,59 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Download Extensions (The Java™ Tutorials >        
-            The Extension Mechanism > Creating and Using Extensions)"
-描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+标题: "下载扩展"
+描述: "《Java 教程》扩展机制课程，介绍下载扩展——通过 JAR 文件清单的 Class-Path 或 Extension-List 头引用的扩展，并通过 AreaApplet 示例演示下载扩展的创建与安装。"
 来源: "https://docs.oracle.com/javase/tutorial/ext/basics/download.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Download Extensions (The Java™ Tutorials >        
-            The Extension Mechanism > Creating and Using Extensions)
 
-Documentation
+# 下载扩展
 
-[[扩展机制-install|Installed Extensions]]
+> 文档说明
 
-Download Extensions
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[扩展机制-load|Understanding Extension Class Loading]]
+## 下载扩展
 
-[[扩展机制-服务提供者机制|Creating Extensible Applications]]
+下载扩展是 JAR 文件中的一组类（和相关资源）。JAR 文件的清单可以包含引用一个或多个下载扩展的头。扩展可以通过以下两种方式之一引用：
 
-[[扩展机制-install|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/ext/TOC.html) • [[扩展机制-load|Next »]]
+- 通过 Class-Path 头
+- 通过 Extension-List 头
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+注意，清单中每种最多允许一个。由 Class-Path 头指示的下载扩展仅在下载它们的应用程序（如 Web 浏览器）的生命周期内下载。它们的优点是客户端上没有安装任何东西；缺点是每次需要时都会下载它们。由 Extension-List 头下载的下载扩展安装在下载它们的 JRE 的 /lib/ext 目录中。它们的优点是第一次需要时下载；随后无需下载即可使用。但是，如本教程后面所示，它们的部署更复杂。
 
-## Download Extensions
-
-Download extensions are sets of classes (and related resources) in JAR files. A JAR file's manifest can contain headers that refer to one or more download extensions. The extensions can be referenced in one of two ways:
-
-- by a Class-Path header
-- by an Extension-List header
-
-Note that at most one of each is allowed in a manifest. Download extensions indicated by a Class-Path header are downloaded only for the lifetime of the application that downloads them, such as a web browser. Their advantage is that nothing is installed on the client; their disadvantage is that they are downloaded each time they are needed. Download extensions that are downloaded by an Extension-List header are installed into the /lib/ext directory of the JRE that downloads them. Their advantage is that they are downloaded the first time they're needed; subsequently they can be used without downloading. But, as shown later in this tutorial, they are more complex to deploy.
-
-Since download extensions that use the Class-Path headers are simpler, let's consider them first. Assume for example that a.jar and b.jar are two JAR files in the same directory, and that the manifest of a.jar contains this header:
+由于使用 Class-Path 头的下载扩展更简单，让我们首先考虑它们。例如，假设 a.jar 和 b.jar 是同一目录中的两个 JAR 文件，并且 a.jar 的清单包含此头：
 
 ```text
 Class-Path: b.jar
 ```
 
-Then the classes in b.jar serve as extension classes for purposes of the classes in a.jar. The classes in a.jar can invoke classes in b.jar without b.jar 's classes having to be named on the class path. a.jar may or may not itself be an extension. If b.jar weren't in the same directory as a.jar, then the value of the Class-Path header should be set to the relative pathname of b.jar.
+则 b.jar 中的类作为 a.jar 中类的扩展类。a.jar 中的类可以调用 b.jar 中的类，而无需在类路径上命名 b.jar 的类。a.jar 本身可能是也可能不是扩展。如果 b.jar 不在与 a.jar 相同的目录中，则 Class-Path 头的值应设置为 b.jar 的相对路径名。
 
-There's nothing special about the classes that are playing the role of a download extension. They are treated as extensions solely because they're referenced by the manifest of some other JAR file.
+充当下载扩展的类没有什么特别之处。它们之所以被视为扩展，仅仅是因为它们被某个其他 JAR 文件的清单引用。
 
-To get a better understanding of how download extensions work, let's create one and put it to use.
+为了更好地理解下载扩展的工作原理，让我们创建一个并投入使用。
 
-## An Example
+## 一个示例
 
-Suppose you want to create an applet that makes use of the `RectangleArea` class of the previous section:
+假设你想创建一个使用上一节 `RectangleArea` 类的小程序：
 
 ```java
-public final class RectangleArea {  
+public final class RectangleArea {
     public static int area(java.awt.Rectangle r) {
         return r.width * r.height;
     }
 }
 ```
 
-In the previous section, you made the RectangleArea class into an installed extension by placing the JAR file containing it into the lib/ext directory of the JRE. By making it an installed extension, you enabled any application to use the RectangleArea class as if it were part of the Java platform.
+在上一节中，你通过将包含 RectangleArea 类的 JAR 文件放入 JRE 的 lib/ext 目录，使其成为已安装扩展。通过使其成为已安装扩展，你使任何应用程序都能像使用 Java 平台的一部分一样使用 RectangleArea 类。
 
-If you want to be able to use the RectangleArea class from an applet, the situation is a little different. Suppose, for example, that you have an applet, `AreaApplet`, that makes use of class RectangleArea:
+如果你想能够从小程序中使用 RectangleArea 类，情况略有不同。例如，假设你有一个使用 RectangleArea 类的小程序 `AreaApplet`：
 
 ```java
 import java.applet.Applet;
@@ -73,7 +62,7 @@ import java.awt.*;
 public class AreaApplet extends Applet {
     Rectangle r;
 
-    public void init() {    
+    public void init() {
         int width = 10;
         int height = 5;
 
@@ -81,55 +70,55 @@ public class AreaApplet extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("The rectangle's area is " 
+        g.drawString("The rectangle's area is "
                       + RectangleArea.area(r), 10, 10);
     }
 }
+```
+
+此小程序实例化一个 10 x 5 的矩形，然后使用 RectangleArea.area 方法显示矩形的面积。
+
+但是，你不能假设每个下载并使用你的小程序的人都会在其系统上（作为已安装扩展或其他方式）提供 RectangleArea 类。解决此问题的一种方法是从服务器端提供 RectangleArea 类，你可以通过将其用作下载扩展来实现。
+
+要了解如何做到这一点，假设你已将 `AreaApplet` 捆绑在名为 AreaApplet.jar 的 JAR 文件中，并且 RectangleArea 类捆绑在 RectangleArea.jar 中。为了使 RectangleArea.jar 被视为下载扩展，RectangleArea.jar 必须列在 AreaApplet.jar 清单的 Class-Path 头中。AreaApplet.jar 的清单可能如下所示：
+
 ```text
-
-This applet instantiates a 10 x 5 rectangle and then displays the rectangle's area by using the RectangleArea.area method.
-
-However, you can't assume that everyone who downloads and uses your applet is going to have the RectangleArea class available on their system, as an installed extension or otherwise. One way around that problem is to make the RectangleArea class available from the server side, and you can do that by using it as a download extension.
-
-To see how that's done, let's assume that you've bundled `AreaApplet` in a JAR file called AreaApplet.jar and that the class RectangleArea is bundled in RectangleArea.jar. In order for RectangleArea.jar to be treated as a download extension, RectangleArea.jar must be listed in the Class-Path header in AreaApplet.jar 's manifest. AreaApplet.jar 's manifest might look like this, for example:
-
-```yaml
 Manifest-Version: 1.0
 Class-Path: RectangleArea.jar
 ```
 
-The value of the Class-Path header in this manifest is RectangleArea.jar with no path specified, indicating that RectangleArea.jar is located in the same directory as the applet's JAR file.
+此清单中 Class-Path 头的值是 RectangleArea.jar，未指定路径，指示 RectangleArea.jar 与小程序的 JAR 文件位于同一目录中。
 
-## More about the Class-Path Header
+## 关于 Class-Path 头的更多信息
 
-If an applet or application uses more than one extension, you can list multiple URLs in a manifest. For example, the following is a valid header:
+如果小程序或应用程序使用多个扩展，你可以在清单中列出多个 URL。例如，以下是有效的头：
 
 ```text
 Class-Path: area.jar servlet.jar images/
 ```
 
-In the Class-Path header any URLs listed that don't end with ' / ' are assumed to be JAR files. URLs ending in ' / ' indicate directories. In the preceding example, images/ might be a directory containing resources needed by the applet or the application.
+在 Class-Path 头中，列出的任何不以「 / 」结尾的 URL 都假定为 JAR 文件。以「 / 」结尾的 URL 指示目录。在前面的示例中，images/ 可能是包含小程序或应用程序所需资源的目录。
 
-Note that only one Class-Path header is allowed in a manifest file, and that each line in a manifest must be no more than 72 characters long. If you need to specify more class path entries than will fit on one line, you can extend them onto subsequent continuation lines. Begin each continuation line with two spaces. For example:
+注意，清单文件中只允许一个 Class-Path 头，并且清单中的每一行不得超过 72 个字符。如果需要指定的类路径条目多于一行的容量，你可以将它们扩展到后续的续行。每个续行以两个空格开头。例如：
 
 ```text
 Class-Path: area.jar servlet.jar monitor.jar datasource.jar
   provider.jar gui.jar
 ```
 
-A future release may remove the limitation of having only one instance of each header, and of limiting lines to only 72 characters.
+未来的版本可能会删除每个头只能有一个实例以及行限制为 72 个字符的限制。
 
-Download extensions can be "daisy chained", meaning that the manifest of one download extension can have a Class-Path header that refers to a second extension, which can refer to a third extension, and so on.
+下载扩展可以「菊花链」连接，这意味着一个下载扩展的清单可以有一个 Class-Path 头引用第二个扩展，第二个扩展可以引用第三个扩展，依此类推。
 
-## Installing Download Extensions
+## 安装下载扩展
 
-In the above example, the extension downloaded by the applet is available only while the browser which loaded the applet is still running. However, applets can trigger installation of extensions, if additional information is included in the manifests of both the applet and the extension.
+在上面的示例中，小程序下载的扩展仅在加载小程序的浏览器仍在运行时可用。但是，如果小程序和扩展的清单中都包含附加信息，小程序可以触发扩展的安装。
 
-Since this mechanism extends the platform's core API, its use should be judiciously applied. It is rarely appropriate for interfaces used by a single, or small set of applications. All visible symbols should follow reverse domain name and class hierarchy conventions.
+由于此机制扩展了平台的核心 API，因此其使用应谨慎应用。它很少适用于单个或少量应用程序使用的接口。所有可见符号都应遵循反向域名和类层次结构约定。
 
-The basic requirements are that both the applet and the extensions it uses provide version information in their manifests, and that they be signed. The version information allows Java Plug-in to ensure that the extension code has the version expected by the applet. For example, the AreaApplet could specify an areatest extension in its manifest:
+基本要求是小程序及其使用的扩展都在其清单中提供版本信息，并且它们都被签名。版本信息允许 Java 插件确保扩展代码具有小程序期望的版本。例如，AreaApplet 可以在其清单中指定一个 areatest 扩展：
 
-```yaml
+```text
 Manifest-Version: 1.0
 Extension-List: areatest
 areatest-Extension-Name: area
@@ -137,11 +126,11 @@ areatest-Specification-Version: 1.1
 areatest-Implementation-Version: 1.1.2
 areatest-Implementation-Vendor-Id: com.example
 areatest-Implementation-URL: http://www.example.com/test/area.jar
+```
+
+area.jar 中的清单将提供相应的信息：
+
 ```text
-
-The manifest in area.jar would provide corresponding information:
-
-```yaml
 Manifest-Version: 1.0
 Extension-Name: area
 Specification-Vendor: Example Tech, Inc
@@ -151,22 +140,22 @@ Implementation-Vendor: Example Tech, Inc
 Implementation-Version: 1.1.2
 ```
 
-Both the applet and the extension must be signed, by the same signer. Signing the jar files will modify them in-place, providing more information in their manifest files. Signing helps ensure that only trusted code gets installed. A simple way to sign jar files is to first create a keystore, and then use that to hold certificates for the applet and extension. For example:
+小程序和扩展都必须由同一签名者签名。对 jar 文件签名将就地修改它们，在其清单文件中提供更多信息。签名有助于确保只安装受信任的代码。签名 jar 文件的一种简单方法是首先创建一个密钥库，然后使用它来保存小程序和扩展的证书。例如：
 
-```text
+```bash
 keytool -genkey -dname "cn=Fred" -alias test  -validity 180
 ```
 
-You will be prompted for the keystore and key passwords. After generating a key, the jar files can be signed:
+系统将提示你输入密钥库和密钥密码。生成密钥后，可以对 jar 文件进行签名：
 
-```text
+```bash
 jarsigner AreaApplet.jar test
 jarsigner area.jar test
 ```
 
-You will be prompted for the keystore and key passwords. More information on keytool, jarsigner, and other security tools is at the [Summary of Tools for the Java 2 Platform Security](https://docs.oracle.com/javase/8/docs/technotes/guides/security/SecurityToolsSummary.html).
+系统将提示你输入密钥库和密钥密码。有关 keytool、jarsigner 和其他安全工具的更多信息，请参阅 [Java 2 平台安全工具摘要](https://docs.oracle.com/javase/8/docs/technotes/guides/security/SecurityToolsSummary.html)。
 
-Here is AreaDemo.html, which loads the applet and causes the extension code to be downloaded and installed:
+以下是 AreaDemo.html，它加载小程序并导致扩展代码被下载和安装：
 
 ```html
 <html>
@@ -176,6 +165,6 @@ Here is AreaDemo.html, which loads the applet and causes the extension code to b
 </html>
 ```
 
-When the page is loaded for the first time, the user is told that the applet requires installation of the extension. A subsequent dialog informs the user about the signed applet. Accepting both installs the extension in the lib/ext folder of the JRE and runs the applet.
+首次加载页面时，用户被告知小程序需要安装扩展。随后的对话框通知用户有关已签名小程序的信息。接受两者会将扩展安装在 JRE 的 lib/ext 文件夹中并运行小程序。
 
-After restarting the web browser and load the same web page, only the dialog about the applet's signer is presented, because area.jar is already installed. This is also true if AreaDemo.html is opened in a different web browser (assuming both browsers use the same JRE).
+重启 Web 浏览器并加载同一网页后，只会显示有关小程序签名者的对话框，因为 area.jar 已经安装。如果在不同的 Web 浏览器中打开 AreaDemo.html（假设两个浏览器使用相同的 JRE），情况也是如此。

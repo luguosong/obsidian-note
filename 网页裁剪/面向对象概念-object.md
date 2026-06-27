@@ -1,70 +1,53 @@
 ---
 分类:
   - "网页裁剪"
-标题: "What Is an Object? (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)"
-描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+标题: "什么是对象？"
+描述: "《Java 教程》面向对象编程概念课程，介绍对象的概念——对象由状态（字段）和行为（方法）组成，以及数据封装、模块性、信息隐藏、代码复用等面向对象编程的好处。"
 来源: "https://docs.oracle.com/javase/tutorial/java/concepts/object.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# What Is an Object? (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)
 
-Documentation
+# 什么是对象？
 
-What Is an Object?
+> 文档说明
 
-[[面向对象概念-class|What Is a Class?]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[面向对象概念-inheritance|What Is Inheritance?]]
+## 什么是对象？
 
-[[面向对象概念-interface|What Is an Interface?]]
+对象是理解*面向对象*技术的关键。现在环顾四周，你会发现许多现实世界对象的示例：你的狗、你的桌子、你的电视机、你的自行车。
 
-[[面向对象概念-package|What Is a Package?]]
+现实世界对象有两个共同特征：它们都有*状态*和*行为*。狗有状态（名称、颜色、品种、饥饿）和行为（吠叫、取物、摇尾巴）。自行车也有状态（当前档位、当前踏板节奏、当前速度）和行为（换档、改变踏板节奏、刹车）。识别现实世界对象的状态和行为是开始以面向对象编程方式思考的好方法。
 
-[[面向对象概念-questions|Questions and Exercises]]
+现在花一分钟观察你周围区域中的现实世界对象。对于你看到的每个对象，问自己两个问题：「此对象可能处于什么状态？」和「此对象可以执行什么行为？」。确保写下你的观察结果。在做这件事时，你会注意到现实世界对象的复杂程度各不相同；你的台灯可能只有两种可能的状态（开和关）和两种可能的行为（打开、关闭），但你的台式收音机可能有额外的状态（开、关、当前音量、当前电台）和行为（打开、关闭、增大音量、减小音量、寻台、扫描和调谐）。你可能还会注意到，某些对象反过来也包含其他对象。这些现实世界的观察都转化为面向对象编程的世界。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+![一个圆，内部有一个填充了项目的圆，周围是表示允许访问内部圆的方法的灰色楔形。](https://docs.oracle.com/javase/tutorial/figures/java/concepts-object.gif)
 
-## What Is an Object?
+一个软件对象。
 
-Objects are key to understanding *object-oriented* technology. Look around right now and you'll find many examples of real-world objects: your dog, your desk, your television set, your bicycle.
+软件对象在概念上类似于现实世界对象：它们也由状态和相关行为组成。对象将其状态存储在*字段*中（某些编程语言中的变量），并通过*方法*（某些编程语言中的函数）公开其行为。方法操作对象的内部状态，并作为对象间通信的主要机制。隐藏内部状态并要求所有交互都通过对象的方法执行称为*数据封装*——面向对象编程的基本原则。
 
-Real-world objects share two characteristics: They all have *state* and *behavior*. Dogs have state (name, color, breed, hungry) and behavior (barking, fetching, wagging tail). Bicycles also have state (current gear, current pedal cadence, current speed) and behavior (changing gear, changing pedal cadence, applying brakes). Identifying the state and behavior for real-world objects is a great way to begin thinking in terms of object-oriented programming.
+例如，考虑一辆自行车：
 
-Take a minute right now to observe the real-world objects that are in your immediate area. For each object that you see, ask yourself two questions: "What possible states can this object be in?" and "What possible behavior can this object perform?". Make sure to write down your observations. As you do, you'll notice that real-world objects vary in complexity; your desktop lamp may have only two possible states (on and off) and two possible behaviors (turn on, turn off), but your desktop radio might have additional states (on, off, current volume, current station) and behavior (turn on, turn off, increase volume, decrease volume, seek, scan, and tune). You may also notice that some objects, in turn, will also contain other objects. These real-world observations all translate into the world of object-oriented programming.
+![一个对象图，包含自行车方法和实例变量。](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
 
-![A circle with an inner circle filled with items, surrounded by gray wedges representing methods that allow access to the inner circle.](https://docs.oracle.com/javase/tutorial/figures/java/concepts-object.gif)
+建模为软件对象的自行车。
 
-A software object.
+通过赋予状态（当前速度、当前踏板节奏和当前档位）并提供改变该状态的方法，对象保持对允许外部世界如何使用它的控制。例如，如果自行车只有 6 个档位，换档的方法可以拒绝任何小于 1 或大于 6 的值。
 
-  
+将代码捆绑到单个软件对象中提供了许多好处，包括：
 
-Software objects are conceptually similar to real-world objects: they too consist of state and related behavior. An object stores its state in *fields* (variables in some programming languages) and exposes its behavior through *methods* (functions in some programming languages). Methods operate on an object's internal state and serve as the primary mechanism for object-to-object communication. Hiding internal state and requiring all interaction to be performed through an object's methods is known as *data encapsulation* — a fundamental principle of object-oriented programming.
-
-Consider a bicycle, for example:
-
-![A picture of an object, with bicycle methods and instance variables.](https://docs.oracle.com/javase/tutorial/figures/java/concepts-bicycleObject.gif)
-
-A bicycle modeled as a software object.
-
-  
-
-By attributing state (current speed, current pedal cadence, and current gear) and providing methods for changing that state, the object remains in control of how the outside world is allowed to use it. For example, if the bicycle only has 6 gears, a method to change gears could reject any value that is less than 1 or greater than 6.
-
-Bundling code into individual software objects provides a number of benefits, including:
-
-1. Modularity: The source code for an object can be written and maintained independently of the source code for other objects. Once created, an object can be easily passed around inside the system.
-2. Information-hiding: By interacting only with an object's methods, the details of its internal implementation remain hidden from the outside world.
-3. Code re-use: If an object already exists (perhaps written by another software developer), you can use that object in your program. This allows specialists to implement/test/debug complex, task-specific objects, which you can then trust to run in your own code.
-4. Pluggability and debugging ease: If a particular object turns out to be problematic, you can simply remove it from your application and plug in a different object as its replacement. This is analogous to fixing mechanical problems in the real world. If a bolt breaks, you replace *it*, not the entire machine.
+1. 模块性：对象的源代码可以独立于其他对象的源代码编写和维护。一旦创建，对象可以在系统内轻松传递。
+2. 信息隐藏：通过仅与对象的方法交互，其内部实现的细节对外部世界保持隐藏。
+3. 代码复用：如果对象已经存在（可能由其他软件开发者编写），你可以在程序中使用该对象。这允许专家实现/测试/调试复杂的、特定于任务的对象，然后你可以信任它们在你自己的代码中运行。
+4. 可插拔性和调试便利性：如果某个对象出现问题，你可以简单地从应用程序中删除它并插入一个不同的对象作为替代。这类似于修复现实世界中的机械问题。如果一个螺栓断了，你替换*它*，而不是整台机器。
 
 ---
 
-**Previous page:** Object-Oriented Programming Concepts  
-**Next page:** What Is a Class?
+**上一页：** 面向对象编程概念
+**下一页：** 什么是类？

@@ -1,47 +1,32 @@
 ---
 分类:
   - "网页裁剪"
-标题: "What Is a Package? (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)"
-描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+标题: "什么是包？"
+描述: "《Java 教程》面向对象编程概念课程，介绍包的概念——组织一组相关类和接口的命名空间，以及 Java 平台 API 类库的作用。"
 来源: "https://docs.oracle.com/javase/tutorial/java/concepts/package.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# What Is a Package? (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)
 
-Documentation
+# 什么是包？
 
-[[面向对象概念-object|What Is an Object?]]
+> 文档说明
 
-[[面向对象概念-class|What Is a Class?]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[面向对象概念-inheritance|What Is Inheritance?]]
+## 什么是包？
 
-[[面向对象概念-interface|What Is an Interface?]]
+包是组织一组相关类和接口的命名空间。从概念上讲，你可以将包视为类似于计算机上的不同文件夹。你可能将 HTML 页面保存在一个文件夹中，图像保存在另一个文件夹中，脚本或应用程序保存在又一个文件夹中。因为用 Java 编程语言编写的软件可能由数百或*数千*个单独的类组成，所以通过将相关类和接口放入包中来保持组织有序是有意义的。
 
-What Is a Package?
+Java 平台提供了适合在你自己的应用程序中使用的庞大类库（一组包）。此库称为「应用程序编程接口」，简称「API」。它的包表示与通用编程最常关联的任务。例如，`String` 对象包含字符字符串的状态和行为；`File` 对象允许程序员轻松创建、删除、检查、比较或修改文件系统上的文件；`Socket` 对象允许创建和使用网络套接字；各种 GUI 对象控制按钮和复选框以及与图形用户界面相关的任何其他东西。有数以千计的类可供选择。这使你（程序员）能够专注于特定应用程序的设计，而不是使其工作所需的基础设施。
 
-[[面向对象概念-questions|Questions and Exercises]]
-
-[[面向对象概念-interface|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[面向对象概念-questions|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## What Is a Package?
-
-A package is a namespace that organizes a set of related classes and interfaces. Conceptually you can think of packages as being similar to different folders on your computer. You might keep HTML pages in one folder, images in another, and scripts or applications in yet another. Because software written in the Java programming language can be composed of hundreds or *thousands* of individual classes, it makes sense to keep things organized by placing related classes and interfaces into packages.
-
-The Java platform provides an enormous class library (a set of packages) suitable for use in your own applications. This library is known as the "Application Programming Interface", or "API" for short. Its packages represent the tasks most commonly associated with general-purpose programming. For example, a `String` object contains state and behavior for character strings; a `File` object allows a programmer to easily create, delete, inspect, compare, or modify a file on the filesystem; a `Socket` object allows for the creation and use of network sockets; various GUI objects control buttons and check boxes and anything else related to graphical user interfaces. There are literally thousands of classes to choose from. This allows you, the programmer, to focus on the design of your particular application, rather than the infrastructure required to make it work.
-
-The [Java Platform API Specification](https://docs.oracle.com/javase/8/docs/api/index.html) contains the complete listing for all packages, interfaces, classes, fields, and methods supplied by the Java SE platform. Load the page in your browser and bookmark it. As a programmer, it will become your single most important piece of reference documentation.
+[Java 平台 API 规范](https://docs.oracle.com/javase/8/docs/api/index.html)包含 Java SE 平台提供的所有包、接口、类、字段和方法的完整列表。在浏览器中加载该页面并将其加入书签。作为程序员，它将成为你最重要的参考文档。
 
 ---
 
-**Previous page:** What Is an Interface?  
-**Next page:** Questions and Exercises: Object-Oriented Programming Concepts
+**上一页：** 什么是接口？
+**下一页：** 问题与练习：面向对象编程概念

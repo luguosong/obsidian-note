@@ -1,60 +1,45 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Questions and Exercises: Object-Oriented Programming Concepts (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)"
-描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+标题: "问题与练习：面向对象编程概念"
+描述: "《Java 教程》面向对象编程概念课程，提供问题与练习，考察状态/行为、字段/方法、数据封装、类、继承、接口、包、API 等核心 OOP 概念。"
 来源: "https://docs.oracle.com/javase/tutorial/java/concepts/QandE/questions.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Questions and Exercises: Object-Oriented Programming Concepts (The Java™ Tutorials >        
-            Learning the Java Language > Object-Oriented Programming Concepts)
 
-Documentation
+# 问题与练习：面向对象编程概念
 
-[[面向对象概念-object|What Is an Object?]]
+> 文档说明
 
-[[面向对象概念-class|What Is a Class?]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[面向对象概念-inheritance|What Is Inheritance?]]
+## 问题与练习：面向对象编程概念
 
-[[面向对象概念-interface|What Is an Interface?]]
+## 问题
 
-[[面向对象概念-package|What Is a Package?]]
+1. 现实世界对象包含 \_\_\_ 和 \_\_\_。
+2. 软件对象的状态存储在 \_\_\_ 中。
+3. 软件对象的行为通过 \_\_\_ 公开。
+4. 对外部世界隐藏内部数据，并仅通过公开的方法访问它称为数据 \_\_\_。
+5. 软件对象的蓝图称为 \_\_\_。
+6. 通用行为可以在 \_\_\_ 中定义，并使用 \_\_\_ 关键字继承到 \_\_\_ 中。
+7. 一组没有实现的方法称为 \_\_\_。
+8. 按功能组织类和接口的命名空间称为 \_\_\_。
+9. 术语 API 代表 \_\_\_？
 
-Questions and Exercises
+## 练习
 
-[[面向对象概念-package|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[学习Java语言-语言基础|Next »]]
+1. 为你在本路线开头观察到的每个现实世界对象创建新类。如果你忘记了所需的语法，请参考 Bicycle 类。
+2. 对于你在上面创建的每个新类，创建一个定义其行为的接口，然后要求你的类实现它。省略一两个方法并尝试编译。错误是什么样的？
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Questions and Exercises: Object-Oriented Programming Concepts
-
-## Questions
-
-1. Real-world objects contain \_\_\_ and \_\_\_.
-2. A software object's state is stored in \_\_\_.
-3. A software object's behavior is exposed through \_\_\_.
-4. Hiding internal data from the outside world, and accessing it only through publicly exposed methods is known as data \_\_\_.
-5. A blueprint for a software object is called a \_\_\_.
-6. Common behavior can be defined in a \_\_\_ and inherited into a \_\_\_ using the \_\_\_ keyword.
-7. A collection of methods with no implementation is called an \_\_\_.
-8. A namespace that organizes classes and interfaces by functionality is called a \_\_\_.
-9. The term API stands for \_\_\_?
-
-## Exercises
-
-1. Create new classes for each real-world object that you observed at the beginning of this trail. Refer to the Bicycle class if you forget the required syntax.
-2. For each new class that you've created above, create an interface that defines its behavior, then require your class to implement it. Omit one or two methods and try compiling. What does the error look like?
-
-[[面向对象概念-answers|Check your answers.]]
+[[面向对象概念-answers|检查你的答案。]]
 
 ---
 
-**Previous page:** What Is a Package?  
-**Next page:** Language Basics
+**上一页：** 什么是包？
+**下一页：** 语言基础

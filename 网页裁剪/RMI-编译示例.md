@@ -1,69 +1,50 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Compiling the Example Programs (The Java™ Tutorials >        
-            RMI)"
-描述: "This RMI Java tutorial describes the Java RMI system. It walks through a complete client/server example"
+标题: "编译示例程序"
+描述: "《Java 教程》RMI 课程，演示如何构建接口 JAR 文件、服务器类和客户端类，配置网络可访问的类文件位置以支持 RMI 运行时代码下载。"
 来源: "https://docs.oracle.com/javase/tutorial/rmi/compiling.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Compiling the Example Programs (The Java™ Tutorials >        
-            RMI)
 
-Documentation
+# 编译示例程序
 
-[[RMI-概述|An Overview of RMI Applications]]
+> 文档说明
 
-[[RMI-服务器|Writing an RMI Server]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[RMI-设计远程接口|Designing a Remote Interface]]
+## 编译示例程序
 
-[[RMI-实现远程接口|Implementing a Remote Interface]]
+在部署计算引擎等服务的真实场景中，开发者可能会创建一个 Java 归档(JAR) 文件，其中包含供服务器类实现和客户端程序使用的 `Compute` 和 `Task` 接口。接下来，开发者（可能是接口 JAR 文件的同一开发者）将编写 `Compute` 接口的实现，并将该服务部署在客户端可用的机器上。客户端程序的开发者可以使用 JAR 文件中包含的 `Compute` 和 `Task` 接口，独立开发使用 `Compute` 服务的任务和客户端程序。
 
-[[RMI-客户端|Creating a Client Program]]
+在本节中，你将学习如何设置 JAR 文件、服务器类和客户端类。你将看到客户端的 `Pi` 类将在运行时下载到服务器。此外，`Compute` 和 `Task` 接口将在运行时从服务器下载到注册表。
 
-[[RMI-示例|Compiling and Running the Example]]
+此示例将接口、远程对象实现和客户端代码分为三个包：
 
-Compiling the Example Programs
+- `compute` —— [`Compute`](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Compute.java) 和 [`Task`](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Task.java) 接口
+- `engine` —— [`ComputeEngine`](https://docs.oracle.com/javase/tutorial/rmi/examples/engine/ComputeEngine.java) 实现类
+- `client` —— [`ComputePi`](https://docs.oracle.com/javase/tutorial/rmi/examples/client/ComputePi.java) 客户端代码和 [`Pi`](https://docs.oracle.com/javase/tutorial/rmi/examples/client/Pi.java) 任务实现
 
-[[RMI-运行示例|Running the Example Programs]]
+首先，你需要构建接口 JAR 文件以提供给服务器和客户端开发者。
 
-[[RMI-示例|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/rmi/TOC.html) • [[RMI-运行示例|Next »]]
+## 构建接口类的 JAR 文件
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+首先，你需要编译 `compute` 包中的接口源文件，然后构建包含其类文件的 JAR 文件。假设用户 `waldo` 编写了这些接口并将源文件放在 Windows 的 `C:\home\waldo\src\compute` 目录或 Solaris/Linux 的 `/home/waldo/src/compute` 目录中。给定这些路径，你可以使用以下命令编译接口并创建 JAR 文件：
 
-## Compiling the Example Programs
-
-In a real-world scenario in which a service such as the compute engine is deployed, a developer would likely create a Java Archive (JAR) file that contains the `Compute` and `Task` interfaces for server classes to implement and client programs to use. Next, a developer, perhaps the same developer of the interface JAR file, would write an implementation of the `Compute` interface and deploy that service on a machine available to clients. Developers of client programs can use the `Compute` and the `Task` interfaces, contained in the JAR file, and independently develop a task and client program that uses a `Compute` service.
-
-In this section, you learn how to set up the JAR file, server classes, and client classes. You will see that the client's `Pi` class will be downloaded to the server at runtime. Also, the `Compute` and `Task` interfaces will be downloaded from the server to the registry at runtime.
-
-This example separates the interfaces, remote object implementation, and client code into three packages:
-
-- `compute` – [`Compute`](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Compute.java) and [`Task`](https://docs.oracle.com/javase/tutorial/rmi/examples/compute/Task.java) interfaces
-- `engine` – [`ComputeEngine`](https://docs.oracle.com/javase/tutorial/rmi/examples/engine/ComputeEngine.java) implementation class
-- `client` – [`ComputePi`](https://docs.oracle.com/javase/tutorial/rmi/examples/client/ComputePi.java) client code and [`Pi`](https://docs.oracle.com/javase/tutorial/rmi/examples/client/Pi.java) task implementation
-
-First, you need to build the interface JAR file to provide to server and client developers.
-
-## Building a JAR File of Interface Classes
-
-First, you need to compile the interface source files in the `compute` package and then build a JAR file that contains their class files. Assume that user `waldo` has written these interfaces and placed the source files in the directory `C:\home\waldo\src\compute` on Windows or the directory `/home/waldo/src/compute` on Solaris or Linux. Given these paths, you can use the following commands to compile the interfaces and create the JAR file:
-
-**Microsoft Windows**:
+**Microsoft Windows**：
 
 ```bash
 cd C:\home\waldo\src
 javac compute\Compute.java compute\Task.java
 jar cvf compute.jar compute\*.class
-```bash
+```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
 ```bash
 cd /home/waldo/src
@@ -73,40 +54,40 @@ jar cvf compute.jar compute/*.class
 
 ---
 
-The `jar` command displays the following output due to the `-v` option:
+由于 `-v` 选项，`jar` 命令显示以下输出：
 
-```yaml
+```text
 added manifest
 adding: compute/Compute.class(in = 307) (out= 201)(deflated 34%)
 adding: compute/Task.class(in = 217) (out= 149)(deflated 31%)
-```bash
+```
 
-Now, you can distribute the `compute.jar` file to developers of server and client applications so that they can make use of the interfaces.
+现在，你可以将 `compute.jar` 文件分发给服务器和客户端应用程序的开发者，以便他们使用这些接口。
 
-After you build either server-side or client-side classes with the `javac` compiler, if any of those classes will need to be dynamically downloaded by other Java virtual machines, you must ensure that their class files are placed in a network-accessible location. In this example, for Solaris or Linux this location is `/home/*user*/public_html/classes` because many web servers allow the accessing of a user's `public_html` directory through an HTTP URL constructed as `http://host/~*user*/`. If your web server does not support this convention, you could use a different location in the web server's hierarchy, or you could use a file URL instead. The file URLs take the form `file://home/*user*/public_html/classes/` on Solaris or Linux and the form `file://C:/home/*user*/public_html/classes/` on Windows. You may also select another type of URL, as appropriate.
+使用 `javac` 编译器构建服务器端或客户端类后，如果这些类中的任何一个需要被其他 Java 虚拟机动态下载，你必须确保其类文件放在网络可访问的位置。在此示例中，对于 Solaris 或 Linux，此位置是 `/home/*user*/public_html/classes`，因为许多 Web 服务器允许通过构造为 `http://host/~*user*/` 的 HTTP URL 访问用户的 `public_html` 目录。如果你的 Web 服务器不支持此约定，你可以使用 Web 服务器层次结构中的不同位置，或者你可以使用文件 URL。文件 URL 在 Solaris 或 Linux 上采用 `file://home/*user*/public_html/classes/` 形式，在 Windows 上采用 `file://C:/home/*user*/public_html/classes/` 形式。你还可以根据需要选择其他类型的 URL。
 
-The network accessibility of the class files enables the RMI runtime to download code when needed. Rather than defining its own protocol for code downloading, RMI uses URL protocols supported by the Java platform (for example, HTTP) to download code. Note that using a full, heavyweight web server to serve these class files is unnecessary. For example, a simple HTTP server that provides the functionality needed to make classes available for downloading in RMI through HTTP can be found at .  
-Also see [Remote Method Invocation Home](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html).
+类文件的网络可访问性使 RMI 运行时能够在需要时下载代码。RMI 不定义自己的代码下载协议，而是使用 Java 平台支持的 URL 协议（例如 HTTP）来下载代码。注意，使用完整的、重量级的 Web 服务器来提供这些类文件是不必要的。例如，可以找到一个简单的 HTTP 服务器，它提供通过 HTTP 使类可供 RMI 下载所需的功能。
+另请参阅[远程方法调用主页](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136424.html)。
 
-## Building the Server Classes
+## 构建服务器类
 
-The `engine` package contains only one server-side implementation class, `ComputeEngine`, the implementation of the remote interface `Compute`.
+`engine` 包只包含一个服务器端实现类 `ComputeEngine`，即远程接口 `Compute` 的实现。
 
-Assume that user `ann`, the developer of the `ComputeEngine` class, has placed `ComputeEngine.java` in the directory `C:\home\ann\src\engine` on Windows or the directory `/home/ann/src/engine` on Solaris or Linux. She is deploying the class files for clients to download in a subdirectory of her `public_html` directory, `C:\home\ann\public_html\classes` on Windows or `/home/ann/public_html/classes` on Solaris or Linux. This location is accessible through some web servers as `http://*host*:*port*/~ann/classes/`.
+假设 `ComputeEngine` 类的开发者用户 `ann` 将 `ComputeEngine.java` 放在 Windows 的 `C:\home\ann\src\engine` 目录或 Solaris/Linux 的 `/home/ann/src/engine` 目录中。她将类文件部署在 `public_html` 目录的子目录 `C:\home\ann\public_html\classes`（Windows）或 `/home/ann/public_html\classes`（Solaris/Linux）中供客户端下载。此位置可通过某些 Web 服务器访问为 `http://*host*:*port*/~ann/classes/`。
 
-The `ComputeEngine` class depends on the `Compute` and `Task` interfaces, which are contained in the `compute.jar` JAR file. Therefore, you need the `compute.jar` file in your class path when you build the server classes. Assume that the `compute.jar` file is located in the directory `C:\home\ann\public_html\classes` on Windows or the directory `/home/ann/public_html/classes` on Solaris or Linux. Given these paths, you can use the following commands to build the server classes and then copy them to a network-accessible location:
+`ComputeEngine` 类依赖于 `compute.jar` JAR 文件中包含的 `Compute` 和 `Task` 接口。因此，构建服务器类时，类路径中需要 `compute.jar` 文件。假设 `compute.jar` 文件位于 Windows 的 `C:\home\ann\public_html\classes` 目录或 Solaris/Linux 的 `/home/ann/public_html\classes` 目录中。给定这些路径，你可以使用以下命令构建服务器类，然后将它们复制到网络可访问的位置：
 
-**Microsoft Windows**:
+**Microsoft Windows**：
 
 ```bash
 cd C:\home\ann\src
 javac -cp C:\home\ann\public_html\classes\compute.jar ^
-    engine\ComputeEngine.java 
+    engine\ComputeEngine.java
 mkdir C:\home\ann\public_html\classes\engine
 cp engine\ComputeEngine.class C:\home\ann\public_html\classes\engine
 ```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
 ```bash
 cd /home/ann/src
@@ -114,27 +95,27 @@ javac -cp /home/ann/public_html/classes/compute.jar \
     engine/ComputeEngine.java
 mkdir /home/ann/public_html/classes/engine
 cp engine/ComputeEngine.class /home/ann/public_html/classes/engine
-```bash
+```
 
 ---
 
-**Note:** The carat (`^`) is the line continuation character in Windows, while the backslash (`\`) is the line continuation character in Solaris and Linux. The line continuation character enables you to enter a command that spans multiple lines in a command prompt.
+**注意：** 脱字符(`^`) 是 Windows 中的行继续符，而反斜杠(`\`) 是 Solaris 和 Linux 中的行继续符。行继续符使你能够在命令提示符中输入跨越多行的命令。
 
 ---
 
-The stub class for `ComputeEngine` implements the `Compute` interface, which refers to the `Task` interface. So, the class definitions for those two interfaces need to be network-accessible for the stub to be received by other Java virtual machines such as the registry's Java virtual machine. The client Java virtual machine will already have these interfaces in its class path, so it does not actually need to download their definitions. The `compute.jar` file under the `public_html` directory can serve this purpose.
+`ComputeEngine` 的桩类实现了 `Compute` 接口，该接口引用 `Task` 接口。因此，这两个接口的类定义需要可被网络访问，以便其他 Java 虚拟机（如注册表的 Java 虚拟机）接收桩。客户端 Java 虚拟机的类路径中已经有这些接口，因此它实际上不需要下载它们的定义。`public_html` 目录下的 `compute.jar` 文件可以达到此目的。
 
-Now, the compute engine is ready to deploy. You could do that now, or you could wait until after you have built the client.
+现在，计算引擎已准备好部署。你可以现在部署，也可以等到构建客户端之后再部署。
 
-## Building the Client Classes
+## 构建客户端类
 
-The `client` package contains two classes, `ComputePi`, the main client program, and `Pi`, the client's implementation of the `Task` interface.
+`client` 包包含两个类，`ComputePi`（主客户端程序）和 `Pi`（客户端对 `Task` 接口的实现）。
 
-Assume that user `jones`, the developer of the client classes, has placed `ComputePi.java` and `Pi.java` in the directory `C:\home\jones\src\client` on Windows or the directory `/home/jones/src/client` on Solaris or Linux. He is deploying the class files for the compute engine to download in a subdirectory of his `public_html` directory, `C:\home\jones\public_html\classes` on Windows or `/home/jones/public_html/classes` on Solaris or Linux. This location is accessible through some web servers as `http://*host*:*port*/~jones/classes/`.
+假设客户端类的开发者用户 `jones` 将 `ComputePi.java` 和 `Pi.java` 放在 Windows 的 `C:\home\jones\src\client` 目录或 Solaris/Linux 的 `/home/jones/src/client` 目录中。他将类文件部署在 `public_html` 目录的子目录 `C:\home\jones\public_html\classes`（Windows）或 `/home/jones/public_html\classes`（Solaris/Linux）中供计算引擎下载。此位置可通过某些 Web 服务器访问为 `http://*host*:*port*/~jones/classes/`。
 
-The client classes depend on the `Compute` and `Task` interfaces, which are contained in the `compute.jar` JAR file. Therefore, you need the `compute.jar` file in your class path when you build the client classes. Assume that the `compute.jar` file is located in the directory `C:\home\jones\public_html\classes` on Windows or the directory `/home/jones/public_html/classes` on Solaris or Linux. Given these paths, you can use the following commands to build the client classes:
+客户端类依赖于 `compute.jar` JAR 文件中包含的 `Compute` 和 `Task` 接口。因此，构建客户端类时，类路径中需要 `compute.jar` 文件。假设 `compute.jar` 文件位于 Windows 的 `C:\home\jones\public_html\classes` 目录或 Solaris/Linux 的 `/home/jones/public_html\classes` 目录中。给定这些路径，你可以使用以下命令构建客户端类：
 
-**Microsoft Windows**:
+**Microsoft Windows**：
 
 ```bash
 cd C:\home\jones\src
@@ -145,7 +126,7 @@ cp client\Pi.class ^
     C:\home\jones\public_html\classes\client
 ```
 
-**Solaris or Linux**:
+**Solaris 或 Linux**：
 
 ```bash
 cd /home/jones/src
@@ -156,4 +137,4 @@ cp client/Pi.class \
     /home/jones/public_html/classes/client
 ```
 
-Only the `Pi` class needs to be placed in the directory `public_html\classes\client` because only the `Pi` class needs to be available for downloading to the compute engine's Java virtual machine. Now, you can run the server and then the client.
+只有 `Pi` 类需要放在 `public_html\classes\client` 目录中，因为只有 `Pi` 类需要可供下载到计算引擎的 Java 虚拟机。现在，你可以运行服务器，然后运行客户端。

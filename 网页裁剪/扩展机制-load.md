@@ -1,66 +1,55 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Understanding Extension Class Loading (The Java™ Tutorials >        
-            The Extension Mechanism > Creating and Using Extensions)"
-描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+标题: "理解扩展类加载"
+描述: "《Java 教程》扩展机制课程，介绍扩展框架的类加载委托机制，阐述引导类、已安装扩展、类路径的搜索顺序，以及 Java 平台的类加载委托模型。"
 来源: "https://docs.oracle.com/javase/tutorial/ext/basics/load.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
-# Understanding Extension Class Loading (The Java™ Tutorials >        
-            The Extension Mechanism > Creating and Using Extensions)
 
-Documentation
+# 理解扩展类加载
 
-[[扩展机制-install|Installed Extensions]]
+> 文档说明
 
-[[扩展机制-download|Download Extensions]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Understanding Extension Class Loading
+## 理解扩展类加载
 
-[[扩展机制-服务提供者机制|Creating Extensible Applications]]
+扩展框架利用类加载委托机制。当运行时环境需要为应用程序加载新类时，它会按以下顺序在以下位置查找类：
 
-[[扩展机制-download|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/ext/TOC.html) • [[扩展机制-服务提供者机制|Next »]]
+1. **引导类**：rt.jar 中的运行时类、i18n.jar 中的国际化类等。
+2. **已安装扩展**：JRE 的 lib/ext 目录中的 JAR 文件中的类，以及全系统、特定于平台的扩展目录（如 Solaris™ 操作系统上的 /usr/jdk/packages/lib/ext，但请注意此目录的使用仅适用于 Java™ 6 及更高版本）中的类。
+3. **类路径**：由系统属性 java.class.path 指定的路径上的类，包括 JAR 文件中的类。如果类路径上的 JAR 文件具有带 `Class-Path` 属性的清单，则也会搜索 `Class-Path` 属性指定的 JAR 文件。默认情况下，`java.class.path` 属性的值为 `.`（当前目录）。你可以使用 \-classpath 或 \-cp 命令行选项，或设置 `CLASSPATH` 环境变量来更改该值。命令行选项覆盖 `CLASSPATH` 环境变量的设置。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+优先级列表告诉你，例如，只有在 rt.jar、i18n.jar 或已安装扩展中的类中未找到要加载的类时，才会搜索类路径。
 
-## Understanding Extension Class Loading
+除非你的软件出于特殊目的实例化自己的类加载器，否则你不需要了解太多，只需记住此优先级列表。特别是，你应该注意可能存在的任何类名冲突。例如，如果你在类路径上列出一个类，如果运行时环境改为加载它在已安装扩展中找到的另一个同名类，你将得到意外结果。
 
-The extension framework makes use of the class-loading delegation mechanism. When the runtime environment needs to load a new class for an application, it looks for the class in the following locations, in order:
+## Java 类加载机制
 
-1. **Bootstrap classes**: the runtime classes in rt.jar, internationalization classes in i18n.jar, and others.
-2. **Installed extensions**: classes in JAR files in the lib/ext directory of the JRE, and in the system-wide, platform-specific extension directory (such as /usr/jdk/packages/lib/ext on the Solaris™ Operating System, but note that use of this directory applies only to Java™ 6 and later).
-3. **The class path**: classes, including classes in JAR files, on paths specified by the system property java.class.path. If a JAR file on the class path has a manifest with the `Class-Path` attribute, JAR files specified by the `Class-Path` attribute will be searched also. By default, the `java.class.path` property's value is `.`, the current directory. You can change the value by using the \-classpath or \-cp command-line options, or setting the `CLASSPATH` environment variable. The command-line options override the setting of the `CLASSPATH` environment variable.
+Java 平台使用委托模型加载类。基本思想是每个类加载器都有一个「父」类加载器。加载类时，类加载器首先将类的搜索「委托」给其父类加载器，然后再尝试自己查找类。
 
-The precedence list tells you, for example, that the class path is searched only if a class to be loaded hasn't been found among the classes in rt.jar, i18n.jar or the installed extensions.
+以下是类加载 API 的一些要点：
 
-Unless your software instantiates its own class loaders for special purposes, you don't really need to know much more than to keep this precedence list in mind. In particular, you should be aware of any class name conflicts that might be present. For example, if you list a class on the class path, you'll get unexpected results if the runtime environment instead loads another class of the same name that it found in an installed extension.
+- java.lang.ClassLoader 及其子类中的构造函数允许你在实例化新类加载器时指定父加载器。如果你没有显式指定父加载器，则虚拟机的系统类加载器将被指定为默认父加载器。
+- ClassLoader 中的 loadClass 方法在调用以加载类时，按顺序执行以下任务：
+	1. 如果类已加载，则返回它。
+		2. 否则，它将新类的搜索委托给父类加载器。
+		3. 如果父类加载器找不到该类，loadClass 调用 findClass 方法查找并加载该类。
+- ClassLoader 的 findClass 方法在父类加载器未找到该类时，在当前类加载器中搜索该类。当你在应用程序中实例化类加载器子类时，你可能希望重写此方法。
+- java.net.URLClassLoader 类用作扩展和其他 JAR 文件的基本类加载器，重写 java.lang.ClassLoader 的 findClass 方法以在一个或多个指定 URL 中搜索类和资源。
 
-## The Java Class Loading Mechanism
+要查看使用与 JAR 文件相关的一些 API 的示例应用程序，请参阅本教程中的[[部署-apiindex|使用 JAR 相关 API]]课程。
 
-The Java platform uses a delegation model for loading classes. The basic idea is that every class loader has a "parent" class loader. When loading a class, a class loader first "delegates" the search for the class to its parent class loader before attempting to find the class itself.
+## 类加载和 java 命令
 
-Here are some highlights of the class-loading API:
+Java 平台的类加载机制反映在 java 命令中。
 
-- Constructors in java.lang.ClassLoader and its subclasses allow you to specify a parent when you instantiate a new class loader. If you don't explicitly specify a parent, the virtual machine's system class loader will be assigned as the default parent.
-- The loadClass method in ClassLoader performs these tasks, in order, when called to load a class:
-	1. If a class has already been loaded, it returns it.
-		2. Otherwise, it delegates the search for the new class to the parent class loader.
-		3. If the parent class loader does not find the class, loadClass calls the method findClass to find and load the class.
-- The findClass method of ClassLoader searches for the class in the current class loader if the class wasn't found by the parent class loader. You will probably want to override this method when you instantiate a class loader subclass in your application.
-- The class java.net.URLClassLoader serves as the basic class loader for extensions and other JAR files, overriding the findClass method of java.lang.ClassLoader to search one or more specified URLs for classes and resources.
-
-To see a sample application that uses some of the API as it relates to JAR files, see the [[部署-apiindex|Using JAR-related APIs]] lesson in this tutorial.
-
-## Class Loading and the java Command
-
-The Java platform's class-loading mechanism is reflected in the java command.
-
-- In the java tool, the \-classpath option is a shorthand way to set the java.class.path property.
-- The \-cp and \-classpath options are equivalent.
-- The \-jar option runs applications that are packaged in JAR files. For a description and examples of this option, see the [[部署-run|Running JAR-Packaged Software]] lesson in this tutorial.
+- 在 java 工具中，\-classpath 选项是设置 java.class.path 属性的简写方式。
+- \-cp 和 \-classpath 选项是等效的。
+- \-jar 选项运行打包在 JAR 文件中的应用程序。有关此选项的描述和示例，请参阅本教程中的[[部署-run|运行 JAR 打包的软件]]课程。
