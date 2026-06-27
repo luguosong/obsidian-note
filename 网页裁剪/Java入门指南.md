@@ -24,7 +24,7 @@
 
 [[Java技术现象]] 对 Java 技术进行整体概述。它既讨论 Java 编程语言，也讨论 Java 平台，全面介绍这项技术能做什么，以及它将如何让你的工作更加轻松。
 
-[**"Hello World!" 应用程序 (The "Hello World!" Application)**](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/index.html) 这篇实战教程描述了创建一个简单的"Hello World!"应用程序需要下载什么、安装什么、输入什么。它为 NetBeans™ 集成开发环境(NetBeans IDE)、Microsoft Windows、Solaris™ 操作系统(Solaris OS)、Linux 和 Mac 用户分别提供了操作说明。
+[[HelloWorld应用程序]] 这篇实战教程描述了创建一个简单的"Hello World!"应用程序需要下载什么、安装什么、输入什么。它为 NetBeans™ 集成开发环境(NetBeans IDE)、Microsoft Windows、Solaris™ 操作系统(Solaris OS)、Linux 和 Mac 用户分别提供了操作说明。
 
 [**深入剖析"Hello World!" (A Closer Look at "Hello World!")**](https://docs.oracle.com/javase/tutorial/getStarted/application/index.html) 讨论"Hello World!"应用程序，详细描述代码的各个部分。涵盖源代码注释、`HelloWorldApp` 类定义块以及 `main` 方法。
 

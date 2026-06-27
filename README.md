@@ -1,5 +1,27 @@
 # Obsidian 笔记仓库
 
+![GitHub Repo stars](https://img.shields.io/github/stars/luguosong/obsidian-note?style=social)
+![GitHub forks](https://img.shields.io/github/forks/luguosong/obsidian-note?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/luguosong/obsidian-note?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/luguosong/obsidian-note)
+![GitHub language count](https://img.shields.io/github/languages/count/luguosong/obsidian-note)
+![GitHub top language](https://img.shields.io/github/languages/top/luguosong/obsidian-note)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/luguosong/obsidian-note)
+![GitHub last commit](https://img.shields.io/github/last-commit/luguosong/obsidian-note)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/luguosong/obsidian-note)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/luguosong/obsidian-note/latest)
+![GitHub Release Date](https://img.shields.io/github/release-date/luguosong/obsidian-note)
+![GitHub all releases](https://img.shields.io/github/releases/luguosong/obsidian-note)
+![GitHub issues](https://img.shields.io/github/issues/luguosong/obsidian-note)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/luguosong/obsidian-note)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/luguosong/obsidian-note)
+![GitHub contributors](https://img.shields.io/github/contributors/luguosong/obsidian-note)
+![GitHub license](https://img.shields.io/github/license/luguosong/obsidian-note)
+![GitHub commit merge status](https://img.shields.io/github/commit-status/p/luguosong/obsidian-note/master)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/luguosong/obsidian-note/master)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/luguosong/obsidian-note/ci)
+![GitHub milestones](https://img.shields.io/github/milestones/luguosong/obsidian-note)
+
 这是一个以 [Obsidian](https://obsidian.md/) 为载体的个人知识管理仓库,主要记录编程学习笔记、技术整理与网页摘录。介绍仓库的设计思路与组织方式;如果需要了解给
 Agent 看的协作约定,请参阅 [`AGENTS.md`](./AGENTS.md)。
 
