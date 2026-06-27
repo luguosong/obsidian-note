@@ -600,6 +600,10 @@
     "编程笔记/04-专项研究/Ai/Claude Code": {
       "option": "property-asc",
       "propertyKey": "排序"
+    },
+    "编程笔记/03-Java/01-基础/01-JavaSE": {
+      "option": "property-asc",
+      "propertyKey": "排序"
     }
   },
   "folderTreeSortOverrides": {},

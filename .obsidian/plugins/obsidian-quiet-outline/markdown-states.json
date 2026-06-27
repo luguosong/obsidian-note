@@ -3331,7 +3331,7 @@
     "expandedKeys": []
   },
   "AGENTS.md": {
-    "scroll": 112.0651364764268,
+    "scroll": 93.06944444444444,
     "cursor": {
       "from": {
         "line": 9,
@@ -3343,7 +3343,8 @@
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-7"
     ]
   },
   "编程笔记/Obsidian/Obsidian.md": {
@@ -4308,20 +4309,19 @@
     ]
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/概述.md": {
-    "scroll": 9.25925925925926,
+    "scroll": 167.2044677734375,
     "cursor": {
       "from": {
-        "line": 44,
+        "line": 170,
         "ch": 0
       },
       "to": {
-        "line": 44,
+        "line": 170,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-4",
       "item-2-6"
     ]
   },
@@ -4338,5 +4338,39 @@
       }
     },
     "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 34,
+        "ch": 0
+      },
+      "to": {
+        "line": 34,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-5"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
+    "scroll": 90.79605454017987,
+    "cursor": {
+      "from": {
+        "line": 110,
+        "ch": 0
+      },
+      "to": {
+        "line": 110,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ]
   }
 }
