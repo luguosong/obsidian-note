@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Make Applets (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -158,7 +160,7 @@ private void createGUI() {
     label.setBorder(BorderFactory.createMatteBorder(1,1,1,1,Color.black));
     getContentPane().add(label, BorderLayout.CENTER);
 }
-```
+```java
 
 The `invokeLater` method is not appropriate for this implementation because it allows `init` to return before initialization is complete, which can cause applet problems that are difficult to debug.
 
@@ -267,7 +269,7 @@ protected ImageIcon loadImage(int imageNum) {
         return null;
     }
 }
-```
+```javascript
 
 The `loadImage` method loads the image for the specified frame of animation. It uses the `getResourceAsStream` method rather than the usual `getResource` method to get the images. The resulting code isn't pretty, but `getResourceAsStream` is more efficient than `getResource` for loading images from JAR files into applets that are executed using Java Plug-in™ software. For further details, see [[Swing-组件-icon|Loading Images Into Applets]].
 

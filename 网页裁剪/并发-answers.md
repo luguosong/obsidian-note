@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Concurrency (The Java™ Tutorials > Essential Java Classes >
+            Concurrency)
 
 Documentation
 
@@ -29,7 +31,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Exercises
 
 1. **Exercise:** Compile and run [`` `BadThreads.java` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/QandE/BadThreads.java):
-	```
+	```java
 	public class BadThreads {
 	    static String message;
 	    private static class CorrectorThread
@@ -51,7 +53,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println(message);
 	    }
 	}
-	```
+```java
 	The application should print out "Mares do eat oats." Is it guaranteed to always do this? If not, why not? Would it help to change the parameters of the two invocations of `Sleep`? How would you guarantee that all changes to `message` will be visible to the main thread?
 	**Solution:** The program will almost always print out "Mares do eat oats." However, this result is not guaranteed, because there is no happens-before relationship between "Key statement 1" and "Key statement 2". This is true even if "Key statement 1" actually executes before "Key statement 2" — remember, a happens-before relationship is about visibility, not sequence.
 	There are two ways you can guarantee that all changes to `message` will be visible to the main thread:
@@ -63,7 +65,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 2. **Exercise:** Modify the producer-consumer example in [[并发-guardmeth|Guarded Blocks]] to use a standard library class instead of the `Drop` class.
 	**Solution:** The [`java.util.concurrent.BlockingQueue`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html) interface defines a `get` method that blocks if the queue is empty, and a `put` methods that blocks if the queue is full. These are effectively the same operations defined by `Drop` — except that `Drop` is not a queue! However, there's another way of looking at Drop: it's a queue with a capacity of zero. Since there's no room in the queue for *any* elements, every `get` blocks until the corresponding `take` and every `take` blocks until the corresponding `get`. There is an implementation of `BlockingQueue` with precisely this behavior: [`java.util.concurrent.SynchronousQueue`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/SynchronousQueue.html).
 	`BlockingQueue` is almost a drop-in replacement for `Drop`. The main problem in [`` `Producer` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/QandE/Producer.java) is that with `BlockingQueue`, the `put` and `get` methods throw `InterruptedException`. This means that the existing `try` must be moved up a level:
-	```
+	```java
 	import java.util.Random;
 	import java.util.concurrent.BlockingQueue;
 	public class Producer implements Runnable {
@@ -90,9 +92,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        } catch (InterruptedException e) {}
 	    }
 	}
-	```
+```
 	Similar changes are required for [`` `Consumer` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/QandE/Consumer.java):
-	```
+	```java
 	import java.util.Random;
 	import java.util.concurrent.BlockingQueue;
 	public class Consumer implements Runnable {
@@ -113,9 +115,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        } catch (InterruptedException e) {}
 	    }
 	}
-	```
+```java
 	For [`` `ProducerConsumerExample` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/QandE/ProducerConsumerExample.java), we simply change the declaration for the `drop` object:
-	```
+	```java
 	import java.util.concurrent.BlockingQueue;
 	import java.util.concurrent.SynchronousQueue;
 	public class ProducerConsumerExample {
@@ -126,4 +128,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        (new Thread(new Consumer(drop))).start();
 	    }
 	}
-	```
+```

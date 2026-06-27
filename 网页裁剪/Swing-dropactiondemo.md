@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Demo - ChooseDropAction (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -87,7 +89,7 @@ On the right side are two lists that act as drop targets. The top list, labeled 
 
 As you might guess, the [`` `ChooseDropActionDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/ChooseDropActionDemoProject/src/dnd/ChooseDropActionDemo.java) example contains two `TransferHandler` implementations:
 
-```
+```sql
 /**
  * The FromTransferHandler allows dragging from the list and
  * supports both copy and move actions.  This transfer handler

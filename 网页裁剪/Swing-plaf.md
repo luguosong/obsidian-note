@@ -1,257 +1,240 @@
 ---
 分类:
   - "网页裁剪"
-标题: "How to Set the Look and Feel (The Java™ Tutorials >        
-            Creating a GUI With Swing > Modifying the Look and Feel)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "如何设置外观"
+描述: "《Java 教程》Swing 外观课程，全面介绍 Swing 外观(look and feel, L&F) 架构、可用的 L&F（Metal、System、Synth、Multiplexing）、三种设置方式（编程、命令行、swing.properties）、启动后切换 L&F、主题，以及 LookAndFeelDemo 和 SwingSet2 示例。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 如何设置外观
 
-How to Set the Look and Feel
+> 文档说明
 
-[[Swing-synth|The Synth Look and Feel]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[Swing-synthExample|A Synth Example]]
+## 如何设置外观
 
-[[Swing-nimbus|Nimbus Look and Feel]]
+Swing 的架构使你可以更改应用程序 GUI 的"外观"(look and feel, L&F)（参见 [Swing 架构概述](http://www.oracle.com/technetwork/java/architecture-142923.html)）。"外观"指的是 GUI 小部件（更正式地说，`JComponents`）的外观，"感觉"指的是小部件的行为方式。
 
-[[Swing-custom|Changing the Look of Nimbus]]
+Swing 的架构通过将每个组件分离为两个不同的类来实现多种 L&F：一个 `JComponent` 子类和相应的 `ComponentUI` 子类。例如，每个 `JList` 实例都有 `ListUI`（`ListUI` 扩展 `ComponentUI`）的具体实现。`ComponentUI` 子类在 Swing 文档中有多种名称——"UI"、"组件 UI"、"UI 委托"和"外观委托"都用于标识 `ComponentUI` 子类。
 
-[[Swing-size|Resizing a Component]]
+大多数开发者从不需要直接与 UI 委托交互。在大多数情况下，UI 委托由 `JComponent` 子类在内部用于关键功能，`JComponent` 子类为所有对 UI 委托的访问提供覆盖方法。例如，`JComponent` 子类中的所有绘制都委托给 UI 委托。通过委托绘制，"外观"可以根据 L&F 而变化。
 
-[[Swing-color|Changing the Color Theme]]
+每个 L&F 负责为 Swing 定义的每个 `ComponentUI` 子类提供具体实现。例如，Java 外观创建 `MetalTabbedPaneUI` 的实例来为 `JTabbedPane` 提供 L&F。UI 委托的实际创建由 Swing 为你处理——在大多数情况下你从不需要直接与 UI 委托交互。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+## 可用的外观
 
-## How to Set the Look and Feel
+Sun 的 JRE 提供以下 L&F：
 
-The architecture of Swing is designed so that you may change the "look and feel" (L&F) of your application's GUI (see [A Swing Architecture Overview](http://www.oracle.com/technetwork/java/architecture-142923.html)). "Look" refers to the appearance of GUI widgets (more formally, `JComponents`) and "feel" refers to the way the widgets behave.
+1. `CrossPlatformLookAndFeel` —— 这是"Java L&F"（也称为"Metal"），在所有平台上看起来相同。它是 Java API（`javax.swing.plaf.metal`）的一部分，如果你在代码中不做任何设置其他 L&F 的操作，它就是默认值。
+2. `SystemLookAndFeel` —— 这里，应用程序使用其运行系统的原生 L&F。系统 L&F 在运行时确定，应用程序请求系统返回适当 L&F 的名称。
+3. Synth —— 使用 XML 文件创建自己外观的基础。
+4. Multiplexing —— 一种让 UI 方法同时委托给多个不同外观实现的方式。
 
-Swing's architecture enables multiple L&Fs by separating every component into two distinct classes: a `JComponent` subclass and a corresponding `ComponentUI` subclass. For example, every `JList` instance has a concrete implementation of `ListUI` (`ListUI` extends `ComponentUI`). The `ComponentUI` subclass is referred to by various names in Swing's documentation—"the UI," "component UI," "UI delegate," and "look and feel delegate" are all used to identify the `ComponentUI` subclass.
+对于 Linux 和 Solaris，如果安装了 GTK+ 2.2 或更高版本，系统 L&F 是"GTK+"，否则为"Motif"。对于 Windows，系统 L&F 是"Windows"，它模仿正在运行的特定 Windows 操作系统的 L&F——经典 Windows、XP 或 Vista。GTK+、Motif 和 Windows L&F 由 Sun 提供并随 Java SDK 和 JRE 一起发布，虽然它们不是 Java API 的一部分。
 
-Most developers never need to interact with the UI delegate directly. For the most part, the UI delegate is used internally by the `JComponent` subclass for crucial functionality, with cover methods provided by the `JComponent` subclass for all access to the UI delegate. For example, all painting in `JComponent` subclasses is delegated to the UI delegate. By delegating painting, the 'look' can vary depending upon the L&F.
+Apple 提供自己的 JVM，其中包括其专有 L&F。
 
-It is the responsibility of each L&F to provide a concrete implementation for each of the `ComponentUI` subclasses defined by Swing. For example, the Java Look and Feel creates an instance of `MetalTabbedPaneUI` to provide the L&F for `JTabbedPane`. The actual creation of the UI delegate is handled by Swing for you—for the most part you never need to interact directly with the UI delegate.
+总之，当你使用 `SystemLookAndFeel` 时，你会看到：
 
-The rest of this section discusses the following subjects:
-
-## Available Look and Feels
-
-Sun's JRE provides the following L&Fs:
-
-1. `CrossPlatformLookAndFeel` —this is the "Java L&F" (also called "Metal") that looks the same on all platforms. It is part of the Java API (`javax.swing.plaf.metal`) and is the default that will be used if you do nothing in your code to set a different L&F.
-2. `SystemLookAndFeel` —here, the application uses the L&F that is native to the system it is running on. The System L&F is determined at runtime, where the application asks the system to return the name of the appropriate L&F.
-3. Synth—the basis for creating your own look and feel with an XML file.
-4. Multiplexing— a way to have the UI methods delegate to a number of different look and feel implementations at the same time.
-
-For Linux and Solaris, the System L&Fs are "GTK+" if GTK+ 2.2 or later is installed, "Motif" otherwise. For Windows, the System L&F is "Windows," which mimics the L&F of the particular Windows OS that is running—classic Windows, XP, or Vista. The GTK+, Motif, and Windows L&Fs are provided by Sun and shipped with the Java SDK and JRE, although they are not part of the Java API.
-
-Apple provides its own JVM which includes their proprietary L&F.
-
-In summary, when you use the `SystemLookAndFeel`, this is what you will see:
-
-| Platform | Look and Feel |
+| 平台 | 外观 |
 | --- | --- |
-| Solaris, Linux with GTK+ 2.2 or later | GTK+ |
-| Other Solaris, Linux | Motif |
+| 安装 GTK+ 2.2 或更高版本的 Solaris、Linux | GTK+ |
+| 其他 Solaris、Linux | Motif |
 | IBM UNIX | IBM\* |
 | HP UX | HP\* |
-| Classic Windows | Windows |
+| 经典 Windows | Windows |
 | Windows XP | Windows XP |
 | Windows Vista | Windows Vista |
 | Macintosh | Macintosh\* |
 
-\* Supplied by the system vendor.
+\* 由系统供应商提供。
 
-You don't see the System L&F in the API. The GTK+, Motif, and Windows packages that it requires are shipped with the Java SDK as:
+你在 API 中看不到系统 L&F。它所需的 GTK+、Motif 和 Windows 包随 Java SDK 发布：
 
-```
+```text
 com.sun.java.swing.plaf.gtk.GTKLookAndFeel
 com.sun.java.swing.plaf.motif.MotifLookAndFeel
 com.sun.java.swing.plaf.windows.WindowsLookAndFeel
 ```
 
-Note that the path includes `java`, and not `javax`.
+注意路径包含 `java` 而不是 `javax`。
 
 ---
 
-**Note:** The GTK+ L&F will only run on UNIX or Linux systems with GTK+ 2.2 or later installed, while the Windows L&F runs only on Windows systems. Like the Java (Metal) L&F, the Motif L&F will run on any platform.
+**注意：** GTK+ L&F 只能在安装了 GTK+ 2.2 或更高版本的 UNIX 或 Linux 系统上运行，而 Windows L&F 只能在 Windows 系统上运行。与 Java (Metal) L&F 一样，Motif L&F 可以在任何平台上运行。
 
 ---
 
-All of Sun's L&Fs have a great deal of commonality. This commonality is defined in the `Basic` look and feel in the API (`javax.swing.plaf.basic`). The Motif and Windows L&Fs are each built by extending the UI delegate classes in `javax.swing.plaf.basic` (a custom L&F can be built by doing the same thing). The "Basic" L&F is not used without being extended.
+所有 Sun 的 L&F 都有大量共同点。这些共同点在 API（`javax.swing.plaf.basic`）中的 `Basic` 外观中定义。Motif 和 Windows L&F 分别通过扩展 `javax.swing.plaf.basic` 中的 UI 委托类来构建（可以通过做同样的事情来构建自定义 L&F）。"Basic" L&F 不会在不被扩展的情况下使用。
 
-In the API you will see four L&F packages:
+在 API 中你会看到四个 L&F 包：
 
-- `javax.swing.plaf.basic` —basic UI Delegates to be extended when creating a custom L&F
-- `javax.swing.plaf.metal` —the Java L&F, also known as the CrossPlatform L&F ("Metal" was the Sun project name for this L&F) The current default "theme" (discussed below) for this L&F is "Ocean, so this is often referred to as the Ocean L&F.
-- `javax.swing.plaf.multi` —a multiplexing look and feel that allows the UI methods to delegate to a number of look and feel implementations at the same time. It can be used to augment the behavior of a particular look and feel, for example with a L&F that provides audio cues on top of the Windows look and feel. This is a way of creating a handicapped-accessible look and feel.
-- `javax.swing.plaf.synth` —an easily configured L&F using XML files (discussed in the next section of this lesson)
+- `javax.swing.plaf.basic` —— 创建自定义 L&F 时要扩展的基本 UI 委托
+- `javax.swing.plaf.metal` —— Java L&F，也称为跨平台 L&F（"Metal" 是 Sun 此 L&F 的项目名称）。此 L&F 的当前默认"主题"（下面讨论）是"Ocean"，因此通常称为 Ocean L&F。
+- `javax.swing.plaf.multi` —— 一种多路复用外观，允许 UI 方法同时委托给多个外观实现。它可用于增强特定外观的行为，例如在 Windows 外观之上提供音频提示的 L&F。这是创建无障碍外观的一种方式。
+- `javax.swing.plaf.synth` —— 使用 XML 文件轻松配置的 L&F（在本课的下一节讨论）
 
-You aren't limited to the L&Fs supplied with the Java platform. You can use any L&F that is in your program's class path. External L&Fs are usually provided in one or more JAR files that you add to your program's class path at runtime. For example:
+你不限于 Java 平台提供的 L&F。你可以使用程序类路径中的任何 L&F。外部 L&F 通常在一个或多个 JAR 文件中提供，你在运行时将其添加到程序的类路径中。例如：
 
-```
+```bash
 java -classpath .;C:\java\lafdir\customlaf.jar YourSwingApplication
 ```
 
-Once an external L&F is in your program's class path, your program can use it just like any of the L&Fs shipped with the Java platform.
+一旦外部 L&F 在程序的类路径中，你的程序就可以像使用 Java 平台附带的任何 L&F 一样使用它。
 
-## Programmatically Setting the Look and Feel
-
----
-
-**Note:** If you are going to set the L&F, you should do it as the very first step in your application. Otherwise you run the risk of initializing the Java L&F regardless of what L&F you've requested. This can happen inadvertently when a static field references a Swing class, which causes the L&F to be loaded. If no L&F has yet been specified, the default L&F for the JRE is loaded. For Sun's JRE the default is the Java L&F, for Apple's JRE the Apple L&F, and so forth.
+## 以编程方式设置外观
 
 ---
 
-The L&F that Swing components use is specified by way of the `UIManager` class in the `javax.swing` package. Whenever a Swing component is created,the component asks the UI manager for the UI delegate that implements the component's L&F. For example, each `JLabel` constructor queries the UI manager for the UI delegate object appropriate for the label. It then uses that UI delegate object to implement all of its drawing and event handling.
+**注意：** 如果你要设置 L&F，应该将其作为应用程序的第一步。否则，无论你请求什么 L&F，都可能初始化 Java L&F。当静态字段引用 Swing 类时可能会无意中发生这种情况，这会导致 L&F 被加载。如果尚未指定 L&F，则加载 JRE 的默认 L&F。对于 Sun 的 JRE，默认是 Java L&F；对于 Apple 的 JRE，是 Apple L&F，依此类推。
 
-To programmatically specify a L&F, use the `UIManager.setLookAndFeel()` method with the fully qualified name of the appropriate subclass of `LookAndFeel` as its argument. For example, the bold code in the following snippet makes the program use the cross-platform Java L&F:
+---
 
-```
+Swing 组件使用的 L&F 通过 `javax.swing` 包中的 `UIManager` 类指定。每当创建 Swing 组件时，组件会向 UI 管理器请求实现组件 L&F 的 UI 委托。例如，每个 `JLabel` 构造器都会向 UI 管理器查询适合标签的 UI 委托对象。然后它使用该 UI 委托对象实现其所有绘制和事件处理。
+
+要以编程方式指定 L&F，请使用 `UIManager.setLookAndFeel()` 方法，以 `LookAndFeel` 适当子类的完全限定名作为参数。例如，以下代码片段使程序使用跨平台 Java L&F：
+
+```java
 public static void main(String[] args) {
     try {
-            // Set cross-platform Java L&F (also called "Metal")
+            // 设置跨平台 Java L&F（也称为"Metal"）
         UIManager.setLookAndFeel(
             UIManager.getCrossPlatformLookAndFeelClassName());
-    } 
+    }
     catch (UnsupportedLookAndFeelException e) {
-       // handle exception
+       // 处理异常
     }
     catch (ClassNotFoundException e) {
-       // handle exception
+       // 处理异常
     }
     catch (InstantiationException e) {
-       // handle exception
+       // 处理异常
     }
     catch (IllegalAccessException e) {
-       // handle exception
+       // 处理异常
     }
-        
-    new SwingApplication(); //Create and show the GUI.
+
+    new SwingApplication(); // 创建并显示 GUI。
 }
 ```
 
-Alternatively, this code makes the program use the System L&F:
+或者，以下代码使程序使用系统 L&F：
 
-```
+```java
 public static void main(String[] args) {
     try {
-            // Set System L&F
+            // 设置系统 L&F
         UIManager.setLookAndFeel(
             UIManager.getSystemLookAndFeelClassName());
-    } 
+    }
     catch (UnsupportedLookAndFeelException e) {
-       // handle exception
+       // 处理异常
     }
     catch (ClassNotFoundException e) {
-       // handle exception
+       // 处理异常
     }
     catch (InstantiationException e) {
-       // handle exception
+       // 处理异常
     }
     catch (IllegalAccessException e) {
-       // handle exception
+       // 处理异常
     }
 
-    new SwingApplication(); //Create and show the GUI.
+    new SwingApplication(); // 创建并显示 GUI。
 }
 ```
 
-You can also use the actual class name of a Look and Feel as the argument to `UIManager.setLookAndFeel()`. For example,
+你也可以使用外观的实际类名作为 `UIManager.setLookAndFeel()` 的参数。例如，
 
-```
-// Set cross-platform Java L&F (also called "Metal")
+```java
+// 设置跨平台 Java L&F（也称为"Metal"）
 UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 ```
 
-or
+或
 
-```
-// Set Motif L&F on any platform
+```java
+// 在任何平台上设置 Motif L&F
 UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
 ```
 
-You aren't limited to the preceding arguments. You can specify the name for any L&F that is in your program's class path.
+你不限于前面的参数。你可以为程序类路径中的任何 L&F 指定名称。
 
-## Specifying the Look and Feel: Command Line
+## 指定外观：命令行
 
-You can specify the L&F at the command line by using the `-D` flag to set the `swing.defaultlaf` property. For example:
+你可以通过使用 `-D` 标志设置 `swing.defaultlaf` 属性在命令行指定 L&F。例如：
 
-```
+```bash
 java -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel MyApp
-
 java -Dswing.defaultlaf=com.sun.java.swing.plaf.windows.WindowsLookAndFeel MyApp
 ```
 
-## Specifying the Look and Feel: swing.properties File
+## 指定外观：swing.properties 文件
 
-Yet another way to specify the current L&F is to use the `swing.properties` file to set the `swing.defaultlaf` property. This file, which you may need to create, is located in the `lib` directory of Sun's Java release (other vendors of Java may use a different location). For example, if you're using the Java interpreter in `*javaHomeDirectory*\bin`, then the `swing.properties` file (if it exists) is in `*javaHomeDirectory*\lib`. Here is an example of the contents of a [`swing.properties`](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/swing.properties) file:
+指定当前 L&F 的另一种方法是使用 `swing.properties` 文件设置 `swing.defaultlaf` 属性。此文件（你可能需要创建）位于 Sun Java 发行版的 `lib` 目录中（其他 Java 供应商可能使用不同位置）。例如，如果你使用 `*javaHomeDirectory*\bin` 中的 Java 解释器，那么 `swing.properties` 文件（如果存在）在 `*javaHomeDirectory*\lib` 中。以下是 [`swing.properties`](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/swing.properties) 文件内容的示例：
 
-```
+```bash
 # Swing properties
 swing.defaultlaf=com.sun.java.swing.plaf.windows.WindowsLookAndFeel
 ```
 
-## How the UI Manager Chooses the Look and Feel
+## UI 管理器如何选择外观
 
-Here are the look-and-feel determination steps that occur when the UI manager needs to set a L&F:
+以下是 UI 管理器需要设置 L&F 时发生的外观确定步骤：
 
-1. If the program sets the L&F before a look and feel is needed, the UI manager tries to create an instance of the specified look-and-feel class. If successful, all components use that L&F.
-2. If the program hasn't successfully specified a L&F, then the UI manager uses the L&F specified by the `swing.defaultlaf` property. If the property is specified in both the `swing.properties` file *and* on the command line, the command-line definition takes precedence.
-3. If none of these steps has resulted in a valid L&F, Sun's JRE uses the Java L&F. Other vendors, such as Apple, will use their default L&F.
+1. 如果程序在需要外观之前设置了 L&F，UI 管理器尝试创建指定外观类的实例。如果成功，所有组件使用该 L&F。
+2. 如果程序未成功指定 L&F，则 UI 管理器使用 `swing.defaultlaf` 属性指定的 L&F。如果该属性在 `swing.properties` 文件*和*命令行中都指定，则命令行定义优先。
+3. 如果这些步骤都未产生有效的 L&F，Sun 的 JRE 使用 Java L&F。其他供应商（如 Apple）将使用其默认 L&F。
 
-## Changing the Look and Feel After Startup
+## 启动后更改外观
 
-You can change the L&F with `setLookAndFeel` even after the program's GUI is visible. To make existing components reflect the new L&F, invoke the `SwingUtilities` `updateComponentTreeUI` method once per top-level container. Then you might wish to resize each top-level container to reflect the new sizes of its contained components. For example:
+即使程序的 GUI 已可见，你也可以使用 `setLookAndFeel` 更改 L&F。要使现有组件反映新 L&F，请对每个顶层容器调用一次 `SwingUtilities` 的 `updateComponentTreeUI` 方法。然后你可能希望调整每个顶层容器的大小以反映其包含组件的新大小。例如：
 
-```
+```java
 UIManager.setLookAndFeel(lnfName);
 SwingUtilities.updateComponentTreeUI(frame);
 frame.pack();
 ```
 
-## An Example
+## 示例
 
-In the following example, `LookAndFeelDemo.java`, you can experiment with different Look and Feels. The program creates a simple GUI with a button and a label. Every time you click the button, the label increments.
+在以下示例 `LookAndFeelDemo.java` 中，你可以试验不同的外观。程序创建一个带有按钮和标签的简单 GUI。每次单击按钮时，标签递增。
 
-You can change the L&F by changing the `LOOKANDFEEL` constant on line 18. The comments on the preceding lines tell you what values are acceptable:
+你可以通过更改第 18 行的 `LOOKANDFEEL` 常量来更改 L&F。前面行的注释告诉你可接受的值：
 
-```
-// Specify the look and feel to use by defining the LOOKANDFEEL constant
-// Valid values are: null (use the default), "Metal", "System", "Motif",
-// and "GTK"
+```java
+// 通过定义 LOOKANDFEEL 常量指定要使用的外观
+// 有效值为：null（使用默认）、"Metal"、"System"、"Motif" 和 "GTK"
 final static String LOOKANDFEEL = "Motif";
 ```
 
-Here the constant is set to "Motif", which is a L&F that will run on any platform (as will the default, "Metal"). "GTK+" will not run on Windows, and "Windows" will run only on Windows. If you choose a L&F that will not run, you will get the Java, or Metal, L&F.
+这里常量设置为"Motif"，这是一种可以在任何平台上运行的 L&F（默认的"Metal"也是）。"GTK+"不能在 Windows 上运行，"Windows"只能在 Windows 上运行。如果你选择无法运行的 L&F，你将获得 Java 或 Metal L&F。
 
-In the section of the code where the L&F is actually set, you will see several different ways to set it, as discussed above:
+在实际设置 L&F 的代码部分，你会看到上面讨论的几种不同设置方式：
 
-```
+```java
 if (LOOKANDFEEL.equals("Metal")) {
    lookAndFeel = UIManager.getCrossPlatformLookAndFeelClassName();
-   //  an alternative way to set the Metal L&F is to replace the 
-   // previous line with:
+   // 设置 Metal L&F 的另一种方式是将
+   // 前一行替换为：
    // lookAndFeel = "javax.swing.plaf.metal.MetalLookAndFeel";
 ```
 
-You can verify that both arguments work by commenting/un-commenting the two alternatives.
+你可以通过注释/取消注释两种替代方案来验证两个参数都有效。
 
-Here is a listing of the [`LookAndFeelDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/LookAndFeelDemoProject/src/lookandfeel/LookAndFeelDemo.java) source file:
+以下是 [`LookAndFeelDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/LookAndFeelDemoProject/src/lookandfeel/LookAndFeelDemo.java) 源文件的清单：
 
-```
+```java
 package lookandfeel;
 
-import javax.swing.*;          
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.plaf.metal.*;
@@ -261,16 +244,15 @@ public class LookAndFeelDemo implements ActionListener {
     private int numClicks = 0;
     final JLabel label = new JLabel(labelPrefix + "0    ");
 
-    // Specify the look and feel to use by defining the LOOKANDFEEL constant
-    // Valid values are: null (use the default), "Metal", "System", "Motif",
-    // and "GTK"
+    // 通过定义 LOOKANDFEEL 常量指定要使用的外观
+    // 有效值为：null（使用默认）、"Metal"、"System"、"Motif" 和 "GTK"
     final static String LOOKANDFEEL = "Metal";
-    
-    // If you choose the Metal L&F, you can also choose a theme.
-    // Specify the theme to use by defining the THEME constant
-    // Valid values are: "DefaultMetal", "Ocean",  and "Test"
+
+    // 如果选择 Metal L&F，还可以选择主题。
+    // 通过定义 THEME 常量指定要使用的主题
+    // 有效值为："DefaultMetal"、"Ocean" 和 "Test"
     final static String THEME = "Test";
-    
+
 
     public Component createComponents() {
         JButton button = new JButton("I'm a Swing button!");
@@ -282,10 +264,10 @@ public class LookAndFeelDemo implements ActionListener {
         pane.add(button);
         pane.add(label);
         pane.setBorder(BorderFactory.createEmptyBorder(
-                                        30, //top
-                                        30, //left
-                                        10, //bottom
-                                        30) //right
+                                        30, // 上
+                                        30, // 左
+                                        10, // 下
+                                        30) // 右
                                         );
 
         return pane;
@@ -298,28 +280,28 @@ public class LookAndFeelDemo implements ActionListener {
 
     private static void initLookAndFeel() {
         String lookAndFeel = null;
-       
+
         if (LOOKANDFEEL != null) {
             if (LOOKANDFEEL.equals("Metal")) {
                 lookAndFeel = UIManager.getCrossPlatformLookAndFeelClassName();
-              //  an alternative way to set the Metal L&F is to replace the 
-              // previous line with:
+              // 设置 Metal L&F 的另一种方式是将
+              // 前一行替换为：
               // lookAndFeel = "javax.swing.plaf.metal.MetalLookAndFeel";
-                
+
             }
-            
+
             else if (LOOKANDFEEL.equals("System")) {
                 lookAndFeel = UIManager.getSystemLookAndFeelClassName();
-            } 
-            
+            }
+
             else if (LOOKANDFEEL.equals("Motif")) {
                 lookAndFeel = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
-            } 
-            
-            else if (LOOKANDFEEL.equals("GTK")) { 
+            }
+
+            else if (LOOKANDFEEL.equals("GTK")) {
                 lookAndFeel = "com.sun.java.swing.plaf.gtk.GTKLookAndFeel";
-            } 
-            
+            }
+
             else {
                 System.err.println("Unexpected value of LOOKANDFEEL specified: "
                                    + LOOKANDFEEL);
@@ -327,12 +309,12 @@ public class LookAndFeelDemo implements ActionListener {
             }
 
             try {
-                
-                
+
+
                 UIManager.setLookAndFeel(lookAndFeel);
-                
-                // If L&F = "Metal", set the theme
-                
+
+                // 如果 L&F = "Metal"，设置主题
+
                 if (LOOKANDFEEL.equals("Metal")) {
                   if (THEME.equals("DefaultMetal"))
                      MetalLookAndFeel.setCurrentTheme(new DefaultMetalTheme());
@@ -340,29 +322,28 @@ public class LookAndFeelDemo implements ActionListener {
                      MetalLookAndFeel.setCurrentTheme(new OceanTheme());
                   else
                      MetalLookAndFeel.setCurrentTheme(new TestTheme());
-                     
-                  UIManager.setLookAndFeel(new MetalLookAndFeel()); 
-                }    
-                    
-                    
-                  
-                
-            } 
-            
+
+                  UIManager.setLookAndFeel(new MetalLookAndFeel());
+                }
+
+
+
+            }
+
             catch (ClassNotFoundException e) {
                 System.err.println("Couldn't find class for specified look and feel:"
                                    + lookAndFeel);
                 System.err.println("Did you include the L&F library in the class path?");
                 System.err.println("Using the default look and feel.");
-            } 
-            
+            }
+
             catch (UnsupportedLookAndFeelException e) {
                 System.err.println("Can't use the specified look and feel ("
                                    + lookAndFeel
                                    + ") on this platform.");
                 System.err.println("Using the default look and feel.");
-            } 
-            
+            }
+
             catch (Exception e) {
                 System.err.println("Couldn't get specified look and feel ("
                                    + lookAndFeel
@@ -374,13 +355,13 @@ public class LookAndFeelDemo implements ActionListener {
     }
 
     private static void createAndShowGUI() {
-        //Set the look and feel.
+        // 设置外观。
         initLookAndFeel();
 
-        //Make sure we have nice window decorations.
+        // 确保有漂亮的窗口装饰。
         JFrame.setDefaultLookAndFeelDecorated(true);
 
-        //Create and set up the window.
+        // 创建并设置窗口。
         JFrame frame = new JFrame("SwingApplication");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -388,14 +369,14 @@ public class LookAndFeelDemo implements ActionListener {
         Component contents = app.createComponents();
         frame.getContentPane().add(contents, BorderLayout.CENTER);
 
-        //Display the window.
+        // 显示窗口。
         frame.pack();
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        //Schedule a job for the event dispatch thread:
-        //creating and showing this application's GUI.
+        // 为事件分发线程调度一个任务：
+        // 创建并显示此应用程序的 GUI。
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
@@ -405,19 +386,19 @@ public class LookAndFeelDemo implements ActionListener {
 }
 ```
 
-## Themes
+## 主题
 
-Themes were introduced as a way of easily changing the colors and fonts of the cross-platform Java (Metal) Look and Feel. In the sample program, `LookAndfeelDemo.java`, listed above, you can change the theme of the Metal L&F by setting the `THEME` constant on line 23 to one of three values:
+主题作为一种轻松更改跨平台 Java (Metal) 外观颜色和字体的方式被引入。在上面列出的示例程序 `LookAndfeelDemo.java` 中，你可以通过将第 23 行的 `THEME` 常量设置为三个值之一来更改 Metal L&F 的主题：
 
 - `DefaultMetal`
 - `Ocean`
 - `Test`
 
-`Ocean`, which is a bit softer than the pure Metal look, has been the default theme for the Metal (Java) L&F since Java SE 5. Despite its name, `DefaultMetal` is not the default theme for Metal (it was before Java SE 5, which explains its name). The `Test` theme is a theme defined in [`` `TestTheme.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/LookAndFeelDemoProject/src/lookandfeel/TestTheme.java), which you must compile with `LookAndfeelDemo.java`. As it is written, `TestTheme.java` sets the three primary colors (with somewhat bizarre results). You can modify `TestTheme.java` to test any colors you like.
+`Ocean` 比纯 Metal 外观柔和一些，自 Java SE 5 以来一直是 Metal (Java) L&F 的默认主题。尽管名称如此，`DefaultMetal` 并不是 Metal 的默认主题（它在 Java SE 5 之前是，这解释了它的名称）。`Test` 主题是在 [`TestTheme.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/LookAndFeelDemoProject/src/lookandfeel/TestTheme.java) 中定义的主题，你必须将其与 `LookAndfeelDemo.java` 一起编译。按所写内容，`TestTheme.java` 设置三种原色（结果有些怪异）。你可以修改 `TestTheme.java` 来测试你喜欢的任何颜色。
 
-The section of code where the theme is set is found beginning on line 92 of `LookAndfeelDemo.java`. Note that you must be using the Metal L&F to set a theme.
+设置主题的代码部分从 `LookAndfeelDemo.java` 的第 92 行开始。注意你必须使用 Metal L&F 才能设置主题。
 
-```
+```java
 if (LOOKANDFEEL.equals("Metal")) {
    if (THEME.equals("DefaultMetal"))
       MetalLookAndFeel.setCurrentTheme(new DefaultMetalTheme());
@@ -425,33 +406,33 @@ if (LOOKANDFEEL.equals("Metal")) {
       MetalLookAndFeel.setCurrentTheme(new OceanTheme());
    else
       MetalLookAndFeel.setCurrentTheme(new TestTheme());
-                    
-   UIManager.setLookAndFeel(new MetalLookAndFeel()); 
+
+   UIManager.setLookAndFeel(new MetalLookAndFeel());
 }
 ```
 
-## The SwingSet2 Demonstration Program
+## SwingSet2 演示程序
 
-When you download the [JDK and JavaFX Demos and Samples](http://www.oracle.com/technetwork/java/javase/downloads/index.html) bundle and open it up, there is a `demo\jfc` folder that contains a demonstration program called `SwingSet2`. This program has a graphically rich GUI and allows you to change the Look and Feel from the menu. Further, if you are using the Java (Metal) Look and Feel, you can choose a variety of different themes. The files for the various themes (for example, `RubyTheme.java`) are found in the `SwingSet2\src` folder.
+当你下载 [JDK 和 JavaFX 演示及示例](http://www.oracle.com/technetwork/java/javase/downloads/index.html)包并打开时，有一个 `demo\jfc` 文件夹，其中包含一个名为 `SwingSet2` 的演示程序。此程序具有图形丰富的 GUI，允许你从菜单更改外观。此外，如果你使用 Java (Metal) 外观，可以选择各种不同的主题。各种主题的文件（例如 `RubyTheme.java`）可在 `SwingSet2\src` 文件夹中找到。
 
-This is the "Ocean" theme, which is the default for the cross-platform Java (Metal) Look and Feel:
+这是"Ocean"主题，是跨平台 Java (Metal) 外观的默认主题：
 
 ![](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/OceanLAF.gif)
 
-This is the "Steel" theme, which was the original theme for the cross-platform Java (Metal) Look and Feel:
+这是"Steel"主题，是跨平台 Java (Metal) 外观的原始主题：
 
 ![](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/MetalLAF.gif)
 
-To run the `SwingSet2` demo program on a system that has the JDK installed, use this command:
+要在安装了 JDK 的系统上运行 `SwingSet2` 演示程序，请使用以下命令：
 
-```
+```bash
 java -jar SwingSet2.jar
 ```
 
-This will give you the default theme of Ocean.
+这将为你提供 Ocean 的默认主题。
 
-To get the metal L&F, run this:
+要获取 metal L&F，请运行：
 
-```
+```bash
 java -Dswing.metalTheme=steel -jar SwingSet2.jar
 ```

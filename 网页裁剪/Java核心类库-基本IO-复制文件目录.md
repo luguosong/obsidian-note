@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Copying a File or Directory (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -103,7 +105,7 @@ If you are not familiar with `enums`, see [[类与对象-enum|Enum Types]].
 
 The following shows how to use the `copy` method:
 
-```
+```java
 import static java.nio.file.StandardCopyOption.*;
 ...
 Files.copy(source, target, REPLACE_EXISTING);

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using FilteredRowSet Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -185,13 +187,11 @@ public class StateFilter implements Predicate {
         return evaluation;
     }
 }
-```
 
 This is a very simple implementation that checks the value in the column specified by either `colName` or `colNumber` to see if it is in the range of `lo` to `hi`, inclusive. The following line of code, from [`FilteredRowSetSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/FilteredRowSetSample.java), creates a filter that allows only the rows where the `STORE_ID` column value indicates a value between 10000 and 10999, which indicates a California location:
 
-```
 StateFilter myStateFilter = new StateFilter(10000, 10999, 1);
-```
+```text
 
 Note that the `StateFilter` class just defined applies to one column. It is possible to have it apply to two or more columns by making each of the parameters arrays instead of single values. For example, the constructor for a `Filter` object could look like the following:
 
@@ -201,7 +201,7 @@ public Filter2(Object [] lo, Object [] hi, Object [] colNumber) {
     this.hi = hi;
     this.colNumber = colNumber;
 }
-```
+```java
 
 The first element in the `colNumber` object gives the first column in which the value will be checked against the first element in `lo` and the first element in `hi`. The value in the second column indicated by `colNumber` will be checked against the second elements in `lo` and `hi`, and so on. Therefore, the number of elements in the three arrays should be the same. The following code is what an implementation of the method `evaluate(RowSet rs)` might look like for a `Filter2` object, in which the parameters are arrays:
 
@@ -234,7 +234,7 @@ The advantage of using a `Filter2` implementation is that you can use parameters
 
 Use an instance of `RowSetFactory`, which is created from the class `RowSetProvider`, to create a `FilteredRowSet` object. The following is from [`FilteredRowSetSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/FilteredRowSetSample.java):
 
-```
+```text
 RowSetFactory factory = RowSetProvider.newFactory();
 try (FilteredRowSet frs = factory.createFilteredRowSet()) {
   // ...
@@ -251,13 +251,12 @@ try (FilteredRowSet frs = factory.createFilteredRowSet()){
   frs.setUrl(settings.urlString);
   frs.execute();
   // ...
-```
+```text
 
 The following line of code populates the `frs` object with the data stored in the `COFFEE_HOUSE` table:
 
-```
+```sql
 frs.execute();
-```
 
 The method `execute` does all kinds of things in the background by calling on the `RowSetReader` object for `frs`, which creates a connection, executes the command for `frs`, populates `frs` with the data from the `ResultSet` object that is produced, and closes the connection. Note that if the table `COFFEE_HOUSES` had more rows than the `frs` object could hold in memory at one time, the `CachedRowSet` paging methods would have been used.
 
@@ -269,15 +268,14 @@ Now that the `FilteredRowSet` object `frs` contains the list of Coffee Break est
 
 The following line of code uses the `StateFilter` class defined previously to create the object `myStateFilter`, which checks the column `STORE_ID` to determine which stores are in California (a store is in California if its ID number is between 10000 and 10999, inclusive):
 
-```
 StateFilter myStateFilter = new StateFilter(10000, 10999, 1);
-```
+```text
 
 The following line sets `myStateFilter` as the filter for `frs`.
 
 ```
 frs.setFilter(myStateFilter);
-```
+```java
 
 To do the actual filtering, you call the method `next`, which in the reference implementation calls the appropriate version of the `Predicate.evaluate` method that you have implemented previously.
 
@@ -396,7 +394,6 @@ public void testFilteredRowSet() throws SQLException {
     JDBCTutorialUtilities.printSQLException(e);
   }
 }
-```
 
 The output should contain a row for each store that is in San Francisco, California or Los Angeles, California. If there were a row in which the `CITY` column contained LA and the `STORE_ID` column contained 40003, it would not be included in the list because it had already been filtered out when the filter was set to `state`. (40003 is not in the range of 10000 to 10999.)
 
@@ -410,7 +407,6 @@ Assume that two new Coffee Break coffee houses have just opened and the owner wa
 
 The current state of the `frs` object is that the `StateFilter` object was set and then the `CityFilter` object was set. As a result, `frs` currently makes visible only those rows that satisfy the criteria for both filters. And, equally important, you cannot add a row to the `frs` object unless it satisfies the criteria for both filters. The following code fragment attempts to insert two new rows into the `frs` object, one row in which the values in the `STORE_ID` and `CITY` columns both meet the criteria, and one row in which the value in `STORE_ID` does not pass the filter but the value in the `CITY` column does:
 
-```
 frs.moveToInsertRow();
 frs.updateInt("STORE_ID", 10101);
 frs.updateString("CITY", "SF");
@@ -426,7 +422,6 @@ frs.updateLong("MERCH_SALES", 0);
 frs.updateLong("TOTAL_SALES", 0);
 frs.insertRow();
 frs.moveToCurrentRow();
-```
 
 If you were to iterate through the `frs` object using the method `next`, you would find a row for the new coffee house in San Francisco, California, but not for the store in San Francisco, Washington.
 
@@ -434,7 +429,6 @@ If you were to iterate through the `frs` object using the method `next`, you wou
 
 The owner can add the store in Washington by nullifying the filter. With no filter set, all rows in the `frs` object are once more visible, and a store in any location can be added to the list of stores. The following line of code unsets the current filter, effectively nullifying both of the `Predicate` implementations previously set on the `frs` object.
 
-```
 frs.setFilter(null);
 ```
 

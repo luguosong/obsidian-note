@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Java Web Start (The Java™ Tutorials > Deployment >
+            Java Web Start)
 
 Documentation
 
@@ -48,14 +50,12 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1. **Exercise:** Write the XML code you would add to a `JNLP` file in order to request that the application have complete access to the client system.
 	**Answer:**
-	```
+	```xml
 	<security>
 	   <all-permissions/>
 	</security>
-	```
 2. **Exercise:** For a Java Web Start application, you have two icons, `one.gif` and `two.gif`, in the `images` directory in a JAR file. Write the application code you would use to access these images.
 	**Answer:**
-	```
 	// Get current classloader
 	ClassLoader cl = this.getClass().getClassLoader();
 	// Create icons

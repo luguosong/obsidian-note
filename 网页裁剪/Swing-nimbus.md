@@ -1,54 +1,39 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Nimbus Look and Feel (The Java™ Tutorials >        
-            Creating a GUI With Swing > Modifying the Look and Feel)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "Nimbus 外观"
+描述: "《Java 教程》Swing 外观课程，介绍 Java SE 6 Update 10 引入的 Nimbus 外观——使用 Java 2D 矢量图形绘制 UI、高度可定制，以及三种启用 Nimbus 的方式。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/nimbus.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# Nimbus 外观
 
-[[Swing-plaf|How to Set the Look and Feel]]
+> 文档说明
 
-[[Swing-synth|The Synth Look and Feel]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[Swing-synthExample|A Synth Example]]
+## Nimbus 外观
 
-Nimbus Look and Feel
+Nimbus 是在 Java SE 6 Update 10 (6u10) 发行版中引入的精心打造的跨平台外观。以下来自 SwingSet3 的屏幕截图展示了 Nimbus 外观。
 
-[[Swing-custom|Changing the Look of Nimbus]]
+![使用 Nimbus 外观的 SwingSet3 屏幕截图](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/nimbus.png)
 
-[[Swing-size|Resizing a Component]]
+Nimbus 使用 Java 2D 矢量图形来绘制用户界面(UI)，而不是静态位图，因此 UI 可以以任何分辨率清晰地渲染。
 
-[[Swing-color|Changing the Color Theme]]
+Nimbus 高度可定制。你可以直接使用 Nimbus 外观，也可以用自己的品牌*皮肤化*（自定义）外观。
 
-[[Swing-synthExample|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-custom|Next »]]
+## 启用 Nimbus 外观
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+为了向后兼容，Metal 仍然是默认的 Swing 外观，但你可以通过以下三种方式之一切换到 Nimbus：
 
-## Nimbus Look and Feel
-
-Nimbus is a polished cross-platform look and feel introduced in the Java SE 6 Update 10 (6u10) release. The following screen capture, from SwingSet3 shows the Nimbus look and feel.
-
-![SwingSet3 Screen capture Using Nimbus Look and Feel](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/nimbus.png)
-
-Nimbus uses Java 2D vector graphics to draw the user interface (UI), rather than static bitmaps, so the UI can be crisply rendered at any resolution.
-
-Nimbus is highly customizable. You can use the Nimbus look and feel as is, or you can *skin* (customize) the look with your own brand.
-
-## Enabling the Nimbus Look and Feel
-
-For backwards compatibility, Metal is still the default Swing look and feel, but you can change to Nimbus in one of three ways:
-
-- Add the following code to the event-dispatching thread before creating the graphical user interface (GUI):
-	```
+- 在创建图形用户界面(GUI) 之前，将以下代码添加到事件分发线程：
+	```java
 	import javax.swing.UIManager.*;
 	try {
 	    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -58,19 +43,23 @@ For backwards compatibility, Metal is still the default Swing look and feel, but
 	        }
 	    }
 	} catch (Exception e) {
-	    // If Nimbus is not available, you can set the GUI to another look and feel.
+	    // 如果 Nimbus 不可用，你可以将 GUI 设置为其他外观。
 	}
 	```
-	The first line of code retrieves the list of all installed look and feel implementations for the platform and then iterates through the list to determine if Nimbus is available. If so, Nimbus is set as the look and feel.
+	第一行代码检索平台所有已安装的外观实现列表，然后遍历列表以确定 Nimbus 是否可用。如果可用，则将 Nimbus 设置为外观。
 	---
-	**Version Note:** Do not set the Nimbus look and feel explicitly by invoking the `UIManager.setLookAndFeel` method because not all versions or implementations of Java SE 6 support Nimbus. Additionally, the location of the Nimbus package changed between the JDK 6 Update 10 and JDK 7 releases. Iterating through all installed look and feel implementations is a more robust approach because if Nimbus is not available, the default look and feel is used. For the JDK 6 Update 10 release, the Nimbus package is located at `com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel`.
+	**版本说明：** 不要通过调用 `UIManager.setLookAndFeel` 方法显式设置 Nimbus 外观，因为并非所有版本或实现的 Java SE 6 都支持 Nimbus。此外，Nimbus 包的位置在 JDK 6 Update 10 和 JDK 7 发行版之间发生了变化。遍历所有已安装的外观实现是一种更健壮的方法，因为如果 Nimbus 不可用，则使用默认外观。对于 JDK 6 Update 10 发行版，Nimbus 包位于 `com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel`。
 	---
-- Specify Nimbus as the default look and feel for a particular application at the command line, as follows:
-	```
+- 在命令行中为特定应用程序指定 Nimbus 作为默认外观，如下所示：
+
+	```bash
 	java -Dswing.defaultlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel MyApp
 	```
-- Permanently set the default look and feel to Nimbus by adding the following line to the `<*JAVA_HOME*>/lib/swing.properties` file:
-	```
+
+- 通过在 `<*JAVA_HOME*>/lib/swing.properties` 文件中添加以下行，永久地将默认外观设置为 Nimbus：
+
+	```bash
 	swing.defaultlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel
 	```
-	If the `swing.properties` file does not yet exist, you need to create it.
+
+	如果 `swing.properties` 文件尚不存在，你需要创建它。

@@ -1,14 +1,15 @@
 ---
 分类:
   - "网页裁剪"
-标题: ""Hello World!" for the NetBeans IDE (The Java™ Tutorials >        
-            Getting Started > The "Hello World!" Application)"
+标题: "NetBeans IDE 版 Hello World"
 描述: "This beginner Java tutorial describes getting started with Java and setting up your Netbeans IDE"
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+
+# NetBeans IDE 版 Hello World
 
 Documentation
 
@@ -111,7 +112,7 @@ The IDE is now configured for JDK 8.
 
 When you created this project, you left the **Create Main Class** checkcbox selected in the **New Project** wizard. The IDE has therefore created a skeleton class for you. You can add the "Hello World!" message to the skeleton code by replacing the line:
 
-```
+```text
 // TODO code application logic here
 ```
 
@@ -119,7 +120,7 @@ with the line:
 
 ```java
 System.out.println("Hello World!"); // Display the string.
-```
+```text
 
 Optionally, you can replace these four lines of generated code:
 
@@ -128,7 +129,7 @@ Optionally, you can replace these four lines of generated code:
  *
  * @author
  */
-```
+```text
 
 with these lines:
 
@@ -137,7 +138,7 @@ with these lines:
  * The HelloWorldApp class implements an application that
  * simply prints "Hello World!" to standard output.
  */
-```
+```java
 
 These four lines are a code comment and do not affect how the program runs. Later sections of this tutorial explain the use and format of code comments.
 

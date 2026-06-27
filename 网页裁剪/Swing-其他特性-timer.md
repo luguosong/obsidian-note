@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Swing Timers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -66,7 +68,7 @@ Note that the Swing timer's task is performed in the event dispatch thread. This
 
 Let's look at an example of using a timer to periodically update a component. The [`` `TumbleItem` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TumbleItemProject/src/components/TumbleItem.java) applet uses a timer to update its display at regular intervals. (To see this applet running, go to [[Swing-组件-applet|How to Make Applets]]. This applet begins by creating and starting a timer:
 
-```
+```text
 timer = new Timer(speed, this);
 timer.setInitialDelay(pause);
 timer.start();
@@ -76,7 +78,7 @@ The `speed` and `pause` variables represent applet parameters; as configured on 
 
 After starting the timer, `TumbleItem` begins loading a series of images in a background thread. Meanwhile, the timer events begin to occur, causing the `actionPerformed` method to execute:
 
-```
+```java
 public void actionPerformed(ActionEvent e) {
     //If still loading, can't animate.
     if (!worker.isDone()) {

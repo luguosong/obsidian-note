@@ -1,46 +1,35 @@
 ---
 分类:
   - "网页裁剪"
-标题: "When to Use SAX (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Simple API for XML)"
-描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+标题: "何时使用 SAX"
+描述: "《Java 教程》JAXP SAX 课程，介绍何时选择 SAX 解析器——适用于状态无关的处理和需要低内存占用的场景，并与 StAX、DOM 对比。"
 来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/when.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 何时使用 SAX
 
-When to Use SAX
+> 文档说明
 
-[[JAXP-SAX-parsing|Parsing an XML File Using SAX]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[JAXP-SAX-validation|Implementing SAX Validation]]
+## 何时使用 SAX
 
-[[JAXP-SAX-events|Handling Lexical Events]]
+当你想将现有数据转换为 XML 时，理解 SAX 事件模型很有帮助。转换过程的关键是修改现有应用程序，使其在读取数据时传递 SAX 事件。
 
-[[JAXP-SAX-using|Using the DTDHandler and EntityResolver]]
+SAX 快速且高效，但其事件模型使其最适合此类状态无关的过滤。例如，SAX 解析器在遇到元素标签时调用应用程序中的一个方法，在找到文本时调用另一个方法。如果你正在做的处理是状态无关的（意味着它不依赖于之前的元素），那么 SAX 工作良好。
 
-[[JAXP-SAX-info|Further Information]]
+另一方面，对于状态相关的处理——程序需要对元素 A 下的数据做一件事但对元素 B 下的数据做不同的事——拉取式解析器（如 XML 流式 API(StAX)）将是更好的选择。使用拉取式解析器，你可以在代码中任意位置获取下一个节点（无论它是什么）。因此，很容易改变处理文本的方式（例如），因为你可以在程序中的多个位置处理它（更多细节，请参阅 [[JAXP-SAX-info|进一步信息]]）。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+SAX 比 DOM 需要的内存少得多，因为 SAX 不像 DOM 那样构造 XML 数据的内部表示（树结构）。相反，SAX 在读取数据时简单地将数据发送给应用程序；你的应用程序然后可以对其看到的数据做任何想做的事。
 
-## When to Use SAX
+拉取式解析器和 SAX API 都像串行 I/O 流。你在数据流入时看到它，但无法返回到较早的位置或跳到不同位置。通常，当你只想读取数据并让应用程序对其采取行动时，此类解析器工作良好。
 
-It is helpful to understand the SAX event model when you want to convert existing data to XML. The key to the conversion process is to modify an existing application to deliver SAX events as it reads the data.
+但当你需要修改 XML 结构——特别是需要交互式修改时——内存中的结构更有意义。DOM 就是这样的模型。然而，虽然 DOM 为大型文档（如书籍和文章）提供了许多强大的功能，但它也需要大量复杂的编码。该过程的详细信息在下一课的 [[JAXP-DOM-when|何时使用 DOM]] 中重点介绍。
 
-SAX is fast and efficient, but its event model makes it most useful for such state-independent filtering. For example, a SAX parser calls one method in your application when an element tag is encountered and calls a different method when text is found. If the processing you are doing is state-independent (meaning that it does not depend on the elements that have come before), then SAX works fine.
-
-On the other hand, for state-dependent processing, where the program needs to do one thing with the data under element A but something different with the data under element B, then a pull parser such as the Streaming API for XML (StAX) would be a better choice. With a pull parser, you get the next node, whatever it happens to be, at any point in the code that you ask for it. So it is easy to vary the way you process text (for example), because you can process it multiple places in the program (for more detail, see [[JAXP-SAX-info|Further Information]]).
-
-SAX requires much less memory than DOM, because SAX does not construct an internal representation (tree structure) of the XML data, as a DOM does. Instead, SAX simply sends data to the application as it is read; your application can then do whatever it wants to do with the data it sees.
-
-Pull parsers and the SAX API both act like a serial I/O stream. You see the data as it streams in, but you cannot go back to an earlier position or leap ahead to a different position. In general, such parsers work well when you simply want to read data and have the application act on it.
-
-But when you need to modify an XML structure - especially when you need to modify it interactively - an in-memory structure makes more sense. DOM is one such model. However, although DOM provides many powerful capabilities for large-scale documents (like books and articles), it also requires a lot of complex coding. The details of that process are highlighted in [[JAXP-DOM-when|When to Use DOM]] in the next lesson.
-
-For simpler applications, that complexity may well be unnecessary. For faster development and simpler applications, one of the object-oriented XML-programming standards, such as JDOM ( [http://www.jdom.org](http://www.jdom.org/)) and DOM4J ( [http://www.dom4j.org/](http://www.dom4j.org/)), might make more sense.
+对于更简单的应用程序，这种复杂性可能是不必要的。对于更快的开发和更简单的应用程序，面向对象的 XML 编程标准之一（如 JDOM（[http://www.jdom.org](http://www.jdom.org/)）和 DOM4J（[http://www.dom4j.org/](http://www.dom4j.org/)））可能更有意义。

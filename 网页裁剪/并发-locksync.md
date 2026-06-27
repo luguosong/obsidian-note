@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Intrinsic Locks and Synchronization (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -45,7 +47,7 @@ public void addName(String name) {
     }
     nameList.add(name);
 }
-```
+```java
 
 In this example, the `addName` method needs to synchronize changes to `lastName` and `nameCount`, but also needs to avoid synchronizing invocations of other objects' methods. (Invoking other objects' methods from synchronized code can create problems that are described in the section on [[并发-liveness|Liveness]].) Without synchronized statements, there would have to be a separate, unsynchronized method for the sole purpose of invoking `nameList.add`.
 

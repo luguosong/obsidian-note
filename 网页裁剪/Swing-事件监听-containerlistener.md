@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Container Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -98,7 +100,7 @@ The following example demonstrates container events. By clicking **Add a button*
 
 You can find the demo's code in [`ContainerEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/ContainerEventDemoProject/src/events/ContainerEventDemo.java). Here is the demo's container event handling code:
 
-```
+```sql
 public class ContainerEventDemo ... implements ContainerListener ... {
     ...//where initialization occurs:
         buttonPanel = new JPanel(new GridLayout(1,1));

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use GridLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -41,7 +43,7 @@ A `GridLayout` object places components in a grid of cells. Each component takes
 
 The code snippet below creates the `GridLayout` object and the components it manages.
 
-```
+```text
 GridLayout experimentLayout = new GridLayout(0,2);
 
 ...
@@ -59,7 +61,7 @@ The constructor of the `GridLayout` class creates an instance that has two colum
 
 Use combo boxes to set up how much vertical or horizontal padding is put around the components. Then click the Apply gaps button. The following code snippet shows how your selection is processed by using the `setVgap` and `setHgap` methods of the `GridLayout` class:
 
-```
+```java
 applyButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 //Get the horizontal gap value

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Mouse-Motion Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -102,7 +104,7 @@ The following demo code contains a mouse-motion listener. This demo is exactly t
 
 You can find the demo's code in [`MouseMotionEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/MouseMotionEventDemoProject/src/events/MouseMotionEventDemo.java) and [`BlankArea.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/MouseMotionEventDemoProject/src/events/BlankArea.java). The following code snippet from `MouseMotionEventDemo` implements the mouse-motion event handling:
 
-```
+```java
 public class MouseMotionEventDemo extends JPanel 
                                   implements MouseMotionListener {
     //...in initialization code:
@@ -128,11 +130,11 @@ public class MouseMotionEventDemo extends JPanel
                         + newline);
     }
 }
-```
+```java
 
 The SelectionDemo example, draws a rectangle illustrating the user's current dragging. To draw the rectangle, the application must implement an event handler for three kinds of mouse events: mouse presses, mouse drags, and mouse releases. To be informed of all these events, the handler must implement both the `MouseListener` and `MouseMotionListener` interfaces, and be registered as both a mouse listener and a mouse-motion listener. To avoid having to define empty methods, the handler doesn't implement either listener interface directly. Instead, it extends `MouseInputAdapter`, as the following code snippet shows.
 
-```
+```java
 ...//where initialization occurs:
     MyListener myListener = new MyListener();
     addMouseListener(myListener);

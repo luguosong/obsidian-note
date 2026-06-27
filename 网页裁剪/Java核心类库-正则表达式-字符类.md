@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Character Classes (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -45,7 +47,7 @@ The left-hand column specifies the regular expression constructs, while the righ
 
 The most basic form of a character class is to simply place a set of characters side-by-side within square brackets. For example, the regular expression `[bcr]at` will match the words "bat", "cat", or "rat" because it defines a character class (accepting either "b", "c", or "r") as its first character.
 
-```
+```text
 Enter your regex: [bcr]at
 Enter input string to search: bat
 I found the text "bat" starting at index 0 and ending at index 3.
@@ -69,7 +71,7 @@ In the above examples, the overall match succeeds only when the first letter mat
 
 To match all characters *except* those listed, insert the " `^` " metacharacter at the beginning of the character class. This technique is known as *negation*.
 
-```
+```text
 Enter your regex: [^bcr]at
 Enter input string to search: bat
 No match found.
@@ -95,7 +97,7 @@ Sometimes you'll want to define a character class that includes a range of value
 
 Here are some examples of ranges and negation:
 
-```
+```text
 Enter your regex: [a-c]
 Enter input string to search: a
 I found the text "a" starting at index 0 and ending at index 1.
@@ -137,7 +139,7 @@ I found the text "foo6" starting at index 0 and ending at index 4.
 
 You can also use *unions* to create a single character class comprised of two or more separate character classes. To create a union, simply nest one class inside the other, such as `[0-4[6-8]]`. This particular union creates a single character class that matches the numbers 0, 1, 2, 3, 4, 6, 7, and 8.
 
-```
+```text
 Enter your regex: [0-4[6-8]]
 Enter input string to search: 0
 I found the text "0" starting at index 0 and ending at index 1.
@@ -163,7 +165,7 @@ No match found.
 
 To create a single character class matching only the characters common to all of its nested classes, use `&&`, as in `[0-9&&[345]]`. This particular intersection creates a single character class matching only the numbers common to both character classes: 3, 4, and 5.
 
-```
+```text
 Enter your regex: [0-9&&[345]]
 Enter input string to search: 3
 I found the text "3" starting at index 0 and ending at index 1.
@@ -187,7 +189,7 @@ No match found.
 
 And here's an example that shows the intersection of two ranges:
 
-```
+```text
 Enter your regex: [2-8&&[4-6]]
 Enter input string to search: 3
 No match found.
@@ -213,7 +215,7 @@ No match found.
 
 Finally, you can use *subtraction* to negate one or more nested character classes, such as `[0-9&&[^345]]`. This example creates a single character class that matches everything from 0 to 9, *except* the numbers 3, 4, and 5.
 
-```
+```text
 Enter your regex: [0-9&&[^345]]
 Enter input string to search: 2
 I found the text "2" starting at index 0 and ending at index 1.

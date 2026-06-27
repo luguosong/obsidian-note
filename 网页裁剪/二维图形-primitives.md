@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Drawing Geometric Primitives (The Java™ Tutorials >        
+            2D Graphics > Working with Geometry)
 
 Documentation
 
@@ -31,21 +33,18 @@ The [`Shape`](https://docs.oracle.com/javase/8/docs/api/java/awt/Shape.html) int
 
 All examples represented in this section create geometries by using `java.awt.geom` package and then render them by using the [`Graphics2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html) class. To begin you obtain a `Graphics2D` object, for example by casting the `Graphics` parameter of the `paint()` method.
 
-```
+```java
 public void paint (Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     ...
 }
-```
 
 ## Point
 
 The [`Point`](https://docs.oracle.com/javase/8/docs/api/java/awt/Point.html) class creates a point representing a location in (x,y) [[二维图形-坐标系|coordinate space]]. The subclasses `Point2D.Float` and `Point2D.Double` provide correspondingly float and double precision for storing the coordinates of the point.
 
-```
 //Create Point2D.Double
 Point2D.Double point = new Point2D.Double(x, y);
-```
 
 To create a point with the coordinates 0,0 you use the default constructor, `Point2D.Double()`.  
 You can use the `setLocation` method to set the position of the point as follows:
@@ -59,10 +58,8 @@ Also, the `Point2D` class has methods to calculate the distance between the curr
 
 The [`Line2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/geom/Line2D.html) class represents a line segment in (x, y) coordinate space. The `Line2D. Float` and `Line2D.Double` subclasses specify lines in float and double precision. For example:
 
-```
 // draw Line2D.Double
 g2.draw(new Line2D.Double(x1, y1, x2, y2));
-```
 
 ![Line](https://docs.oracle.com/javase/tutorial/figures/2d/2D-16.gif)
 
@@ -85,13 +82,11 @@ The [`QuadCurve2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/geom/Quad
 Several `setCurve` methods are used to specify two endpoints and a control point of the curve, whose coordinates can be defined directly, by the coordinates of other points and by using a given array.  
 A very useful method, `setCurve(QuadCurve2D)`, sets the quadratic curve with the same endpoints and the control point as a supplied curve. For example:
 
-```
 // create new QuadCurve2D.Float
 QuadCurve2D q = new QuadCurve2D.Float();
 // draw QuadCurve2D.Float with set coordinates
 q.setCurve(x1, y1, ctrlx, ctrly, x2, y2);
 g2.draw(q);
-```
 
 ![Quadratic parametric curve segment](https://docs.oracle.com/javase/tutorial/figures/2d/quadCurve.gif)
 
@@ -101,14 +96,12 @@ The [`CubicCurve2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/geom/Cub
 
 The `CubicCurve2D` class has similar methods for setting the curve as the `QuadraticCurve2D` class, except with a second control point. For example:
 
-```
 // create new CubicCurve2D.Double
 CubicCurve2D c = new CubicCurve2D.Double();
 // draw CubicCurve2D.Double with set coordinates
 c.setCurve(x1, y1, ctrlx1,
            ctrly1, ctrlx2, ctrly2, x2, y2);
 g2.draw(c);
-```
 
 ![Cubic Curve Segment](https://docs.oracle.com/javase/tutorial/figures/2d/cubicCurve.gif)
 
@@ -120,12 +113,10 @@ These methods enables you to get information about a shape’s location and size
 
 The [`Rectangle2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/geom/Rectangle2D.html) class represents a rectangle defined by a location (x, y) and dimension (w x h). The `Rectangle2D.Float` and `Rectangle2D.Double` subclasses specify a rectangle in float and double precision. For example:
 
-```
 // draw Rectangle2D.Double
 g2.draw(new Rectangle2D.Double(x, y,
                                rectwidth,
                                rectheight));
-```
 
 ![Rectangle](https://docs.oracle.com/javase/tutorial/figures/2d/2D-17.gif)
 
@@ -141,13 +132,11 @@ The rounded rectangle is specified with following parameters:
 
 To set the location, size, and arcs of a `RoundRectangle2D` object, use the method `setRoundRect(double a, double y, double w, double h, double arcWidth, double arcHeight)`. For example:
 
-```
 // draw RoundRectangle2D.Double
 g2.draw(new RoundRectangle2D.Double(x, y,
                                    rectwidth,
                                    rectheight,
                                    10, 10));
-```
 
 ![Rounded Rectangle](https://docs.oracle.com/javase/tutorial/figures/2d/2D-18.gif)
 
@@ -157,12 +146,10 @@ The [`Ellipse2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/geom/Ellips
 
 Ellipse is fully defined by a location, a width and a height. For example:
 
-```
 // draw Ellipse2D.Double
 g2.draw(new Ellipse2D.Double(x, y,
                              rectwidth,
                              rectheight));
-```
 
 ![Ellipse](https://docs.oracle.com/javase/tutorial/figures/2d/2D-20.gif)
 
@@ -182,7 +169,6 @@ Several methods set the size and parameters of the arc:
 
 Also, you can use the `setArcByCenter` method to specify an arc from a center point, given by its coordinates and a radius.
 
-```
 // draw Arc2D.Double
 g2.draw(new Arc2D.Double(x, y,
                          rectwidth,

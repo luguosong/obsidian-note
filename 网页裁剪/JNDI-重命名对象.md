@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Rename (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 You can rename an object in a context by using [Context.rename()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#rename-javax.naming.Name-javax.naming.Name-).
 
-```
+```text
 // Rename to Scott S
 ctx.rename("cn=Scott Seligman", "cn=Scott S");
 ```
@@ -32,7 +34,7 @@ ctx.rename("cn=Scott Seligman", "cn=Scott S");
 
 [`This example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Rename.java) renames the object that was bound to "cn=Scott Seligman" to "cn=Scott S". After verifying that the object got renamed, the program renames it to its original name ("cn=Scott Seligman"), as follows.
 
-```
+```text
 // Rename back to Scott Seligman
 ctx.rename("cn=Scott S", "cn=Scott Seligman");
 ```

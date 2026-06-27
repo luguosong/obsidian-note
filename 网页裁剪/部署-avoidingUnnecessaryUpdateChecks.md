@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Avoiding Unnecessary Update Checks (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -36,12 +38,12 @@ The term "launch software" is used here to collectively refer to the Java Plug-i
 You can leverage the *version download protocol* to eliminate unnecessary version checks. See the following steps to enable this protocol.
 
 1. Rename the JAR files to include a version number suffix with the following naming convention:
-	```
+```text
 	<JAR file name>__V<version number>.jar
-	```
+```
 	For example, rename `DynamicTreeDemo.jar` to `DynamicTreeDemo__V1.0.jar`.
 2. In the JNLP file, specify a version for every JAR file, and set the `jnlp.versionEnabled` property to `true`.
-	```
+	```xml
 	<resources>
 	    <!-- Application Resources -->
 	    <j2se version="1.6+"
@@ -54,7 +56,6 @@ You can leverage the *version download protocol* to eliminate unnecessary versio
 	        value="true"/>
 	    <!-- ... -->
 	</resources>
-	```
 	When the `jnlp.versionEnabled` property is enabled, the launch software performs only *one* update check to make sure that the JNLP file is up-to-date. The software compares the version numbers that are specified in the JNLP file with the corresponding JAR file versions (according to the naming convention mentioned in step 1) and updates only the outdated JAR files. This approach is efficient because only the update check for the JNLP file occurs over the network. All other version checks occur locally.
 	If a file with the correct version number is not found, the launch software attempts to load the default JAR file (for example, `DynamicTreeDemo.jar`).
 
@@ -62,13 +63,12 @@ You can leverage the *version download protocol* to eliminate unnecessary versio
 
 If it is not critical for the user to immediately run the latest version of your RIA, you can specify that all update checks should occur in the background. In this case, the launch software launches the locally cached copy for immediate usage and downloads a newer version of the RIA in the background. The newer version of the RIA will be launched the next time the user attempts to use your RIA. To enable background update checks, add the following line to your JNLP file:
 
-```
 <update check='background'/>
-```
+```xml
 
 The following code snippet shows a sample JNLP file with the background update check enabled:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <jnlp spec="1.0+" codebase="" href="">
     <information>

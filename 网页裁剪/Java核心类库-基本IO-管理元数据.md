@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Managing Metadata (File and File Store Attributes) (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -162,7 +164,6 @@ System.out.println("isOther: " + attr.isOther());
 System.out.println("isRegularFile: " + attr.isRegularFile());
 System.out.println("isSymbolicLink: " + attr.isSymbolicLink());
 System.out.println("size: " + attr.size());
-```
 
 In addition to the accessor methods shown in this example, there is a `fileKey` method that returns either an object that uniquely identifies the file or `null` if no file key is available.
 
@@ -170,7 +171,6 @@ In addition to the accessor methods shown in this example, there is a `fileKey` 
 
 The following code snippet sets the last modified time in milliseconds:
 
-```
 Path file = ...;
 BasicFileAttributes attr =
     Files.readAttributes(file, BasicFileAttributes.class);
@@ -178,7 +178,6 @@ long currentTime = System.currentTimeMillis();
 FileTime ft = FileTime.fromMillis(currentTime);
 Files.setLastModifiedTime(file, ft);
 }
-```
 
 ## DOS File Attributes
 
@@ -197,11 +196,10 @@ try {
     System.err.println("DOS file" +
         " attributes not supported:" + x);
 }
-```
 
 However, you can set a DOS attribute using the [`setAttribute(Path, String, Object, LinkOption...)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#setAttribute-java.nio.file.Path-java.lang.String-java.lang.Object-java.nio.file.LinkOption...-) method, as follows:
 
-```
+```text
 Path file = ...;
 Files.setAttribute(file, "dos:hidden", true);
 ```
@@ -214,7 +212,7 @@ Besides file owner and group owner, POSIX supports nine file permissions: read, 
 
 The following code snippet reads the POSIX file attributes for a given file and prints them to standard output. The code uses the methods in the [`PosixFileAttributes`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/attribute/PosixFileAttributes.html) class.
 
-```
+```text
 Path file = ...;
 PosixFileAttributes attr =
     Files.readAttributes(file, PosixFileAttributes.class);
@@ -240,7 +238,7 @@ PosixFileAttributes attrs =
 FileAttribute<Set<PosixFilePermission>> attr =
     PosixFilePermissions.asFileAttribute(attrs.permissions());
 Files.createFile(file, attr);
-```
+```text
 
 The `asFileAttribute` method wraps the permissions as a `FileAttribute`. The code then attempts to create a new file with those permissions. Note that the `umask` also applies, so the new file might be more secure than the permissions that were requested.
 
@@ -263,7 +261,7 @@ To translate a name into an object you can store as a file owner or a group owne
 
 The following code snippet shows how to set the file owner by using the `setOwner` method:
 
-```
+```text
 Path file = ...;
 UserPrincipal owner = file.GetFileSystem().getUserPrincipalLookupService()
         .lookupPrincipalByName("sally");
@@ -272,7 +270,7 @@ Files.setOwner(file, owner);
 
 There is no special-purpose method in the `Files` class for setting a group owner. However, a safe way to do so directly is through the POSIX file attribute view, as follows:
 
-```
+```text
 Path file = ...;
 GroupPrincipal group =
     file.getFileSystem().getUserPrincipalLookupService()
@@ -289,7 +287,7 @@ Some implementations map this concept to features like NTFS Alternative Data Str
 
 A file's MIME type can be stored as a user-defined attribute by using this code snippet:
 
-```
+```text
 Path file = ...;
 UserDefinedFileAttributeView view = Files
     .getFileAttributeView(file, UserDefinedFileAttributeView.class);
@@ -299,7 +297,7 @@ view.write("user.mimetype",
 
 To read the MIME type attribute, you would use this code snippet:
 
-```
+```text
 Path file = ...;
 UserDefinedFileAttributeView view = Files
 .getFileAttributeView(file,UserDefinedFileAttributeView.class);
@@ -318,7 +316,6 @@ The [`` `Xdd` ``](https://docs.oracle.com/javase/tutorial/essential/io/examples/
 
 ```bash
 $ sudo mount -o remount,user_xattr /
-```
 
 If you want to make the change permanent, add an entry to `/etc/fstab`.
 
@@ -330,7 +327,6 @@ You can use the [`FileStore`](https://docs.oracle.com/javase/8/docs/api/java/nio
 
 The following code snippet prints the space usage for the file store where a particular file resides:
 
-```
 Path file = ...;
 FileStore store = Files.getFileStore(file);
 

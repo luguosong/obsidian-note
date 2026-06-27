@@ -23,7 +23,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 To read the attributes of an object from the directory, use [DirContext.getAttributes()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#getAttributes-javax.naming.Name-) and pass it the name of the object for which you want the attributes. Suppose that an object in the naming service has the name "cn=Ted Geisel, ou=People". To retrieve this object's attributes, you'll need [`code`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/GetAllAttrs.java) that looks like this:
 
-```
+```text
 Attributes answer = ctx.getAttributes("cn=Ted Geisel, ou=People");
 ```
 
@@ -38,7 +38,6 @@ for (NamingEnumeration ae = answer.getAll(); ae.hasMore();) {
          System.out.println("value: " + e.next()))
         ;
 }
-```
 
 This produces the following output.
 
@@ -61,13 +60,12 @@ attribute: telephonenumber
 value: +1 408 555 5252
 attribute: cn
 value: Ted Geisel
-```
 
 ## Returning Selected Attributes
 
 To read a selective subset of attributes, you supply an array of strings that are attribute identifiers of the attributes that you want to retrieve.
 
-```
+```text
 // Specify the ids of the attributes to return
 String[] attrIDs = {"sn", "telephonenumber", "golfhandicap", "mail"};
 

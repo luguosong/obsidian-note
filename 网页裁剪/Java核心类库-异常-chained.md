@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Chained Exceptions (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -25,7 +27,7 @@ An application often responds to an exception by throwing another exception. In 
 
 The following are the methods and constructors in `Throwable` that support chained exceptions.
 
-```
+```text
 Throwable getCause()
 Throwable initCause(Throwable)
 Throwable(String, Throwable)
@@ -36,7 +38,7 @@ The `Throwable` argument to `initCause` and the `Throwable` constructors is the 
 
 The following example shows how to use a chained exception.
 
-```
+```text
 try {
 
 } catch (IOException e) {
@@ -58,7 +60,7 @@ Now let's suppose that the higher-level exception handler wants to dump the stac
 
 The following code shows how to call the `getStackTrace` method on the exception object.
 
-```
+```java
 catch (Exception cause) {
     StackTraceElement elements[] = cause.getStackTrace();
     for (int i = 0, n = elements.length; i < n; i++) {       
@@ -68,13 +70,11 @@ catch (Exception cause) {
             + elements[i].getMethodName() + "()");
     }
 }
-```
 
 ## Logging API
 
 The next code snippet logs where an exception occurred from within the `catch` block. However, rather than manually parsing the stack trace and sending the output to `System.err()`, it sends the output to a file using the logging facility in the [`java.util.logging`](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html) package.
 
-```
 try {
     Handler handler = new FileHandler("OutFile.log");
     Logger.getLogger("").addHandler(handler);

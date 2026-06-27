@@ -1,95 +1,94 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Answers: Laying Out Components within a Container (The Java™ Tutorials > Creating a GUI With Swing >
-            )"
-描述: ""
+标题: "答案：在容器中布局组件"
+描述: "《Java 教程》Swing 布局课程的答案，涵盖 BorderLayout、GridLayout、BoxLayout 和 CardLayout 的选用场景及实现代码。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/QandE/answers-ch4.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 答案：在容器中布局组件
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [TOC](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html)
+> 文档说明
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-## Answers: Laying Out Components within a Container
+## 答案：在容器中布局组件
 
-## Questions
+## 问题
 
-In each of the following questions, choose the layout manager(s) most naturally suited for the described layout. Assume that the container controlled by the layout manager is a `JPanel`.
+在以下每个问题中，选择最适合所描述布局的布局管理器。假设布局管理器控制的容器是 `JPanel`。
 
-**Question 1**. The container has one component that should take up as much space as possible
+**问题 1.** 容器有一个组件，该组件应占用尽可能多的空间
 
 | ![Layout1-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout1-1.png) | ![Layout1-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout1-2.png) |
 | --- | --- |
 
-a. `BorderLayout`  
-b. `GridLayout`  
-c. `GridBagLayout`  
-d. a and b  
-e. b and c
+a. `BorderLayout`
+b. `GridLayout`
+c. `GridBagLayout`
+d. a 和 b
+e. b 和 c
 
-**Answer 1**: d. `BorderLayout` and `GridLayout` easily deal with this situation. Although you could use `GridBagLayout`, it's much more complex than necessary.
+**答案 1**：d。`BorderLayout` 和 `GridLayout` 很容易处理这种情况。虽然你可以使用 `GridBagLayout`，但它比必要的复杂得多。
 
-**Question 2**. The container has a row of components that should all be displayed at the same size, filling the container’s entire area.
+**问题 2.** 容器有一行组件，所有组件都应以相同大小显示，填充容器的整个区域。
 
 ![Layout2-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout2-1.png) ![Layout2-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout2-2.png)
 
-a. `FlowLayout`  
-b. `GridLayout`  
-c. `BoxLayout`  
-d. a and b
+a. `FlowLayout`
+b. `GridLayout`
+c. `BoxLayout`
+d. a 和 b
 
-**Answer 2**: b. This type of same-size layout — whether in a row, a column, or a grid — is what `GridLayout` is best at.
+**答案 2**：b。这种相同大小的布局——无论是行、列还是网格——正是 `GridLayout` 最擅长的。
 
-**Question 3**. The container displays a number of components in a column, with any extra space going between the first two components.
+**问题 3.** 容器在一列中显示多个组件，多余的空间分配给前两个组件之间。
 
 | ![Layout3-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout3-1.png) | ![Layout3-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout3-2.png) |
 | --- | --- |
 
-a. `FlowLayout`  
-b. `BoxLayout`  
-c. `GridLayout`  
+a. `FlowLayout`
+b. `BoxLayout`
+c. `GridLayout`
 d. `BorderLayout`
 
-**Answer 3**: b. `BoxLayout` lays out components in either a column or a row. You can specify extra space using an invisible component.
+**答案 3**：b。`BoxLayout` 在列或行中布局组件。你可以使用不可见组件指定额外空间。
 
-**Question 4**. The container can display three completely different components at different times, depending perhaps on user input or program state. Even if the components’ sizes differ, switching from one component to the next shouldn’t change the amount of space devoted to the component.
+**问题 4.** 容器可以在不同时间显示三个完全不同的组件，可能取决于用户输入或程序状态。即使组件的大小不同，从一个组件切换到下一个也不应改变分配给组件的空间量。
 
 ![Layout4-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout4-1.png)
 
 ![Layout4-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout4-2.png)
 
-a. `SpringLayout`  
-b. `BoxLayout`  
-c. `CardLayout`  
+a. `SpringLayout`
+b. `BoxLayout`
+c. `CardLayout`
 d. `GridBagLayout`
 
-**Answer 4**: c. `CardLayout` exists to allow components to share the same space. Although it's simpler to use a `JTabbedPane` component to control an area, `CardLayout` is the solution when you don't want tabs.
+**答案 4**：c。`CardLayout` 的存在就是为了让组件共享相同的空间。虽然使用 `JTabbedPane` 组件来控制区域更简单，但当你不想要选项卡时，`CardLayout` 是解决方案。
 
-## Exercises
+## 练习
 
-**Exercise 1**. Implement the layout described and shown in question 1.  
-**Answer 1**: See [`Layout1.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout1Project/src/QandE/Layout1.java). Here's the code that implements the layout:
+**练习 1.** 实现问题 1 中描述和展示的布局。
+**答案 1**：参见 [`Layout1.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout1Project/src/QandE/Layout1.java)。以下是实现布局的代码：
 
-```
+```java
 JPanel p = new JPanel(new BorderLayout());
 p.add(createComponent("Component 1"),
                       BorderLayout.CENTER);
 frame.setContentPane(p);
 ```
 
-**Exercise 2**. Implement the layout described and shown in question 2.  
-**Answer 2**: See [`Layout2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout2Project/src/QandE/Layout2.java). Here's the code that implements the layout:
+**练习 2.** 实现问题 2 中描述和展示的布局。
+**答案 2**：参见 [`Layout2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout2Project/src/QandE/Layout2.java)。以下是实现布局的代码：
 
-```
+```java
 JPanel p = new JPanel(new GridLayout(1,0));
 p.add(createComponent("Component 1"));
 p.add(createComponent("Component 2"));
@@ -98,10 +97,10 @@ p.add(createComponent("Component 4"));
 frame.setContentPane(p);
 ```
 
-**Exercise 3**. Implement the layout described and shown in question 3.  
-**Answer 3**: See [`Layout3.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout3Project/src/QandE/Layout3.java). Here's the code that implements the layout:
+**练习 3.** 实现问题 3 中描述和展示的布局。
+**答案 3**：参见 [`Layout3.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout3Project/src/QandE/Layout3.java)。以下是实现布局的代码：
 
-```
+```java
 JPanel p = new JPanel();
 p.setLayout(new BoxLayout(p, BoxLayout.PAGE_AXIS));
 p.add(createComponent("Component 1"));
@@ -112,36 +111,36 @@ p.add(createComponent("Component 4"));
 frame.setContentPane(p);
 ```
 
-**Exercise 4**. Implement the layout described and shown in question 4.  
-**Answer 4**: See [`Layout4.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout4Project/src/QandE/Layout4.java). Here's the code that implements the layout:
+**练习 4.** 实现问题 4 中描述和展示的布局。
+**答案 4**：参见 [`Layout4.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/Layout4Project/src/QandE/Layout4.java)。以下是实现布局的代码：
 
-```
-...//Where the radio buttons are set up:
+```java
+...// 设置单选按钮的位置：
 for (int i= 0; i < strings.length; i++) {
     ...
     rb[i].setActionCommand(String.valueOf(i));
     ...
 }
 
-...//Where the panel to contain the shared-space components is set up:
+...// 设置包含共享空间组件的面板的位置：
 cards = new JPanel(new CardLayout());
 for (int i = 0; i < strings.length; i++) {
         cards.add(createComponent(strings[i]), String.valueOf(i));
 }
 
-...//In the action listener for the radio buttons:
+...// 在单选按钮的操作监听器中：
 public void actionPerformed(ActionEvent evt) {
         CardLayout cl = (CardLayout)(cards.getLayout());
         cl.show(cards, (String)evt.getActionCommand());
 }
 ```
 
-**Exercise 5**. By adding a single line of code, make the program you wrote for Exercise 2 display the components from right-to-left, instead of from left-to-right.
+**练习 5.** 通过添加一行代码，使你为练习 2 编写的程序从右到左（而不是从左到右）显示组件。
 
 ![Layout2-3.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/Layout2-3.png)
 
-**Answer 5**: You can change the horizontal orientation using the [`setComponentOrientation`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#setComponentOrientation-java.awt.ComponentOrientation-) method defined by the `Component` class. For example:
+**答案 5**：你可以使用 `Component` 类定义的 [`setComponentOrientation`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#setComponentOrientation-java.awt.ComponentOrientation-) 方法更改水平方向。例如：
 
-```
+```java
 p.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 ```

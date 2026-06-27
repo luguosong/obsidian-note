@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Guarded Blocks (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -25,18 +27,18 @@ Threads often have to coordinate their actions. The most common coordination idi
 
 Suppose, for example `guardedJoy` is a method that must not proceed until a shared variable `joy` has been set by another thread. Such a method could, in theory, simply loop until the condition is satisfied, but that loop is wasteful, since it executes continuously while waiting.
 
-```
+```java
 public void guardedJoy() {
     // Simple loop guard. Wastes
     // processor time. Don't do this!
     while(!joy) {}
     System.out.println("Joy has been achieved!");
 }
-```
+```java
 
 A more efficient guard invokes [`Object.wait`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#wait--) to suspend the current thread. The invocation of `wait` does not return until another thread has issued a notification that some special event may have occurred — though not necessarily the event this thread is waiting for:
 
-```
+```java
 public synchronized void guardedJoy() {
     // This guard only loops once for each special event, which may not
     // be the event we're waiting for.
@@ -61,7 +63,7 @@ Why is this version of `guardedJoy` synchronized? Suppose `d` is the object we'r
 
 When `wait` is invoked, the thread releases the lock and suspends execution. At some future time, another thread will acquire the same lock and invoke [`Object.notifyAll`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#notifyAll--), informing all threads waiting on that lock that something important has happened:
 
-```
+```java
 public synchronized notifyJoy() {
     joy = true;
     notifyAll();
@@ -80,7 +82,7 @@ Let's use guarded blocks to create a *Producer-Consumer* application. This kind 
 
 In this example, the data is a series of text messages, which are shared through an object of type [`` `Drop` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/Drop.java):
 
-```
+```sql
 public class Drop {
     // Message sent from producer
     // to consumer.
@@ -124,11 +126,11 @@ public class Drop {
         notifyAll();
     }
 }
-```
+```java
 
 The producer thread, defined in [`` `Producer` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/Producer.java), sends a series of familiar messages. The string "DONE" indicates that all messages have been sent. To simulate the unpredictable nature of real-world applications, the producer thread pauses for random intervals between messages.
 
-```
+```java
 import java.util.Random;
 
 public class Producer implements Runnable {
@@ -162,7 +164,7 @@ public class Producer implements Runnable {
 
 The consumer thread, defined in [`` `Consumer` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/Consumer.java), simply retrieves the messages and prints them out, until it retrieves the "DONE" string. This thread also pauses for random intervals.
 
-```
+```java
 import java.util.Random;
 
 public class Consumer implements Runnable {
@@ -184,11 +186,11 @@ public class Consumer implements Runnable {
         }
     }
 }
-```
+```java
 
 Finally, here is the main thread, defined in [`` `ProducerConsumerExample` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/ProducerConsumerExample.java), that launches the producer and consumer threads.
 
-```
+```java
 public class ProducerConsumerExample {
     public static void main(String[] args) {
         Drop drop = new Drop();

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Layered Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -134,7 +136,7 @@ Here is a picture of an application that creates a layered pane and places overl
 
 Here is the code from [`LayeredPaneDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/LayeredPaneDemoProject/src/components/LayeredPaneDemo.java) that creates the layered pane:
 
-```
+```text
 layeredPane = new JLayeredPane();
 layeredPane.setPreferredSize(new Dimension(300, 310));
 layeredPane.setBorder(BorderFactory.createTitledBorder(
@@ -160,7 +162,7 @@ The rest of this section covers these topics:
 
 Here is the code from the sample program that adds the colored labels to the layered pane:
 
-```
+```text
 for (int i = 0; i < ...number of labels...; i++) {
     JLabel label = createColoredLabel(...);
     layeredPane.add(label, new Integer(i));
@@ -189,7 +191,6 @@ public void actionPerformed(ActionEvent e) {
                          layerList.getSelectedIndex(),
                          position);
 }
-```
 
 The `setLayer` method used here takes three arguments: the component whose depth is to be set, the new depth, and the position within the depth. `JLayeredPane` has a two-argument version of `setLayer` that takes only the component and the new depth. That method puts the component at the bottom position in its depth.
 
@@ -205,7 +206,6 @@ When adding a component to a layered pane you specify the layer with an `Integer
 
 The following code creates the label that displays Duke's image, and then adds the label to the layered pane.
 
-```
 final ImageIcon icon = createImageIcon("images/dukeWaveRed.gif");
 ...
 dukeLabel = new JLabel(icon);
@@ -215,7 +215,7 @@ dukeLabel.setBounds(15, 225,
                     icon.getIconHeight());
 ...
 layeredPane.add(dukeLabel, new Integer(2), 0);
-```
+```java
 
 This code uses the three-argument version of the `add` method. The third argument specifies the Duke label position within its depth, which determines the component's relationship with other components at the same depth.
 
@@ -242,7 +242,7 @@ By default a layered pane has no layout manager. This means that you typically h
 
 The example uses the `setBounds` method to set the size and position of each of the labels:
 
-```
+```text
 dukeLabel.setBounds(15, 225,
                     icon.getIconWidth(),
                     icon.getIconHeight());
@@ -252,7 +252,7 @@ label.setBounds(origin.x, origin.y, 140, 140);
 
 When the user moves the mouse around, the program calls `setPosition` to change Duke's position:
 
-```
+```text
 dukeLabel.setLocation(e.getX()-XFUDGE, e.getY()-YFUDGE);
 ```
 

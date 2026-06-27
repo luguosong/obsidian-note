@@ -78,13 +78,13 @@ cd /tmp
 mkdir examples
 cd examples
 mkdir java
-```
+```text
 
 要将当前目录更改为这个新目录，然后输入：
 
 ```
 cd /tmp/examples/java
-```
+```java
 
 现在你可以开始创建源文件了。
 
@@ -124,7 +124,7 @@ class HelloWorldApp {
 
 调出另一个 shell 窗口。要编译你的源文件，请将当前目录更改为文件所在的目录。例如，如果你的源目录是 `/tmp/examples/java`，则在提示符下输入以下命令并按 **Return**：
 
-```
+```bash
 cd /tmp/examples/java
 ```
 
@@ -138,7 +138,7 @@ cd /tmp/examples/java
 
 现在已准备好编译源文件。在提示符下，输入以下命令并按 **Return**。
 
-```
+```text
 javac HelloWorldApp.java
 ```
 
@@ -156,7 +156,7 @@ javac HelloWorldApp.java
 
 在同一目录下，于提示符处输入：
 
-```
+```text
 java HelloWorldApp
 ```
 

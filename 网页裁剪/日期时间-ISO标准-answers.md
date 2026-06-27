@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Date-Time API (The Java™ Tutorials > Date Time >
+            Standard Calendar)
 
 Documentation
 
@@ -31,11 +33,11 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 **Answer 2**. You can use the previous method of a TemporalAdjuster:
 
-```
+```java
 LocalDate date = ...;
 System.out.printf("The previous Thursday is: %s%n",
           date.with(TemporalAdjuster.previous(DayOfWeek.THURSDAY)));
-```
+```text
 
 **Question 3**. What is the difference between a ZoneId and a ZoneOffset?
 
@@ -45,16 +47,16 @@ System.out.printf("The previous Thursday is: %s%n",
 
 **Answer 4**. You can convert an Instant to a ZonedDateTime by using the ZonedDateTime.ofInstant method. You also need to supply a ZoneId:
 
-```
+```text
 ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.now(),
                                             ZoneId.systemDefault());
-```
+```text
 
 Alternatively, you could use the Instant.atZone method:
 
-```
+```text
 ZonedDateTime zdt = Instant.now().atZone(ZoneId.systemDefault());
-```
+```text
 
 You can use the toInstant method in the ChronoZonedDateTime interface, implemented by the ZonedDateTime class, to convert from a ZonedDateTime to an Instant:
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: The Platform Environment (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -25,7 +27,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1\. A programmer installs a new library contained in a.jar file. In order to access the library from his code, he sets the CLASSPATH environment variable to point to the new.jar file. Now he finds that he gets an error message when he tries to launch simple applications:
 
-```
+```text
 java Hello
 Exception in thread "main" java.lang.NoClassDefFoundError: Hello
 ```

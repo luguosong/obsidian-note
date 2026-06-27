@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Manipulating LdapName (Distinguished Name) (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)
 
 Documentation
 
@@ -74,7 +76,7 @@ try {
 } catch (InvalidNameException e) {
     System.out.println("Cannot parse name: " + name);
 }
-```
+```text
 
 Running this example with an input of "cn=Mango,ou=Fruits,o=Food" produces the following results:
 
@@ -105,7 +107,7 @@ The right most RDN is at index 0, and the left most RDN is at index n-1. For exa
 
 You can also get a LdapNames's suffix or prefix as a LdapName instance. Here's an [`example`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/LdapNameSuffixPrefix.java) that gets the suffix and prefix of an LDAP name.
 
-```
+```text
 LdapName dn = new LdapName("cn=Mango, ou=Fruits, o=Food");
 Name suffix = dn.getSuffix(1);  // 1 <= index < cn.size()
 Name prefix = dn.getPrefix(1);  // 0 <= index < 1
@@ -116,7 +118,6 @@ When you run this program, it generates the following output:
 ```properties
 cn=Mango ou=Fruits
 o=Food
-```
 
 To make a copy of an LdapName, you use clone().
 
@@ -146,7 +147,6 @@ LdapName dn = new LdapName("ou=Fruits,o=Food");
      System.out.println(dn.remove(1));  // o=Food
      System.out.println(dn);  
 // cn=WaterMelon,ou=Summer,ou=Fruits,o=Resources
-```
 
 ### Comparing an LDAP name
 
@@ -183,7 +183,6 @@ System.out.println(one.endsWith(three));    // false
 System.out.println(one.isEmpty());          // false
 System.out.println(four.isEmpty());         // true
 System.out.println(four.size() == 0);       // true
-```
 
 ### Getting the String Representation
 
@@ -199,13 +198,12 @@ String str = dn.toString();
 System.out.println(str);
 LdapName dn2 = new LdapName(str);
 System.out.println(dn.equals(dn2));  // true
-```
 
 ### LdapName as an Argument to Context Methods
 
 The Context method require either a composite or a compound name passed as argument to its methods. Hence an LdapName can be directly passed to a context method as shown in [`LookupLdapName`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/LookupLdapName.java):
 
-```
+```text
 // Create the initial context
 Context ctx = new InitialContext(env);
 

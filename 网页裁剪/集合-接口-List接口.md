@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The List Interface (The Java™ Tutorials >        
+            Collections > Interfaces)
 
 Documentation
 
@@ -56,13 +58,13 @@ The Java platform contains two general-purpose `List` implementations. [`ArrayLi
 
 The operations inherited from `Collection` all do about what you'd expect them to do, assuming you're already familiar with them. If you're not familiar with them from `Collection`, now would be a good time to read [[集合-接口-Collection接口|The Collection Interface]] section. The `remove` operation always removes *the first* occurrence of the specified element from the list. The `add` and `addAll` operations always append the new element(s) to the *end* of the list. Thus, the following idiom concatenates one list to another.
 
-```
+```text
 list1.addAll(list2);
 ```
 
 Here's a nondestructive form of this idiom, which produces a third `List` consisting of the second list appended to the first.
 
-```
+```text
 List<Type> list3 = new ArrayList<Type>(list1);
 list3.addAll(list2);
 ```
@@ -71,7 +73,7 @@ Note that the idiom, in its nondestructive form, takes advantage of `ArrayList` 
 
 And here's an example (JDK 8 and later) that aggregates some names into a `List`:
 
-```
+```text
 List<String> list = people.stream()
 .map(Person::getName)
 .collect(Collectors.toList());
@@ -93,7 +95,7 @@ public static <E> void swap(List<E> a, int i, int j) {
     a.set(i, a.get(j));
     a.set(j, tmp);
 }
-```
+```java
 
 Of course, there's one big difference. This is a polymorphic algorithm: It swaps two elements in any `List`, regardless of its implementation type. Here's another polymorphic algorithm that uses the preceding `swap` method.
 
@@ -118,7 +120,7 @@ public class Shuffle {
         System.out.println(list);
     }
 }
-```
+```java
 
 In fact, this program can be made even shorter and faster. The [`Arrays`](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html) class has a static factory method called `asList`, which allows an array to be viewed as a `List`. This method does not copy the array. Changes in the `List` write through to the array and vice versa. The resulting List is not a general-purpose `List` implementation, because it doesn't implement the (optional) `add` and `remove` operations: Arrays are not resizable. Taking advantage of `Arrays.asList` and calling the library version of `shuffle`, which uses a default source of randomness, you get the following [`tiny program`](https://docs.oracle.com/javase/tutorial/collections/interfaces/examples/Shuffle.java) whose behavior is identical to the previous program.
 
@@ -142,7 +144,7 @@ The three methods that `ListIterator` inherits from `Iterator` (`hasNext`, `next
 
 Here's the standard idiom for iterating backward through a list.
 
-```
+```text
 for (ListIterator<Type> it = list.listIterator(list.size()); it.hasPrevious(); ) {
     Type t = it.previous();
     ...
@@ -171,7 +173,7 @@ public int indexOf(E e) {
     // Element not found
     return -1;
 }
-```
+```java
 
 Note that the `indexOf` method returns `it.previousIndex()` even though it is traversing the list in the forward direction. The reason is that `it.nextIndex()` would return the index of the element we are about to examine, and we want to return the index of the element we just examined.
 
@@ -189,7 +191,7 @@ The only bit of trickiness in this example is the equality test between `val` an
 
 The `add` method inserts a new element into the list immediately before the current cursor position. This method is illustrated in the following polymorphic algorithm to replace all occurrences of a specified value with the sequence of values contained in the specified list.
 
-```
+```java
 public static <E> 
     void replace(List<E> list, E val, List<? extends E> newVals) {
     for (ListIterator<E> it = list.listIterator(); it.hasNext(); ){
@@ -206,7 +208,7 @@ public static <E>
 
 The `range-view` operation, `subList(int fromIndex, int toIndex)`, returns a `List` view of the portion of this list whose indices range from `fromIndex`, inclusive, to `toIndex`, exclusive. This *half-open range* mirrors the typical `for` loop.
 
-```
+```text
 for (int i = fromIndex; i < toIndex; i++) {
     ...
 }
@@ -216,13 +218,13 @@ As the term *view* implies, the returned `List` is backed up by the `List` on wh
 
 This method eliminates the need for explicit range operations (of the sort that commonly exist for arrays). Any operation that expects a `List` can be used as a range operation by passing a `subList` view instead of a whole `List`. For example, the following idiom removes a range of elements from a `List`.
 
-```
+```text
 list.subList(fromIndex, toIndex).clear();
 ```
 
 Similar idioms can be constructed to search for an element in a range.
 
-```
+```text
 int i = list.subList(fromIndex, toIndex).indexOf(o);
 int j = list.subList(fromIndex, toIndex).lastIndexOf(o);
 ```
@@ -233,7 +235,7 @@ Any polymorphic algorithm that operates on a `List`, such as the `replace` and `
 
 Here's a polymorphic algorithm whose implementation uses `subList` to deal a hand from a deck. That is, it returns a new `List` (the "hand") containing the specified number of elements taken from the end of the specified `List` (the "deck"). The elements returned in the hand are removed from the deck.
 
-```
+```java
 public static <E> List<E> dealHand(List<E> deck, int n) {
     int deckSize = deck.size();
     List<E> handView = deck.subList(deckSize - n, deckSize);
@@ -295,11 +297,11 @@ public class Deal {
         return hand;
     }
 }
-```
+```text
 
 Running the program produces output like the following.
 
-```
+```text
 % java Deal 4 5
 
 [8 of hearts, jack of spades, 3 of spades, 4 of spades,

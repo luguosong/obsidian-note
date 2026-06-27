@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Setting Trusted Arguments and Secure Properties (The Java™ Tutorials >        
+            Deployment > Doing More With Java Rich Internet Applications)
 
 Documentation
 
@@ -45,7 +47,7 @@ Consider the Properties and Arguments Demo applet. The following Java Virtual Ma
 - `sun.java2d.noddraw` – A predefined secure property set equal to "true"
 - `jnlp.myProperty` – A user-defined secure property set equal to "a user-defined property"
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <jnlp spec="1.0+" codebase="" href="">
     <information>
@@ -74,11 +76,11 @@ Consider the Properties and Arguments Demo applet. The following Java Virtual Ma
      </applet-desc>
      <update check="background"/>
 </jnlp>
-```
+```java
 
 The [`PropertiesArgsDemoApplet`](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/examples/applet_PropertiesAndVMArgs/src/PropertiesArgsDemoApplet.java) class uses the `System.getProperty` method to retrieve the `java.version` property and other properties that are set in the JNLP file. The `PropertiesArgsDemoApplet` class also displays the properties.
 
-```
+```java
 import javax.swing.JApplet;
 import javax.swing.SwingUtilities;
 import javax.swing.JLabel;

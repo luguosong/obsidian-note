@@ -62,7 +62,7 @@ public class Person {
         // ...
     }
 }
-```
+```java
 
 假设你的社交网络应用程序的成员存储在一个 `List<Person>` 实例中。
 
@@ -99,7 +99,7 @@ public static void printPersonsWithinAgeRange(
         }
     }
 }
-```
+```java
 
 如果你想打印指定性别的成员，或指定性别和年龄范围的组合怎么办？如果你决定更改 `Person` 类并添加其他属性（如关系状态或地理位置）怎么办？尽管此方法比 `printPersonsOlderThan` 更通用，但尝试为每个可能的搜索查询创建单独的方法仍可能导致脆弱的代码。你可以改为将指定搜索条件的代码放在另一个类中。
 
@@ -126,7 +126,7 @@ public static void printPersons(
 interface CheckPerson {
     boolean test(Person p);
 }
-```
+```java
 
 以下类通过为方法 `test` 指定实现来实现 `CheckPerson` 接口。此方法筛选符合美国选择性服务(Selective Service)资格的成员：如果其 `Person` 参数为男性且年龄在 18 到 25 岁之间，则返回 `true` 值：
 
@@ -145,7 +145,7 @@ class CheckPersonEligibleForSelectiveService implements CheckPerson {
 ```java
 printPersons(
     roster, new CheckPersonEligibleForSelectiveService());
-```
+```java
 
 尽管这种方法不那么脆弱——如果你更改 `Person` 的结构则不必重写方法——但你仍有额外的代码：为应用程序中计划的每个搜索创建一个新接口和一个局部类。因为 `CheckPersonEligibleForSelectiveService` 实现了一个接口，你可以使用匿名类代替局部类，从而免于为每个搜索声明新类。
 
@@ -179,7 +179,7 @@ printPersons(
         && p.getAge() >= 18
         && p.getAge() <= 25
 );
-```
+```java
 
 有关如何定义 Lambda 表达式的信息，请参阅 [Lambda 表达式的语法](#syntax)。
 
@@ -203,7 +203,7 @@ interface CheckPerson {
 interface Predicate<T> {
     boolean test(T t);
 }
-```
+```java
 
 接口 `Predicate<T>` 是泛型接口的一个例子。（有关泛型的更多信息，请参阅[[学习Java语言-泛型|泛型（更新版）]]课程。）泛型类型（如泛型接口）在尖括号（`<>`）内指定一个或多个类型参数。此接口只包含一个类型参数 `T`。当你用实际类型参数声明或实例化泛型类型时，你就得到了一个参数化类型。例如，参数化类型 `Predicate<Person>` 如下：
 
@@ -224,7 +224,6 @@ public static void printPersonsWithPredicate(
         }
     }
 }
-```
 
 因此，以下方法调用与你在[方法 3：在局部类中指定搜索条件代码](#approach3)中调用 `printPersons` 以获取符合选择性服务资格的成员相同：
 
@@ -235,7 +234,6 @@ printPersonsWithPredicate(
         && p.getAge() >= 18
         && p.getAge() <= 25
 );
-```
 
 这不是在此方法中使用 Lambda 表达式的唯一可能之处。以下方法建议了使用 Lambda 表达式的其他方式。
 
@@ -252,7 +250,7 @@ public static void printPersonsWithPredicate(
         }
     }
 }
-```
+```java
 
 此方法检查 `List` 参数 `roster` 中包含的每个 `Person` 实例是否满足 `Predicate` 参数 `tester` 中指定的条件。如果该 `Person` 实例确实满足 `tester` 指定的条件，则在该 `Person` 实例上调用 `printPerson` 方法。
 
@@ -281,7 +279,7 @@ processPersons(
          && p.getAge() <= 25,
      p -> p.printPerson()
 );
-```
+```java
 
 如果你想对成员的个人资料做更多的事情，而不仅仅是打印它们怎么办？假设你想验证成员的个人资料或检索他们的联系信息？在这种情况下，你需要一个函数式接口，它包含一个返回值的抽象方法。`Function<T,R>` 接口包含方法 `R apply(T t)`。以下方法检索参数 `mapper` 指定的数据，然后对其执行参数 `block` 指定的操作：
 
@@ -311,7 +309,7 @@ processPersonsWithFunction(
     p -> p.getEmailAddress(),
     email -> System.out.println(email)
 );
-```
+```java
 
 ### 方法 8：更广泛地使用泛型
 
@@ -343,7 +341,6 @@ processElements(
     p -> p.getEmailAddress(),
     email -> System.out.println(email)
 );
-```
 
 此方法调用执行以下操作：
 
@@ -367,7 +364,6 @@ roster
             && p.getAge() <= 25)
     .map(p -> p.getEmailAddress())
     .forEach(email -> System.out.println(email));
-```
 
 下表将方法 `processElements` 执行的每个操作映射到相应的聚合操作：
 
@@ -396,7 +392,7 @@ btn.setOnAction(new EventHandler<ActionEvent>() {
         System.out.println("Hello World!");
     }
 });
-```
+```text
 
 方法调用 `btn.setOnAction` 指定当你选择 `btn` 对象所代表的按钮时会发生什么。此方法需要一个 `EventHandler<ActionEvent>` 类型的对象。`EventHandler<ActionEvent>` 接口只包含一个方法 `void handle(T event)`。此接口是一个函数式接口，因此你可以使用以下高亮显示的 Lambda 表达式来替换它：
 
@@ -416,14 +412,12 @@ btn.setOnAction(
 	p -> p.getGender() == Person.Sex.MALE 
 	    && p.getAge() >= 18
 	    && p.getAge() <= 25
-	```
 - 箭头标记 `->`
 - 一个主体，由单个表达式或语句块组成。此示例使用以下表达式：
 	```java
 	p.getGender() == Person.Sex.MALE 
 	    && p.getAge() >= 18
 	    && p.getAge() <= 25
-	```
 	如果你指定单个表达式，那么 Java 运行时会评估该表达式然后返回其值。或者，你可以使用 return 语句：
 	```java
 	p -> {
@@ -431,11 +425,11 @@ btn.setOnAction(
 	        && p.getAge() >= 18
 	        && p.getAge() <= 25;
 	}
-	```
+```text
 	return 语句不是一个表达式；在 Lambda 表达式中，你必须用大括号（`{}`）将语句括起来。但是，你不必用大括号括起 void 方法调用。例如，以下是有效的 Lambda 表达式：
 	```java
 	email -> System.out.println(email)
-	```
+```
 
 注意，Lambda 表达式看起来很像方法声明；你可以将 Lambda 表达式视为匿名方法——没有名称的方法。
 
@@ -463,14 +457,14 @@ public class Calculator {
             myApp.operateBinary(20, 10, subtraction));    
     }
 }
-```
+```text
 
 方法 `operateBinary` 对两个整数操作数执行数学运算。运算本身由 `IntegerMath` 的实例指定。该示例用 Lambda 表达式定义了两个运算，`addition` 和 `subtraction`。示例打印以下内容：
 
 ```
 40 + 2 = 42
 20 - 10 = 10
-```
+```java
 
 ## 访问外围作用域的局部变量
 
@@ -529,7 +523,7 @@ y = 23
 z = 2
 this.x = 1
 LambdaScopeTest.this.x = 0
-```
+```text
 
 如果你在 Lambda 表达式 `myConsumer` 的声明中用参数 `x` 替换 `y`，则编译器会生成一个错误：
 
@@ -548,7 +542,6 @@ Consumer<Integer> myConsumer = (y) -> {
     z = 99;
     // ...
 }
-```
 
 由于此赋值语句，变量 `z` 不再是事实上 final 的。结果，Java 编译器生成类似 "Local variable z defined in an enclosing scope must be final or effectively final" 的错误消息。
 
@@ -560,7 +553,6 @@ Consumer<Integer> myConsumer = (y) -> {
 p -> p.getGender() == Person.Sex.MALE
     && p.getAge() >= 18
     && p.getAge() <= 25
-```
 
 此 Lambda 表达式在以下两个方法中使用：
 
@@ -592,7 +584,7 @@ public interface Runnable {
 public interface Callable<V> {
     V call();
 }
-```
+```java
 
 方法 `Runnable.run` 不返回值，而 `Callable<V>.call` 返回值。
 

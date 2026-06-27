@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# A Synth Example (The Java™ Tutorials >        
+            Creating a GUI With Swing > Modifying the Look and Feel)
 
 Documentation
 
@@ -43,7 +45,7 @@ This lesson creates the same dialog box with Synth, using an external XML file. 
 
 `SynthDialog.java` is exactly the same as `Find.java` except for the `initLookAndFeel()` method, which has been altered to use the Synth look and feel with an external file called `synthDemo.xml`. Here is the new `initLookAndFeel()` method:
 
-```
+```java
 private static void initLookAndFeel() {
    SynthLookAndFeel lookAndFeel = new SynthLookAndFeel();
        
@@ -63,13 +65,12 @@ private static void initLookAndFeel() {
       e.printStackTrace();
    }
 }
-```
 
 ## The XML File
 
 The XML file, `synthDemo.xml`, begins with a style bound to all regions. It is good practice to do this to ensure that regions without a style bound to them will contain something. This style makes all regions paint their background in an opaque color. It also sets a default font and default colors.
 
-```
+```xml
 <!-- Style that all regions will use -->
 <style id="backingStyle">
   <!-- Make all the regions opaque-->
@@ -81,7 +82,6 @@ The XML file, `synthDemo.xml`, begins with a style bound to all regions. It is g
   </state>
 </style>
 <bind style="backingStyle" type="region" key=".*"/>
-```
 
 ---
 
@@ -95,7 +95,7 @@ The XML file, `synthDemo.xml`, begins with a style bound to all regions. It is g
 
 The next <style> element defined is for the text field, which is painted using an image.
 
-```
+```xml
 <style id="textfield">
   <insets top="4" left="6" bottom="4" right="6"/>
   <state>
@@ -107,7 +107,7 @@ The next <style> element defined is for the text field, which is painted using a
                 sourceInsets="4 6 4 6" paintCenter="false"/>
 </style>
 <bind style="textfield" type="region" key="TextField"/>
-```
+```text
 
 ---
 
@@ -125,7 +125,7 @@ The next <style> element defined is for the text field, which is painted using a
 
 The next <style> element is for buttons that are painted with different images, depending on the button state. When the mouse passes over the button, its appearance changes. When it is clicked (PRESSED) the image changes again.
 
-```
+```xml
 <style id="button">
        <!-- Shift the text one pixel when pressed -->
    <property key="Button.textShiftOffset" type="integer" value="1"/>
@@ -167,7 +167,7 @@ The next <style> element is for buttons that are painted with different images, 
 
 The next <style> element is for check boxes that are painted with different icons, depending on the check box state.
 
-```
+```xml
 <style id="checkbox">
   <imageIcon id="check_off" path="images/checkbox_off.png"/>
   <imageIcon id="check_on" path="images/checkbox_on.png"/>

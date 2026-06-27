@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Understanding Signing and Verification (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -92,16 +94,16 @@ To summarize digital signing:
 
 When you sign a JAR file, each file in the archive is given a digest entry in the archive's [[部署-manifestindex|manifest]]. Here's an example of what such an entry might look like:
 
-```
+```yaml
 Name: test/classes/ClassOne.class
 SHA1-Digest: TD1GZt8G11dXY2p4olSZPc5Rj64=
-```
+```text
 
 The digest values are hashes or encoded representations of the contents of the files as they were at the time of signing. A file's digest will change if and only if the file itself changes.
 
 When a JAR file is signed, a *signature* file is automatically generated and placed in the JAR file's META-INF directory, the same directory that contains the archive's manifest. Signature files have filenames with an .SF extension. Here is an example of the contents of a signature file:
 
-```
+```yaml
 Signature-Version: 1.0
 SHA1-Digest-Manifest: h1yS+K9T7DyHtZrtI+LxvgqaMYM=
 Created-By: 1.7.0_06 (Oracle Corporation)

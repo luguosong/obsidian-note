@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Security Manager (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -31,7 +33,7 @@ This section explains how an application interacts with an existing security man
 
 The security manager is an object of type [`SecurityManager`](https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityManager.html); to obtain a reference to this object, invoke `System.getSecurityManager`.
 
-```
+```text
 SecurityManager appsm = System.getSecurityManager();
 ```
 
@@ -47,13 +49,13 @@ In addition, the set of `check*XXX*()` methods represents the set of operations 
 
 Many actions that are routine without a security manager can throw a `SecurityException` when run with a security manager. This is true even when invoking a method that isn't documented as throwing `SecurityException`. For example, consider the following code used to write to a file:
 
-```
+```text
 reader = new FileWriter("xanadu.txt");
 ```
 
 In the absence of a security manager, this statement executes without error, provided `xanadu.txt` exists and is writeable. But suppose this statement is inserted in a web applet, which typically runs under a security manager that does not allow file output. The following error messages might result:
 
-```
+```text
 appletviewer fileApplet.html
     Exception in thread "AWT-EventQueue-1" java.security.AccessControlException: access denied (java.io.FilePermission xanadu.txt write)
         at java.security.AccessControlContext.checkPermission(AccessControlContext.java:323)

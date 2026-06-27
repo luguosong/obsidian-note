@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using an Interface as a Type (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -25,7 +27,7 @@ When you define a new interface, you are defining a new reference data type. You
 
 As an example, here is a method for finding the largest object in a pair of objects, for *any* objects that are instantiated from a class that implements `Relatable`:
 
-```
+```java
 public Object findLargest(Object object1, Object object2) {
    Relatable obj1 = (Relatable)object1;
    Relatable obj2 = (Relatable)object2;
@@ -40,7 +42,7 @@ By casting `object1` to a `Relatable` type, it can invoke the `isLargerThan` met
 
 If you make a point of implementing `Relatable` in a wide variety of classes, the objects instantiated from *any* of those classes can be compared with the `findLargest()` method—provided that both objects are of the same class. Similarly, they can all be compared with the following methods:
 
-```
+```java
 public Object findSmallest(Object object1, Object object2) {
    Relatable obj1 = (Relatable)object1;
    Relatable obj2 = (Relatable)object2;

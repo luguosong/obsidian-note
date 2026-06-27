@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# LDAP Setup (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Software Setup)
 
 Documentation
 
@@ -69,7 +71,7 @@ In the examples of this trail, the results shown reflect how the LDAP directory 
 
 For example, using ldapmodify you could do (by plugging in appropriate values for the host name, administrator DN (-D option), and the password):
 
-```
+```text
 ldapmodify -a -c -v -h hostname -p 389\
         -D "cn=Administrator, cn=users, dc=xxx, dc=xxx"\
         -w passwd -f tutorial.ldif
@@ -81,13 +83,13 @@ ldapmodify -a -c -v -h hostname -p 389\
 
 **Installation Note: Namespace Setup.** The entries in the [`tutorial.ldif`](https://docs.oracle.com/javase/tutorial/jndi/software/config/tutorial.ldif) file use the distinguished name (DN) "o=JNDITutorial" for the root naming context. If you have not configured your directory server to have "o=JNDITutorial" as a root naming context, then your attempt to import tutorial.ldif will fail. The easiest way to get around this problem is to add the DN of an existing root naming context to each "dn:" line in the tutorial.ldif file. For example, if your server already has the root naming context "dc=imc,dc=org", then you should change the line
 
-```
+```text
 dn: o=JNDITutorial
 ```
 
 to
 
-```
+```text
 dn: o=JNDITutorial, dc=imc, dc=org
 ```
 
@@ -100,7 +102,7 @@ Make this change for each line that begins with "dn:" in the file. Then, in all 
 1. The root naming context is not going to be "o=jnditutorial". It will be of the form "dc=x,dc=y,dc=z". You need to follow the previous **Namespace Setup** note.
 2. Add the object classes and related attributes for the "inetOrgPerson" and "groupOfUniqueNames" object classes to the Active Directory schema by using the Active Directory Management Console snap-in, ADSIEdit. "groupOfUniqueNames" is defined in [RFC 2256](http://www.ietf.org/rfc/rfc2256.txt), "inetOrgPerson" in [RFC 2798](http://www.ietf.org/rfc/rfc2798.txt).
 3. Some of hierarchical relationships used by the tutorial are not allowed by default in Active Directory. To enable these relationships, add them by using the Active Directory Management Console snap-in, ADSIEdit.
-	```
+```text
 	objectclass: organizationalUnit
 	possible superiors: domainDNS
 	                    inetOrgPerson
@@ -116,12 +118,10 @@ Make this change for each line that begins with "dn:" in the file. Then, in all 
 	                    organizationalPerson
 	                    person
 	                    top
-	```
+```
 4. Delete one of the two "sn" attributes from the Mark Twain entry in tutorial.ldif. Active Directory defines "sn" to be a single-valued attribute, contrary to [RFC 2256](http://www.ietf.org/rfc/rfc2256.txt).
 5. Use the ldifde command-line utility to load the modified tutorial.ldif file.
-	```
 	# ldifde -i -v -k -f tutorial.ldif
-	```
 6. Most of the examples assume that the directory has been set up to permit unauthenticated read and update access. Your Active Directory setup might not allow you to do that. See the **Access Control** installation note.
 7. Reading an entry sometimes produces more attributes than are shown in the tutorial because Active Directory often returns some internal attributes.
 8. Creation of entries might require the specification of additional Active Directory-specific attributes or the use of other object classes.

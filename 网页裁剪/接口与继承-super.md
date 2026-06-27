@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using the Keyword super (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -25,18 +27,18 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 If your method overrides one of its superclass's methods, you can invoke the overridden method through the use of the keyword `super`. You can also use `super` to refer to a hidden field (although hiding fields is discouraged). Consider this class, `Superclass`:
 
-```
+```java
 public class Superclass {
 
     public void printMethod() {
         System.out.println("Printed in Superclass.");
     }
 }
-```
+```java
 
 Here is a subclass, called `Subclass`, that overrides `printMethod()`:
 
-```
+```java
 public class Subclass extends Superclass {
 
     // overrides printMethod in Superclass
@@ -53,7 +55,7 @@ public class Subclass extends Superclass {
 
 Within `Subclass`, the simple name `printMethod()` refers to the one declared in `Subclass`, which overrides the one in `Superclass`. So, to refer to `printMethod()` inherited from `Superclass`, `Subclass` must use a qualified name, using `super` as shown. Compiling and executing `Subclass` prints the following:
 
-```
+```text
 Printed in Superclass.
 Printed in Subclass
 ```
@@ -62,7 +64,7 @@ Printed in Subclass
 
 The following example illustrates how to use the `super` keyword to invoke a superclass's constructor. Recall from the [[接口与继承-subclasses|`Bicycle`]] example that `MountainBike` is a subclass of `Bicycle`. Here is the `MountainBike` (subclass) constructor that calls the superclass constructor and then adds initialization code of its own:
 
-```
+```java
 public MountainBike(int startHeight, 
                     int startCadence,
                     int startSpeed,
@@ -76,13 +78,13 @@ Invocation of a superclass constructor must be the first line in the subclass co
 
 The syntax for calling a superclass constructor is
 
-```
+```text
 super();
 ```
 
 or:
 
-```
+```text
 super(parameter list);
 ```
 

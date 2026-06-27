@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Java Application Setup (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Software Setup)
 
 Documentation
 
@@ -39,7 +41,7 @@ Following are the JNDI packages:
 
 The examples in this trail use classes and interfaces from the first two packages. You need to import these two packages into your program or import individual classes and interfaces that you use. The following two lines import all of the classes and interfaces from the two packages javax.naming and javax.naming.directory.
 
-```
+```java
 import javax.naming.*;
 import javax.naming.directory.*;
 ```

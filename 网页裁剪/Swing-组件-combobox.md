@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Combo Boxes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -141,7 +143,7 @@ String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
 JComboBox petList = new JComboBox(petStrings);
 petList.setSelectedIndex(4);
 petList.addActionListener(this);
-```
+```java
 
 This combo box contains an array of strings, but you could just as easily use icons instead. To put anything else into a combo box or to customize how the items in a combo box look, you need to write a custom renderer. An editable combo box would also need a custom editor. Refer to [Providing a Custom Renderer](#renderer) for information and an example.
 
@@ -200,7 +202,7 @@ Here's a picture of a demo application that uses an editable combo box to enter 
 
 The following code, taken from [`ComboBoxDemo2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ComboBoxDemo2Project/src/components/ComboBoxDemo2.java), creates and sets up the combo box:
 
-```
+```text
 String[] patternExamples = {
          "dd MMMMM yyyy",
          "dd.MM.yy",
@@ -240,7 +242,7 @@ The full source code for this example is in [`CustomComboBoxDemo.java`](https://
 
 The following statements from the example create an instance of `ComboBoxRenderer` (a custom class) and set up the instance as the combo box's renderer:
 
-```
+```text
 JComboBox petList = new JComboBox(intArray);
 . . .
 ComboBoxRenderer renderer = new ComboBoxRenderer();

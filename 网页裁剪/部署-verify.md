@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Verifying Signed JAR Files (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -69,25 +71,25 @@ However, you can verify signed JAR files yourself by using the `jarsigner` tool.
 
 The basic command to use for verifying a signed JAR file is:
 
-```
+```text
 jarsigner -verify jar-file
 ```
 
 This command will verify the JAR file's signature and ensure that the files in the archive haven't changed since it was signed. You'll see the following message if the verification is successful:
 
-```
+```text
 jar verified.
 ```
 
 If you try to verify an unsigned JAR file, the following message results:
 
-```
+```text
 jar is unsigned. (signatures missing or not parsable)
 ```
 
 If the verification fails, an appropriate message is displayed. For example, if the contents of a JAR file have changed since the JAR file was signed, a message similar to the following will result if you try to verify the file:
 
-```
+```text
 jarsigner: java.lang.SecurityException: invalid SHA1 
 signature file digest for test/classes/Manifest.class
 ```

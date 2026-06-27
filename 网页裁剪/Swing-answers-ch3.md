@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers: Using Swing Components (The Java™ Tutorials > Creating a GUI With Swing >
+            )
 
 Documentation
 
@@ -68,7 +70,7 @@ Use the information in this lesson and the component [[Swing-组件-componentlis
 
 **Answer 1**: See [`MyDemo1.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/MyDemo1Project/src/QandE/MyDemo1.java). Here's the code that adds the bold, italicized text:
 
-```
+```text
 JLabel label = new JLabel("My Demo");
 frame.getContentPane().add(BorderLayout.CENTER, label);
 label.setFont(label.getFont().deriveFont(Font.ITALIC | Font.BOLD));
@@ -78,7 +80,7 @@ label.setHorizontalAlignment(JLabel.CENTER)
 **Exercise 2.** Make a copy of `MyDemo1.java` named `MyDemo2.java`. Add a menu bar to `MyDemo2`.  
 **Answer 2**: See [`MyDemo2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/MyDemo2Project/src/QandE/MyDemo2.java). The menu bar can be implemented with this code:
 
-```
+```text
 JMenu menu = new JMenu("Menu");
 JMenuBar mb = new JMenuBar();
 mb.add(menu);
@@ -88,7 +90,7 @@ frame.setJMenuBar(mb);
 **Exercise 3.** Copy `MyDemo1.java` to `MyDemo3.java`. Add a button (`JButton`) to `MyDemo3.java`. Make it the default button.  
 **Answer 3**: See [`MyDemo3.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/MyDemo3Project/src/QandE/MyDemo3.java). Here's the code that adds the button and makes it the default button:
 
-```
+```text
 JButton b = new JButton("A button");
 frame.getContentPane().add(BorderLayout.PAGE_END, b);
 frame.getRootPane().setDefaultButton(b);

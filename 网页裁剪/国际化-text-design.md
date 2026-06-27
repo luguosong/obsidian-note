@@ -1,13 +1,14 @@
 ---
 分类:
   - "网页裁剪"
-标题: "design"
+标题: "BreakIterator 设计"
 描述: "This internationalization Java tutorial describes setting locale, isolating locale-specific data, formatting data, internationalized domain name and resource identifier"
 来源: "https://docs.oracle.com/javase/tutorial/i18n/text/design.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:30:00+08:00"
 ---
+# BreakIterator 设计
 
 Documentation
 

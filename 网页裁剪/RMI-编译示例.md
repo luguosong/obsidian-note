@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Compiling the Example Programs (The Java™ Tutorials >        
+            RMI)
 
 Documentation
 
@@ -59,7 +61,7 @@ First, you need to compile the interface source files in the `compute` package a
 cd C:\home\waldo\src
 javac compute\Compute.java compute\Task.java
 jar cvf compute.jar compute\*.class
-```
+```bash
 
 **Solaris or Linux**:
 
@@ -77,7 +79,7 @@ The `jar` command displays the following output due to the `-v` option:
 added manifest
 adding: compute/Compute.class(in = 307) (out= 201)(deflated 34%)
 adding: compute/Task.class(in = 217) (out= 149)(deflated 31%)
-```
+```bash
 
 Now, you can distribute the `compute.jar` file to developers of server and client applications so that they can make use of the interfaces.
 
@@ -112,7 +114,7 @@ javac -cp /home/ann/public_html/classes/compute.jar \
     engine/ComputeEngine.java
 mkdir /home/ann/public_html/classes/engine
 cp engine/ComputeEngine.class /home/ann/public_html/classes/engine
-```
+```bash
 
 ---
 

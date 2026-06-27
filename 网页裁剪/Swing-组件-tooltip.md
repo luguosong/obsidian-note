@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Tool Tips (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -107,7 +109,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Creating a tool tip for any `JComponent` object is easy. Use the `setToolTipText` method to set up a tool tip for the component. For example, to add tool tips to three buttons, you add only three lines of code:
 
-```
+```text
 b1.setToolTipText("Click this button to disable the middle button.");
 b2.setToolTipText("This middle button does not react when you click it.");
 b3.setToolTipText("Click this button to enable the middle button.");

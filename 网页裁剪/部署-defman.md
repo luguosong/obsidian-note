@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Understanding the Default Manifest (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -65,13 +67,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 When you create a JAR file, it automatically receives a default manifest file. There can be only one manifest file in an archive, and it always has the pathname
 
-```
+```text
 META-INF/MANIFEST.MF
 ```
 
 When you create a JAR file, the default manifest file simply contains the following:
 
-```
+```yaml
 Manifest-Version: 1.0
 Created-By: 1.7.0_06 (Oracle Corporation)
 ```

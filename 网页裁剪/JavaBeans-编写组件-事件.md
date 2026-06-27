@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Events (The Java™ Tutorials >        
+            JavaBeans(TM) > Writing JavaBeans Components)
 
 Documentation
 
@@ -34,7 +36,7 @@ A bean class can fire off any type of event, including custom events. As with pr
 ```java
 public void add<Event>Listener(<Event>Listener a)
 public void remove<Event>Listener(<Event>Listener a)
-```
+```java
 
 The listener type must be a descendant of `java.util.EventListener`.
 

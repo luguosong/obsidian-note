@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write Window Listeners (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -117,7 +119,7 @@ The following window activities or states can precede a window event:
 	8. Close the window, using the window controls. A window closing message is displayed. Once the window has closed, a window closed message is sent to standard output.
 	---
 	Here is the demo's window event handling code:
-	```
+	```java
 	public class WindowEventDemo extends JFrame implements WindowListener,
 	                                            WindowFocusListener,
 	                                            WindowStateListener {

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Search Results (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -27,7 +29,7 @@ When you use the search methods in the [DirContext](https://docs.oracle.com/java
 
 Each SearchResult contains the name of the LDAP entry that satisfied the search filter. You obtain the name of the entry by using [getName()](https://docs.oracle.com/javase/8/docs/api/javax/naming/NameClassPair.html#getName--). This method returns the [composite name](https://docs.oracle.com/javase/8/docs/api/javax/naming/CompositeName.html) of the LDAP entry *relative* to the *target context*. The target context is the context to which the name parameter resolves. In LDAP parlance, the target context is the *base object* for the search. Here's an example.
 
-```
+```bash
 NamingEnumeration answer = ctx.search("ou=NewHires", 
     "(&(mySpecialKey={0}) (cn=*{1}))",  // Filter expression
     new Object[]{key, name},                // Filter arguments

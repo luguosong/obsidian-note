@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Printing the Contents of a User Interface (The Java™ Tutorials >        
+            2D Graphics > Printing)
 
 Documentation
 
@@ -35,7 +37,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Another common printing task is to print the contents of a window or a frame, either in whole, or in part. The window may contain the following components: toolbars, buttons sliders, text labels, scrollable text areas, images, and other graphical content. All of these components are printed using the following methods of the Java 2D printing API:
 
-```
+```text
 java.awt.Component.print(Graphics g);
 java.awt.Component.printAll(Graphics g);
 ```
@@ -48,7 +50,7 @@ The code to create this UI is located in the sample program [`PrintUIWindow.java
 
 To print this window, modify the code in the earlier examples which printed text or images. The resulting code should appear as follows:
 
-```
+```java
 public int print(Graphics g, PageFormat pf, int page)
     throws PrinterException {
     if (page > 0) {

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The try-with-resources Statement (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -25,7 +27,7 @@ The `try` -with-resources statement is a `try` statement that declares one or mo
 
 The following example reads the first line from a file. It uses an instance of `FileReader` and `BufferedReader` to read data from the file. `FileReader` and `BufferedReader` are resources that must be closed after the program is finished with it:
 
-```
+```java
 static String readFirstLineFromFile(String path) throws IOException {
     try (FileReader fr = new FileReader(path);
          BufferedReader br = new BufferedReader(fr)) {
@@ -38,7 +40,7 @@ In this example, the resources declared in the `try` -with-resources statement a
 
 Prior to Java SE 7, you can use a `finally` block to ensure that a resource is closed regardless of whether the `try` statement completes normally or abruptly. The following example uses a `finally` block instead of a `try` -with-resources statement:
 
-```
+```java
 static String readFirstLineFromFileWithFinallyBlock(String path) throws IOException {
    
     FileReader fr = new FileReader(path);
@@ -91,7 +93,7 @@ public static void writeToFileZipFileContents(String zipFileName,
         }
     }
 }
-```
+```java
 
 In this example, the `try` -with-resources statement contains two declarations that are separated by a semicolon: `ZipFile` and `BufferedWriter`. When the block of code that directly follows it terminates, either normally or because of an exception, the `close` methods of the `BufferedWriter` and `ZipFile` objects are automatically called in this order. Note that the `close` methods of resources are called in the *opposite* order of their creation.
 

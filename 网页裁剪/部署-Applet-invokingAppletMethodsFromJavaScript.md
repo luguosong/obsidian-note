@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Invoking Applet Methods From JavaScript Code (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -111,7 +113,7 @@ public class MathApplet extends Applet{
         System.out.println(text);
     }
 }
-```
+```java
 
 The methods in the [`` `Calculator` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/applet_InvokingAppletMethodsFromJavaScript/src/jstojava/Calculator.java) class let the user set two values, add numbers, and retrieve the numbers in a range.
 
@@ -160,7 +162,7 @@ public class DateHelper {
     }
 
 }
-```
+```javascript
 
 ## Deploying the Applet
 
@@ -213,11 +215,11 @@ Next, add some JavaScript code to the [`` `AppletPage.html` ``](https://docs.ora
         var dateStr = dateHelper.getDate();
         <!-- ... -->
 </script>
-```
+```text
 
 The Math applet displays the following results on the web page when the number a = 0 and b = 5:
 
-```
+```text
 Results of JavaScript to Java Communication
 
 Hello John Doe

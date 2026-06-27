@@ -1,58 +1,50 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Lesson: All About Datagrams (The Java™ Tutorials > Custom Networking)"
-描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
-来源: "https://docs.oracle.com/javase/tutorial/networking/datagrams"
+标题: "数据报详解"
+描述: "《Java 教程》自定义网络路线课程，介绍使用 UDP 协议的数据报通信——一种不保证到达和到达顺序的网络通信模式，涵盖 DatagramPacket 和 DatagramSocket 类。"
+来源: "https://docs.oracle.com/javase/tutorial/networking/datagrams/index.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 数据报详解
 
-All About Datagrams
+> 文档说明
 
-[[自定义网络-definition|What Is a Datagram?]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[自定义网络-clientServer|Writing a Datagram Client and Server]]
+## 课程：数据报详解
 
-[[自定义网络-broadcasting|Broadcasting to Multiple Recipients]]
+你编写的某些通过网络通信的应用程序不需要 TCP 提供的可靠点对点通道。相反，你的应用程序可能受益于一种交付独立信息包的通信模式，其到达和到达顺序不保证。
 
-[[sockets-sockets|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/TOC.html) • [[自定义网络-definition|Next »]]
+UDP 协议提供了一种网络通信模式，应用程序通过它相互发送数据包（称为数据报(datagram)）。数据报是通过网络发送的独立、自包含的消息，其到达、到达时间和内容不保证。`java.net` 包中的 `DatagramPacket` 和 `DatagramSocket` 类使用 UDP 实现了与系统无关的数据报通信。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+## 什么是数据报？
 
-## Lesson: All About Datagrams
+数据报是通过网络发送的独立、自包含的消息，其到达、到达时间和内容不保证。
 
-Some applications that you write to communicate over the network will not require the reliable, point-to-point channel provided by TCP. Rather, your applications might benefit from a mode of communication that delivers independent packages of information whose arrival and order of arrival are not guaranteed.
+## 编写数据报客户端和服务器
 
-The UDP protocol provides a mode of network communication whereby applications send packets of data, called datagrams, to one another. A datagram is an independent, self-contained message sent over the network whose arrival, arrival time, and content are not guaranteed. The `DatagramPacket` and `DatagramSocket` classes in the `java.net` package implement system-independent datagram communication using UDP.
+本节带你了解一个包含两个使用数据报通信的 Java 程序的示例。服务器端是一个引言服务器，它监听其 `DatagramSocket` 并在客户端请求时向客户端发送一条引言。客户端是一个简单地向服务器发出请求的程序。
 
-## What Is a Datagram?
+## 向多个接收者广播
 
-A datagram is an independent, self-contained message sent over the network whose arrival, arrival time, and content are not guaranteed.
-
-## Writing a Datagram Client and Server
-
-This section walks you through an example that contains two Java programs that use datagrams to communicate. The server side is a quote server that listens to its `DatagramSocket` and sends a quotation to a client whenever the client requests it. The client side is a simple program that simply makes a request of the server.
-
-## Broadcasting to Multiple Recipients
-
-This section modifies the quote server so that instead of sending a quotation to a single client upon request, the quote server broadcasts a quote every minute to as many clients as are listening. The client program must be modified accordingly.
+本节修改引言服务器，使其不再在请求时向单个客户端发送引言，而是每分钟向所有正在监听的客户端广播一条引言。客户端程序也必须相应修改。
 
 ---
 
-**Note:**
+**注意：**
 
-Many firewalls and routers are configured not to allow UDP packets. If you have trouble connecting to a service outside your firewall, or if clients have trouble connecting to your service, ask your system administrator if UDP is permitted.
+许多防火墙和路由器配置为不允许 UDP 数据包。如果你无法连接到防火墙外的服务，或者客户端无法连接到你的服务，请询问系统管理员是否允许 UDP。
 
 ---
 
 ---
 
-**Previous page:** Previous Lesson  
-**Next page:** What Is a Datagram?
+**上一页：** 上一课
+**下一页：** 什么是数据报？

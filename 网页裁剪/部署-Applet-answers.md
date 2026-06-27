@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Applets (The Java™ Tutorials > Deployment >
+            Java Applets)
 
 Documentation
 
@@ -42,7 +44,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1. Exercise: The `Exercise` applet's parent web page has a JavaScript variable called `memberId`. Write the code to set the value of the `memberId` equal to "123489" in the applet's `start` method.
 	Answer:
-	```
+	```java
 	import java.applet.Applet;
 	import netscape.javascript.*; // add plugin.jar to
 	                              // classpath during

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Constructing Complex Shapes from Geometry Primitives (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)
 
 Documentation
 
@@ -53,7 +55,7 @@ In this example `Area` objects construct a pear shape from several ellipses.
 
 The leaves are each created by performing an intersection on two overlapping circles.
 
-```
+```text
 leaf = new Ellipse2D.Double();
 ...
 leaf1 = new Area(leaf);
@@ -74,7 +76,7 @@ g2.fill(leaf2);
 
 Overlapping circles are also used to construct the stem through a subtraction operation.
 
-```
+```text
 stem = new Ellipse2D.Double();
 ...
 stem.setFrame(ew, eh-42, 40.0, 40.0);
@@ -87,7 +89,7 @@ g2.fill(st1);
 
 The body of the pear is constructed by performing a union operation on a circle and an oval.
 
-```
+```text
 circle = new Ellipse2D.Double();
 oval = new Ellipse2D.Double();
 circ = new Area(circle);

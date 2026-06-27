@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Tables (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -130,7 +132,7 @@ The rest of this section shows you how to accomplish some common table-related t
 
 The table in [`SimpleTableDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/SimpleTableDemoProject/src/components/SimpleTableDemo.java) declares the column names in a String array:
 
-```
+```text
 String[] columnNames = {"First Name",
                         "Last Name",
                         "Sport",
@@ -140,7 +142,7 @@ String[] columnNames = {"First Name",
 
 Its data is initialized and stored in a two-dimensional Object array:
 
-```
+```json
 Object[][] data = {
     {"Kathy", "Smith",
      "Snowboarding", new Integer(5), new Boolean(false)},
@@ -157,7 +159,7 @@ Object[][] data = {
 
 Then the Table is constructed using these data and columnNames:
 
-```
+```text
 JTable table = new JTable(data, columnNames);
 ```
 
@@ -178,7 +180,7 @@ If you want to get around these restrictions, you need to implement your own tab
 
 Here is typical code for creating a [[Swing-组件-scrollpane|scroll pane]] that serves as a container for a table:
 
-```
+```text
 JScrollPane scrollPane = new JScrollPane(table);
 table.setFillsViewportHeight(true);
 ```
@@ -192,7 +194,7 @@ The scroll pane automatically places the table header at the top of the viewport
 
 If you are using a table without a scroll pane, then you must get the table header component and place it yourself. For example:
 
-```
+```text
 container.setLayout(new BorderLayout());
 container.add(table.getTableHeader(), BorderLayout.PAGE_START);
 container.add(table, BorderLayout.CENTER);
@@ -206,7 +208,7 @@ When the user resizes a column by dragging its right border, then either other c
 
 To customize initial column widths, you can invoke `setPreferredWidth` on each of your table's columns. This sets both the preferred widths of the columns and their approximate relative widths. For example, adding the following code to `SimpleTableDemo` makes its third column bigger than the other columns:
 
-```
+```text
 TableColumn column = null;
 for (int i = 0; i < 5; i++) {
     column = table.getColumnModel().getColumn(i);
@@ -274,7 +276,7 @@ You may also notice that changing any of the three selection options can affect 
 
 To retrieve the current selection, use [`JTable.getSelectedRows`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html#getSelectedRows--) which returns an array of row indexes, and [`JTable.getSelectedColumns`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html#getSelectedColumns--) which returns an array of column indexes. To retrieve the coordinates of the lead selection, refer to the selection models for the table itself and for the table's column model. The following code formats a string containing the row and column of the lead selection:
 
-```
+```text
 String.format("Lead Selection: %d, %d. ",
     table.getSelectionModel().getLeadSelectionIndex(),
     table.getColumnModel().getSelectionModel().getLeadSelectionIndex());
@@ -313,7 +315,7 @@ new AbstractTableModel() {
         fireTableCellUpdated(row, col);
     }
 }
-```
+```java
 
 As the preceding code shows, implementing a table model can be simple. Generally, you implement your table model in a subclass of the [`AbstractTableModel`](https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html) class.
 
@@ -410,7 +412,7 @@ public class SimpleTableDemo ... implements TableModelListener {
     }
     ...
 }
-```
+```java
 
 ## Firing Data Change Events
 
@@ -516,13 +518,11 @@ public class ColorRenderer extends JLabel
         return this;
     }
 }
-```
 
 Here is the code from [`TableDialogEditDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TableDialogEditDemoProject/src/components/TableDialogEditDemo.java) that registers a `ColorRenderer` instance as the default renderer for all `Color` data:
 
-```
 table.setDefaultRenderer(Color.class, new ColorRenderer(true));
-```
+```java
 
 To specify a cell-specific renderer, you need to define a `JTable` subclass that overrides the `getCellRenderer` method. For example, the following code makes the first cell in the first column of the table use a custom renderer:
 
@@ -549,7 +549,7 @@ An example of setting tool tips for cells is in `TableRenderDemo`. Click the Lau
 
 The source code is in [`TableRenderDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TableRenderDemoProject/src/components/TableRenderDemo.java). It adds tool tips to the cells of the **Sport** column with the following code:
 
-```
+```text
 //Set up tool tips for the sport cells.
 DefaultTableCellRenderer renderer =
         new DefaultTableCellRenderer();
@@ -582,7 +582,6 @@ public class ColorRenderer extends JLabel
         return this;
     }
 }
-```
 
 Here is an example of what the tool tip looks like:
 
@@ -596,7 +595,6 @@ The cells with tool tips are in the **Sport** and **Vegetarian** columns. Here i
 
 Here is the code from [`TableToolTipsDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TableToolTipsDemoProject/src/components/TableToolTipsDemo.java) that implements tool tips for cells in the **Sport** and **Vegetarian** columns:
 
-```
 JTable table = new JTable(new MyTableModel()) {    
     //Implement table cell tool tips.
     public String getToolTipText(MouseEvent e) {
@@ -634,7 +632,6 @@ JTable table = new JTable(new MyTableModel()) {
     }
     ...
 }
-```
 
 The code is fairly straightforward, except perhaps for the call to `convertColumnIndexToModel`. That call is necessary because if the user moves the columns around, the view's index for the column will not match the model's index for the column. For example, the user might drag the **Vegetarian** column (which the model considers to be at index 4) so it is displayed as the first column — at view index 0. Since `prepareRenderer` provides the view index, you need to translate the view index to a model index so you can be sure the intended column has been selected.
 
@@ -644,10 +641,8 @@ You can add a tool tip to a column header by setting the tool tip text for the t
 
 An example of using the same tool tip text for all column headers is in [`TableSorterDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TableSorterDemoProject/src/components/TableSorterDemo.java). Here is how it sets the tool tip text:
 
-```
 table.getTableHeader().setToolTipText(
         "Click to sort; Shift-Click to sort in reverse order");
-```
 
 [`TableToolTipsDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TableToolTipsDemoProject/src/components/TableToolTipsDemo.java) has an example of implementing column header tool tips that vary by column. If you run `TableToolTipsDemo` (click the Launch button) using [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) ([download JDK 7 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Or, to compile and run the example yourself, consult the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TableToolTipsDemo).
 
@@ -657,7 +652,6 @@ You will see the tool tips when you mouse over any column header except for the 
 
 The following code implements the tool tips. Basically, it creates a subclass of `JTableHeader` that overrides the `getToolTipText(MouseEvent)` method so that it returns the text for the current column. To associate the revised table header with the table, the `JTable` method `createDefaultTableHeader` is overridden so that it returns an instance of the `JTableHeader` subclass.
 
-```
 protected String[] columnToolTips = {
     null, // "First Name" assumed obvious
     null, // "Last Name" assumed obvious
@@ -683,16 +677,13 @@ JTable table = new JTable(new MyTableModel()) {
         };
     }
 };
-```
 
 ## Sorting and Filtering
 
 Table sorting and filtering is managed by a *sorter* object. The easiest way to provide a sorter object is to set `autoCreateRowSorter` bound property to `true`:
 
-```
 JTable table = new JTable();
 table.setAutoCreateRowSorter(true);
-```
 
 This action defines a row sorter that is an instance of [`javax.swing.table.TableRowSorter`](https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableRowSorter.html). This provides a table that does a simple locale-specific sort when the user clicks on a column header. This is demonstrated in [`` `TableSortDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TableSortDemoProject/src/components/TableSortDemo.java), as seen in this screen shot:
 
@@ -700,15 +691,12 @@ This action defines a row sorter that is an instance of [`javax.swing.table.Tabl
 
 To have more control over sorting, you can construct an instance of `TableRowSorter` and specify that it is the sorter object for your table.
 
-```
 TableRowSorter<TableModel> sorter 
     = new TableRowSorter<TableModel>(table.getModel());
 table.setRowSorter(sorter);
-```
 
 `TableRowSorter` uses [`java.util.Comparator`](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) objects to sort its rows. A class that implements this interface must provide a method called `compare` that defines how any two objects are compared for the purpose of sorting. For example, the following code creates a `Comparator` that sorts a set of strings by the last word in each string:
 
-```
 Comparator<String> comparator = new Comparator<String>() {
     public int compare(String s1, String s2) {
         String[] strings1 = s1.split("\\s");
@@ -717,7 +705,6 @@ Comparator<String> comparator = new Comparator<String>() {
             .compareTo(strings2[strings2.length - 1]);
     }
 };
-```
 
 This example is fairly simplistic; more typically, a `Comparator` implementation is a subclass of [`java.text.Collator`](https://docs.oracle.com/javase/8/docs/api/java/text/Collator.html). You can define your own subclass, use the factory methods in `Collator` to obtain a `Comparator` for a specific locale, or use [`java.text.RuleBasedCollator`](https://docs.oracle.com/javase/8/docs/api/java/text/RuleBasedCollator.html).
 
@@ -733,24 +720,21 @@ For more sophisticated kinds of sorting, subclass `TableRowSorter` or its parent
 
 To specify the sort order and sort precedence for columns, invoke [`setSortKeys`](https://docs.oracle.com/javase/8/docs/api/javax/swing/DefaultRowSorter.html#setSortKeys-java.util.List-). Here is an example that sorts the table used in the examples by the first two columns. The precedence of the columns in the sort is indicated by the order of the sort keys in the sort key list. In this case, the second column has the first sort key, so they rows are sorted by first name, then last name.
 
-```
 List <RowSorter.SortKey> sortKeys 
     = new ArrayList<RowSorter.SortKey>();
 sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
 sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
 sorter.setSortKeys(sortKeys);
-```
 
 In addition to reordering the results, a table sorter can also specify which rows will be displayed. This is known as *filtering*. `TableRowSorter` implements filtering using [`javax.swing.RowFilter`](https://docs.oracle.com/javase/8/docs/api/javax/swing/RowFilter.html) objects. `RowFilter` implements several factory methods that create common kinds of filters. For example, [`regexFilter`](https://docs.oracle.com/javase/8/docs/api/javax/swing/RowFilter.html#regexFilter-java.lang.String-int...-) returns a `RowFilter` that filters based on a [[Java核心类库-正则表达式|regular expression]].
 
 In the following example code, you explicitly create a sorter object so you can later use it to specify a filter:
 
-```
 MyTableModel model = new MyTableModel();
 sorter = new TableRowSorter<MyTableModel>(model);
 table = new JTable(model);
 table.setRowSorter(sorter);
-```
+```text
 
 Then you filter based on the current value of a text field:
 
@@ -765,7 +749,7 @@ private void newFilter() {
     }
     sorter.setRowFilter(rf);
 }
-```
+```java
 
 In a subsequent example, `newFilter()` is invoked every time the text field changes. When the user enters complicated regular expressions, the `try...catch` prevents the syntax exception from interfering with input.
 
@@ -816,7 +800,7 @@ table.getSelectionModel().addListSelectionListener(
 
 Setting up a [[Swing-组件-combobox|combo box]] as an editor is simple, as the following example shows. The bold line of code sets up the combo box as the editor for a specific column.
 
-```
+```text
 TableColumn sportColumn = table.getColumnModel().getColumn(2);
 ...
 JComboBox comboBox = new JComboBox();
@@ -907,7 +891,6 @@ public class ColorEditor extends AbstractCellEditor
         return button;
     }
 }
-```
 
 As you can see, the code is pretty simple. The only part that is a bit tricky is the call to `fireEditingStopped` at the end of the editor button's action handler. Without this call, the editor would remain active, even though the modal dialog is no longer visible. The call to `fireEditingStopped` lets the table know that it can deactivate the editor, letting the cell be handled by the renderer again.
 
@@ -923,10 +906,8 @@ The following code, taken from a demo named [`TableFTFEditDemo.java`](https://do
 
 The following code makes the formatted text field the editor for all columns that contain data of type `Integer`.
 
-```
 table.setDefaultEditor(Integer.class,
                        new IntegerEditor(0, 100));
-```
 
 The `IntegerEditor` class is implemented as a subclass of [`DefaultCellEditor`](https://docs.oracle.com/javase/8/docs/api/javax/swing/DefaultCellEditor.html) that uses a `JFormattedTextField` instead of the `JTextField` that `DefaultCellEditor` supports. It accomplishes this by first setting up a formatted text field to use an integer format and have the specified minimum and maximum values, using the API described in [[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]. It then overrides the `DefaultCellEditor` implementation of the `getTableCellEditorComponent`, `getCellEditorValue`, and `stopCellEditing` methods, adding the operations that are necessary for formatted text fields.
 
@@ -944,13 +925,12 @@ try {
 } catch (java.awt.print.PrinterException e) {
     System.err.format("Cannot print %s%n", e.getMessage());
 }
-```
 
 Invoking `print` on a normal Swing application brings up a standard printing dialog box. (On a headless application, the table is simply printed.) The return value indicates whether the user went ahead with the print job or cancelled it. `JTable.print` can throw `java.awt.print.PrinterException`, which is a [[Java核心类库-异常-catchOrDeclare|checked exception]]; that's why the above example uses a `try ... catch`.
 
 `JTable` provides several overloads of `print` with various options. The following code from [`` `TablePrintDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TablePrintDemoProject/src/components/TablePrintDemo.java) shows how to define a page header:
 
-```
+```text
 MessageFormat header = new MessageFormat("Page {0,number,integer}");
 try {
     table.print(JTable.PrintMode.FIT_WIDTH, header, null);

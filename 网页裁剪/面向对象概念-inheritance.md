@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# What Is Inheritance? (The Java™ Tutorials >        
+            Learning the Java Language > Object-Oriented Programming Concepts)
 
 Documentation
 
@@ -43,7 +45,7 @@ A hierarchy of bicycle classes.
 
 The syntax for creating a subclass is simple. At the beginning of your class declaration, use the `extends` keyword, followed by the name of the class to inherit from:
 
-```
+```java
 class MountainBike extends Bicycle {
 
     // new fields and methods defining 

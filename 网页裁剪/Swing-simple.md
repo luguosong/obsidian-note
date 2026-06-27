@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Simple Background Tasks (The Java™ Tutorials >        
+            Creating a GUI With Swing > Concurrency in Swing)
 
 Documentation
 
@@ -41,7 +43,7 @@ To avoid these problems, `TumbleItem` creates and executes an instance of `Swing
 
 Here is the code that defines and executes the `SwingWorker` object.
 
-```
+```java
 SwingWorker worker = new SwingWorker<ImageIcon[], Void>() {
     @Override
     public ImageIcon[] doInBackground() {

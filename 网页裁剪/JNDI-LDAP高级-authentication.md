@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Modes of Authenticating to LDAP (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -42,7 +44,7 @@ When the initial context is created, the underlying LDAP service provider extrac
 
 The [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Simple.java) shows how, by using a simple clear-text password, a client authenticates to an LDAP server.
 
-```
+```text
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
@@ -66,7 +68,7 @@ If you want to use different authentication information for an existing context,
 
 The [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/UseDiff.java) shows how the authentication information of a context is changed to "none" after the context has been created.
 
-```
+```text
 // Authenticate as S. User and the password "mysecret"
 env.put(Context.SECURITY_AUTHENTICATION, "simple");
 env.put(Context.SECURITY_PRINCIPAL, 
@@ -90,7 +92,7 @@ Authentication can fail for a number of reasons. For example, if you supply inco
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/BadPasswd.java) that is a variation of the previous example. This time, an incorrect password causes the authentication to fail.
 
-```
+```text
 // Authenticate as S. User and give an incorrect password
 env.put(Context.SECURITY_AUTHENTICATION, "simple");
 env.put(Context.SECURITY_PRINCIPAL, 
@@ -100,7 +102,7 @@ env.put(Context.SECURITY_CREDENTIALS, "notmysecret");
 
 This produces the following output.
 
-```
+```text
 javax.naming.AuthenticationException: [LDAP: error code 49 - Invalid Credentials]
         ...
 ```
@@ -109,7 +111,7 @@ Because different servers support different authentication mechanisms, you might
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/BadAuth.java) that is a variation of the previous example. This time, an unsupported authentication mechanism ("custom") causes the authentication to fail.
 
-```
+```text
 // Authenticate as S. User and the password "mysecret"
 env.put(Context.SECURITY_AUTHENTICATION, "custom");
 env.put(Context.SECURITY_PRINCIPAL, 
@@ -119,7 +121,7 @@ env.put(Context.SECURITY_CREDENTIALS, "mysecret");
 
 This produces the following output.
 
-```
+```text
 javax.naming.AuthenticationNotSupportedException: custom
         ...
 ```

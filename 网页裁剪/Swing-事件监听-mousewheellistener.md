@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Mouse-Wheel Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -106,7 +108,7 @@ The following example demonstrates mouse-wheel events.
 
 The output from MouseWheelEventDemo for a system that uses unit increments for its mouse wheel might look as follows:
 
-```
+```text
 javax.swing.JTextArea: Mouse wheel moved UP 1 notch(es)
     Scroll type: WHEEL_UNIT_SCROLL
     Scroll amount: 3 unit increments per notch
@@ -118,7 +120,7 @@ The scroll amount, returned by the `getScrollAmount` method, indicates how many 
 
 For a system that uses block increments for mouse-wheel scrolling, for the same movement of the mouse wheel the output might look as follows:
 
-```
+```text
 javax.swing.JTextArea: Mouse wheel moved UP 1 notch(es)
     Scroll type: WHEEL_BLOCK_SCROLL
     Vertical block increment: 307 pixels
@@ -128,7 +130,7 @@ The vertical block increment is obtained from the vertical scroll bar using the 
 
 Find the demo's code in the [`MouseWheelEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/MouseWheelEventDemoProject/src/events/MouseWheelEventDemo.java) file. The following code snippet is related to the mouse-wheel event handling:
 
-```
+```java
 public class MouseWheelEventDemo ... implements MouseWheelListener ... {
     public MouseWheelEventDemo() {
         //where initialization occurs:

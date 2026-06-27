@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Text Attributes to Style Text (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)
 
 Documentation
 
@@ -50,7 +52,7 @@ These and other text attributes can be applied by using the Java 2D `TextAttribu
 
 To apply these text attributes by add them to a `Font` object. For example:
 
-```
+```text
 Map<TextAttribute, Object> map =
     new Hashtable<TextAttribute, Object>();
 map.put(TextAttribute.KERNING,

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Trouble Shooting Tips (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)
 
 Documentation
 
@@ -45,7 +47,7 @@ If the property was set, then make sure that the class name was not mistyped, an
 
 If the server is a v3 server, then try setting the following environment property before creating the initial context:
 
-```
+```text
 env.put(Context.REFERRAL, "throw");
 ```
 

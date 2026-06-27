@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Invoking JavaScript Code From an Applet (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -119,7 +121,6 @@ Assume you have a web page with a few JavaScript functions. The example [`` `App
                              // the summary 
     <!-- ... -->
 </body>
-```
 
 Next, consider an applet class called `DataSummaryApplet`. The `DataSummaryApplet` class performs the following operations.
 
@@ -129,11 +130,10 @@ Next, consider an applet class called `DataSummaryApplet`. The `DataSummaryApple
 
 This applet first needs to retrieve a reference to `JSObject` as follows:
 
-```
 ...
 JSObject window = JSObject.getWindow(this);
 ...
-```
+```java
 
 Put the preceding statement in a try...catch.. block to handle `netscape.javascript.JSException`.
 
@@ -184,7 +184,7 @@ To compile Java code that has a reference to classes in the `netscape.javascript
 
 The Data Summary applet displays the following result on the web page:
 
-```
+```text
 Result of applet's Java calls to JavaScript on this page
                 
 John Doe : 25 : 1 Example Lane, Santa Clara, CA : 408-555-0100, 408-555-0102

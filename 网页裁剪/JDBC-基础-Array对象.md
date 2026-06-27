@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Array Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -95,13 +97,9 @@ insert into REGIONS values(
 insert into REGIONS values(
     'Southwest',
     '{"94105", "90049", "92027"}');
-```
-
-```
 Connection con = DriverManager.getConnection(url, props);
 String [] northEastRegion = { "10022", "02110", "07399" };
 Array anArray = con.createArrayOf("VARCHAR", northEastRegion);
-```
 
 The Oracle Database JDBC driver implements the `java.sql.Array` interface with the `oracle.sql.ARRAY` class.
 
@@ -125,11 +123,10 @@ while (rs.next()) {
         }
     }
 }
-```
 
 In the following statement, the `ResultSet` method `getArray` returns the value stored in the column `ZIPS` of the current row as the `java.sql.Array` object `z`:
 
-```
+```text
 Array z = rs.getArray("ZIPS");
 ```
 
@@ -137,7 +134,7 @@ The variable `*z*` contains a locator, which is a logical pointer to the SQL `AR
 
 In the following line, `getArray` is the `Array.getArray` method, not the `ResultSet.getArray` method used in the previous line. Because the `Array.getArray` method returns an `Object` in the Java programming language and because each zip code is a `String` object, the result is cast to an array of `String` objects before being assigned to the variable `zips`.
 
-```
+```text
 String[] zips = (String[])z.getArray();
 ```
 
@@ -149,7 +146,7 @@ Use the methods `PreparedStatement.setArray` and `PreparedStatement.setObject` t
 
 The following example sets the `Array` object `anArray` (created in a previous example) as the second parameter to the PreparedStatement `pstmt`:
 
-```
+```text
 PreparedStatement pstmt = con.prepareStatement(
     "insert into REGIONS (region_name, zips) " + "VALUES (?, ?)");
 pstmt.setString(1, "NorthEast");
@@ -165,7 +162,7 @@ Similarly, use the methods `PreparedStatement.updateArray` and `PreparedStatemen
 
 In the following excerpt, the method `Array.free` is called to release the resources held for a previously created `Array` object.
 
-```
+```text
 Array aArray = con.createArrayOf("VARCHAR", northEastRegionnewYork);
 // ...
 aArray.free();

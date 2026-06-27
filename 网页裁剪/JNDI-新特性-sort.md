@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Sort Control (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)
 
 Documentation
 
@@ -45,7 +47,6 @@ The example below illustrates the client-server interaction between a client per
 	 // Perform a search
 	 NamingEnumeration results = 
 	     ctx.search("", "(objectclass=*)", new SearchControls());
-	```
 2. The server responds with entries that are sorted based on the "cn" attribute and its corresponding matching rule.
 	```java
 	// Iterate over sorted search results
@@ -72,7 +73,6 @@ The example below illustrates the client-server interaction between a client per
 	         }
 	     }
 	 }
-	```
 
 The complete JNDI example can be found [`here`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/SortedResults.java).
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Setting Up Tables (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -203,7 +205,7 @@ You can create tables with Apache Ant or JDBC API.
 
 To create the tables used with the tutorial sample code, run the following command in the directory `*<JDBC tutorial directory>*`:
 
-```
+```text
 ant setup
 ```
 
@@ -224,7 +226,6 @@ This command runs several Ant targets, including the following, `build-tables` (
   "./sql/${DB.VENDOR}/create-tables.sql"/>
   </sql>
 </target>
-```
 
 The sample specifies values for the following `sql` Ant task parameters:
 
@@ -241,9 +242,8 @@ The sample specifies values for the following `sql` Ant task parameters:
 
 The sample stores the values of these parameters in a separate file. The build file `build.xml` retrieves these values with the `import` task:
 
-```
 <import file="${ANTPROPERTIES}"/>
-```
+```sql
 
 The `transaction` element specifies a file that contains SQL statements to execute. The file `create-tables.sql` contains SQL statements that create all the tables described on this page. For example, the following excerpt from this file creates the tables `SUPPLIERS` and `COFFEES`:
 
@@ -288,7 +288,7 @@ public void createTable() throws SQLException {
     JDBCTutorialUtilities.printSQLException(e);
   }
 }
-```
+```java
 
 The following method, [`CoffeesTable.createTable`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/CoffeesTable.java), creates the `COFFEES` table:
 
@@ -326,7 +326,7 @@ In addition to creating the tables used by this tutorial, the command `ant setup
 
 The following is an excerpt from `populate-tables.sql` that populates the tables `SUPPLIERS` and `COFFEES`:
 
-```
+```sql
 insert into SUPPLIERS values(
     49, 'Superior Coffee', '1 Party Place',
     'Mendocino', 'CA', '95460');
@@ -368,7 +368,7 @@ public void populateTable() throws SQLException {
     JDBCTutorialUtilities.printSQLException(e);
   }
 }
-```
+```java
 
 The following method, `CoffeesTable.populateTable`, inserts data into the table:
 

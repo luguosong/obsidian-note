@@ -1,47 +1,34 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Initial Threads (The Java™ Tutorials >        
-            Creating a GUI With Swing > Concurrency in Swing)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "初始线程"
+描述: "《Java 教程》Swing 并发课程，介绍 Swing 程序中初始线程的职责——创建初始化 GUI 的 Runnable 对象并将其调度到事件分发线程执行。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/concurrency/initial.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 初始线程
 
-Initial Threads
+> 文档说明
 
-[[Swing-dispatch|The Event Dispatch Thread]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[Swing-worker|Worker Threads and SwingWorker]]
+## 初始线程
 
-[[Swing-simple|Simple Background Tasks]]
+每个程序都有一组应用程序逻辑开始的线程。在标准程序中，只有一个这样的线程：调用程序类 `main` 方法的线程。在 applet 中，初始线程是构造 applet 对象并调用其 `init` 和 `start` 方法的线程；这些操作可能发生在单个线程上，或两个或三个不同的线程上，具体取决于 Java 平台实现。在本课中，我们将这些线程称为*初始线程(initial threads)*。
 
-[[Swing-interim|Tasks that Have Interim Results]]
+在 Swing 程序中，初始线程没有太多事要做。它们最基本的工作是创建一个初始化 GUI 的 `Runnable` 对象，并将该对象调度到事件分发线程上执行。一旦创建 GUI，程序主要由 GUI 事件驱动，每个事件都会在事件分发线程上执行一个短任务。应用程序代码可以在事件分发线程上调度额外任务（如果它们快速完成，以免干扰事件处理）或在工作线程上调度（用于长时间运行的任务）。
 
-[[Swing-cancel|Canceling Background Tasks]]
+初始线程通过调用 [`javax.swing.SwingUtilities.invokeLater`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeLater-java.lang.Runnable-) 或 [`javax.swing.SwingUtilities.invokeAndWait`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeAndWait-java.lang.Runnable-) 来调度 GUI 创建任务。这两个方法都接受一个参数：定义新任务的 `Runnable`。它们唯一的区别正如其名称所示：`invokeLater` 只是调度任务并返回；`invokeAndWait` 等待任务完成后再返回。
 
-[[Swing-bound|Bound Properties and Status Methods]]
+你可以在整个 Swing 教程中看到这样的示例：
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Initial Threads
-
-Every program has a set of threads where the application logic begins. In standard programs, there's only one such thread: the thread that invokes the `main` method of the program class. In applets the initial threads are the ones that construct the applet object and invoke its `init` and `start` methods; these actions may occur on a single thread, or on two or three different threads, depending on the Java platform implementation. In this lesson, we call these threads the *initial threads*.
-
-In Swing programs, the initial threads don't have a lot to do. Their most essential job is to create a `Runnable` object that initializes the GUI and schedule that object for execution on the event dispatch thread. Once the GUI is created, the program is primarily driven by GUI events, each of which causes the execution of a short task on the event dispatch thread. Application code can schedule additional tasks on the event dispatch thread (if they complete quickly, so as not to interfere with event processing) or a worker thread (for long-running tasks).
-
-An initial thread schedules the GUI creation task by invoking [`javax.swing.SwingUtilities.invokeLater`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeLater-java.lang.Runnable-) or [`javax.swing.SwingUtilities.invokeAndWait`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#invokeAndWait-java.lang.Runnable-). Both of these methods take a single argument: the `Runnable` that defines the new task. Their only difference is indicated by their names: `invokeLater` simply schedules the task and returns; `invokeAndWait` waits for the task to finish before returning.
-
-You can see examples of this throughout the Swing tutorial:
-
-```
+```java
 SwingUtilities.invokeLater(new Runnable() {
     public void run() {
         createAndShowGUI();
@@ -49,6 +36,6 @@ SwingUtilities.invokeLater(new Runnable() {
 });
 ```
 
-In an applet, the GUI-creation task must be launched from the `init` method using `invokeAndWait`; otherwise, `init` may return before the GUI is created, which may cause problems for a web browser launching an applet. In any other kind of program, scheduling the GUI-creation task is usually the last thing the initial thread does, so it doesn't matter whether it uses `invokeLater` or `invokeAndWait`.
+在 applet 中，GUI 创建任务必须从 `init` 方法使用 `invokeAndWait` 启动；否则，`init` 可能在 GUI 创建之前返回，这可能会给启动 applet 的 Web 浏览器带来问题。在任何其他类型的程序中，调度 GUI 创建任务通常是初始线程做的最后一件事，因此使用 `invokeLater` 还是 `invokeAndWait` 并不重要。
 
-Why does not the initial thread simply create the GUI itself? Because almost all code that creates or interacts with Swing components must run on the event dispatch thread. This restriction is discussed further in the next section.
+为什么初始线程不直接自己创建 GUI？因为几乎所有创建或与 Swing 组件交互的代码都必须在事件分发线程上运行。下一节将进一步讨论此限制。

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Text Component Features (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -138,7 +140,7 @@ All Swing text components support standard editing commands such as cut, copy, p
 
 You can invoke the `getActions` method on any text component to receive an array containing all actions supported by this component. It is also possible to load the array of actions into a `HashMap` so your program can retrieve an action by name. Here is the code from the `TextComponentDemo` example that takes the actions from the text pane and loads them into a `HashMap`.
 
-```
+```java
 private HashMap<Object, Action> createActionTable(JTextComponent textComponent) {
         HashMap<Object, Action> actions = new HashMap<Object, Action>();
         Action[] actionsArray = textComponent.getActions();
@@ -152,7 +154,7 @@ private HashMap<Object, Action> createActionTable(JTextComponent textComponent) 
 
 Here is the method for retrieving an action by its name from the hash map:
 
-```
+```java
 private Action getActionByName(String name) {
     return actions.get(name);
 }
@@ -162,7 +164,7 @@ You can use both methods verbatim in your programs.
 
 The following code shows how the cut menu item is created and associated with the action of removing text from the text component.
 
-```
+```java
 protected JMenu createEditMenu() {
     JMenu menu = new JMenu("Edit");
     ...
@@ -179,7 +181,7 @@ For efficiency, text components share actions. The `Action` object returned by `
 
 Here is the code that creates the Style menu and puts the Bold menu item in it:
 
-```
+```java
 protected JMenu createStyleMenu() {
     JMenu menu = new JMenu("Style");
  
@@ -204,7 +206,7 @@ The text pane in the `TextComponentDemo` example supports four key bindings not 
 
 The following code adds the Ctrl-B key binding to the text pane. The code for adding the other three bindings listed above is similar.
 
-```
+```text
 InputMap inputMap = textPane.getInputMap();
 
 KeyStroke key = KeyStroke.getKeyStroke(KeyEvent.VK_B,
@@ -224,7 +226,7 @@ Implementing undo and redo has two parts:
 **Part 1: Remembering Undoable Edits**  
 To support undo and redo, a text component must remember each edit that occurs, the order of edits, and what is needed to undo each edit. The example program uses an instance of the [`UndoManager`](https://docs.oracle.com/javase/8/docs/api/javax/swing/undo/UndoManager.html) class to manage its list of undoable edits. The undo manager is created where the member variables are declared:
 
-```
+```java
 protected UndoManager undo = new UndoManager();
 ```
 
@@ -232,7 +234,7 @@ Now, let us look at how the program discovers undoable edits and adds them to th
 
 A document notifies interested listeners whenever an undoable edit occurs on the document content. An important step in implementing undo and redo is to register an undoable edit listener on the document of the text component. The following code adds an instance of `MyUndoableEditListener` to the text pane's document:
 
-```
+```text
 doc.addUndoableEditListener(new MyUndoableEditListener());
 ```
 
@@ -248,7 +250,7 @@ protected class MyUndoableEditListener
         redoAction.updateRedoState();
     }
 }
-```
+```text
 
 Note that this method updates two objects: `undoAction` and `redoAction`. These are the action objects attached to the Undo and Redo menu items, respectively. The next step shows you how to create the menu items and how to implement the two actions. For general information about undoable edit listeners and undoable edit events, see [[Swing-事件监听-undoableeditlistener|How to Write an Undoable Edit Listener]].
 
@@ -273,7 +275,7 @@ menu.add(undoAction);
 redoAction = new RedoAction();
 menu.add(redoAction);
 ...
-```
+```java
 
 The undo and redo actions are implemented by custom `AbstractAction` subclasses: `UndoAction` and `RedoAction`, respectively. These classes are inner classes of the example's primary class.
 
@@ -307,7 +309,6 @@ public void actionPerformed(ActionEvent e) {
     updateRedoState();
     undoAction.updateUndoState();
 }
-```
 
 This method is similar to undo, except that it calls the undo manager's `redo` method.
 
@@ -349,7 +350,6 @@ To implement a document filter, create a subclass of [`DocumentFilter`](https://
 
 The `TextComponentDemo` application has a document filter, [`DocumentSizeFilter`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TextComponentDemoProject/src/components/DocumentSizeFilter.java), that limits the number of characters that the text pane can contain. Here is the code that creates the filter and attaches it to the text pane's document:
 
-```
 ...//Where member variables are declared:
 JTextPane textPane;
 AbstractDocument doc;
@@ -362,7 +362,7 @@ if (styledDoc instanceof AbstractDocument) {
     doc = (AbstractDocument)styledDoc;
     doc.setDocumentFilter(new DocumentSizeFilter(MAX_CHARACTERS));
 }
-```
+```java
 
 To limit the characters allowed in the document, `DocumentSizeFilter` overrides the `DocumentFilter` class's `insertString` method, which is called each time that text is inserted into the document. It also overrides the `replace` method, which is most likely to be called when the user pastes in new text. In general, text insertion can result when the user types or pastes in new text, or when the `setText` method is called. Here is the `DocumentSizeFilter` class's implementation of the `insertString` method:
 
@@ -390,7 +390,7 @@ A document notifies registered document listeners of changes to the document. Us
 
 The `TextComponentDemo` program uses a document listener to update the change log whenever a change is made to the text pane. The following line of code registers an instance of the `MyDocumentListener` class as a listener on the text pane's document:
 
-```
+```text
 doc.addDocumentListener(new MyDocumentListener());
 ```
 
@@ -417,7 +417,6 @@ protected class MyDocumentListener implements DocumentListener {
                 + "." + newline);
     }
 }
-```
 
 The listener implements three methods for handling three different types of document events: insertion, removal, and style changes. `StyledDocument` instances can fire all three types of events. `PlainDocument` instances fire events only for insertion and removal. For general information about document listeners and document events, see [[Swing-事件监听-documentlistener|How to Write a Document Listener]].
 
@@ -431,13 +430,12 @@ The `TextComponentDemo` program uses a caret listener to display the current pos
 
 The caret listener class in this example is a `JLabel` subclass. Here is the code that creates the caret listener label and makes it a caret listener of the text pane:
 
-```
 //Create the status area
 CaretListenerLabel caretListenerLabel = new CaretListenerLabel(
                                                 "Caret Status");
 ...
 textPane.addCaretListener(caretListenerLabel);
-```
+```java
 
 A caret listener must implement one method, `caretUpdate`, which is called each time the caret moves or the selection changes. Here is the `CaretListenerLabel` implementation of `caretUpdate`:
 

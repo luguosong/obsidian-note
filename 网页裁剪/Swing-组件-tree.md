@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Trees (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -140,7 +142,7 @@ Here is a picture of an application, the top half of which displays a tree in a 
 
 The following code, taken from [`TreeDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TreeDemoProject/src/components/TreeDemo.java), creates the `JTree` object and puts it in a scroll pane:
 
-```
+```java
 //Where instance variables are declared:
 private JTree tree;
 ...
@@ -160,7 +162,7 @@ The code creates an instance of [`DefaultMutableTreeNode`](https://docs.oracle.c
 
 Here is the code that creates the nodes under the root node:
 
-```
+```java
 private void createNodes(DefaultMutableTreeNode top) {
     DefaultMutableTreeNode category = null;
     DefaultMutableTreeNode book = null;
@@ -247,7 +249,6 @@ public void valueChanged(TreeSelectionEvent e) {
         displayURL(helpURL); 
     }
 }
-```
 
 The preceding code performs these tasks:
 
@@ -272,15 +273,13 @@ A tree typically also performs some look-and-feel-specific painting to indicate 
 
 If you are using the Java look and feel, you can customize whether lines are drawn to show relationships between tree nodes. By default, the Java look and feel draws angled lines between nodes. By setting the `JTree.lineStyle` client property of a tree, you can specify a different convention. For example, to request that the Java look and feel use only horizontal lines to group nodes, use the following code:
 
-```
 tree.putClientProperty("JTree.lineStyle", "Horizontal");
-```
+```text
 
 To specify that the Java look and feel should draw no lines, use this code:
 
-```
+```sql
 tree.putClientProperty("JTree.lineStyle", "None");
-```
 
 The following snapshots show the results of setting the `JTree.lineStyle` property, when using the Java look and feel.
 
@@ -292,7 +291,6 @@ No matter what the look and feel, the default icon displayed by a node is determ
 
 You can easily change the default icon used for leaf, expanded branch, or collapsed branch nodes. To do so, you first create an instance of [`DefaultTreeCellRenderer`](https://docs.oracle.com/javase/8/docs/api/javax/swing/tree/DefaultTreeCellRenderer.html). You could always create your own TreeCellRenderer implementation from scratch, reusing whatever components you like. Next, specify the icons to use by invoking one or more of the following methods on the renderer: `setLeafIcon` (for leaf nodes), `setOpenIcon` (for expanded branch nodes), `setClosedIcon` (for collapsed branch nodes). If you want the tree to display no icon for a type of node, then specify `null` for the icon. Once you have set up the icons, use the tree's `setCellRenderer` method to specify that the `DefaultTreeCellRenderer` paint its nodes. Here is an example, taken from [`TreeIconDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TreeIconDemoProject/src/components/TreeIconDemo.java):
 
-```
 ImageIcon leafIcon = createImageIcon("images/middle.gif");
 if (leafIcon != null) {
     DefaultTreeCellRenderer renderer = 
@@ -300,7 +298,7 @@ if (leafIcon != null) {
     renderer.setLeafIcon(leafIcon);
     tree.setCellRenderer(renderer);
 }
-```
+```java
 
 Here is the screenshot of TreeIconDemo:
 
@@ -404,7 +402,7 @@ The application is based on an example provided by tutorial reader Richard Stanf
 
 Here is the code that initializes the tree:
 
-```
+```text
 rootNode = new DefaultMutableTreeNode("Root Node");
 treeModel = new DefaultTreeModel(rootNode);
 treeModel.addTreeModelListener(new MyTreeModelListener());
@@ -451,11 +449,11 @@ class MyTreeModelListener implements TreeModelListener {
     public void treeStructureChanged(TreeModelEvent e) {
     }
 }
-```
+```text
 
 Here is the code that the **Add** button's event handler uses to add a new node to the tree:
 
-```
+```sql
 treePanel.addObject("New Node " + newNodeSuffix++);
 ...
 public DefaultMutableTreeNode addObject(Object child) {
@@ -488,7 +486,6 @@ public DefaultMutableTreeNode addObject(DefaultMutableTreeNode parent,
     }
     return childNode;
 }
-```
 
 The code creates a node, inserts it into the tree model, and then, if appropriate, requests that the nodes above it be expanded and the tree scrolled so that the new node is visible. To insert the node into the model, the code uses the `insertNodeInto` method provided by the `DefaultTreeModel` class.
 
@@ -523,7 +520,6 @@ One of the ways you can lazily load children of a Tree is by utilizing the TreeW
 
 Let us declare the root, grandparent and parent as shown below:
 
-```
 class DemoArea extends JScrollPane
                    implements TreeWillExpandListener {
         .......
@@ -545,7 +541,7 @@ class DemoArea extends JScrollPane
             dummyParent = parent;
             return root;
         }
-```
+```text
 
 You can load above declared nodes to the tree as shown in the following code:
 
@@ -557,7 +553,7 @@ tree.addTreeWillExpandListener(this);
 .......
 .......
 setViewportView(tree);
-```
+```java
 
 Now, you can load children lazily to the application whenever the parent node `Restaurants` is visible in the application. To do this, let us declare two children in a separate method and call that method as shown in the following code:
 

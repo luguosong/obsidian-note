@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using and Creating a DataFlavor (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -75,13 +77,13 @@ The [`DataFlavor`](https://docs.oracle.com/javase/8/docs/api/java/awt/datatransf
 
 For most applications, this is all you need to know about data flavors. However, if you require a flavor other than these predefined types, you can create your own. If you create a custom component and want it to participate in data transfer, you will need to create a custom data flavor. The constructor for specifying a data flavor is [`DataFlavor(Class, String)`](https://docs.oracle.com/javase/8/docs/api/java/awt/datatransfer/DataFlavor.html#DataFlavor-java.lang.Class-java.lang.String-). For example, to create a data flavor for the `java.util.ArrayList` class:
 
-```
+```text
 new DataFlavor(ArrayList.class, "ArrayList");
 ```
 
 To create a data flavor for an integer array:
 
-```
+```text
 new DataFlavor(int[].class, "Integer Array");
 ```
 
@@ -89,7 +91,7 @@ Transferring the data using this mechanism uses `Object` serialization, so the c
 
 Creating a data flavor using the `DataFlavor(Class, String)` constructor allows you to transfer data between applications, including native applications. If you want to create a data flavor that transfers data only within an application, use [`` `javaJVMLocalObjectMimeType` ``](https://docs.oracle.com/javase/8/docs/api/java/awt/datatransfer/DataFlavor.html#javaJVMLocalObjectMimeType) and the [`` `DataFlavor(String)` ``](https://docs.oracle.com/javase/8/docs/api/java/awt/datatransfer/DataFlavor.html#DataFlavor-java.lang.String-) constructor. For example, to specify a data flavor that transfers color from a `JColorChooser` only within your application, you could use this code:
 
-```
+```text
 String colorType = DataFlavor.javaJVMLocalObjectMimeType +
                    ";class=java.awt.Color";
 DataFlavor colorFlavor = new DataFlavor(colorType);
@@ -97,14 +99,14 @@ DataFlavor colorFlavor = new DataFlavor(colorType);
 
 To create a data flavor for an `ArrayList` that would work only within your application:
 
-```
+```text
 new DataFlavor(DataFlavor.javaJVMLocalObjectMimeType +
                ";class=java.util.ArrayList");
 ```
 
 To create a data flavor for an integer array:
 
-```
+```text
 new DataFlavor(DataFlavor.javaJVMLocalObjectMimeType +
                ";class=\"" + int[].class.getName() + "\"");
 ```

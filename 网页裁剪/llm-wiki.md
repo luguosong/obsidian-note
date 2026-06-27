@@ -1,13 +1,15 @@
 ---
 分类:
   - "网页裁剪"
-标题: "llm-wiki"
+标题: "大语言模型(LLM) Wiki"
 描述: "llm-wiki. GitHub Gist: instantly share code, notes, and snippets."
 来源: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f"
 发布者: "Gist-262588213843476"
 发布时间:
 创建时间: "2026-06-24T22:17:02+08:00"
 ---
+# 大语言模型(LLM) Wiki
+
 ## LLM Wiki
 
 使用大规模语言模型(LLMs)构建个人知识库的模式。

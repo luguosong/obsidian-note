@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deploying Without Codebase (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -46,10 +48,10 @@ In the following example, the `launchWebStartApplication` function is invoked in
 
 The [`` `dynamictree_webstart_no_codebase.jnlp` ``](https://docs.oracle.com/javase/tutorial/deployment/webstart/examples/webstart_ComponentArch_DynamicTreeDemo/src/dynamictree_webstart_no_codebase.jnlp) JNLP file is used to deploy the Dynamic Tree Demo application.
 
-```
+```html
 <script src="https://www.java.com/js/deployJava.js"></script>
 <a href="javascript:deployJava.launchWebStartApplication('dynamictree_webstart_no_codebase.jnlp');">Launch</a>
-```
+```javascript
 
 The Java Web Start application is launched when the user clicks the resulting HTML link.
 
@@ -65,7 +67,7 @@ The following example shows the usage of the `createWebStartLaunchButtonEx` func
 
 The [`` `dynamictree_webstart_no_codebase.jnlp` ``](https://docs.oracle.com/javase/tutorial/deployment/webstart/examples/webstart_ComponentArch_DynamicTreeDemo/src/dynamictree_webstart_no_codebase.jnlp) JNLP file is used to deploy the Dynamic Tree Demo application.
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js"></script>
 <script>        
     var jnlpFile = "dynamictree_webstart_no_codebase.jnlp";
@@ -83,7 +85,7 @@ Open [`` `JavaWebStartAppPage_No_Codebase.html` ``](https://docs.oracle.com/java
 
 You can also launch the Java Web Start application at the system command prompt by invoking the `javaws` command with the complete url of the JNLP file as shown in the following code snippet.
 
-```
+```text
 javaws http://example.com/dynamictree_webstart_no_codebase.jnlp
 ```
 

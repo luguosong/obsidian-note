@@ -78,7 +78,7 @@
 
 我仓库**根目录**中的一条日志条目大概长这样：
 
-```
+```text
 I went to see the movie [[Perfect Days]] with [[Aisha]] at [[Vidiots]] and had Filipino food at [[Little Ongpin]]. I loved this quote from Perfect Days: [[Next time is next time, now is now]]. It reminds me of the essay ...
 ```
 

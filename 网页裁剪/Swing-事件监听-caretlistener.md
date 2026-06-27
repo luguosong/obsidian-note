@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Caret Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -87,7 +89,7 @@ Caret events occur when the *caret* — the cursor indicating the insertion poin
 
 Here is the caret event handling code from an application called `TextComponentDemo`:
 
-```
+```sql
 ...
 //where initialization occurs
 CaretListenerLabel caretListenerLabel =

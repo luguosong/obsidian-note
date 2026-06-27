@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Joins (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The `join` method allows one thread to wait for the completion of another. If `t` is a `Thread` object whose thread is currently executing,
 
-```
+```text
 t.join();
 ```
 

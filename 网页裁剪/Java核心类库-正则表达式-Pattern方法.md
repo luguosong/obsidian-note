@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Methods of the Pattern Class (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -68,7 +70,7 @@ In the following steps we will modify the test harness, [`RegexTestHarness.java`
 
 First, modify the code to invoke the alternate version of `compile`:
 
-```
+```text
 Pattern pattern = 
 Pattern.compile(console.readLine("%nEnter your regex: "),
 Pattern.CASE_INSENSITIVE);
@@ -76,7 +78,7 @@ Pattern.CASE_INSENSITIVE);
 
 Then compile and run the test harness to get the following results:
 
-```
+```text
 Enter your regex: dog
 Enter input string to search: DoGDOg
 I found the text "DoG" starting at index 0 and ending at index 3.
@@ -85,13 +87,13 @@ I found the text "DOg" starting at index 3 and ending at index 6.
 
 As you can see, the string literal "dog" matches both occurences, regardless of case. To compile a pattern with multiple flags, separate the flags to be included using the bitwise OR operator " `|` ". For clarity, the following code samples hardcode the regular expression instead of reading it from the `Console`:
 
-```
+```text
 pattern = Pattern.compile("[az]$", Pattern.MULTILINE | Pattern.UNIX_LINES);
 ```
 
 You could also specify an `int` variable instead:
 
-```
+```java
 final int flags = Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE;
 Pattern pattern = Pattern.compile("aa", flags);
 ```
@@ -100,7 +102,7 @@ Pattern pattern = Pattern.compile("aa", flags);
 
 It's also possible to enable various flags using *embedded flag expressions*. Embedded flag expressions are an alternative to the two-argument version of `compile`, and are specified in the regular expression itself. The following example uses the original test harness, [`RegexTestHarness.java`](https://docs.oracle.com/javase/tutorial/essential/regex/examples/RegexTestHarness.java) with the embedded flag expression `(?i)` to enable case-insensitive matching.
 
-```
+```text
 Enter your regex: (?i)foo
 Enter input string to search: FOOfooFoOfoO
 I found the text "FOO" starting at index 0 and ending at index 3.
@@ -150,9 +152,6 @@ public class SplitDemo {
         }
     }
 }
-```
-
-```
 OUTPUT:
 
 one
@@ -160,7 +159,7 @@ two
 three
 four
 five
-```
+```java
 
 For simplicity, we've matched a string literal, the colon (`:`) instead of a complex regular expression. Since we're still using `Pattern` and `Matcher` objects, you can use split to get the text that falls on either side of any regular expression. Here's the same example, [`SplitDemo2.java`](https://docs.oracle.com/javase/tutorial/essential/regex/examples/SplitDemo2.java), modified to split on digits instead:
 
@@ -184,7 +183,7 @@ public class SplitDemo2 {
 }
 ```
 
-```
+```text
 OUTPUT:
 
 one

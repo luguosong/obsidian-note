@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using JAR-related APIs (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -73,7 +75,7 @@ To give you an idea of the possibilities that are opened up by these new APIs, t
 
 JarRunner enables you to run an application that's bundled in a JAR file by specifying the JAR file's URL on the command line. For example, if an application called TargetApp were bundled in a JAR file at http://www.example.com/TargetApp.jar, you could run the application using this command:
 
-```
+```text
 java JarRunner http://www.example.com/TargetApp.jar
 ```
 

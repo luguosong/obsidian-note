@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Setting Package Version Information (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -77,7 +79,7 @@ You may need to include package version information in a JAR file's manifest. Yo
 
 One set of such headers can be assigned to each package. The versioning headers should appear directly beneath the Name header for the package. This example shows all the versioning headers:
 
-```
+```yaml
 Name: java/util/
 Specification-Title: Java Utility Classes
 Specification-Version: 1.2
@@ -85,7 +87,6 @@ Specification-Vendor: Example Tech, Inc.
 Implementation-Title: java.util
 Implementation-Version: build57
 Implementation-Vendor: Example Tech, Inc.
-```
 
 For more information about package version headers, see the [Package Versioning specification](https://docs.oracle.com/javase/8/docs/technotes/guides/versioning/spec/versioning2.html#wp89936) .
 
@@ -95,7 +96,7 @@ We want to include the headers in the example above in the manifest of MyJar.jar
 
 We first create a text file named Manifest.txt with the following contents:
 
-```
+```yaml
 Name: java/util/
 Specification-Title: Java Utility Classes
 Specification-Version: 1.2
@@ -103,7 +104,6 @@ Specification-Vendor: Example Tech, Inc.
 Implementation-Title: java.util 
 Implementation-Version: build57
 Implementation-Vendor: Example Tech, Inc.
-```
 
 ---
 
@@ -113,13 +113,13 @@ Implementation-Vendor: Example Tech, Inc.
 
 We then create a JAR file named MyJar.jar by entering the following command:
 
-```
+```text
 jar cfm MyJar.jar Manifest.txt MyPackage/*.class
 ```
 
 This creates the JAR file with a manifest with the following contents:
 
-```
+```yaml
 Manifest-Version: 1.0
 Created-By: 1.7.0_06 (Oracle Corporation)
 Name: java/util/

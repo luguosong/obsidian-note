@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Running a Java Web Start Application (The Java™ Tutorials >        
+            Deployment > Java Web Start)
 
 Documentation
 
@@ -53,7 +55,7 @@ Users can run Java Web Start applications in the following ways:
 
 You can run a Java Web Start application from a browser by clicking a link to the application's JNLP file. The following text is an example of a link to a JNLP file.
 
-```
+```html
 <a href="/some/path/Notepad.jnlp">Launch Notepad Application</a>
 ```
 

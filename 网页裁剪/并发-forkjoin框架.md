@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Fork/Join (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -31,7 +33,7 @@ The center of the fork/join framework is the [`ForkJoinPool`](https://docs.oracl
 
 The first step for using the fork/join framework is to write code that performs a segment of the work. Your code should look similar to the following pseudocode:
 
-```
+```text
 if (my portion of the work is small enough)
   do the work directly
 else
@@ -93,7 +95,7 @@ public class ForkBlur extends RecursiveAction {
     }
   
   ...
-```
+```text
 
 Now you implement the abstract `compute()` method, which either performs the blur directly or splits it into two smaller tasks. A simple array length threshold helps determine whether the work is performed or split.
 
@@ -112,7 +114,6 @@ protected void compute() {
               new ForkBlur(mSource, mStart + split, mLength - split,
                            mDestination));
 }
-```
 
 If the previous methods are in a subclass of the `RecursiveAction` class, then setting up the task to run in a `ForkJoinPool` is straightforward, and involves the following steps:
 
@@ -121,15 +122,14 @@ If the previous methods are in a subclass of the `RecursiveAction` class, then s
 	// source image pixels are in src
 	// destination image pixels are in dst
 	ForkBlur fb = new ForkBlur(src, 0, src.length, dst);
-	```
 2. Create the `ForkJoinPool` that will run the task.
-	```
+```text
 	ForkJoinPool pool = new ForkJoinPool();
-	```
+```
 3. Run the task.
-	```
+```text
 	pool.invoke(fb);
-	```
+```
 
 For the full source code, including some extra code that creates the destination image file, see the [`` `ForkBlur` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/ForkBlur.java) example.
 

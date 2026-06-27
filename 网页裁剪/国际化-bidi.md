@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Working with Bidirectional Text with the JTextComponent Class (The Java™ Tutorials >        
+            Internationalization > Working with Text)
 
 Documentation
 
@@ -37,7 +39,7 @@ The sample [`BidiTextComponentDemo.java`](https://docs.oracle.com/javase/tutoria
 
 You can specify the run direction of the [`Document`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/Document.html) object of a [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html) object. For example, the following statement specifies that the text in the [`JTextPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextPane.html) object `textPane` runs right-to-left:
 
-```
+```text
 textPane.getDocument().putProperty(
     TextAttribute.RUN_DIRECTION,
     TextAttribute.RUN_DIRECTION_RTL);
@@ -45,7 +47,7 @@ textPane.getDocument().putProperty(
 
 Alternatively, you can specify the component orientation of a particular Swing component based on locale. For example, the following statements specify that the component orientation of the object `textPane` is based on the ar-SA locale:
 
-```
+```text
 Locale arabicSaudiArabia = 
     new Locale.Builder().setLanguage("ar").setRegion("SA").build();
 
@@ -93,7 +95,7 @@ The following uses the ar-SA locale:
 
 Note that the components have been laid out in the same direction as the corresponding locale: left-to-right for en-US and right-to-left for ar-SA. The [`InternationalizedMortgageCalculator.java`](https://docs.oracle.com/javase/tutorial/i18n/format/examples/InternationalizedMortgageCalculator.java) sample calls the methods [`applyComponentOrientation`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#applyComponentOrientation-java.awt.ComponentOrientation-) and [`getOrientation`](https://docs.oracle.com/javase/8/docs/api/java/awt/ComponentOrientation.html#getOrientation-java.util.Locale-) to specify the direction of its components by locale:
 
-```
+```java
 private static JFrame frame;
 
 // ...

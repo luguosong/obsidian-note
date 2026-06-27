@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Synchronized Methods (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -41,7 +43,6 @@ public class SynchronizedCounter {
         return c;
     }
 }
-```
 
 If `count` is an instance of `SynchronizedCounter`, then making these methods synchronized has two effects:
 
@@ -54,7 +55,6 @@ Note that constructors cannot be synchronized — using the `synchronized` keywo
 
 **Warning:** When constructing an object that will be shared between threads, be very careful that a reference to the object does not "leak" prematurely. For example, suppose you want to maintain a `List` called `instances` containing every instance of class. You might be tempted to add the following line to your constructor:
 
-```
 instances.add(this);
 ```
 

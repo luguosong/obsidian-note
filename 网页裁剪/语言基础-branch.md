@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Branching Statements (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -25,7 +27,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The `break` statement has two forms: labeled and unlabeled. You saw the unlabeled form in the previous discussion of the `switch` statement. You can also use an unlabeled `break` to terminate a `for`, `while`, or `do-while` loop, as shown in the following [`BreakDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/BreakDemo.java) program:
 
-```
+```java
 class BreakDemo {
     public static void main(String[] args) {
 
@@ -52,17 +54,17 @@ class BreakDemo {
         }
     }
 }
-```
+```text
 
 This program searches for the number 12 in an array. The `break` statement, shown in boldface, terminates the `for` loop when that value is found. Control flow then transfers to the statement after the `for` loop. This program's output is:
 
 ```
 Found 12 at index 4
-```
+```java
 
 An unlabeled `break` statement terminates the innermost `switch`, `for`, `while`, or `do-while` statement, but a labeled `break` terminates an outer statement. The following program, [`BreakWithLabelDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/BreakWithLabelDemo.java), is similar to the previous program, but uses nested `for` loops to search for a value in a two-dimensional array. When the value is found, a labeled `break` terminates the outer `for` loop (labeled "search"):
 
-```
+```java
 class BreakWithLabelDemo {
     public static void main(String[] args) {
 
@@ -99,7 +101,7 @@ class BreakWithLabelDemo {
 
 This is the output of the program.
 
-```
+```text
 Found 12 at 1, 0
 ```
 
@@ -109,7 +111,7 @@ The `break` statement terminates the labeled statement; it does not transfer the
 
 The `continue` statement skips the current iteration of a `for`, `while`, or `do-while` loop. The unlabeled form skips to the end of the innermost loop's body and evaluates the `boolean` expression that controls the loop. The following program, [`ContinueDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ContinueDemo.java), steps through a `String`, counting the occurrences of the letter "p". If the current character is not a p, the `continue` statement skips the rest of the loop and proceeds to the next character. If it *is* a "p", the program increments the letter count.
 
-```
+```java
 class ContinueDemo {
     public static void main(String[] args) {
 
@@ -128,19 +130,19 @@ class ContinueDemo {
         System.out.println("Found " + numPs + " p's in the string.");
     }
 }
-```
+```text
 
 Here is the output of this program:
 
 ```
 Found 9 p's in the string.
-```
+```java
 
 To see this effect more clearly, try removing the `continue` statement and recompiling. When you run the program again, the count will be wrong, saying that it found 35 p's instead of 9.
 
 A labeled `continue` statement skips the current iteration of an outer loop marked with the given label. The following example program, `ContinueWithLabelDemo`, uses nested loops to search for a substring within another string. Two nested loops are required: one to iterate over the substring and one to iterate over the string being searched. The following program, [`ContinueWithLabelDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ContinueWithLabelDemo.java), uses the labeled form of continue to skip an iteration in the outer loop.
 
-```
+```java
 class ContinueWithLabelDemo {
     public static void main(String[] args) {
 
@@ -171,7 +173,7 @@ class ContinueWithLabelDemo {
 
 Here is the output from this program.
 
-```
+```text
 Found it
 ```
 
@@ -179,13 +181,13 @@ Found it
 
 The last of the branching statements is the `return` statement. The `return` statement exits from the current method, and control flow returns to where the method was invoked. The `return` statement has two forms: one that returns a value, and one that doesn't. To return a value, simply put the value (or an expression that calculates the value) after the `return` keyword.
 
-```
+```text
 return ++count;
 ```
 
 The data type of the returned value must match the type of the method's declared return value. When a method is declared `void`, use the form of `return` that doesn't return a value.
 
-```
+```text
 return;
 ```
 

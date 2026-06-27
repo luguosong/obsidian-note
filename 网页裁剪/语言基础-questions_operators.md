@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Operators (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -24,15 +26,15 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Questions
 
 1. Consider the following code snippet.
-	```
+```text
 	arrayOfInts[j] > arrayOfInts[j+1]
-	```
+```
 	Which operators does the code contain?
 2. Consider the following code snippet.
-	```
+```text
 	int i = 10;
 	int n = i++%5;
-	```
+```
 	1. What are the values of `i` and `n` after the code is executed?
 		2. What are the final values of `i` and `n` if instead of using the postfix increment operator (`i++`), you use the prefix version (`++i)`)?
 3. To invert the value of a `boolean`, which operator would you use?
@@ -42,7 +44,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Exercises
 
 1. Change the following program to use compound assignments:
-	```
+	```java
 	class ArithmeticDemo {
 	     public static void main (String[] args){
 	          
@@ -59,9 +61,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	          System.out.println(result);
 	     }
 	}
-	```
+```java
 2. In the following program, explain why the value "6" is printed twice in a row:
-	```
+	```java
 	class PrePostDemo {
 	    public static void main(String[] args){
 	        int i = 3;
@@ -74,6 +76,6 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println(i);    // "7"
 	    }
 	}
-	```
+```
 
 [[语言基础-answers_operators|Check your answers]]

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Putting it All Together - DnD and CCP (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -71,18 +73,18 @@ We have shown how to implement drag and drop support and how to implement cut, c
 
 You implement both within the `TransferHandler` 's `importData` method, like this:
 
-```
+```bash
 if (transferSupport.isDrop()) {
     // put data in transferSupport.getDropLocation()
 } else {
     // determine where you want the paste to go (ex: after current selection)
     // put data there
 }
-```
+```java
 
 The `ListCutPaste` example, discussed on the [[Swing-listpaste|CCP in a non-Text Component]] page, supports both dnd and ccp. Here is its `importData` method (the `if` - `else` drop logic is bolded):
 
-```
+```sql
 public boolean importData(TransferHandler.TransferSupport info) {
     String data = null;
 

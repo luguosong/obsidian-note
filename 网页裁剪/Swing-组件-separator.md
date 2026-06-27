@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Separators (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -113,7 +115,7 @@ Here is a picture of a menu that has three separators, used to divide the menu i
 
 The code to add the menu items and separators to the menu is extremely simple, boiling down to something like this:
 
-```
+```text
 menu.add(menuItem1);
 menu.add(menuItem2);
 menu.add(menuItem3);
@@ -141,7 +143,7 @@ The vertical separator does have a bit of width (and the horizontal a bit of hei
 
 The following code snippet shows how ListDemo puts together the panel that contains the vertical separator. You can find the full source code for ListDemo in [`ListDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ListDemoProject/src/components/ListDemo.java).
 
-```
+```text
 JPanel buttonPane = new JPanel();
 buttonPane.setLayout(new BoxLayout(buttonPane,
                                    BoxLayout.LINE_AXIS));
@@ -164,7 +166,7 @@ Here's a picture of another GUI that uses a separator, this time to put a dividi
 
 You can find the code in the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TextInputDemo). Here is the code that sets up the separator's container:
 
-```
+```text
 JPanel panel = new JPanel(new BorderLayout());
 ...
 panel.setBorder(BorderFactory.createEmptyBorder(

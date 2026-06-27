@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Modality in Dialogs (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -110,7 +112,7 @@ Click the image to view it at its natural size.*
 
 The following code snippet shows how to create dialog boxes of different modality types:
 
-```
+```java
 //The Book 1 parent frame
 f1 = new JFrame("Book 1 (parent frame)");
 

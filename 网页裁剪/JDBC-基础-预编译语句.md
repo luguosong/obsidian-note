@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Prepared Statements (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -123,7 +125,6 @@ public void updateCoffeeSales(HashMap<String, Integer> salesForWeek) throws SQLE
     }
   }
 }
-```
 
 ## Creating a PreparedStatement Object
 
@@ -134,13 +135,12 @@ String updateString =
   "update COFFEES " + "set SALES = ? where COF_NAME = ?";
 // ...
 PreparedStatement updateSales = con.prepareStatement(updateString);
-```
 
 ## Supplying Values for PreparedStatement Parameters
 
 You must supply values in place of the question mark placeholders (if there are any) before you can execute a `PreparedStatement` object. Do this by calling one of the setter methods defined in the `PreparedStatement` class. The following statements supply the two question mark placeholders in the `PreparedStatement` named `updateSales`:
 
-```
+```text
 updateSales.setInt(1, e.getValue().intValue());
 updateSales.setString(2, e.getKey());
 ```
@@ -149,7 +149,7 @@ The first argument for each of these setter methods specifies the question mark 
 
 After a parameter has been set with a value, it retains that value until it is reset to another value, or the method `clearParameters` is called. Using the `PreparedStatement` object `updateSales`, the following code fragment illustrates reusing a prepared statement after resetting the value of one of its parameters and leaving the other one the same:
 
-```
+```text
 // changes SALES column of French Roast
 //row to 100
 
@@ -171,7 +171,7 @@ You can often make coding easier by using a `for` loop or a `while` loop to set 
 
 The [`CoffeesTable.updateCoffeeSales`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/CoffeesTable.java) method uses a for-each loop to repeatedly set values in the `PreparedStatement` objects `updateSales` and `updateTotal`:
 
-```
+```text
 for (Map.Entry<String, Integer> e : salesForWeek.entrySet()) {
   updateSales.setInt(1, e.getValue().intValue());
   updateSales.setString(2, e.getKey());
@@ -185,7 +185,7 @@ The method `CoffeesTable.updateCoffeeSales` takes one argument, `HashMap`. Each 
 
 As with `Statement` objects, to execute a `PreparedStatement` object, call an execute statement: `executeQuery` if the query returns only one `ResultSet` (such as a `SELECT` SQL statement), `executeUpdate` if the query does not return a `ResultSet` (such as an `UPDATE` SQL statement), or `execute` if the query might return more than one `ResultSet` object. Both `PreparedStatement` objects in `CoffeesTable.updateCoffeeSales(HashMap<String, Integer>)` contain `UPDATE` SQL statements, so both are executed by calling `executeUpdate`:
 
-```
+```text
 updateSales.setInt(1, e.getValue().intValue());
 updateSales.setString(2, e.getKey());
 updateSales.executeUpdate();
@@ -200,7 +200,7 @@ No arguments are supplied to `executeUpdate` when they are used to execute `upda
 
 **Note**: At the beginning of `CoffeesTable.updateCoffeeSales`, the auto-commit mode is set to false:
 
-```
+```text
 con.setAutoCommit(false);
 ```
 
@@ -210,7 +210,7 @@ Consequently, no SQL statements are committed until the method `commit` is calle
 
 Whereas `executeQuery` returns a `ResultSet` object containing the results of the query sent to the DBMS, the return value for `executeUpdate` is an `int` value that indicates how many rows of a table were updated. For instance, the following code shows the return value of `executeUpdate` being assigned to the variable `n`:
 
-```
+```text
 updateSales.setInt(1, 50);
 updateSales.setString(2, "Espresso");
 int n = updateSales.executeUpdate();
@@ -221,7 +221,7 @@ The table `COFFEES` is updated; the value 50 replaces the value in the column `S
 
 When the method `executeUpdate` is used to execute a DDL (data definition language) statement, such as in creating a table, it returns the `int` value of 0. Consequently, in the following code fragment, which executes the DDL statement used to create the table `COFFEES`, `n` is assigned a value of 0:
 
-```
+```text
 // n = 0
 int n = executeUpdate(createTableCoffees);
 ```

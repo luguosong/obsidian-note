@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# LDAP Compare (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -33,7 +35,7 @@ To accomplish this in the JNDI, use suitably constrained arguments for the follo
 
 Here's [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Compare.java) that causes an LDAP "compare" operation to be used.
 
-```
+```bash
 // Value of the attribute
 byte[] key = {(byte)0x61, (byte)0x62, (byte)0x63, (byte)0x64, 
               (byte)0x65, (byte)0x66, (byte)0x67};

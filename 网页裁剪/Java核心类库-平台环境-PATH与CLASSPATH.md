@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# PATH and CLASSPATH (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -35,7 +37,7 @@ You can run Java applications just fine without setting the `PATH` environment v
 
 Set the `PATH` environment variable if you want to be able to conveniently run the executables (`javac.exe`, `java.exe`, `javadoc.exe`, and so on) from any directory without having to type the full path of the command. If you do not set the `PATH` variable, you need to specify the full path to the executable every time you run it, such as:
 
-```
+```text
 C:\Java\jdk1.7.0\bin\javac MyClass.java
 ```
 
@@ -43,7 +45,7 @@ The `PATH` environment variable is a series of directories separated by semicolo
 
 The following is an example of a `PATH` environment variable:
 
-```
+```text
 C:\Java\jdk1.7.0\bin;C:\Windows\System32\;C:\Windows\;C:\Windows\System32\Wbem
 ```
 
@@ -70,7 +72,7 @@ It is useful to set the `PATH` environment variable permanently so it will persi
 
 **Note:** You may see a `PATH` environment variable similar to the following when editing it from the Control Panel:
 
-```
+```text
 %JAVA_HOME%\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem
 ```
 
@@ -78,7 +80,6 @@ Variables enclosed in percentage signs (`%`) are existing environment variables.
 
 ```batch
 echo %SystemRoot%
-```
 
 ---
 
@@ -86,15 +87,14 @@ echo %SystemRoot%
 
 You can run the JDK just fine without setting the `PATH` variable, or you can optionally set it as a convenience. However, you should set the path variable if you want to be able to run the executables (`javac`, `java`, `javadoc`, and so on) from any directory without having to type the full path of the command. If you do not set the `PATH` variable, you need to specify the full path to the executable every time you run it, such as:
 
-```
 % /usr/local/jdk1.7.0/bin/javac MyClass.java
-```
+```text
 
 To find out if the path is properly set, execute:
 
 ```
 % java -version
-```
+```text
 
 This will print the version of the `java` tool, if it can find it. If the version is old or you get the error **java: Command not found**, then the path is not properly set.
 
@@ -108,21 +108,21 @@ set path=(/usr/local/jdk1.7.0/bin $path)
 
 For `bash`, edit the startup file (`~/.bashrc`):
 
-```
+```javascript
 PATH=/usr/local/jdk1.7.0/bin:$PATH
 export PATH
 ```
 
 For `ksh`, the startup file is named by the environment variable, `ENV`. To set the path:
 
-```
+```javascript
 PATH=/usr/local/jdk1.7.0/bin:$PATH
 export PATH
 ```
 
 For `sh`, edit the profile file (`~/.profile`):
 
-```
+```javascript
 PATH=/usr/local/jdk1.7.0/bin:$PATH
 export PATH
 ```
@@ -134,14 +134,13 @@ For C shell (`csh`):
 ```bash
 % source ~/.cshrc
 % java -version
-```
+```text
 
 For `ksh`, `bash`, or `sh`:
 
-```
+```bash
 % . /.profile
 % java -version
-```
 
 ## Checking the CLASSPATH variable (All platforms)
 
@@ -155,7 +154,6 @@ To check whether `CLASSPATH` is set on Microsoft Windows NT/2000/XP, execute the
 
 ```batch
 C:> echo %CLASSPATH%
-```
 
 On Solaris or Linux, execute the following:
 

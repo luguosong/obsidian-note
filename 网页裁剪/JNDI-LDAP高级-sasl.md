@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# SASL (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -40,21 +42,19 @@ Of the mechanisms on the previous list, popular LDAP servers (such as those from
 
 Here is a [`simple program`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/ServerSasl.java) for finding out the list of SASL mechanisms that an LDAP server supports.
 
-```
+```sql
 // Create initial context
 DirContext ctx = new InitialDirContext();
 
 // Read supportedSASLMechanisms from root DSE
 Attributes attrs = ctx.getAttributes(
     "ldap://localhost:389", new String[]{"supportedSASLMechanisms"});
-```
+```text
 
 Here is the output produced by running this program against a server that supports the External SASL mechanism.
 
-```
 {supportedsaslmechanisms=supportedSASLMechanisms: 
                          EXTERNAL, GSSAPI, DIGEST-MD5}
-```
 
 ## Specifying the Authentication Mechanism
 
@@ -62,9 +62,7 @@ To use a particular SASL mechanism, you specify its Internet Assigned Numbers Au
 
 Here's an example that asks the LDAP provider to try to get the implementation for the DIGEST-MD5 mechanism and if that's not available, use the one for GSSAPI.
 
-```
 env.put(Context.SECURITY_AUTHENTICATION, "DIGEST-MD5 GSSAPI");
-```
 
 You might get this list of authentication mechanisms from the user of your application. Or you might get it by asking the LDAP server, via a call similar to that shown previously. The LDAP provider itself does not consult the server for this information. It simply attempts to locate and use the implementation of the specified mechanisms.
 

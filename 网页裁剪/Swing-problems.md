@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Solving Common Painting Problems (The Java™ Tutorials >        
+            Creating a GUI With Swing > Performing Custom Painting)
 
 Documentation
 
@@ -49,11 +51,11 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 - Make sure your component is opaque. `JPanel` s, for example, are opaque by default in many but not all look and feels. To make components such as `JLabel` s and GTK+ `JPanel` s opaque, you must invoke `setOpaque(true)` on them.
 - If your custom component extends `JPanel` or a more specialized `JComponent` descendant, then you can paint the background by invoking `super.paintComponent` before painting the contents of your component.
 - You can paint the background yourself using this code at the top of a custom component's `paintComponent` method:
-	```
+```text
 	g.setColor(getBackground());
 	g.fillRect(0, 0, getWidth(), getHeight());
 	g.setColor(getForeground());
-	```
+```
 
 **Problem:** I used `setBackground` to set my component's background color, but it seemed to have no effect.
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Working With a Server-Side Application  (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -81,7 +83,7 @@ Java applets, like other Java programs, can use the API defined in the `java.net
 
 When the applet is deployed to a web server, use the `Applet` `getCodeBase` method and the `java.net.URL` `getHost` method to determine which host the applet came from, as follows:
 
-```
+```text
 String host = getCodeBase().getHost();
 ```
 

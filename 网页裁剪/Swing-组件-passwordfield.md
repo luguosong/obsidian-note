@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Password Fields (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -115,7 +117,7 @@ Click the Launch button to run PasswordDemo using [Java™ Web Start](http://www
 
 The password is "bugaboo". The password "bugaboo" is an example only. Use secure authentication methods in production systems. You can find the entire code for this program in [`` `PasswordDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/PasswordDemoProject/src/components/PasswordDemo.java). Here is the code that creates and sets up the password field:
 
-```
+```text
 passwordField = new JPasswordField(10);
 passwordField.setActionCommand(OK);
 passwordField.addActionListener(this);
@@ -146,7 +148,7 @@ public void actionPerformed(ActionEvent e) {
         resetFocus();
     } else ...//handle the Help button...
 }
-```
+```text
 
 ---
 
@@ -156,7 +158,7 @@ public void actionPerformed(ActionEvent e) {
 
 A program that uses a password field typically validates the password before completing any actions that require the password. This program calls a private method, `isPasswordCorrect`, that compares the value returned by the `getPassword` method to a value stored in a character array. Here is its code:
 
-```
+```java
 private static boolean isPasswordCorrect(char[] input) {
     boolean isCorrect = true;
     char[] correctPassword = { 'b', 'u', 'g', 'a', 'b', 'o', 'o' };

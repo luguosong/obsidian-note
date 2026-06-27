@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Command-Line Arguments (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -25,7 +27,7 @@ A Java application can accept any number of arguments from the command line. Thi
 
 The user enters command-line arguments when invoking the application and specifies them after the name of the class to be run. For example, suppose a Java application called `Sort` sorts lines in a file. To sort the data in a file named `friends.txt`, a user would enter:
 
-```
+```text
 java Sort friends.txt
 ```
 
@@ -35,7 +37,7 @@ When an application is launched, the runtime system passes the command-line argu
 
 The [`` `Echo` ``](https://docs.oracle.com/javase/tutorial/essential/environment/examples/Echo.java) example displays each of its command-line arguments on a line by itself:
 
-```
+```java
 public class Echo {
     public static void main (String[] args) {
         for (String s: args) {
@@ -43,11 +45,11 @@ public class Echo {
         }
     }
 }
-```
+```text
 
 The following example shows how a user might run `Echo`. User input is in italics.
 
-```
+```batch
 java Echo Drink Hot Java
 Drink
 Hot
@@ -56,16 +58,15 @@ Java
 
 Note that the application displays each word — `Drink`, `Hot`, and `Java` — on a line by itself. This is because the space character separates command-line arguments. To have `Drink`, `Hot`, and `Java` interpreted as a single argument, the user would join them by enclosing them within quotation marks.
 
-```
+```batch
 java Echo "Drink Hot Java"
 Drink Hot Java
-```
 
 ## Parsing Numeric Command-Line Arguments
 
 If an application needs to support a numeric command-line argument, it must convert a `String` argument that represents a number, such as "34", to a numeric value. Here is a code snippet that converts a command-line argument to an `int`:
 
-```
+```java
 int firstArg;
 if (args.length > 0) {
     try {
@@ -75,6 +76,5 @@ if (args.length > 0) {
         System.exit(1);
     }
 }
-```
 
 `parseInt` throws a `NumberFormatException` if the format of `args[0]` isn't valid. All of the `Number` classes — `Integer`, `Float`, `Double`, and so on — have `parseXXX` methods that convert a `String` representing a number to an object of their type.

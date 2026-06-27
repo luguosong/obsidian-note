@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a List Data Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -105,7 +107,7 @@ The following example demonstrates list data events on a mutable list:
 
 You can find the demo's code in [`ListDataEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/ListDataEventDemoProject/src/events/ListDataEventDemo.java). Here is the code that registers a list data listener on the list model and implements the listener:
 
-```
+```sql
 //...where member variables are declared...
 private DefaultListModel listModel;
 ...

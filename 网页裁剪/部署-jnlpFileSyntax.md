@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Structure of the JNLP File (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -25,7 +27,7 @@ This topic describes the syntax of the Java Network Launch Protocol (JNLP) file 
 
 The following code snippet shows a sample JNLP file for a Java Web Start application:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <jnlp spec="1.0+" codebase="" href="">
     <information>
@@ -50,7 +52,7 @@ The following code snippet shows a sample JNLP file for a Java Web Start applica
      </application-desc>
      <update check="background"/>
 </jnlp>
-```
+```xml
 
 The following table describes the elements and attributes commonly used in JNLP files. Click the parent link to view an element's parent.
 
@@ -161,7 +163,7 @@ The following table describes the elements and attributes commonly used in JNLP 
 
 Java Web Start software supports encoding of JNLP files in any character encoding supported by the Java platform. For more information about character encoding in the Java platform, see the [Supported Encodings Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html). To encode a JNLP file, specify an encoding in the XML prolog of that file. For example, the following line indicates that the JNLP file is encoded in UTF-16.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-16"?>
 ```
 

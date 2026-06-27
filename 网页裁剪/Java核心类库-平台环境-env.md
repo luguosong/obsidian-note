@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Environment Variables (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -27,7 +29,7 @@ Many operating systems use *environment variables* to pass configuration informa
 
 On the Java platform, an application uses [`System.getenv`](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#getenv--) to retrieve environment variable values. Without an argument, `getenv` returns a read-only instance of `java.util.Map`, where the map keys are the environment variable names, and the map values are the environment variable values. This is demonstrated in the [`` `EnvMap` ``](https://docs.oracle.com/javase/tutorial/essential/environment/examples/EnvMap.java) example:
 
-```
+```java
 import java.util.Map;
 
 public class EnvMap {
@@ -40,11 +42,11 @@ public class EnvMap {
         }
     }
 }
-```
+```java
 
 With a `String` argument, `getenv` returns the value of the specified variable. If the variable is not defined, `getenv` returns `null`. The [`` `Env` ``](https://docs.oracle.com/javase/tutorial/essential/environment/examples/Env.java) example uses `getenv` this way to query specific environment variables, specified on the command line:
 
-```
+```java
 public class Env {
     public static void main (String[] args) {
         for (String env: args) {

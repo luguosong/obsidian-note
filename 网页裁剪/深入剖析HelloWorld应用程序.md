@@ -28,7 +28,7 @@ class HelloWorldApp {
         System.out.println("Hello World!"); // 显示该字符串。
     }
 }
-```
+```java
 
 "Hello World!" 应用程序由三个主要部分组成：[源代码注释(source code comments)](#COMMENTS)、[`HelloWorldApp` 类定义(the `HelloWorldApp` class definition)](#CLASS_DEF) 和 [`main` 方法(the `main` method)](#MAIN)。以下解释将使你对这段代码有一个基本的理解，但更深层的含义只有在读完本教程的其余部分后才会变得清晰。
 
@@ -74,7 +74,7 @@ class HelloWorldApp {
         System.out.println("Hello World!"); // 显示该字符串。
     }
 }
-```
+```text
 
 如上所示，类定义最基本的形式是：
 
@@ -82,7 +82,7 @@ class HelloWorldApp {
 class name {
     . . .
 }
-```
+```java
 
 关键字 `class` 开始一个名为 `name` 的类的类定义，每个类的代码都出现在上面加粗标记的开括号和闭括号之间。第 2 章对类进行了总体概述，第 4 章详细讨论了类。目前只需知道，每个应用程序都以一个类定义开始即可。
 
@@ -106,7 +106,7 @@ class HelloWorldApp {
 
 ```java
 public static void main(String[] args)
-```
+```java
 
 修饰符 `public` 和 `static` 可以按任一顺序书写（`public static` 或 `static public`），但约定俗成是使用如上所示的 `public static`。你可以给这个参数起任何你想要的名字，但大多数程序员选择 "args" 或 "argv"。
 
@@ -120,13 +120,13 @@ public static void main(String[] args)
 
 这个数组是运行时系统向你的应用程序传递信息的机制。例如：
 
-```
+```text
 java MyApp arg1 arg2
 ```
 
 数组中的每个字符串被称为一个*命令行参数(command-line argument)*。命令行参数允许用户在不重新编译应用程序的情况下影响其运行方式。例如，一个排序程序可能允许用户通过这个命令行参数来指定数据按降序排列：
 
-```
+```text
 -descending
 ```
 

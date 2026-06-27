@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deploying an Applet (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -98,14 +100,12 @@ Here are some step-by-step instructions to package and deploy your applet. The D
 	Permissions: sandbox
 	Codebase: myserver.com
 	Application-Name: Dynamic Tree Demo
-	```
 	Other manifest attributes are available to restrict an applet to using only trusted code, and to provide security for applets that need to make calls between privileged Java code and sandbox Java code, or have JavaScript code that calls the applet. See the [[部署-secman|Enhancing Security with Manifest Attributes]] lesson to learn more about the manifest attributes that are available.
 3. Create a JAR file containing your applet's class files and resources. Include the manifest attributes in the `mymanifest.txt` file that you created in the previous step.
 	For example, the following command creates a JAR file with the class files in the `build/classes/appletComponentArch` directory and the manifest file in the `build/classes` directory.
-	```
 	% cd build/classes
 	% jar cvfm DynamicTreeDemo.jar mymanifest.txt appletComponentArch
-	```
+```xml
 	See the [[将程序打包为JAR文件|Packaging Programs in JAR Files]] lesson to learn more about creating and using JAR files.
 4. Sign the JAR file for your applet and time stamp the signature. Use a valid, current code signing certificate issued by a trusted certificate authority to provide your users with assurance that it is safe to run the applet.
 	See the [[部署-signing|Signing JAR Files]] lesson for more information.
@@ -134,7 +134,7 @@ Here are some step-by-step instructions to package and deploy your applet. The D
 	     </applet-desc>
 	     <update check="background"/>
 	</jnlp>
-	```
+```
 	Note that the security element for requesting additional permissions is not present in the JNLP file, therefore the applet runs only in the security sandbox.
 	The topic, [[部署-jnlpFileSyntax|Structure of the JNLP File]], describes JNLP file syntax and options.
 6. Create the HTML page that will display the applet. Invoke Deployment Toolkit functions to deploy the applet.

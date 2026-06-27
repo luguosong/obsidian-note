@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Sliders (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -122,7 +124,7 @@ The following picture shows an application that uses a slider to control animati
 
 Below is the code from the [`SliderDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/SliderDemoProject/src/components/SliderDemo.java) file that creates the slider in the previous example.
 
-```
+```java
 static final int FPS_MIN = 0;
 static final int FPS_MAX = 30;
 static final int FPS_INIT = 15;    //initial frames per second
@@ -140,7 +142,7 @@ framesPerSecond.setPaintLabels(true);
 
 By default, spacing for major and minor tick marks is zero. To see tick marks, you must explicitly set the spacing for either major or minor tick marks (or both) to a non-zero value and call the `setPaintTicks(true)` method. However, you also need labels for your tick marks. To display standard, numeric labels at major tick mark locations, set the major tick spacing, then call the `setPaintLabels(true)` method. The example program provides labels for its slider in this way. But you are not constrained to using only these labels. [Customizing Labels on a Slider](#labels) shows you how to customize slider labels. In addition, a slider feature allows you to set a font for the `JSlider` component.
 
-```
+```text
 Font font = new Font("Serif", Font.ITALIC, 15);
 framesPerSecond.setFont(font);
 ```
@@ -162,7 +164,6 @@ public void stateChanged(ChangeEvent e) {
         }
     }
 }
-```
 
 Notice that the `stateChanged` method changes the animation speed only if the `getValueIsAdjusting` method returns `false`. Many change events are fired as the user moves the slider knob. This program is interested only in the final result of the user's action.
 
@@ -194,7 +195,6 @@ labelTable.put( new Integer( FPS_MAX ), new JLabel("Fast") );
 framesPerSecond.setLabelTable( labelTable );
 
 framesPerSecond.setPaintLabels(true);
-```
 
 Each key-value pair in the hashtable specified with the `setLabelTable` method gives the position and the value of one label. The hashtable key must be of an `Integer` type and must have a value within the slider's range at which to place the label. The hashtable value associated with each key must be a `Component` object. This demo uses `JLabel` instances with text only. An interesting modification would be to use `JLabel` instances with icons or buttons that move the knob to the label's position.
 

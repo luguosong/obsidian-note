@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Focus Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -108,7 +110,7 @@ The following example demonstrates focus events. The window displays a variety o
 
 The complete code for this demo is in the [`FocusEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/FocusEventDemoProject/src/events/FocusEventDemo.java) file. The following code snippet represents the focus-event handling mechanism:
 
-```
+```java
 public class FocusEventDemo ... implements FocusListener ... {
     public FocusEventDemo() {
         ...

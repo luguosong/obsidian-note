@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Updating a JAR File (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -67,7 +69,7 @@ The Jar tool provides a u option which you can use to update the contents of an 
 
 The basic command for adding files has this format:
 
-```
+```text
 jar uf jar-file input-file(s)
 ```
 
@@ -86,7 +88,7 @@ When creating a new JAR file, you can optionally use the \-C option to indicate 
 
 Recall that TicTacToe.jar has these contents:
 
-```
+```text
 META-INF/MANIFEST.MF
 TicTacToe.class
 TicTacToe.class
@@ -105,13 +107,13 @@ images/not.gif
 
 Suppose that you want to add the file images/new.gif to the JAR file. You could accomplish that by issuing this command from the parent directory of the images directory:
 
-```
+```text
 jar uf TicTacToe.jar images/new.gif
 ```
 
 The revised JAR file would have this table of contents:
 
-```
+```text
 META-INF/MANIFEST.MF
 TicTacToe.class
 TicTacToe.class
@@ -131,13 +133,13 @@ images/new.gif
 
 You can use the \-C option to "change directories" during execution of the command. For example:
 
-```
+```text
 jar uf TicTacToe.jar -C images new.gif
 ```
 
 This command would change to the images directory before adding new.gif to the JAR file. The images directory would not be included in the pathname of new.gif when it's added to the archive, resulting in a table of contents that looks like this:
 
-```
+```text
 META-INF/MANIFEST.MF
 META-INF/MANIFEST.MF
 TicTacToe.class

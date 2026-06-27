@@ -1,55 +1,40 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Resizing a Component (The Java™ Tutorials >        
-            Creating a GUI With Swing > Modifying the Look and Feel)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "调整组件大小"
+描述: "《Java 教程》Swing 外观课程，介绍如何通过设置客户端属性调整 Nimbus 组件大小，支持 mini、small、large 三种额外尺寸。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/size.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 调整组件大小
 
-[[Swing-plaf|How to Set the Look and Feel]]
+> 文档说明
 
-[[Swing-synth|The Synth Look and Feel]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[Swing-synthExample|A Synth Example]]
+## 调整组件大小
 
-[[Swing-nimbus|Nimbus Look and Feel]]
+你是否曾需要组件的较小版本来放置在工具调色板或工具栏上，或放在状态栏中？你可以通过在组件上设置客户端属性来调整组件大小。除了"常规"大小外，还支持三种尺寸：mini、small 和 large。
 
-[[Swing-custom|Changing the Look of Nimbus]]
-
-Resizing a Component
-
-[[Swing-color|Changing the Color Theme]]
-
-[[Swing-custom|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-color|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Resizing a Component
-
-Have you ever needed a smaller version of a component to place on a tool palette or tool bar, or in a status bar? You can resize a component by setting a client property on the component. Three sizes are supported in addition to the "regular" size: mini, small, and large.
-
-The one component that does not support the size variants property is `JLabel`. However, you can change the size of a label by changing the size of its font.
+不支持大小变体属性的唯一组件是 `JLabel`。但是，你可以通过更改标签的字体大小来更改标签的大小。
 
 ---
 
-**Note:**
+**注意：**
 
-Other look and feel implementations, such as Apple's Aqua, might also honor the size variants client property. Nimbus is currently the only Sun look and feel that supports size variants.
+其他外观实现（如 Apple 的 Aqua）可能也会遵循大小变体客户端属性。Nimbus 目前是唯一支持大小变体的 Sun 外观。
 
 ---
 
-You can set the size of a component with one line of code, before the component is displayed. The following snippet shows how to use each size:
+你可以在组件显示之前用一行代码设置组件的大小。以下代码片段展示如何使用每种大小：
 
-```
+```java
 // mini
 myButton.putClientProperty("JComponent.sizeVariant", "mini");
 // small
@@ -58,9 +43,9 @@ mySlider.putClientProperty("JComponent.sizeVariant", "small");
 myTextField.putClientProperty("JComponent.sizeVariant", "large");
 ```
 
-If you have set the size variants property correctly but the component displays in its "regular" size, you might need to force an update to the UI. You can do so by invoking the [`SwingUtilities.updateComponentTreeUI(Component)`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#updateComponentTreeUI-java.awt.Component-) method before the window is displayed. The following code snippet updates the window and all the components it contains:
+如果你已正确设置大小变体属性但组件仍以其"常规"大小显示，你可能需要强制更新 UI。你可以在窗口显示之前调用 [`SwingUtilities.updateComponentTreeUI(Component)`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingUtilities.html#updateComponentTreeUI-java.awt.Component-) 方法来实现。以下代码片段更新窗口及其包含的所有组件：
 
-```
+```java
 JFrame frame = ...;
 
 SwingUtilities.updateComponentTreeUI(frame);

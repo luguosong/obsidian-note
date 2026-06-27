@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Key Bindings (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -104,7 +106,7 @@ In the second case, assume the Enter key is pressed while the focus is anywhere 
 
 Here is an example of specifying that a component should react to the F2 key:
 
-```
+```text
 component.getInputMap().put(KeyStroke.getKeyStroke("F2"),
                             "doSomething");
 component.getActionMap().put("doSomething",
@@ -118,7 +120,7 @@ To add an entry to one of the maps, use the `put` method. You specify a key usin
 
 Here's a slightly more complex example that specifies that a component should react to the Space key as if the user clicked the mouse.
 
-```
+```text
 component.getInputMap().put(KeyStroke.getKeyStroke("SPACE"),
                             "pressed");
 component.getInputMap().put(KeyStroke.getKeyStroke("released SPACE"),
@@ -132,7 +134,7 @@ component.getActionMap().put("released",
 
 To make a component ignore a key that it normally responds to, you can use the special action name "none". For example, the following code makes a component ignore the F2 key.
 
-```
+```text
 component.getInputMap().put(KeyStroke.getKeyStroke("F2"),
                             "none");
 ```
@@ -143,7 +145,7 @@ component.getInputMap().put(KeyStroke.getKeyStroke("F2"),
 
 The preceding code doesn't prevent the relevant `WHEN_ANCESTOR_OF_FOCUSED_COMPONENT` and `WHEN_IN_FOCUSED_WINDOW` input maps from being searched for an F2 key binding. To prevent this search, you must use a valid action instead of "none". For example:
 
-```
+```java
 Action doNothing = new AbstractAction() {
     public void actionPerformed(ActionEvent e) {
         //do nothing

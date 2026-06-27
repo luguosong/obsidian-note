@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Pooling (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -33,7 +35,7 @@ The rest of this lesson describes in more detail how to use connection pooling.
 
 You request connection pooling by adding the property, "com.sun.jndi.ldap.connect.pool" to the environment properties passed to the initial context constructor. Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/UsePool.java).
 
-```
+```sql
 // Set up environment for creating initial context
 Hashtable env = new Hashtable(11);
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
@@ -57,17 +59,17 @@ DirContext ctx2 = new InitialDirContext(env);
 
 // Close the context when we're done
 ctx2.close();   // Return connection to pool
-```
+```text
 
 This example creates two initial contexts in succession. The second initial context will reuse the connection used by the first. To run this program and observe how the connections are retrieved and returned to the pool, use the following command line.
 
-```
+```sql
 #java -Dcom.sun.jndi.ldap.connect.pool.debug=fine UsePool
-```
+```text
 
 This should produce output that looks as follows.
 
-```
+```sql
 Create com.sun.jndi.ldap.LdapClient@5d173[localhost:389]
 Use com.sun.jndi.ldap.LdapClient@5d173
 {ou=ou: NewHires, objectclass=objectClass: top, organizationalUnit}

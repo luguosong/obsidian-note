@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Set Interface (The Java™ Tutorials >        
+            Collections > Interfaces)
 
 Documentation
 
@@ -49,7 +51,7 @@ The Java platform contains three general-purpose `Set` implementations: `HashSet
 
 Here's a simple but useful `Set` idiom. Suppose you have a `Collection`, `c`, and you want to create another `Collection` containing the same elements but with all duplicates eliminated. The following one-liner does the trick.
 
-```
+```text
 Collection<Type> noDups = new HashSet<Type>(c);
 ```
 
@@ -57,7 +59,7 @@ It works by creating a `Set` (which, by definition, cannot contain duplicates), 
 
 Or, if using JDK 8 or later, you could easily collect into a `Set` using aggregate operations:
 
-```
+```text
 c.stream()
 .collect(Collectors.toSet()); // no duplicates
 ```
@@ -68,13 +70,13 @@ Here's a slightly longer example that accumulates a `Collection` of names into a
 Set<String> set = people.stream()
 .map(Person::getName)
 .collect(Collectors.toCollection(TreeSet::new));
-```
+```text
 
 And the following is a minor variant of the first idiom that preserves the order of the original collection while removing duplicate elements:
 
 ```
 Collection<Type> noDups = new LinkedHashSet<Type>(c);
-```
+```java
 
 The following is a generic method that encapsulates the preceding idiom, returning a `Set` of the same generic type as the one passed.
 
@@ -105,7 +107,7 @@ public class FindDups {
                            distinctWords);
     }
 }
-```
+```java
 
 Using the `for-each` Construct:
 
@@ -124,13 +126,13 @@ public class FindDups {
 
 Now run either version of the program.
 
-```
+```text
 java FindDups i came i saw i left
 ```
 
 The following output is produced:
 
-```
+```text
 4 distinct words: [left, came, saw, i]
 ```
 
@@ -140,7 +142,7 @@ Furthermore, there's no guarantee that the resulting program will work. If the p
 
 The implementation type of the `Set` in the preceding example is `HashSet`, which makes no guarantees as to the order of the elements in the `Set`. If you want the program to print the word list in alphabetical order, merely change the `Set` 's implementation type from `HashSet` to `TreeSet`. Making this trivial one-line change causes the command line in the previous example to generate the following output.
 
-```
+```text
 java FindDups i came i saw i left
 
 4 distinct words: [came, i, left, saw]
@@ -166,7 +168,7 @@ intersection.retainAll(s2);
 
 Set<Type> difference = new HashSet<Type>(s1);
 difference.removeAll(s2);
-```
+```java
 
 The implementation type of the result `Set` in the preceding idioms is `HashSet`, which is, as already mentioned, the best all-around `Set` implementation in the Java platform. However, any general-purpose `Set` implementation could be substituted.
 
@@ -195,7 +197,7 @@ public class FindDups2 {
 
 When run with the same argument list used earlier (`i came i saw i left`), the program yields the following output.
 
-```
+```text
 Unique words:    [left, saw, came]
 Duplicate words: [i]
 ```

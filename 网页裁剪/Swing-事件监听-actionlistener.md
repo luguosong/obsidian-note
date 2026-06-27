@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write an Action Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -88,17 +90,15 @@ To write an Action Listener, follow the steps given below:
 1. Declare an event handler class and specify that the class either implements an ActionListener interface or extends a class that implements an ActionListener interface. For example:
 	```java
 	public class MyClass implements ActionListener {
-	```
 2. Register an instance of the event handler class as a listener on one or more components. For example:
-	```
 	someComponent.addActionListener(instanceOfMyClass);
-	```
+```java
 3. Include code that implements the methods in listener interface. For example:
 	```java
 	public void actionPerformed(ActionEvent e) { 
 	    ...//code that reacts to the action... 
 	}
-	```
+```
 
 In general, to detect when the user clicks an onscreen button (or does the keyboard equivalent), a program must have an object that implements the ActionListener interface. The program must register this object as an action listener on the button (the event source), using the addActionListener method. When the user clicks the onscreen button, the button fires an action event. This results in the invocation of the action listener's actionPerformed method (the only method in the ActionListener interface). The single argument to the method is an ActionEvent object that gives information about the event and its source.
 
@@ -109,7 +109,7 @@ public class AL extends Frame implements WindowListener,ActionListener {
 TextField text = new TextField(20);
 Button b;
 private int numClicks = 0;
-```
+```text
 
 In the above example, the event handler class is AL which implements ActionListener.
 
@@ -118,7 +118,7 @@ We would like to handle the button-click event, so we add an action listener to 
 ```
 b = new Button("Click me");
 b.addActionListener(this);
-```
+```java
 
 In the above code, Button b is a component upon which an instance of event handler class AL is registered.
 

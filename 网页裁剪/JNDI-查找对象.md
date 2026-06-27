@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Lookup an Object (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 To look up an object from the naming service, use [Context.lookup()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#lookup-javax.naming.Name-) and pass it the name of the object that you want to retrieve. Suppose that there is an object in the naming service with the name cn=Rosanna Lee,ou=People. To retrieve the object, you would write
 
-```
+```text
 Object obj = ctx.lookup("cn=Rosanna Lee,ou=People");
 ```
 
@@ -31,7 +33,7 @@ The type of object that is returned by lookup() depends both on the underlying n
 
 For example, the following code looks up the object "cn=Rosanna Lee,ou=People" and casts it to LdapContext.
 
-```
+```java
 import javax.naming.ldap.LdapContext;
 ...
 LdapContext ctx = (LdapContext) ctx.lookup("cn=Rosanna Lee,ou=People");

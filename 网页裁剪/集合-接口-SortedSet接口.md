@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The SortedSet Interface (The Java™ Tutorials >        
+            Collections > Interfaces)
 
 Documentation
 
@@ -65,7 +67,6 @@ public interface SortedSet<E> extends Set<E> {
     // Comparator access
     Comparator<? super E> comparator();
 }
-```
 
 ## Set Operations
 
@@ -90,15 +91,14 @@ Sorted sets provide three `range-view` operations. The first, `subSet`, takes tw
 
 Thus, the following line of code tells you how many words between `"doorbell"` and `"pickle"`, including `"doorbell"` but excluding `"pickle"`, are contained in a `SortedSet` of strings called `dictionary`:
 
-```
 int count = dictionary.subSet("doorbell", "pickle").size();
-```
+```text
 
 In like manner, the following one-liner removes all the elements beginning with the letter `f`.
 
 ```
 dictionary.subSet("f", "g").clear();
-```
+```text
 
 A similar trick can be used to print a table telling you how many words begin with each letter.
 
@@ -114,19 +114,19 @@ Suppose you want to view a *closed interval*, which contains both of its endpoin
 
 Thus, the following one-liner tells you how many words between `"doorbell"` and `"pickle"`, including doorbell *and* pickle, are contained in the dictionary.
 
-```
+```text
 count = dictionary.subSet("doorbell", "pickle\0").size();
 ```
 
 A similar technique can be used to view an *open interval*, which contains neither endpoint. The open-interval view from `lowEndpoint` to `highEndpoint` is the half-open interval from `successor(lowEndpoint)` to `highEndpoint`. Use the following to calculate the number of words between `"doorbell"` and `"pickle"`, excluding both.
 
-```
+```text
 count = dictionary.subSet("doorbell\0", "pickle").size();
 ```
 
 The `SortedSet` interface contains two more `range-view` operations — `headSet` and `tailSet`, both of which take a single `Object` argument. The former returns a view of the initial portion of the backing `SortedSet`, up to but not including the specified object. The latter returns a view of the final portion of the backing `SortedSet`, beginning with the specified object and continuing to the end of the backing `SortedSet`. Thus, the following code allows you to view the dictionary as two disjoint `volumes` (`a-m` and `n-z`).
 
-```
+```text
 SortedSet<String> volume1 = dictionary.headSet("n");
 SortedSet<String> volume2 = dictionary.tailSet("n");
 ```
@@ -137,7 +137,7 @@ The `SortedSet` interface contains operations to return the first and last eleme
 
 The following idiom obtains the first element that is less than a specified object `o` in the element space.
 
-```
+```text
 Object predecessor = ss.headSet(o).last();
 ```
 

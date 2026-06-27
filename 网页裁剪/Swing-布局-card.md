@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use CardLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -59,7 +61,7 @@ The `CardLayoutDemo` class uses the last scheme.
 
 The following code snippet from the [`CardLayoutDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/CardLayoutDemoProject/src/layout/CardLayoutDemo.java) application creates the `CardLayout` object and the components it manages.
 
-```
+```sql
 //Where instance variables are declared:
 JPanel cards;
 final static String BUTTONPANEL = "Card with JButtons";
@@ -76,13 +78,13 @@ JPanel card2 = new JPanel();
 cards = new JPanel(new CardLayout());
 cards.add(card1, BUTTONPANEL);
 cards.add(card2, TEXTPANEL);
-```
+```java
 
 To add a component to a container that a `CardLayout` object manages, specify a string that identifies the component being added. For example, in this demo, the first panel has the string `"Card with JButtons"`, and the second panel has the string `"Card with JTextField"`. In this demo those strings are also used in the combo box.
 
 To choose which component a `CardLayout` object shows, put additional code in your code example:
 
-```
+```sql
 //Where the GUI is assembled:
 //Put the JComboBox in a JPanel to get a nicer look.
 JPanel comboBoxPane = new JPanel(); //use FlowLayout

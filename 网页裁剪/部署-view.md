@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Viewing the Contents of a JAR File (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -65,7 +67,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The basic format of the command for viewing the contents of a JAR file is:
 
-```
+```text
 jar tf jar-file
 ```
 
@@ -85,13 +87,13 @@ You can optionally add the verbose option, v, to produce additional information 
 
 Let's use the Jar tool to list the contents of the TicTacToe.jar file we created in the previous section:
 
-```
+```text
 jar tf TicTacToe.jar
 ```
 
 This command displays the contents of the JAR file to stdout:
 
-```
+```text
 META-INF/MANIFEST.MF
 TicTacToe.class
 audio/
@@ -111,13 +113,13 @@ All pathnames are displayed with forward slashes, regardless of the platform or 
 
 The JAR tool will display additional information if you use the v option:
 
-```
+```text
 jar tvf TicTacToe.jar
 ```
 
 For example, the verbose output for the TicTacToe JAR file would look similar to this:
 
-```
+```text
 68 Thu Nov 01 20:00:40 PDT 2012 META-INF/MANIFEST.MF
  553 Mon Sep 24 21:57:48 PDT 2012 TicTacToe.class
 3708 Mon Sep 24 21:57:48 PDT 2012 TicTacToe.class

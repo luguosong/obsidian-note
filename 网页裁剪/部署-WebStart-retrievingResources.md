@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Retrieving Resources (The Java™ Tutorials >        
+            Deployment > Java Web Start)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Use the `getResource` method to read resources from a JAR file. For example, the following code retrieves images from a JAR file.
 
-```
+```text
 // Get current classloader
 ClassLoader cl = this.getClass().getClassLoader();
 // Create icons

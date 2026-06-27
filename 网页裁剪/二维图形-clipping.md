@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Clipping the Drawing Region (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)
 
 Documentation
 
@@ -49,7 +51,7 @@ This example animates a clipping path to reveal different portions of an image.
 
 The clipping path is defined by the intersection of an ellipse and a rectangle whose dimensions are set randomly. The ellipse is passed to the `setClip` method, and then `clip` is called to set the clipping path to the intersection of the ellipse and the rectangle.
 
-```
+```java
 private Ellipse2D ellipse = new Ellipse2D.Float();
 private Rectangle2D rect = new Rectangle2D.Float();
 ...
@@ -65,7 +67,7 @@ A clipping area can also be created from a text string. The following example cr
 
 ![The Starry Night text (outline)](https://docs.oracle.com/javase/tutorial/figures/2d/starryOutline.gif)
 
-```
+```text
 FontRenderContext frc = g2.getFontRenderContext();
 Font f = new Font("Helvetica", 1, w/10);
 String s = new String("The Starry Night");
@@ -82,7 +84,7 @@ g2.draw(outline);
 
 Next, a clipping area is set on the graphics context using the `Shape` object created from `getOutline`. The `starry.gif` image, which is Van Gogh's famous painting, *The Starry Night*, is drawn into this clipping area starting at the lower left corner of the `Rectangle` object.
 
-```
+```text
 g2.setClip(outline);
 g2.drawImage(img, r.x, r.y, r.width, r.height, this);
 ```

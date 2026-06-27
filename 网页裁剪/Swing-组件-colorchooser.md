@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Color Choosers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -129,7 +131,7 @@ public class ColorChooserDemo extends JPanel ... {
         . . .
         add(tcc, BorderLayout.PAGE_END);
     }
-```
+```java
 
 The `JColorChooser` constructor in the previous code snippet takes a `Color` argument, which specifies the chooser's initially selected color. If you do not specify the initial color, then the color chooser displays `Color.white`. See the [`Color` API documentation](https://docs.oracle.com/javase/8/docs/api/java/awt/Color.html) for a list of color constants you can use.
 
@@ -179,7 +181,7 @@ This program also adds a button that brings up a color chooser in a dialog, whic
 
 The `JColorChooser` class provides two class methods to make it easy to use a color chooser in a dialog. ColorChooserDemo2 uses one of these methods, `showDialog`, to display the background color chooser when the user clicks the **Show Color Chooser...** button. Here is the single line of code from the example that brings up the background color chooser in a dialog:
 
-```
+```text
 Color newColor = JColorChooser.showDialog(
                      ColorChooserDemo2.this,
                      "Choose Background Color",
@@ -190,7 +192,7 @@ The first argument is the parent for the dialog, the second is the dialog title,
 
 The dialog disappears under three conditions: the user chooses a color and clicks the **OK** button, the user cancels the operation with the **Cancel** button, or the user dismisses the dialog with a frame control. If the user chooses a color, the `showDialog` method returns the new color. If the user cancels the operation or dismisses the window, the method returns `null`. Here is the code from the example that updates the banner background color according to the value returned by `showDialog`:
 
-```
+```text
 if (newColor != null) {
     banner.setBackground(newColor);
 }
@@ -202,7 +204,7 @@ The dialog created by `showDialog` is modal. If you want a non-modal dialog, you
 
 By default, the color chooser displays a preview panel. ColorChooserDemo2 removes the text color chooser's preview panel with this line of code:
 
-```
+```text
 tcc.setPreviewPanel(new JPanel());
 ```
 
@@ -224,7 +226,7 @@ You can extend the default color chooser by adding chooser panels of your own de
 
 If you want to remove all of the default chooser panels and add one or more of your own, you can do this with a single call to `setChooserPanels`. ColorChooserDemo2 uses this method to replace the default chooser panels with an instance of [`CrayonPanel`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ColorChooserDemo2Project/src/components/CrayonPanel.java), a custom chooser panel. Here is the call to `setChooserPanels` from that example:
 
-```
+```text
 //Override the chooser panels with our own.
 AbstractColorChooserPanel panels[] = { new CrayonPanel() };
 tcc.setChooserPanels(panels);
@@ -255,13 +257,13 @@ public void updateChooser() {
         blueCrayon.setSelected(true);
     }
 }
-```
+```text
 
 **`String getDisplayName()`**
 
 Returns the display name of the chooser panel. The name is used on the tab for the chooser panel. Here is the example `getDisplayName` method:
 
-```
+```java
 public String getDisplayName() {
     return "Crayons";
 }

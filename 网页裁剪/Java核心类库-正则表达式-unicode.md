@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Unicode Support (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -32,7 +34,7 @@ You can match a specific Unicode code point using an escape sequence of the form
 
 Alternatively, you can specify a code point using Perl-style hex notation, `\x{...}`. For example:
 
-```
+```text
 String hexPattern = "\x{" + Integer.toHexString(codePoint) + "}";
 ```
 

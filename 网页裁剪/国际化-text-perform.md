@@ -1,13 +1,14 @@
 ---
 分类:
   - "网页裁剪"
-标题: "perform"
+标题: "BreakIterator 操作"
 描述: "This internationalization Java tutorial describes setting locale, isolating locale-specific data, formatting data, internationalized domain name and resource identifier"
 来源: "https://docs.oracle.com/javase/tutorial/i18n/text/perform.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:30:00+08:00"
 ---
+# BreakIterator 操作
 
 Documentation
 
@@ -28,7 +29,7 @@ The example that follows uses a `CollationKey` object to sort an array of words.
 
 The `KeysDemo` program creates an array of `CollationKey` objects in the `main` method. To create a `CollationKey`, you invoke the `getCollationKey` method on a `Collator` object. You cannot compare two `CollationKey` objects unless they originate from the same `Collator`. The `main` method is as follows:
 
-```
+```java
 static public void main(String[] args) {
     Collator enUSCollator = Collator.getInstance(new Locale("en","US"));
     String [] words = {
@@ -47,11 +48,11 @@ static public void main(String[] args) {
     sortArray(keys);
     printArray(keys);
 }
-```
+```java
 
 The `sortArray` method invokes the `CollationKey.compareTo` method. The `compareTo` method returns an integer less than, equal to, or greater than zero if the `keys[i]` object is less than, equal to, or greater than the `keys[j]` object. Note that the program compares the `CollationKey` objects, not the `String` objects from the original array of words. Here is the code for the `sortArray` method:
 
-```
+```java
 public static void sortArray(CollationKey[] keys) {
     CollationKey tmp;
 
@@ -69,17 +70,17 @@ public static void sortArray(CollationKey[] keys) {
 
 The `KeysDemo` program sorts an array of `CollationKey` objects, but the original goal was to sort an array of `String` objects. To retrieve the `String` representation of each `CollationKey`, the program invokes `getSourceString` in the `displayWords` method, as follows:
 
-```
+```java
 static void displayWords(CollationKey[] keys) {
     for (int i = 0; i < keys.length; i++) {
         System.out.println(keys[i].getSourceString());
     }
 }
-```
+```text
 
 The `displayWords` method prints the following lines:
 
-```
+```text
 apricot
 grape
 lemon

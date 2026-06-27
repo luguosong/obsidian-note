@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# General Information about Writing Event Listeners (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -119,7 +121,7 @@ Whenever possible, you should listen for semantic events rather than low-level e
 
 Some listener interfaces contain more than one method. For example, the `MouseListener` interface contains five methods: `mousePressed`, `mouseReleased`, `mouseEntered`, `mouseExited`, and `mouseClicked`. Even if you care only about mouse clicks, if your class directly implements `MouseListener`, then you must implement all five `MouseListener` methods. Methods for those events you do not care about can have empty bodies. Here is an example:
 
-```
+```java
 //An example that implements a listener interface directly.
 public class MyClass implements MouseListener {
     ...
@@ -145,13 +147,13 @@ public class MyClass implements MouseListener {
         ...//Event listener implementation goes here...
     }
 }
-```
+```java
 
 The resulting collection of empty method bodies can make code harder to read and maintain. To help you avoid implementing empty method bodies, the API generally includes an *adapter* class for each listener interface with more than one method. (The [[Swing-事件监听-api|Listener API Table]] lists all the listeners and their adapters.) For example, the `MouseAdapter` class implements the `MouseListener` interface. An adapter class implements empty versions of all its interface's methods.
 
 To use an adapter, you create a subclass of it and override only the methods of interest, rather than directly implementing all methods of the listener interface. Here is an example of modifying the preceding code to extend `MouseAdapter`. By extending `MouseAdapter`, it inherits empty definitions of all five of the methods that `MouseListener` contains.
 
-```
+```java
 /*
  * An example of extending an adapter class instead of
  * directly implementing a listener interface.
@@ -172,7 +174,7 @@ What if you want to use an adapter class, but do not want your public class to i
 
 Inner classes can also be useful for event listeners that implement one or more interfaces directly.
 
-```
+```java
 //An example of using an inner class.
 public class MyClass extends Applet {
     ...
@@ -184,7 +186,7 @@ public class MyClass extends Applet {
         }
     }
 }
-```
+```java
 
 ---
 
@@ -198,7 +200,7 @@ You can create an inner class without specifying a name this is known as an *ano
 
 Here is an example of using an anonymous inner class:
 
-```
+```java
 //An example of using an anonymous inner class.
 public class MyClass extends Applet {
     ...
@@ -239,31 +241,31 @@ Inner classes are another, more general way to handle events from user interface
 
 Examples of Using `EventHandler` The simplest use of `EventHandler` is to install a listener that calls a method on the target object with no arguments. In the following example we create an ActionListener that invokes the toFront method on an instance of `javax.swing.JFrame`.
 
-```
+```text
 myButton.addActionListener(
     (ActionListener)EventHandler.create(ActionListener.class, frame, "toFront"));
 ```
 
 When myButton is pressed, the statement frame.toFront() will be executed. One could get the same effect, with some additional compile-time type safety, by defining a new implementation of the ActionListener interface and adding an instance of it to the button:
 
-```
+```java
 //Equivalent code using an inner class instead of EventHandler.
 myButton.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent e) {
         frame.toFront();
     }
 });
-```
+```text
 
 The next simplest use of `EventHandler` is to extract a property value from the first argument of the method in the listener interface (typically an event object) and use it to set the value of a property in the target object. In the following example we create an ActionListener that sets the nextFocusableComponent property of the target (myButton) object to the value of the "source" property of the event.
 
 ```
 EventHandler.create(ActionListener.class, myButton, "nextFocusableComponent", "source")
-```
+```java
 
 This would correspond to the following inner class implementation:
 
-```
+```java
 //Equivalent code using an inner class instead of EventHandler.
 new ActionListener() {
     public void actionPerformed(ActionEvent e) {
@@ -274,30 +276,30 @@ new ActionListener() {
 
 It is also possible to create an `EventHandler` that just passes the incoming event object to the target's action. If the fourth `EventHandler.create` argument is an empty string, then the event is just passed along:
 
-```
+```text
 EventHandler.create(ActionListener.class, target, "doActionEvent", "")
 ```
 
 This would correspond to the following inner class implementation:
 
-```
+```java
 //Equivalent code using an inner class instead of EventHandler.
 new ActionListener() {
     public void actionPerformed(ActionEvent e) {
         target.doActionEvent(e);
     }
 }
-```
+```text
 
 Probably the most common use of `EventHandler` is to extract a property value from the source of the event object and set this value as the value of a property of the target object. In the following example we create an ActionListener that sets the "label" property of the target object to the value of the "text" property of the source (the value of the "source" property) of the event.
 
 ```
 EventHandler.create(ActionListener.class, myButton, "label", "source.text")
-```
+```java
 
 This would correspond to the following inner class implementation:
 
-```
+```java
 //Equivalent code using an inner class instead of EventHandler.
 new ActionListener {
     public void actionPerformed(ActionEvent e) {

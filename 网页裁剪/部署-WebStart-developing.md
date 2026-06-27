@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Developing a Java Web Start Application (The Java™ Tutorials >        
+            Deployment > Java Web Start)
 
 Documentation
 
@@ -55,7 +57,7 @@ Click the following Launch button to launch the Dynamic Tree Demo application.
 
 Create a class that is a subclass of `JPanel`. This top `JPanel` acts as a container for all your other UI components. In the following example, the `DynamicTreePanel` class is the topmost `JPanel`. The constructor of the `DynamicTreePanel` class invokes other methods to create and lay out the UI controls properly.
 
-```
+```java
 public class DynamicTreePanel extends JPanel implements ActionListener {
     private int newNodeSuffix = 1;
     private static String ADD_COMMAND = "add";
@@ -94,7 +96,7 @@ public class DynamicTreePanel extends JPanel implements ActionListener {
     }
     // ...
 }
-```
+```java
 
 ## Creating the Application
 
@@ -102,7 +104,7 @@ For an application that has a Swing-based GUI, create a class that is a subclass
 
 Instantiate your top `JPanel` class and set it as the content pane of the `JFrame` in the application's `main` method. The `main` method of the `DynamicTreeApplication` class invokes the `createGUI` method in the AWT Event Dispatcher thread.
 
-```
+```java
 package webstartComponentArch;
 
 import javax.swing.JFrame;

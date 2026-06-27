@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Drop Location Rendering (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -73,7 +75,7 @@ You can register to be notified whenever the `dropLocation` property changes. Yo
 
 Here is an example of listening for the `dropLocation` property:
 
-```
+```java
 class Repainter extends PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent pce) {
         repaintDropLocation(pce.getOldValue());
@@ -82,11 +84,11 @@ class Repainter extends PropertyChangeListener {
 }
 
 comp.addPropertyChangeListener("dropLocation", newRepainter());
-```
+```java
 
 Here is an example of the `paintComponent` approach:
 
-```
+```java
 public void paintComponent(Graphics g) {
     super.paintComponent(g);
 

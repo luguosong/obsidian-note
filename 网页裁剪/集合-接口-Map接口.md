@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Map Interface (The Java™ Tutorials >        
+            Collections > Interfaces)
 
 Documentation
 
@@ -49,7 +51,7 @@ The Java platform contains three general-purpose `Map` implementations: [`HashMa
 
 The remainder of this page discusses the `Map` interface in detail. But first, here are some more examples of collecting to `Map` s using JDK 8 aggregate operations. Modeling real-world objects is a common task in object-oriented programming, so it is reasonable to think that some programs might, for example, group employees by department:
 
-```
+```text
 // Group employees by department
 Map<Department, List<Employee>> byDept = employees.stream()
 .collect(Collectors.groupingBy(Employee::getDepartment));
@@ -57,7 +59,7 @@ Map<Department, List<Employee>> byDept = employees.stream()
 
 Or compute the sum of all salaries by department:
 
-```
+```text
 // Compute sum of salaries by department
 Map<Department, Integer> totalByDept = employees.stream()
 .collect(Collectors.groupingBy(Employee::getDepartment,
@@ -66,7 +68,7 @@ Collectors.summingInt(Employee::getSalary)));
 
 Or perhaps group students by passing or failing grades:
 
-```
+```text
 // Partition students into passing and failing
 Map<Boolean, List<Student>> passingFailing = students.stream()
 .collect(Collectors.partitioningBy(s -> s.getGrade()>= PASS_THRESHOLD));
@@ -74,7 +76,7 @@ Map<Boolean, List<Student>> passingFailing = students.stream()
 
 You could also group people by city:
 
-```
+```text
 // Classify Person objects by city
 Map<String, List<Person>> peopleByCity
          = personStream.collect(Collectors.groupingBy(Person::getCity));
@@ -82,7 +84,7 @@ Map<String, List<Person>> peopleByCity
 
 Or even cascade two collectors to classify people by state and city:
 
-```
+```text
 // Cascade Collectors 
 Map<String, Map<String, List<Person>>> peopleByStateAndCity
   = personStream.collect(Collectors.groupingBy(Person::getState,
@@ -112,34 +114,33 @@ public class Freq {
         System.out.println(m);
     }
 }
-```
+```text
 
 The only tricky thing about this program is the second argument of the `put` statement. That argument is a conditional expression that has the effect of setting the frequency to one if the word has never been seen before or one more than its current value if the word has already been seen. Try running this program with the command:
 
 ```
 java Freq if it is to be it is up to me to delegate
-```
+```text
 
 The program yields the following output.
 
 ```
 8 distinct words:
 {to=3, delegate=1, be=1, it=2, up=1, if=1, me=1, is=2}
-```
+```text
 
 Suppose you'd prefer to see the frequency table in alphabetical order. All you have to do is change the implementation type of the `Map` from `HashMap` to `TreeMap`. Making this four-character change causes the program to generate the following output from the same command line.
 
 ```
 8 distinct words:
 {be=1, delegate=1, if=1, is=2, it=2, me=1, to=3, up=1}
-```
+```text
 
 Similarly, you could make the program print the frequency table in the order the words first appear on the command line simply by changing the implementation type of the map to `LinkedHashMap`. Doing so results in the following output.
 
-```
+```sql
 8 distinct words:
 {if=1, it=2, is=2, to=3, be=1, up=1, me=1, delegate=1}
-```
 
 This flexibility provides a potent illustration of the power of an interface-based framework.
 
@@ -147,21 +148,17 @@ Like the [`Set`](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html) a
 
 By convention, all general-purpose `Map` implementations provide constructors that take a `Map` object and initialize the new `Map` to contain all the key-value mappings in the specified `Map`. This standard `Map` conversion constructor is entirely analogous to the standard `Collection` constructor: It allows the caller to create a `Map` of a desired implementation type that initially contains all of the mappings in another `Map`, regardless of the other `Map` 's implementation type. For example, suppose you have a `Map`, named `m`. The following one-liner creates a new `HashMap` initially containing all of the same key-value mappings as `m`.
 
-```
 Map<K, V> copy = new HashMap<K, V>(m);
-```
 
 ## Map Interface Bulk Operations
 
 The `clear` operation does exactly what you would think it could do: It removes all the mappings from the `Map`. The `putAll` operation is the `Map` analogue of the `Collection` interface's `addAll` operation. In addition to its obvious use of dumping one `Map` into another, it has a second, more subtle use. Suppose a `Map` is used to represent a collection of attribute-value pairs; the `putAll` operation, in combination with the `Map` conversion constructor, provides a neat way to implement attribute map creation with default values. The following is a static factory method that demonstrates this technique.
 
-```
 static <K, V> Map<K, V> newAttributeMap(Map<K, V>defaults, Map<K, V> overrides) {
     Map<K, V> result = new HashMap<K, V>(defaults);
     result.putAll(overrides);
     return result;
 }
-```
 
 ## Collection Views
 
@@ -176,11 +173,10 @@ The `Collection` views provide the *only* means to iterate over a `Map`. This ex
 ```java
 for (KeyType key : m.keySet())
     System.out.println(key);
-```
 
 and with an `iterator`:
 
-```
+```text
 // Filter a map based on some 
 // property of its keys.
 for (Iterator<Type> it = m.keySet().iterator(); it.hasNext(); )
@@ -193,7 +189,6 @@ The idiom for iterating over values is analogous. Following is the idiom for ite
 ```java
 for (Map.Entry<KeyType, ValType> e : m.entrySet())
     System.out.println(e.getKey() + ": " + e.getValue());
-```
 
 At first, many people worry that these idioms may be slow because the `Map` has to create a new `Collection` instance each time a `Collection` view operation is called. Rest easy: There's no reason that a `Map` cannot always return the same object each time it is asked for a given `Collection` view. This is precisely what all the `Map` implementations in `java.util` do.
 
@@ -209,11 +204,10 @@ The `Collection` views *do not* support element addition under any circumstances
 
 When applied to the `Collection` views, bulk operations (`containsAll`, `removeAll`, and `retainAll`) are surprisingly potent tools. For starters, suppose you want to know whether one `Map` is a submap of another — that is, whether the first `Map` contains all the key-value mappings in the second. The following idiom does the trick.
 
-```
 if (m1.entrySet().containsAll(m2.entrySet())) {
     ...
 }
-```
+```text
 
 Along similar lines, suppose you want to know whether two `Map` objects contain mappings for all of the same keys.
 
@@ -221,7 +215,7 @@ Along similar lines, suppose you want to know whether two `Map` objects contain 
 if (m1.keySet().equals(m2.keySet())) {
     ...
 }
-```
+```java
 
 Suppose you have a `Map` that represents a collection of attribute-value pairs, and two `Set` s representing required attributes and permissible attributes. (The permissible attributes include the required attributes.) The following snippet determines whether the attribute map conforms to these constraints and prints a detailed error message if it doesn't.
 
@@ -251,7 +245,7 @@ Suppose you want to know all the keys common to two `Map` objects.
 ```batch
 Set<KeyType>commonKeys = new HashSet<KeyType>(m1.keySet());
 commonKeys.retainAll(m2.keySet());
-```
+```text
 
 A similar idiom gets you the common values.
 
@@ -259,13 +253,13 @@ All the idioms presented thus far have been nondestructive; that is, they don't 
 
 ```
 m1.entrySet().removeAll(m2.entrySet());
-```
+```text
 
 Suppose you want to remove from one `Map` all of the keys that have mappings in another.
 
 ```
 m1.keySet().removeAll(m2.keySet());
-```
+```text
 
 What happens when you start mixing keys and values in the same bulk operation? Suppose you have a `Map`, `managers`, that maps each employee in a company to the employee's manager. We'll be deliberately vague about the types of the key and the value objects. It doesn't matter, as long as they're the same. Now suppose you want to know who all the "individual contributors" (or nonmanagers) are. The following snippet tells you exactly what you want to know.
 
@@ -276,7 +270,7 @@ individualContributors.removeAll(managers.values());
 
 Suppose you want to fire all the employees who report directly to some manager, Simon.
 
-```
+```text
 Employee simon = ... ;
 managers.values().removeAll(Collections.singleton(simon));
 ```
@@ -289,7 +283,7 @@ Once you've done this, you may have a bunch of employees whose managers no longe
 Map<Employee, Employee> m = new HashMap<Employee, Employee>(managers);
 m.values().removeAll(managers.keySet());
 Set<Employee> slackers = m.keySet();
-```
+```java
 
 This example is a bit tricky. First, it makes a temporary copy of the `Map`, and it removes from the temporary copy all entries whose (manager) value is a key in the original `Map`. Remember that the original `Map` has an entry for each employee. Thus, the remaining entries in the temporary `Map` comprise all the entries from the original `Map` whose (manager) values are no longer employees. The keys in the temporary copy, then, represent precisely the employees that we're looking for.
 
@@ -345,7 +339,7 @@ public class Anagrams {
 
 Running this program on a 173,000-word dictionary file with a minimum anagram group size of eight produces the following output.
 
-```
+```text
 9: [estrin, inerts, insert, inters, niters, nitres, sinter,
      triens, trines]
 8: [lapse, leaps, pales, peals, pleas, salep, sepal, spale]

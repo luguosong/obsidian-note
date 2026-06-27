@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Connecting with DataSource Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -113,7 +115,7 @@ First, consider the most basic case, which is to use a basic implementation of t
 
 Suppose a company that wants only a basic implementation of `DataSource` has bought a driver from the JDBC vendor DB Access, Inc. This driver includes the class `com.dbaccess.BasicDataSource` that implements the `DataSource` interface. The following code excerpt creates an instance of the class `BasicDataSource` and sets its properties. After the instance of `BasicDataSource` is deployed, a programmer can call the method `DataSource.getConnection` to get a connection to the company's database, `CUSTOMER_ACCOUNTS`. First, the system administrator creates the `BasicDataSource` object `*ds*` using the default constructor. The system administrator then sets three properties. Note that the following code is typically be executed by a deployment tool:
 
-```
+```text
 com.dbaccess.BasicDataSource ds = new com.dbaccess.BasicDataSource();
 ds.setServerName("grinder");
 ds.setDatabaseName("CUSTOMER_ACCOUNTS");
@@ -126,7 +128,7 @@ The variable `*ds*` now represents the database `CUSTOMER_ACCOUNTS` installed on
 
 With the properties set, the system administrator can register the `BasicDataSource` object with a JNDI (Java Naming and Directory Interface) naming service. The particular naming service that is used is usually determined by a system property, which is not shown here. The following code excerpt registers the `BasicDataSource` object and binds it with the logical name `jdbc/billingDB`:
 
-```
+```text
 Context ctx = new InitialContext();
 ctx.bind("jdbc/billingDB", ds);
 ```
@@ -139,7 +141,7 @@ In the previous example, `jdbc` is a subcontext under the initial context, just 
 
 After a basic `DataSource` implementation is deployed by a system administrator, it is ready for a programmer to use. This means that a programmer can give the logical data source name that was bound to an instance of a `DataSource` class, and the JNDI naming service will return an instance of that `DataSource` class. The method `getConnection` can then be called on that `DataSource` object to get a connection to the data source it represents. For example, a programmer might write the following two lines of code to get a `DataSource` object that produces a connection to the database `CUSTOMER_ACCOUNTS`.
 
-```
+```text
 Context ctx = new InitialContext();
 DataSource ds = (DataSource)ctx.lookup("jdbc/billingDB");
 ```
@@ -148,7 +150,7 @@ The first line of code gets an initial context as the starting point for retriev
 
 The variable `*ds*` is an instance of the class `com.dbaccess.BasicDataSource` that implements the `DataSource` interface. Calling the method `*ds*.getConnection` produces a connection to the `CUSTOMER_ACCOUNTS` database.
 
-```
+```text
 Connection con = ds.getConnection("fernanda","brewed");
 ```
 
@@ -172,7 +174,7 @@ To get better performance, The Coffee Break company has bought a JDBC driver fro
 
 The `ConnectionPoolDataSource` object must be deployed first. The following code creates an instance of `com.dbaccess.ConnectionPoolDS` and sets its properties:
 
-```
+```text
 com.dbaccess.ConnectionPoolDS cpds = new com.dbaccess.ConnectionPoolDS();
 cpds.setServerName("creamer");
 cpds.setDatabaseName("COFFEEBREAK");
@@ -182,7 +184,7 @@ cpds.setDescription("Connection pooling for " + "COFFEEBREAK DBMS");
 
 After the `ConnectionPoolDataSource` object has been deployed, the system administrator deploys the `DataSource` object. The following code registers the `com.dbaccess.ConnectionPoolDS` object `*cpds*` with a JNDI naming service. Note that the logical name being associated with the `*cpds*` variable has the subcontext `pool` added under the subcontext `jdbc`, which is similar to adding a subdirectory to another subdirectory in a hierarchical file system. The logical name of any instance of the class `com.dbaccess.ConnectionPoolDS` will always begin with `jdbc/pool`. Oracle recommends putting all `ConnectionPoolDataSource` objects under the subcontext `jdbc/pool`:
 
-```
+```text
 Context ctx = new InitialContext();
 ctx.bind("jdbc/pool/fastCoffeeDB", cpds);
 ```
@@ -191,7 +193,7 @@ Next, the `DataSource` class that is implemented to interact with the `*cpds*` v
 
 The following code, which would probably be executed by a deployment tool, creates a `PooledDataSource` object, sets its properties, and binds it to the logical name `jdbc/fastCoffeeDB`:
 
-```
+```text
 com.applogic.PooledDataSource ds = new com.applogic.PooledDataSource();
 ds.setDescription("produces pooled connections to COFFEEBREAK");
 ds.setDataSourceName("jdbc/pool/fastCoffeeDB");
@@ -212,18 +214,14 @@ Now that these `DataSource` and `ConnectionPoolDataSource` objects are deployed,
 ```properties
 ctx = new InitialContext();
 ds = (DataSource)ctx.lookup("jdbc/fastCoffeeDB");
-```
 
 The variable `*ds*` represents a `DataSource` object that produces pooled connections to the database `COFFEEBREAK`. You need to retrieve this `DataSource` object only once because you can use it to produce as many pooled connections as needed. Calling the method `getConnection` on the `*ds*` variable automatically produces a pooled connection because the `DataSource` object that the `*ds*` variable represents was configured to produce pooled connections.
 
 Connection pooling is generally transparent to the programmer. There are only two things you need to do when you are using pooled connections:
 
 1. Use a `DataSource` object rather than the `DriverManager` class to get a connection. In the following line of code, `*ds*` is a `DataSource` object implemented and deployed so that it will create pooled connections and `username` and `password` are variables that represent the credentials of the user that has access to the database:
-	```
 	Connection con = ds.getConnection(username, password);
-	```
 2. Use a `finally` statement to close a pooled connection. The following `finally` block would appear after the `try/catch` block that applies to the code in which the pooled connection was used:
-	```
 	try {
 	    Connection con = ds.getConnection(username, password);
 	    // ... code to use the pooled
@@ -233,7 +231,7 @@ Connection pooling is generally transparent to the programmer. There are only tw
 	} finally {
 	    if (con != null) con.close();
 	}
-	```
+```java
 
 Otherwise, an application using a pooled connection is identical to an application using a regular connection. The only other thing an application programmer might notice when connection pooling is being done is that performance is better.
 
@@ -305,7 +303,7 @@ Suppose that the EJB server that The Coffee Break entrepreneur bought includes t
 
 The `XADataSource` object must be deployed first. The following code creates an instance of `com.dbaccess.XATransactionalDS` and sets its properties:
 
-```
+```text
 com.dbaccess.XATransactionalDS xads = new com.dbaccess.XATransactionalDS();
 xads.setServerName("creamer");
 xads.setDatabaseName("COFFEEBREAK");
@@ -315,14 +313,14 @@ xads.setDescription("Distributed transactions for COFFEEBREAK DBMS");
 
 The following code registers the `com.dbaccess.XATransactionalDS` object `*xads*` with a JNDI naming service. Note that the logical name being associated with `*xads*` has the subcontext `xa` added under `jdbc`. Oracle recommends that the logical name of any instance of the class `com.dbaccess.XATransactionalDS` always begin with `jdbc/xa`.
 
-```
+```text
 Context ctx = new InitialContext();
 ctx.bind("jdbc/xa/distCoffeeDB", xads);
 ```
 
 Next, the `DataSource` object that is implemented to interact with `*xads*` and other `XADataSource` objects is deployed. Note that the `DataSource` class, `com.applogic.TransactionalDS`, can work with an `XADataSource` class from any JDBC driver vendor. Deploying the `DataSource` object involves creating an instance of the `com.applogic.TransactionalDS` class and setting its properties. The `dataSourceName` property is set to `jdbc/xa/distCoffeeDB`, the logical name associated with `com.dbaccess.XATransactionalDS`. This is the `XADataSource` class that implements the distributed transaction capability for the `DataSource` class. The following code deploys an instance of the `DataSource` class:
 
-```
+```text
 com.applogic.TransactionalDS ds = new com.applogic.TransactionalDS();
 ds.setDescription("Produces distributed transaction " +
                   "connections to COFFEEBREAK");
@@ -337,7 +335,7 @@ Now that instances of the classes `com.applogic.TransactionalDS` and `com.dbacce
 
 To get a connection that can be used for distributed transactions, must use a `DataSource` object that has been properly implemented and deployed, as shown in the section [Deploying Distributed Transactions](#deployment_distributed_transactions). With such a `DataSource` object, call the method `getConnection` on it. After you have the connection, use it just as you would use any other connection. Because `jdbc/distCoffeesDB` has been associated with an `XADataSource` object in a JNDI naming service, the following code produces a `Connection` object that can be used in distributed transactions:
 
-```
+```text
 Context ctx = new InitialContext();
 DataSource ds = (DataSource)ctx.lookup("jdbc/distCoffeesDB");
 Connection con = ds.getConnection();

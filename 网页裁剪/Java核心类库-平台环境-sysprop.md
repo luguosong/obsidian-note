@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# System Properties (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -54,7 +56,7 @@ The `System` class has two methods used to read system properties: `getProperty`
 
 The `System` class has two different versions of `getProperty`. Both retrieve the value of the property named in the argument list. The simpler of the two `getProperty` methods takes a single argument, a property key For example, to get the value of `path.separator`, use the following statement:
 
-```
+```text
 System.getProperty("path.separator");
 ```
 
@@ -62,7 +64,7 @@ The `getProperty` method returns a string containing the value of the property. 
 
 The other version of `getProperty` requires two `String` arguments: the first argument is the key to look up and the second argument is a default value to return if the key cannot be found or if it has no value. For example, the following invocation of `getProperty` looks up the `System` property called `subliminal.message`. This is not a valid system property, so instead of returning null, this method returns the default value provided as a second argument: " `Buy StayPuft Marshmallows!`"
 
-```
+```text
 System.getProperty("subliminal.message", "Buy StayPuft Marshmallows!");
 ```
 
@@ -80,13 +82,13 @@ To modify the existing set of system properties, use `System.setProperties`. Thi
 
 The next example, [`PropertiesTest`](https://docs.oracle.com/javase/tutorial/essential/environment/examples/PropertiesTest.java), creates a `Properties` object and initializes it from [`myProperties.txt`](https://docs.oracle.com/javase/tutorial/essential/environment/examples/myProperties.txt).
 
-```
+```text
 subliminal.message=Buy StayPuft Marshmallows!
 ```
 
 `PropertiesTest` then uses `System.setProperties` to install the new `Properties` objects as the current set of system properties.
 
-```
+```java
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -108,19 +110,19 @@ public class PropertiesTest {
         System.getProperties().list(System.out);
     }
 }
-```
+```text
 
 Note how `PropertiesTest` creates the `Properties` object, `p`, which is used as the argument to `setProperties`:
 
-```
+```text
 Properties p = new Properties(System.getProperties());
-```
+```text
 
 This statement initializes the new properties object, `p`, with the current set of system properties, which in the case of this small application, is the set of properties initialized by the runtime system. Then the application loads additional properties into `p` from the file `myProperties.txt` and sets the system properties to `p`. This has the effect of adding the properties listed in `myProperties.txt` to the set of properties created by the runtime system at startup. Note that an application can create `p` without any default `Properties` object, like this:
 
-```
+```text
 Properties p = new Properties();
-```
+```text
 
 Also note that the value of system properties can be overwritten! For example, if `myProperties.txt` contains the following line, the `java.vendor` system property will be overwritten:
 

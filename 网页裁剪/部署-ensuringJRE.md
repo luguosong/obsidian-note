@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Ensuring the Presence of the JRE Software (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -30,7 +32,7 @@ Rich Internet applications (RIAs) usually need a minimum version of the Java Run
 
 The following example checks if a user has at least version 1.6.0\_13 of the JRE software installed. If not, the code installs the latest JRE software. See inline comments in the code.
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js"></script>
 <script>
     
@@ -51,7 +53,7 @@ The following example checks if a user has at least version 1.6.0\_13 of the JRE
         }
     }
 </script>
-```
+```javascript
 
 ## Installing the Correct JRE Software Only When the User Attempts to Use Your RIA
 
@@ -59,7 +61,7 @@ When you specify the minimum version of the JRE software in the `runApplet` or `
 
 Use the `runApplet` function to deploy an applet, as shown in the following example. The last parameter of the `runApplet` function is the minimum version that is required to run your applet (version 1.6).
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js"></script>
 <script>
     var attributes = { code:'components.DynamicTreeApplet',
@@ -71,7 +73,7 @@ Use the `runApplet` function to deploy an applet, as shown in the following exam
 
 To deploy a Java Web Start application, use the `createWebStartLaunchButton` function with the correct minimum version parameter (version 1.6).
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js"></script>
 <script>
     var url = "dynamictree_applet.jnlp";

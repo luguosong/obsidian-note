@@ -1,13 +1,14 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Swing-emptytable"
+标题: "空表格"
 描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/dnd/emptytable.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# 空表格
 
 Documentation
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Walking the File Tree (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -148,7 +150,6 @@ public static class PrintFiles
         return CONTINUE;
     }
 }
-```
 
 ## Kickstarting the Process
 
@@ -159,11 +160,9 @@ Once you have implemented your `FileVisitor`, how do you initiate the file walk?
 
 The first method requires only a starting point and an instance of your `FileVisitor`. You can invoke the `PrintFiles` file visitor as follows:
 
-```
 Path startingDir = ...;
 PrintFiles pf = new PrintFiles();
 Files.walkFileTree(startingDir, pf);
-```
 
 The second `walkFileTree` method enables you to additionally specify a limit on the number of levels visited and a set of [`FileVisitOption`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileVisitOption.html) enums. If you want to ensure that this method walks the entire file tree, you can specify `Integer.MAX_VALUE` for the maximum depth argument.
 
@@ -171,7 +170,6 @@ You can specify the `FileVisitOption` enum, `FOLLOW_LINKS`, which indicates that
 
 This code snippet shows how the four-argument method can be invoked:
 
-```
 import static java.nio.file.FileVisitResult.*;
 
 Path startingDir = ...;
@@ -180,7 +178,7 @@ EnumSet<FileVisitOption> opts = EnumSet.of(FOLLOW_LINKS);
 
 Finder finder = new Finder(pattern);
 Files.walkFileTree(startingDir, opts, Integer.MAX_VALUE, finder);
-```
+```java
 
 ## Considerations When Creating a FileVisitor
 
@@ -227,7 +225,7 @@ The `FileVisitor` methods return a [`FileVisitResult`](https://docs.oracle.com/j
 
 In this code snippet, any directory named `SCCS` is skipped:
 
-```
+```java
 import static java.nio.file.FileVisitResult.*;
 
 public FileVisitResult

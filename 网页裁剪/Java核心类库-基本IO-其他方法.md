@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Other Useful Methods (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -110,7 +112,6 @@ try {
 } catch (IOException x) {
     System.err.println(x);
 }
-```
 
 Note that `probeContentType` returns null if the content type cannot be determined.
 
@@ -124,19 +125,15 @@ The [`` `Email` ``](https://docs.oracle.com/javase/tutorial/essential/io/example
 
 To retrieve the default file system, use the [`getDefault`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystems.html#getDefault--) method. Typically, this `FileSystems` method (note the plural) is chained to one of the `FileSystem` methods (note the singular), as follows:
 
-```
 PathMatcher matcher =
     FileSystems.getDefault().getPathMatcher("glob:*.*");
-```
 
 ## Path String Separator
 
 The path separator for POSIX file systems is the forward slash, `/`, and for Microsoft Windows is the backslash, `\`. Other file systems might use other delimiters. To retrieve the `Path` separator for the default file system, you can use one of the following approaches:
 
-```
 String separator = File.separator;
 String separator = FileSystems.getDefault().getSeparator();
-```
 
 The [`getSeparator`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getSeparator--) method is also used to retrieve the path separator for any available file system.
 
@@ -146,15 +143,12 @@ A file system has one or more file stores to hold its files and directories. The
 
 To retrieve a list of all the file stores for the file system, you can use the [`getFileStores`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getFileStores--) method. This method returns an `Iterable`, which allows you to use the [[语言基础-for|enhanced for]] statement to iterate over all the root directories.
 
-```
 for (FileStore store: FileSystems.getDefault().getFileStores()) {
    ...
 }
-```
 
 If you want to retrieve the file store where a particular file is located, use the [`getFileStore`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#getFileStore-java.nio.file.Path-) method in the `Files` class, as follows:
 
-```
 Path file = ...;
 FileStore store= Files.getFileStore(file);
 ```

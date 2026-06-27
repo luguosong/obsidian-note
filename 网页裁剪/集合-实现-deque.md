@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deque Implementations (The Java™ Tutorials >        
+            Collections > Implementations)
 
 Documentation
 
@@ -64,7 +66,6 @@ ArrayDeque<String> aDeque = new ArrayDeque<String>();
 for (String str : aDeque) {
     System.out.println(str);
 }
-```
 
 ### Iterator
 
@@ -76,7 +77,6 @@ ArrayDeque<String> aDeque = new ArrayDeque<String>();
 for (Iterator<String> iter = aDeque.iterator(); iter.hasNext();  ) {
     System.out.println(iter.next());
 }
-```
 
 The `ArrayDeque` class is used in this tutorial to implement the `Deque` interface. The complete code of the example used in this tutorial is available in [`` `ArrayDequeSample` ``](https://docs.oracle.com/javase/tutorial/collections/interfaces/examples/ArrayDequeSample.java). Both the `LinkedList` and `ArrayDeque` classes do not support concurrent access by multiple threads.
 

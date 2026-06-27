@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Icons (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -113,7 +115,7 @@ Here's a snapshot of an application with three labels, two decorated with an ico
 
 The program uses one image icon to contain and paint the yellow splats. One statement creates the image icon and two more statements include the image icon on each of the two labels:
 
-```
+```text
 ImageIcon icon = createImageIcon("images/middle.gif",
                                  "a pretty but meaningless splat");
 label1 = new JLabel("Image and Text", icon, JLabel.CENTER);
@@ -135,7 +137,7 @@ protected ImageIcon createImageIcon(String path,
         return null;
     }
 }
-```
+```text
 
 In the preceding snippet, the first argument to the `ImageIcon` constructor is relative to the location of the current class, and will be resolved to an absolute URL. The `description` argument is a string that allows [[Swing-其他特性-access|assistive technologies]] to help a visually impaired user understand what information the icon conveys.
 
@@ -144,7 +146,7 @@ Generally, applications provide their own set of images used as part of the appl
 ```
 ImageIcon icon = new ImageIcon("images/middle.gif",
                                "a pretty but meaningless splat");
-```
+```java
 
 When you specify a filename or URL to an `ImageIcon` constructor, processing is blocked until after the image data is completely loaded or the data location has proven to be invalid. If the data location is invalid (but non-null), an `ImageIcon` is still successfully created; it just has no size and, therefore, paints nothing. As shown in the `createImageIcon` method, it is advisable to first verify that the URL points to an existing file before passing it to the `ImageIcon` constructor. This allows graceful error handling when the file isn't present. If you want more information while the image is loading, you can register an observer on an image icon by calling its `setImageObserver` method.
 
@@ -233,7 +235,7 @@ If you are writing a real-world application, it is likely (and recommended) that
 
 All seven configurations shown are valid, and the same code reads the image:
 
-```
+```text
 java.net.URL imageURL = myDemo.class.getResource("images/myImage.gif");
 ...
 if (imageURL != null) {
@@ -246,21 +248,21 @@ The `getResource` method causes the class loader to look through the directories
 Here are three ways to specify the class path:
 
 - Using the `-cp` or `-classpath` command-line argument. For example, in the case where the images are in a JAR file named `images.jar` and the class file is in the current directory:
-	```
+```text
 	java -cp  .;images.jar  MyDemo  [Microsoft Windows]
 	java -cp ".;images.jar" MyDemo  [UNIX-emulating shell on Microsoft
 	                                Windows — you must quote the path]
 	java -cp  .:images.jar  MyDemo  [UNIX]
-	```
+```
 	If your image and class files are in separate JAR files, your command line will look something like:
-	```
+```text
 	java -cp .;MyDemo.jar;images.jar MyDemo  [Microsoft Windows]
-	```
+```
 	In the situation where all the files are in one JAR file, you can use either of the following commands:
-	```
+```text
 	java -jar MyAppPlusImages.jar
 	java -cp .;MyAppPlusImages.jar MyApp  [Microsoft Windows]
-	```
+```
 	For more information, see the [[将程序打包为JAR文件|JAR Files]] trail.
 - In the program's JNLP file (used by Java Web Start). For example, here is the JNLP file used by `DragPictureDemo`:
 	```xml
@@ -286,7 +288,7 @@ Here are three ways to specify the class path:
 	  </resources>
 	  <application-desc main-class="DragPictureDemo"/>
 	</jnlp>
-	```
+```java
 	In this example, the class files and the images files are in separate JAR files. The JAR files are specified using the XML `jar` tag.
 - Setting the `CLASSPATH` environment variable. This last approach is *not recommended*. If `CLASSPATH` is not set, the current directory (".") followed by the location of the system classes shipped with the JRE are used by default.
 
@@ -415,7 +417,7 @@ public class MissingIcon implements Icon{
         return height;
     }
 }
-```
+```java
 
 The `paintIcon` method is passed a `Graphics` object. The `Graphics` object gives the `paintIcon` method access to the entire Java2D API. For more information about painting and Java2D, see [[Swing-自定义绘制|Performing Custom Painting]].
 

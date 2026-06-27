@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Grant the Required Permission (The Java™ Tutorials >        
+            Security Features in Java SE > Creating a Policy File)
 
 Documentation
 
@@ -46,7 +48,7 @@ You can grant permission to all code from the location (URL) where examples are 
 
 Type the following URL into the **CodeBase** text box of the Policy Entry dialog box:
 
-```
+```text
 https://docs.oracle.com/javase/tutorial/security/tour1/examples/
 ```
 
@@ -58,7 +60,7 @@ Leave the **SignedBy** text box blank, since you aren't requiring the code to be
 
 **Note:** To grant the permission to any code (`.class` file) not just from the directory specified previously but from the `security` directory *and its subdirectories*, type the following URL into the **CodeBase** box:
 
-```
+```text
 https://docs.oracle.com/javase/tutorial/security/
 ```
 

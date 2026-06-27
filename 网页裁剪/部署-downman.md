@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Adding Classes to the JAR File's Classpath (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -73,7 +75,7 @@ Relative URLs in the `Class-Path` attribute value that don't end with a slash (`
 
 The following is an example of the `Class-Path` manifest attribute:
 
-```
+```text
 Class-Path: servlet.jar infobus.jar acme/beans.jar images/
 ```
 
@@ -97,7 +99,7 @@ Our goal is to build the `MyJar.jar` JAR file with a relevant `Class-Path` attri
 
 First, from within the `MyApp` directory, we create a text file named `Manifest.txt` with the following contents:
 
-```
+```text
 Class-Path: MyUtils.jar MyLibs/Lib.jar MyResources/
 ```
 
@@ -109,13 +111,13 @@ Class-Path: MyUtils.jar MyLibs/Lib.jar MyResources/
 
 We then create a JAR file named `MyJar.jar` with the following command:
 
-```
+```text
 jar cfm MyJar.jar Manifest.txt MyPackage/*.class
 ```
 
 This creates the `MyJar.jar` JAR file with a manifest with the following contents:
 
-```
+```bash
 Manifest-Version: 1.0
 Class-Path: MyUtils.jar MyLibs/Lib.jar MyResources/
 Created-By: 1.8.0_422 (Oracle Corporation)

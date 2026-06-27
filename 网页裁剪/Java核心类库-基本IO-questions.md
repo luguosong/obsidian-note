@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Basic I/O (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -97,6 +99,6 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1\. Write an example that counts the number of times a particular character, such as `e`, appears in a file. The character can be specified at the command line. You can use [`xanadu.txt`](https://docs.oracle.com/javase/tutorial/essential/io/examples/xanadu.txt) as the input file.
 
-2\. The file [[Java核心类库-基本IO-datafile|`datafile`]] begins with a single `long` that tells you the offset of a single `int` piece of data within the same file. Write a program that gets the `int` piece of data. What is the `int` data?
+2\. The file  begins with a single `long` that tells you the offset of a single `int` piece of data within the same file. Write a program that gets the `int` piece of data. What is the `int` data?
 
 [[Java核心类库-基本IO-answers|Check your answers.]]

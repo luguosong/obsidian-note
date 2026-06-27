@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Implementing an Interface (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -27,7 +29,7 @@ To declare a class that implements an interface, you include an `implements` cla
 
 Consider an interface that defines how to compare the size of objects.
 
-```
+```java
 public interface Relatable {
         
     // this (object calling isLargerThan)
@@ -37,7 +39,7 @@ public interface Relatable {
     // equal to, or less than other
     public int isLargerThan(Relatable other);
 }
-```
+```java
 
 If you want to be able to compare the size of similar objects, no matter what they are, the class that instantiates them should implement `Relatable`.
 
@@ -49,7 +51,7 @@ If you know that a class implements `Relatable`, then you know that you can comp
 
 Here is the `Rectangle` class that was presented in the [[类与对象-objectcreation|Creating Objects]] section, rewritten to implement `Relatable`.
 
-```
+```java
 public class RectanglePlus 
     implements Relatable {
     public int width = 0;

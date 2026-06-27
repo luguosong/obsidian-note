@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Digest-MD5 (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -41,7 +43,7 @@ Set to the password of the principal (for example, "mysecret"). It is of type ja
 
 The [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Digest.java) shows how a client performs authentication using Digest-MD5 to an LDAP server.
 
-```
+```text
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
@@ -77,7 +79,7 @@ Set to the realm of the principal. This is a deployment-specific and/or server-s
 
 The [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/DigestRealm.java) shows how to set the environment properties for performing authentication using Digest-MD5 and a specified realm. To make this example work in your environment, you must change the source code so that the realm value reflects what has been configured on your directory server.
 
-```
+```text
 // Authenticate as C. User and password "mysecret" in realm "JNDITutorial"
 env.put(Context.SECURITY_AUTHENTICATION, "DIGEST-MD5");
 env.put(Context.SECURITY_PRINCIPAL, 

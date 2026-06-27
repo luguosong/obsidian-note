@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Signing JAR Files (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -69,7 +71,7 @@ To sign a JAR file, you must first have a private key. Private keys and their as
 
 The basic form of the command for signing a JAR file is
 
-```
+```text
 jarsigner jar-file alias
 ```
 
@@ -106,7 +108,7 @@ Let's look at a couple of examples of signing a JAR file with the Jarsigner tool
 
 Under these assumptions, you could use this command to sign a JAR file named app.jar:
 
-```
+```text
 jarsigner -keystore mykeys -tsa http://tsa.url.example.com app.jar johndoe
 ```
 
@@ -114,7 +116,7 @@ You will be prompted to enter the passwords for both the keystore and your alias
 
 Let's look at what would happen if you used a different combination of options:
 
-```
+```text
 jarsigner -keystore mykeys -sigfile SIG -signedjar SignedApp.jar 
           -tsacert testalias app.jar johndoe
 ```

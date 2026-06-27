@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Object Streams (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -101,7 +103,7 @@ I/O of multiple referred-to objects
 
 You might wonder what happens if two objects on the same stream both contain references to a single object. Will they both refer to a single object when they're read back? The answer is "yes." A stream can only contain one copy of an object, though it can contain any number of references to it. Thus if you explicitly write an object to a stream twice, you're really writing only the reference twice. For example, if the following code writes an object `ob` twice to a stream:
 
-```
+```text
 Object ob = new Object();
 out.writeObject(ob);
 out.writeObject(ob);
@@ -109,7 +111,7 @@ out.writeObject(ob);
 
 Each `writeObject` has to be matched by a `readObject`, so the code that reads the stream back will look something like this:
 
-```
+```text
 Object ob1 = in.readObject();
 Object ob2 = in.readObject();
 ```

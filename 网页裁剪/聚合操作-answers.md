@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Aggregate Operations (The Java™ Tutorials > Collections >
+            Aggregate Operations)
 
 Documentation
 
@@ -36,14 +38,14 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 6. Q: True or False: A stream is similar to a collection in that it is a data structure that stores elements.  
 	A: False. Unlike a collection, a stream is not a data structure. It instead carries values from a source through a pipeline.
 7. Q: Identify the intermediate and terminal operations in this code:
-	```
+```text
 	double average = roster
 	    .stream()
 	    .filter(p -> p.getGender() == Person.Sex.MALE)
 	    .mapToInt(Person::getAge)
 	    .average()
 	    .getAsDouble();
-	```
+```
 	  
 	A: Intermediate: `filter`, `mapToInt`  
 	Terminal: `average`  
@@ -60,13 +62,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	A: The collect operation is most appropriate for collecting into a `List`.  
 	  
 	Example:
-	```
+```text
 	List<String> namesOfMaleMembersCollect = roster
 	    .stream()
 	    .filter(p -> p.getGender() == Person.Sex.MALE)
 	    .map(p -> p.getName())
 	    .collect(Collectors.toList());
-	```
+```
 13. Q: True or False: Aggregate operations make it possible to implement parallelism with non-thread-safe collections.  
 	A: True, provided that you do not modify (mutate) the underlying collection while you are operating on it.
 14. Q: Streams are always serial unless otherwise specified. How do you request that a stream be processed in parallel?  
@@ -75,23 +77,23 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Exercises
 
 1. Exercise: Write the following enhanced `for` statement as a pipeline with lambda expressions. Hint: Use the `filter` intermediate operation and the `forEach` terminal operation.  
-	```
+	```java
 	for (Person p : roster) {
 	    if (p.getGender() == Person.Sex.MALE) {
 	        System.out.println(p.getName());
 	    }
 	}
-	```
+```text
 	  
 	Answer:
-	```
+	```java
 	roster
 	    .stream()
 	    .filter(e -> e.getGender() == Person.Sex.MALE)
 	    .forEach(e -> System.out.println(e.getName());
-	```
+```
 2. Convert the following code into a new implementation that uses lambda expressions and aggregate operations instead of nested `for` loops. Hint: Make a pipeline that invokes the `filter`, `sorted`, and `collect` operations, in that order.
-	```
+```java
 	List<Album> favs = new ArrayList<>();
 	for (Album a : albums) {
 	    boolean hasFavorite = false;
@@ -108,15 +110,15 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	                           public int compare(Album a1, Album a2) {
 	                               return a1.name.compareTo(a2.name);
 	                           }});
-	```
+```
 	  
 	Answer:
-	```
+```text
 	List<Album> sortedFavs =
 	  albums.stream()
 	        .filter(a -> a.tracks.anyMatch(t -> (t.rating >= 4)))
 	        .sorted(Comparator.comparing(a -> a.name))
 	        .collect(Collectors.toList());
-	```
+```
 	  
 	Here we have used the stream operations to simplify each of the three major steps -- identification of whether any track in an album has a rating of at least 4 (`anyMatch`), the sorting, and the collection of albums matching our criteria into a `List`. The `Comparator.comparing()` method takes a function that extracts a `Comparable` sort key, and returns a `Comparator` that compares on that key.

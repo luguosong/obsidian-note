@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# JNDI as an LDAP API (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -39,7 +41,7 @@ As a result of federation, the names that you supply to the JNDI's context metho
 
 LDAP names as they are used in the protocol are always fully qualified names that identify entries that start from the root of the LDAP namespace (as defined by the server). Following are some examples of fully qualified LDAP names.
 
-```
+```properties
 cn=Ted Geisel, ou=Marketing, o=Some Corporation, c=gb
 cn=Vinnie Ryan, ou=People, o=JNDITutorial
 ```

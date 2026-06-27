@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write an Undoable Edit Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -83,7 +85,7 @@ Undoable edit events occur when an operation that can be undone occurs on a comp
 
 Here is the undoable edit event handling code from an application called `TextComponentDemo`.
 
-```
+```sql
 ...
 //where initialization occurs
 document.addUndoableEditListener(new MyUndoableEditListener());

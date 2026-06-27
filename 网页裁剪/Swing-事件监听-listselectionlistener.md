@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a List Selection Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -119,7 +121,7 @@ You can find the entire program of ListSelectionDemo in [`` `ListSelectionDemo.j
 
 Here is the code from `ListSelectionDemo` that sets up the selection model and adds a listener to it:
 
-```
+```text
 ...//where the member variables are defined
 JList list;
     ...//in the init method:
@@ -131,7 +133,7 @@ JList list;
 
 And here is the code for the listener, which works for all the possible selection modes:
 
-```
+```java
 class SharedListSelectionHandler implements ListSelectionListener {
     public void valueChanged(ListSelectionEvent e) {
         ListSelectionModel lsm = (ListSelectionModel)e.getSource();

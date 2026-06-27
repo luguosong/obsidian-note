@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Providing Constructors for Your Classes (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -79,7 +81,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 A class contains constructors that are invoked to create objects from the class blueprint. Constructor declarations look like method declarations—except that they use the name of the class and have no return type. For example, `Bicycle` has one constructor:
 
-```
+```java
 public Bicycle(int startCadence, int startSpeed, int startGear) {
     gear = startGear;
     cadence = startCadence;
@@ -89,7 +91,7 @@ public Bicycle(int startCadence, int startSpeed, int startGear) {
 
 To create a new `Bicycle` object called `myBike`, a constructor is called by the `new` operator:
 
-```
+```text
 Bicycle myBike = new Bicycle(30, 0, 8);
 ```
 
@@ -97,7 +99,7 @@ Bicycle myBike = new Bicycle(30, 0, 8);
 
 Although `Bicycle` only has one constructor, it could have others, including a no-argument constructor:
 
-```
+```java
 public Bicycle() {
     gear = 1;
     cadence = 10;

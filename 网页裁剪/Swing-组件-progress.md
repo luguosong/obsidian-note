@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Progress Bars (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -109,7 +111,7 @@ Sometimes a task running within a program might take a while to complete. A user
 
 Another way of indicating work is to set the wait cursor, using the [`Cursor`](https://docs.oracle.com/javase/8/docs/api/java/awt/Cursor.html) class and the `Component` -defined [`setCursor`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#setCursor-java.awt.Cursor-) method. For example, the following code makes the wait cursor be displayed when the cursor is over `container` (including any components it contains that have no cursor specified):
 
-```
+```text
 container.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 ```
 
@@ -148,7 +150,7 @@ Here's a picture of a small demo application that uses a progress bar to measure
 
 The following code, from [`ProgressBarDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ProgressBarDemoProject/src/components/ProgressBarDemo.java), creates and sets up the progress bar:
 
-```
+```text
 //Where member variables are declared:
 JProgressBar progressBar;
 ...
@@ -162,7 +164,7 @@ The constructor that creates the progress bar sets the progress bar's minimum an
 
 The call to `setStringPainted` causes the progress bar to display, within its bounds, a textual indication of the percentage of the task that has completed. By default, the progress bar displays the value returned by its `getPercentComplete` method formatted as a percent, such as **33%**. Alternatively, you can replace the default with a different string by calling `setString`. For example,
 
-```
+```text
 if (/*...half way done...*/)
     progressBar.setString("Half way there!");
 ```
@@ -178,7 +180,7 @@ public void actionPerformed(ActionEvent evt) {
     task.addPropertyChangeListener(this);
     task.execute();
 }
-```
+```java
 
 `Task` is a subclass of [`javax.swing.SwingWorker`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingWorker.html). The `Task` instance does three important things for `ProgressBarDemo`:
 
@@ -212,7 +214,7 @@ public void done() {
     progressBar.setValue(progressBar.getMinimum());
     taskOutput.append("Done!\n");
 }
-```
+```java
 
 Note that the `done` method sets the `done` field to `true`, preventing `propertyChange` from making further updates to the progress bar. This is necessary because the final updates to the `progress` property may occur after `done` is invoked.
 
@@ -270,7 +272,7 @@ A progress monitor cannot be used again, so a new one must be created each time 
 
 Here's the statement that creates the progress monitor:
 
-```
+```text
 progressMonitor = new ProgressMonitor(ProgressMonitorDemo.this,
                                       "Running a Long Task",
                                       "", 0, task.getLengthOfTask());
@@ -281,13 +283,13 @@ This code uses `ProgressMonitor` 's only constructor to create the monitor and i
 - The first argument provides the parent component to the dialog popped up by the progress monitor.
 - The second argument is a string that describes the nature of the task being monitored. This string is displayed on the dialog. see [The Progress Monitoring API](#api) for details about this argument.
 - The third argument is another string that provides a changeable status note. The example uses an empty string to indicate that the dialog should make space for a changeable status note, but that the note is initially empty. If you provide `null` for this argument, the note is omitted from the dialog. The example updates the note each time the `progress` property changes. It updates the monitor's current value at the same time:
-	```
+```text
 	int progress = task.getProgress();
 	String message = String.format("Completed %d%%.\n", progress);
 	progressMonitor.setNote(message);
 	progressMonitor.setProgress(progress);
 	taskOutput.append(message);
-	```
+```
 - The last two arguments provide the minimum and maximum values, respectively, for the progress bar displayed in the dialog.
 
 By default, a progress monitor waits a minimum of 500 milliseconds before deciding whether to pop up the dialog. It also waits for the progress to become more than the minimum value. If it calculates that the task will take more than 2000 milliseconds to complete, the progress dialog appears. To adjust the minimum waiting period, invoke `setMillisToDecidedToPopup`. To adjust the minimum progress time required for a dialog to appear, invoke `setMillisToPopup`.

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Create Translucent and Shaped Windows (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -90,7 +92,7 @@ The `GraphicsConfiguration` class also provides the [`isTranslucencyCapable`](ht
 
 The following code shows how to check for all three capabilities:
 
-```
+```java
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 // Determine what the default GraphicsDevice can support.
@@ -118,7 +120,7 @@ You can create a window where each pixel has the same translucency by invoking t
 
 The [`` `TranslucentWindowDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/TranslucentWindowDemoProject/src/misc/TranslucentWindowDemo.java) example creates a window that is 55 percent opaque (45 percent translucent). If the underlying platform does not support translucent windows, the example exits. The code relating to opacity is shown in bold.
 
-```
+```java
 import java.awt.*;
 import javax.swing.*;
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
@@ -166,7 +168,7 @@ public class TranslucentWindowDemo extends JFrame {
         });
     }
 }
-```
+```java
 
 Note that the button is also affected by the uniform translucency. Setting the opacity affects the whole window, including any components that the window contains.
 
@@ -190,7 +192,7 @@ An example follows. First, here are the steps required to implement the example:
 
 Here is the code for the [`` `GradientTranslucentWindowDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/GradientTranslucentWindowDemoProject/src/misc/GradientTranslucentWindowDemo.java) example. If the underlying platform does not support per-pixel translucency, this example exits. The code specifically relating to creating the gradient window is shown in bold.
 
-```
+```java
 import java.awt.*;
 import javax.swing.*;
 import static java.awt.GraphicsDevice.WindowTranslucency.*;
@@ -270,7 +272,7 @@ The [`` `ShapedWindowDemo.java` ``](https://docs.oracle.com/javase/tutorial/uisw
 
 The code relating to shaping the window is shown in bold.
 
-```
+```java
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Menus (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -219,7 +221,7 @@ menuBar.add(menu);
 
 ...
 frame.setJMenuBar(theJMenuBar);
-```
+```java
 
 As the code shows, to set the menu bar for a `JFrame`, you use the `setJMenuBar` method. To add a `JMenu` to a `JMenuBar`, you use the `add(JMenu)` method. To add menu items and submenus to a `JMenu`, you use the `add(JMenuItem)` method.
 
@@ -287,7 +289,7 @@ An accelerator is a key combination that causes a menu item to be chosen, whethe
 
 You can specify a mnemonic either when constructing the menu item or with the `setMnemonic` method. To specify an accelerator, use the `setAccelerator` method. Here are examples of setting mnemonics and accelerators:
 
-```
+```text
 //Setting the mnemonic when constructing a menu item:
 menuItem = new JMenuItem("A text-only menu item",
                          KeyEvent.VK_T);
@@ -358,7 +360,6 @@ class PopupListener extends MouseAdapter {
         }
     }
 }
-```
 
 Popup menus have a few interesting implementation details. One is that every menu has an associated popup menu. When the menu is activated, it uses its associated popup menu to show its menu items.
 
@@ -370,7 +371,6 @@ Lightweight popup windows are more efficient than heavyweight windows but, prior
 
 Because menus are made up of ordinary Swing components, you can easily customize them. For example, you can add any lightweight component to a `JMenu` or `JMenuBar`. And because `JMenuBar` uses [[Swing-布局-box|`BoxLayout`]], you can customize a menu bar's layout just by adding invisible components to it. Here is an example of adding a [[Swing-布局-box|glue]] component to a menu bar, so that the last menu is at the right edge of the menu bar:
 
-```
 //...create and add some menus...
 menuBar.add(Box.createHorizontalGlue());
 //...create the rightmost menu...

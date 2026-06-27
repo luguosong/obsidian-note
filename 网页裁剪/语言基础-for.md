@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The for Statement (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The `for` statement provides a compact way to iterate over a range of values. Programmers often refer to it as the "for loop" because of the way in which it repeatedly loops until a particular condition is satisfied. The general form of the `for` statement can be expressed as follows:
 
-```
+```text
 for (initialization; termination;
      increment) {
     statement(s)
@@ -46,7 +48,7 @@ class ForDemo {
          }
     }
 }
-```
+```text
 
 The output of this program is:
 
@@ -61,7 +63,7 @@ Count is: 7
 Count is: 8
 Count is: 9
 Count is: 10
-```
+```text
 
 Notice how the code declares a variable within the initialization expression. The scope of this variable extends from its declaration to the end of the block governed by the `for` statement, so it can be used in the termination and increment expressions as well. If the variable that controls a `for` statement is not needed outside of the loop, it's best to declare the variable in the initialization expression. The names `i`, `j`, and `k` are often used to control `for` loops; declaring them within the initialization expression limits their life span and reduces errors.
 
@@ -73,13 +75,13 @@ for ( ; ; ) {
     
     // your code goes here
 }
-```
+```text
 
 The `for` statement also has another form designed for iteration through [[集合|Collections]] and [[语言基础-arrays|arrays]] This form is sometimes referred to as the *enhanced for* statement, and can be used to make your loops more compact and easy to read. To demonstrate, consider the following array, which holds the numbers 1 through 10:
 
 ```
 int[] numbers = {1,2,3,4,5,6,7,8,9,10};
-```
+```java
 
 The following program, [`EnhancedForDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/EnhancedForDemo.java), uses the enhanced `for` to loop through the array:
 
@@ -97,7 +99,7 @@ class EnhancedForDemo {
 
 In this example, the variable `item` holds the current value from the numbers array. The output from this program is the same as before:
 
-```
+```text
 Count is: 1
 Count is: 2
 Count is: 3

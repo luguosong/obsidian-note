@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# More Fun with Wildcards (The Java™ Tutorials >        
+            Bonus > Generics)
 
 Documentation
 
@@ -49,7 +51,7 @@ In this section, we'll consider some of the more advanced uses of wildcards. We'
 interface Sink<T> {
     flush(T t);
 }
-```
+```text
 
 We can imagine using it as demonstrated by the code below. The method `writeAll()` is designed to flush all elements of the collection `coll` to the sink `snk`, and return the last element flushed.
 
@@ -66,7 +68,7 @@ public static <T> T writeAll(Collection<T> coll, Sink<T> snk) {
 Sink<Object> s;
 Collection<String> cs;
 String str = writeAll(cs, s); // Illegal call.
-```
+```text
 
 As written, the call to `writeAll()` is illegal, as no valid type argument can be inferred; neither `String` nor `Object` are appropriate types for `T`, because the `Collection` element and the `Sink` element must be of the same type.
 
@@ -77,7 +79,7 @@ public static <T> T writeAll(Collection<? extends T>, Sink<T>) {...}
 ...
 // Call is OK, but wrong return type. 
 String str = writeAll(cs, s);
-```
+```text
 
 The call is now legal, but the assignment is erroneous, since the return type inferred is `Object` because `T` matches the element type of `s`, which is `Object`.
 
@@ -88,7 +90,7 @@ public static <T> T writeAll(Collection<T> coll, Sink<? super T> snk) {
     ...
 }
 String str = writeAll(cs, s); // Yes!
-```
+```text
 
 Using this syntax, the call is legal, and the inferred type is `String`, as desired.
 
@@ -96,7 +98,7 @@ Now let's turn to a more realistic example. A `java.util.TreeSet<E>` represents 
 
 ```
 TreeSet(Comparator<E> c)
-```
+```java
 
 The `Comparator` interface is essentially:
 
@@ -108,7 +110,7 @@ interface Comparator<T> {
 
 Suppose we want to create a `TreeSet<String>` and pass in a suitable comparator, We need to pass it a `Comparator` that can compare `String` s. This can be done by a `Comparator<String>`, but a `Comparator<Object>` will do just as well. However, we won't be able to invoke the constructor given above on a `Comparator<Object>`. We can use a lower bounded wildcard to get the flexibility we want:
 
-```
+```text
 TreeSet(Comparator<? super E> c)
 ```
 
@@ -118,13 +120,13 @@ As a final example of using lower bounded wildcards, lets look at the method `Co
 
 A first attempt at generifying this method signature yields:
 
-```
+```java
 public static <T extends Comparable<T>> T max(Collection<T> coll)
 ```
 
 That is, the method takes a collection of some type `T` that is comparable to itself, and returns an element of that type. However, this code turns out to be too restrictive. To see why, consider a type that is comparable to arbitrary objects:
 
-```
+```java
 class Foo implements Comparable<Object> {
     ...
 }
@@ -136,7 +138,7 @@ Every element of `cf` is comparable to every other element in `cf`, since every 
 
 It isn't necessary that `T` be comparable to **exactly** itself. All that's required is that `T` be comparable to one of its supertypes. This give us:
 
-```
+```java
 public static <T extends Comparable<? super T>> 
         T max(Collection<T> coll)
 ```
@@ -156,13 +158,13 @@ Set<?> unknownSet = new HashSet<String>();
 public static <T> void addToSet(Set<T> s, T t) {
     ...
 }
-```
+```text
 
 The call below is illegal.
 
 ```
 addToSet(unknownSet, "abc"); // Illegal.
-```
+```java
 
 It makes no difference that the actual set being passed is a set of strings; what matters is that the expression being passed as an argument is a set of an unknown type, which cannot be guaranteed to be a set of strings, or of any type in particular.
 

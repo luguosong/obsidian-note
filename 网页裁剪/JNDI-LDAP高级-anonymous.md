@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Anonymous (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -27,7 +29,7 @@ Because none of the directory examples in the [[JNDI-操作|Naming and Directory
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/None.java) that explicitly sets the Context.SECURITY\_AUTHENTICATION property to "none" (even though doing this is not strictly necessary because that is the default).
 
-```
+```text
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");

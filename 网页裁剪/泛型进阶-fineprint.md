@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Fine Print (The Java™ Tutorials >        
+            Bonus > Generics)
 
 Documentation
 
@@ -29,7 +31,6 @@ What does the following code fragment print?
 List <String> l1 = new ArrayList<String>();
 List<Integer> l2 = new ArrayList<Integer>();
 System.out.println(l1.getClass() == l2.getClass());
-```
 
 You might be tempted to say `false`, but you'd be wrong. It prints `true`, because all instances of a generic class have the same run-time class, regardless of their actual type parameters.
 
@@ -41,29 +42,27 @@ As consequence, the static variables and methods of a class are also shared amon
 
 Another implication of the fact that a generic class is shared among all its instances, is that it usually makes no sense to ask an instance if it is an instance of a particular invocation of a generic type:
 
-```
 Collection cs = new ArrayList<String>();
 // Illegal.
 if (cs instanceof Collection<String>) { ... }
-```
+```text
 
 similarly, a cast such as
 
 ```
 // Unchecked warning,
 Collection<String> cstr = (Collection<String>) cs;
-```
+```text
 
 gives an unchecked warning, since this isn't something the runtime system is going to check for you.
 
 The same is true of type variables
 
-```
+```bash
 // Unchecked warning. 
 <T> T badCast(T t, Object o) {
     return (T) o;
 }
-```
 
 Type variables don't exist at run time. This means that they entail no performance overhead in either time nor space, which is nice. Unfortunately, it also means that you can't reliably use them in casts.
 
@@ -85,7 +84,6 @@ oa[1] = li;
 
 // Run-time error: ClassCastException.
 String s = lsa[1].get(0);
-```
 
 If arrays of parameterized type were allowed, the previous example would compile without any unchecked warnings, and yet fail at run-time. We've had type-safety as a primary design goal of generics. In particular, the language is designed to guarantee that **if your entire application has been compiled without unchecked warnings using javac -source 1.5, it is type safe**.
 
@@ -102,7 +100,7 @@ li.add(new Integer(3));
 oa[1] = li;
 // Run time error, but cast is explicit.
 String s = (String) lsa[1].get(0);
-```
+```text
 
 In the next variation, which causes a compile-time error, we refrain from creating an array object whose element type is parameterized, but still use an array type with a parameterized element type.
 
@@ -113,7 +111,7 @@ List<String>[] lsa = new List<?>[10];
 
 Similarly, attempting to create an array object whose element type is a type variable causes a compile-time error:
 
-```
+```text
 <T> T[] makeArray(T t) {
     return new T[100]; // Error.
 }

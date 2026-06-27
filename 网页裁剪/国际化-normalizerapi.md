@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Normalizing Text (The Java™ Tutorials >        
+            Internationalization > Working with Text)
 
 Documentation
 
@@ -44,7 +46,7 @@ In the code example, [`NormSample.java`](https://docs.oracle.com/javase/tutorial
 
 To be sure that you really need to normalize the text you may use the `isNormalized` method to determine if the given sequence of char values is normalized. If this method returns false, it means that you have to normalize this sequence and you should use the `normalize` method which normalizes a `char` values according to the specified normalization form. For example, to transform text into the canonical decomposed form you will have to use the following `normalize` method:
 
-```
+```text
 normalized_string = Normalizer.normalize(target_chars, Normalizer.Form.NFD);
 ```
 

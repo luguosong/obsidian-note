@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Spinners (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -132,7 +134,7 @@ The code for the main class can be found in [`SpinnerDemo.java`](https://docs.or
 
 To create a spinner, first create its model and then pass the model into the [JSpinner](https://docs.oracle.com/javase/8/docs/api/javax/swing/JSpinner.html) constructor. For example:
 
-```
+```text
 String[] monthStrings = getMonthStrings(); //get month names
 SpinnerListModel monthModel = new SpinnerListModel(monthStrings);
 JSpinner spinner = new JSpinner(monthModel);
@@ -152,7 +154,7 @@ The `SpinnerListModel` is a model whose values are defined by an array of object
 
 The `SpinnerNumberModel` supports sequences of numbers which can be expressed as `double` objects, `int` objects, or `Number` objects. You can specify the minimum and maximum allowable values, as well as the *step size* — the amount of each increment or decrement. The Year spinner uses this model, created with the following code:
 
-```
+```text
 SpinnerModel model =
         new SpinnerNumberModel(currentYear, //initial value
                                currentYear - 100, //min
@@ -164,7 +166,7 @@ SpinnerModel model =
 
 The `SpinnerDateModel` supports sequences of `Date` objects. You can specify the minimum and maximum dates, as well as the field (such as `Calendar.YEAR`) to increment or decrement. Note, however, that some types of look and feel ignore the specified field, and instead change the field that appears selected. The Another Date spinner uses this model, created with the following code:
 
-```
+```text
 Date initDate = calendar.getTime();
 calendar.add(Calendar.YEAR, -100);
 Date earliestDate = calendar.getTime();
@@ -184,7 +186,7 @@ To change the formatting used in a standard spinner editor, you can create and s
 
 The `JSpinner.NumberEditor` and `JSpinner.DateEditor` classes have constructors that allow you to create an editor that formats its data in a particular way. For example, the following code sets up the Another Date spinner so that instead of using the default date format, which is long and includes the time, it shows just a month and year in a compact way.
 
-```
+```text
 spinner.setEditor(new JSpinner.DateEditor(spinner, "MM/yyyy"));
 ```
 
@@ -220,7 +222,7 @@ public JFormattedTextField getTextField(JSpinner spinner) {
         return null;
     }
 }
-```
+```java
 
 ## Creating Custom Spinner Models and Editors
 
@@ -323,7 +325,7 @@ public class SpinnerDemo3 extends JPanel
     }
     ...
 }
-```
+```java
 
 The following example implements an editor which has a change listener so that it can reflect the spinner's current value. This particular editor displays a solid color of gray, ranging anywhere from white to black. Click the Launch button to run SpinnerDemo4 using [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) ([download JDK 7 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Alternatively, to compile and run the example yourself, consult the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#SpinnerDemo4).
 

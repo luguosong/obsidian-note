@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Getting Started (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -194,7 +196,7 @@ Modify these XML files as follows:
 
 In the `build.xml` file, modify the property `ANTPROPERTIES` to refer to either `properties/javadb-build-properties.xml` or `properties/mysql-build-properties.xml`, depending on your DBMS. For example, if you are using Java DB, your `build.xml` file would contain this:
 
-```
+```text
 <property
   name="ANTPROPERTIES"
   value="properties/javadb-build-properties.xml"/>
@@ -204,7 +206,7 @@ In the `build.xml` file, modify the property `ANTPROPERTIES` to refer to either 
 
 Similarly, if you are using MySQL, your `build.xml` file would contain this:
 
-```
+```text
 <property
   name="ANTPROPERTIES"
   value="properties/mysql-build-properties.xml"/>
@@ -258,7 +260,7 @@ The tutorial samples use the values in either the `properties/javadb-sample-prop
 
 At a command prompt, change the current directory to `*<JDBC tutorial directory>*`. From this directory, run the following command to compile the samples and package them in a jar file:
 
-```
+```text
 ant jar
 ```
 
@@ -266,7 +268,7 @@ ant jar
 
 If you are using MySQL, then run the following command to create a database:
 
-```
+```text
 ant create-mysql-database
 ```
 
@@ -274,7 +276,7 @@ ant create-mysql-database
 
 If you are using either Java DB or MySQL, then from the same directory, run the following command to delete existing sample database tables, recreate the tables, and populate them. For Java DB, this command also creates the database if it does not already exist:
 
-```
+```text
 ant setup
 ```
 
@@ -305,6 +307,6 @@ Each target in the `build.xml` file corresponds to a Java class or SQL script in
 
 For example, to run the class `CoffeesTable`, change the current directory to `*<JDBC tutorial directory>*`, and from this directory, run the following command:
 
-```
+```text
 ant runct
 ```

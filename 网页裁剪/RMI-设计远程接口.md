@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Designing a Remote Interface (The Java™ Tutorials >        
+            RMI)
 
 Documentation
 
@@ -54,7 +56,7 @@ import java.rmi.RemoteException;
 public interface Compute extends Remote {
     <T> T executeTask(Task<T> t) throws RemoteException;
 }
-```
+```java
 
 By extending the interface `java.rmi.Remote`, the `Compute` interface identifies itself as an interface whose methods can be invoked from another Java virtual machine. Any object that implements this interface can be a remote object.
 

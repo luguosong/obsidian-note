@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Customized Type Mappings (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -85,7 +87,7 @@ The first thing required for a custom mapping is to create a class that implemen
 
 The SQL definition of the structured type `ADDRESS` looks like this:
 
-```
+```sql
 CREATE TYPE ADDRESS
 (
   NUM INTEGER,
@@ -130,17 +132,15 @@ public class Address implements SQLData {
         stream.writeString(zip);
     }
 }
-```
 
 ## Using a Connection's Type Map
 
 After writing a class that implements the interface `SQLData`, the only other thing you have to do to set up a custom mapping is to make an entry in a type map. For the example, this means entering the fully qualified SQL name for the `ADDRESS` type and the `Class` object for the class `Address`. A type map, an instance of the `java.util.Map` interface, is associated with every new connection when it is created, so you use that one. Assuming that `con` is the active connection, the following code fragment adds an entry for the UDT `ADDRESS` to the type map associated with `con`.
 
-```
 java.util.Map map = con.getTypeMap();
 map.put("SchemaName.ADDRESS", Class.forName("Address"));
 con.setTypeMap(map);
-```
+```text
 
 Whenever you call the `getObject` method to retrieve an instance of the `ADDRESS` type, the driver will check the type map associated with the connection and see that it has an entry for `ADDRESS`. The driver will note the `Class` object for the `Address` class, create an instance of it, and do many other things in the background to map `ADDRESS` to `Address`. You do not have to do anything more than generate the class for the mapping and then make an entry in a type map to let the driver know that there is a custom mapping. The driver will do all the rest.
 
@@ -166,7 +166,7 @@ ResultSet rs = stmt.executeQuery(
     "WHERE STORE_NO = 100003");
 rs.next();
 Address store_3 = (Address)rs.getObject("LOCATION");
-```
+```text
 
 The variable `store_3` is now an instance of the class `Address`, with each attribute value being the current value of one of the fields of `Address`. Note that you must remember to convert the object retrieved by the `getObject` method to an `Address` object before assigning it to `store_3`. Note also that `store_3` must be an `Address` object.
 

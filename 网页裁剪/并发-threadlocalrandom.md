@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Concurrent Random Numbers (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -27,6 +29,6 @@ For concurrent access, using `ThreadLocalRandom` instead of `Math.random()` resu
 
 All you need to do is call `ThreadLocalRandom.current()`, then call one of its methods to retrieve a random number. Here is one example:
 
-```
+```text
 int r = ThreadLocalRandom.current() .nextInt(4, 77);
 ```

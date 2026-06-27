@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Developing Draggable Applets (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -104,13 +106,11 @@ You can enable the capability to drag an applet by setting the `draggable` param
     var parameters = { jnlp_href: 'draggableapplet.jnlp', draggable: 'true' };
     deployJava.runApplet(attributes, parameters, '1.6');
 </script>
-```
 
 ## Changing the Keystroke and Mouse Button Sequence That Is Used to Drag an Applet
 
 You can change the keystroke and mouse button sequence that is used to drag an applet by implementing the `isAppletDragStart` method. In the following code snippet, the applet can be dragged by pressing the left mouse button and dragging the mouse:
 
-```
 public boolean isAppletDragStart(MouseEvent e) {
        if(e.getID() == MouseEvent.MOUSE_DRAGGED) {
            return true;
@@ -118,7 +118,6 @@ public boolean isAppletDragStart(MouseEvent e) {
            return false;
        }
    }
-```
 
 ## Enabling the Addition of a Desktop Shortcut When the Applet Is Disconnected From the Browser
 
@@ -132,7 +131,6 @@ If the user closes the browser window or navigates away from the page after drag
         <desktop />
     </shortcut>
 </information>
-```
 
 ---
 
@@ -162,7 +160,7 @@ public void setAppletCloseListener(ActionListener cl) {
 public void appletRestored() {
     display.setCloseListener(null);
 }
-```
+```text
 
 The `MenuItemChooser` class is responsible for controlling the applet's user interface. The `MenuItemChooser` class defines a `JButton` labeled "Close." The following code is executed when the user clicks this Close button:
 
@@ -174,7 +172,7 @@ private void close() {
         closeListener.actionPerformed(null);
     }
 }
-```
+```javascript
 
 ## Requesting and Customizing Applet Decoration
 

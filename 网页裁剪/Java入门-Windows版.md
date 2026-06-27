@@ -1,14 +1,15 @@
 ---
 分类:
   - "网页裁剪"
-标题: ""Hello World!" for Microsoft Windows (The Java™ Tutorials >        
-            Getting Started > The "Hello World!" Application)"
+标题: "Windows 版 Hello World"
 描述: "This beginner Java tutorial describes getting started with Java and setting up your Netbeans IDE"
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+
+# Windows 版 Hello World
 
 Documentation
 
@@ -82,7 +83,6 @@ class HelloWorldApp {
         System.out.println("Hello World!"); // Display the string.
     }
 }
-```
 
 **Be Careful When You Type** ![[Java-Windows-typeA.gif]] ![[Java-Windows-typea2.gif]]
 
@@ -121,9 +121,8 @@ The prompt shows your *current directory*. When you bring up the prompt, your cu
 
 To compile your source file, change your current directory to the directory where your file is located. For example, if your source directory is `myapplication` on the `C` drive, type the following command at the prompt and press **Enter**:
 
-```
 cd C:\myapplication
-```
+```text
 
 Now the prompt should change to `C:\myapplication>`.
 
@@ -161,17 +160,17 @@ C:\myapplication>dir
                2 Dir(s)  93,297,991,680 bytes free
 
 C:\myapplication>
-```
+```text
 
 Now you are ready to compile. At the prompt, type the following command and press **Enter**.
 
-```
+```bash
 javac HelloWorldApp.java
-```
+```text
 
 The compiler has generated a bytecode file, `HelloWorldApp.class`. At the prompt, type `dir` to see the new file that was generated as follows:
 
-```
+```bash
 C:\myapplication>javac HelloWorldApp.java
 
 C:\myapplication>dir
@@ -188,7 +187,6 @@ C:\myapplication>dir
                2 Dir(s)  93,298,032,640 bytes free
 
 C:\myapplication>
-```
 
 Now that you have a `.class` file, you can run your program.
 
@@ -198,13 +196,12 @@ If you encounter problems with the instructions in this step, consult the [[常�
 
 In the same directory, enter the following command at the prompt:
 
-```
 java -cp . HelloWorldApp
-```
+```text
 
 You should see the following on your screen:
 
-```
+```text
 C:\myapplication>java -cp . HelloWorldApp
 Hello World!
 

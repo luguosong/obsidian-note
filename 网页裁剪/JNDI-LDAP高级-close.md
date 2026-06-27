@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Closing (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -29,7 +31,7 @@ You invoke [Context.close()](https://docs.oracle.com/javase/8/docs/api/javax/nam
 
 In the [`example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Shared.java) from the [[JNDI-LDAP高级-create|Connection Creation]] example section, all three Context instances must be closed before the underlying connection is closed.
 
-```
+```text
 // Create initial context
 DirContext ctx = new InitialDirContext(env);
 
@@ -51,7 +53,7 @@ ctx3.close();
 
 As mentioned previously, for those Context and NamingEnumeration instances that are no longer in scope, the Java runtime system will eventually garbage collect them, thus cleaning up the state that a close() would have done. To force the garbage collection, you can use the following code.
 
-```
+```text
 Runtime.getRuntime().gc();
 Runtime.getRuntime().runFinalization();
 ```

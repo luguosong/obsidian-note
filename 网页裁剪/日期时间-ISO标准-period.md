@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Period and Duration (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -35,7 +37,7 @@ A Duration is most suitable in situations that measure machine-based time, such 
 
 The following code calculates, in nanoseconds, the duration between two instants:
 
-```
+```text
 Instant t1, t2;
 ...
 long ns = Duration.between(t1, t2).toNanos();
@@ -43,7 +45,7 @@ long ns = Duration.between(t1, t2).toNanos();
 
 The following code adds 10 seconds to an Instant:
 
-```
+```text
 Instant start;
 ...
 Duration gap = Duration.ofSeconds(10);
@@ -56,7 +58,7 @@ A Duration is not connected to the timeline, in that it does not track time zone
 
 The ChronoUnit enum, discussed in the [[日期时间-ISO标准-temporal|The Temporal Package]], defines the units used to measure time. The ChronoUnit.between method is useful when you want to measure an amount of time in a single unit of time only, such as days or seconds. The between method works with all temporal-based objects, but it returns the amount in a single unit only. The following code calculates the gap, in milliseconds, between two time-stamps:
 
-```
+```java
 import java.time.Instant;
 import java.time.temporal.Temporal;
 import java.time.temporal.ChronoUnit;
@@ -68,7 +70,6 @@ if (previous != null) {
     gap = ChronoUnit.MILLIS.between(previous,current);
 }
 ...
-```
 
 ## Period
 
@@ -78,7 +79,7 @@ The total period of time is represented by all three units together: months, day
 
 The following code reports how old you are, assuming that you were born on January 1, 1960. The Period class is used to determine the time in years, months, and days. The same period, in total days, is determined by using the ChronoUnit.between method and is displayed in parentheses:
 
-```
+```java
 LocalDate today = LocalDate.now();
 LocalDate birthday = LocalDate.of(1960, Month.JANUARY, 1);
 
@@ -87,17 +88,16 @@ long p2 = ChronoUnit.DAYS.between(birthday, today);
 System.out.println("You are " + p.getYears() + " years, " + p.getMonths() +
                    " months, and " + p.getDays() +
                    " days old. (" + p2 + " days total)");
-```
 
 The code produces output similar to the following:
 
-```
+```text
 You are 53 years, 4 months, and 29 days old. (19508 days total)
 ```
 
 To calculate how long it is until your next birthday, you could use the following code from the [`Birthday`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/Birthday.java) example. The Period class is used to determine the value in months and days. The ChronoUnit.between method returns the value in total days and is displayed in parentheses.
 
-```
+```java
 LocalDate birthday = LocalDate.of(1960, Month.JANUARY, 1);
 
 LocalDate nextBDay = birthday.withYear(today.getYear());
@@ -112,11 +112,11 @@ long p2 = ChronoUnit.DAYS.between(today, nextBDay);
 System.out.println("There are " + p.getMonths() + " months, and " +
                    p.getDays() + " days until your next birthday. (" +
                    p2 + " total)");
-```
+```text
 
 The code produces output similar to the following:
 
-```
+```text
 There are 7 months, and 2 days until your next birthday. (216 total)
 ```
 

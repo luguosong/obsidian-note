@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Paged Results Control (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)
 
 Documentation
 
@@ -52,7 +54,6 @@ The example below illustrates the client-server interaction between a client doi
 	 // Perform the search
 	 NamingEnumeration results = ctx.search("", "(objectclass=*)", 
 	                                        new SearchControls());
-	```
 2. The server responds with entries plus an indication of 21 total entries in the search result and an opaque cookie to be used by the client when retrieving subsequent pages.
 	```java
 	// Iterate over a batch of search results sent by the server
@@ -79,7 +80,6 @@ The example below illustrates the client-server interaction between a client doi
 	              }
 	          }
 	      }
-	```
 3. Client sends an identical search request, returning the opaque cookie, asking for the next page.
 	```bash
 	// Re-activate paged results

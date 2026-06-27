@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Date Classes (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -27,7 +29,7 @@ The Date-Time API provides four classes that deal exclusively with date informat
 
 A [LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) represents a year-month-day in the ISO calendar and is useful for representing a date without a time. You might use a LocalDate to track a significant event, such as a birth date or wedding date. The following examples use the of and with methods to create instances of LocalDate:
 
-```
+```text
 LocalDate date = LocalDate.of(2000, Month.NOVEMBER, 20);
 LocalDate nextWed = date.with(TemporalAdjusters.next(DayOfWeek.WEDNESDAY));
 ```
@@ -36,25 +38,24 @@ For more information about the TemporalAdjuster interface, see [[日期时间-IS
 
 In addition to the usual methods, the LocalDate class offers getter methods for obtaining information about a given date. The [getDayOfWeek](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#getDayOfWeek--) method returns the day of the week that a particular date falls on. For example, the following line of code returns "MONDAY":
 
-```
+```text
 DayOfWeek dotw = LocalDate.of(2012, Month.JULY, 9).getDayOfWeek();
 ```
 
 The following example uses a TemporalAdjuster to retrieve the first Wednesday after a specific date.
 
-```
+```java
 LocalDate date = LocalDate.of(2000, Month.NOVEMBER, 20);
 TemporalAdjuster adj = TemporalAdjusters.next(DayOfWeek.WEDNESDAY);
 LocalDate nextWed = date.with(adj);
 System.out.printf("For the date of %s, the next Wednesday is %s.%n",
                   date, nextWed);
-```
+```text
 
 Running the code produces the following:
 
 ```
 For the date of 2000-11-20, the next Wednesday is 2000-11-22.
-```
 
 The [[日期时间-ISO标准-period|Period and Duration]] section also has examples using the LocalDate class.
 
@@ -62,7 +63,7 @@ The [[日期时间-ISO标准-period|Period and Duration]] section also has examp
 
 The [YearMonth](https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html) class represents the month of a specific year. The following example uses the YearMonth.lengthOfMonth() method to determine the number of days for several year and month combinations.
 
-```
+```java
 YearMonth date = YearMonth.now();
 System.out.printf("%s: %d%n", date, date.lengthOfMonth());
 
@@ -71,15 +72,13 @@ System.out.printf("%s: %d%n", date2, date2.lengthOfMonth());
 
 YearMonth date3 = YearMonth.of(2012, Month.FEBRUARY);
 System.out.printf("%s: %d%n", date3, date3.lengthOfMonth());
-```
 
 The output from this code looks like the following:
 
-```
+```yaml
 2013-06: 30
 2010-02: 28
 2012-02: 29
-```
 
 ## MonthDay
 
@@ -87,15 +86,12 @@ The [MonthDay](https://docs.oracle.com/javase/8/docs/api/java/time/MonthDay.html
 
 The following example uses the [MonthDay.isValidYear](https://docs.oracle.com/javase/8/docs/api/java/time/MonthDay.html#isValidYear-int-) method to determine if February 29 is valid for the year 2010. The call returns false, confirming that 2010 is not a leap year.
 
-```
 MonthDay date = MonthDay.of(Month.FEBRUARY, 29);
 boolean validLeapYear = date.isValidYear(2010);
-```
 
 ## Year
 
 The [Year](https://docs.oracle.com/javase/8/docs/api/java/time/Year.html) class represents a year. The following example uses the [Year.isLeap](https://docs.oracle.com/javase/8/docs/api/java/time/Year.html#isLeap--) method to determine if the given year is a leap year. The call returns true, confirming that 2012 is a leap year.
 
-```
 boolean validLeapYear = Year.of(2012).isLeap();
 ```

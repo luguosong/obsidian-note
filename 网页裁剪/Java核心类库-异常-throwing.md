@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Throw Exceptions (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -33,13 +35,13 @@ You can also create *chained* exceptions. For more information, see the [[Java�
 
 All methods use the `throw` statement to throw an exception. The `throw` statement requires a single argument: a throwable object. Throwable objects are instances of any subclass of the `Throwable` class. Here's an example of a `throw` statement.
 
-```
+```text
 throw someThrowableObject;
 ```
 
 Let's look at the `throw` statement in context. The following `pop` method is taken from a class that implements a common stack object. The method removes the top element from the stack and returns the object.
 
-```
+```java
 public Object pop() {
     Object obj;
 

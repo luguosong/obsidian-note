@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Demo - LocationSensitiveDemo (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -88,7 +90,7 @@ A combo box below the tree allows you to toggle the behavior for showing the dro
 
 The `canImport` method for [`` `LocationSensitiveDemo` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/LocationSensitiveDemoProject/src/dnd/LocationSensitiveDemo.java) looks like this:
 
-```
+```bash
 public boolean canImport(TransferHandler.TransferSupport info) {
     // for the demo, we will only support drops (not clipboard paste)
     if (!info.isDrop()) {

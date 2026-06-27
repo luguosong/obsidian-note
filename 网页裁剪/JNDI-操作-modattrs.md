@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Modify Attributes (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)
 
 Documentation
 
@@ -35,7 +37,7 @@ Modifications are applied in the order in which they appear in the list. Either 
 
 The following code creates a list of modifications. It replaces the "mail" attribute's value with a value of "geisel@wizards.com", adds an additional value to the "telephonenumber" attribute, and removes the "jpegphoto" attribute.
 
-```
+```text
 // Specify the changes to make
 ModificationItem[] mods = new ModificationItem[3];
 
@@ -60,7 +62,7 @@ mods[2] = new ModificationItem(DirContext.REMOVE_ATTRIBUTE,
 
 After creating this list of modifications, you can supply it to [modifyAttributes()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#modifyAttributes-javax.naming.Name-javax.naming.directory.ModificationItem:A-) as follows.
 
-```
+```text
 // Perform the requested modifications on the named object
 ctx.modifyAttributes(name, mods);
 ```
@@ -71,7 +73,7 @@ Alternatively, you can perform modifications by specifying the type of modificat
 
 For example, the following line replaces the attributes (identified in orig) associated with name with those in orig:
 
-```
+```text
 ctx.modifyAttributes(name, DirContext.REPLACE_ATTRIBUTE, orig);
 ```
 

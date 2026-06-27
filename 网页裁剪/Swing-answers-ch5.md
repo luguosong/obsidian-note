@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers: Writing Event Listeners (The Java™ Tutorials > Creating a GUI With Swing >
+            )
 
 Documentation
 
@@ -34,7 +36,7 @@ Use this lesson’s tables, the [[Swing-组件|component how-to sections]] and t
 **Question 3:** What listener would you implement to be notified when a spinner’s value has changed? How would you get the spinner’s new value?  
 **Answer 3:** To be notified when the value has changed, you would register a `ChangeListener` on the spinner. You would get the new value through the event's source in the `stateChanged` method. The following code snippet shows how this could be done:
 
-```
+```java
 public void stateChanged(ChangeEvent e) {
     JSpinner mySpinner = (JSpinner)(e.getSource());
     SpinnerNumberModel model = (SpinnerNumberModel)(mySpinner.getModel());

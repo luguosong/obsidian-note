@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Long Term Persistence (The Java™ Tutorials >        
+            JavaBeans(TM) > Advanced JavaBeans Topics)
 
 Documentation
 
@@ -35,7 +37,7 @@ Information on the XML format and on how to implement long-term persistence for 
 
 The [`XMLEncoder`](https://docs.oracle.com/javase/8/docs/api/java/beans/XMLEncoder.html) class is assigned to write output files for textual representation of `Serializable` objects. The following code fragment is an example of writing a Java bean and its properties in XML format:
 
-```
+```text
 XMLEncoder encoder = new XMLEncoder(
            new BufferedOutputStream(
            new FileOutputStream("Beanarchive.xml")));
@@ -46,7 +48,7 @@ encoder.close();
 
 The [`XMLDecoder`](https://docs.oracle.com/javase/8/docs/api/java/beans/XMLDecoder.html) class reads an XML document that was created with XMLEncoder:
 
-```
+```text
 XMLDecoder decoder = new XMLDecoder(
     new BufferedInputStream(
     new FileInputStream("Beanarchive.xml")));
@@ -66,7 +68,7 @@ An XML bean archive has its own specific syntax, which includes the following ta
 	<object class="javax.swing.JButton" method="new">
 	    <string>Ok</string>
 	</object>
-	```
+```text
 	or statements
 	```xml
 	<object class="javax.swing.JButton">
@@ -74,7 +76,7 @@ An XML bean archive has its own specific syntax, which includes the following ta
 	        <string>Cancel</string>
 	            </void>
 	    </object>
-	```
+```
 - tags to define appropriate primitive types:
 	- `**<boolean>**`
 		- `**<byte>**`
@@ -86,16 +88,14 @@ An XML bean archive has its own specific syntax, which includes the following ta
 		- `**<double>**`
 	```xml
 	<int>5555</int>
-	```
 - a **< `class` >** tag to represent an instance of Class.
 	```xml
 	<class>java.swing.JFrame</class>
-	```
 - an **< `array` >** tag to define an array
 	```xml
 	<array class="java.lang.String" length="5">
 	</array>
-	```
+```xml
 
 The following code represents an XML archive that will be generated for the `SimpleBean` component:
 

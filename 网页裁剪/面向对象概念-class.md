@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# What Is a Class? (The Java™ Tutorials >        
+            Learning the Java Language > Object-Oriented Programming Concepts)
 
 Documentation
 
@@ -37,7 +39,7 @@ In the real world, you'll often find many individual objects all of the same kin
 
 The following [`Bicycle`](https://docs.oracle.com/javase/tutorial/java/concepts/examples/Bicycle.java) class is one possible implementation of a bicycle:
 
-```
+```java
 class Bicycle {
 
     int cadence = 0;
@@ -66,7 +68,7 @@ class Bicycle {
              speed + " gear:" + gear);
     }
 }
-```
+```java
 
 The syntax of the Java programming language will look new to you, but the design of this class is based on the previous discussion of bicycle objects. The fields `cadence`, `speed`, and `gear` represent the object's state, and the methods (`changeCadence`, `changeGear`, `speedUp` etc.) define its interaction with the outside world.
 
@@ -74,7 +76,7 @@ You may have noticed that the `Bicycle` class does not contain a `main` method. 
 
 Here's a [`BicycleDemo`](https://docs.oracle.com/javase/tutorial/java/concepts/examples/BicycleDemo.java) class that creates two separate `Bicycle` objects and invokes their methods:
 
-```
+```java
 class BicycleDemo {
     public static void main(String[] args) {
 
@@ -103,7 +105,7 @@ class BicycleDemo {
 
 The output of this test prints the ending pedal cadence, speed, and gear for the two bicycles:
 
-```
+```text
 cadence:50 speed:10 gear:2
 cadence:40 speed:20 gear:3
 ```

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Implementing a Remote Interface (The Java™ Tutorials >        
+            RMI)
 
 Documentation
 
@@ -89,7 +91,7 @@ public class ComputeEngine implements Compute {
         }
     }
 }
-```
+```java
 
 The following sections discuss each component of the compute engine implementation.
 
@@ -109,7 +111,7 @@ The `ComputeEngine` class defines a remote object implementation class that impl
 
 The `ComputeEngine` class has a single constructor that takes no arguments. The code for the constructor is as follows:
 
-```
+```java
 public ComputeEngine() {
     super();
 }
@@ -121,7 +123,7 @@ This constructor just invokes the superclass constructor, which is the no-argume
 
 The class for a remote object provides implementations for each remote method specified in the remote interfaces. The `Compute` interface contains a single remote method, `executeTask`, which is implemented as follows:
 
-```
+```java
 public <T> T executeTask(Task<T> t) {
     return t.execute();
 }
@@ -158,7 +160,7 @@ If an RMI program does not install a security manager, RMI will not download cla
 
 Here's the code that creates and installs a security manager:
 
-```
+```text
 if (System.getSecurityManager() == null) {
     System.setSecurityManager(new SecurityManager());
 }
@@ -168,7 +170,7 @@ if (System.getSecurityManager() == null) {
 
 Next, the `main` method creates an instance of `ComputeEngine` and exports it to the RMI runtime with the following statements:
 
-```
+```text
 Compute engine = new ComputeEngine();
 Compute stub =
     (Compute) UnicastRemoteObject.exportObject(engine, 0);
@@ -188,13 +190,13 @@ The `java.rmi.registry.Registry` remote interface is the API for binding (or reg
 
 The `ComputeEngine` class creates a name for the object with the following statement:
 
-```
+```text
 String name = "Compute";
 ```
 
 The code then adds the name to the RMI registry running on the server. This step is done later with the following statements:
 
-```
+```text
 Registry registry = LocateRegistry.getRegistry();
 registry.rebind(name, stub);
 ```

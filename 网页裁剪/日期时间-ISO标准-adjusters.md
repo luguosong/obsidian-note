@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Temporal Adjuster (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -31,7 +33,7 @@ The [TemporalAdjusters](https://docs.oracle.com/javase/8/docs/api/java/time/temp
 
 The following example uses several TemporalAdjusters methods, in conjunction with the with method defined in the temporal-based classes, to compute new dates based on the original date of 15 October 2000:
 
-```
+```java
 LocalDate date = LocalDate.of(2000, Month.OCTOBER, 15);
 DayOfWeek dotw = date.getDayOfWeek();
 System.out.printf("%s is on a %s%n", date, dotw);
@@ -48,7 +50,7 @@ System.out.printf("first day of next Year: %s%n",
                   date.with(TemporalAdjusters.firstDayOfNextYear()));
 System.out.printf("first day of Year: %s%n",
                   date.with(TemporalAdjusters.firstDayOfYear()));
-```
+```text
 
 This produces the following output:
 
@@ -60,13 +62,13 @@ last day of Month: 2000-10-31
 first day of next Month: 2000-11-01
 first day of next Year: 2001-01-01
 first day of Year: 2000-01-01
-```
+```java
 
 ## Custom Adjusters
 
 You can also create your own custom adjuster. To do this, you create a class that implements the TemporalAdjuster interface with a [adjustInto(Temporal)](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjuster.html#adjustInto-java.time.temporal.Temporal-) method. The [`PaydayAdjuster`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/PaydayAdjuster.java) class from the [`NextPayday`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/NextPayday.java) example is a custom adjuster. The PaydayAdjuster evaluates the passed-in date and returns the next payday, assuming that payday occurs twice a month: on the 15th, and again on the last day of the month. If the computed date occurs on a weekend, then the previous Friday is used. The current calendar year is assumed.
 
-```
+```bash
 /**
  * The adjustInto method accepts a Temporal instance 
  * and returns an adjusted LocalDate. If the passed in
@@ -92,13 +94,13 @@ public Temporal adjustInto(Temporal input) {
 
 The adjuster is invoked in the same manner as a predefined adjuster, using the with method. The following line of code is from the NextPayday example:
 
-```
+```text
 LocalDate nextPayday = date.with(new PaydayAdjuster());
 ```
 
 In 2013, both June 15 and June 30 occur on the weekend. Running the NextPayday example with the respective dates of June 3 and June 18 (in 2013), gives the following results:
 
-```
+```text
 Given the date:  2013 Jun 3
 the next payday: 2013 Jun 14
 

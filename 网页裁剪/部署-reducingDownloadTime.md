@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Reducing the Download Time (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -33,20 +35,20 @@ The following steps describe how to create and deploy a compressed JAR file for 
 
 1. Normalize the JAR file using the `--repack` option.
 	This step ensures that the security certificate and JAR file will pass verification checks when the RIA is launched.
-	```
+```text
 	pack200 --repack DynamicTreeDemo.jar
-	```
+```
 2. Sign the normalized JAR file.
-	```
+```text
 	jarsigner -keystore myKeyStore DynamicTreeDemo.jar me
-	```
+```
 	where `myKeyStore` is the name of the keystore and `me` is the alias for the keystore.
 3. Pack the signed JAR file
-	```
+```text
 	pack200 DynamicTreeDemo.jar.pack.gz DynamicTreeDemo.jar
-	```
+```
 4. Set the `jnlp.packEnabled` property to `true` in the RIA's JNLP file.
-	```
+	```xml
 	<resources>    
 	    <j2se version="1.6+"
 	        href="http://java.sun.com/products/autodl/j2se"

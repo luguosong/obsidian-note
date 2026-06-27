@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Methods of the PatternSyntaxException Class (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -112,11 +114,11 @@ public class RegexTestHarness2 {
         }
     }
 }
-```
+```text
 
 To run this test, enter `?i)foo` as the regular expression. This mistake is a common scenario in which the programmer has forgotten the opening parenthesis in the embedded flag expression `(?i)`. Doing so will produce the following results:
 
-```
+```text
 Enter your regex: ?i)
 There is a problem with the regular expression!
 The pattern in question is: ?i)

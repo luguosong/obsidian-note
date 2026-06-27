@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The finally Block (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -39,7 +41,7 @@ The runtime system always executes the statements within the `finally` block reg
 
 The following `finally` block for the `writeList` method cleans up and then closes the `PrintWriter` and `FileWriter`.
 
-```
+```java
 finally {
     if (out != null) { 
         System.out.println("Closing PrintWriter");
@@ -52,13 +54,13 @@ finally {
         f.close();
     }    
 }
-```
+```java
 
 ---
 
 **Important:** Use a `try-` with-resources statement instead of a `finally` block when closing a file or otherwise recovering resources. The following example uses a `try` -with-resources statement to clean up and close the `PrintWriter` and `FileWriter` for the `writeList` method:
 
-```
+```java
 public void writeList() throws IOException {
     try (FileWriter f = new FileWriter("OutFile.txt");
          PrintWriter out = new PrintWriter(f)) {

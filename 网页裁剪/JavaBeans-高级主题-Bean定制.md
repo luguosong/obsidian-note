@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Bean Customization (The Java™ Tutorials >        
+            JavaBeans(TM) > Advanced JavaBeans Topics)
 
 Documentation
 
@@ -69,7 +71,6 @@ public void paintValue(java.awt.Graphics gfx, java.awt.Rectangle box) {
     gfx.fillRect(box.x+1, box.y+1, box.width-4, box.height-4);
     gfx.setColor(oldColor);
 }
-```
 
 To support the custom property editor, override two more methods. Override `supportsCustomEditor` to return true, and then override `getCustomEditor` to return a custom editor instance. `ColorEditor.getCustomEditor` returns `this`.
 
@@ -80,7 +81,6 @@ In addition, the `PropertyEditorSupport` class maintains a `PropertyChangeListen
 Property editors are discovered and associated with a given property in the following ways:
 
 - Explicit association by way of a `BeanInfo` object. The editor of the title's property is set with the following line of code:
-	```
 	pd.setPropertyEditorClass(TitleEditor.class);
 	```
 - Explicit registration by way of the `java.beans.PropertyEditorManager.registerEditor` method. This method takes two arguments: the bean class type, and the editor class to be associated with that type.

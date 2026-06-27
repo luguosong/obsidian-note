@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Large Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -111,19 +113,19 @@ public void addRowToCoffeeDescriptions(String coffeeName,
     System.out.println("Unexpected exception: " + ex.toString());
   }
 }
-```
+```text
 
 The following line creates a `Clob` Java object:
 
 ```
 Clob myClob = this.con.createClob();
-```
+```text
 
 The following line retrieves a stream (in this case a `Writer` object named `clobWriter`) that is used to write a stream of characters to the `Clob` Java object `myClob`. The method `ClobSample.readFile` writes this stream of characters; the stream is from the file specified by the `String` `fileName`. The method argument `1` indicates that the `Writer` object will start writing the stream of characters at the beginning of the `Clob` value:
 
 ```
 Writer clobWriter = myClob.setCharacterStream(1);
-```
+```java
 
 The `ClobSample.readFile` method reads the file line-by-line specified by the file `fileName` and writes it to the `Writer` object specified by `writerArg`:
 
@@ -147,7 +149,7 @@ private String readFile(String fileName, Writer writerArg) throws IOException {
 
 The following excerpt creates a `PreparedStatement` object `pstmt` that inserts the `Clob` Java object `myClob` into `COFFEE_DESCRIPTIONS`:
 
-```
+```text
 String sql = "INSERT INTO COFFEE_DESCRIPTIONS VALUES(?,?)";
 Clob myClob = this.con.createClob();
 try (PreparedStatement pstmt = this.con.prepareStatement(sql);
@@ -187,19 +189,17 @@ public String retrieveExcerpt(String coffeeName,
   }
   return description;
 }
-```
+```text
 
 The following line retrieves the `Clob` Java value from the `ResultSet` object `rs`:
 
-```
 myClob = rs.getClob(1);
-```
+```text
 
 The following line retrieves a substring from the `myClob` object. The substring begins at the first character of the value of `myClob` and has up to the number of consecutive characters specified in `numChar`, where `numChar` is an integer.
 
 ```
 description = myClob.getSubString(1, numChar);
-```
 
 ## Adding and Retrieving BLOB Objects
 
@@ -211,8 +211,6 @@ Adding and retrieving `BLOB` SQL objects is similar to adding and retrieving `CL
 
 In the following excerpt, the method `Clob.free` is called to release the resources held for a previously created `Clob` object:
 
-```
 Clob aClob = con.createClob();
 int numWritten = aClob.setString(1, val);
 aClob.free();
-```

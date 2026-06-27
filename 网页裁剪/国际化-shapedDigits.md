@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Converting Latin Digits to Other Unicode Digits (The Java™ Tutorials >        
+            Internationalization > Working with Text)
 
 Documentation
 
@@ -25,7 +27,7 @@ By default, when text contains numeric values, those values are displayed using 
 
 The following code snippet, from the [`ArabicDigits`](https://docs.oracle.com/javase/tutorial/i18n/text/examples/ArabicDigits.java) example, shows how to use a `NumericShaper` instance to convert Latin digits to Arabic digits. The line that determines the shaping action is bolded.
 
-```
+```java
 ArabicDigitsPanel(String fontname) {
     HashMap map = new HashMap();
     Font font = new Font(fontname, Font.PLAIN, 60);
@@ -43,7 +45,6 @@ public void paint(Graphics g) {
     Graphics2D g2d = (Graphics2D)g;
     layout.draw(g2d, 10, 50);
 }
-```
 
 The `NumericShaper` instance for Arabic digits is fetched and placed into a `HashMap` for the [`TextLayout.NUMERIC_SHAPING`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextAttribute.html#NUMERIC_SHAPING) attribute key. The hash map is passed to the `TextLayout` instance. After rendering the text in the `paint` method, the digits are displayed in the desired script. In this example, the Latin digits, 0 through 9, are drawn as Arabic digits.
 
@@ -60,7 +61,6 @@ An alternative way to specify a particular set of digits is to use the [`Numeric
 
 The [`ArabicDigitsEnum`](https://docs.oracle.com/javase/tutorial/i18n/text/examples/ArabicDigitsEnum.java) example is identical to the ArabicDigits example, except it uses the `NumericShaper.Range` enum to specify the language script:
 
-```
 ArabicDigitsEnumPanel(String fontname) {
     HashMap map = new HashMap();
     Font font = new Font(fontname, Font.PLAIN, 60);
@@ -70,11 +70,11 @@ ArabicDigitsEnumPanel(String fontname) {
     FontRenderContext frc = new FontRenderContext(null, false, false);
     layout = new TextLayout(text, map, frc);
 }
-```
+```text
 
 Both `getShaper` methods accept a `singleRange` parameter. With either constant type, you can specify a range of script-specific digits. The bit mask-based constants can be combined using the `OR` operand, or you can create a set of `NumericShaper.Range` enums. The following shows how to define a range using each constant type:
 
-```
+```text
 NumericShaper.MONGOLIAN | NumericShaper.THAI |
 NumericShaper.TIBETAN
 EnumSet.of(

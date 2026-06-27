@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Drawing Arbitrary Shapes (The Java™ Tutorials >        
+            2D Graphics > Working with Geometry)
 
 Documentation
 
@@ -31,12 +33,11 @@ You have already learned how to draw most of shapes represented in the `java.awt
 
 This class implements the [`Shape`](https://docs.oracle.com/javase/8/docs/api/java/awt/Shape.html) interface and represents a geometric path constructed from lines, and quadratic and cubic curves. The three constructors in this class can create the [`GeneralPath`](https://docs.oracle.com/javase/8/docs/api/java/awt/geom/GeneralPath.html) object with the default winding rule (`WIND_NON_ZERO`), the given winding rule (`WIND_NON_ZERO` or `WIND_EVEN_ODD`), or the specified initial coordinate capacity. The winding rule specifies how the interior of a path is determined.
 
-```
+```java
 public void paint (Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     ...
 }
-```
 
 To create an empty `GeneralPath` instance call `new GeneralPath()` and then add segments to the shape by using the following methods:
 
@@ -48,7 +49,6 @@ To create an empty `GeneralPath` instance call `new GeneralPath()` and then add 
 
 The following example illustrates how to draw a polyline by using `GeneralPath`:
 
-```
 // draw GeneralPath (polyline)
 int x2Points[] = {0, 100, 0, 100};
 int y2Points[] = {0, 50, 50, 0};
@@ -62,11 +62,11 @@ for (int index = 1; index < x2Points.length; index++) {
 };
 
 g2.draw(polyline);
-```
+```text
 
 This example illustrates how to draw a polygon by using `GeneralPath`:
 
-```
+```text
 // draw GeneralPath (polygon)
 int x1Points[] = {0, 100, 0, 100};
 int y1Points[] = {0, 50, 50, 0};

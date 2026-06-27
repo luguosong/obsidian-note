@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Creation (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -37,7 +39,7 @@ Context instances and [NamingEnumeration s](https://docs.oracle.com/javase/8/doc
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Shared.java).
 
-```
+```text
 // Create initial context
 DirContext ctx = new InitialDirContext(env);
 
@@ -56,7 +58,7 @@ When you change a Context instance's environment properties that are related to 
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/NewConn.java) that uses two connections.
 
-```
+```java
 // Create initial context (first connection)
 DirContext ctx = new InitialDirContext(env);
 
@@ -70,7 +72,6 @@ ctx2.addToEnvironment(Context.SECURITY_CREDENTIALS, "mysecret");
 
 // Method on ctx2 will use new connection
 System.out.println(ctx2.getAttributes("ou=NewHires"));
-```
 
 ctx2 initially shares the same connection with ctx. But when its principal and password properties are changed, it can no longer use ctx 's connection. The LDAP provider will automatically create a new connection for ctx2.
 
@@ -84,7 +85,6 @@ Not all connection creations are successful. If the LDAP provider cannot establi
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Timeout.java).
 
-```
 // Set up environment for creating initial context
 Hashtable env = new Hashtable(11);
 env.put(Context.INITIAL_CONTEXT_FACTORY, 

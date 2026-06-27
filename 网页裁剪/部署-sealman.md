@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Sealing Packages within a JAR File (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -67,10 +69,9 @@ Packages within JAR files can be optionally sealed, which means that all classes
 
 You seal a package in a JAR file by adding the Sealed header in the manifest, which has the general form:
 
-```
+```yaml
 Name: myCompany/myPackage/
 Sealed: true
-```
 
 The value myCompany/myPackage/ is the name of the package to seal.
 
@@ -82,13 +83,12 @@ We want to seal two packages firstPackage and secondPackage in the JAR file MyJa
 
 We first create a text file named Manifest.txt with the following contents:
 
-```
+```yaml
 Name: myCompany/firstPackage/
 Sealed: true
 
 Name: myCompany/secondPackage/
 Sealed: true
-```
 
 ---
 
@@ -98,20 +98,19 @@ Sealed: true
 
 We then create a JAR file named MyJar.jar by entering the following command:
 
-```
+```text
 jar cfm MyJar.jar Manifest.txt MyPackage/*.class
 ```
 
 This creates the JAR file with a manifest with the following contents:
 
-```
+```yaml
 Manifest-Version: 1.0
 Created-By: 1.7.0_06 (Oracle Corporation)
 Name: myCompany/firstPackage/
 Sealed: true
 Name: myCompany/secondPackage/
 Sealed: true
-```
 
 ## Sealing JAR Files
 
@@ -119,7 +118,6 @@ If you want to guarantee that all classes in a package come from the same code s
 
 To seal a JAR file, use the Sealed manifest header with the value true. For example,
 
-```
 Sealed: true
 ```
 

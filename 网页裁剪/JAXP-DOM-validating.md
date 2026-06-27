@@ -1,57 +1,48 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Validating with XML Schema (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Document Object Model)"
-描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+标题: "使用 XML Schema 验证"
+描述: "《Java 教程》JAXP DOM 课程，介绍 XML Schema 验证过程，涵盖配置 DocumentBuilderFactory、将文档关联到模式、使用多命名空间验证，以及运行 DOMEcho 示例。"
 来源: "https://docs.oracle.com/javase/tutorial/jaxp/dom/validating.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 使用 XML Schema 验证
 
-[[JAXP-DOM-when|When to Use DOM]]
+> 文档说明
 
-[[JAXP-DOM-readingXML|Reading XML Data into a DOM]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Validating with XML Schema
+## 使用 XML Schema 验证
 
-[[JAXP-DOM-info|Further Information]]
+本节讨论 XML Schema 验证过程。虽然对 XML Schema 的全面介绍超出了本教程的范围，但本节向你展示了使用 XML Schema 定义验证 XML 文档所需的步骤。（要了解有关 XML Schema 的更多信息，你可以查阅在线教程 [XML Schema Part 0: Primer](http://www.w3.org/TR/xmlschema-0/)。在本节末尾，你还将学习如何使用 XML Schema 定义验证包含来自多个命名空间元素的文档。）
 
-[[JAXP-DOM-readingXML|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-DOM-info|Next »]]
+## 验证过程概述
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+要收到 XML 文档中验证错误的通知，必须满足以下条件：
 
-## Validating with XML Schema
+- 工厂必须已配置，并设置了适当的错误处理器。
+- 文档必须与至少一个模式关联，可能更多。
 
-This section looks at the process of XML Schema validation. Although a full treatment of XML Schema is beyond the scope of this tutorial, this section shows you the steps you take to validate an XML document using an XML Schema definition. (To learn more about XML Schema, you can review the online tutorial, [XML Schema Part 0: Primer](http://www.w3.org/TR/xmlschema-0/). At the end of this section, you will also learn how to use an XML Schema definition to validate a document that contains elements from multiple namespaces.
+## 配置 DocumentBuilderFactory
 
-## Overview of the Validation Process
+首先定义配置工厂时使用的常量很有帮助。这些常量与使用 XML Schema 进行 SAX 解析时定义的常量相同，它们在 DOMEcho 示例程序的开头声明。
 
-To be notified of validation errors in an XML document, the following must be true:
-
-- The factory must configured, and the appropriate error handler set.
-- The document must be associated with at least one schema, and possibly more.
-
-## Configuring the DocumentBuilder Factory
-
-It is helpful to start by defining the constants you will use when configuring the factory. These are the same constants you define when using XML Schema for SAX parsing, and they are declared at the beginning of the DOMEcho example program.
-
-```
+```java
 static final String JAXP_SCHEMA_LANGUAGE =
     "http://java.sun.com/xml/jaxp/properties/schemaLanguage";
 static final String W3C_XML_SCHEMA =
     "http://www.w3.org/2001/XMLSchema";
 ```
 
-Next, you configure DocumentBuilderFactory to generate a namespace-aware, validating parser that uses XML Schema. This is done by calling the setValidating method on the DocumentBuilderFactory instance dbf, that was created in [[JAXP-DOM-readingXML|Instantiate the Factory]].
+接下来，你配置 DocumentBuilderFactory 以生成使用 XML Schema 的命名空间感知、验证解析器。这是通过在 [[JAXP-DOM-readingXML|实例化工厂]]中创建的 DocumentBuilderFactory 实例 dbf 上调用 setValidating 方法来完成的。
 
-```
+```java
 // ...
 
 dbf.setNamespaceAware(true);
@@ -62,7 +53,7 @@ if (xsdValidate) {
         dbf.setAttribute(JAXP_SCHEMA_LANGUAGE, W3C_XML_SCHEMA);
     }
     catch (IllegalArgumentException x) {
-        System.err.println("Error: JAXP DocumentBuilderFactory attribute " 
+        System.err.println("Error: JAXP DocumentBuilderFactory attribute "
                            + "not recognized: " + JAXP_SCHEMA_LANGUAGE);
         System.err.println("Check to see if parser conforms to JAXP spec.");
         System.exit(1);
@@ -72,38 +63,38 @@ if (xsdValidate) {
 // ...
 ```
 
-Because JAXP-compliant parsers are not namespace-aware by default, it is necessary to set the property for schema validation to work. You also set a factory attribute to specify the parser language to use. (For SAX parsing, on the other hand, you set a property on the parser generated by the factory).
+因为符合 JAXP 的解析器默认不是命名空间感知的，所以必须设置此属性才能使模式验证工作。你还设置工厂属性以指定要使用的解析器语言。（另一方面，对于 SAX 解析，你在工厂生成的解析器上设置属性。）
 
-## Associating a Document with a Schema
+## 将文档关联到模式
 
-Now that the program is ready to validate with an XML Schema definition, it is necessary only to ensure that the XML document is associated with (at least) one. There are two ways to do that:
+现在程序已准备好使用 XML Schema 定义进行验证，只需确保 XML 文档与（至少）一个模式关联即可。有两种方法：
 
-- With a schema declaration in the XML document
-- By specifying the schema(s) to use in the application
-
----
-
-**Note -** When the application specifies the schema(s) to use, it overrides any schema declarations in the document.
+- 在 XML 文档中使用模式声明
+- 在应用程序中指定要使用的模式
 
 ---
 
-To specify the schema definition in the document, you would create XML like this:
+**注意 -** 当应用程序指定要使用的模式时，它会覆盖文档中的任何模式声明。
+
+---
+
+要在文档中指定模式定义，你需要创建如下 XML：
 
 `<*documentRoot* xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='*YourSchemaDefinition.xsd*'> [...]`
 
-The first attribute defines the XML namespace (xmlns) prefix, xsi, which stands for "XML Schema instance." The second line specifies the schema to use for elements in the document that do not have a namespace prefix-that is, for the elements you typically define in any simple, uncomplicated XML document. (You will see how to deal with multiple namespaces in the next section.)
+第一个属性定义 XML 命名空间(xmlns) 前缀 xsi，代表"XML Schema instance"。第二行指定用于文档中没有命名空间前缀的元素的模式——即，你通常在任何简单、不复杂的 XML 文档中定义的元素。（你将在下一节中看到如何处理多个命名空间。）
 
-You can also specify the schema file in the application, which is the case for DOMEcho.
+你也可以在应用程序中指定模式文件，DOMEcho 就是这种情况。
 
-```
+```java
 static final String JAXP_SCHEMA_SOURCE =
     "http://java.sun.com/xml/jaxp/properties/schemaSource";
-        
+
 // ...
 
 dbf.setValidating(dtdValidate || xsdValidate);
 if (xsdValidate) {
-    // ...    
+    // ...
 }
 
 if (schemaSource != null) {
@@ -111,60 +102,60 @@ if (schemaSource != null) {
 }
 ```
 
-Here, too, there are mechanisms at your disposal that will let you specify multiple schemas. We will take a look at those next.
+这里也有可用的机制让你指定多个模式。我们接下来看看这些。
 
-## Validating with Multiple Namespaces
+## 使用多个命名空间验证
 
-Namespaces let you combine elements that serve different purposes in the same document without having to worry about overlapping names.
-
----
-
-**Note -** The material discussed in this section also applies to validating when using the SAX parser. You are seeing it here, because at this point you have learned enough about namespaces for the discussion to make sense.
+命名空间允许你在同一文档中组合服务于不同目的的元素，而不必担心名称重叠。
 
 ---
 
-To contrive an example, consider an XML data set that keeps track of personnel data. The data set may include information from a tax declaration form as well as information from the employee's hiring form, with both elements named form in their respective schemas.
+**注意 -** 本节讨论的内容也适用于使用 SAX 解析器时的验证。你在这里看到它，因为此时你已经了解了足够的命名空间知识，使讨论有意义。
 
-If a prefix is defined for the tax namespace, and another prefix defined for the hiring namespace, then the personnel data could include segments like the following.
+---
 
-```
+为了构造一个示例，考虑一个跟踪人事数据的 XML 数据集。该数据集可能包含来自税务申报表的信息以及来自员工招聘表的信息，两个元素在各自的模式中都命名为 form。
+
+如果为税务命名空间定义了一个前缀，为招聘命名空间定义了另一个前缀，那么人事数据可以包含如下片段。
+
+```xml
 <employee id="...">
   <name>....</name>
   <tax:form>
-     ...w2 tax form data...
+     ...w2 税务表数据...
   </tax:form>
   <hiring:form>
-     ...employment history, etc....
+     ...就业历史等...
   </hiring:form>
 </employee>
 ```
 
-The contents of the tax:form element would obviously be different from the contents of the hiring:form element and would have to be validated differently.
+tax:form 元素的内容显然与 hiring:form 元素的内容不同，必须以不同方式验证。
 
-Note, too, that in this example there is a default namespace that the unqualified element names employee and name belong to. For the document to be properly validated, the schema for that namespace must be declared, as well as the schemas for the tax and hiring namespaces.
-
----
-
-**Note -** The default namespace is actually a specific namespace. It is defined as the "namespace that has no name." So you cannot simply use one namespace as your default this week, and another namespace as the default later. This "unnamed namespace" (or "null namespace") is like the number zero. It does not have any value to speak of (no name), but it is still precisely defined. So a namespace that does have a name can never be used as the default namespace.
+还要注意，在此示例中有一个默认命名空间，未限定的元素名 employee 和 name 属于该命名空间。为了正确验证文档，必须声明该命名空间的模式，以及 tax 和 hiring 命名空间的模式。
 
 ---
 
-When parsed, each element in the data set will be validated against the appropriate schema, as long as those schemas have been declared. Again, the schemas can be declared either as part of the XML data set or in the program. (It is also possible to mix the declarations. In general, though, it is a good idea to keep all the declarations together in one place.)
+**注意 -** 默认命名空间实际上是一个特定的命名空间。它被定义为"没有名称的命名空间"。因此，你不能简单地本周将一个命名空间用作默认值，之后再将另一个命名空间用作默认值。这个"未命名的命名空间"（或"null 命名空间"）就像数字零。它没有任何可说的值（没有名称），但它仍然被精确定义。因此，有名称的命名空间永远不能用作默认命名空间。
 
-## Declaring the Schemas in the XML Data Set
+---
 
-To declare the schemas to use for the preceding example in the data set, the XML code would look something like the following.
+解析时，数据集中的每个元素都将根据适当的模式验证，只要这些模式已被声明。同样，模式可以作为 XML 数据集的一部分或在程序中声明。（也可以混合声明。但通常，将所有声明放在一起是个好主意。）
 
-```
+## 在 XML 数据集中声明模式
+
+要在数据集中为前面的示例声明要使用的模式，XML 代码看起来类似于以下内容。
+
+```xml
 <documentRoot
   xmlns:xsi=
   "http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation=
     "employeeDatabase.xsd"
   xsi:schemaLocation=
-  "http://www.irs.gov.example.com/ 
+  "http://www.irs.gov.example.com/
    fullpath/w2TaxForm.xsd
-   http://www.ourcompany.example.com/ 
+   http://www.ourcompany.example.com/
    relpath/hiringForm.xsd"
   xmlns:tax=
     "http://www.irs.gov.example.com/"
@@ -173,24 +164,24 @@ To declare the schemas to use for the preceding example in the data set, the XML
 >
 ```
 
-The noNamespaceSchemaLocation declaration is something you have seen before, as are the last two entries, which define the namespace prefixes tax and hiring. What is new is the entry in the middle, which defines the locations of the schemas to use for each namespace referenced in the document.
+noNamespaceSchemaLocation 声明是你之前见过的，最后两个条目也是如此，它们定义了命名空间前缀 tax 和 hiring。新的是中间的条目，它定义了文档中引用的每个命名空间要使用的模式的位置。
 
-The xsi:schemaLocation declaration consists of entry pairs, where the first entry in each pair is a fully qualified URI that specifies the namespace, and the second entry contains a full path or a relative path to the schema definition. In general, fully qualified paths are recommended. In that way, only one copy of the schema will tend to exist.
+xsi:schemaLocation 声明由条目对组成，每对中的第一个条目是指定命名空间的完全限定 URI，第二个条目包含模式定义的完整路径或相对路径。通常，建议使用完全限定路径。这样，模式往往只存在一个副本。
 
-Note that you cannot use the namespace prefixes when defining the schema locations. The xsi:schemaLocation declaration understands only namespace names and not prefixes.
+注意，定义模式位置时不能使用命名空间前缀。xsi:schemaLocation 声明只理解命名空间名称而不理解前缀。
 
-## Declaring the Schemas in the Application
+## 在应用程序中声明模式
 
-To declare the equivalent schemas in the application, the code would look something like the following.
+要在应用程序中声明等效的模式，代码看起来类似于以下内容。
 
-```
+```java
 static final String employeeSchema = "employeeDatabase.xsd";
 static final String taxSchema = "w2TaxForm.xsd";
 static final String hiringSchema = "hiringForm.xsd";
 
 static final String[] schemas = {
     employeeSchema,
-    taxSchema, 
+    taxSchema,
     hiringSchema,
 };
 
@@ -200,46 +191,46 @@ static final String JAXP_SCHEMA_SOURCE =
 // ...
 
 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance()
-    
+
 // ...
 
 factory.setAttribute(JAXP_SCHEMA_SOURCE, schemas);
 ```
 
-Here, the array of strings that points to the schema definitions (.xsd files) is passed as the argument to the factory.setAttribute method. Note the differences from when you were declaring the schemas to use as part of the XML data set.
+这里，指向模式定义(.xsd 文件) 的字符串数组作为参数传递给 factory.setAttribute 方法。注意与将模式声明为 XML 数据集一部分时的差异。
 
-- There is no special declaration for the default (unnamed) schema.
-- You do not specify the namespace name. Instead, you only give pointers to the .xsd files.
+- 没有（未命名的）默认模式的特殊声明。
+- 你不指定命名空间名称。相反，你只给出 .xsd 文件的指针。
 
-To make the namespace assignments, the parser reads the .xsd files, and finds in them the name of the target namespace they apply to. Because the files are specified with URIs, the parser can use an EntityResolver (if one has been defined) to find a local copy of the schema.
+要进行命名空间分配，解析器读取 .xsd 文件，并在其中找到它们适用的目标命名空间的名称。因为文件用 URI 指定，解析器可以使用 EntityResolver（如果已定义）来查找模式的本地副本。
 
-If the schema definition does not define a target namespace, then it applies to the default (unnamed, or null) namespace. So, in our example, you would expect to see these target namespace declarations in the schemas:
+如果模式定义未定义目标命名空间，则它适用于默认（未命名或 null）命名空间。因此，在我们的示例中，你会期望在模式中看到这些目标命名空间声明：
 
-- A string that points to the URI of the schema
-- An InputStream with the contents of the schema
-- A SAX InputSource
-- A File
-- An array of Objects, each of which is one of the types defined here
+- 指向模式 URI 的字符串
+- 包含模式内容的 InputStream
+- SAX InputSource
+- File
+- Object 数组，每个都是此处定义的类型之一
 
-An array of Objects can be used only when the schema language has the ability to assemble a schema at runtime. Also, when an array of Objects is passed it is illegal to have two schemas that share the same namespace.
+Object 数组只能在模式语言能够在运行时组装模式时使用。此外，传递 Object 数组时，有两个模式共享相同命名空间是非法的。
 
-## Running the DOMEcho Sample With Schema Validation
+## 使用模式验证运行 DOMEcho 示例
 
-To run the DOMEcho sample with schema validation, follow the steps below.
+要使用模式验证运行 DOMEcho 示例，请按以下步骤操作。
 
-1. **Navigate to the samples directory.**`% cd *install-dir*/jaxp-1_4_2-*release-date*/samples.`
-2. **Compile the example class, using the class path you have just set.**`% javac dom/*`
-3. **Run the DOMEcho program on an XML file, specifying schema validation.**
-	Choose one of the XML files in the data directory and run the DOMEcho program on it with the \-xsd option specified. Here, we have chosen to run the program on the file personal-schema.xml.
+1. **导航到示例目录。**`% cd *install-dir*/jaxp-1_4_2-*release-date*/samples.`
+2. **使用你刚设置的类路径编译示例类。**`% javac dom/*`
+3. **在 XML 文件上运行 DOMEcho 程序，指定模式验证。**
+	选择 data 目录中的一个 XML 文件，并使用 -xsd 选项运行 DOMEcho 程序。这里，我们选择在文件 personal-schema.xml 上运行程序。
 	`% java dom/DOMEcho -xsd data/personal-schema.xml`
-	As you saw in [[JAXP-DOM-readingXML|Configuring the Factory]], the \-xsd option tells DOMEcho to perform validation against the XML schema that is defined in the personal-schema.xml file. In this case, the schema is the file personal.xsd, which is also located in the sample/data directory.
-4. **Open personal-schema.xml in a text editor and delete the schema declaration.**
-	Remove the following from the opening <personnel> tag.
+	如你在 [[JAXP-DOM-readingXML|配置工厂]]中所见，-xsd 选项告诉 DOMEcho 对 personal-schema.xml 文件中定义的 XML 模式执行验证。在本例中，模式是文件 personal.xsd，它也位于 sample/data 目录中。
+4. **在文本编辑器中打开 personal-schema.xml 并删除模式声明。**
+	从开始的 <personnel> 标签中删除以下内容。
 	`xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='personal.xsd'`
-	Do not forget to save the file.
-5. **Run DOMEcho again, specifying the \-xsd option once more.**`% java dom/DOMEcho -xsd data/personal-schema.xml`
-	This time, you will see a stream of errors.
-6. **Run DOMEcho one more time, this time specifying the \-xsdss option and specifying the schema definition file.**
-	As you saw in [[JAXP-DOM-readingXML|Configuring the Factory]], the \-xsdss option tells DOMEcho to perform validation against an XML schema definition that is specified when the program is run. Once again, use the file personal.xsd.
+	不要忘记保存文件。
+5. **再次运行 DOMEcho，再次指定 -xsd 选项。**`% java dom/DOMEcho -xsd data/personal-schema.xml`
+	这次，你会看到一系列错误。
+6. **再运行一次 DOMEcho，这次指定 -xsdss 选项并指定模式定义文件。**
+	如你在 [[JAXP-DOM-readingXML|配置工厂]]中所见，-xsdss 选项告诉 DOMEcho 对运行程序时指定的 XML 模式定义执行验证。再次使用文件 personal.xsd。
 	`% java dom/DOMEcho -xsdss data/personal.xsd data/personal-schema.xml`
-	You will see the same output as before, meaning that the XML file has been successfully validated against the schema.
+	你会看到与之前相同的输出，这意味着 XML 文件已成功根据模式验证。

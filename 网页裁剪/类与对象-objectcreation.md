@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Creating Objects (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -79,7 +81,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 As you know, a class provides the blueprint for objects; you create an object from a class. Each of the following statements taken from the [`CreateObjectDemo`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/CreateObjectDemo.java) program creates an object and assigns it to a variable:
 
-```
+```text
 Point originOne = new Point(23, 94);
 Rectangle rectOne = new Rectangle(originOne, 100, 200);
 Rectangle rectTwo = new Rectangle(50, 100);
@@ -97,7 +99,7 @@ Each of these statements has three parts (discussed in detail below):
 
 Previously, you learned that to declare a variable, you write:
 
-```
+```text
 type name;
 ```
 
@@ -105,7 +107,7 @@ This notifies the compiler that you will use *name* to refer to data whose type 
 
 You can also declare a reference variable on its own line. For example:
 
-```
+```text
 Point originOne;
 ```
 
@@ -129,13 +131,13 @@ The new operator requires a single, postfix argument: a call to a constructor. T
 
 The new operator returns a reference to the object it created. This reference is usually assigned to a variable of the appropriate type, like:
 
-```
+```text
 Point originOne = new Point(23, 94);
 ```
 
 The reference returned by the new operator does not have to be assigned to a variable. It can also be used directly in an expression. For example:
 
-```
+```text
 int height = new Rectangle().height;
 ```
 
@@ -155,13 +157,13 @@ public class Point {
         y = b;
     }
 }
-```
+```text
 
 This class contains a single constructor. You can recognize a constructor because its declaration uses the same name as the class and it has no return type. The constructor in the Point class takes two integer arguments, as declared by the code (int a, int b). The following statement provides 23 and 94 as values for those arguments:
 
 ```
 Point originOne = new Point(23, 94);
-```
+```java
 
 The result of executing this statement can be illustrated in the next figure:
 
@@ -208,7 +210,7 @@ public class Rectangle {
 
 Each constructor lets you provide initial values for the rectangle's origin, width, and height, using both primitive and reference types. If a class has multiple constructors, they must have different signatures. The Java compiler differentiates the constructors based on the number and the type of the arguments. When the Java compiler encounters the following code, it knows to call the constructor in the Rectangle class that requires a Point argument followed by two integer arguments:
 
-```
+```text
 Rectangle rectOne = new Rectangle(originOne, 100, 200);
 ```
 
@@ -218,13 +220,13 @@ This calls one of `Rectangle` 's constructors that initializes `origin` to `orig
 
 The following line of code calls the `Rectangle` constructor that requires two integer arguments, which provide the initial values for width and height. If you inspect the code within the constructor, you will see that it creates a new Point object whose x and y values are initialized to 0:
 
-```
+```text
 Rectangle rectTwo = new Rectangle(50, 100);
 ```
 
 The Rectangle constructor used in the following statement doesn't take any arguments, so it's called a *no-argument constructor*:
 
-```
+```text
 Rectangle rect = new Rectangle();
 ```
 

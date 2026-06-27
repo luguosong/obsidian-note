@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Temporal Package (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -39,13 +41,13 @@ The arithmetic-based methods in the Temporal interface require parameters define
 
 The [ChronoField](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoField.html) enum, which implements the TemporalField interface, provides a rich set of constants for accessing date and time values. A few examples are CLOCK\_HOUR\_OF\_DAY, NANO\_OF\_DAY, and DAY\_OF\_YEAR. This enum can be used to express conceptual aspects of time, such as the third week of the year, the 11th hour of the day, or the first Monday of the month. When you encounter a Temporal of unknown type, you can use the [TemporalAccessor.isSupported(TemporalField)](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAccessor.html#isSupported-java.time.temporal.TemporalField-) method to determine if the Temporal supports a particular field. The following line of code returns false, indicating that LocalDate does not support ChronoField.CLOCK\_HOUR\_OF\_DAY:
 
-```
+```text
 boolean isSupported = LocalDate.now().isSupported(ChronoField.CLOCK_HOUR_OF_DAY);
 ```
 
 Additional fields, specific to the ISO-8601 calendar system, are defined in the [IsoFields](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/IsoFields.html) class. The following examples show how to obtain the value of a field using both ChronoField and IsoFields:
 
-```
+```text
 time.get(ChronoField.MILLI_OF_SECOND)
 int qoy = date.get(IsoFields.QUARTER_OF_YEAR);
 ```
@@ -56,7 +58,7 @@ Two other classes define additional fields that may be useful, [WeekFields](http
 
 The [ChronoUnit](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html) enum implements the TemporalUnit interface, and provides a set of standard units based on date and time, from milliseconds to millennia. Note that not all ChronoUnit objects are supported by all classes. For example, the Instant class does not support ChronoUnit.MONTHS or ChronoUnit.YEARS. Classes in the Date-Time API contain the isSupported(TemporalUnit) method that can be used to verify whether a class supports a particular time unit. The following call to isSupported returns false, confirming that the Instant class does not support ChronoUnit.DAYS.
 
-```
+```text
 Instant instant = Instant.now();
 boolean isSupported = instant.isSupported(ChronoUnit.DAYS);
 ```

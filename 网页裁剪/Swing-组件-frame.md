@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Make Frames (Main Windows) (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -119,7 +121,7 @@ Here is a picture of the extremely plain window created by the `FrameDemo` demon
 
 The following `FrameDemo` code shows how to create and set up a frame.
 
-```
+```text
 //1. Create the frame.
 JFrame frame = new JFrame("FrameDemo");
 
@@ -146,9 +148,9 @@ Here are some details about the code:
 	For frames that have menus, you'd typically add the menu bar to the frame here using the `setJMenuBar` method. See [[Swing-组件-menu|How to Use Menus]] for details.
 4. The `pack` method sizes the frame so that all its contents are at or above their preferred sizes. An alternative to `pack` is to establish a frame size explicitly by calling `setSize` or `setBounds` (which also sets the frame location). In general, using `pack` is preferable to calling `setSize`, since `pack` leaves the frame layout manager in charge of the frame size, and layout managers are good at adjusting to platform dependencies and other factors that affect component size.
 	This example does not set the frame location, but it is easy to do so using either the `setLocationRelativeTo` or `setLocation` method. For example, the following code centers a frame onscreen:
-	```
+```text
 	frame.setLocationRelativeTo(null);
-	```
+```
 5. Calling `setVisible(true)` makes the frame appear onscreen. Sometimes you might see the `show` method used instead. The two usages are equivalent, but we use `setVisible(true)` for consistency's sake.
 
 ## Specifying Window Decorations

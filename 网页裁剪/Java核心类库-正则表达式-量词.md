@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Quantifiers (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -34,7 +36,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Let's start our look at greedy quantifiers by creating three different regular expressions: the letter "a" followed by either `?`, `*`, or `+`. Let's see what happens when these expressions are tested against an empty input string `""`:
 
-```
+```text
 Enter your regex: a?
 Enter input string to search: 
 I found the text "" starting at index 0 and ending at index 0.
@@ -54,7 +56,7 @@ In the above example, the match is successful in the first two cases because the
 
 Let's explore zero-length matches with a few more examples. Change the input string to a single letter "a" and you'll notice something interesting:
 
-```
+```text
 Enter your regex: a?
 Enter input string to search: a
 I found the text "a" starting at index 0 and ending at index 1.
@@ -74,7 +76,7 @@ All three quantifiers found the letter "a", but the first two also found a zero-
 
 Now change the input string to the letter "a" five times in a row and you'll get the following:
 
-```
+```text
 Enter your regex: a?
 Enter input string to search: aaaaa
 I found the text "a" starting at index 0 and ending at index 1.
@@ -100,7 +102,7 @@ At this point, you might be wondering what the results would be if the first two
 
 Let's find out:
 
-```
+```text
 Enter your regex: a?
 Enter input string to search: ababaaaab
 I found the text "a" starting at index 0 and ending at index 1.
@@ -135,7 +137,7 @@ Even though the letter "b" appears in cells 1, 3, and 8, the output reports a ze
 
 To match a pattern exactly *n* number of times, simply specify the number inside a set of braces:
 
-```
+```text
 Enter your regex: a{3}
 Enter input string to search: aa
 No match found.
@@ -151,7 +153,7 @@ I found the text "aaa" starting at index 0 and ending at index 3.
 
 Here, the regular expression `a{3}` is searching for three occurrences of the letter "a" in a row. The first test fails because the input string does not have enough a's to match against. The second test contains exactly 3 a's in the input string, which triggers a match. The third test also triggers a match because there are exactly 3 a's at the beginning of the input string. Anything following that is irrelevant to the first match. If the pattern should appear again after that point, it would trigger subsequent matches:
 
-```
+```text
 Enter your regex: a{3}
 Enter input string to search: aaaaaaaaa
 I found the text "aaa" starting at index 0 and ending at index 3.
@@ -161,7 +163,7 @@ I found the text "aaa" starting at index 6 and ending at index 9.
 
 To require a pattern to appear at least *n* times, add a comma after the number:
 
-```
+```text
 Enter your regex: a{3,}
 Enter input string to search: aaaaaaaaa
 I found the text "aaaaaaaaa" starting at index 0 and ending at index 9.
@@ -171,7 +173,7 @@ With the same input string, this test finds only one match, because the 9 a's in
 
 Finally, to specify an upper limit on the number of occurrences, add a second number inside the braces:
 
-```
+```text
 Enter your regex: a{3,6} // find at least 3 (but no more than 6) a's in a row
 Enter input string to search: aaaaaaaaa
 I found the text "aaaaaa" starting at index 0 and ending at index 6.
@@ -186,7 +188,7 @@ Until now, we've only tested quantifiers on input strings containing one charact
 
 Let's illustrate by specifying the group `(dog)`, three times in a row.
 
-```
+```text
 Enter your regex: (dog){3}
 Enter input string to search: dogdogdogdogdogdog
 I found the text "dogdogdog" starting at index 0 and ending at index 9.
@@ -201,7 +203,7 @@ Here the first example finds three matches, since the quantifier applies to the 
 
 Similarly, we can apply a quantifier to an entire character class:
 
-```
+```text
 Enter your regex: [abc]{3}
 Enter input string to search: abccabaaaccbbbc
 I found the text "abc" starting at index 0 and ending at index 3.
@@ -229,7 +231,7 @@ Finally, the possessive quantifiers always eat the entire input string, trying o
 
 To illustrate, consider the input string `xfooxxxxxxfoo`.
 
-```
+```text
 Enter your regex: .*foo  // greedy quantifier
 Enter input string to search: xfooxxxxxxfoo
 I found the text "xfooxxxxxxfoo" starting at index 0 and ending at index 13.

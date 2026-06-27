@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: JAR (The Java™ Tutorials > Deployment >
+            Packaging Programs in JAR Files)
 
 Documentation
 
@@ -25,15 +27,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1. Question: How do you invoke an applet that is packaged as a JAR file?
 	Answer: To invoke an applet packaged as a JAR file, open a page containing the applet:
-	```
+	```xml
 	<applet code=AppletClassName.class
 	        archive="JarFileName.jar"
 	        width=320 height=240>
 	</applet>
-	```
 2. Question: What is the purpose of the `-e` option in a `jar` command?
 	Answer: This option is available since Java SE 6. It sets the entrypoint as the application entry point for stand-alone applications bundled into executable jar file. The use of this option creates or overrides the Main-Class attribute value in the manifest file. This option can be used during creation of jar file or while updating the jar file. This option specifies the application entry point without editing or creating the manifest file. For example, this command creates Main.jar where the Main-Class attribute value in the manifest is set to Main:
-	```
 	jar cfe Main.jar Main Main.class
 	```
 3. Question: What is the significance of the manifest in a JAR file?

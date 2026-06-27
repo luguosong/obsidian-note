@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Expressions, Statements, and Blocks (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -27,9 +29,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 2. Expressions are the core components of \_\_\_.
 3. Statements may be grouped into \_\_\_.
 4. The following code snippet is an example of a \_\_\_ expression.
-	```
+```text
 	1 * 2 * 3
-	```
+```
 5. Statements are roughly equivalent to sentences in natural languages, but instead of ending with a period, a statement ends with a \_\_\_.
 6. A block is a group of zero or more statements between balanced \_\_\_ and can be used anywhere a single statement is allowed.
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Handling Lexical Events (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)
 
 Documentation
 
@@ -71,7 +73,7 @@ Tells when a DTD is being processed, and identifies it.
 
 To activate the Lexical Handler, your application must extend DefaultHandler and implement the LexicalHandler interface. Then, you must configure your XMLReader instance that the parser delegates to, and configure it to send lexical events to your lexical handler, as shown below.
 
-```
+```text
 // ...
 
 SAXParser saxParser = factory.newSAXParser();

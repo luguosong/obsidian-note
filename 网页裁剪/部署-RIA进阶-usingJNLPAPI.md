@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Accessing the Client Using JNLP API (The Java™ Tutorials >        
+            Deployment > Doing More With Java Rich Internet Applications)
 
 Documentation
 
@@ -61,7 +63,7 @@ Remember, the techniques described in this topic apply to Java Web Start applica
 
 To make use of a JNLP service, first retrieve a reference to the service. The `initialize` method of the `FileHandler` class retrieves references to JNLP services as shown in the following code snippet:
 
-```
+```java
 private static synchronized void initialize() {
     ...
     try {
@@ -77,7 +79,7 @@ private static synchronized void initialize() {
 
 After you have a reference to the required services, invoke methods on the service to perform the necessary operations. The `open` method of the `FileHandler` class invokes the `openFileDialog` method of the [`FileOpenService`](https://docs.oracle.com/javase/8/docs/jre/api/javaws/jnlp/javax/jnlp/FileOpenService.html) class to display a file chooser. The `open` method returns the contents of the selected file.
 
-```
+```java
 public static String open() {
     initialize();
     try {
@@ -92,7 +94,7 @@ public static String open() {
 
 Similarly, the `save` and `saveAs` methods of the `FileHandler` class invoke corresponding methods of the [`FileSaveService`](https://docs.oracle.com/javase/8/docs/jre/api/javaws/jnlp/javax/jnlp/FileSaveService.html) class to enable the user to select a file name and save the contents of the text area to disk.
 
-```
+```java
 public static void saveAs(String txt) {
     initialize();
     try {
@@ -109,13 +111,13 @@ public static void saveAs(String txt) {
         ioe.printStackTrace(System.out);
     }
 }
-```
+```java
 
 At runtime, when the RIA attempts to open or save a file, users see a security dialog asking them if they want to allow the action. The operation will proceed only if users allow the RIA to access their environment.
 
 The complete source of the [`FileHandler`](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/examples/applet_JNLP_API/src/FileHandler.java) class is shown next.
 
-```
+```java
 // add javaws.jar to the classpath during compilation 
 import javax.jnlp.FileOpenService;
 import javax.jnlp.FileSaveService;

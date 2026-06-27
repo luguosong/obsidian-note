@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Support Assistive Technologies (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -55,7 +57,7 @@ Assistive technologies — voice interfaces, screen readers, alternate input dev
 
 Because support for the Accessibility API is built into the Swing components, your Swing program will probably work just fine with assistive technologies, even if you do nothing special. For example, assistive technologies can automatically get the text information that is set by the following lines of code:
 
-```
+```text
 JButton button = new JButton("I'm a Swing button!");
 label = new JLabel(labelPrefix + "0    ");
 label.setText(labelPrefix + numClicks);
@@ -74,16 +76,16 @@ Here are a few things you can do to make your program work as well as possible w
 
 - If a component doesn't display a short string (which serves as its default name), specify a name with the `setAccessibleName` method. You might want to do this for image-only buttons, panels that provide logical groupings, text areas, and so on.
 - Set [[Swing-组件-tooltip|tool tip]] text for components whenever it makes sense to do so. For example:
-	```
+```text
 	aJComponent.setToolTipText(
 	     "Clicking this component causes XYZ to happen.");
-	```
+```
 - If you don't want to provide a tool tip for a component, use the `setAccessibleDescription` method to provide a description that assistive technologies can give the user. For example:
-	```
+```text
 	aJComponent.getAccessibleContext().
 	    setAccessibleDescription(
 	    "Clicking this component causes XYZ to happen.");
-	```
+```
 - Specify keyboard alternatives wherever possible. Make sure you can use your program with only the keyboard. Try hiding your mouse! Note that if the focus is in an editable text component, you can use Shift-Tab to move focus to the next component.
 	Support for keyboard alternatives varies by component. [[Swing-按钮|Buttons]] support keyboard alternatives with the `setMnemonic` method. Menus inherit the button mnemonic support and also support accelerators, as described in [[Swing-组件-menu|Enabling Keyboard Operation]]. Other components can use [[Swing-组件-jcomponent|key bindings]] to associate user typing with program actions.
 - Assign a textual description to all [[Swing-组件-icon|`ImageIcon`]] objects in your program. You can set this property by using either the `setDescription` method or one of the `String` forms of the `ImageIcon` constructors.
@@ -151,7 +153,7 @@ The only true test of accessibility is to run your programs with real-world assi
 
 Giving your program's components accessible names and descriptions is one of the easiest and most important steps in making your program accessible. Following is a complete listing of the `AccessibleScrollDemo` constructor that creates the scroll pane and the custom components it uses. The boldface statements give components names and descriptions that assistive technologies can use.
 
-```
+```bash
 public AccessibleScrollDemo() {
     // Get the image to use.
     ImageIcon bee = createImageIcon("images/flyingBee.jpg",
@@ -235,7 +237,6 @@ public AccessibleScrollDemo() {
     add(pictureScrollPane);
     setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 }
-```
 
 Often, the program sets a component's name and description directly through the component's accessible context. Other times, the program sets an accessible description indirectly with tool tips. In the case of the **cm** toggle button, the description is set automatically to the text on the button.
 
@@ -251,9 +252,8 @@ Because the `JComponent` class itself does not implement the `Accessible` interf
 
 All the other standard Swing components implement the `Accessible` interface and have an accessible context that implements one or more of the preceding interfaces as appropriate. The accessible contexts for Swing components are implemented as inner classes and have names of this style:
 
-```
 Component.AccessibleComponent
-```
+```java
 
 If you create a subclass of a standard Swing component and your subclass is substantially different from its superclass, then you should provide a custom accessible context for it. The easiest way is to create a subclass of the superclass's accessible context class and override methods as necessary. For example, if you create a `JLabel` subclass substantially different from `JLabel`, then your `JLabel` subclass should contain an inner class that extends `AccessibleJLabel`. The next section shows how to do so, using examples in which `JComponent` subclasses extend `AccessibleJComponent`.
 
@@ -265,7 +265,7 @@ The `ScrollablePicture` class relies completely on accessibility inherited from 
 
 The accessible version of the `Corner` class contains just enough code to make its instances accessible. We implemented accessibility support by adding the code shown in bold to the original version of `Corner`.
 
-```
+```java
 public class Corner extends JComponent implements Accessible {
 
     protected void paintComponent(Graphics g) {
@@ -291,7 +291,7 @@ All of the accessibility provided by this class is inherited from [`AccessibleJC
 
 `Rule` provides an accessible context for itself in the same manner as `Corner`, but the context overrides two methods to provide details about the component's role and state:
 
-```
+```java
 protected class AccessibleRuler extends AccessibleJComponent {
 
     public AccessibleRole getAccessibleRole() {
@@ -318,7 +318,7 @@ protected class AccessibleRuler extends AccessibleJComponent {
 
 [`AccessibleRole`](https://docs.oracle.com/javase/8/docs/api/javax/accessibility/AccessibleRole.html) is an enumeration of objects that identify roles that Swing components can play. It contains predefined roles such as label, button, and so on. The rulers in our example don't fit well into any of the predefined roles, so the program invents a new one in a subclass of `AccessibleRole`:
 
-```
+```java
 class AccessibleRuleRole extends AccessibleRole {
     public static final AccessibleRuleRole RULER
         = new AccessibleRuleRole("ruler");
@@ -337,7 +337,7 @@ class AccessibleRuleRole extends AccessibleRole {
 
 Any component that has state can provide state information to assistive technologies by overriding the `getAccessibleStateSet` method. A rule has two sets of states: its orientation can be either vertical or horizontal, and its units of measure can be either centimeters or inches. [`AccessibleState`](https://docs.oracle.com/javase/8/docs/api/javax/accessibility/AccessibleState.html) is an enumeration of predefined states. This program uses its predefined states for vertical and horizontal orientation. Because `AccessibleState` contains nothing for centimeters and inches, the program makes a subclass to provide appropriate states:
 
-```
+```java
 class AccessibleRulerState extends AccessibleState {
     public static final AccessibleRulerState INCHES
         = new AccessibleRulerState("inches");

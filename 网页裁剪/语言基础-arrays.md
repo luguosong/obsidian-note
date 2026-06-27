@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Arrays (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -78,7 +80,7 @@ class ArrayDemo {
                            + anArray[9]);
     }
 }
-```
+```text
 
 The output from this program is:
 
@@ -93,7 +95,6 @@ Element at index 6: 700
 Element at index 7: 800
 Element at index 8: 900
 Element at index 9: 1000
-```
 
 In a real-world programming situation, you would probably use one of the supported *looping constructs* to iterate through each element of the array, rather than write each line individually as in the preceding example. However, the example clearly illustrates the array syntax. You will learn about the various looping constructs (`for`, `while`, and `do-while`) in the [[语言基础-flow|Control Flow]] section.
 
@@ -101,10 +102,9 @@ In a real-world programming situation, you would probably use one of the support
 
 The preceding program declares an array (named `anArray`) with the following line of code:
 
-```
 // declares an array of integers
 int[] anArray;
-```
+```text
 
 Like declarations for variables of other types, an array declaration has two components: the array's type and the array's name. An array's type is written as `*type*[]`, where `*type*` is the data type of the contained elements; the brackets are special symbols indicating that this variable holds an array. The size of the array is not part of its type (which is why the brackets are empty). An array's name can be anything you want, provided that it follows the rules and conventions as previously discussed in the [[语言基础-variables|naming]] section. As with variables of other types, the declaration does not actually create an array; it simply tells the compiler that this variable will hold an array of the specified type.
 
@@ -119,14 +119,13 @@ double[] anArrayOfDoubles;
 boolean[] anArrayOfBooleans;
 char[] anArrayOfChars;
 String[] anArrayOfStrings;
-```
+```text
 
 You can also place the brackets after the array's name:
 
 ```
 // this form is discouraged
 float anArrayOfFloats[];
-```
 
 However, convention discourages this form; the brackets identify the array type and should appear with the type designation.
 
@@ -134,16 +133,15 @@ However, convention discourages this form; the brackets identify the array type 
 
 One way to create an array is with the `new` operator. The next statement in the `ArrayDemo` program allocates an array with enough memory for 10 integer elements and assigns the array to the `anArray` variable.
 
-```
 // create an array of integers
 anArray = new int[10];
-```
+```text
 
 If this statement is missing, then the compiler prints an error like the following, and compilation fails:
 
 ```
 ArrayDemo.java:4: Variable anArray may not have been initialized.
-```
+```text
 
 The next few lines assign values to each element of the array:
 
@@ -151,7 +149,7 @@ The next few lines assign values to each element of the array:
 anArray[0] = 100; // initialize first element
 anArray[1] = 200; // initialize second element
 anArray[2] = 300; // and so forth
-```
+```text
 
 Each array element is accessed by its numerical index:
 
@@ -163,7 +161,7 @@ System.out.println("Element 3 at index 2: " + anArray[2]);
 
 Alternatively, you can use the shortcut syntax to create and initialize an array:
 
-```
+```text
 int[] anArray = { 
     100, 200, 300,
     400, 500, 600, 
@@ -190,14 +188,14 @@ class MultiDimArrayDemo {
         System.out.println(names[0][2] + names[1][1]);
     }
 }
-```
+```text
 
 The output from this program is:
 
 ```
 Mr. Smith
 Ms. Jones
-```
+```text
 
 Finally, you can use the built-in `length` property to determine the size of any array. The following code prints the array's size to standard output:
 
@@ -212,7 +210,7 @@ The `System` class has an `arraycopy` method that you can use to efficiently cop
 ```java
 public static void arraycopy(Object src, int srcPos,
                              Object dest, int destPos, int length)
-```
+```java
 
 The two `Object` arguments specify the array to copy *from* and the array to copy *to*. The three `int` arguments specify the starting position in the source array, the starting position in the destination array, and the number of array elements to copy.
 
@@ -237,7 +235,7 @@ class ArrayCopyDemo {
 
 The output from this program is:
 
-```
+```text
 Cappuccino Corretto Cortado Doppio Espresso Frappucino Freddo
 ```
 
@@ -261,7 +259,6 @@ class ArrayCopyOfDemo {
         }            
     }
 }
-```
 
 As you can see, the output from this program is the same, although it requires fewer lines of code. Note that the second parameter of the `copyOfRange` method is the initial index of the range to be copied, inclusively, while the third parameter is the final index of the range to be copied, *exclusively*. In this example, the range to be copied does not include the array element at index 9 (which contains the string `Lungo`).
 
@@ -272,15 +269,12 @@ Some other useful operations provided by methods in the `java.util.Arrays` class
 - Filling an array to place a specific value at each index (the `fill` method).
 - Sorting an array into ascending order. This can be done either sequentially, using the `sort` method, or concurrently, using the `parallelSort` method introduced in Java SE 8. Parallel sorting of large arrays on multiprocessor systems is faster than sequential array sorting.
 - Creating a stream that uses an array as its source (the `stream` method). For example, the following statement prints the contents of the `copyTo` array in the same way as in the previous example:
-	```
 	java.util.Arrays.stream(copyTo).map(coffee -> coffee + " ").forEach(System.out::print);
-	```
 	See [[聚合操作|Aggregate Operations]] for more information about streams.
 - Converting an array to a string. The `toString` method converts each element of the array to a string, separates them with commas, then surrounds them with brackets. For example, the following statement converts the `copyTo` array to a string and prints it:
 	```java
 	System.out.println(java.util.Arrays.toString(copyTo));
-	```
 	This statement prints the following:
-	```
+```text
 	[Cappuccino, Corretto, Cortado, Doppio, Espresso, Frappucino, Freddo]
-	```
+```

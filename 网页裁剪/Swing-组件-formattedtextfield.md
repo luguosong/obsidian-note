@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Formatted Text Fields (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -132,7 +134,7 @@ This GUI uses formatted text fields to display numbers in four different formats
 
 You can find the entire code for this program in [`` `FormattedTextFieldDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FormattedTextFieldDemoProject/src/components/FormattedTextFieldDemo.java). This code creates the first field.
 
-```
+```text
 amountField = new JFormattedTextField(amountFormat);
 amountField.setValue(new Double(amount));
 amountField.setColumns(10);
@@ -153,7 +155,7 @@ This section does not explain the API inherited from the `JTextField` class. Tha
 
 The following code creates and initializes the remaining three fields in the `FormattedTextFieldDemo` example.
 
-```
+```text
 rateField = new JFormattedTextField(percentFormat);
 rateField.setValue(new Double(rate));
 rateField.setColumns(10);
@@ -216,7 +218,7 @@ Note that although the `JFormattedTextField` class inherits the `setText` method
 
 To obtain a formatted text field's current value, use the `getValue` method. If necessary, you can ensure that the value reflects the text by calling the `commitEdit` method before `getValue`. Because the `getValue` method returns an `Object`, you need to cast it to the type used for your field's value. For example:
 
-```
+```text
 Date enteredDate = (Date)dateField.getValue();
 ```
 
@@ -241,7 +243,7 @@ public void propertyChange(PropertyChangeEvent e) {
     double payment = computePayment(amount, rate, numPeriods);
     paymentField.setValue(new Double(payment));
 }
-```
+```java
 
 ## Specifying Formats
 
@@ -323,7 +325,7 @@ Click the Launch button to run FormatterFactoryDemo using [Java™ Web Start](ht
 
 The following code that creates the formatters and sets them up by using instances of the `DefaultFormatterFactory` class:
 
-```
+```java
 private double rate = .075;  //7.5 %
 ...
 amountField = new JFormattedTextField(

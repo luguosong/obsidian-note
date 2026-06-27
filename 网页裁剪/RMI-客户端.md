@@ -32,7 +32,7 @@ package compute;
 public interface Task<T> {
     T execute();
 }
-```
+```java
 
 调用 `Compute` 对象方法的代码必须获取对该对象的引用、创建一个 `Task` 对象，然后请求执行该任务。任务类 `Pi` 的定义稍后展示。`Pi` 对象用单个参数构造，即结果的所需精度。任务执行的结果是一个 `java.math.BigDecimal`，表示计算到指定精度的 π。
 

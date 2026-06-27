@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Export Methods (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -77,7 +79,7 @@ The first set of methods we will examine are used for exporting data from a comp
 
 Here are some sample implementations of the export methods:
 
-```
+```java
 int getSourceActions(JComponent c) {
     return COPY_OR_MOVE;
 }

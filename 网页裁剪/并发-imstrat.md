@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# A Strategy for Defining Immutable Objects (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -39,7 +41,7 @@ Applying this strategy to `SynchronizedRGB` results in the following steps:
 
 After these changes, we have [`` `ImmutableRGB` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/ImmutableRGB.java):
 
-```
+```java
 final public class ImmutableRGB {
 
     // Values must be between 0 and 255.

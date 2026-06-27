@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Tool Bars (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -141,7 +143,7 @@ public class ToolBarDemo extends JPanel
     }
     ...
 }
-```
+```java
 
 This code positions the tool bar above the scroll pane by placing both components in a panel controlled by a border layout, with the tool bar in the `PAGE_START` position and the scroll pane in the `CENTER` position. Because the scroll pane is in the center and no other components except the tool bar are in the container, by default the tool bar can be dragged to other edges of the container. The tool bar can also be dragged out into its own window, in which case the window has the title "Still draggable", as specified by the `JToolBar` constructor.
 
@@ -226,25 +228,25 @@ You can find the entire code for this program in [`ToolBarDemo2.java`](https://d
 
 Because the tool bar can no longer be dragged, it no longer has bumps at its left edge. Here is the code that turns off dragging:
 
-```
+```text
 toolBar.setFloatable(false);
 ```
 
 The tool bar is in rollover mode, so the button under the cursor has a visual indicator. The kind of visual indicator depends on the look and feel. For example, the Metal look and feel uses a gradient effect to indicate the button under the cursor while other types of look and feel use borders for this purpose. Here is the code that sets rollover mode:
 
-```
+```text
 toolBar.setRollover(true);
 ```
 
 Another visible difference in the example above is that the tool bar contains two new components, which are preceded by a blank space called a [[Swing-组件-separator|separator]]. Here is the code that adds the separator:
 
-```
+```text
 toolBar.addSeparator();
 ```
 
 Here is the code that adds the new components:
 
-```
+```text
 //fourth button
 button = new JButton("Another button");
 ...

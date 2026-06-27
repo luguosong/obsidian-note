@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# What Is an Interface? (The Java™ Tutorials >        
+            Learning the Java Language > Object-Oriented Programming Concepts)
 
 Documentation
 
@@ -37,7 +39,7 @@ As you've already learned, objects define their interaction with the outside wor
 
 In its most common form, an interface is a group of related methods with empty bodies. A bicycle's behavior, if specified as an interface, might appear as follows:
 
-```
+```typescript
 interface Bicycle {
 
     //  wheel revolutions per minute
@@ -49,11 +51,11 @@ interface Bicycle {
 
     void applyBrakes(int decrement);
 }
-```
+```java
 
 To implement this interface, the name of your class would change (to a particular brand of bicycle, for example, such as `ACMEBicycle`), and you'd use the `implements` keyword in the class declaration:
 
-```
+```java
 class ACMEBicycle implements Bicycle {
 
     int cadence = 0;

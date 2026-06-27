@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Displaying Documents in the Browser (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -78,7 +80,6 @@ Here are the two forms of `showDocument`:
 ```java
 public void showDocument(java.net.URL url)
 public void showDocument(java.net.URL url, String targetWindow)
-```
 
 The one-argument form of `showDocument` simply instructs the browser to display the document at the specified URL, without specifying the window in which to display the document.
 
@@ -106,7 +107,6 @@ The following applet enables you try every argument of both forms of `showDocume
 
 Following is the applet code that calls `showDocument`. Here is the whole program, [`ShowDocument`](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/applet_ShowDocument/src/ShowDocument.java).
 
-```
 ...//In an Applet subclass:
         urlWindow = new URLWindow(getAppletContext());
         . . .

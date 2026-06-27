@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using the <tt>DTDHandler</tt> and <tt>EntityResolver</tt> (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)
 
 Documentation
 
@@ -62,7 +64,7 @@ The notationDecl method is passed the name of the notation and either the public
 
 Notations can also be used in attribute declarations. For example, the following declaration requires notations for the GIF and PNG image-file formats.
 
-```
+```text
 <!ENTITY image EMPTY>
 <!ATTLIST image ...  type  NOTATION  (gif | png) "gif">
 ```

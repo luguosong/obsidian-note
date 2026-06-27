@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Methods of the Matcher Class (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -110,9 +112,6 @@ public class MatcherDemo {
       }
    }
 }
-```
-
-```
 OUTPUT:
 
 Match number 1
@@ -124,7 +123,7 @@ end(): 7
 Match number 3
 start(): 8
 end(): 11
-```
+```java
 
 You can see that this example uses word boundaries to ensure that the letters `"d" "o" "g"` are not merely a substring in a longer word. It also gives some useful information about where in the input string the match has occurred. The `start` method returns the start index of the subsequence captured by the given group during the previous match operation, and `end` returns the index of the last character matched, plus one.
 
@@ -163,7 +162,7 @@ public class MatchesLooking {
 }
 ```
 
-```
+```text
 Current REGEX is: foo
 Current INPUT is: fooooooooooooooooo
 lookingAt(): true
@@ -193,11 +192,8 @@ public class ReplaceDemo {
         System.out.println(INPUT);
     }
 }
-```
-
-```
 OUTPUT: The cat says meow. All cats say meow.
-```
+```java
 
 In this first version, all occurrences of `dog` are replaced with `cat`. But why stop here? Rather than replace a simple literal like `dog`, you can replace text that matches *any* regular expression. The API for this method states that "given the regular expression `a*b`, the input `aabfooaabfooabfoob`, and the replacement string `-`, an invocation of this method on a matcher for that expression would yield the string `-foo-foo-foo-`."
 
@@ -224,7 +220,7 @@ public class ReplaceDemo2 {
 }
 ```
 
-```
+```text
 OUTPUT: -foo-foo-foo-
 ```
 
@@ -255,9 +251,6 @@ public class RegexDemo {
         System.out.println(sb.toString());
     }
 }
-```
-
-```
 OUTPUT: -foo-foo-foo-
 ```
 

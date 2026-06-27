@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# MXBeans (The Java™ Tutorials >        
+            Java Management Extensions (JMX) > Introducing MBeans)
 
 Documentation
 
@@ -62,7 +64,7 @@ public interface QueueSamplerMXBean {
     public QueueSample getQueueSample(); 
     public void clearQueue(); 
 }
-```
+```java
 
 Note that you declare an MXBean interface in exactly the same way as you declare a standard MBean interface. The `QueueSamplerMXBean` interface declares a getter, `getQueueSample` and an operation, `clearQueue`.
 
@@ -138,7 +140,7 @@ public class QueueSample {
         return head; 
     } 
 }
-```
+```java
 
 In the `QueueSample` class, the MXBean framework calls all the getters in `QueueSample` to convert the given instance into a [`CompositeData`](https://docs.oracle.com/javase/8/docs/api/javax/management/openmbean/CompositeData.html) instance and uses the `@ConstructorProperties` annotation to reconstruct a `QueueSample` instance from a `CompositeData` instance.
 
@@ -192,21 +194,21 @@ The MXBean example uses classes from the [`jmx_examples.zip`](https://docs.oracl
 
 1. If you have not done so already, save [`jmx_examples.zip`](https://docs.oracle.com/javase/tutorial/jmx/examples/jmx_examples.zip) into your `work_dir` directory.
 2. Unzip the bundle of sample classes by using the following command in a terminal window.
-	```
+```text
 	unzip jmx_examples.zip
-	```
+```
 3. Compile the example Java classes from within the `work_dir` directory.
-	```
+```text
 	javac com/example/*.java
-	```
+```
 4. Start the `Main` application. A confirmation that `Main` is waiting for something to happen is generated.
-	```
+```text
 	java com.example.Main
-	```
+```
 5. Start JConsole in a different terminal window on the same machine. The New Connection dialog box is displayed, presenting a list of running JMX agents that you can connect to.
-	```
+```text
 	jconsole
-	```
+```
 6. In the New Connection dialog box, select `com.example.Main` from the list and click Connect.
 	A summary of your platform's current activity is displayed.
 7. Click the MBeans tab.

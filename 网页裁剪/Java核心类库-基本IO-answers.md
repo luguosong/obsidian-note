@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Basic I/O (The Java™ Tutorials > Essential Java Classes >
+            Basic I/O)
 
 Documentation
 
@@ -45,6 +47,6 @@ Exercise 1. Write an example that counts the number of times a particular charac
 
 Answer 1. See [`CountLetter.java`](https://docs.oracle.com/javase/tutorial/essential/io/QandE/CountLetter.java) for the solution.
 
-Exercise 2. The file [[Java核心类库-基本IO-datafile|`datafile`]] begins with a single `long` that tells you the offset of a single `int` piece of data within the same file. Write a program that gets the `int` piece of data. What is the `int` data?
+Exercise 2. The file  begins with a single `long` that tells you the offset of a single `int` piece of data within the same file. Write a program that gets the `int` piece of data. What is the `int` data?
 
 Answer 2. `123`. See [`FindInt.java`](https://docs.oracle.com/javase/tutorial/essential/io/QandE/FindInt.java) for the solution.

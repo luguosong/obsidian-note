@@ -1,60 +1,53 @@
 ---
 分类:
   - "网页裁剪"
-标题: "When to Use DOM (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Document Object Model)"
-描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+标题: "何时使用 DOM"
+描述: "《Java 教程》JAXP DOM 课程，深入对比 DOM 文档模型与 JDOM/dom4j 数据模型的差异——混合内容模型、节点类型、复杂度，帮助你选择最适合应用程序的 XML 处理方案。"
 来源: "https://docs.oracle.com/javase/tutorial/jaxp/dom/when.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 何时使用 DOM
 
-When to Use DOM
+> 文档说明
 
-[[JAXP-DOM-readingXML|Reading XML Data into a DOM]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[JAXP-DOM-validating|Validating with XML Schema]]
+## 何时使用 DOM
 
-[[JAXP-DOM-info|Further Information]]
+文档对象模型标准首先是为文档（例如文章和书籍）设计的。此外，JAXP 1.4.2 实现支持 XML Schema，这对于任何给定应用程序来说可能是一个重要的考虑因素。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+另一方面，如果你处理简单的数据结构，并且 XML Schema 不是你计划的重要组成部分，那么你可能会发现更面向对象的标准之一（如 JDOM 或 dom4j）更适合你的目的。
 
-## When to Use DOM
+从一开始，DOM 就被设计为语言无关的。由于它被设计用于 C 和 Perl 等语言，DOM 没有利用 Java 的面向对象特性。这一事实，加上文档与数据之间的区别，也有助于解释处理 DOM 与处理 JDOM 或 dom4j 结构的不同方式。
 
-The Document Object Model standard is, above all, designed for documents (for example, articles and books). In addition, the JAXP 1.4.2 implementation supports XML Schema, something that can be an important consideration for any given application.
+在本节中，我们将检查这些标准背后的模型差异，以帮助你选择最适合应用程序的方案。
 
-On the other hand, if you are dealing with simple data structures and if XML Schema is not a big part of your plans, then you may find that one of the more object-oriented standards, such as JDOM or dom4j, is better suited for your purpose.
+## 文档与数据
 
-From the start, DOM was intended to be language-neutral. Because it was designed for use with languages such as C and Perl, DOM does not take advantage of Java's object-oriented features. That fact, in addition to the distinction between documents and data, also helps to account for the ways in which processing a DOM differs from processing a JDOM or dom4j structure.
+DOM 中使用的文档模型与 JDOM 或 dom4j 中使用的数据模型之间的主要分歧在于：
 
-In this section, we will examine the differences between the models underlying those standards to help you choose the one that is most appropriate for your application.
+- 层次结构中存在的节点类型
+- 混合内容的能力
 
-## Documents Versus Data
+数据层次结构中什么构成"节点"的差异主要解释了使用这两种模型编程时的差异。然而，混合内容的能力比其他任何东西都更能解释标准定义节点的方式的差异。因此，我们从检查 DOM 的混合内容模型开始。
 
-The major point of departure between the document model used in DOM and the data model used in JDOM or dom4j lies in:
+## 混合内容模型
 
-- The kind of node that exists in the hierarchy
-- The capacity for mixed content
+文本和元素可以在 DOM 层次结构中自由混合。这种结构在 DOM 模型中称为混合内容(mixed content)。
 
-It is the difference in what constitutes a "node" in the data hierarchy that primarily accounts for the differences in programming with these two models. However, the capacity for mixed content, more than anything else, accounts for the difference in how the standards define a node. So we start by examining DOM's mixed-content model.
-
-## Mixed-Content Model
-
-Text and elements can be freely intermixed in a DOM hierarchy. That kind of structure is called mixed content in the DOM model.
-
-Mixed content occurs frequently in documents. For example, suppose you wanted to represent this structure:
+混合内容在文档中经常出现。例如，假设你想表示此结构：
 
 `<sentence>This is an <bold>important</bold> idea.</sentence>`
 
-The hierarchy of DOM nodes would look something like this, where each line represents one node:
+DOM 节点的层次结构看起来像这样，每行代表一个节点：
 
-```
+```text
 ELEMENT: sentence
    + TEXT: This is an
    + ELEMENT: bold
@@ -62,34 +55,34 @@ ELEMENT: sentence
    + TEXT: idea.
 ```
 
-Note that the sentence element contains text, followed by a sub-element, followed by additional text. It is the intermixing of text and elements that defines the mixed-content model.
+注意 sentence 元素包含文本，后跟子元素，后跟额外文本。正是文本和元素的混合定义了混合内容模型。
 
-## Types of Nodes
+## 节点类型
 
-To provide the capacity for mixed content, DOM nodes are inherently very simple. In the foregoing example, the "content" of the first element (its value) simply identifies the kind of node it is.
+为了提供混合内容的能力，DOM 节点本质上非常简单。在前面的示例中，第一个元素的"内容"（其值）简单地标识了它是什么类型的节点。
 
-First-time users of a DOM are usually thrown by this fact. After navigating to the <sentence> node, they ask for the node's "content", and expect to get something useful. Instead, all they can find is the name of the element, sentence.
-
----
-
-**Note -** The DOM Node API defines nodeValue(), nodeType(), and nodeName() methods. For the first element node, nodeName() returns sentence, while nodeValue() returns null. For the first text node, nodeName() returns #text, and nodeValue() returns “ This is an ”. The important point is that the **value** of an element is not the same as its **content**.
+DOM 的初次使用者通常会被这一事实困惑。导航到 `<sentence>` 节点后，他们请求节点的"内容"，期望得到有用的东西。相反，他们能找到的只是元素的名称 sentence。
 
 ---
 
-In the example above, what does it mean to ask for the "text" of the sentence? Any of the following could be reasonable, depending on your application:
+**注意 -** DOM Node API 定义了 nodeValue()、nodeType() 和 nodeName() 方法。对于第一个元素节点，nodeName() 返回 sentence，而 nodeValue() 返回 null。对于第一个文本节点，nodeName() 返回 #text，nodeValue() 返回 "This is an"。重要的一点是，元素的**值**与其**内容**不同。
+
+---
+
+在上面的示例中，请求 sentence 的"文本"意味着什么？以下任何一种都可能是合理的，具体取决于你的应用程序：
 
 - This is an
 - This is an idea.
 - This is an important idea.
 - This is an <bold>important</bold> idea.
 
-## A Simpler Model
+## 更简单的模型
 
-With DOM, you are free to create the semantics you need. However, you are also required to do the processing necessary to implement those semantics. Standards such as JDOM and dom4j, on the other hand, make it easier to do simple things, because each node in the hierarchy is an object.
+使用 DOM，你可以自由创建所需的语义。但是，你也需要执行实现这些语义所需的处理。另一方面，JDOM 和 dom4j 等标准使简单的事情更容易做，因为层次结构中的每个节点都是一个对象。
 
-Although JDOM and dom4j make allowances for elements having mixed content, they are not primarily designed for such situations. Instead, they are targeted for applications where the XML structure contains data.
+虽然 JDOM 和 dom4j 允许元素具有混合内容，但它们主要不是为此类情况设计的。相反，它们面向 XML 结构包含数据的应用程序。
 
-The elements in a data structure typically contain either text or other elements, but not both. For example, here is some XML that represents a simple address book:
+数据结构中的元素通常包含文本或其他元素，但不包含两者。例如，以下是一些表示简单通讯簿的 XML：
 
 ```xml
 <addressbook>
@@ -103,15 +96,15 @@ The elements in a data structure typically contain either text or other elements
 
 ---
 
-**Note -** For very simple XML data structures like this one, you could also use the regular-expression package (java.util.regex) built into the Java platform in version 1.4.
+**注意 -** 对于像这样非常简单的 XML 数据结构，你还可以使用 Java 平台 1.4 版本中内置的正则表达式包(java.util.regex)。
 
 ---
 
-In JDOM and dom4j, after you navigate to an element that contains text, you invoke a method such as text() to get its content. When processing a DOM, though, you must inspect the list of sub-elements to "put together" the text of the node, as you saw earlier - even if that list contains only one item (a TEXT node).
+在 JDOM 和 dom4j 中，导航到包含文本的元素后，你调用 text() 等方法来获取其内容。但是，在处理 DOM 时，你必须检查子元素列表来"拼装"节点的文本，正如你之前看到的——即使该列表只包含一个项目（TEXT 节点）。
 
-So for simple data structures such as the address book, you can save yourself a bit of work by using JDOM or dom4j. It may make sense to use one of those models even when the data is technically "mixed" but there is always one (and only one) segment of text for a given node.
+因此，对于像通讯簿这样的简单数据结构，你可以使用 JDOM 或 dom4j 来节省一些工作。即使数据在技术上是"混合的"，但给定节点总是有且只有一段文本，使用其中一种模型也可能有意义。
 
-Here is an example of that kind of structure, which would also be easily processed in JDOM or dom4j:
+以下是这种结构的示例，它在 JDOM 或 dom4j 中也很容易处理：
 
 ```xml
 <addressbook>
@@ -122,13 +115,13 @@ Here is an example of that kind of structure, which would also be easily process
 </addressbook>
 ```
 
-Here, each entry has a bit of identifying text, followed by other elements. With this structure, the program could navigate to an entry, invoke text() to find out whom it belongs to, and process the <email> sub-element if it is at the correct node.
+这里，每个条目有一些标识文本，后跟其他元素。有了这种结构，程序可以导航到条目，调用 text() 来找出它属于谁，并在正确的节点处理 `<email>` 子元素。
 
-## Increasing the Complexity
+## 增加复杂度
 
-But for you to get a full understanding of the kind of processing you need to do when searching or manipulating a DOM, it is important to know the kinds of nodes that a DOM can conceivably contain.
+但是，为了让你充分理解在搜索或操作 DOM 时需要执行的处理类型，了解 DOM 可能包含的节点类型很重要。
 
-Here is an example that illustrates this point. It is a representation of this data:
+这是一个说明此点的示例。它表示以下数据：
 
 ```xml
 <sentence>
@@ -137,15 +130,15 @@ Here is an example that illustrates this point. It is a representation of this d
 </sentence>
 ```
 
-This sentence contains an **entity reference** - a pointer to an entity that is defined elsewhere. In this case, the entity contains the name of the project. The example also contains a CDATA section (uninterpreted data, like <pre> data in HTML) as well as **processing instructions** (<?...?>), which in this case tell the editor which color to use when rendering the text.
+这个句子包含一个**实体引用**——指向在别处定义的实体的指针。在本例中，实体包含项目名称。该示例还包含一个 CDATA 部分（未解释的数据，如 HTML 中的 `<pre>` 数据）以及**处理指令**(<?...?>)，在本例中告诉编辑器渲染文本时使用哪种颜色。
 
-Here is the DOM structure for that data. It is representative of the kind of structure that a robust application should be prepared to handle:
+以下是该数据的 DOM 结构。它代表了健壮应用程序应该准备处理的结构的典型：
 
 ```xml
 + ELEMENT: sentence
        + TEXT: The
        + ENTITY REF: projectName
-        + COMMENT: 
+        + COMMENT:
         The latest name we are using
         + TEXT: Eagle
        + CDATA: <i>project</i>
@@ -156,37 +149,37 @@ Here is the DOM structure for that data. It is representative of the kind of str
        + PI: editor: normal
 ```
 
-This example depicts the kinds of nodes that may occur in a DOM. Although your application may be able to ignore most of them most of the time, a truly robust implementation needs to recognize and deal with each of them.
+此示例描绘了 DOM 中可能出现的节点类型。虽然你的应用程序在大多数情况下可能能够忽略其中的大部分，但真正健壮的实现需要识别并处理每一种。
 
-Similarly, the process of navigating to a node involves processing sub-elements, ignoring the ones you are not interested in and inspecting the ones you are, until you find the node you are interested in.
+类似地，导航到节点的过程涉及处理子元素——忽略你不感兴趣的，检查你感兴趣的，直到找到你感兴趣的节点。
 
-A program that works on fixed, internally generated data can afford to make simplifying assumptions: that processing instructions, comments, CDATA nodes, and entity references will not exist in the data structure. But truly robust applications that work on a variety of data - especially data coming from the outside world - must be prepared to deal with all possible XML entities.
+处理固定的内部生成数据的程序可以做出简化假设：处理指令、注释、CDATA 节点和实体引用不会存在于数据结构中。但是处理各种数据的真正健壮的应用程序——特别是来自外部的数据——必须准备处理所有可能的 XML 实体。
 
-(A "simple" application will work only as long as the input data contains the simplified XML structures it expects. But there are no validation mechanisms to ensure that more complex structures will not exist. After all, XML was specifically designed to allow them.)
+（"简单"应用程序只有在输入数据包含它期望的简化 XML 结构时才能工作。但没有验证机制来确保不会存在更复杂的结构。毕竟，XML 是专门设计来允许它们的。）
 
-To be more robust, a DOM application must do these things:
+为了更健壮，DOM 应用程序必须做以下事情：
 
-1. When searching for an element:
-	1. Ignore comments, attributes, and processing instructions.
-		2. Allow for the possibility that sub-elements do not occur in the expected order.
-		3. Skip over TEXT nodes that contain ignorable white space, if not validating.
-2. When extracting text for a node:
-	1. Extract text from CDATA nodes as well as text nodes.
-		2. Ignore comments, attributes, and processing instructions when gathering the text.
-		3. If an entity reference node or another element node is encountered, recurse (that is, apply the text-extraction procedure to all sub-nodes).
+1. 搜索元素时：
+	1. 忽略注释、属性和处理指令。
+		2. 允许子元素可能不以预期顺序出现。
+		3. 如果未验证，则跳过包含可忽略空白的 TEXT 节点。
+2. 提取节点的文本时：
+	1. 从 CDATA 节点和文本节点中提取文本。
+		2. 在收集文本时忽略注释、属性和处理指令。
+		3. 如果遇到实体引用节点或另一个元素节点，则递归（即将文本提取过程应用于所有子节点）。
 
-Of course, many applications will not have to worry about such things, because the kind of data they see will be strictly controlled. But if the data can come from a variety of external sources, then the application will probably need to take these possibilities into account.
+当然，许多应用程序不需要担心这些事情，因为它们看到的数据类型将受到严格控制。但如果数据可能来自各种外部来源，那么应用程序可能需要考虑这些可能性。
 
-The code you need to carry out these functions is given near the end of this lesson in [[JAXP-DOM-readingXML|Searching for Nodes]] and [[JAXP-DOM-readingXML|Obtaining Node Content]]. Right now, the goal is simply to determine whether DOM is suitable for your application.
+你需要执行这些功能的代码在本课末尾的 [[JAXP-DOM-readingXML|搜索节点]] 和 [[JAXP-DOM-readingXML|获取节点内容]]中给出。现在的目标只是确定 DOM 是否适合你的应用程序。
 
-## Choosing Your Model
+## 选择你的模型
 
-As you can see, when you are using DOM, even a simple operation such as getting the text from a node can take a bit of programming. So if your programs handle simple data structures, then JDOM, dom4j, or even the 1.4 regular-expression package (java.util.regex) may be more appropriate for your needs.
+如你所见，当你使用 DOM 时，即使是像从节点获取文本这样简单的操作也可能需要一些编程。因此，如果你的程序处理简单的数据结构，那么 JDOM、dom4j 甚至 1.4 正则表达式包(java.util.regex) 可能更适合你的需求。
 
-For fully-fledged documents and complex applications, on the other hand, DOM gives you a lot of flexibility. And if you need to use XML Schema, then again DOM is the way to go - for now, at least.
+另一方面，对于完整的文档和复杂的应用程序，DOM 为你提供了很大的灵活性。如果你需要使用 XML Schema，那么 DOM 又是正确的方式——至少目前是。
 
-If you process both documents and data in the applications you develop, then DOM may still be your best choice. After all, after you have written the code to examine and process a DOM structure, it is fairly easy to customize it for a specific purpose. So choosing to do everything in DOM means that you will only have to deal with one set of APIs, rather than two.
+如果你在开发的应用程序中同时处理文档和数据，那么 DOM 可能仍然是你的最佳选择。毕竟，一旦你编写了检查和处理 DOM 结构的代码，为其特定目的进行定制就相当容易了。因此，选择在 DOM 中完成一切意味着你只需要处理一套 API，而不是两套。
 
-In addition, the DOM standard is a codified standard for an in-memory document model. It is powerful and robust, and it has many implementations. That is a significant decision-making factor for many large installations, particularly for large-scale applications that need to minimize costs resulting from API changes.
+此外，DOM 标准是内存中文档模型的编纂标准。它功能强大且健壮，有许多实现。对于许多大型安装来说，这是一个重要的决策因素，特别是对于需要最小化 API 更改成本的大规模应用程序。
 
-Finally, even though the text in an address book may not permit bold, italics, colors, and font sizes today, one day you may want to handle these things. Because DOM will handle virtually anything you throw at it, choosing DOM makes it easier to future-proof your application.
+最后，即使通讯簿中的文本今天可能不允许粗体、斜体、颜色和字体大小，但有一天你可能想要处理这些东西。因为 DOM 几乎可以处理你抛给它的任何东西，选择 DOM 使你更容易使应用程序面向未来。

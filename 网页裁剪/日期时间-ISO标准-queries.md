@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Temporal Query (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -29,7 +31,7 @@ The [TemporalQueries](https://docs.oracle.com/javase/8/docs/api/java/time/tempor
 
 The [precision](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalQueries.html#precision--) query, for example, returns the smallest ChronoUnit that can be returned by a particular temporal-based object. The following example uses the precision query on several types of temporal-based objects:
 
-```
+```java
 TemporalQuery<TemporalUnit> query = TemporalQueries.precision();
 System.out.printf("LocalDate precision is %s%n",
                   LocalDate.now().query(query));
@@ -41,23 +43,21 @@ System.out.printf("YearMonth precision is %s%n",
                   YearMonth.now().query(query));
 System.out.printf("Instant precision is %s%n",
                   Instant.now().query(query));
-```
+```text
 
 The output looks like the following:
 
-```
+```bash
 LocalDate precision is Days
 LocalDateTime precision is Nanos
 Year precision is Years
 YearMonth precision is Months
 Instant precision is Nanos
-```
 
 ## Custom Queries
 
 You can also create your own custom queries. One way to do this is to create a class that implements the TemporalQuery interface with the [queryFrom(TemporalAccessor)](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalQuery.html#queryFrom-java.time.temporal.TemporalAccessor-) method. The [`CheckDate`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/CheckDate.java) example implements two custom queries. The first custom query can be found in the [`FamilyVacations`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/FamilyVacations.java) class, which implements the [TemporalQuery](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalQuery.html) interface. The queryFrom method compares the passed-in date against scheduled vacation dates and returns TRUE if it falls within those date ranges.
 
-```
 // Returns true if the passed-in date occurs during one of the
 // family vacations. Because the query compares the month and day only,
 // the check succeeds even if the Temporal types are not the same.
@@ -75,11 +75,9 @@ public Boolean queryFrom(TemporalAccessor date) {
 
     return Boolean.FALSE;
 }
-```
 
 The second custom query is implemented in the [`FamilyBirthdays`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/FamilyBirthdays.java) class. This class provides an isFamilyBirthday method that compares the passed-in date against several birthdays and returns TRUE if there is a match.
 
-```
 // Returns true if the passed-in date is the same as one of the
 // family birthdays. Because the query compares the month and day only,
 // the check succeeds even if the Temporal types are not the same.
@@ -101,11 +99,11 @@ public static Boolean isFamilyBirthday(TemporalAccessor date) {
 
     return Boolean.FALSE;
 }
-```
+```text
 
 The FamilyBirthday class does not implement the TemporalQuery interface and can be used as part of a [[类与对象-Lambda表达式|lambda expression]]. The following code, from the CheckDate example, shows how to invoke both custom queries.
 
-```
+```java
 // Invoking the query without using a lambda expression.
 Boolean isFamilyVacation = date.query(new FamilyVacations());
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Transforming Shapes, Text, and Images (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)
 
 Documentation
 
@@ -67,7 +69,7 @@ The following program is the same as `StrokeandFill`, but also allows the user t
 
 When a transform is chosen from the Transform menu, the transform is concatenated onto the `AffineTransform` `at`:
 
-```
+```java
 public void setTrans(int transIndex) {
     // Sets the AffineTransform.
     switch ( transIndex ) {
@@ -86,29 +88,29 @@ public void setTrans(int transIndex) {
         break;
     }
 }
-```
+```text
 
 Before displaying the shape corresponding to the menu choices, the application first retrieves the current transform from the `Graphics2D` object:
 
-```
+```text
 AffineTransform saveXform = g2.getTransform();
-```
+```text
 
 This transform will be restored to the `Graphics2D` after rendering.
 
 After retrieving the current transform, another `AffineTransform`, `toCenterAt`, is created that causes shapes to be rendered in the center of the panel. The `at` `AffineTransform` is concatenated onto `toCenterAt`:
 
-```
+```text
 AffineTransform toCenterAt = new AffineTransform();
 toCenterAt.concatenate(at);
 toCenterAt.translate(-(r.width/2), -(r.height/2));
-```
+```text
 
 The `toCenterAt` transform is concatenated onto the `Graphics2D` transform with the `transform` method:
 
 ```
 g2.transform(toCenterAt);
-```
+```text
 
 After rendering is completed, the original transform is restored using the `setTransform` method:
 

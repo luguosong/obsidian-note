@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Common Java Web Start Problems (The Java™ Tutorials >        
+            Deployment > Java Web Start)
 
 Documentation
 
@@ -47,7 +49,7 @@ Furthermore, if you are using a proxy server, ensure that the update versions of
 
 **Problem:** When I try to launch my JNLP file, I get the following error:
 
-```
+```text
 MissingFieldException[ The following required field is missing from the launch
   file: (<application-desc>|<applet-desc>|<installer-desc>|<component-desc>)]
         at com.sun.javaws.jnl.XMLFormat.parse(Unknown Source)
@@ -64,7 +66,7 @@ Often this error occurs when your XML is malformed. You can stare at the code un
 
 However, this error can occur in a other situations and the above was caused by the following line in an otherwise well-formed XML file:
 
-```
+```xml
 <description kind="short">Demonstrates choosing the drop location in the target <code>TransferHandler</code></description>
 ```
 

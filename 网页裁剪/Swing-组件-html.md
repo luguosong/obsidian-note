@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use HTML in Swing Components (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -107,7 +109,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Many Swing components display a text string as part of their GUI. By default, a component's text is displayed in a single font and color, all on one line. You can determine the font and color of a component's text by invoking the component's `setFont` and `setForeground` methods, respectively. For example, the following code creates a label and then sets its font and color:
 
-```
+```text
 label = new JLabel("A label");
 label.setFont(new Font("Serif", Font.PLAIN, 14));
 label.setForeground(new Color(0xffffdd));
@@ -119,7 +121,6 @@ To specify that a component's text has HTML formatting, just put the `<html>` ta
 
 ```html
 button = new JButton("<html><b><u>T</u>wo</b><br>lines</html>");
-```
 
 Here is the resulting button. ![Screenshot of a button that shows HTML in the Metal look and feel.](https://docs.oracle.com/javase/tutorial/figures/uiswing/components/HtmlButtonMetal.png)
 
@@ -163,7 +164,6 @@ b3 = new JButton("<html><center><b><u>E</u>nable</b><br>"
                  + "<font color=#ffffdd>middle button</font>",
                  rightButtonIcon);
 b3.setFont(font);
-```
 
 Note that we have to use a `<u>` tag to cause the mnemonic characters "D" and "E" to be underlined in the buttons that use HTML. Note also that when a button is disabled, its HTML text unfortunately remains black, instead of becoming gray. (Refer to [bug #4783068](http://bugs.java.com/bugdatabase/view_bug.do?bug_id=4783068) to see if this situation changes.)
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -24,29 +26,29 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Questions
 
 1. Is the following code legal?
-	```
+```text
 	try {
 	    
 	} finally {
 	    
 	}
-	```
+```
 2. What exception types can be caught by the following handler?
-	```
+```text
 	catch (Exception e) {
 	     
 	}
-	```
+```
 	What is wrong with using this type of exception handler?
 3. Is there anything wrong with the following exception handler as written? Will this code compile?
-	```
+```text
 	try {
 	} catch (Exception e) {
 	    
 	} catch (ArithmeticException a) {
 	    
 	}
-	```
+```
 4. Match each situation in the first list with an item in the second list.
 	1. `int[] A;   A[0] = 0;`
 		2. The JVM starts running your program, but the JVM can't find the Java platform classes. (The Java platform classes reside in `classes.zip` or `rt.jar`.)
@@ -59,7 +61,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	## Exercises
 	1. Add a `readList` method to [`` `ListOfNumbers.java` ``](https://docs.oracle.com/javase/tutorial/essential/exceptions/examples/ListOfNumbers.java). This method should read in `int` values from a file, print each value, and append them to the end of the vector. You should catch all appropriate errors. You will also need a text file containing numbers to read in.
 		2. Modify the following `cat` method so that it will compile.
-		```
+		```java
 		public static void cat(File file) {
 		    RandomAccessFile input = null;
 		    String line = null;

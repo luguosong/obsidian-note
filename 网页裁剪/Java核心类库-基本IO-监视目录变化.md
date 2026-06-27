@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Watching a Directory for Changes (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -119,7 +121,7 @@ Here are the basic steps required to implement a watch service:
 
 Because this API is more advanced, try it out before proceeding. Save the [`` `WatchDir` ``](https://docs.oracle.com/javase/tutorial/essential/io/examples/WatchDir.java) example to your computer, and compile it. Create a `test` directory that will be passed to the example. `WatchDir` uses a single thread to process all events, so it blocks keyboard input while waiting for events. Either run the program in a separate window, or in the background, as follows:
 
-```
+```text
 java WatchDir test &
 ```
 
@@ -131,7 +133,7 @@ You can also watch an entire file tree by specifying the `-r` option. When you s
 
 The first step is to create a new [`WatchService`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/WatchService.html) by using the [`newWatchService`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#newWatchService--) method in the `FileSystem` class, as follows:
 
-```
+```text
 WatchService watcher = FileSystems.getDefault().newWatchService();
 ```
 
@@ -160,7 +162,6 @@ try {
 } catch (IOException x) {
     System.err.println(x);
 }
-```
 
 ## Processing Events
 
@@ -247,13 +248,12 @@ for (;;) {
         break;
     }
 }
-```
 
 ## Retrieving the File Name
 
 The file name is retrieved from the event context. The [`` `Email` ``](https://docs.oracle.com/javase/tutorial/essential/io/examples/Email.java) example retrieves the file name with this code:
 
-```
+```text
 WatchEvent<Path> ev = (WatchEvent<Path>)event;
 Path filename = ev.context();
 ```
@@ -263,11 +263,9 @@ When you compile the `Email` example, it generates the following error:
 ```bash
 Note: Email.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-```
 
 This error is a result of the line of code that casts the `WatchEvent<T>` to a `WatchEvent<Path>`. The [`` `WatchDir` ``](https://docs.oracle.com/javase/tutorial/essential/io/examples/WatchDir.java) example avoids this error by creating a utility `cast` method that suppresses the unchecked warning, as follows:
 
-```
 @SuppressWarnings("unchecked")
 static <T> WatchEvent<T> cast(WatchEvent<?> event) {
     return (WatchEvent<Path>)event;

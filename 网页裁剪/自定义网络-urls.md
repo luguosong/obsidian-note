@@ -1,76 +1,62 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Lesson: Working with URLs (The Java™ Tutorials > Custom Networking)"
-描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
-来源: "https://docs.oracle.com/javase/tutorial/networking/urls"
+标题: "使用 URL"
+描述: "《Java 教程》自定义网络路线课程，介绍 URL（统一资源定位符）的概念，以及如何在 Java 程序中使用 java.net.URL 类创建、解析 URL，读取 URL 内容和与 URLConnection 通信。"
+来源: "https://docs.oracle.com/javase/tutorial/networking/urls/index.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 使用 URL
 
-Working with URLs
+> 文档说明
 
-[[自定义网络-definition|What Is a URL?]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[自定义网络-creatingUrls|Creating a URL]]
+## 课程：使用 URL
 
-[[自定义网络-urlInfo|Parsing a URL]]
+URL 是统一资源定位符(Uniform Resource Locator) 的缩写。它是对互联网上资源的引用（地址）。你向最喜欢的 Web 浏览器提供 URL，以便它可以在互联网上定位文件，就像你在信件上提供地址以便邮局可以找到你的收件人一样。
 
-[[自定义网络-readingURL|Reading Directly from a URL]]
-
-[[自定义网络-connecting|Connecting to a URL]]
-
-[[自定义网络-readingWriting|Reading from and Writing to a URLConnection]]
-
-[[overview-overview|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/TOC.html) • [[自定义网络-definition|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: Working with URLs
-
-URL is the acronym for Uniform Resource Locator. It is a reference (an address) to a resource on the Internet. You provide URLs to your favorite Web browser so that it can locate files on the Internet in the same way that you provide addresses on letters so that the post office can locate your correspondents.
-
-Java programs that interact with the Internet also may use URLs to find the resources on the Internet they wish to access. Java programs can use a class called [`URL`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html) in the `java.net` package to represent a URL address.
+与互联网交互的 Java 程序也可以使用 URL 来查找它们希望访问的互联网资源。Java 程序可以使用 `java.net` 包中名为 [`URL`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html) 的类来表示 URL 地址。
 
 ---
 
-**Terminology Note:**
+**术语说明：**
 
-The term *URL* can be ambiguous. It can refer to an Internet address or a `URL` object in a Java program. Where the meaning of URL needs to be specific, this text uses "URL address" to mean an Internet address and " `URL` object" to refer to an instance of the `URL` class in a program.
-
----
-
-## What Is a URL?
-
-A URL takes the form of a string that describes how to find a resource on the Internet. URLs have two main components: the protocol needed to access the resource and the location of the resource.
-
-## Creating a URL
-
-Within your Java programs, you can create a URL object that represents a URL address. The URL object always refers to an absolute URL but can be constructed from an absolute URL, a relative URL, or from URL components.
-
-## Parsing a URL
-
-Gone are the days of parsing a URL to find out the host name, filename, and other information. With a valid URL object you can call any of its accessor methods to get all of that information from the URL without doing any string parsing!
-
-## Reading Directly from a URL
-
-This section shows how your Java programs can read from a URL using the `openStream()` method.
-
-## Connecting to a URL
-
-If you want to do more than just read from a URL, you can connect to it by calling `openConnection()` on the URL. The `openConnection()` method returns a URLConnection object that you can use for more general communications with the URL, such as reading from it, writing to it, or querying it for content and other information.
-
-## Reading from and Writing to a URLConnection
-
-Some URLs, such as many that are connected to cgi-bin scripts, allow you to (or even require you to) write information to the URL. For example, a search script may require detailed query data to be written to the URL before the search can be performed. This section shows you how to write to a URL and how to get results back.
+术语 *URL* 可能不明确。它可以指互联网地址或 Java 程序中的 `URL` 对象。在 URL 的含义需要具体的地方，本文使用"URL 地址"表示互联网地址，使用"`URL` 对象"表示程序中 `URL` 类的实例。
 
 ---
 
-**Previous page:** Previous Lesson  
-**Next page:** What Is a URL?
+## 什么是 URL？
+
+URL 采用字符串形式，描述如何在互联网上找到资源。URL 有两个主要组成部分：访问资源所需的协议和资源的位置。
+
+## 创建 URL
+
+在你的 Java 程序中，你可以创建一个表示 URL 地址的 URL 对象。URL 对象始终引用绝对 URL，但可以从绝对 URL、相对 URL 或 URL 组件构造。
+
+## 解析 URL
+
+解析 URL 以找出主机名、文件名和其他信息的时代已经过去。有了有效的 URL 对象，你可以调用其任何访问器方法来从 URL 获取所有这些信息，而无需进行任何字符串解析！
+
+## 直接从 URL 读取
+
+本节展示你的 Java 程序如何使用 `openStream()` 方法从 URL 读取。
+
+## 连接到 URL
+
+如果你想做的不仅仅是读取 URL，可以通过在 URL 上调用 `openConnection()` 来连接它。`openConnection()` 方法返回一个 URLConnection 对象，你可以将其用于与 URL 的更一般通信，例如从中读取、写入或查询其内容和其他信息。
+
+## 从 URLConnection 读取和写入
+
+某些 URL（例如许多连接到 cgi-bin 脚本的 URL）允许你（甚至要求你）向 URL 写入信息。例如，搜索脚本可能要求在执行搜索之前向 URL 写入详细的查询数据。本节向你展示如何写入 URL 以及如何获取结果。
+
+---
+
+**上一页：** 上一课
+**下一页：** 什么是 URL？

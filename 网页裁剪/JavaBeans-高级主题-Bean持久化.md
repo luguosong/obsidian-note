@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Bean Persistence (The Java™ Tutorials >        
+            JavaBeans(TM) > Advanced JavaBeans Topics)
 
 Documentation
 
@@ -61,7 +63,7 @@ The `Serializable` interface provides automatic serialization by using the Java 
 
 To exclude fields from serialization in a `Serializable` object mark the fields with the `transient` modifier.
 
-```
+```text
 transient int status;
 ```
 
@@ -71,7 +73,7 @@ Default serialization will not serialize `transient` and `static` fields.
 
 If your serializable class contains either of the following two methods (the signatures must be exact), then the default serialization will not take place.
 
-```
+```java
 private void writeObject(java.io.ObjectOutputStream out)
     throws IOException;
 private void readObject(java.io.ObjectInputStream in)

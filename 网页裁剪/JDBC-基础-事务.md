@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Transactions (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -83,7 +85,7 @@ When a connection is created, it is in auto-commit mode. This means that each in
 
 The way to allow two or more statements to be grouped into a transaction is to disable the auto-commit mode. This is demonstrated in the following code, where `con` is an active connection:
 
-```
+```text
 con.setAutoCommit(false);
 ```
 
@@ -125,7 +127,7 @@ public void updateCoffeeSales(HashMap<String, Integer> salesForWeek) throws SQLE
     }
   }
 }
-```
+```java
 
 In this method, the auto-commit mode is disabled for the connection `con`, which means that the two prepared statements `updateSales` and `updateTotal` are committed together when the method `commit` is called. Whenever the `commit` method is called (either automatically when auto-commit mode is enabled or explicitly when it is disabled), all changes resulting from statements in the transaction are made permanent. In this case, that means that the `SALES` and `TOTAL` columns for Colombian coffee have been changed to `50` (if `TOTAL` had been `0` previously) and will retain this value until they are changed with another update statement.
 
@@ -217,19 +219,19 @@ public void modifyPricesByPercentage(
 
 The following statement specifies that the cursor of the `ResultSet` object generated from the `getPrice` query is closed when the `commit` method is called. Note that if your DBMs does not support `ResultSet.CLOSE_CURSORS_AT_COMMIT`, then this constant is ignored:
 
-```
+```text
 getPrice = con.prepareStatement(query, ResultSet.CLOSE_CURSORS_AT_COMMIT);
 ```
 
 The method begins by creating a `Savepoint` with the following statement:
 
-```
+```text
 Savepoint save1 = con.setSavepoint();
 ```
 
 The method checks if the new price is greater than the `maximumPrice` value. If so, the method rolls back the transaction with the following statement:
 
-```
+```text
 con.rollback(save1);
 ```
 

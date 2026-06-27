@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Interfaces (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -31,13 +33,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println("Hi Mom");
 	    }
 	}
-	```
+```java
 3. Fix the interface in question 2.
 4. Is the following interface valid?
 	```java
 	public interface Marker {
 	}
-	```
+```
 
 ## Exercises
 

@@ -1,45 +1,30 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Refining the Design (The Java™ Tutorials >        
-            Creating a GUI With Swing > Performing Custom Painting)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "完善设计"
+描述: "《Java 教程》Swing 自定义绘制课程，将绘制逻辑提取到单独的 RedSquare 类中，使每个正方形作为独立对象处理自己的绘制——这种模式在 2D 游戏编程中常被称为"精灵动画"。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/painting/refining.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 完善设计
 
-[[Swing-step1|Creating the Demo Application (Step 1)]]
+> 文档说明
 
-[[Swing-step2|Creating the Demo Application (Step 2)]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[Swing-step3|Creating the Demo Application (Step 3)]]
+## 完善设计
 
-Refining the Design
+出于演示目的，将绘制逻辑完全包含在 `MyPanel` 类中是合理的。但如果你的应用程序需要跟踪多个实例，一种可以使用的模式是将该代码提取到单独的类中，使每个正方形可以被视为独立的对象。此技术在 2D 游戏编程中很常见，有时被称为"精灵动画(sprite animation)"。
 
-[[Swing-closer|A Closer Look at the Paint Mechanism]]
+单击"启动"按钮使用 [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) 运行 SwingPaintDemo4（[下载 JDK 7 或更高版本](http://www.oracle.com/technetwork/java/javase/downloads/index.html)）。或者，要自己编译和运行示例，请参阅[示例索引](https://docs.oracle.com/javase/tutorial/uiswing/examples/painting/index.html#SwingPaintDemo4)。
 
-[[Swing-summary|Summary]]
-
-[[Swing-problems|Solving Common Painting Problems]]
-
-[[Swing-step3|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-closer|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Refining the Design
-
-For demonstration purposes it makes sense to keep the painting logic entirely contained within the `MyPanel` class. But if your application will need to track multiple instances, one pattern that you could use is to factor that code out into a separate class so that each square can be treated as an individual object. This technique is common in 2D game programming and is sometimes referred to as "sprite animation."
-
-Click the Launch button to run SwingPaintDemo4 using [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) ([download JDK 7 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Alternatively, to compile and run the example yourself, consult the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/painting/index.html#SwingPaintDemo4).
-
-```
+```java
 package painting;
 
 import javax.swing.SwingUtilities;
@@ -48,7 +33,7 @@ import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics; 
+import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseAdapter;
@@ -56,12 +41,12 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseMotionAdapter;
 
 public class SwingPaintDemo4 {
-    
+
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                createAndShowGUI(); 
+                createAndShowGUI();
             }
         });
     }
@@ -70,11 +55,11 @@ public class SwingPaintDemo4 {
         System.out.println("Created GUI on EDT? "+
         SwingUtilities.isEventDispatchThread());
         JFrame f = new JFrame("Swing Paint Demo");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(new MyPanel());
         f.setSize(250,250);
         f.setVisible(true);
-    } 
+    }
 
 }
 
@@ -102,8 +87,8 @@ class MyPanel extends JPanel {
 
     private void moveSquare(int x, int y){
 
-        // Current square state, stored as final variables 
-        // to avoid repeat invocations of the same methods.
+        // 当前正方形状态，存储为 final 变量
+        // 以避免重复调用相同的方法。
         final int CURR_X = redSquare.getX();
         final int CURR_Y = redSquare.getY();
         final int CURR_W = redSquare.getWidth();
@@ -112,17 +97,17 @@ class MyPanel extends JPanel {
 
         if ((CURR_X!=x) || (CURR_Y!=y)) {
 
-            // The square is moving, repaint background 
-            // over the old square location. 
+            // 正方形正在移动，在旧位置
+            // 重绘背景。
             repaint(CURR_X,CURR_Y,CURR_W+OFFSET,CURR_H+OFFSET);
 
-            // Update coordinates.
+            // 更新坐标。
             redSquare.setX(x);
             redSquare.setY(y);
 
-            // Repaint the square at the new location.
-            repaint(redSquare.getX(), redSquare.getY(), 
-                    redSquare.getWidth()+OFFSET, 
+            // 在新位置重绘正方形。
+            repaint(redSquare.getX(), redSquare.getY(),
+                    redSquare.getWidth()+OFFSET,
                     redSquare.getHeight()+OFFSET);
         }
     }
@@ -130,13 +115,13 @@ class MyPanel extends JPanel {
     public Dimension getPreferredSize() {
         return new Dimension(250,200);
     }
-    
+
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);       
+        super.paintComponent(g);
         g.drawString("This is my custom Panel!",10,20);
 
         redSquare.paintSquare(g);
-    }  
+    }
 }
 
 class RedSquare{
@@ -146,7 +131,7 @@ class RedSquare{
     private int width = 20;
     private int height = 20;
 
-    public void setX(int xPos){ 
+    public void setX(int xPos){
         this.xPos = xPos;
     }
 
@@ -164,7 +149,7 @@ class RedSquare{
 
     public int getWidth(){
         return width;
-    } 
+    }
 
     public int getHeight(){
         return height;
@@ -174,9 +159,9 @@ class RedSquare{
         g.setColor(Color.RED);
         g.fillRect(xPos,yPos,width,height);
         g.setColor(Color.BLACK);
-        g.drawRect(xPos,yPos,width,height);  
+        g.drawRect(xPos,yPos,width,height);
     }
 }
 ```
 
-In this particular implementation we have created a `RedSquare` class entirely from scratch. Another approach would be to reuse the functionality of `java.awt.Rectangle` by making the `RedSquare` a subclass of it. Regardless of how `RedSquare` is implemented, the important point is that we have given the class a method that accepts a `Graphics` object, and that method is invoked from the panel's `paintComponent` method. This separation keeps your code clean because it essentially tells each red square to paint itself.
+在此特定实现中，我们从零开始创建了 `RedSquare` 类。另一种方法是通过使 `RedSquare` 成为 `java.awt.Rectangle` 的子类来重用其功能。无论 `RedSquare` 如何实现，重要的是我们给该类一个接受 `Graphics` 对象的方法，该方法从面板的 `paintComponent` 方法调用。这种分离使你的代码保持整洁，因为它本质上是告诉每个红色正方形绘制自己。

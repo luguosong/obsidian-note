@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Writing Final Classes and Methods (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -25,7 +27,7 @@ You can declare some or all of a class's methods *final*. You use the `final` ke
 
 You might wish to make a method final if it has an implementation that should not be changed and it is critical to the consistent state of the object. For example, you might want to make the `getFirstPlayer` method in this `ChessAlgorithm` class final:
 
-```
+```java
 class ChessAlgorithm {
     enum ChessPlayer { WHITE, BLACK }
     ...

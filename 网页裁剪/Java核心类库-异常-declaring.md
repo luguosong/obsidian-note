@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Specifying the Exceptions Thrown by a Method (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -25,7 +27,7 @@ The previous section showed how to write an exception handler for the `writeList
 
 If the `writeList` method doesn't catch the checked exceptions that can occur within it, the `writeList` method must specify that it can throw these exceptions. Let's modify the original `writeList` method to specify the exceptions it can throw instead of catching them. To remind you, here's the original version of the `writeList` method that won't compile.
 
-```
+```java
 public void writeList() {
     PrintWriter out = new PrintWriter(new FileWriter("OutFile.txt"));
     for (int i = 0; i < SIZE; i++) {
@@ -33,16 +35,16 @@ public void writeList() {
     }
     out.close();
 }
-```
+```java
 
 To specify that `writeList` can throw two exceptions, add a `throws` clause to the method declaration for the `writeList` method. The `throws` clause comprises the `throws` keyword followed by a comma-separated list of all the exceptions thrown by that method. The clause goes after the method name and argument list and before the brace that defines the scope of the method; here's an example.
 
-```
+```java
 public void writeList() throws IOException, IndexOutOfBoundsException {
 ```
 
 Remember that `IndexOutOfBoundsException` is an unchecked exception; including it in the `throws` clause is not mandatory. You could just write the following.
 
-```
+```java
 public void writeList() throws IOException {
 ```

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Inner Class Example (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -144,11 +146,11 @@ public class DataStructure {
         ds.printEven();
     }
 }
-```
+```text
 
 The output is:
 
-```
+```text
 0 2 4 6 8 10 12 14
 ```
 

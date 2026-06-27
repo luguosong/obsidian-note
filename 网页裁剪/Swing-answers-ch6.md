@@ -1,63 +1,62 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Answers: Performing Custom Painting (The Java™ Tutorials > Creating a GUI With Swing >
-            )"
-描述: ""
+标题: "答案：执行自定义绘制"
+描述: "《Java 教程》Swing 自定义绘制课程的答案，涵盖 paintComponent 方法、矩形绘制尺寸差异（fillRect vs drawRect）、透明度设置，以及自定义组件、图标和边框的实现。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/QandE/answers-ch6.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 答案：执行自定义绘制
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [TOC](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html)
+> 文档说明
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-## Answers: Performing Custom Painting
+## 答案：执行自定义绘制
 
-## Questions
+## 问题
 
-**Question 1.** What method defined by `JComponent` paints the inside of a component?  
-**Answer 1:** The `paintComponent` method paints a component's innards (with the exception of any children it contains).
+**问题 1.** `JComponent` 定义的哪个方法绘制组件的内部？
+**答案 1：** `paintComponent` 方法绘制组件的内部（不包含它持有的任何子组件）。
 
-**Question 2.** Which of the following code snippets paint a rectangle (filled or not) that is 100x100 pixels?
+**问题 2.** 以下哪些代码片段绘制一个 100x100 像素的矩形（填充或未填充）？
 
-a. `g.fillRect(x, y, 100, 100)`  
-b. `g.fillRect(x, y, 99, 99)`  
-c. `g.drawRect(x, y, 100, 100)`  
-d. b and c  
-e. a and c
+a. `g.fillRect(x, y, 100, 100)`
+b. `g.fillRect(x, y, 99, 99)`
+c. `g.drawRect(x, y, 100, 100)`
+d. b 和 c
+e. a 和 c
 
-**Answer 2:** a. The `drawRect` methods paint lines just below the specified rectangle. So to get a 100x100 rectangle, you need to specify a width and height of 99, 99 to `drawRect`. For `fill*Xxx*` methods, on the other hand, you specify exactly the desired width and height, so `g.fillRect(x, y, 100, 100)` results in a 100x100 rectangle.
+**答案 2：** a。`drawRect` 方法在指定矩形的下方绘制线条。因此，要获得 100x100 的矩形，你需要向 `drawRect` 指定宽度和高度为 99, 99。另一方面，对于 `fill*Xxx*` 方法，你指定精确所需的宽度和高度，因此 `g.fillRect(x, y, 100, 100)` 会产生 100x100 的矩形。
 
-**Question 3.** What code would you use to make a component perform the next painting operation using the background color at 50% transparency?  
-**Answer 3:**
+**问题 3.** 你会使用什么代码使组件以 50% 透明度的背景色执行下一次绘制操作？
+**答案 3：**
 
-```
+```java
 g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
 ```
 
-## Exercises
+## 练习
 
-**Exercise 1.** Using a standard border and custom component painting, implement a component that has a preferred size of 250x100, is opaque by default, has a 5-pixel black border, and paints an “X” (using 5-pixel-thick lines) in the foreground color, as shown in the following figure. ![ComponentDisplayer-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/ComponentDisplayer-1.png)
+**练习 1.** 使用标准边框和自定义组件绘制，实现一个组件，其首选大小为 250x100，默认不透明，有 5 像素的黑色边框，并以前景色绘制"X"（使用 5 像素粗的线条），如下图所示。![ComponentDisplayer-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/ComponentDisplayer-1.png)
 
-**Answer 1:** See `XMarksTheSpot.java`, which you can run using `ComponentDisplayer.java`.
+**答案 1：** 参见 `XMarksTheSpot.java`，你可以使用 `ComponentDisplayer.java` 运行它。
 
-Here's the code that sets the border of the `XMarksTheSpot` component:
+以下是设置 `XMarksTheSpot` 组件边框的代码：
 
-```
+```java
 setBorder(BorderFactory.createMatteBorder(5,5,5,5, Color.BLACK));
 ```
 
-Here's the X-drawing code from the `paintComponent` method of `XMarksTheSpot`:
+以下是 `XMarksTheSpot` 的 `paintComponent` 方法中绘制 X 的代码：
 
-```
+```java
 Graphics2D g2 = (Graphics2D)g;
 Insets insets = getInsets();
 g2.setStroke(new BasicStroke(5.0f));
@@ -71,24 +70,24 @@ g2.draw(new Line2D.Double(insets.left,
                           insets.top));
 ```
 
-**Exercise 2.** Implement an icon that’s 10x10 pixels and paints a solid rectangle that fills the 10x10 area. If the icon’s component is enabled, the rectangle should be red; if disabled, gray. Make a copy of `ButtonDemo.java` that uses your custom `Icon` for the middle button, instead of displaying `middle.gif`. The following pictures show what the icon should look like.
+**练习 2.** 实现一个 10x10 像素的图标，绘制填充 10x10 区域的实心矩形。如果图标的组件已启用，矩形应为红色；如果禁用，则为灰色。复制 `ButtonDemo.java`，将自定义 `Icon` 用于中间按钮，而不是显示 `middle.gif`。以下图片显示图标应有的外观。
 
 | ![SquareIcon-1.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/SquareIcon-1.png) | ![SquareIcon-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/SquareIcon-2.png) |
 | --- | --- |
 
-**Answer 2:** See `SquareIcon.java`, which you can run using this [modified `ButtonDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/ButtonDemoProject/src/QandE/ButtonDemo.java).
+**答案 2：** 参见 `SquareIcon.java`，你可以使用此[修改后的 `ButtonDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/QandE/ButtonDemoProject/src/QandE/ButtonDemo.java) 运行它。
 
-Here's the code that sets the icon:
+以下是设置图标的代码：
 
-```
+```java
 Icon middleButtonIcon = new SquareIcon();
 ...
 b2 = new JButton("Middle button", middleButtonIcon);
 ```
 
-Here is `SquareIcon` 's implementation of the three methods required by the `Icon` interface:
+以下是 `SquareIcon` 对 `Icon` 接口所需的三个方法的实现：
 
-```
+```java
 public void paintIcon(Component c, Graphics g,
                       int x, int y) {
     if (c.isEnabled()) {
@@ -109,9 +108,9 @@ public int getIconHeight() {
 }
 ```
 
-**Exercise 3.** Implement a border that paints a red 15-pixel-tall stripe all the way across the top of its component. Test this border by substituting it for the border on the component you created in exercise 1. The result should look like the following figure. ![ComponentDisplayer-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/ComponentDisplayer-2.png) **Answer 3:** See `StripeBorder.java`, which you can run using `ComponentDisplayer.java` and `XMarksTheSpot.java` (be sure to uncomment the line that sets the border to `StripeBorder`). Here is `StripeBorder` 's implementation of the three methods required by the `Border` interface:
+**练习 3.** 实现一个边框，在其组件顶部绘制一条红色 15 像素高的条纹。通过将其替换为练习 1 中创建的组件上的边框来测试此边框。结果应如下图所示。![ComponentDisplayer-2.png](https://docs.oracle.com/javase/tutorial/figures/uiswing/QandE/ComponentDisplayer-2.png) **答案 3：** 参见 `StripeBorder.java`，你可以使用 `ComponentDisplayer.java` 和 `XMarksTheSpot.java` 运行它（确保取消注释将边框设置为 `StripeBorder` 的行）。以下是 `StripeBorder` 对 `Border` 接口所需的三个方法的实现：
 
-```
+```java
 public void paintBorder(Component c, Graphics g,
                         int x, int y,
                         int width, int height) {

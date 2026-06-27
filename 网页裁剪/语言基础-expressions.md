@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Expressions, Statements, and Blocks (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -35,7 +37,7 @@ System.out.println("Element 1 at index 0: " + anArray[0]);
 int result = 1 + 2; // result is now 3
 if (value1 == value2) 
     System.out.println("value1 == value2");
-```
+```text
 
 The data type of the value returned by an expression depends on the elements used in the expression. The expression `cadence = 0` returns an `int` because the assignment operator returns a value of the same data type as its left-hand operand; in this case, `cadence` is an `int`. As you can see from the other expressions, an expression can return other types of values as well, such as `boolean` or `String`.
 
@@ -43,19 +45,19 @@ The Java programming language allows you to construct compound expressions from 
 
 ```
 1 * 2 * 3
-```
+```text
 
 In this particular example, the order in which the expression is evaluated is unimportant because the result of multiplication is independent of order; the outcome is always the same, no matter in which order you apply the multiplications. However, this is not true of all expressions. For example, the following expression gives different results, depending on whether you perform the addition or the division operation first:
 
 ```
 x + y / 100    // ambiguous
-```
+```text
 
 You can specify exactly how an expression will be evaluated using balanced parenthesis: ( and ). For example, to make the previous expression unambiguous, you could write the following:
 
 ```
 (x + y) / 100  // unambiguous, recommended
-```
+```text
 
 If you don't explicitly indicate the order for the operations to be performed, the order is determined by the precedence assigned to the operators in use within the expression. Operators that have a higher precedence get evaluated first. For example, the division operator has a higher precedence than does the addition operator. Therefore, the following two statements are equivalent:
 
@@ -63,7 +65,6 @@ If you don't explicitly indicate the order for the operations to be performed, t
 x + y / 100 
 
 x + (y / 100) // unambiguous, recommended
-```
 
 When writing compound expressions, be explicit and indicate with parentheses which operators should be evaluated first. This practice makes code easier to read and to maintain.
 
@@ -87,11 +88,10 @@ aValue++;
 System.out.println("Hello World!");
 // object creation statement
 Bicycle myBike = new Bicycle();
-```
 
 In addition to expression statements, there are two other kinds of statements: *declaration statements* and *control flow statements*. A *declaration statement* declares a variable. You've seen many examples of declaration statements already:
 
-```
+```text
 // declaration statement
 double aValue = 8933.234;
 ```

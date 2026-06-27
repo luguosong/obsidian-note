@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# What Is a Path? (And Other File System Facts) (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -105,13 +107,13 @@ Sample Directory Structure
 
 A file is identified by its path through the file system, beginning from the root node. For example, the `statusReport` file in the previous figure is described by the following notation in the Solaris OS:
 
-```
+```text
 /home/sally/statusReport
 ```
 
 In Microsoft Windows, `statusReport` is described by the following notation:
 
-```
+```text
 C:\home\sally\statusReport
 ```
 

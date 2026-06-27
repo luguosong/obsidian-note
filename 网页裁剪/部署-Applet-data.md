@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Finding and Loading Data Files (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -93,6 +95,6 @@ The `JApplet` class defines convenient forms of image-loading and sound-loading 
 
 To create an `Image` object that uses the `a.gif` image file under `imgDir`, the applet can use the following code:
 
-```
+```text
 Image image = getImage(getCodeBase(), "imgDir/a.gif");
 ```

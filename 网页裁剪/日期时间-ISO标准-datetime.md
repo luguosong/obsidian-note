@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Date and Time Classes (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -25,7 +27,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The [LocalTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html) class is similar to the other classes whose names are prefixed with Local, but deals in time only. This class is useful for representing human-based time of day, such as movie times, or the opening and closing times of the local library. It could also be used to create a digital clock, as shown in the following example:
 
-```
+```text
 LocalTime thisSec;
 
 for (;;) {
@@ -44,7 +46,7 @@ The class that handles both date and time, without a time zone, is [LocalDateTim
 
 In addition to the now method that every temporal-based class provides, the LocalDateTime class has various of methods (or methods prefixed with of) that create an instance of LocalDateTime. There is a from method that converts an instance from another temporal format to a LocalDateTime instance. There are also methods for adding or subtracting hours, minutes, days, weeks, and months. The following example shows a few of these methods. The date-time expressions are in bold:
 
-```
+```java
 System.out.printf("now: %s%n", LocalDateTime.now());
 
 System.out.printf("Apr 15, 1994 @ 11:30am: %s%n",
@@ -58,11 +60,11 @@ System.out.printf("6 months from now: %s%n",
 
 System.out.printf("6 months ago: %s%n",
                   LocalDateTime.now().minusMonths(6));
-```
+```text
 
 This code produces output that will look similar to the following:
 
-```
+```text
 now: 2013-07-24T17:13:59.985
 Apr 15, 1994 @ 11:30am: 1994-04-15T11:30
 now (from Instant): 2013-07-24T17:14:00.479

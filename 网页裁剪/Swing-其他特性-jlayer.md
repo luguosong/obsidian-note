@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Decorate Components with the JLayer Class (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -77,7 +79,7 @@ The `javax.swing.JLayer` class is half of a team. The other half is the `javax.s
 
 For example, to add an instance of a `JPanel` subclass to a `JFrame` object, you would do something similar to this:
 
-```
+```text
 JFrame f = new JFrame();
 
 JPanel panel = createPanel();
@@ -87,7 +89,7 @@ f.add (panel);
 
 To decorate the `JPanel` object, do something similar to this instead:
 
-```
+```text
 JFrame f = new JFrame();
 
 JPanel panel = createPanel();
@@ -117,7 +119,7 @@ The `LayerUI` class inherits most of its behavior from the `ComponentUI` class. 
 
 To use the `JLayer` class, you need a good `LayerUI` subclass. The simplest kinds of `LayerUI` classes change how components are drawn. Here is one, for example, that paints a transparent color gradient on a component.
 
-```
+```java
 class WallpaperLayerUI extends LayerUI<JComponent> {
   @Override
   public void paint(Graphics g, JComponent c) {
@@ -135,13 +137,13 @@ class WallpaperLayerUI extends LayerUI<JComponent> {
     g2.dispose();
   }
 }
-```
+```java
 
 The `paint()` method is where the custom drawing takes place. The call to the `super.paint()` method draws the contents of the `JPanel` object. After setting up a 50% transparent composite, the color gradient is drawn.
 
 After the `LayerUI` subclass is defined, using it is simple. Here is some source code that uses the `WallpaperLayerUI` class:
 
-```
+```java
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.plaf.LayerUI;
@@ -213,7 +215,7 @@ Run with [Java Web Start](http://www.oracle.com/technetwork/java/javase/javawebs
 
 The `LayerUI` class' `paint()` method gives you complete control over how a component is drawn. Here is another `LayerUI` subclass that shows how the entire contents of a panel can be modified using Java 2D image processing:
 
-```
+```java
 class BlurLayerUI extends LayerUI<JComponent> {
   private BufferedImage mOffscreenImage;
   private BufferedImageOp mOperation;
@@ -256,7 +258,7 @@ class BlurLayerUI extends LayerUI<JComponent> {
     g2.drawImage(mOffscreenImage, mOperation, 0, 0);
   }
 }
-```
+```java
 
 In the `paint()` method, the panel is rendered into an off-screen image. The off-screen image is processed with a convolution operator, then drawn to the screen.
 
@@ -280,7 +282,7 @@ Your `LayerUI` subclass can also receive all of the events of its corresponding 
 
 For example, the following excerpt shows a portion of a `LayerUI` subclass that registers to receive mouse and mouse motion events.
 
-```
+```java
 public void installUI(JComponent c) {
   super.installUI(c);
   JLayer jlayer = (JLayer)c;
@@ -293,7 +295,7 @@ public void installUI(JComponent c) {
 
 All events going to your `JLayer` subclass get routed to an event handler method whose name matches the event type. For example, you can respond to mouse and mouse motion events by overriding corresponding methods:
 
-```
+```java
 protected void processMouseEvent(MouseEvent e, JLayer l) {
   // ...
 }
@@ -305,7 +307,7 @@ protected void processMouseMotionEvent(MouseEvent e, JLayer l) {
 
 The following is a `LayerUI` subclass that draws a translucent circle wherever the mouse moves inside a panel.
 
-```
+```sql
 class SpotlightLayerUI extends LayerUI<JPanel> {
   private boolean mActive;
   private int mX, mY;

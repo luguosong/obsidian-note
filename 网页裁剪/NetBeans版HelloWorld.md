@@ -106,7 +106,7 @@ IDE 现在已配置为使用 JDK 8。
 
 创建此项目时，你在 **New Project** 向导中保留了 **Create Main Class** 复选框的选中状态。因此 IDE 已经为你创建了一个骨架类。你可以通过将下面这一行：
 
-```
+```text
 // TODO code application logic here
 ```
 
@@ -114,7 +114,7 @@ IDE 现在已配置为使用 JDK 8。
 
 ```java
 System.out.println("Hello World!"); // 显示该字符串。
-```
+```text
 
 可选地，你可以把这四行生成的代码：
 
@@ -123,7 +123,7 @@ System.out.println("Hello World!"); // 显示该字符串。
  *
  * @author
  */
-```
+```text
 
 替换为这些行：
 
@@ -132,7 +132,7 @@ System.out.println("Hello World!"); // 显示该字符串。
  * HelloWorldApp 类实现了一个应用程序，
  * 它仅向标准输出打印 "Hello World!"。
  */
-```
+```java
 
 这四行是代码注释，不影响程序的运行方式。本教程的后续章节会解释代码注释的用法和格式。
 

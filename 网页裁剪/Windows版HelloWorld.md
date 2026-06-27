@@ -75,7 +75,6 @@ class HelloWorldApp {
         System.out.println("Hello World!"); // 显示该字符串。
     }
 }
-```
 
 **输入时要小心** ![[win-hello-typeA.gif]] ![[win-hello-typea2.gif]]
 
@@ -114,9 +113,8 @@ class HelloWorldApp {
 
 要编译你的源文件，请将当前目录更改为文件所在的目录。例如，如果你的源目录是 `C` 盘上的 `myapplication`，则在提示符下输入以下命令并按 **Enter**：
 
-```
 cd C:\myapplication
-```
+```text
 
 现在提示符应当变为 `C:\myapplication>`。
 
@@ -154,17 +152,17 @@ C:\myapplication>dir
                2 Dir(s)  93,297,991,680 bytes free
 
 C:\myapplication>
-```
+```text
 
 现在你已准备好编译。在提示符下，输入以下命令并按 **Enter**。
 
-```
+```bash
 javac HelloWorldApp.java
-```
+```text
 
 编译器已生成一个字节码文件 `HelloWorldApp.class`。在提示符下输入 `dir` 以查看生成的新文件，如下所示：
 
-```
+```bash
 C:\myapplication>javac HelloWorldApp.java
 
 C:\myapplication>dir
@@ -181,7 +179,6 @@ C:\myapplication>dir
                2 Dir(s)  93,298,032,640 bytes free
 
 C:\myapplication>
-```
 
 现在你已经有了一个 `.class` 文件，可以运行程序了。
 
@@ -191,13 +188,12 @@ C:\myapplication>
 
 在同一目录下，于提示符处输入以下命令：
 
-```
 java -cp . HelloWorldApp
-```
+```text
 
 你应当在屏幕上看到以下内容：
 
-```
+```text
 C:\myapplication>java -cp . HelloWorldApp
 Hello World!
 

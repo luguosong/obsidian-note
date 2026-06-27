@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Modifying a Manifest File (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -77,7 +79,7 @@ To modify the manifest, you must first prepare a text file containing the inform
 
 The basic command has this format:
 
-```
+```text
 jar cfm jar-file manifest-addition input-file(s)
 ```
 

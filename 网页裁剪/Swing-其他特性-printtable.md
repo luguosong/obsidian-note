@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Print Tables (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -55,7 +57,7 @@ If the default implementation of the `Printable` object does not meet your needs
 
 The easiest way to print your table is to call the `print` method without parameters. See the code example below.
 
-```
+```bash
 try {
     boolean complete = table.print();
     if (complete) {
@@ -69,11 +71,11 @@ try {
     /* Printing failed, report to the user */
     ...
 }
-```
+```text
 
 When you call the `print` method with no parameters, a print dialog is displayed, and then your table is printed interactively in the `FIT_WIDTH` mode without a header or a footer. The code example below shows the `print` method signature with the complete set of arguments.
 
-```
+```sql
 boolean complete = table.print(JTable.PrintMode printMode,
                                MessageFormat headerFormat,
                                MessageFormat footerFormat, 
@@ -81,7 +83,6 @@ boolean complete = table.print(JTable.PrintMode printMode,
                                PrintRequestAttributeSet attr,
                                boolean interactive,
                                PrintService service);
-```
 
 When you call the `print` method with all arguments, you explicitly choose printing features such as a printing mode, a header and a footer text, printing attributes, a destination print service, and also whether to show a print dialog or not, and whether to print interactively or non-interactively. To decide which parameters suit your needs best, see the description of available features below.
 
@@ -154,11 +155,10 @@ Whenever a web-launched application tries to print, Java Web Start pops up a sec
 
 Note when you clear the Interactive check box, a message appears that warns the user about the disadvantage of printing non-interactively. You can find the printing code in the `PrintGradesTable` method. When called, this method first obtains the set of selected options from the GUI components and then calls the `print` method as follows.
 
-```
 boolean complete = gradesTable.print(mode, header, footer,
                                      showPrintDialog, null,
                                      interactive, null);
-```
+```java
 
 The value returned by the `print` method is then used to show either the success message or the message saying that the user cancelled printing.
 
@@ -178,7 +178,7 @@ Click the Launch button to run TablePrintDemo2 using [Java™ Web Start](http://
 
 The [`isPaintingForPrint`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComponent.html#isPaintingForPrint--) method defined in the `JComponent` class allows us to customize what we print compared with what we see on the screen. The code of the custom cell renderer, taken from [`TablePrintDemo2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/TablePrintDemo2Project/src/misc/TablePrintDemo2.java), is listed below. This code chooses which images to use depending on the value returned by the `isPaintingForPrint` method.
 
-```
+```css
 /**
  * A custom cell renderer that extends TablePrinteDemo1's renderer, to instead
  * use clearer black and white versions of the icons when printing.
@@ -225,7 +225,7 @@ Click the image to view it at its natural size.*
 
 The entire code for this program can be found in [`TablePrintDemo3.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/TablePrintDemo3Project/src/misc/TablePrintDemo3.java). In this demo, a custom subclass of the `JTable` class is used called `FancyPrintingJTable`. This `FancyPrintingJTable` class overrides the `getPrintable` method to return a custom printable object that wraps the default printable with its own decorations and header and footer. Here is the implementation of the `getPrintable` method.
 
-```
+```java
 public Printable getPrintable(PrintMode printMode,
                               MessageFormat headerFormat,
                               MessageFormat footerFormat) {

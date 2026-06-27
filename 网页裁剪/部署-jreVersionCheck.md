@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Checking the Client JRE Software Version (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -35,7 +37,7 @@ Parameters:
 
 In this example, a Launch button is created for the Notepad application only if the version of JRE software on the client is greater than or equal to 1.6. If not, the browser is redirected to `oracle.com`.
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js"></script>
 <script>
     if (deployJava.versionCheck('1.6+')) {            

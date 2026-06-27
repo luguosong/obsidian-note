@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Setting an Application's Entry Point (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -65,7 +67,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 If you have an application bundled in a JAR file, you need some way to indicate which class within the JAR file is your application's entry point. You provide this information with the `Main-Class` header in the manifest, which has the general form:
 
-```
+```text
 Main-Class: classname
 ```
 
@@ -75,7 +77,7 @@ Recall that the entry point is a class having a method with signature `public s
 
 After you have set the `Main-Class` header in the manifest, you then run the JAR file using the following form of the `java` command:
 
-```
+```text
 java -jar JAR-name
 ```
 
@@ -87,7 +89,7 @@ We want to execute the `main` method in the class `MyClass` in the package `MyPa
 
 We first create a text file named `Manifest.txt` with the following contents:
 
-```
+```text
 Main-Class: MyPackage.MyClass
 ```
 
@@ -99,38 +101,36 @@ Main-Class: MyPackage.MyClass
 
 We then create a JAR file named `MyJar.jar` by entering the following command:
 
-```
+```text
 jar cfm MyJar.jar Manifest.txt MyPackage/*.class
 ```
 
 This creates the JAR file with a manifest with the following contents:
 
-```
+```yaml
 Manifest-Version: 1.0
 Created-By: 1.7.0_06 (Oracle Corporation)
 Main-Class: MyPackage.MyClass
-```
+```text
 
 When you run the JAR file with the following command, the `main` method of `MyClass` executes:
 
-```
+```bash
 java -jar MyJar.jar
-```
 
 ## Setting an Entry Point with the JAR Tool
 
 The 'e' flag (for 'entrypoint') creates or overrides the manifest's `Main-Class` attribute. It can be used while creating or updating a JAR file. Use it to specify the application entry point without editing or creating the manifest file.  
 For example, this command creates `app.jar` where the `Main-Class` attribute value in the manifest is set to `MyApp`:
 
-```
 jar cfe app.jar MyApp MyApp.class
-```
+```text
 
 You can directly invoke this application by running the following command:
 
-```
+```bash
 java -jar app.jar
-```
+```text
 
 If the entrypoint class name is in a package it may use a '.' (dot) character as the delimiter. For example, if `Main.class` is in a package called `foo` the entry point can be specified in the following ways:
 

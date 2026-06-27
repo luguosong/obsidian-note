@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Expressions, Statements, and Blocks (The Java™ Tutorials > Learning the Java Language >
+            Language Basics)
 
 Documentation
 
@@ -27,9 +29,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 2. Expressions are the core components of **statements**.
 3. Statements may be grouped into **blocks**.
 4. The following code snippet is an example of a **compound** expression.
-	```
+```text
 	1 * 2 * 3
-	```
+```
 5. Statements are roughly equivalent to sentences in natural languages, but instead of ending with a period, a statement ends with a **semicolon**.
 6. A block is a group of zero or more statements between balanced **braces** and can be used anywhere a single statement is allowed.
 

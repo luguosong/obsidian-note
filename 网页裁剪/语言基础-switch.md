@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The switch Statement (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -25,7 +27,7 @@ Unlike `if-then` and `if-then-else` statements, the `switch` statement can have 
 
 The following code example, [`SwitchDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/SwitchDemo.java), declares an `int` named `month` whose value represents a month. The code displays the name of the month, based on the value of `month`, using the `switch` statement.
 
-```
+```java
 public class SwitchDemo {
     public static void main(String[] args) {
 
@@ -62,7 +64,7 @@ public class SwitchDemo {
         System.out.println(monthString);
     }
 }
-```
+```text
 
 In this case, `August` is printed to standard output.
 
@@ -70,7 +72,7 @@ The body of a `switch` statement is known as a *switch block*. A statement in th
 
 You could also display the name of the month with `if-then-else` statements:
 
-```
+```java
 int month = 8;
 if (month == 1) {
     System.out.println("January");
@@ -84,7 +86,7 @@ Deciding whether to use `if-then-else` statements or a `switch` statement is bas
 
 Another point of interest is the `break` statement. Each `break` statement terminates the enclosing `switch` statement. Control flow continues with the first statement following the `switch` block. The `break` statements are necessary because without them, statements in `switch` blocks *fall through*: All statements after the matching `case` label are executed in sequence, regardless of the expression of subsequent `case` labels, until a `break` statement is encountered. The program [`SwitchDemoFallThrough`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/SwitchDemoFallThrough.java) shows statements in a `switch` block that fall through. The program displays the month corresponding to the integer `month` and the months that follow in the year:
 
-```
+```java
 public class SwitchDemoFallThrough {
 
     public static void main(String[] args) {
@@ -119,7 +121,7 @@ public class SwitchDemoFallThrough {
         }
     }
 }
-```
+```text
 
 This is the output from the code:
 
@@ -129,13 +131,13 @@ September
 October
 November
 December
-```
+```java
 
 Technically, the final `break` is not required because flow falls out of the `switch` statement. Using a `break` is recommended so that modifying the code is easier and less error prone. The `default` section handles all values that are not explicitly handled by one of the `case` sections.
 
 The following code example, [`SwitchDemo2`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/SwitchDemo2.java), shows how a statement can have multiple `case` labels. The code example calculates the number of days in a particular month:
 
-```
+```java
 class SwitchDemo2 {
     public static void main(String[] args) {
 
@@ -173,7 +175,7 @@ class SwitchDemo2 {
 
 This is the output from the code:
 
-```
+```text
 Number of Days = 29
 ```
 
@@ -181,7 +183,7 @@ Number of Days = 29
 
 In Java SE 7 and later, you can use a `String` object in the `switch` statement's expression. The following code example, [`StringSwitchDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/StringSwitchDemo.java), displays the number of the month based on the value of the `String` named `month`:
 
-```
+```java
 public class StringSwitchDemo {
 
     public static int getMonthNumber(String month) {

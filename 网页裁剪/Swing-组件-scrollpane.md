@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Scroll Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -113,7 +115,7 @@ The code to create a scroll pane can be minimal. For example, here's a picture o
 
 Here's the code that creates the text area, makes it the scroll pane's client, and adds the scroll pane to a container:
 
-```
+```text
 //In a container that uses a BorderLayout:
 textArea = new JTextArea(5, 30);
 ...
@@ -153,7 +155,7 @@ The scroll pane in this application looks very different from the one in the pre
 
 The ScrollDemo program establishes the scroll pane's client when creating the scroll pane:
 
-```
+```java
 //Where the member variables are declared:
 private ScrollablePicture picture;
 ...
@@ -188,7 +190,7 @@ On startup, the scroll pane in the `ScrollDemo` application has two scroll bars.
 
 Of the constructors provided by `JScrollPane`, these two let you set the scroll bar policies when you create the scroll pane:
 
-```
+```text
 JScrollPane(Component, int, int)
 JScrollPane(int, int)
 ```
@@ -228,7 +230,6 @@ rowView = new Rule(Rule.VERTICAL, true);
 ...
 pictureScrollPane.setColumnHeaderView(columnView);
 pictureScrollPane.setRowHeaderView(rowView);
-```
 
 You can use any component for a scroll pane's row and column headers. The scroll pane puts the row and column headers in `JViewPort` s of their own. Thus, when scrolling horizontally, the column header follows along, and when scrolling vertically, the row header follows along. Make sure the row and column have the same width and height as the view, because JScrollPane does not enforce these values to have the same size. If one differs from the other, you are likely to not get the desired behavior.
 
@@ -236,7 +237,6 @@ As a `JComponent` subclass, our custom `Rule` class puts its rendering code in i
 
 You can also use any component for the corners of a scroll pane. `ScrollDemo` illustrates this by putting a toggle button in the upper left corner, and custom [`Corner`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ScrollDemoProject/src/components/Corner.java) objects in the upper right and lower left corners. Here's the code that creates the `Corner` objects and calls `setCorner` to place them:
 
-```
 //Create the corners.
 JPanel buttonCorner = new JPanel(); //use FlowLayout
 isMetric = new JToggleButton("cm", true);
@@ -252,7 +252,6 @@ pictureScrollPane.setCorner(JScrollPane.LOWER_LEFT_CORNER,
                             new Corner());
 pictureScrollPane.setCorner(JScrollPane.UPPER_RIGHT_CORNER,
                             new Corner());
-```
 
 Remember that the size of each corner is determined by the size of the sides intersecting there. For some components you must take care that the specific instance of the component fits in its corner. For example, the program sets the font and margins on the toggle button so that it fits within the space established by the headers. It's not an issue with the `Corner` class because that class colors its entire bounds, whatever they happen to be, with a solid color.
 
@@ -270,9 +269,8 @@ To customize the way that a client component interacts with its scroll pane, you
 
 **Note:** If you can't or don't want to implement a scrollable client, you can specify the unit and block increments using the `setUnitIncrement` and `setBlockIncrement` methods of [`JScrollBar`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JScrollBar.html). For example, the following code sets the unit increment for vertical scrolling to 10 pixels:
 
-```
 scrollPane.getVerticalScrollBar().setUnitIncrement(10);
-```
+```java
 
 ---
 
@@ -325,7 +323,7 @@ If the image is already on a tick mark boundary, this method returns the number 
 
 Likewise, the scroll pane calls the client's `getScrollableBlockIncrement` method each time the user clicks on the track, but only if the client implements Scrollable. Here's `ScrollablePicture` 's implementation of this method:
 
-```
+```java
 public int getScrollableBlockIncrement(Rectangle visibleRect,
                                        int orientation,
                                        int direction) {
@@ -358,7 +356,6 @@ public class ScrollablePicture extends JLabel
     }
 ...
 }
-```
 
 This snippet scrolls the picture whenever the user drags from the picture to a location outside the picture and pauses. The `setAutoscrolls` method is defined by `JComponent` for the purpose of assisting — but not implementing — scrolling by dragging. Setting the autoscrolls property to `true` makes the component fire synthetic mouse-dragged events even when the mouse isn't moving (because it stopped, mid-drag, outside the component). It's up to the component's mouse motion listener to listen for these events and react accordingly.
 
@@ -386,7 +383,6 @@ You can find the full source code for this example in [`ScrollDemo2.java`](https
 
 Here's the code that changes the drawing area's size when necessary:
 
-```
 if (changed) {
     //Update client's preferred size because
     //the area taken up by the graphics has

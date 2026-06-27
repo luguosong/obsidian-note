@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use SpringLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -61,7 +63,7 @@ Based on this, a `SpringLayout` can be visualized as a set of objects that are c
 
 This section takes you through the typical steps of specifying the constraints for a container that uses `SpringLayout`. The first example, [`SpringDemo1.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/SpringDemo1Project/src/layout/SpringDemo1.java), is an extremely simple application that features a label and a text field in a content pane controlled by a spring layout. Here is the relevant code:
 
-```
+```java
 public class SpringDemo1 {
     public static void main(String[] args) {
         ...
@@ -75,7 +77,6 @@ public class SpringDemo1 {
         frame.setVisible(true);
     }
 }
-```
 
 Click the Launch button to run SpringDemo1 using [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) ([download JDK 7 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Alternatively, to compile and run the example yourself, consult the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/index.html#SpringDemo1).
 
@@ -93,7 +94,6 @@ Our next example, [`SpringDemo2.java`](https://docs.oracle.com/javase/tutorial/u
 
 In this example, we will specify that the components should appear in a single row, with 5 pixels between them. The following code specifies the location of the label:
 
-```
 //Adjust constraints for the label so it's at (5,5).
 layout.putConstraint(SpringLayout.WEST, label,
                      5,
@@ -101,13 +101,13 @@ layout.putConstraint(SpringLayout.WEST, label,
 layout.putConstraint(SpringLayout.NORTH, label,
                      5,
                      SpringLayout.NORTH, contentPane);
-```
+```text
 
 The first `putConstraint` call specifies that the label's left (west) edge should be 5 pixels from its container's left edge. This translates to an *x* coordinate of 5. The second `putConstraint` call sets up a similar relationship between the top (north) edges of the label and its container, resulting in a *y* coordinate of 5.
 
 Here is the code that sets up the location of the text field:
 
-```
+```sql
 //Adjust constraints for the text field so it's at
 //(<label's right edge> + 5, 5).
 layout.putConstraint(SpringLayout.WEST, textField,
@@ -116,7 +116,6 @@ layout.putConstraint(SpringLayout.WEST, textField,
 layout.putConstraint(SpringLayout.NORTH, textField,
                      5,
                      SpringLayout.NORTH, contentPane);
-```
 
 The first `putConstraint` call makes the text field's left (west) edge be 5 pixels away from the label's right (east) edge. The second `putConstraint` call is just like the second call in the first snippet, and has the same effect of setting the component's *y* coordinate to 5.
 
@@ -128,14 +127,12 @@ To make the container initially appear at the right size, we need to set the spr
 
 Here is the code that sets the container's springs:
 
-```
 layout.putConstraint(SpringLayout.EAST, contentPane,
                      5,
                      SpringLayout.EAST, textField);
 layout.putConstraint(SpringLayout.SOUTH, contentPane,
                      5,
                      SpringLayout.SOUTH, textField);
-```
 
 The first `putConstraint` call makes the container's right edge be 5 pixels to the right of the text field's right edge. The second one makes its bottom edge be 5 pixels beyond the bottom edge of the tallest component (which, for simplicity's sake, we've assumed is the text field).
 
@@ -161,18 +158,17 @@ The `getMaximumSize` method of some components, such as `JTextField`, returns th
 
 The SpringDemo examples used the `SpringLayout` method `putConstraint` to set the springs associated with each component. The `putConstraint` method is a convenience method that lets you modify a component's constraints without needing to use the full spring layout API. Here, again, is the code from `SpringDemo3` that sets the location of the label:
 
-```
 layout.putConstraint(SpringLayout.WEST, label,
                      5,
                      SpringLayout.WEST, contentPane);
 layout.putConstraint(SpringLayout.NORTH, label,
                      5,
                      SpringLayout.NORTH, contentPane);
-```
+```text
 
 Here is equivalent code that uses the `SpringLayout.Constraints` and `Spring` classes directly:
 
-```
+```sql
 SpringLayout.Constraints  contentPaneCons = 
         layout.getConstraints(contentPane);
 contentPaneCons.setX(Spring.sum(Spring.constant(5),
@@ -181,7 +177,6 @@ contentPaneCons.setX(Spring.sum(Spring.constant(5),
 contentPaneCons.setY(Spring.sum(Spring.constant(5),
                           contentPaneCons
                           .getConstraint(SpringLayout.NORTH)));
-```
 
 To see the entire demo converted to use this API, look at [`SpringDemo4.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/SpringDemo4Project/src/layout/SpringDemo4.java). That file also includes a more polished (and much longer) version of the code that sets the container's size. Click the Launch button to run SpringDemo4 using [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) ([download JDK 7 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Alternatively, to compile and run the example yourself, consult the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/index.html#SpringDemo3).
 
@@ -204,12 +199,11 @@ Edges differ from `Spring` objects The `SpringLayout.Constraints` class knows ab
 
 Each `Constraints` object maintains the following relationships between its springs and the edges they represent:
 
-```
+```properties
 west = x
 north = y
  east = x + width
 south = y + height
-```
 
 If you are confused, do not worry. The next section presents utility methods you can use to accomplish some common layout tasks without knowing anything about the spring layout API.
 
@@ -227,7 +221,7 @@ Let us see these methods in action. Our first example, implemented in the source
 
 Here is the code that creates and lays out the text fields in SpringGrid:
 
-```
+```text
 JPanel panel = new JPanel(new SpringLayout());
 for (int i = 0; i < 9; i++) {
     JTextField textField = new JTextField(Integer.toString(i));
@@ -249,7 +243,7 @@ Here is what the SpringCompactGrid GUI looks like:
 
 Here is the code that creates and lays out the text fields in SpringCompactGrid:
 
-```
+```text
 JPanel panel = new JPanel(new SpringLayout());
 
 int rows = 10;
@@ -278,7 +272,7 @@ Click the Launch button to run SpringForm using [Java™ Web Start](http://www.o
 
 Here is the code that creates and lays out the label-text field pairs in SpringForm:
 
-```
+```text
 String[] labels = {"Name: ", "Fax: ", "Email: ", "Address: "};
 int numPairs = labels.length;
 
@@ -311,7 +305,7 @@ Our last example of the `makeCompactGrid` method, in [`SpringBox.java`](https://
 
 Note that the behavior is almost identical to that of `BoxLayout` in the case of a single row. Not only are the components laid out as `BoxLayout` would arrange them but the minimum, preferred, and maximum sizes of the container that uses the `SpringLayout` return the same results that `BoxLayout` would. Here is the call to `makeCompactGrid` that produces this layout:
 
-```
+```text
 //Lay out the buttons in one row and as many columns
 //as necessary, with 6 pixels of padding all around.
 SpringUtilities.makeCompactGrid(contentPane, 1,

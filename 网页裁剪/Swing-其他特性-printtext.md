@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Print Text (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -55,7 +57,7 @@ If the default implementation of the `Printable` object does not meet your needs
 
 The easiest way to print your text component is to call the `print` method without parameters. See the code example below.
 
-```
+```bash
 try {
     boolean complete = textComponent.print();
     if (complete) {
@@ -69,7 +71,7 @@ try {
     /* Printing failed, report to the user */
     ...
 }
-```
+```text
 
 When you call the `print` method with no parameters, a print dialog is displayed, and then your text component is printed interactively without a header or a footer. The code example below shows the `print` method signature with the complete set of arguments.
 
@@ -80,7 +82,7 @@ boolean complete = textComponent.print(MessageFormat headerFormat,
                                        PrintService service
                                        PrintRequestAttributeSet attributes,
                                        boolean interactive);
-```
+```java
 
 When you call the `print` method with all arguments, you explicitly choose printing features such as header and footer text, printing attributes, a destination print service, and also whether to show a print dialog or not, and whether to print interactively or non-interactively. To decide which parameters suit your needs best, see the description of available features below.
 
@@ -141,7 +143,7 @@ Whenever a web-launched application tries to print, Java Web Start opens up a se
 
 An action listener is registered for the Print button. As the user clicks the Print button the `actionPerformed` method calls the `print` method, which initiates a printing task. The printing task is a `SwingWorker` object. The code example below shows how the `PrintingTask` class is implemented.
 
-```
+```css
 private class PrintingTask extends SwingWorker<Object, Object> {
     private final MessageFormat headerFormat;
     private final MessageFormat footerFormat;
@@ -180,7 +182,7 @@ private class PrintingTask extends SwingWorker<Object, Object> {
 
 The code example below shows how the `print` method obtains the set of selected options from the GUI components, then creates an instance of the `PrintingTask` class, and performs printing.
 
-```
+```java
 private void print(java.awt.event.ActionEvent evt) {
         MessageFormat header = createFormat(headerField);
         MessageFormat footer = createFormat(footerField);
@@ -220,7 +222,7 @@ The `TextBatchPrintingDemo` example illustrates printing non-visible HTML text d
 
 You can find the printing code in the `printSelectedPages` method. When called, this method first obtains the amount of pages selected for printing. The code example below shows how the `printSelectedPages` method creates a `Runnable` object for each page and then prints the current page on a separate thread.
 
-```
+```java
 for (int i = 0; i < n; i++) {
     final PageItem item = (PageItem) pages.getElementAt(i);
     // This method is called from EDT.  Printing is a time-consuming

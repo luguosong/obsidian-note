@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Doing More With Rich Internet Applications (The Java™ Tutorials >        
+            Deployment > Doing More With Java Rich Internet Applications)
 
 Documentation
 
@@ -29,7 +31,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Exercises
 
 1. To the following JNLP file, add a secure property called `jnlp.foo` and set its value to `true`.
-	```
+	```xml
 	<?xml version="1.0" encoding="UTF-8"?>
 	<jnlp spec="1.0+" codebase="" href="">
 	    <information>

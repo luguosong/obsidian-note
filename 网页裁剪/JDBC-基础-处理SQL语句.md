@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Processing SQL Statements with JDBC (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -101,7 +103,6 @@ public static void viewTable(Connection con) throws SQLException {
     JDBCTutorialUtilities.printSQLException(e);
   }
 }
-```
 
 ## Establishing Connections
 
@@ -113,9 +114,7 @@ A `Statement` is an interface that represents a SQL statement. You execute `Stat
 
 For example, `CoffeesTable.viewTable` creates a `Statement` object with the following code:
 
-```
 stmt = con.createStatement();
-```
 
 There are three different kinds of statements:
 
@@ -133,9 +132,7 @@ To execute a query, call an `execute` method from `Statement` such as the follow
 
 For example, `CoffeesTable.viewTable` executed a `Statement` object with the following code:
 
-```
 ResultSet rs = stmt.executeQuery(query);
-```
 
 See [[JDBC-基础-检索修改值|Retrieving and Modifying Values from Result Sets]] for more information.
 
@@ -157,7 +154,6 @@ while (rs.next()) {
                      ", " + sales + ", " + total);
 }
 // ...
-```
 
 See [[JDBC-基础-检索修改值|Retrieving and Modifying Values from Result Sets]] for more information.
 
@@ -185,11 +181,11 @@ public static void viewTable(Connection con) throws SQLException {
     JDBCTutorialUtilities.printSQLException(e);
   }
 }
-```
+```text
 
 The following statement is a `try` -with-resources statement, which declares one resource, `stmt`, that will be automatically closed when the `try` block terminates:
 
-```
+```text
 try (Statement stmt = con.createStatement()) {
   // ...
 }

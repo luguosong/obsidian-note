@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Add, Replace or Remove a Binding (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)
 
 Documentation
 
@@ -67,7 +69,7 @@ The Context interface contains methods for [adding](#BIND), [replacing](#REBIND)
 
 ---
 
-```
+```text
 // Create the object to be bound
 Fruit fruit = new Fruit("orange");
 
@@ -83,7 +85,7 @@ If you were to run this example twice, then the second attempt would fail with a
 
 rebind() is used to add or replace a binding. It accepts the same arguments as bind(), but the semantics are such that if the name is already bound, then it will be unbound and the newly given object will be bound.
 
-```
+```text
 // Create the object to be bound
 Fruit fruit = new Fruit("lemon");
 
@@ -99,7 +101,7 @@ When you run [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/e
 
 To remove a binding, you use [unbind()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#unbind-javax.naming.Name-).
 
-```
+```text
 // Remove the binding
 ctx.unbind("cn=Favorite Fruit");
 ```

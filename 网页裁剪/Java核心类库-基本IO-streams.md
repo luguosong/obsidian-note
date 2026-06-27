@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# I/O Streams (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -103,7 +105,7 @@ The data source and data destination pictured above can be anything that holds, 
 
 In the next section, we'll use the most basic kind of streams, byte streams, to demonstrate the common operations of Stream I/O. For sample input, we'll use the example file [`xanadu.txt`](https://docs.oracle.com/javase/tutorial/essential/io/examples/xanadu.txt), which contains the following verse:
 
-```
+```sql
 In Xanadu did Kubla Khan
 A stately pleasure-dome decree:
 Where Alph, the sacred river, ran

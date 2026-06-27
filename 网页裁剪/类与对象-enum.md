@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Enum Types (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -88,7 +90,7 @@ public enum Day {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
     THURSDAY, FRIDAY, SATURDAY 
 }
-```
+```java
 
 You should use enum types any time you need to represent a fixed set of constants. That includes natural enum types such as the planets in our solar system and data sets where you know all possible values at compile time—for example, the choices on a menu, command line flags, and so on.
 
@@ -139,7 +141,7 @@ public class EnumTest {
 
 The output is:
 
-```
+```text
 Mondays are bad.
 Midweek days are so-so.
 Fridays are better.
@@ -154,7 +156,7 @@ for (Planet p : Planet.values()) {
     System.out.printf("Your weight on %s is %f%n",
                       p, p.surfaceWeight(mass));
 }
-```
+```java
 
 ---
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Structured Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -92,7 +94,7 @@ The owner makes the column `LOCATION` be a SQL structured type, the column `COF_
 
 The first thing the owner must define the new structured types for the address and the manager. A SQL structured type is similar to structured types in the Java programming language in that it has members, called *attributes*, that may be any data type. The owner writes the following SQL statement to create the new data type `ADDRESS`:
 
-```
+```sql
 CREATE TYPE ADDRESS
 (
     NUM INTEGER,
@@ -107,7 +109,7 @@ In this statement, the new type `ADDRESS` has five attributes, which are analogo
 
 The following excerpt, in which `con` is a valid `Connection` object, sends the definition of `ADDRESS` to the database:
 
-```
+```text
 String createAddress =
     "CREATE TYPE ADDRESS " +
     "(NUM INTEGER, STREET VARCHAR(40), " +
@@ -122,13 +124,13 @@ Now the `ADDRESS` structured type is registered with the database as a data type
 
 One of the attributes the owner of The Coffee Break plans to include in the new structured type `MANAGER` is the manager's telephone number. Because the owner will always list the telephone number as a 10-digit number (to be sure it includes the area code) and will never manipulate it as a number, the owner decides to define a new type called `PHONE_NO` that consists of 10 characters. The SQL definition of this data type, which can be thought of as a structured type with only one attribute, looks like this:
 
-```
+```sql
 CREATE TYPE PHONE_NO AS CHAR(10);
 ```
 
 Or, as noted earlier, for some drivers the definition might look like this:
 
-```
+```sql
 CREATE DISTINCT TYPE PHONE_NO AS CHAR(10);
 ```
 
@@ -136,26 +138,26 @@ A `DISTINCT` type is always based on another data type, which must be a predefin
 
 Assuming that a value of type `PHONE_NO` is in the fourth column of the current row of the `ResultSet` object `*rs*`, the following line of code retrieves it:
 
-```
+```text
 String phoneNumber = rs.getString(4);
 ```
 
 Similarly, the following line of code sets an input parameter that has type `PHONE_NO` for a prepared statement being sent to the database:
 
-```
+```text
 pstmt.setString(1, phoneNumber);
 ```
 
 Adding on to the previous code fragment, the definition of `PHONE_NO` will be sent to the database with the following line of code:
 
-```
+```text
 stmt.executeUpdate(
     "CREATE TYPE PHONE_NO AS CHAR(10)");
 ```
 
 After registering the type `PHONE_NO` with the database, the owner can use it as a column type in a table or as the data type for an attribute in a structured type. The definition of `MANAGER` in the following SQL statement uses `PHONE_NO` as the data type for the attribute `PHONE`:
 
-```
+```sql
 CREATE TYPE MANAGER
 (
     MGR_ID INTEGER,
@@ -167,7 +169,7 @@ CREATE TYPE MANAGER
 
 Reusing `*stmt*`, defined previously, the following code fragment sends the definition of the structured type `MANAGER` to the database:
 
-```
+```text
 String createManager =
   "CREATE TYPE MANAGER " +
   "(MGR_ID INTEGER, LAST_NAME " +
@@ -189,7 +191,7 @@ Because a SQL `REF` value needs to be permanently associated with the instance o
 CREATE TABLE MANAGERS OF MANAGER
 (OID REF(MANAGER)
 VALUES ARE SYSTEM GENERATED);
-```
+```text
 
 This statement creates a table with the special column `OID`, which stores values of type `REF(MANAGER)`. Each time an instance of `MANAGER` is inserted into the table, the database will generate an instance of `REF(MANAGER)` and store it in the column `OID`. Implicitly, an additional column stores each attribute of `MANAGER` that has been inserted into the table, as well. For example, the following code fragment shows how the entrepreneur created three instances of the `MANAGER` structured type to represent three managers:
 
@@ -223,7 +225,7 @@ INSERT INTO MANAGERS (
   'HELEN',
   '4153785600'
  );
-```
+```text
 
 The table `MANAGERS` will now have three rows, one row for each manager inserted so far. The column `OID` will contain three unique object identifiers of type `REF(MANAGER)`, one for each instance of `MANAGER.` These object identifiers were generated automatically by the database and will be permanently stored in the table `MANAGERS`. Implicitly, an additional column stores each attribute of `MANAGER`. For example, in the table `MANAGERS`, one row contains a `REF(MANAGER)` that references Alfredo Montoya, another row contains a `REF(MANAGER)` that references Margaret Haskins, and a third row contains a `REF(MANAGER)` that references Helen Chen.
 
@@ -348,7 +350,6 @@ public class CreateRef {
         }
     }
 }
-```
 
 ## Using User-Defined Types as Column Values
 
@@ -356,9 +357,8 @@ Our entrepreneur now has the UDTs required to create the table `STORES`. The str
 
 The UDT `COF_TYPES` is based on the SQL data type `ARRAY` and is the type for the column `COF_TYPES`. The following line of code creates the type `COF_ARRAY` as an `ARRAY` value with 10 elements. The base type of `COF_ARRAY` is `VARCHAR(40)`.
 
-```
 CREATE TYPE COF_ARRAY AS ARRAY(10) OF VARCHAR(40);
-```
+```sql
 
 With the new data types defined, the following SQL statement creates the table `STORES`:
 
@@ -389,20 +389,20 @@ INSERT INTO STORES VALUES
   SELECT OID FROM MANAGERS
     WHERE MGR_ID = 000001
 );
-```
+```text
 
 The following goes through each column and the value inserted into it.
 
 ```
 STORE_NO: 100001
-```
+```text
 
 This column is type `INTEGER`, and the number `100001` is an `INTEGER` type, similar to entries made before in the tables `COFFEES` and `SUPPLIERS`.
 
 ```
 LOCATION: ADDRESS(888, 'Main_Street',
   'Rancho_Alegre', 'CA', '94049')
-```
+```text
 
 The type for this column is the structured type `ADDRESS`, and this value is the constructor for an instance of `ADDRESS`. When we sent the definition of `ADDRESS` was sent to the database, one of the things it did was to create a constructor for the new type. The comma-separated values in parentheses are the initialization values for the attributes of the `ADDRESS` type, and they must appear in the same order in which the attributes were listed in the definition of the `ADDRESS` type. `888` is the value for the attribute `NUM`, which is an `INTEGER` value. `"Main_Street"` is the value for `STREET`, and `"Rancho_Alegre"` is the value for `CITY`, with both attributes being of type `VARCHAR(40)`. The value for the attribute `STATE` is `"CA"`, which is of type `CHAR(2)`, and the value for the attribute `ZIP` is `"94049"`, which is of type `CHAR(5)`.
 
@@ -413,7 +413,7 @@ COF_TYPES: COF_ARRAY(
   'Espresso',
   'Colombian_Decaf',
   'French_Roast_Decaf'),
-```
+```sql
 
 The column `COF_TYPES` is of type `COF_ARRAY` with a base type of `VARCHAR(40)`, and the comma-separated values between parentheses are the `String` objects that are the array elements. The owner defined the type `COF_ARRAY` as having a maximum of 10 elements. This array has 5 elements because the entrepreneur supplied only 5 `String` objects for it.
 
@@ -441,7 +441,7 @@ String insertMgr =
   "WHERE MGR_ID = 000001)";
 
 stmt.executeUpdate(insertMgr);
-```
+```java
 
 However, because you are going to send several `INSERT INTO` statements, it will be more efficient to send them all together as a batch update, as in the following code example:
 

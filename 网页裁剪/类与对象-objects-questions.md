@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Objects (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -89,16 +91,14 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println("myRect's area is " + myRect.area());
 	    }
 	}
-	```
 2. The following code creates one array and one string object. How many references to those objects exist after the code executes? Is either object eligible for garbage collection?
-	```
 	...
 	String[] students = new String[10];
 	String studentName = "Peter Parker";
 	students[0] = studentName;
 	studentName = null;
 	...
-	```
+```java
 3. How does a program destroy an object that it creates?
 
 ## Exercises
@@ -110,6 +110,6 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	    public int anInt;
 	    public float aFloat;
 	}
-	```
+```
 
 [[类与对象-objects-answers|Check your answers.]]

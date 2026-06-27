@@ -61,7 +61,7 @@ The naming examples discussed how you can use [[JNDI-添加绑定|bind(), rebind
 
 [DirContext.bind()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#bind-javax.naming.Name-java.lang.Object-javax.naming.directory.Attributes-) is used to add a binding that has attributes to a context. It accepts as arguments the name of the object, the object to be bound, and a set of attributes.
 
-```
+```text
 // Create the object to be bound
 Fruit fruit = new Fruit("orange");
 
@@ -94,7 +94,6 @@ attribute: javareferenceaddress
 value: #0#fruit#orange
 attribute: ou
 value: favorite
-```
 
 The extra attributes and attribute values shown are used to store information about the object (fruit). These extra attributes are discussed in more detail in the trail.
 
@@ -104,7 +103,6 @@ If you were to run this example twice, then the second attempt would fail with a
 
 [DirContext.rebind()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#rebind-javax.naming.Name-java.lang.Object-javax.naming.directory.Attributes-) is used to add or replace a binding and its attributes. It accepts the same arguments as bind(). However, rebind() 's semantics require that if the name is already bound, then it will be unbound and the newly given object and attributes will be bound.
 
-```
 // Create the object to be bound
 Fruit fruit = new Fruit("lemon");
 
@@ -117,7 +115,6 @@ attrs.put(objclass);
 
 // Perform bind
 ctx.rebind("ou=favorite, ou=Fruits", fruit, attrs);
-```
 
 When you run [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Rebind.java), it replaces the binding that the [`bind()`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Bind.java) example created.
 
@@ -137,4 +134,3 @@ attribute: javareferenceaddress
 value: #0#fruit#lemon
 attribute: ou
 value: favorite
-```

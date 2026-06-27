@@ -1,43 +1,44 @@
 ---
 分类:
   - "网页裁剪"
-标题: "User Acceptance of RIAs (The Java™ Tutorials >        
-            Deployment > Deployment In-Depth)"
-描述: "This deployment Java tutorial describes development and deployment of applets, Java Web Start applications, rich Internet applications, and JAR related tools"
+标题: "用户对 RIA 的接受"
+描述: "《Java 教程》部署路线课程，介绍出于安全考虑，用户在首次启动 RIA 前会被提示授权运行，以及签名、证书和安全级别设置的相关内容。"
 来源: "https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/userAcceptance.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 用户对 RIA 的接受
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+> 文档说明
 
-## User Acceptance of RIAs
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-For security, users are prompted for permission to run an RIA before launching for the first time, even if the application is signed or doesn't require access outside of the security sandbox. The prompt includes the following information, depending on the RIA being run:
+## 用户对 RIA 的接受
 
-- Name of the RIA, or notification that the application is unsigned.
-- Information about the publisher, if the app is signed with a certificate from a trusted authority. If the certificate is expired, a warning is included. If the application is self-signed, the publisher is shown as UNKNOWN.
-- Warnings if the certificate is expired, revoked, or the revocation status cannot be checked.
-- Location from which the application is accessed.
-- Level of access required by the application. Limited access restricts the application to the security sandbox, unrestricted access provides the application with access to resources on the user's system.
-- Warning about missing JAR file manifest attributes if recommended attributes are not present.
-- For unsigned or self-signed applications, a check box that the user must select to accept the application.
-- In some cases, the option to not show the prompt again.
+出于安全考虑，用户在首次启动 RIA 前会被提示授权运行，即使应用程序已签名或不需要访问安全沙箱之外的内容。提示包含以下信息，具体取决于正在运行的 RIA：
 
-For a description of the prompts, see [What should I do when I see a security prompt from Java?](http://java.com/faq-securityprompts)
+- RIA 的名称，或应用程序未签名的通知。
+- 有关发布者的信息（如果应用程序使用受信任机构颁发的证书签名）。如果证书已过期，则包含警告。如果应用程序是自签名的，则发布者显示为 UNKNOWN。
+- 如果证书已过期、被吊销或无法检查吊销状态，则发出警告。
+- 访问应用程序的位置。
+- 应用程序所需的访问级别。受限访问将应用程序限制在安全沙箱中，不受限访问使应用程序能够访问用户系统上的资源。
+- 如果缺少推荐的 JAR 文件清单属性，则发出警告。
+- 对于未签名或自签名的应用程序，用户必须选中复选框才能接受该应用程序。
+- 在某些情况下，可选择不再显示提示。
 
-Users are also warned if they are running an out-of-date JRE and are given the opportunity to update to the latest version before running an application. Users can also choose to run with the JRE on their system, or to block the application from running.
+有关提示的描述，请参阅[当我看到 Java 的安全提示时该怎么办？](http://java.com/faq-securityprompts)
 
-The security level setting in the Java Control Panel determines if users are given the opportunity to run RIAs. The default setting of High prompts users for permission to run applications that are signed with a valid certificate and include the Permissions attribute in the manifest for the main JAR file. If the revocation status of an application cannot be checked, the application is also allowed to run with the user's permission.
+如果用户运行的是过时的 JRE，也会收到警告，并有机会在运行应用程序之前更新到最新版本。用户还可以选择使用其系统上的 JRE 运行，或阻止应用程序运行。
 
-Signing your RIA provides the user with a level of trust. Consider the following when preparing your application for deployment:
+Java 控制面板中的安全级别设置决定是否给用户提供运行 RIA 的机会。默认的"高"设置会提示用户授权运行使用有效证书签名并在主 JAR 文件清单中包含 Permissions 属性的应用程序。如果无法检查应用程序的吊销状态，则在用户许可的情况下也允许运行该应用程序。
 
-- The best user experience is provided by an application that is signed with a certificate issued by a recognized certificate authority.
-- Self-signed and unsigned applications are not allowed to be run unless an exception site list or deployment rule set has been created to explicitly allow the application to run.
-- Signed applications can be either privileged applications or sandbox applications. Privileged applications are provided unrestricted access to resources on the user's system. Sandbox applications are restricted to the Java security sandbox. Unsigned applications are restricted to the sandbox.
+对 RIA 进行签名为用户提供了一定程度的信任。在为部署准备应用程序时，请考虑以下事项：
+
+- 使用受认可的证书颁发机构颁发的证书签名的应用程序提供最佳用户体验。
+- 除非创建了例外站点列表或部署规则集以明确允许应用程序运行，否则不允许运行自签名和未签名的应用程序。
+- 已签名的应用程序可以是特权应用程序或沙箱应用程序。特权应用程序可以不受限制地访问用户系统上的资源。沙箱应用程序被限制在 Java 安全沙箱中。未签名的应用程序被限制在沙箱中。

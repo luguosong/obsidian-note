@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Top-Level Containers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -146,7 +148,7 @@ A Swing-based applet has at least one containment hierarchy, exactly one of whic
 
 Here's the code that the preceding example uses to get a frame's content pane and add the yellow label to it:
 
-```
+```text
 frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
 ```
 
@@ -158,7 +160,7 @@ Note that the default layout manager for `JPanel` is `FlowLayout`; you'll probab
 
 To make a component the content pane, use the top-level container's `setContentPane` method. For example:
 
-```
+```text
 //Create a panel and add components to it.
 JPanel contentPane = new JPanel(new BorderLayout());
 contentPane.setBorder(someBorder);
@@ -174,7 +176,7 @@ topLevelContainer.setContentPane(contentPane);
 
 As a convenience, the `add` method and its variants, `remove` and `setLayout` have been overridden to forward to the `contentPane` as necessary. This means you can write
 
-```
+```text
 frame.add(child);
 ```
 
@@ -188,7 +190,7 @@ Note that only these three methods do this. This means that `getLayout()` will n
 
 In theory, all top-level containers can hold a menu bar. In practice, however, menu bars usually appear only in frames and applets. To add a menu bar to a top-level container, create a `JMenuBar` object, populate it with menus, and then call `setJMenuBar`. The `TopLevelDemo` adds a menu bar to its frame with this code:
 
-```
+```text
 frame.setJMenuBar(greenMenuBar);
 ```
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Advanced Data Types (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -86,15 +88,15 @@ The latest version of the ANSI/ISO SQL standard is commonly referred to as SQL:2
 	- `XML`: XML object
 - User defined types:
 	- Structured type: User-defined type; for example:
-		```
+```sql
 		CREATE TYPE PLANE_POINT
 		AS (X FLOAT, Y FLOAT) NOT FINAL
-		```
+```
 		- `DISTINCT` type: User-defined type based on a built-in type; for example:
-		```
+```sql
 		CREATE TYPE MONEY
 		AS NUMERIC(10,2) FINAL
-		```
+```
 - Constructed types: New types based on a given base type:
 	- `REF(*structured-type*)`: Pointer that persistently denotes an instance of a structured type that resides in the database
 		- `*base-type* ARRAY[*n*]`: Array of *n* base-type elements
@@ -147,7 +149,7 @@ ResultSet rs = stmt.executeQuery(
     "WHERE ID = 002238");
 rs.next();
 Array scores = rs.getArray("SCORES");
-```
+```text
 
 The variable `*scores*` is a logical pointer to the SQL `ARRAY` object stored in the table `STUDENTS` in the row for student `002238`.
 

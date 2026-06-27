@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: (The Java™ Tutorials > Collections >
+            Interfaces)
 
 Documentation
 
@@ -48,7 +50,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1. Exercise: Write a program that prints its arguments in random order. Do not make a copy of the argument array. Demonstrate how to print out the elements using both streams and the traditional enhanced for statement.  
 	Answer:  
-	```
+	```java
 	import java.util.*;
 	public class Ran {
 	    public static void main(String[] args) {
@@ -66,10 +68,10 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println();
 	    }
 	}
-	```
+```java
 2. Exercise: Take the [`FindDups`](https://docs.oracle.com/javase/tutorial/collections/interfaces/examples/FindDups.java) example and modify it to use a `SortedSet` instead of a `Set`. Specify a `Comparator` so that case is ignored when sorting and identifying set elements.  
 	Answer:  
-	```
+	```java
 	import java.util.*;
 	public class FindDups {
 	    static final Comparator<String> IGNORE_CASE_ORDER
@@ -87,11 +89,11 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println(s.size() + " distinct words: " + s);
 	    }
 	}
-	```
+```
 3. Exercise: Write a method that takes a `List<String>` and applies [`String.trim`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#trim--) to each element.  
 	Answer:  
 	The enhanced `for` statement does not allow you to modify the `List`. Using an instance of the `Iterator` class allows you to delete elements, but not replace an existing element or add a new one. That leaves `ListIterator`:
-	```
+	```java
 	import java.util.*;
 	public class ListTrim {
 	    static void listTrim(List<String> strings) {

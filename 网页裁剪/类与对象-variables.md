@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Declaring Member Variables (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -85,7 +87,7 @@ There are several kinds of variables:
 
 The `Bicycle` class uses the following lines of code to define its fields:
 
-```
+```java
 public int cadence;
 public int gear;
 public int speed;

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Creating and Using Packages (The Java™ Tutorials > Learning the Java Language >
+            Packages)
 
 Documentation
 
@@ -64,7 +66,7 @@ In `mygame/shared/` place:
 c. Do you think you'll need to make any other changes to the source files to make them compile correctly? If so, what?  
 Answer 1c: Yes, you need to add import statements. `Client.java` and `Server.java` need to import the `Utilities` class, which they can do in one of two ways:
 
-```
+```java
 import mygame.shared.*;
        --or--
 import mygame.shared.Utilities;
@@ -72,7 +74,7 @@ import mygame.shared.Utilities;
 
 Also, `Server.java` needs to import the `Client` class:
 
-```
+```java
 import mygame.client.Client;
 ```
 

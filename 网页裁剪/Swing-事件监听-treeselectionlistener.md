@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Tree Selection Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -81,7 +83,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 To detect when the user selects a node in a [[Swing-组件-tree|tree]], you need to register a tree selection listener. Here is an example, taken from the `TreeDemo` example discussed in [[Swing-组件-tree|Responding to Node Selection]], of detecting node selection in a tree that can have at most one node selected at a time:
 
-```
+```java
 tree.addTreeSelectionListener(new TreeSelectionListener() {
     public void valueChanged(TreeSelectionEvent e) {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode)
@@ -97,11 +99,11 @@ tree.addTreeSelectionListener(new TreeSelectionListener() {
         ...
     }
 });
-```
+```text
 
 To specify that the tree should support single selection, the program uses this code:
 
-```
+```text
 tree.getSelectionModel().setSelectionMode
         (TreeSelectionModel.SINGLE_TREE_SELECTION);
 ```

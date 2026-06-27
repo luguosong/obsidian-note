@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Primitive Data Types (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The Java programming language is statically-typed, which means that all variables must first be declared before they can be used. This involves stating the variable's type and name, as you've already seen:
 
-```
+```text
 int gear = 1;
 ```
 
@@ -64,7 +66,7 @@ Local variables are slightly different; the compiler never assigns a default val
 
 You may have noticed that the `new` keyword isn't used when initializing a variable of a primitive type. Primitive types are special data types built into the language; they are not objects created from a class. A *literal* is the source code representation of a fixed value; literals are represented directly in your code without requiring computation. As shown below, it's possible to assign a literal to a variable of a primitive type:
 
-```
+```text
 boolean result = true;
 char capitalC = 'C';
 byte b = 100;
@@ -84,7 +86,7 @@ Values of the integral types `byte`, `short`, `int`, and `long` can be created f
 
 For general-purpose programming, the decimal system is likely to be the only number system you'll ever use. However, if you need to use another number system, the following example shows the correct syntax. The prefix `0x` indicates hexadecimal and `0b` indicates binary:
 
-```
+```text
 // The number 26, in decimal
 int decVal = 26;
 //  The number 26, in hexadecimal
@@ -99,7 +101,7 @@ A floating-point literal is of type `float` if it ends with the letter `F` or `f
 
 The floating point types (`float` and `double`) can also be expressed using E or e (for scientific notation), F or f (32-bit float literal) and D or d (64-bit double literal; this is the default and by convention is omitted).
 
-```
+```text
 double d1 = 123.4;
 // same value as d1, but in scientific notation
 double d2 = 1.234e2;
@@ -124,7 +126,7 @@ For instance, if your code contains numbers with many digits, you can use an und
 
 The following example shows other ways you can use the underscore in numeric literals:
 
-```
+```text
 long creditCardNumber = 1234_5678_9012_3456L;
 long socialSecurityNumber = 999_99_9999L;
 float pi =  3.14_15F;
@@ -144,7 +146,7 @@ You can place underscores only between digits; you cannot place underscores in t
 
 The following examples demonstrate valid and invalid underscore placements (which are highlighted) in numeric literals:
 
-```
+```text
 // Invalid: cannot put underscores
 // adjacent to a decimal point
 float pi1 = 3_.1415F;

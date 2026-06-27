@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Reading, Writing, and Creating Files (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -136,7 +138,7 @@ The following `StandardOpenOptions` enums are supported:
 
 If you have a small-ish file and you would like to read its entire contents in one pass, you can use the [`readAllBytes(Path)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#readAllBytes-java.nio.file.Path-) or [`readAllLines(Path, Charset)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#readAllLines-java.nio.file.Path-java.nio.charset.Charset-) method. These methods take care of most of the work for you, such as opening and closing the stream, but are not intended for handling large files. The following code shows how to use the `readAllBytes` method:
 
-```
+```text
 Path file = ...;
 byte[] fileArray;
 fileArray = Files.readAllBytes(file);
@@ -151,7 +153,7 @@ You can use one of the write methods to write bytes, or lines, to a file.
 
 The following code snippet shows how to use a `write` method.
 
-```
+```text
 Path file = ...;
 byte[] buf = ...;
 Files.write(file, buf);
@@ -179,7 +181,6 @@ try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
 } catch (IOException x) {
     System.err.format("IOException: %s%n", x);
 }
-```
 
 ### Writing a File by Using Buffered Stream I/O
 
@@ -187,7 +188,6 @@ You can use the [`newBufferedWriter(Path, Charset, OpenOption...)`](https://docs
 
 The following code snippet shows how to create a file encoded in "US-ASCII" using this method:
 
-```
 Charset charset = Charset.forName("US-ASCII");
 String s = ...;
 try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
@@ -195,7 +195,6 @@ try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 } catch (IOException x) {
     System.err.format("IOException: %s%n", x);
 }
-```
 
 ---
 
@@ -217,7 +216,6 @@ try (InputStream in = Files.newInputStream(file);
 } catch (IOException x) {
     System.err.println(x);
 }
-```
 
 ### Creating and Writing a File by Using Stream I/O
 
@@ -250,7 +248,7 @@ public class LogFileTest {
     }
   }
 }
-```
+```java
 
 ---
 
@@ -341,7 +339,6 @@ public class LogFilePermissionsTest {
     }
   }
 }
-```
 
 ---
 
@@ -355,7 +352,6 @@ In a single atomic operation, the `createFile` method checks for the existence o
 
 The following code snippet creates a file with default attributes:
 
-```
 Path file = ...;
 try {
     // Create the empty file with default permissions, etc.
@@ -367,7 +363,7 @@ try {
     // Some other sort of failure, such as permissions.
     System.err.format("createFile error: %s%n", x);
 }
-```
+```json
 
 [[Java核心类库-基本IO-管理元数据|POSIX File Permissions]] has an example that uses `createFile(Path, FileAttribute<?>)` to create a file with pre-set permissions.
 
@@ -395,7 +391,7 @@ try {
 
 The result of running this file would be something like the following:
 
-```
+```text
 The temporary file has been created: /tmp/509668702974537184.myapp
 ```
 

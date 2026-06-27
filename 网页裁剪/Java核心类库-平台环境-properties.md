@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Properties (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)
 
 Documentation
 
@@ -70,7 +72,7 @@ The following figure illustrates how a typical application might manage its conf
 
 The following Java code performs the first two steps described in the previous section: loading the default properties and loading the remembered properties:
 
-```
+```sql
 . . .
 // create and load default properties
 Properties defaultProps = new Properties();
@@ -87,7 +89,6 @@ in = new FileInputStream("appProperties");
 applicationProps.load(in);
 in.close();
 . . .
-```
 
 First, the application sets up a default `Properties` object. This object contains the set of properties to use if values are not explicitly set elsewhere. Then the load method reads the default values from a file on disk named `defaultProperties`.
 
@@ -99,7 +100,6 @@ Finally, the code loads a set of properties into `applicationProps` from a file 
 
 The following example writes out the application properties from the previous example using `Properties.store`. The default properties don't need to be saved each time because they never change.
 
-```
 FileOutputStream out = new FileOutputStream("appProperties");
 applicationProps.store(out, "---No Comment---");
 out.close();

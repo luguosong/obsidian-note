@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Developing an Applet (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -130,7 +132,7 @@ public class DynamicTreePanel extends JPanel implements ActionListener {
     }
     // ...
 }
-```
+```java
 
 ## Creating the Applet
 

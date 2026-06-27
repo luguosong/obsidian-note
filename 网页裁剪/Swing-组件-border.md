@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Borders (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -117,7 +119,7 @@ Our examples set borders on `JPanel` s, `JLabel` s, and custom subclasses of `JC
 
 To put a border around a `JComponent`, you use its `setBorder` method. You can use the [`BorderFactory`](https://docs.oracle.com/javase/8/docs/api/javax/swing/BorderFactory.html) class to create most of the borders that Swing provides. If you need a reference to a border — say, because you want to use it in multiple components — you can save it in a variable of type [`Border`](https://docs.oracle.com/javase/8/docs/api/javax/swing/border/Border.html). Here is an example of code that creates a bordered container:
 
-```
+```text
 JPanel pane = new JPanel();
 pane.setBorder(BorderFactory.createLineBorder(Color.black));
 ```
@@ -154,7 +156,7 @@ The next picture shows compound borders. With compound borders, you can combine 
 
 The code that follows shows how to create and set the borders you saw in the preceding figures. You can find the program's code in [`BorderDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/BorderDemoProject/src/components/BorderDemo.java).
 
-```
+```text
 //Keep references to the next few borders,
 //for use in titles and compound borders.
 Border blackline, raisedetched, loweredetched,

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Set Implementations (The Java™ Tutorials >        
+            Collections > Implementations)
 
 Documentation
 
@@ -49,7 +51,6 @@ One thing worth keeping in mind about `HashSet` is that iteration is linear in t
 
 ```batch
 Set<String> s = new HashSet<String>(64);
-```
 
 The `HashSet` class has one other tuning parameter called the *load factor*. If you care a lot about the space consumption of your `HashSet`, read the `HashSet` documentation for more information. Otherwise, just accept the default; it's almost always the right thing to do.
 
@@ -66,11 +67,10 @@ There are two special-purpose `Set` implementations — [`EnumSet`](https://docs
 ```java
 for (Day d : EnumSet.range(Day.MONDAY, Day.FRIDAY))
     System.out.println(d);
-```
 
 Enum sets also provide a rich, typesafe replacement for traditional bit flags.
 
-```
+```text
 EnumSet.of(Style.BOLD, Style.ITALIC)
 ```
 

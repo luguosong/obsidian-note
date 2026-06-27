@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Converting Non-Unicode Text (The Java™ Tutorials >        
+            Internationalization > Working with Text)
 
 Documentation
 
@@ -25,7 +27,7 @@ In the Java programming language `char` values represent Unicode characters. Uni
 
 Few text editors currently support Unicode text entry. The text editor we used to write this section's code examples supports only ASCII characters, which are limited to 7 bits. To indicate Unicode characters that cannot be represented in ASCII, such as ö, we used the `\uXXXX` escape sequence. Each `X` in the escape sequence is a hexadecimal digit. The following example shows how to indicate the ö character with an escape sequence:
 
-```
+```text
 String str = "\u00F6";
 char c = '\u00F6';
 Character letter = new Character('\u00F6');
@@ -33,7 +35,7 @@ Character letter = new Character('\u00F6');
 
 A variety of character encodings are used by systems around the world. Currently few of these encodings conform to Unicode. Because your program expects characters in Unicode, the text data it gets from the system must be converted into Unicode, and vice versa. Data in text files is automatically converted to Unicode when its encoding matches the default file encoding of the Java Virtual Machine. You can identify the default file encoding by creating an `OutputStreamWriter` using it and asking for its canonical name:
 
-```
+```java
 OutputStreamWriter out = new OutputStreamWriter(new ByteArrayOutputStream());
 System.out.println(out.getEncoding());
 ```

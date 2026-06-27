@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Root Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -166,7 +168,7 @@ class MyGlassPane extends JComponent
     }
 ...
 }
-```
+```java
 
 The next code snippet implements the mouse-event handling for the glass pane. If a mouse event occurs over the check box, then the glass pane redispatches the event so that the check box receives it.
 
@@ -234,7 +236,7 @@ private void redispatchMouseEvent(MouseEvent e,
 
 Here is the code in `MyGlassPane` that implements the painting.
 
-```
+```java
 protected void paintComponent(Graphics g) {
     if (point != null) {
         g.setColor(Color.red);

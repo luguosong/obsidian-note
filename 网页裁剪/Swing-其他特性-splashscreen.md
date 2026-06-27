@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Create a Splash Screen (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -69,7 +71,7 @@ Typically, a developer wants to keep the splash-screen image on the screen and d
 
 The following code snippet shows how to obtain a `SplashScreen` object, then how to create a graphics context with the `createGraphics()` method:
 
-```
+```java
 ...
         final SplashScreen splash = SplashScreen.getSplashScreen();
         if (splash == null) {
@@ -82,7 +84,6 @@ The following code snippet shows how to obtain a `SplashScreen` object, then how
             return;
         }
 ...
-```
 
 Find the demo's complete code in the [`SplashDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/SplashDemoProject/src/misc/SplashDemo.java) file.
 
@@ -103,33 +104,23 @@ The native splash screen can be displayed in the following ways:
 
 To display a splash screen from the command line use the `-splash:` command-line argument. This argument is a Java application launcher option that displays a splash screen:
 
-```
 java -splash:<file name> <class name>
-```
 
 ---
 
 **Try this:**
 1. Save the [`` `SplashDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/SplashDemoProject/src/misc/SplashDemo.java) file in a directory named `misc`.
 2. Compile the file as follows:
-	```
 	javac misc/SplashDemo.java
-	```
 3. Save the [`` `splash.gif` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/SplashDemoProject/src/misc/images/splash.gif) image in the `images` directory.
 4. Run the application from the command line with the following arguments:
-	```
 	java -splash:images/splash.gif misc.SplashDemo
-	```
 5. Wait until the splash screen has been completely displayed.
 6. The application window appears. To close the window choose File|Exit from the pop-up menu or click the X.
 7. Change the splash screen name to a non-existent image, for example, `nnn.gif`. Run the application as follows:
-	```
 	java -splash:images/nnn.gif misc.SplashDemo
-	```
 8. You will see the following output string:
-	```
 	SplashScreen.getSplashScreen() returned null
-	```
 
 ---
 
@@ -137,34 +128,29 @@ java -splash:<file name> <class name>
 
 If your application is packaged in a JAR file, you can use the `SplashScreen-Image` option in a manifest file to show a splash screen. Place the image in the JAR file and specify the path in the option as follows:
 
-```
+```yaml
 Manifest-Version: 1.0
 Main-Class: <class name>
 SplashScreen-Image: <image name>
-```
 
 ---
 
 **Try this:**
 1. Save the [`` `SplashDemo.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/SplashDemoProject/src/misc/SplashDemo.java) file in a directory named `misc`.
 2. Compile the file as follows:
-	```
+```text
 	javac misc/SplashDemo.java
-	```
+```
 3. Save the [`` `splash.gif` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/SplashDemoProject/src/misc/images/splash.gif) image in the `images` directory.
 4. Prepare the `splashmanifest.mf` file as follows:
-	```
+	```yaml
 	Manifest-Version: 1.0
 	Main-Class: misc.SplashDemo
 	SplashScreen-Image: images/splash.gif
-	```
 5. Create a JAR file using the following command:
-	```
 	jar cmf splashmanifest.mf splashDemo.jar misc/SplashDemo*.class images/splash.gif
-	```
 	For more information about JAR files, see [[部署-basicsindex|Using JAR Files]] in the [[将程序打包为JAR文件|Packaging Programs in JAR Files]] page.
 6. Run the application:
-	```
 	java -jar splashDemo.jar
 	```
 7. Wait until the splash screen has been completely displayed.

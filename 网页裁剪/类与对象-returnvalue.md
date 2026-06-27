@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Returning a Value from a Method (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -89,7 +91,7 @@ You declare a method's return type in its method declaration. Within the body of
 
 Any method declared `void` doesn't return a value. It does not need to contain a `return` statement, but it may do so. In such a case, a `return` statement can be used to branch out of a control flow block and exit the method and is simply used like this:
 
-```
+```text
 return;
 ```
 
@@ -97,7 +99,7 @@ If you try to return a value from a method that is declared `void`, you will get
 
 Any method that is not declared `void` must contain a `return` statement with a corresponding return value, like this:
 
-```
+```text
 return returnValue;
 ```
 
@@ -105,7 +107,7 @@ The data type of the return value must match the method's declared return type; 
 
 The `getArea()` method in the `Rectangle` [`Rectangle`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Rectangle.java) class that was discussed in the sections on objects returns an integer:
 
-```
+```java
 // a method for computing the area of the rectangle
 public int getArea() {
     return width * height;
@@ -116,7 +118,7 @@ This method returns the integer that the expression `width*height` evaluates to.
 
 The `getArea` method returns a primitive type. A method can also return a reference type. For example, in a program to manipulate `Bicycle` objects, we might have a method like this:
 
-```
+```java
 public Bicycle seeWhosFastest(Bicycle myBike, Bicycle yourBike,
                               Environment env) {
     Bicycle fastest;
@@ -140,7 +142,7 @@ The class hierarchy for ImaginaryNumber
 
 Now suppose that you have a method declared to return a `Number`:
 
-```
+```java
 public Number returnANumber() {
     ...
 }
@@ -150,7 +152,7 @@ The `returnANumber` method can return an `ImaginaryNumber` but not an `Object`. 
 
 You can override a method and define it to return a subclass of the original method, like this:
 
-```
+```java
 public ImaginaryNumber returnANumber() {
     ...
 }

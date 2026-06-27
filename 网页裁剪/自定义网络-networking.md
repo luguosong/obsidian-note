@@ -1,45 +1,47 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Trail: Custom Networking (The Java™ Tutorials)"
-描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
-来源: "https://docs.oracle.com/javase/tutorial/networking"
+标题: "自定义网络"
+描述: "《Java 教程》自定义网络路线，介绍如何编写可在互联网上使用的 Java 应用程序和 applet，涵盖 URL、套接字、数据报和 cookie 等网络功能。"
+来源: "https://docs.oracle.com/javase/tutorial/networking/index.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 自定义网络
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+> 文档说明
 
-## Trail: Custom Networking
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-The Java platform is highly regarded in part because of its suitability for writing programs that use and interact with the resources on the Internet and the World Wide Web. In fact, Java-compatible browsers use this ability of the Java platform to the extreme to transport and run applets over the Internet.
+## 路线：自定义网络
 
-This trail walks you through the complexities of writing Java applications and applets that can be used on the Internet.
+Java 平台之所以备受推崇，部分原因是它适合编写使用互联网和万维网资源并与之交互的程序。事实上，兼容 Java 的浏览器将 Java 平台的此能力发挥到极致，通过互联网传输和运行 applet。
 
-[[overview-overview|**Overview of Networking**]] has two sections. The first describes the networking capabilities of the Java platform that you may already be using without realizing that you are using the network. The second provides a brief overview of networking to familiarize you with terms and concepts that you should understand before reading how to use URLs, sockets, and datagrams.
+本路线带你了解编写可在互联网上使用的 Java 应用程序和 applet 的复杂性。
 
-[[urls-urls|**Working With URLs**]] discusses how your Java programs can use URLs to access information on the Internet. A URL (Uniform Resource Locator) is the address of a resource on the Internet. Your Java programs can use URLs to connect to and retrieve information over a network. This lesson provides a more complete definition of a URL and shows you how to create and parse a URL, how to open a connection to a URL, and how to read from and write to that connection.
+本路线有两个部分。第一部分描述 Java 平台的网络功能，你可能已经在使用它们而没有意识到自己在使用网络。第二部分提供网络概述，使你熟悉在阅读如何使用 URL、套接字和数据报之前应理解的术语和概念。
 
-[[sockets-sockets|**All About Sockets**]] explains how to use sockets so that your programs can communicate with other programs on the network. A socket is one endpoint of a two-way communication link between two programs running on the network. This lesson shows you how a client can connect to a standard server, the Echo server, and communicate with it via a socket. It then walks you through the details of a complete client/server example, which shows you how to implement both the client side and the server side of a client/server pair.
+讨论你的 Java 程序如何使用 URL 访问互联网上的信息。URL（统一资源定位符）是互联网上资源的地址。你的 Java 程序可以使用 URL 通过网络连接和检索信息。本课提供 URL 的更完整定义，并向你展示如何创建和解析 URL、如何打开到 URL 的连接以及如何从该连接读取和写入。
 
-[[datagrams-datagrams|**All About Datagrams**]] takes you step by step through a simple client/server example that uses datagrams to communicate. It then challenges you to rewrite the example using multicast socket instead.
+解释如何使用套接字使你的程序能够与网络上的其他程序通信。套接字是网络上运行的两个程序之间双向通信链路的一个端点。本课展示客户端如何连接到标准服务器（Echo 服务器）并通过套接字与其通信。然后它带你了解一个完整的客户端/服务器示例的细节，展示你如何实现客户端/服务器对的客户端和服务器端。
 
-[[nifs-nifs|**Programmatic Access to Network Parameters**]] explains why you might want to access network interface parameters and how to do so. It gives examples of how to list all the IP addresses assigned to the machine as well as other useful information such as whether the interface is running.
+逐步带你了解一个使用数据报进行通信的简单客户端/服务器示例。然后挑战你改用多播套接字重写该示例。
 
-[[cookies-cookies|**Working With Cookies**]] discusses how cookies are used to create a session between a client and server, and how you can take advantage of cookies in your HTTP URL connections.
+解释为什么你可能想要访问网络接口参数以及如何这样做。它给出了如何列出分配给机器的所有 IP 地址以及其他有用信息（如接口是否正在运行）的示例。
+
+讨论如何使用 cookie 在客户端和服务器之间创建会话，以及如何在 HTTP URL 连接中利用 cookie。
 
 ---
 
-**Security considerations:**
+**安全考虑：**
 
-Note that communications over the network are subject to approval by the current security manager. [The Security Manager](https://docs.oracle.com/javase/essential/environment/security.html) describes what a security manager is and how it impacts your applications. For general information about the security features provided by the JDK, refer to [Security Features in Java SE](https://docs.oracle.com/javase/security/index.html).
+注意，网络上的通信需要当前安全管理器的批准。[安全管理器](https://docs.oracle.com/javase/essential/environment/security.html)描述了什么是安全管理器以及它如何影响你的应用程序。有关 JDK 提供的安全特性的常规信息，请参阅 [Java SE 中的安全特性](https://docs.oracle.com/javase/security/index.html)。
 
-The example programs in the following lessons that cover URLs, sockets, and datagrams are standalone applications, which, by default, have no security manager. If you convert these applications to applets, they may be unable to communicate over the network, depending on the browser or viewer in which they are running. See [What Applets Can and Cannot Do](https://docs.oracle.com/javase/deployment/applet/security.html) for information about the security restrictions placed on applets.
+以下涵盖 URL、套接字和数据报的课程中的示例程序是独立应用程序，默认情况下没有安全管理器。如果将这些应用程序转换为 applet，它们可能无法通过网络通信，具体取决于运行它们的浏览器或查看器。有关对 applet 施加的安全限制的信息，请参阅 [Applet 能做什么和不能做什么](https://docs.oracle.com/javase/deployment/applet/security.html)。
 
 ---

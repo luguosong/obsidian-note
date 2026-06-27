@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Defining and Using Applet Parameters (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -96,7 +98,7 @@ Consider an applet that takes three parameters. The `paramStr` and `paramInt` pa
      </applet-desc>
      <!-- ... -->
 </jnlp>
-```
+```javascript
 
 The `paramOutsideJNLPFile` parameter is specified in the `parameters` variable passed to the Deployment Toolkit script's `runApplet` function in [`` `AppletPage.html` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/dist/applet_AppletWithParameters/AppletPage.html).
 

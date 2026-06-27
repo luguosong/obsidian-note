@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Finding Files (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -89,13 +91,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 If you have ever used a shell script, you have most likely used pattern matching to locate files. In fact, you have probably used it extensively. If you haven't used it, pattern matching uses special characters to create a pattern and then file names can be compared against that pattern. For example, in most shell scripts, the asterisk, `*`, matches any number of characters. For example, the following command lists all the files in the current directory that end in `.html`:
 
-```
+```text
 % ls *.html
 ```
 
 The `java.nio.file` package provides programmatic support for this useful feature. Each file system implementation provides a [`PathMatcher`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html). You can retrieve a file system's `PathMatcher` by using the [`getPathMatcher(String)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getPathMatcher-java.lang.String-) method in the `FileSystem` class. The following code snippet fetches the path matcher for the default file system:
 
-```
+```text
 String pattern = ...;
 PathMatcher matcher =
     FileSystems.getDefault().getPathMatcher("glob:" + pattern);
@@ -117,7 +119,6 @@ Path filename = ...;
 if (matcher.matches(filename)) {
     System.out.println(filename);
 }
-```
 
 ## Recursive Pattern Matching
 
@@ -127,15 +128,14 @@ The [`Find`](https://docs.oracle.com/javase/tutorial/essential/io/examples/Find.
 
 To run the Find application, use the following format:
 
-```
 % java Find <path> -name "<glob_pattern>"
-```
+```text
 
 The pattern is placed inside quotation marks so any wildcards are not interpreted by the shell. For example:
 
 ```
 % java Find . -name "*.html"
-```
+```java
 
 Here is the source code for the `Find` example:
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Stroking and Filling Graphics Primitives (The Java™ Tutorials >        
+            2D Graphics > Working with Geometry)
 
 Documentation
 
@@ -36,7 +38,7 @@ To apply fancy line styles and fill patterns to geometric primitives change the 
 
 The following code lines enrich geometric primitives with filling and stroking context:
 
-```
+```java
 // draw RoundRectangle2D.Double
 
 final static float dash1[] = {10.0f};
@@ -54,7 +56,7 @@ g2.draw(new RoundRectangle2D.Double(x, y,
 
 ![Dashed rounded rectangle](https://docs.oracle.com/javase/tutorial/figures/2d/2D-18.gif)
 
-```
+```text
 // fill Ellipse2D.Double
 redtowhite = new GradientPaint(0,0,color.RED,100, 0,color.WHITE);
 g2.setPaint(redtowhite);

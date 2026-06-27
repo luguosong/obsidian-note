@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Declaring Classes (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -79,7 +81,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 You've seen classes defined in the following way:
 
-```
+```java
 class MyClass {
     // field, constructor, and 
     // method declarations
@@ -90,7 +92,7 @@ This is a *class declaration*. The *class body* (the area between the braces) co
 
 The preceding class declaration is a minimal one. It contains only those components of a class declaration that are required. You can provide more information about the class, such as the name of its superclass, whether it implements any interfaces, and so on, at the start of the class declaration. For example,
 
-```
+```java
 class MyClass extends MySuperClass implements YourInterface {
     // field, constructor, and
     // method declarations

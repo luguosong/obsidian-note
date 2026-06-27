@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Labels (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -111,7 +113,7 @@ By specifying HTML code in a label's text, you can give the label various charac
 
 Note that labels are not opaque by default. If you need to paint the label's background, it is recommended that you turn its opacity property to "true". The following code snippet shows how to do this.
 
-```
+```text
 label.setOpaque(true);
 ```
 
@@ -130,7 +132,7 @@ The following picture introduces an application that displays three labels. The 
 
 Below is the code from [`LabelDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/LabelDemoProject/src/components/LabelDemo.java) that creates the labels in the previous example.
 
-```
+```text
 ImageIcon icon = createImageIcon("images/middle.gif");
 . . .
 label1 = new JLabel("Image and Text",
@@ -148,7 +150,7 @@ The code for the `createImageIcon` method is similar to that used throughout thi
 
 Often, a label describes another component. When this occurs, you can improve your program's accessibility by using the `setLabelFor` method to identify the component that the label describes. For example:
 
-```
+```text
 amountLabel.setLabelFor(amountField);
 ```
 

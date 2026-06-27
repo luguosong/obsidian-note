@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Evolving Interfaces (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -23,16 +25,16 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Consider an interface that you have developed called `DoIt`:
 
-```
+```java
 public interface DoIt {
    void doSomething(int i, double x);
    int doSomethingElse(String s);
 }
-```
+```java
 
 Suppose that, at a later time, you want to add a third method to `DoIt`, so that the interface now becomes:
 
-```
+```java
 public interface DoIt {
 
    void doSomething(int i, double x);
@@ -46,19 +48,19 @@ If you make this change, then all classes that implement the old `DoIt` interfac
 
 Try to anticipate all uses for your interface and specify it completely from the beginning. If you want to add additional methods to an interface, you have several options. You could create a `DoItPlus` interface that extends `DoIt`:
 
-```
+```java
 public interface DoItPlus extends DoIt {
 
    boolean didItWork(int i, double x, String s);
    
 }
-```
+```java
 
 Now users of your code can choose to continue to use the old interface or to upgrade to the new interface.
 
 Alternatively, you can define your new methods as [[接口与继承-默认方法|default methods]]. The following example defines a default method named `didItWork`:
 
-```
+```java
 public interface DoIt {
 
    void doSomething(int i, double x);

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Classes (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -113,7 +115,7 @@ public class Bicycle {
     }
         
 }
-```
+```java
 
 A class declaration for a `MountainBike` class that is a subclass of `Bicycle` might look like this:
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Installed Extensions (The Java™ Tutorials >        
+            The Extension Mechanism > Creating and Using Extensions)
 
 Documentation
 
@@ -51,7 +53,7 @@ Note that an installed extension placed in one of the above directories extends 
 
 Let's create a simple installed extension. Our extension consists of one class, RectangleArea, that computes the areas of rectangles:
 
-```
+```java
 public final class RectangleArea {
     public static int area(java.awt.Rectangle r) {
         return r.width * r.height;
@@ -76,7 +78,6 @@ public class AreaApp {
                            + RectangleArea.area(r));
     }
 }
-```
 
 This application instantiates a 10 x 5 rectangle, and then prints out the rectangle's area using the RectangleArea.area method.
 
@@ -86,15 +87,13 @@ Let's first review how you would run the `AreaApp` application without using the
 
 The RectangleArea class is not part of the Java platform, of course, so you would need to place the area.jar file on the class path in order to run `AreaApp` without getting a runtime exception. If area.jar was in the directory /home/user, for example, you could use this command:
 
-```
 java -classpath .:/home/user/area.jar AreaApp
-```
+```text
 
 The class path specified in this command contains both the current directory, containing AreaApp.class, and the path to the JAR file containing the RectangleArea package. You would get the desired output by running this command:
 
-```
+```bash
 The rectangle's area is 50
-```
 
 ## Running AreaApp by Using the Extension Mechanism
 
@@ -104,7 +103,6 @@ To make the RectangleArea class into an extension, you place the file area.jar i
 
 With area.jar installed as an extension, you can run `AreaApp` without needing to specify the class path:
 
-```
 java AreaApp
 ```
 

@@ -8,6 +8,8 @@
 发布时间:
 创建时间: "2026-06-25T09:13:16+08:00"
 ---
+# obra/superpowers: An agentic skills framework & software development methodology that works.
+
 ## 超级能力(Superpowers)
 
 超级能力(Superpowers)是为您的编码代理(coding agents)提供的完整软件开发方法论(software development methodology)，建立在一套可组合的技能(composable skills)和一些初始指令之上，这些指令确保您的代理使用它们。
@@ -47,28 +49,28 @@ Superpowers 可通过 [官方 Claude 插件市场获取](https://claude.com/plug
 #### 官方市场
 
 - 从 Anthropic 官方市场安装插件：
-	```
+```text
 	/plugin install superpowers@claude-plugins-official
-	```
+```
 
 #### 超能力市场(Superpowers Marketplace)
 
 Superpowers 市场提供了 Superpowers 和其他一些相关插件供 Claude Code 使用。
 
 - 注册市场：
-	```
+```text
 	/plugin marketplace add obra/superpowers-marketplace
-	```
+```
 - 从此市场安装插件：
-	```
+```text
 	/plugin install superpowers@superpowers-marketplace
-	```
+```
 
 ### 反重力(Antigravity)
 
 从此存储库安装 Superpowers 作为插件：
 
-```
+```text
 agy plugin install https://github.com/obra/superpowers
 ```
 
@@ -87,69 +89,69 @@ Superpowers 可通过 [官方 Codex 插件市场](https://github.com/openai/plug
 Superpowers 可通过 [官方 Codex 插件市场](https://github.com/openai/plugins) 获得。
 
 - 打开插件搜索界面：
-	```
+```text
 	/plugins
-	```
+```
 - 搜索超级能力(Superpowers):
-	```
+```text
 	superpowers
-	```
+```
 - 选择 `安装插件 ` 。
 
 ### Cursor
 
 - 在 Cursor Agent 聊天中，从插件市场安装：
-	```
+```text
 	/add-plugin superpowers
-	```
+```
 - 或在插件市场中搜索"superpowers"。
 
 ### 工厂机器人(Factory Droid)
 
 - 注册市场(marketplace):
-	```
+```text
 	droid plugin marketplace add https://github.com/obra/superpowers
-	```
+```
 - 安装插件：
-	```
+```text
 	droid plugin install superpowers@superpowers
-	```
+```
 
 ### \# Gemini CLI
 
 - 安装扩展：
-	```
+```text
 	gemini extensions install https://github.com/obra/superpowers
-	```
+```
 - 稍后更新：
-	```
+```text
 	gemini extensions update superpowers
-	```
+```
 
 ### \# GitHub Copilot CLI
 
 - 注册市场(marketplace):
-	```
+```text
 	copilot plugin marketplace add obra/superpowers-marketplace
-	```
+```
 - 安装插件：
-	```
+```text
 	copilot plugin install superpowers@superpowers-marketplace
-	```
+```
 
 ### Kimi Code
 
 Superpowers 在 Kimi Code 的插件市场中可用。
 
 - 打开 Kimi Code 的插件管理器：
-	```
+```text
 	/plugins
-	```
+```
 - 转到 `Marketplace` > `Superpowers` 并安装它。
 - 或直接从此仓库安装：
-	```
+```text
 	/plugins install https://github.com/obra/superpowers
-	```
+```
 - 详细文档： [docs/README.kimi.md](https://github.com/obra/superpowers/blob/main/docs/README.kimi.md)
 
 ### OpenCode
@@ -157,22 +159,22 @@ Superpowers 在 Kimi Code 的插件市场中可用。
 OpenCode 使用自己的插件安装方式；即使您已在其他工具中使用 Superpowers，也需要单独安装 Superpowers。
 
 - 告诉 OpenCode：
-	```
+```text
 	Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
-	```
+```
 - 详细文档： [docs/README.opencode.md](https://github.com/obra/superpowers/blob/main/docs/README.opencode.md)
 
 ### Pi
 
 从此存储库将 Superpowers 安装为 Pi 包：
 
-```
+```text
 pi install git:github.com/obra/superpowers
 ```
 
 对于本地开发，运行 Pi 并将此检出(checkout)作为临时包加载：
 
-```
+```text
 pi -e /path/to/superpowers
 ```
 

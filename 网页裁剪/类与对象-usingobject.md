@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Objects (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -87,7 +89,7 @@ You may use a simple name for a field within its own class. For example, we can 
 
 ```java
 System.out.println("Width and height are: " + width + ", " + height);
-```
+```text
 
 In this case, `width` and `height` are simple names.
 
@@ -95,7 +97,7 @@ Code that is outside the object's class must use an object reference or expressi
 
 ```
 objectReference.fieldName
-```
+```text
 
 For example, the code in the CreateObjectDemo class is outside the code for the Rectangle class. So to refer to the origin, width, and height fields within the Rectangle object named rectOne, the CreateObjectDemo class must use the names rectOne.origin, rectOne.width, and rectOne.height, respectively. The program uses two of these names to display the width and the height of rectOne:
 
@@ -110,7 +112,7 @@ Later, the program uses similar code to display information about rectTwo. Objec
 
 To access a field, you can use a named reference to an object, as in the previous examples, or you can use any expression that returns an object reference. Recall that the new operator returns a reference to an object. So you could use the value returned from new to access a new object's fields:
 
-```
+```text
 int height = new Rectangle().height;
 ```
 
@@ -120,13 +122,13 @@ This statement creates a new Rectangle object and immediately gets its height. I
 
 You also use an object reference to invoke an object's method. You append the method's simple name to the object reference, with an intervening dot operator (.). Also, you provide, within enclosing parentheses, any arguments to the method. If the method does not require any arguments, use empty parentheses.
 
-```
+```text
 objectReference.methodName(argumentList);
 ```
 
 or:
 
-```
+```text
 objectReference.methodName();
 ```
 
@@ -136,21 +138,21 @@ The Rectangle class has two methods: getArea() to compute the rectangle's area a
 System.out.println("Area of rectOne: " + rectOne.getArea());
 ...
 rectTwo.move(40, 72);
-```
+```text
 
 The first statement invokes rectOne 's `getArea()` method and displays the results. The second line moves rectTwo because the move() method assigns new values to the object's origin.x and origin.y.
 
 As with instance fields, *objectReference* must be a reference to an object. You can use a variable name, but you also can use any expression that returns an object reference. The new operator returns an object reference, so you can use the value returned from new to invoke a new object's methods:
 
-```
+```text
 new Rectangle(100, 50).getArea()
-```
+```text
 
 The expression new Rectangle(100, 50) returns an object reference that refers to a Rectangle object. As shown, you can use the dot notation to invoke the new Rectangle 's getArea() method to compute the area of the new rectangle.
 
 Some methods, such as getArea(), return a value. For methods that return a value, you can use the method invocation in expressions. You can assign the return value to a variable, use it to make decisions, or control a loop. This code assigns the value returned by getArea() to the variable `areaOfRectangle`:
 
-```
+```text
 int areaOfRectangle = new Rectangle(100, 50).getArea();
 ```
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use GridBagLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -55,7 +57,7 @@ The following sections explain the constraints you can set and provide examples.
 
 The following code is typical of what goes in a container that uses a [`GridBagLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/GridBagLayout.html). You will see a more detailed example in the next section.
 
-```
+```text
 JPanel pane = new JPanel(new GridBagLayout());
 GridBagConstraints c = new GridBagConstraints();
 
@@ -134,7 +136,7 @@ Click the Launch button to run GridBagLayoutDemo using [Java™ Web Start](http:
 
 The following code creates the `GridBagLayout` and the components it manages. You can find the entire source file in [`GridBagLayoutDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/GridBagLayoutDemoProject/src/layout/GridBagLayoutDemo.java).
 
-```
+```text
 JButton button;
 pane.setLayout(new GridBagLayout());
 GridBagConstraints c = new GridBagConstraints();
@@ -191,13 +193,13 @@ This example uses one `GridBagConstraints` instance for all the components the `
 
 For example, to make button 4 be extra tall, the example has this code:
 
-```
+```text
 c.ipady = 40;
 ```
 
 And before setting the constraints of the next component, the code resets the value of `ipady` to the default:
 
-```
+```text
 c.ipady = 0;
 ```
 
@@ -207,7 +209,7 @@ If a component's display area is larger than the component itself, then you can 
 
 **Note:** The Tutorial's examples used to specify the constraints object a different way, which you might see in other programs as well. Rather than specifying the constraints with the `add` method, our examples used to invoke the `setConstraints` method on the `GridBagLayout` object. For example:
 
-```
+```text
 GridBagLayout gridbag = new GridBagLayout();
 pane.setLayout(gridbag);
 ...

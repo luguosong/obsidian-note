@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Handling SQLExceptions (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -116,7 +118,7 @@ public static void printSQLException(SQLException ex) {
         }
     }
 }
-```
+```text
 
 For example, if you call the method `CoffeesTable.dropTable` with Java DB as your DBMS, the table `COFFEES` does not exist, *and* you remove the call to `JDBCTutorialUtilities.ignoreSQLException`, the output will be similar to the following:
 
@@ -147,7 +149,7 @@ public static boolean ignoreSQLException(String sqlState) {
 
     return false;
 }
-```
+```java
 
 ## Retrieving Warnings
 

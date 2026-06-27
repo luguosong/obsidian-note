@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Converting Legacy Code to Use Generics (The Java™ Tutorials >        
+            Bonus > Generics)
 
 Documentation
 
@@ -54,7 +56,7 @@ interface Collection {
     public boolean containsAll(Collection c);
     public boolean addAll(Collection c);
 }
-```
+```java
 
 A naive attempt to generify it would be the following:
 
@@ -75,20 +77,20 @@ In the case of `addAll()`, we should be able to add any collection that consists
 
 You also need to ensure that the revised API retains binary compatibility with old clients. This implies that the erasure of the API must be the same as the original, ungenerified API. In most cases, this falls out naturally, but there are some subtle cases. We'll examine one of the subtlest cases we've encountered, the method `Collections.max()`. As we saw in section [[泛型进阶-通配符进阶|More Fun with Wildcards]], a plausible signature for `max()` is:
 
-```
+```java
 public static <T extends Comparable<? super T>> 
         T max(Collection<T> coll)
 ```
 
 This is fine, except that the erasure of this signature is:
 
-```
+```java
 public static Comparable max(Collection coll)
 ```
 
 which is different than the original signature of `max()`:
 
-```
+```java
 public static Object max(Collection coll)
 ```
 
@@ -96,7 +98,7 @@ One could certainly have specified this signature for `max()`, but it was not do
 
 We can force the erasure to be different, by explicitly specifying a superclass in the bound for the formal type parameter `T`.
 
-```
+```java
 public static <T extends Object & Comparable<? super T>> 
         T max(Collection<T> coll)
 ```
@@ -107,7 +109,7 @@ Finally, we should recall that `max` only reads from its input collection, and s
 
 This brings us to the actual signature used in the JDK:
 
-```
+```java
 public static <T extends Object & Comparable<? super T>> 
         T max(Collection<? extends T> coll)
 ```
@@ -133,7 +135,7 @@ public class Bar extends Foo {
         ...
     }
 }
-```
+```java
 
 Taking advantage of covariant returns, you modify it to:
 

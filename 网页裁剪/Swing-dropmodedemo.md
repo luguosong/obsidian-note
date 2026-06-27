@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Demo - DropDemo (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -88,7 +90,7 @@ Here is the [`` `ListTransferHandler` ``](https://docs.oracle.com/javase/tutoria
 
 The transfer handler for this list supports copy and move and it reimplements the drag support that list provides by default.
 
-```
+```sql
 public class ListTransferHandler extends TransferHandler {
     private int[] indices = null;
     private int addIndex = -1; //Location where items were added

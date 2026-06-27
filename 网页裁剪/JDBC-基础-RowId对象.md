@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using RowId Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -87,7 +89,7 @@ The following topics are covered:
 
 Retrieve a `java.sql.RowId` object by calling the getter methods defined in the interfaces `ResultSet` and `CallableStatement`. The `RowId` object that is returned is an immutable object that you can use for subsequent referrals as a unique identifier to a row. The following is an example of calling the `ResultSet.getRowId` method:
 
-```
+```text
 java.sql.RowId rowId_1 = rs.getRowId(1);
 ```
 
@@ -95,7 +97,7 @@ java.sql.RowId rowId_1 = rs.getRowId(1);
 
 You can set a `RowId` object as a parameter in a parameterized `PreparedStatement` object:
 
-```
+```text
 Connection conn = ds.getConnection(username, password);
 PreparedStatement ps = conn.prepareStatement(
     "INSERT INTO BOOKLIST" +
@@ -106,7 +108,7 @@ ps.setRowId(1, rowId_1);
 
 You can also update a column with a specific `RowId` object in an updatable `ResultSet` object:
 
-```
+```text
 ResultSet rs = ...
 rs.next();
 rs.updateRowId(1, rowId_1);

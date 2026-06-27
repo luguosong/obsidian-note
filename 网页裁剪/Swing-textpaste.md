@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# CCP in a Text Component (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -86,7 +88,7 @@ The following demo, `TextCutPaste`, contains three text fields. As you can see i
 
 Here is the code that creates the Edit menu by hooking up the built-in cut, copy, and paste actions defined in `DefaultEditorKit` to the menu items. This works with any component that descends from `JComponent`:
 
-```
+```java
 /**
  * Create an Edit menu to support cut/copy/paste.
  */

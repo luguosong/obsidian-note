@@ -1,50 +1,44 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Lesson: Making Extensions Secure (The Java™ Tutorials > The Extension Mechanism)"
-描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+标题: "使扩展安全"
+描述: "《Java 教程》扩展机制路线课程，介绍 Java 平台安全架构如何对待扩展，如何设置扩展权限以及如何密封扩展中的包。"
 来源: "https://docs.oracle.com/javase/tutorial/ext/security"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 使扩展安全
 
-Making Extensions Secure
+> 文档说明
 
-[[ext-policy|Setting Privileges for Extensions]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[ext-sealing|Sealing Packages in Extensions]]
+## 课程：使扩展安全
 
-[[basics-basics|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/TOC.html) • [[ext-policy|Next »]]
+既然你已经看到了如何使用扩展，你可能想知道扩展具有什么安全特权。例如，如果你正在开发执行文件 I/O 的扩展，你需要知道如何为你的扩展授予读写文件的适当权限。相反，如果你正在考虑使用他人开发的扩展，你将希望清楚地了解该扩展具有什么安全特权，以及如何在需要时更改这些特权。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+本课向你展示 Java™ 平台的安全架构如何对待扩展。你将看到如何判断授予扩展软件的特权，并通过一些简单步骤学习如何修改扩展特权。此外，你还将学习如何密封扩展中的包以限制对代码指定部分的访问。
 
-## Lesson: Making Extensions Secure
+本课有两节：
 
-Now that you have seen how to use extensions, you may be wondering what security privileges extensions have. If you are developing an extension that does file I/O, for example, you will need to know how your extension is granted the appropriate permissions for reading and writing files. Conversely, if you are thinking about using an extension developed by someone else, you will want to understand clearly what security privileges the extension has and how to change those privileges should you desire to do so.
+## 设置扩展权限
 
-This lesson shows you how the Java™ platform's security architecture treats extensions. You will see how to tell what privileges are granted to extension software, and you will learn how to modify extension privileges by following some simple steps. In addition, you will learn how to seal packages within your extensions to restrict access to specified parts of your code.
+本节包含一些示例，向你展示扩展必须满足什么条件才能被授予执行安全敏感操作的权限。
 
-This lesson has two sections:
+## 密封扩展中的包
 
-## Setting Privileges for Extensions
+你可以选择密封扩展 JAR 文件中的包作为额外的安全措施。如果一个包被密封，意味着该包中定义的所有类必须来自单个 JAR 文件。本节向你展示如何修改扩展清单以密封扩展包。
 
-This section contains some examples that show you what conditions must be met for extensions to be granted permissions to perform security-sensitive operations.
+## 附加文档
 
-## Sealing Packages in Extensions
+你将在本课的适当位置找到指向相关安全文档的链接和引用。
 
-You can optionally seal packages in extension JAR files as an additional security measure. If a package is sealed, it means that all classes defined in that package must originate from a single JAR file. This section shows you how to modify an extension's manifest to seal extension packages.
+有关安全的完整信息，你可以参阅以下内容：
 
-## Additional Documentation
-
-You will find links and references to relevant security documentation at appropriate places throughout this lesson.
-
-For complete information on security, you can refer to the following:
-
-- [Security Features in Java SE](https://docs.oracle.com/javase/security/index.html) trail (in this tutorial)
-- [Security guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/)
+- [Java SE 中的安全特性](https://docs.oracle.com/javase/security/index.html)路线（在本教程中）
+- [安全指南](https://docs.oracle.com/javase/8/docs/technotes/guides/security/)

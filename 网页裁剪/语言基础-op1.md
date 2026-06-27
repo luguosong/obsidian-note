@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Assignment, Arithmetic, and Unary Operators (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -25,7 +27,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 One of the most common operators that you'll encounter is the simple assignment operator " `=` ". You saw this operator in the Bicycle class; it assigns the value on its right to the operand on its left:
 
-```
+```text
 int cadence = 0;
 int speed = 0;
 int gear = 1;
@@ -47,7 +49,7 @@ The Java programming language provides operators that perform addition, subtract
 
 The following program, [`ArithmeticDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ArithmeticDemo.java), tests the arithmetic operators.
 
-```
+```java
 class ArithmeticDemo {
 
     public static void main (String[] args) {
@@ -82,7 +84,7 @@ class ArithmeticDemo {
         System.out.println(original_result + " % 7 = " + result);
     }
 }
-```
+```text
 
 This program prints the following:
 
@@ -93,13 +95,13 @@ This program prints the following:
 4 / 2 = 2
 2 + 8 = 10
 10 % 7 = 3
-```
+```java
 
 You can also combine the arithmetic operators with the simple assignment operator to create *compound assignments*. For example, `x+=1;` and `x=x+1;` both increment the value of `x` by 1.
 
 The `+` operator can also be used for concatenating (joining) two strings together, as shown in the following [`ConcatDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ConcatDemo.java) program:
 
-```
+```java
 class ConcatDemo {
     public static void main(String[] args){
         String firstString = "This is";
@@ -126,7 +128,7 @@ The unary operators require only one operand; they perform various operations su
 
 The following program, [`UnaryDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/UnaryDemo.java), tests the unary operators:
 
-```
+```java
 class UnaryDemo {
 
     public static void main(String[] args) {
@@ -154,13 +156,13 @@ class UnaryDemo {
         System.out.println(!success);
     }
 }
-```
+```java
 
 The increment/decrement operators can be applied before (prefix) or after (postfix) the operand. The code `result++;` and `++result;` will both end in `result` being incremented by one. The only difference is that the prefix version (`++result`) evaluates to the incremented value, whereas the postfix version (`result++`) evaluates to the original value. If you are just performing a simple increment/decrement, it doesn't really matter which version you choose. But if you use this operator in part of a larger expression, the one that you choose may make a significant difference.
 
 The following program, [`PrePostDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/PrePostDemo.java), illustrates the prefix/postfix unary increment operator:
 
-```
+```java
 class PrePostDemo {
     public static void main(String[] args){
         int i = 3;

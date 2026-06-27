@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Pausing Execution with Sleep (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -27,7 +29,7 @@ Two overloaded versions of `sleep` are provided: one that specifies the sleep ti
 
 The [`` `SleepMessages` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/SleepMessages.java) example uses `sleep` to print messages at four-second intervals:
 
-```
+```java
 public class SleepMessages {
     public static void main(String args[])
         throws InterruptedException {

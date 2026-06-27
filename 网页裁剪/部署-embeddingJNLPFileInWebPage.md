@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Embedding JNLP File in Applet Tag (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -31,7 +33,7 @@ A Base64 encoded JNLP file can be embedded in the `jnlp_embedded` parameter when
 The following steps describe how to embed a JNLP file in a web page to deploy an applet.
 
 1. Create a [`` `JNLP` ``](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/examples/depl_EmbeddingJNLPInWebPage/src/dynamictree_applet.jnlp) file for your applet. A sample file is shown next.
-	```
+	```xml
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!-- href attribute contains relative path;
 	     codebase attribute not specified -->
@@ -55,12 +57,12 @@ The following steps describe how to embed a JNLP file in a web page to deploy an
 	     </applet-desc>
 	     <update check="background"/>
 	</jnlp>
-	```
+```javascript
 2. Encode the contents of the JNLP file using the Base64 scheme. You can use any Base64 encoding tool to encode the JNLP file. Check the usage of the tool to create a string with Base64 encoding. Some examples of tools and web sites that may be used are as follows:
 	- UNIX commands – `base64`, `uuencode`
 		- Web sites – [Base64 Encode and Decode](http://base64encode.org/), [Base64 Encoder](http://www.opinionatedgeek.com/dotnet/tools/base64encode/)
 3. When deploying the applet in a web page, specify the `jnlp_embedded` parameter with it's value set to the Base64 encoded JNLP string. Make sure to include only the actual Base64 bytes without any encoding tool specific headers or footers.
-	```
+	```xml
 	<script src="https://www.java.com/js/deployJava.js"></script>
 	<script>
 	    var attributes = {} ;
@@ -70,7 +72,7 @@ The following steps describe how to embed a JNLP file in a web page to deploy an
 	    } ;
 	    deployJava.runApplet(attributes, parameters, '1.6');
 	</script>
-	```
+```
 	Some encoding tools may wrap the encoded string into several 76-column lines. To use this multi-line attribute value in JavaScript code, specify the attribute value as a set of concatenated strings. You can include the multi-line attribute value as is if the applet is deployed directly with the `<applet>` HTML tag.
 
 Open [`` `AppletPage.html` ``](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/examples/dist/depl_EmbeddingJNLPInWebPage/AppletPage.html) in a browser to view the Dynamic Tree Demo applet that is launched by using the JNLP file embedded in the web page.

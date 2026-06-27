@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Component Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -90,12 +92,10 @@ The component-hidden and component-shown events occur only as the result of call
 To write a simple Component listener program, follow the steps mentioned below:
 
 - Declare a class which implements Component listener. For example:
-	```
+	```java
 	public class ComponentEventDemo ... implements ComponentListener
-	```
 - Identify the components that you would like to catch the events for. For example: pane, label, check box, etc.
 - Add the Component Listener to the identified components. For example:
-	```
 	....
 	label.addComponentListener(this);
 	.....
@@ -104,9 +104,9 @@ To write a simple Component listener program, follow the steps mentioned below:
 	panel.addComponentListener(this);
 	...
 	frame.addComponentListener(this);
-	```
+```java
 - Finally, catch the different events of these components by using four methods of Component Listener as shown below:
-	```
+	```java
 	public void componentHidden(ComponentEvent e) {
 	        displayMessage(e.getComponent().getClass().getName() + " --- Hidden");
 	    }
@@ -119,7 +119,7 @@ To write a simple Component listener program, follow the steps mentioned below:
 	    public void componentShown(ComponentEvent e) {
 	        displayMessage(e.getComponent().getClass().getName() + " --- Shown");
 	    }
-	```
+```
 
 The following example demonstrates component events. The window contains a panel that has a label and a check box. The check box controls whether the label is visible. A text area displays a message every time the window, panel, label, or check box fires a component event.
 
@@ -143,7 +143,7 @@ The following example demonstrates component events. The window contains a panel
 
 You can find the demo's code in [`ComponentEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/ComponentEventDemoProject/src/events/ComponentEventDemo.java). Here is just the code related to handling component events:
 
-```
+```java
 public class ComponentEventDemo ... implements ComponentListener {
     static JFrame frame;
     JLabel label;

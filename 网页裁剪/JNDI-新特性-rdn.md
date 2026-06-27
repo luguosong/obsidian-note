@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Manipulating Relative Distinguished Name (RDN) (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)
 
 Documentation
 
@@ -69,7 +71,6 @@ System.out.println("rdn3:" + rdn3.toString());
 
 Rdn rdn4 = new Rdn("ou", "Juicy, Fruit");
 System.out.println("rdn4:" + rdn4.toString());
-```
 
 ## Accessing type/value pairs of an RDN
 
@@ -102,7 +103,6 @@ System.out.println("getValue(): " + rdn.getValue());
 // test toAttributes
 System.out.println();
 System.out.println("toAttributes(): " + rdn.toAttributes());
-```
 
 ## Getting the String Representation
 
@@ -120,7 +120,6 @@ String str = rdn.toString();
 System.out.println(str);
 Rdn rdn2 = new Rdn(str);
 System.out.println(rdn.equals(rdn2));    // true
-```
 
 ## Comparing RDNs
 
@@ -143,7 +142,6 @@ System.out.println(one.equals(two));    // true
 System.out.println(two.equals(three));  // false
 System.out.println(one.equals(three));  // false
 System.out.println(four.equals(five));  // true
-```
 
 ## Escaping and Unescaping of Special Characters
 
@@ -172,7 +170,6 @@ System.out.println("dn:" + dn);
 byte[] bytes = new byte[] {1, 2, 3, 4};
 formatted = Rdn.escapeValue(bytes);
 System.out.println("Orig val: " + bytes + "Escaped val: " + formatted);
-```
 
 Similarly the using the static unescapeValue() method one can obtain the original string from the formatted value. [`Here`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/UnescapingValues.java) is an example for retrieving the original value.
 
@@ -197,4 +194,3 @@ formatted = Rdn.escapeValue(bytes);
 System.out.println("Formatted:" + formatted);
 original = Rdn.unescapeValue(formatted);
 System.out.println("Original:" +  original);
-```

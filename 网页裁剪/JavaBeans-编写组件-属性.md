@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Properties (The Java™ Tutorials >        
+            JavaBeans(TM) > Writing JavaBeans Components)
 
 Documentation
 
@@ -41,7 +43,7 @@ public class FaceBean {
         mMouthWidth = mw;
     }
 }
-```
+```text
 
 A builder tool like NetBeans recognizes the method names and shows the `mouthWidth` property in its list of properties. It also recognizes the type, `int`, and provides an appropriate editor so the property can be manipulated at design time.
 
@@ -53,7 +55,7 @@ A special case for `boolean` properties allows the accessor method to be defined
 public boolean isRunning() {
     // ...
 }
-```
+```java
 
 Various specializations of basic properties are available and described in the following sections.
 
@@ -81,7 +83,7 @@ public int getTestGrades(int index) {
 public void setTestGrades(int index, int grade) {
     mTestGrades[index] = grade;
 }
-```
+```java
 
 ## Bound Properties
 

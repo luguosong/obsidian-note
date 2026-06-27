@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using WebRowSet Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -83,7 +85,7 @@ The Coffee Break company has expanded to selling coffee online. Users order coff
 
 You create a new `WebRowSet` object by using an instance of `RowSetFactory`, which is created from the `RowSetProvider` class, to create a `WebRowSet` object. The following example is from [`WebRowSetSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/WebRowSetSample.java):
 
-```
+```text
 RowSetFactory factory = RowSetProvider.newFactory();  
 try (WebRowSet priceList = factory.createWebRowSet();
      // ...
@@ -109,7 +111,6 @@ priceList.setKeyColumns(keyCols);
 
 // Populate the WebRowSet
 priceList.execute();
-```
 
 At this point, in addition to the default properties, the `priceList` object contains the data in the `COF_NAME` and `PRICE` columns from the `COFFEES` table and also the metadata about these two columns.
 
@@ -121,11 +122,10 @@ To write a `WebRowSet` object as an XML document, call the method `writeXml`. To
 
 The method `writeXml` writes the `WebRowSet` object that invoked it as an XML document that represents its current state. It writes this XML document to the stream that you pass to it. The stream can be an `OutputStream` object, such as a `FileOutputStream` object, or a `Writer` object, such as a `FileWriter` object. If you pass the method `writeXml` an `OutputStream` object, you will write in bytes, which can handle all types of data; if you pass it a `Writer` object, you will write in characters. The following code demonstrates writing the `WebRowSet` object `priceList` as an XML document to the `FileOutputStream` object `oStream`:
 
-```
 java.io.FileOutputStream oStream =
     new java.io.FileOutputStream("priceList.xml");
 priceList.writeXml(oStream);
-```
+```text
 
 The following code writes the XML document representing `priceList` to the `FileWriter` object `writer` instead of to an `OutputStream` object. The `FileWriter` class is a convenience class for writing characters to a file.
 
@@ -133,25 +133,23 @@ The following code writes the XML document representing `priceList` to the `File
 java.io.FileWriter writer =
     new java.io.FileWriter("priceList.xml");
 priceList.writeXml(writer);
-```
+```text
 
 The other two versions of the method `writeXml` let you populate a `WebRowSet` object with the contents of a `ResultSet` object before writing it to a stream. In the following line of code, the method `writeXml` reads the contents of the `ResultSet` object `rs` into the `priceList` object and then writes `priceList` to the `FileOutputStream` object `oStream` as an XML document.
 
 ```
 priceList.writeXml(rs, oStream);
-```
+```text
 
 In the next line of code, the `writeXml` methodpopulates `priceList` with the contents of `rs`, but it writes the XML document to a `FileWriter` object instead of to an `OutputStream` object:
 
 ```
 priceList.writeXml(rs, writer);
-```
 
 ### Using the readXml Method
 
 The method `readXml` parses an XML document in order to construct the `WebRowSet` object the XML document describes. Similar to the method `writeXml`, you can pass `readXml` an `InputStream` object or a `Reader` object from which to read the XML document.
 
-```
 java.io.FileInputStream iStream =
     new java.io.FileInputStream("priceList.xml");
 priceList.readXml(iStream);
@@ -159,7 +157,7 @@ priceList.readXml(iStream);
 java.io.FileReader reader = new
     java.io.FileReader("priceList.xml");
 priceList.readXml(reader);
-```
+```text
 
 Note that you can read the XML description into a new `WebRowSet` object or into the same `WebRowSet` object that called the `writeXml` method. In the scenario, where the price list information is being sent from headquarters to the Web site, you would use a new `WebRowSet` object, as shown in the following lines of code:
 
@@ -168,7 +166,7 @@ WebRowSet recipient = new WebRowSetImpl();
 java.io.FileReader reader =
     new java.io.FileReader("priceList.xml");
 recipient.readXml(reader);
-```
+```sql
 
 ## What Is in XML Documents
 
@@ -290,7 +288,7 @@ The metadata section of the XML document describing a `WebRowSet` object contain
     </column-type-name>
   </column-definition>
 </metadata>
-```
+```sql
 
 From this metadata section, you can see that there are two columns in each row. The first column is `COF_NAME`, which holds values of type `VARCHAR`. The second column is `PRICE`, which holds values of type `REAL`, and so on. Note that the column types are the data types used in the data source, not types in the Java programming language. To get or update values in the `COF_NAME` column, you use the methods `getString` or `updateString`, and the driver makes the conversion to the `VARCHAR` type, as it usually does.
 
@@ -335,7 +333,7 @@ You make changes to a `WebRowSet` object the same way you do to a `CachedRowSet`
 
 If the owner of the Coffee Break chain wants to add a new coffee to the price list, the code might look like this:
 
-```
+```text
 priceList.absolute(3);
 priceList.moveToInsertRow();
 priceList.updateString(COF_NAME, "Kona");
@@ -353,15 +351,13 @@ The `<insertRow>` element will look similar to the following.
   <columnValue>Kona</columnValue>
   <columnValue>8.99</columnValue>
 </insertRow>
-```
 
 ## Deleting Rows
 
 The owner decides that Espresso is not selling enough and should be removed from the coffees sold at The Coffee Break shops. The owner therefore wants to delete Espresso from the price list. Espresso is in the third row of the `priceList` object, so the following lines of code delete it:
 
-```
 priceList.absolute(3); priceList.deleteRow();
-```
+```text
 
 The following `<deleteRow>` element will appear after the second row in the data section of the XML document, indicating that the third row has been deleted.
 
@@ -376,7 +372,7 @@ The following `<deleteRow>` element will appear after the second row in the data
 
 The owner further decides that the price of Colombian coffee is too expensive and wants to lower it to $6.99 a pound. The following code sets the new price for Colombian coffee, which is in the first row, to $6.99 a pound:
 
-```
+```text
 priceList.first();
 priceList.updateFloat(PRICE, 6.99);
 ```
@@ -389,7 +385,7 @@ The XML document will reflect this change in an `<updateRow>` element that gives
   <columnValue>7.99</columnValue>
   <updateRow>6.99</updateRow>
 </currentRow>
-```
+```text
 
 At this point, with the insertion of a row, the deletion of a row, and the modification of a row, the XML document for the `priceList` object would look like the following:
 

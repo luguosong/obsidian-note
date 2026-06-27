@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Displaying Antialiased Text by Using Rendering Hints (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)
 
 Documentation
 
@@ -43,7 +45,7 @@ Java 2D text rendering can be affected by *rendering hints*.
 
 Recall that the most important text drawing method is the following:
 
-```
+```text
 Graphics.drawString(String s, int x, int y);
 ```
 
@@ -53,7 +55,7 @@ Usually, this method draws each glyph in a string of text with a solid color and
 
 The most common rendering hint blends the foreground (text) color with the onscreen background pixels at the edges of the text. To request this hint an application must invoke the following:
 
-```
+```text
 graphics2D.setRenderingHint(
         RenderingHints.KEY_TEXT_ANTIALIASING,
         RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
@@ -65,7 +67,7 @@ The following figure illustrates the antialiasing capability.
 
 If used inappropriately this method can make the text appear overly fuzzy. In such cases, a better hint to use is the following:
 
-```
+```text
 graphics2D.setRenderingHint(
         RenderingHints.KEY_TEXT_ANTIALIASING,
         RenderingHints.VALUE_TEXT_ANTIALIAS_GASP);
@@ -75,7 +77,7 @@ This method automatically uses information in the font itself to decide whether 
 
 LCD displays have a property that the Java 2D API can use to produce text that isn't as fuzzy as typical antialiasing but is more legible at small sizes. To request that text be drawn using the sub-pixel LCD text mode for a typical LCD display, an application must invoke the following:
 
-```
+```text
 graphics2D.setRenderingHint(
         RenderingHints.KEY_TEXT_ANTIALIASING,
         RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);

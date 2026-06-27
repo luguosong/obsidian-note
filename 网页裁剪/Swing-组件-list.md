@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Lists (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -140,7 +142,7 @@ There are three ways to create a list model:
 
 Here is the code from [`ListDialog.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ListDialogRunnerProject/src/components/ListDialog.java) that creates and sets up its list:
 
-```
+```text
 list = new JList(data); //data has type Object[]
 list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
@@ -190,7 +192,6 @@ public void valueChanged(ListSelectionEvent e) {
         }
     }
 }
-```
 
 Many list selection events can be generated from a single user action such as a mouse click. The `getValueIsAdjusting` method returns `true` if the user is still manipulating the selection. This particular program is interested only in the final result of the user's action, so the `valueChanged` method does something only if `getValueIsAdjusting` returns `false`.
 
@@ -200,14 +201,13 @@ Because the list is in single-selection mode, this code can use `getSelectedInde
 
 The ListDemo example that we showed previously features a list whose contents can change. You can find the source code for ListDemo in [`ListDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ListDemoProject/src/components/ListDemo.java). Here is the ListDemo code that creates a mutable list model object, puts the initial items in it, and uses the list model to create a list:
 
-```
 listModel = new DefaultListModel();
 listModel.addElement("Jane Doe");
 listModel.addElement("John Smith");
 listModel.addElement("Kathy Green");
 
 list = new JList(listModel);
-```
+```java
 
 This particular program uses an instance of `DefaultListModel`, a class provided by Swing. In spite of the class name, a list does not have a `DefaultListModel` unless your program explicitly makes it so. If `DefaultListModel` does not suit your needs, you can write a custom list model, which must adhere to the `ListModel` interface.
 

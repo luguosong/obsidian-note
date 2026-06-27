@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Overriding and Hiding Methods (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -40,7 +42,7 @@ The distinction between hiding a static method and overriding an instance method
 
 Consider an example that contains two classes. The first is `Animal`, which contains one instance method and one static method:
 
-```
+```java
 public class Animal {
     public static void testClassMethod() {
         System.out.println("The static method in Animal");
@@ -49,11 +51,11 @@ public class Animal {
         System.out.println("The instance method in Animal");
     }
 }
-```
+```java
 
 The second class, a subclass of `Animal`, is called `Cat`:
 
-```
+```java
 public class Cat extends Animal {
     public static void testClassMethod() {
         System.out.println("The static method in Cat");
@@ -75,7 +77,7 @@ The `Cat` class overrides the instance method in `Animal` and hides the static m
 
 The output from this program is as follows:
 
-```
+```text
 The static method in Animal
 The instance method in Cat
 ```
@@ -88,78 +90,78 @@ As promised, the version of the hidden static method that gets invoked is the on
 
 - Instance methods are preferred over interface default methods.
 	Consider the following classes and interfaces:
-	```
+	```java
 	public class Horse {
 	    public String identifyMyself() {
 	        return "I am a horse.";
 	    }
 	}
-	```
-	```
+```java
+	```java
 	public interface Flyer {
 	    default public String identifyMyself() {
 	        return "I am able to fly.";
 	    }
 	}
-	```
-	```
+```
+	```java
 	public interface Mythical {
 	    default public String identifyMyself() {
 	        return "I am a mythical creature.";
 	    }
 	}
-	```
-	```
+```java
+	```java
 	public class Pegasus extends Horse implements Flyer, Mythical {
 	    public static void main(String... args) {
 	        Pegasus myApp = new Pegasus();
 	        System.out.println(myApp.identifyMyself());
 	    }
 	}
-	```
+```
 	The method `Pegasus.identifyMyself` returns the string `I am a horse.`
 - Methods that are already overridden by other candidates are ignored. This circumstance can arise when supertypes share a common ancestor.
 	Consider the following interfaces and classes:
-	```
+	```java
 	public interface Animal {
 	    default public String identifyMyself() {
 	        return "I am an animal.";
 	    }
 	}
-	```
-	```
+```java
+	```java
 	public interface EggLayer extends Animal {
 	    default public String identifyMyself() {
 	        return "I am able to lay eggs.";
 	    }
 	}
-	```
-	```
+```
+	```java
 	public interface FireBreather extends Animal { }
-	```
-	```
+```java
+	```java
 	public class Dragon implements EggLayer, FireBreather {
 	    public static void main (String... args) {
 	        Dragon myApp = new Dragon();
 	        System.out.println(myApp.identifyMyself());
 	    }
 	}
-	```
+```
 	The method `Dragon.identifyMyself` returns the string `I am able to lay eggs.`
 
 If two or more independently defined default methods conflict, or a default method conflicts with an abstract method, then the Java compiler produces a compiler error. You must explicitly override the supertype methods.
 
 Consider the example about computer-controlled cars that can now fly. You have two interfaces (`OperateCar` and `FlyCar`) that provide default implementations for the same method, (`startEngine`):
 
-```
+```java
 public interface OperateCar {
     // ...
     default public int startEngine(EncryptedKey key) {
         // Implementation
     }
 }
-```
-```
+```java
+```java
 public interface FlyCar {
     // ...
     default public int startEngine(EncryptedKey key) {
@@ -170,7 +172,7 @@ public interface FlyCar {
 
 A class that implements both `OperateCar` and `FlyCar` must override the method `startEngine`. You could invoke any of the of the default implementations with the `super` keyword.
 
-```
+```java
 public class FlyingCar implements OperateCar, FlyCar {
     // ...
     public int startEngine(EncryptedKey key) {
@@ -178,27 +180,27 @@ public class FlyingCar implements OperateCar, FlyCar {
         OperateCar.super.startEngine(key);
     }
 }
-```
+```java
 
 The name preceding `super` (in this example, `FlyCar` or `OperateCar`) must refer to a direct superinterface that defines or inherits a default for the invoked method. This form of method invocation is not restricted to differentiating between multiple implemented interfaces that contain default methods with the same signature. You can use the `super` keyword to invoke a default method in both classes and interfaces.
 
 Inherited instance methods from classes can override abstract interface methods. Consider the following interfaces and classes:
 
-```
+```java
 public interface Mammal {
     String identifyMyself();
 }
 ```
 
-```
+```java
 public class Horse {
     public String identifyMyself() {
         return "I am a horse.";
     }
 }
-```
+```java
 
-```
+```java
 public class Mustang extends Horse implements Mammal {
     public static void main(String... args) {
         Mustang myApp = new Mustang();

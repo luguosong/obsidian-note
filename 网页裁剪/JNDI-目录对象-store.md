@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Storing and Reading Objects (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Java Objects in the Directory)
 
 Documentation
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Legacy File I/O Code (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -103,7 +105,7 @@ Perhaps you have legacy code that uses `java.io.File` and would like to take adv
 
 The `java.io.File` class provides the [`toPath`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#toPath--) method, which converts an old style `File` instance to a `java.nio.file.Path` instance, as follows:
 
-```
+```text
 Path input = file.toPath();
 ```
 
@@ -111,13 +113,13 @@ You can then take advantage of the rich feature set available to the `Path` clas
 
 For example, assume you had some code that deleted a file:
 
-```
+```text
 file.delete();
 ```
 
 You could modify this code to use the `Files.delete` method, as follows:
 
-```
+```text
 Path fp = file.toPath();
 Files.delete(fp);
 ```

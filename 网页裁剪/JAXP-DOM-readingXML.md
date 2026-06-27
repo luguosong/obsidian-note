@@ -1,53 +1,44 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Reading XML Data into a DOM (The Java™ Tutorials >        
-            Java API for XML Processing (JAXP) > Document Object Model)"
-描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+标题: "将 XML 数据读取到 DOM"
+描述: "《Java 教程》JAXP DOM 课程，详细介绍如何通过读取现有 XML 文件构建文档对象模型，涵盖创建程序骨架、导入类、错误处理、实例化工厂、配置验证和显示 DOM 节点。"
 来源: "https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 将 XML 数据读取到 DOM
 
-[[JAXP-DOM-when|When to Use DOM]]
+> 文档说明
 
-Reading XML Data into a DOM
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[JAXP-DOM-validating|Validating with XML Schema]]
+## 将 XML 数据读取到 DOM
 
-[[JAXP-DOM-info|Further Information]]
-
-[[JAXP-DOM-when|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-DOM-validating|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Reading XML Data into a DOM
-
-In this section, you will construct a Document Object Model by reading in an existing XML file.
+在本节中，你将通过读取现有 XML 文件来构建文档对象模型。
 
 ---
 
-**Note -** In [[JAXP-XSLT|Extensible Stylesheet Language Transformations]], you will see how to write out a DOM as an XML file. (You will also see how to convert an existing data file into XML with relative ease.)
+**注意 -** 在 [[JAXP-XSLT|可扩展样式表语言转换]]中，你将看到如何将 DOM 写出为 XML 文件。（你还将看到如何相对轻松地将现有数据文件转换为 XML。）
 
 ---
 
-## Creating the Program
+## 创建程序
 
-The Document Object Model provides APIs that let you create, modify, delete, and rearrange nodes. Before you try to create a DOM, it is helpful to understand how a DOM is structured. This series of examples will make DOM internals visible via a sample program called DOMEcho, which you will find in the directory *INSTALL\_DIR* /jaxp- *version* /samples/dom after you have installed the JAXP API.
+文档对象模型提供了让你创建、修改、删除和重新排列节点的 API。在尝试创建 DOM 之前，了解 DOM 的结构方式很有帮助。这一系列示例将通过一个名为 DOMEcho 的示例程序使 DOM 内部结构可见，安装 JAXP API 后你可以在目录 *INSTALL\_DIR*/jaxp-*version*/samples/dom 中找到它。
 
-### Create the Skeleton
+### 创建骨架
 
-First, build a simple program to read an XML document into a DOM and then write it back out again.
+首先，构建一个简单的程序来读取 XML 文档到 DOM 中，然后再写回。
 
-Start with the normal basic logic for an application, and check to make sure that an argument has been supplied on the command line:
+从应用程序的正常基本逻辑开始，并检查命令行是否提供了参数：
 
-```
+```java
 public class DOMEcho {
 
     static final String outputEncoding = "UTF-8";
@@ -58,11 +49,11 @@ public class DOMEcho {
 
     public static void main(String[] args) throws Exception {
         String filename = null;
-    
+
         for (int i = 0; i < args.length; i++) {
-            if (...) { 
+            if (...) {
                 // ...
-            } 
+            }
             else {
                 filename = args[i];
                 if (i != args.length - 1) {
@@ -78,40 +69,40 @@ public class DOMEcho {
 }
 ```
 
-This code performs all the basic set up operations. All output for DOMEcho uses UTF-8 encoding. The usage() method that is called if no argument is specified simply tells you what arguments DOMEcho expects, so the code is not shown here. A filename string is also declared, which will be the name of the XML file to be parsed into a DOM by DOMEcho.
+此代码执行所有基本设置操作。DOMEcho 的所有输出使用 UTF-8 编码。如果未指定参数则调用的 usage() 方法只是告诉你 DOMEcho 期望什么参数，因此代码未在此处显示。还声明了一个文件名字符串，它将是 DOMEcho 解析到 DOM 中的 XML 文件名。
 
-### Import the Required Classes
+### 导入所需类
 
-In this section, all the classes are individually named so you that can see where each class comes from, in case you want to reference the API documentation. In the sample file, the import statements are made with the shorter form, such as javax.xml.parsers.\*.
+在本节中，所有类都单独命名，以便你可以看到每个类来自哪里，如果你想参考 API 文档的话。在示例文件中，import 语句使用更短的形式，如 javax.xml.parsers.*。
 
-These are the JAXP APIs used by DOMEcho:
+这些是 DOMEcho 使用的 JAXP API：
 
-```
+```java
 package dom;
-import javax.xml.parsers.DocumentBuilder; 
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 ```
 
-These classes are for the exceptions that can be thrown when the XML document is parsed:
+这些类用于解析 XML 文档时可能抛出的异常：
 
-```
+```java
 import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException; 
+import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.*
 ```
 
-These classes read the sample XML file and manage output:
+这些类读取示例 XML 文件并管理输出：
 
-```
+```java
 import java.io.File;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 ```
 
-Finally, import the W3C definitions for a DOM, DOM exceptions, entities and nodes:
+最后，导入 DOM 的 W3C 定义、DOM 异常、实体和节点：
 
-```
+```java
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentType;
 import org.w3c.dom.Entity;
@@ -119,13 +110,13 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 ```
 
-### Handle Errors
+### 处理错误
 
-Next, add the error-handling logic. The most important point is that a JAXP-conformant document builder is required to report SAX exceptions when it has trouble parsing an XML document. The DOM parser does not have to actually use a SAX parser internally, but because the SAX standard is already there, it makes sense to use it for reporting errors. As a result, the error-handling code for DOM applications is very similar to that for SAX applications:
+接下来，添加错误处理逻辑。最重要的一点是，符合 JAXP 的文档构建器在解析 XML 文档遇到困难时必须报告 SAX 异常。DOM 解析器实际上不必在内部使用 SAX 解析器，但由于 SAX 标准已经存在，将其用于报告错误是有意义的。因此，DOM 应用程序的错误处理代码与 SAX 应用程序的非常相似：
 
-```
+```java
 private static class MyErrorHandler implements ErrorHandler {
-     
+
     private PrintWriter out;
 
     MyErrorHandler(PrintWriter out) {
@@ -146,7 +137,7 @@ private static class MyErrorHandler implements ErrorHandler {
     public void warning(SAXParseException spe) throws SAXException {
         out.println("Warning: " + getParseExceptionInfo(spe));
     }
-        
+
     public void error(SAXParseException spe) throws SAXException {
         String message = "Error: " + getParseExceptionInfo(spe);
         throw new SAXException(message);
@@ -159,13 +150,13 @@ private static class MyErrorHandler implements ErrorHandler {
 }
 ```
 
-As you can see, the DomEcho class's error handler generates its output using PrintWriter instances.
+如你所见，DomEcho 类的错误处理器使用 PrintWriter 实例生成输出。
 
-### Instantiate the Factory
+### 实例化工厂
 
-Next, add the following code to the main() method, to obtain an instance of a factory that can give us a document builder.
+接下来，将以下代码添加到 main() 方法中，以获取可以为我们提供文档构建器的工厂实例。
 
-```
+```java
 public static void main(String[] args) throws Exception {
     DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
@@ -173,37 +164,37 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-### Get a Parser and Parse the File
+### 获取解析器并解析文件
 
-Now, add the following code to main() to get an instance of a builder, and use it to parse the specified file.
+现在，将以下代码添加到 main() 中以获取构建器实例，并使用它来解析指定文件。
 
-```
+```java
 DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-DocumentBuilder db = dbf.newDocumentBuilder(); 
+DocumentBuilder db = dbf.newDocumentBuilder();
 Document doc = db.parse(new File(filename));
 ```
 
-The file being parsed is provided by the filename variable that was declared at the beginning of the main() method, which is passed to DOMEcho as an argument when the program is run.
+被解析的文件由 main() 方法开头声明的 filename 变量提供，该变量在运行程序时作为参数传递给 DOMEcho。
 
-### Configuring the Factory
+### 配置工厂
 
-By default, the factory returns a non-validating parser that knows nothing about name spaces. To get a validating parser, or one that understands name spaces (or both), you can configure the factory to set either or both of those options using the following code.
+默认情况下，工厂返回一个不了解命名空间的非验证解析器。要获得验证解析器或了解命名空间的解析器（或两者），你可以使用以下代码配置工厂来设置其中一个或两个选项。
 
-```
+```java
 public static void main(String[] args) throws Exception {
 
     String filename = null;
     boolean dtdValidate = false;
     boolean xsdValidate = false;
     String schemaSource = null;
-        
+
     for (int i = 0; i < args.length; i++) {
-        if (args[i].equals("-dtd"))  { 
+        if (args[i].equals("-dtd"))  {
             dtdValidate = true;
-        } 
+        }
         else if (args[i].equals("-xsd")) {
             xsdValidate = true;
-        } 
+        }
         else if (args[i].equals("-xsdss")) {
             if (i == args.length - 1) {
                 usage();
@@ -235,29 +226,29 @@ public static void main(String[] args) throws Exception {
 }
 ```
 
-As you can see, command line arguments are set up so that you can inform DOMEcho to perform validation against either a DTD or an XML Schema, and the factory is configured to be name space aware and to perform whichever type of validation the user specifies.
+如你所见，命令行参数的设置使你可以通知 DOMEcho 对 DTD 或 XML Schema 执行验证，并且工厂被配置为命名空间感知并执行用户指定的任何类型的验证。
 
 ---
 
-**Note -** JAXP-conformant parsers are not required to support all combinations of those options, even though the reference parser does. If you specify an invalid combination of options, the factory generates a ParserConfigurationException when you attempt to obtain a parser instance.
+**注意 -** 符合 JAXP 的解析器不要求支持这些选项的所有组合，即使参考解析器支持。如果你指定了无效的选项组合，工厂在你尝试获取解析器实例时会生成 ParserConfigurationException。
 
 ---
 
-More information about how to use name spaces and validation is provided in [[JAXP-DOM-validating|Validating with XML Schema]], in which the code that is missing from the above extract will be described.
+有关如何使用命名空间和验证的更多信息在 [[JAXP-DOM-validating|使用 XML Schema 验证]]中提供，其中将描述上述摘录中缺少的代码。
 
-### Handling Validation Errors
+### 处理验证错误
 
-The default response to a validation error, as dictated by the SAX standard, is to do nothing. The JAXP standard requires throwing SAX exceptions, so you use exactly the same error-handling mechanisms as you use for a SAX application. In particular, you use the DocumentBuilder class's setErrorHandler method to supply it with an object that implements the SAX ErrorHandler interface.
-
----
-
-**Note -** DocumentBuilder also has a setEntityResolver method you can use.
+SAX 标准规定的对验证错误的默认响应是什么都不做。JAXP 标准要求抛出 SAX 异常，因此你使用与 SAX 应用程序完全相同的错误处理机制。特别是，你使用 DocumentBuilder 类的 setErrorHandler 方法为其提供一个实现 SAX ErrorHandler 接口的对象。
 
 ---
 
-The following code configures the document builder to use the error handler defined in [[JAXP-DOM-readingXML|Handle Errors]].
+**注意 -** DocumentBuilder 还有一个你可以使用的 setEntityResolver 方法。
 
-```
+---
+
+以下代码配置文档构建器以使用 [[JAXP-DOM-readingXML|处理错误]]中定义的错误处理器。
+
+```java
 DocumentBuilder db = dbf.newDocumentBuilder();
 OutputStreamWriter errorWriter = new OutputStreamWriter(System.err,
                                          outputEncoding);
@@ -265,15 +256,25 @@ db.setErrorHandler(new MyErrorHandler (new PrintWriter(errorWriter, true)));
 Document doc = db.parse(new File(filename));
 ```
 
-The code you have seen so far has set up the document builder, and configured it to perform validation upon request. Error handling is also in place. However, DOMEcho does not do anything yet. In the next section, you will see how to display the DOM structure and begin to explore it. For example, you will see what entity references and CDATA sections look like in the DOM. And perhaps most importantly, you will see how text nodes (which contain the actual data) reside under element nodes in a DOM.
+你目前看到的代码已设置文档构建器并配置它按请求执行验证。错误处理也已就位。然而，DOMEcho 尚未做任何事情。在下一节中，你将看到如何显示 DOM 结构并开始探索它。例如，你将看到实体引用和 CDATA 部分在 DOM 中的样子。也许最重要的是，你将看到文本节点（包含实际数据）如何驻留在 DOM 中的元素节点下。
 
-## Displaying the DOM Nodes
+## 显示 DOM 节点
 
-To create or manipulate a DOM, it helps to have a clear idea of how the nodes in a DOM are structured. This section of the tutorial exposes the internal structure of a DOM, so that you can see what it contains. The DOMEcho example does this by echoing the DOM nodes, and then printing them out onscreen, with the appropriate indentation to make the node hierarchy apparent. The specification of these node types can be found in the [DOM Level 2 Core Specification](http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113), under the specification for Node. [Table 3-1](#gfzpy) below is adapted from that specification.
+要创建或操作 DOM，清楚了解 DOM 中节点的结构方式很有帮助。本教程的这一部分暴露 DOM 的内部结构，以便你可以看到它包含什么。DOMEcho 示例通过回显 DOM 节点然后将它们打印到屏幕上来做到这一点，并使用适当的缩进使节点层次结构明显。这些节点类型的规范可以在 [DOM Level 2 核心规范](http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113)中 Node 的规范下找到。下表改编自该规范。
 
-Table 3-1 Node Types
+表 3-1 节点类型
 
-| Node | nodeName | nodeValue | Attributes |
+| 节点 | nodeName | nodeValue | Attributes |
 | --- | --- | --- | --- |
-| Attr | Name of attribute | Value of attribute | null |
-| CDATASection | #cdata-section | Content of the CDATA section | null |
+| Attr | 属性名称 | 属性值 | null |
+| CDATASection | #cdata-section | CDATA 部分的内容 | null |
+| Comment | #comment | 注释的内容 | null |
+| Document | #document | null | null |
+| DocumentFragment | #document-fragment | null | null |
+| DocumentType | 文档类型名称 | null | null |
+| Element | 标签名称 | null | NamedNodeMap |
+| Entity | 实体名称 | null | null |
+| EntityReference | 引用的实体名称 | null | null |
+| Notation | 表示法名称 | null | null |
+| ProcessingInstruction | 目标 | 除目标之外的整个内容 | null |
+| Text | #text | 文本节点的内容 | null |

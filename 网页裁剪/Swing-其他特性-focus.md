@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use the Focus Subsystem (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -57,18 +59,17 @@ Exactly how a window gains the focus depends on the windowing system. There is n
 
 A component generally gains the focus when the user clicks it, or when the user tabs between components, or otherwise interacts with a component. A component can also be given the focus programmatically, such as when its containing frame or dialog-box is made visible. This code snippet shows how to give a particular component the focus every time the window gains the focus:
 
-```
+```java
 //Make textField get the focus whenever frame is activated.
 frame.addWindowFocusListener(new WindowAdapter() {
     public void windowGainedFocus(WindowEvent e) {
         textField.requestFocusInWindow();
     }
 });
-```
 
 If you want to ensure that a particular component gains the focus the first time a window is activated, you can call the [`requestFocusInWindow`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#requestFocusInWindow--) method on the component after the component has been realized, but before the frame is displayed. The following sample code shows how this operation can be done:
 
-```
+```sql
 //...Where initialization occurs...
 JFrame frame = new JFrame("Test");
 JPanel panel = new JPanel(new BorderLayout());
@@ -84,7 +85,6 @@ frame.pack();  //Realize the components.
 //This button will have the initial focus.
 button.requestFocusInWindow(); 
 frame.setVisible(true); //Display the window.
-```
 
 Alternatively, you can apply a custom `FocusTraversalPolicy` to the frame and call the `getDefaultComponent` method to determine which component will gain the focus.
 
@@ -130,14 +130,14 @@ A *focus traversal policy* determines the order in which a group of components a
 
 In most Look and Feel models, components are navigated using the Tab and Shift-Tab keys. These keys are the default *focus traversal keys* and can be changed programmatically. For example, you can add Enter as a forward focus traversal key with the following four lines of code:
 
-```
+```batch
 Set forwardKeys = getFocusTraversalKeys(
     KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS);
 Set newForwardKeys = new HashSet(forwardKeys);
 newForwardKeys.add(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0));
 setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS,
     newForwardKeys);
-```
+```java
 
 Tab shifts the focus in the forward direction. Shift-Tab moves the focus in the backward direction. For example, in FocusConceptsDemo, the first button has the initial focus. Tabbing moves the focus through the buttons into the text area. Additional tabbing moves the cursor within the text area but not out of the text area because, inside a text area, Tab is *not* a focus traversal key. However, Control-Tab moves the focus out of the text area and into the first text field. Likewise, Control-Shift-Tab moves the focus out of the text area and into the previous component. The Control key is used by convention to move the focus out of any component that treats Tab in a special way, such as `JTable`.
 
@@ -166,7 +166,7 @@ The following two examples show mortgage calculators. One uses formatted text fi
 
 You can find the code for the Input Verification demo in [`InputVerificationDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/InputVerificationDemoProject/src/misc/InputVerificationDemo.java). Here is the code for the `InputVerifier` subclass, `MyVerifier`:
 
-```
+```java
 class MyVerifier extends InputVerifier
                  implements ActionListener {
     double MIN_AMOUNT = 10000.0;
@@ -306,7 +306,7 @@ Note that the `verify` method is implemented to detect invalid values but does n
 
 The input verifier is installed using the `setInputVerifier` method of the `JComponent` class. For example, the `InputVerificationDemo` has the following code:
 
-```
+```java
 private MyVerifier verifier = new MyVerifier();
 ...
 amountField.setInputVerifier(verifier);
@@ -318,7 +318,7 @@ For a component to gain the focus, it must satisfy three requirements: it must b
 
 The [TrackFocusDemo](#trackfocusdemo) example defines the simple component `Picture`. Its constructor is shown below:
 
-```
+```java
 public Picture(Image image) {
     this.image = image;
     setFocusable(true);
@@ -333,12 +333,11 @@ To visually show changes in the focus (by drawing a red border only when the com
 
 To gain the focus when the user clicks on the picture, the component has a [[Swing-事件监听-mouselistener|mouse listener]]. The listener's `mouseClicked` method requests for the focus to be transferred to the picture. Here is the code:
 
-```
+```java
 public void mouseClicked(MouseEvent e) {
     //Since the user clicked on us, let us get focus!
     requestFocusInWindow();
 }
-```
 
 See [Tracking Focus Changes to Multiple Components](#trackingFocus) for more discussion of the TrackFocusDemo example.
 
@@ -366,13 +365,12 @@ You can find the demo's code in [`FocusTraversalDemo.java`](https://docs.oracle.
 
 The check box was removed from the focus cycle with this line of code:
 
-```
 togglePolicy.setFocusable(false);
-```
+```java
 
 Here is the application's custom `FocusTraversalPolicy`:
 
-```
+```sql
 ...
 JTextField tf1 = new JTextField("Field 1");
 JTextField tf2 = new JTextField("A Bigger Field 2");
@@ -437,7 +435,7 @@ public FocusTraversalDemo() {
 
 To use a custom `FocusTraversalPolicy`, implement the following code on any focus cycle root.
 
-```
+```text
 MyOwnFocusTraversalPolicy newPolicy = new MyOwnFocusTraversalPolicy();
 frame.setFocusTraversalPolicy(newPolicy);
 ```
@@ -466,7 +464,7 @@ The following example demonstrates tracking the focus owner by installing a prop
 
 You can view the demo's code in [`TrackFocusDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/TrackFocusDemoProject/src/misc/TrackFocusDemo.java). The custom component used for drawing the images can be found in [`Picture.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/TrackFocusDemoProject/src/misc/Picture.java). Here is the code that defines and installs the property change listener:
 
-```
+```java
 KeyboardFocusManager focusManager =
     KeyboardFocusManager.getCurrentKeyboardFocusManager();
 focusManager.addPropertyChangeListener(
@@ -487,7 +485,7 @@ focusManager.addPropertyChangeListener(
         }
     }
 );
-```
+```text
 
 The custom component, `Picture`, is responsible for drawing the image. All six components are defined in this manner:
 
@@ -495,7 +493,7 @@ The custom component, `Picture`, is responsible for drawing the image. All six c
 pic1 = new Picture(createImageIcon("images/" +
             mayaString + ".gif", mayaString).getImage());
 pic1.setName("1");
-```
+```java
 
 ## Timing Focus Transfers
 
@@ -507,7 +505,7 @@ Focus transfers are asynchronous. This quality can lead to some odd timing-relat
 
 When the application is launched, the `LayoutFocusTraversalPolicy` determines the focus traversal policy — in this case, it is the order that the components were added to their container. In this example, the desired behavior is that the Start button has the initial focus, and when the Start button is clicked, it is disabled, and then the Cancel button receives the focus. The correct way to implement this behavior would be to add the components to the container in the desired order or to create a custom focus traversal policy. If, for some reason, that is not possible, then you can implement this behavior with the following code snippet:
 
-```
+```java
 public void actionPerformed(ActionEvent e) {
     //This works.
     start.setEnabled(false);
@@ -517,7 +515,7 @@ public void actionPerformed(ActionEvent e) {
 
 As desired, the focus goes from the Start button to the Cancel button, rather than to the text field. But a different result would occur if the same methods were called in the opposite order as follows:
 
-```
+```java
 public void actionPerformed(ActionEvent e) {
     //This does not work.
     cancel.requestFocusInWindow();

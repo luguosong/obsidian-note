@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Writing Diagnostics to Standard Output and Error Streams (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -75,7 +77,7 @@ A Java applet can write messages to the standard output and standard error strea
 
 The following code snippet writes messages to the standard output stream and the standard error stream.
 
-```
+```text
 // Where instance variables are declared:
 boolean DEBUG = true;
 // ...

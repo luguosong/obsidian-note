@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Queue Interface (The Java™ Tutorials >        
+            Collections > Interfaces)
 
 Documentation
 
@@ -53,7 +55,7 @@ public interface Queue<E> extends Collection<E> {
     E poll();
     E remove();
 }
-```
+```java
 
 Each `Queue` method exists in two forms: (1) one throws an exception if the operation fails, and (2) the other returns a special value if the operation fails (either `null` or `false`, depending on the operation). The regular structure of the interface is illustrated in the following table.
 
@@ -102,7 +104,7 @@ public class Countdown {
 
 In the following example, a priority queue is used to sort a collection of elements. Again this program is artificial in that there is no reason to use it in favor of the `sort` method provided in `Collections`, but it illustrates the behavior of priority queues.
 
-```
+```java
 static <E> List<E> heapSort(Collection<E> c) {
     Queue<E> queue = new PriorityQueue<E>(c);
     List<E> result = new ArrayList<E>();

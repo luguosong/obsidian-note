@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using CachedRowSetObjects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -95,7 +97,7 @@ Create a new `CachedRowSet` object by using an instance of `RowSetFactory`, whic
 
 The following example from [`CachedRowSetSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/CachedRowSetSample.java) creates a `CachedRowSet` object:
 
-```
+```text
 RowSetFactory factory = RowSetProvider.newFactory();
 CachedRowSet crs = factory.createCachedRowSet();
 ```
@@ -126,7 +128,7 @@ public void setConnectionProperties(
     crs.setPassword(password);
     crs.setUrl("jdbc:mySubprotocol:mySubname");
     // ...
-```
+```text
 
 Another property that you must set is the `command` property. Data is read into a `RowSet` object from a `ResultSet` object. The query that produces that `ResultSet` object is the value for the `command` property. For example, the following line of code sets the `command` property with a query that produces a `ResultSet` object containing all the data in the table `MERCH_INVENTORY`:
 
@@ -138,7 +140,7 @@ crs.setCommand("select * from MERCH_INVENTORY");
 
 If you are going make any updates to the `crs` object and want those updates saved in the database, you must set one more piece of information: the key columns. Key columns are essentially the same as a primary key because they indicate one or more columns that uniquely identify a row. The difference is that a primary key is set on a table in the database, whereas key columns are set on a particular `RowSet` object. The following lines of code set the key columns for `crs` to the first column:
 
-```
+```text
 int[] keys = {1};
 crs.setKeyColumns(keys);
 ```
@@ -151,7 +153,7 @@ As a point of interest, the method `setKeyColumns` does not set a value for a pr
 
 Populating a disconnected `RowSet` object involves more work than populating a connected `RowSet` object. Fortunately, the extra work is done in the background. After you have done the preliminary work to set up the `CachedRowSet` object `crs`, the following line of code populates `crs`:
 
-```
+```text
 crs.execute();
 ```
 
@@ -193,7 +195,6 @@ while (crs.next()) {
     crs.acceptChanges(con);
   }
 } // End of inner while
-```
 
 ### Inserting and Deleting Rows
 
@@ -215,11 +216,10 @@ crs.updateTimestamp(
     new Timestamp(timeStamp.getTimeInMillis()));
 crs.insertRow();
 crs.moveToCurrentRow();
-```
 
 If headquarters has decided to stop stocking a particular item, it would probably remove the row for that coffee itself. However, in the scenario, a warehouse employee using a PDA also has the capability of removing it. The following code fragment finds the row where the value in the `ITEM_ID` column is `12345` and deletes it from the `CachedRowSet` `crs`:
 
-```
+```text
 while (crs.next()) {
     if (crs.getInt("ITEM_ID") == 12345) {
         crs.deleteRow();
@@ -232,7 +232,7 @@ while (crs.next()) {
 
 There is a major difference between making changes to a `JdbcRowSet` object and making changes to a `CachedRowSet` object. Because a `JdbcRowSet` object is connected to its data source, the methods `updateRow`, `insertRow`, and `deleteRow` can update both the `JdbcRowSet` object and the data source. In the case of a disconnected `RowSet` object, however, these methods update the data stored in the `CachedRowSet` object's memory but cannot affect the data source. A disconnected `RowSet` object must call the method `acceptChanges` in order to save its changes to the data source. In the inventory scenario, back at headquarters, an application will call the method `acceptChanges` to update the database with the new values for the column `QUAN`.
 
-```
+```text
 crs.acceptChanges();
 ```
 
@@ -254,7 +254,7 @@ In other situations, however, it is possible for conflicts to exist. To accommod
 
 When the writer has finished looking for conflicts and has found one or more, it creates a `SyncResolver` object containing the database values that caused the conflicts. Next, the method `acceptChanges` throws a `SyncProviderException` object, which an application may catch and use to retrieve the `SyncResolver` object. The following lines of code retrieve the `SyncResolver` object `resolver`:
 
-```
+```text
 try {
     crs.acceptChanges();
 } catch (SyncProviderException spe) {
@@ -309,7 +309,6 @@ try {
     }
   }
 }
-```
 
 ## Notifying Listeners
 
@@ -332,13 +331,12 @@ An example of a component that might want to be a listener is a `BarGraph` objec
 
 As an application programmer, the only thing you must do to take advantage of the notification mechanism is to add or remove listeners. The following line of code means that every time the cursor for the `crs` objects moves, values in `crs` are changed, or `crs` as a whole gets new data, the `BarGraph` object `bar` will be notified:
 
-```
 crs.addRowSetListener(bar);
-```
+```text
 
 You can also stop notifications by removing a listener, as is done in the following line of code:
 
-```
+```text
 crs.removeRowSetListener(bar);
 ```
 

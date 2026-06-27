@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The Collection Interface (The Java™ Tutorials >        
+            Collections > Interfaces)
 
 Documentation
 
@@ -45,13 +47,13 @@ A [`Collection`](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.
 
 Suppose, for example, that you have a `Collection<String> c`, which may be a `List`, a `Set`, or another kind of `Collection`. This idiom creates a new `ArrayList` (an implementation of the `List` interface), initially containing all the elements in `c`.
 
-```
+```text
 List<String> list = new ArrayList<String>(c);
 ```
 
 Or — if you are using JDK 7 or later — you can use the diamond operator:
 
-```
+```text
 List<String> list = new ArrayList<>(c);
 ```
 
@@ -79,7 +81,7 @@ In JDK 8 and later, the preferred method of iterating over a collection is to ob
 myShapesCollection.stream()
 .filter(e -> e.getColor() == Color.RED)
 .forEach(e -> System.out.println(e.getName()));
-```
+```text
 
 Likewise, you could easily request a parallel stream, which might make sense if the collection is large enough and your computer has enough cores:
 
@@ -91,7 +93,7 @@ myShapesCollection.parallelStream()
 
 There are many different ways to collect data with this API. For example, you might want to convert the elements of a `Collection` to `String` objects, then join them, separated by commas:
 
-```
+```text
 String joined = elements.stream()
 .map(Object::toString)
 .collect(Collectors.joining(", "));
@@ -99,7 +101,7 @@ String joined = elements.stream()
 
 Or perhaps sum the salaries of all employees:
 
-```
+```text
 int total = employees.stream()
 .collect(Collectors.summingInt(Employee::getSalary)));
 ```
@@ -115,7 +117,7 @@ The `for-each` construct allows you to concisely traverse a collection or array 
 ```java
 for (Object o : collection)
     System.out.println(o);
-```
+```java
 
 ### Iterators
 
@@ -140,7 +142,7 @@ Use `Iterator` instead of the `for-each` construct when you need to:
 
 The following method shows you how to use an `Iterator` to filter an arbitrary `Collection` — that is, traverse the collection removing specific elements.
 
-```
+```java
 static void filter(Collection<?> c) {
     for (Iterator<?> it = c.iterator(); it.hasNext(); )
         if (!cond(it.next()))
@@ -164,13 +166,13 @@ The `addAll`, `removeAll`, and `retainAll` methods all return `true` if the targ
 
 As a simple example of the power of bulk operations, consider the following idiom to remove *all* instances of a specified element, `e`, from a `Collection`, `c`.
 
-```
+```text
 c.removeAll(Collections.singleton(e));
 ```
 
 More specifically, suppose you want to remove all of the `null` elements from a `Collection`.
 
-```
+```text
 c.removeAll(Collections.singleton(null));
 ```
 
@@ -182,12 +184,12 @@ The `toArray` methods are provided as a bridge between collections and older API
 
 For example, suppose that `c` is a `Collection`. The following snippet dumps the contents of `c` into a newly allocated array of `Object` whose length is identical to the number of elements in `c`.
 
-```
+```text
 Object[] a = c.toArray();
 ```
 
 Suppose that `c` is known to contain only strings (perhaps because `c` is of type `Collection<String>`). The following snippet dumps the contents of `c` into a newly allocated array of `String` whose length is identical to the number of elements in `c`.
 
-```
+```text
 String[] a = c.toArray(new String[0]);
 ```

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Running JAR-Packaged Software (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -77,15 +79,15 @@ To start any applet from an HTML file for running inside a browser, you use the 
 
 As an example, use the TicTacToe demo applet. The applet tag in the HTML file that displays the applet can be marked up like this:
 
-```
+```xml
 <applet code=TicTacToe.class 
         width="120" height="120">
 </applet>
-```
+```text
 
 If the TicTacToe demo was packaged in a JAR file named TicTacToe.jar, you can modify the applet tag with the addition of an archive parameter:
 
-```
+```xml
 <applet code=TicTacToe.class 
         archive="TicTacToe.jar"
         width="120" height="120">
@@ -94,20 +96,18 @@ If the TicTacToe demo was packaged in a JAR file named TicTacToe.jar, you can mo
 
 The archive parameter specifies the relative path to the JAR file that contains TicTacToe.class. For this example it is assumed that the JAR file and the HTML file are in the same directory. If they are not, you must include the JAR file's relative path in the archive parameter's value. For example, if the JAR file was one directory below the HTML file in a directory called applets, the applet tag would look like this:
 
-```
+```xml
 <applet code=TicTacToe.class 
         archive="applets/TicTacToe.jar"
         width="120" height="120">
 </applet>
-```
 
 ## JAR Files as Applications
 
 You can run JAR packaged applications with the Java launcher (java command). The basic command is:
 
-```
 java -jar jar-file
-```
+```text
 
 The \-jar flag tells the launcher that the application is packaged in the JAR file format. You can only specify one JAR file, which must contain all of the application-specific code.
 
@@ -115,9 +115,9 @@ Before you execute this command, make sure that the runtime environment has info
 
 To indicate which class is the application's entry point, you must add a Main-Class header to the JAR file's manifest. The header takes the form:
 
-```
+```bash
 Main-Class: classname
-```
+```text
 
 The header's value, classname, is the name of the class that is the application's entry point.
 
@@ -125,7 +125,7 @@ For more information, see the [[部署-appman|Setting an Application's Entry Poi
 
 When the Main-Class is set in the manifest file, you can run the application from the command line:
 
-```
+```bash
 java -jar app.jar
 ```
 

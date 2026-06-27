@@ -84,26 +84,26 @@ This page covers the following topics:
 The examples [`StoredProcedureJavaDBSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/StoredProcedureJavaDBSample.java) and [`StoredProcedureMySQLSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/StoredProcedureMySQLSample.java) create and call the following stored procedures:
 
 - `SHOW_SUPPLIERS`: Prints a result set that contains the names of coffee suppliers and the coffees they supply to The Coffee Break. This stored procedure does not require any parameters. When the example calls this stored procedure, the example produces output similar to the following:
-	```
+```text
 	Acme, Inc.: Colombian_Decaf
 	Acme, Inc.: Colombian
 	Superior Coffee: French_Roast_Decaf
 	Superior Coffee: French_Roast
 	The High Ground: Espresso
-	```
+```
 - `GET_SUPPLIER_OF_COFFEE`: Prints the name of the supplier `supplierName` for the coffee `coffeeName`. It requires the following parameters:
 	- `IN coffeeName varchar(32)`: The name of the coffee
 		- `OUT supplierName varchar(40)`: The name of the coffee supplier
 	When the example calls this stored procedure with `Colombian` as the value for `coffeeName`, the example produces output similar to the following:
-	```
+```text
 	Supplier of the coffee Colombian: Acme, Inc.
-	```
+```
 - `RAISE_PRICE`: Raises the price of the coffee `coffeeName` to the price `newPrice`. If the price increase is greater than the percentage `maximumPercentage`, then the price is raised by that percentage. This procedure will not change the price if the price `newPrice` is lower than the original price of the coffee. It requires the following parameters:
 	- `IN coffeeName varchar(32)`: The name of the coffee
 		- `IN maximumPercentage float`: The maximum percentage to raise the coffee's price
 		- `INOUT newPrice numeric(10,2)`: The new price of the coffee. After the `RAISE_PRICE` stored procedure has been called, this parameter will contain the current price of the coffee `coffeeName`.
 	When the example calls this stored procedure with `Colombian` as the value for `coffeeName`, `0.10` as the value for `maximumPercentage`, and `19.99` as the value for `newPrice`, the example produces output similar to the following:
-	```
+```text
 	Contents of COFFEES table before calling RAISE_PRICE:
 	Colombian, 101, 7.99, 0, 0
 	Colombian_Decaf, 101, 8.99, 0, 0
@@ -118,7 +118,7 @@ The examples [`StoredProcedureJavaDBSample.java`](https://docs.oracle.com/javase
 	Espresso, 150, 9.99, 0, 0
 	French_Roast, 49, 8.99, 0, 0
 	French_Roast_Decaf, 49, 9.99, 0, 0
-	```
+```
 
 ## Parameter Modes
 
@@ -165,7 +165,7 @@ public static void showSuppliers(ResultSet[] rs)
     stmt = con.createStatement();
     rs[0] = stmt.executeQuery(query);
 }
-```
+```java
 
 The `SHOW_SUPPLIERS` stored procedure takes no arguments. You can specify arguments in a stored procedure by defining them in the method signature of your public static Java method. Note that the method `showSuppliers` contains a parameter of type `ResultSet[]`. If your stored procedure returns any number of `ResultSet` objects, specify one parameter of type `ResultSet[]` in your Java method. In addition, ensure that this Java method is public and static.
 
@@ -240,7 +240,7 @@ CREATE PROCEDURE GET_SUPPLIER_OF_COFFEE(
     EXTERNAL NAME 'com.oracle.tutorial.jdbc.
         StoredProcedureJavaDBSample.
         getSupplierOfCoffee'
-```
+```sql
 
 This stored procedure has two formal parameters, `coffeeName` and `supplierName`. The parameter specifiers `IN` and `OUT` are called parameter modes. They define the action of formal parameters. See [Parameter Modes](#parameter_modes) for more information. This stored procedure does not retrieve a result set, so the procedure element `DYNAMIC RESULT SETS` is `0`.
 
@@ -273,7 +273,7 @@ while (rs.next()) {
     String coffee = rs.getString("COF_NAME");
     System.out.println(supplier + ": " + coffee);
 }
-```
+```text
 
 **Note**: As with `Statement` objects, to call the stored procedure, you can call `execute`, `executeQuery`, or `executeUpdate` depending on how many `ResultSet` objects the procedure returns. However, if you are not sure how many `ResultSet` objects the procedure returns, call `execute`.
 
@@ -286,13 +286,13 @@ cs.registerOutParameter(2, Types.VARCHAR);
 cs.executeQuery();
 
 String supplierName = cs.getString(2);
-```
+```text
 
 The interface `CallableStatement` extends `PreparedStatement`. It is used to call stored procedures. Specify values for `IN` parameters (such as `coffeeName` in this example) just like you would with a `PreparedStatement` object by calling the appropriate setter method. However, if a stored procedure contains an `OUT` parameter, you must register it with the `registerOutParameter` method.
 
 The following excerpt from the method `StoredProcedureJavaDBSample.runStoredProcedures` calls the stored procedure `RAISE_PRICE`:
 
-```
+```sql
 cs = this.con.prepareCall("{call RAISE_PRICE(?,?,?)}");
 cs.setString(1, coffeeNameArg);
 cs.setFloat(2, maximumPercentageArg);
@@ -300,7 +300,6 @@ cs.registerOutParameter(3, Types.NUMERIC);
 cs.setFloat(3, newPriceArg);
 
 cs.execute();
-```
 
 Because the parameter `newPrice` (the third parameter in the procedure `RAISE_PRICE`) has the parameter mode `INOUT`, you must both specify its value by calling the appropriate setter method and register it with the `registerOutParameter` method.
 
@@ -320,7 +319,6 @@ Java DB looks first in your class path for any required classes, and then in the
 
 Use the following system procedures to add the `JDBCTutorial.jar` JAR file to the database (line breaks have been added for clarity):
 
-```
 CALL sqlj.install_jar(
   '<JDBC tutorial directory>/
   lib/JDBCTutorial.jar',
@@ -332,7 +330,7 @@ CALL sqlj.replace_jar(
 CALL syscs_util.syscs_set_database_property(
   'derby.database.classpath',
   'APP.JDBCTutorial')";
-```
+```sql
 
 **Note**: The method [`StoredProcedureJavaDBSample.registerJarFile`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/StoredProcedureJavaDBSample.java) demonstrates how to call these system procedures. If you call this method, ensure that you have modified [`javadb-sample-properties.xml`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/properties/javadb-sample-properties.xml) so that the value of the property `jar_file` is set to the full path name of `JDBCTutorial.jar`.
 
@@ -388,7 +386,7 @@ The `DROP PROCEDURE` statement deletes that procedure `SHOW_SUPPLIERS` if it exi
   </sql>
 
 </target>
-```
+```java
 
 Alternatively, you can use the `DELIMITER` SQL statement to specify a different delimiter character.
 
@@ -429,7 +427,7 @@ Note that the delimiter has not been changed in this method.
 
 The stored procedure `SHOW_SUPPLIERS` generates a result set, even though the return type of the method `createProcedureShowSuppliers` is `void` and the method does not contain any parameters. A result set is returned when the stored procedure `SHOW_SUPPLIERS` is called with the method `CallableStatement.executeQuery`:
 
-```
+```text
 CallableStatement cs = null;
 cs = this.con.prepareCall("{call SHOW_SUPPLIERS}");
 ResultSet rs = cs.executeQuery();
@@ -465,7 +463,7 @@ public void createProcedureGetSupplierOfCoffee() throws SQLException {
     JDBCTutorialUtilities.printSQLException(e);
   }
 }
-```
+```java
 
 This stored procedure has two formal parameters, `coffeeName` and `supplierName`. The parameter specifiers `IN` and `OUT` are called parameter modes. They define the action of formal parameters. See [Parameter Modes](#parameter_modes) for more information. The formal parameters are defined in the SQL query, not in the method `createProcedureGetSupplierOfCoffee`. To assign a value to the `OUT` parameter `supplierName`, this stored procedure uses a `SELECT` statement.
 
@@ -531,25 +529,25 @@ while (rs.next()) {
   String coffee = rs.getString("COF_NAME");
   System.out.println(supplier + ": " + coffee);
 }
-```
+```text
 
 **Note**: As with `Statement` objects, to call the stored procedure, you can call `execute`, `executeQuery`, or `executeUpdate` depending on how many `ResultSet` objects the procedure returns. However, if you are not sure how many `ResultSet` objects the procedure returns, call `execute`.
 
 The following excerpt from the method `StoredProcedureMySQLSample.runStoredProcedures` calls the stored procedure `GET_SUPPLIER_OF_COFFEE`:
 
-```
+```text
 cs = this.con.prepareCall("{call GET_SUPPLIER_OF_COFFEE(?, ?)}");
 cs.setString(1, coffeeNameArg);
 cs.registerOutParameter(2, Types.VARCHAR);
 cs.executeQuery();
 String supplierName = cs.getString(2);
-```
+```text
 
 The interface `CallableStatement` extends `PreparedStatement`. It is used to call stored procedures. Specify values for `IN` parameters (such as `coffeeName` in this example) just like you would with a `PreparedStatement` object by calling the appropriate setter method. However, if a stored procedure contains an `OUT` parameter, you must register it with the `registerOutParameter` method.
 
 The following excerpt from the method `StoredProcedureMySQLSample.runStoredProcedures` calls the stored procedure `RAISE_PRICE`:
 
-```
+```text
 cs = this.con.prepareCall("{call RAISE_PRICE(?,?,?)}");
 cs.setString(1, coffeeNameArg);
 cs.setFloat(2, maximumPercentageArg);

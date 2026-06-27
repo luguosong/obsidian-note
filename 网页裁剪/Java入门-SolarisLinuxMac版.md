@@ -1,14 +1,15 @@
 ---
 分类:
   - "网页裁剪"
-标题: ""Hello World!" for Solaris OS, Linux, and Mac OS X (The Java™ Tutorials >        
-            Getting Started > The "Hello World!" Application)"
+标题: "Solaris/Linux/Mac 版 Hello World"
 描述: "This beginner Java tutorial describes getting started with Java and setting up your Netbeans IDE"
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+
+# Solaris/Linux/Mac 版 Hello World
 
 Documentation
 
@@ -85,13 +86,13 @@ cd /tmp
 mkdir examples
 cd examples
 mkdir java
-```
+```text
 
 To change your current directory to this new directory, you then enter:
 
 ```
 cd /tmp/examples/java
-```
+```java
 
 Now you can start creating your source file.
 
@@ -131,7 +132,7 @@ You can type **Ctrl-X** to exit Pico.
 
 Bring up another shell window. To compile your source file, change your current directory to the directory where your file is located. For example, if your source directory is `/tmp/examples/java`, type the following command at the prompt and press **Return**:
 
-```
+```bash
 cd /tmp/examples/java
 ```
 
@@ -145,7 +146,7 @@ Results of the `ls` command, showing the `.java` source file.
 
 Now are ready to compile the source file. At the prompt, type the following command and press **Return**.
 
-```
+```text
 javac HelloWorldApp.java
 ```
 
@@ -163,7 +164,7 @@ If you encounter problems with the instructions in this step, consult the [[常�
 
 In the same directory, enter at the prompt:
 
-```
+```text
 java HelloWorldApp
 ```
 

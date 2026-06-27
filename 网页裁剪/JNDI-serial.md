@@ -39,7 +39,7 @@ You can store a serializable object in the directory if the underlying service p
 
 The following example invokes [`Context.bind`](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#bind-javax.naming.Name-java.lang.Object-) to bind an AWT button to the name "cn=Button". To associate attributes with the new binding, you use [`DirContext.bind`](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#bind-javax.naming.Name-java.lang.Object-javax.naming.directory.Attributes-). To overwrite an existing binding, use [`Context.rebind`](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#rebind-javax.naming.Name-java.lang.Object-) and [`DirContext.rebind`](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#rebind-javax.naming.Name-java.lang.Object-javax.naming.directory.Attributes-).
 
-```
+```text
 // Create the object to be bound
 Button b = new Button("Push me");
 
@@ -53,14 +53,11 @@ You can then read the object back using [`Context.lookup`](https://docs.oracle.c
 // Check that it is bound
 Button b2 = (Button)ctx.lookup("cn=Button");
 System.out.println(b2);
-```
 
 Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/objects/examples/SerObj.java) produces the following output.
 
-```
 # java SerObj
 java.awt.Button[button0,0,0,0x0,invalid,label=Push me]
-```
 
 ## Specifying a Codebase
 
@@ -76,7 +73,6 @@ Alternatively, you can record a *codebase* with the serialized object in the dir
 
 The following example resembles the one for binding a java.awt.Button. It differs in that it uses a user-defined Serializable class, [`Flower`](https://docs.oracle.com/javase/tutorial/jndi/objects/examples/Flower.java), and supplies a "javaCodebase" attribute that contains the location of Flower 's class definition. Here's the code that does the binding.
 
-```
 String codebase = ...;
 
 // Create the object to be bound
@@ -84,14 +80,12 @@ Flower f = new Flower("rose", "pink");
 
 // Perform the bind and specify the codebase
 ctx.bind("cn=Flower", f, new BasicAttributes("javaCodebase", codebase));
-```
 
 When you run [`this example`](https://docs.oracle.com/javase/tutorial/jndi/objects/examples/SerObjWithCodebase.java), you must supply the URL of the location at which the class file Flower.class was installed. For example, if Flower.class was installed at the Web server web1, in the directory example/classes, then you would run this example as follows.
 
 ```bash
 # java SerObjWithCodebase http://web1/example/classes/
 pink rose
-```
 
 Afterward, you may remove Flower.class from your classpath and run any program that looks up or lists this object without directly referencing the Flower class. If your program references Flower directly, then you must make its class file available for compilation and execution.
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Accessing Cookies (The Java™ Tutorials >        
+            Deployment > Doing More With Java Rich Internet Applications)
 
 Documentation
 
@@ -29,7 +31,7 @@ The Cookie Applet example has a [`CookieAccessor`](https://docs.oracle.com/javas
 
 The following code snippet shows the `getCookieUsingCookieHandler` method of the `CookieAccessor` class:
 
-```
+```java
 public void getCookieUsingCookieHandler() { 
     try {       
         // Instantiate CookieManager;
@@ -57,7 +59,7 @@ public void getCookieUsingCookieHandler() {
         e.printStackTrace();
     }
 }
-```
+```java
 
 The [`CookieManager`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieManager.html) class is the main entry point for cookie management. Create an instance of the `CookieManager` class and set its [`CookiePolicy`](https://docs.oracle.com/javase/8/docs/api/java/net/CookiePolicy.html). Set this instance of the `CookieManager` as the default [`CookieHandler`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieHandler.html).
 
@@ -69,7 +71,7 @@ Next, retrieve cookies from the underlying [`CookieStore`](https://docs.oracle.c
 
 The following code snippet shows the `setCookieUsingCookieHandler` method of the `CookieAccessor` class:
 
-```
+```java
 public void setCookieUsingCookieHandler() {
     try {
         // instantiate CookieManager

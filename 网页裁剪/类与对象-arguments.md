@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Passing Information to a Method or a Constructor (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -79,7 +81,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The declaration for a method or a constructor declares the number and the type of the arguments for that method or constructor. For example, the following is a method that computes the monthly payments for a home loan, based on the amount of the loan, the interest rate, the length of the loan (the number of periods), and the future value of the loan:
 
-```
+```java
 public double computePayment(
                   double loanAmt,
                   double rate,
@@ -109,7 +111,7 @@ You can use any data type for a parameter of a method or a constructor. This inc
 
 Here's an example of a method that accepts an array as an argument. In this example, the method creates a new `Polygon` object and initializes it from an array of `Point` objects (assume that `Point` is a class that represents an x, y coordinate):
 
-```
+```java
 public Polygon polygonFrom(Point[] corners) {
     // method body goes here
 }
@@ -127,7 +129,7 @@ You can use a construct called *varargs* to pass an arbitrary number of values t
 
 To use varargs, you follow the type of the last parameter by an ellipsis (three dots,...), then a space, and the parameter name. The method can then be called with any number of that parameter, including none.
 
-```
+```java
 public Polygon polygonFrom(Point... corners) {
     int numberOfSides = corners.length;
     double squareOfSide1, lengthOfSide1;
@@ -146,7 +148,7 @@ You can see that, inside the method, `corners` is treated like an array. The met
 
 You will most commonly see varargs with the printing methods; for example, this `printf` method:
 
-```
+```java
 public PrintStream printf(String format, Object... args)
 ```
 
@@ -154,7 +156,7 @@ allows you to print an arbitrary number of objects. It can be called like this:
 
 ```java
 System.out.printf("%s: %d, %s%n", name, idnum, address);
-```
+```text
 
 or like this
 
@@ -179,7 +181,7 @@ public class Circle {
         ...
     }
 }
-```
+```java
 
 The `Circle` class has three fields: `x`, `y`, and `radius`. The `setOrigin` method has two parameters, each of which has the same name as one of the fields. Each method parameter shadows the field that shares its name. So using the simple names `x` or `y` within the body of the method refers to the parameter, *not* to the field. To access the field, you must use a qualified name. This will be discussed later in this lesson in the section titled "Using the `this` Keyword."
 
@@ -213,7 +215,7 @@ public class PassPrimitiveByValue {
 
 When you run this program, the output is:
 
-```
+```text
 After invoking passMethod, x = 3
 ```
 
@@ -232,11 +234,11 @@ public void moveCircle(Circle circle, int deltaX, int deltaY) {
     // code to assign a new reference to circle
     circle = new Circle(0, 0);
 }
-```
+```text
 
 Let the method be invoked with these arguments:
 
-```
+```text
 moveCircle(myCircle, 23, 56)
 ```
 

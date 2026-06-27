@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use BoxLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -45,7 +47,7 @@ You can find links for running ListDialog and for its source files in the [examp
 
 The following code, taken from [`` `ListDialog.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ListDialogRunnerProject/src/components/ListDialog.java), lays out the GUI. This code is in the constructor for the dialog, which is implemented as a `JDialog` subclass. The bold lines of code set up the box layouts and add components to them.
 
-```
+```text
 JScrollPane listScroller = new JScrollPane(list);
 listScroller.setPreferredSize(new Dimension(250, 80));
 listScroller.setAlignmentX(LEFT_ALIGNMENT);
@@ -157,7 +159,7 @@ Here is how you generally use each type of filler:
 
 Use this when you want a fixed-size space between two components. For example, to put 5 pixels between two components in a left-to-right box, you can use this code:
 
-```
+```text
 container.add(firstComponent);
 container.add(Box.createRigidArea(new Dimension(5,0)));
 container.add(secondComponent);
@@ -175,7 +177,7 @@ container.add(secondComponent);
 
 Use this to specify where excess space in a layout should go. Think of it as a kind of elastic glue — stretchy and expandable, yet taking up no space unless you pull apart the components that it is sticking to. For example, by putting horizontal glue between two components in a left-to-right box, you make any extra space go between those components, instead of to the right of all the components. Here is an example of making the space in a left-to-right box go between two components, instead of to the right of the components:
 
-```
+```text
 container.add(firstComponent);
 container.add(Box.createHorizontalGlue());
 container.add(secondComponent);
@@ -187,7 +189,7 @@ container.add(secondComponent);
 
 Use this to specify a component with whatever minimum, preferred, and maximum sizes you want. For example, to create some filler in a left-to-right layout that puts at least 5 pixels between two components and ensures that the container has a minimum height of 100 pixels, you could use this code:
 
-```
+```text
 container.add(firstComponent);
 Dimension minSize = new Dimension(5, 100);
 Dimension prefSize = new Dimension(5, 100);
@@ -211,7 +213,7 @@ In general, all the components controlled by a top-to-bottom `BoxLayout` object 
 
 Here is an example, taken from an application called [`BoxAlignmentDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/index.html#BoxAlignmentDemo), of changing the Y alignments of two buttons so that the bottoms of the buttons are aligned:
 
-```
+```text
 button1.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 button2.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 ```
@@ -222,7 +224,7 @@ By default, most components have center X and Y alignment. However, buttons, com
 
 The [`BoxAlignmentDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/index.html#BoxAlignmentDemo) program gives examples of fixing mismatched alignment problems. Usually, it is as simple as making an offending button or label be center aligned. For example:
 
-```
+```text
 label.setAlignmentX(Component.CENTER_ALIGNMENT);
 ```
 
@@ -243,32 +245,32 @@ Sometimes, however, the need to adjust size is not so obvious. You might be gett
 You can change the minimum, preferred, and maximum sizes in two ways:
 
 - By invoking the appropriate `set*Xxx*Size` method (which is defined by the `JComponent` class). For example:
-	```
+```text
 	comp.setMinimumSize(new Dimension(50, 25));
 	comp.setPreferredSize(new Dimension(50, 25));
 	comp.setMaximumSize(new Dimension(Short.MAX_VALUE,
 	                                  Short.MAX_VALUE));
-	```
+```
 - By overriding the appropriate `get*Xxx*Size` method. For example:
-	```
+```java
 	...//in a subclass of a component class:
 	public Dimension getMaximumSize() {
 	    size = getPreferredSize();
 	    size.width = Short.MAX_VALUE;
 	    return size;
 	}
-	```
+```
 
 If you are running into trouble with a box layout and you have ruled out alignment problems, then the trouble might well be size-related. For example, if the container controlled by the box layout is taking up too much space, then one or more of the components in the container probably needs to have its maximum size restricted.
 
 You can use two techniques to track down size trouble in a box layout:
 
 - Add a garish line [[Swing-布局-border|border]] to the outside of the Swing components in question. This lets you see what size they really are. For example:
-	```
+```text
 	comp.setBorder(BorderFactory.createCompoundBorder(
 	                   BorderFactory.createLineBorder(Color.red),
 	                   comp.getBorder()));
-	```
+```
 - Use `System.out.println` to print the components' minimum, preferred, and maximum sizes, and perhaps their bounds.
 
 ## The Box Layout API

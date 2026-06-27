@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The while and do-while Statements (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The `while` statement continually executes a block of statements while a particular condition is `true`. Its syntax can be expressed as:
 
-```
+```text
 while (expression) {
      statement(s)
 }
@@ -31,7 +33,7 @@ while (expression) {
 
 The `while` statement evaluates *expression*, which must return a `boolean` value. If the expression evaluates to `true`, the `while` statement executes the *statement* (s) in the `while` block. The `while` statement continues testing the expression and executing its block until the expression evaluates to `false`. Using the `while` statement to print the values from 1 through 10 can be accomplished as in the following [`WhileDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/WhileDemo.java) program:
 
-```
+```java
 class WhileDemo {
     public static void main(String[] args){
         int count = 1;
@@ -41,7 +43,7 @@ class WhileDemo {
         }
     }
 }
-```
+```text
 
 You can implement an infinite loop using the `while` statement as follows:
 
@@ -49,7 +51,7 @@ You can implement an infinite loop using the `while` statement as follows:
 while (true){
     // your code goes here
 }
-```
+```text
 
 The Java programming language also provides a `do-while` statement, which can be expressed as follows:
 
@@ -57,11 +59,11 @@ The Java programming language also provides a `do-while` statement, which can be
 do {
      statement(s)
 } while (expression);
-```
+```java
 
 The difference between `do-while` and `while` is that `do-while` evaluates its expression at the bottom of the loop instead of the top. Therefore, the statements within the `do` block are always executed at least once, as shown in the following [`DoWhileDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/DoWhileDemo.java) program:
 
-```
+```java
 class DoWhileDemo {
     public static void main(String[] args){
         int count = 1;

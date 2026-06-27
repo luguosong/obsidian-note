@@ -8,6 +8,7 @@
 发布时间:
 创建时间: "2026-06-26T14:34:17+08:00"
 ---
+# Context7 平台 —— 为大语言模型(LLM)和 AI 代码编辑器提供最新代码文档
 
 [![[context7-cover.webp]]](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)
 
@@ -29,15 +30,15 @@
 
 Context7 直接从源头拉取最新的、特定版本(documentation)和代码示例，并将它们直接放入你的提示词(prompt)中。
 
-```
+```sql
 Create a Next.js middleware that checks for a valid JWT in cookies
 and redirects unauthenticated users to `/login`. use context7
 ```
-```
+```text
 Configure a Cloudflare Worker script to cache
 JSON API responses for five minutes. use context7
 ```
-```
+```text
 Show me the Supabase auth API for email/password sign-up.
 ```
 
@@ -55,7 +56,7 @@ Context7 将最新的代码示例和文档直接获取到你的大语言模型(L
 
 使用单个命令为你的编码智能体(coding agents)设置 Context7。`ctx7` CLI 需要 Node.js 18 或更高版本。
 
-```
+```text
 npx ctx7 setup
 ```
 
@@ -73,7 +74,7 @@ npx ctx7 setup
 
 如果你已经确切知道想要使用哪个库，可以将其 Context7 ID 添加到提示词(prompt)中。这样，Context7 就能跳过库匹配步骤，直接获取文档。
 
-```
+```text
 Implement basic authentication with Supabase. use library /supabase/supabase for API and docs.
 ```
 
@@ -83,9 +84,8 @@ Implement basic authentication with Supabase. use library /supabase/supabase for
 
 若要获取特定库版本的文档，只需在提示词(prompt)中提及该版本：
 
-```
+```batch
 How do I set up Next.js 14 middleware? use context7
-```
 
 Context7 将自动匹配相应的版本。
 
@@ -99,7 +99,6 @@ Context7 将自动匹配相应的版本。
 
 **示例规则：**
 
-```
 Always use Context7 when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask.
 ```
 

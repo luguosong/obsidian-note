@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# CCP in a non-Text Component (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -69,7 +71,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 If you are implementing cut, copy and paste using one of the Swing components that is *not* one of the text components you have to do some additional setup. First, you need to install the cut, copy, and paste actions in the action map. The following method shows how to do this:
 
-```
+```java
 private void setMappings(JList list) { 
     ActionMap map = list.getActionMap();
     map.put(TransferHandler.getCutAction().getValue(Action.NAME),
@@ -82,7 +84,7 @@ private void setMappings(JList list) {
 
 When you set up the Edit menu, you can also choose to add menu accelerators, so that the user can type Control-C to initiate a copy, for example. In the following code snippet, the bolded text shows how to set the menu accelerator for the cut action:
 
-```
+```text
 menuItem = new JMenuItem("Cut");
 menuItem.setActionCommand((String)TransferHandler.getCutAction().
          getValue(Action.NAME));
@@ -95,7 +97,7 @@ mainMenu.add(menuItem);
 
 If you have set the menu accelerators for the CCP actions, this next step is redundant. If you have not set the menu accelerators, you need to add the CCP bindings to the input map. The following code snippet shows how this is done:
 
-```
+```text
 // only required if you have not set the menu accelerators
 InputMap imap = this.getInputMap();
 imap.put(KeyStroke.getKeyStroke("ctrl X"),
@@ -108,7 +110,7 @@ imap.put(KeyStroke.getKeyStroke("ctrl V"),
 
 Once the bindings have been installed and the Edit menu has been set up, there is another issue to be addressed: When the user initiates a cut, copy or a paste, which component should receive the action? In the case of a text component, the `DefaultEditorKit` remembers which component last had the focus and forwards the action to that component. The following class, `TransferActionListener`, performs the same function for non-text Swing components. This class can be dropped into most any application:
 
-```
+```java
 public class TransferActionListener implements ActionListener,
                                               PropertyChangeListener {
     private JComponent focusOwner = null;

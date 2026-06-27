@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Path Operations (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -98,7 +100,7 @@ A `Path` instance contains the information used to specify the location of a fil
 
 You can easily create a `Path` object by using one of the following `get` methods from the [`Paths`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Paths.html) (note the plural) helper class:
 
-```
+```text
 Path p1 = Paths.get("/tmp/foo");
 Path p2 = Paths.get(args[0]);
 Path p3 = Paths.get(URI.create("file:///Users/joe/FileTest.java"));
@@ -106,13 +108,13 @@ Path p3 = Paths.get(URI.create("file:///Users/joe/FileTest.java"));
 
 The `Paths.get` method is shorthand for the following code:
 
-```
+```text
 Path p4 = FileSystems.getDefault().getPath("/users/sally");
 ```
 
 The following example creates `/u/joe/logs/foo.log` assuming your home directory is `/u/joe`, or `C:\joe\logs\foo.log` if you are on Windows.
 
-```
+```text
 Path p5 = Paths.get(System.getProperty("user.home"),"logs", "foo.log");
 ```
 
@@ -128,7 +130,7 @@ Sample Directory Structure
 
 The following code snippet defines a `Path` instance and then invokes several methods to obtain information about the path:
 
-```
+```text
 // None of these methods requires that the file corresponding
 // to the Path exists.
 // Microsoft Windows syntax
@@ -160,7 +162,7 @@ Here is the output for both Windows and the Solaris OS:
 
 The previous example shows the output for an absolute path. In the following example, a relative path is specified:
 
-```
+```text
 // Solaris syntax
 Path path = Paths.get("sally/bar");
 or
@@ -186,7 +188,7 @@ Many file systems use "." notation to denote the current directory and ".." to d
 
 The following examples both include redundancies:
 
-```
+```text
 /home/./joe/foo
 /home/sally/../joe/foo
 ```
@@ -201,7 +203,7 @@ To clean up a path while ensuring that the result locates the correct file, you 
 
 You can use three methods to convert the `Path`. If you need to convert the path to a string that can be opened from a browser, you can use [`toUri`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html#toUri--). For example:
 
-```
+```text
 Path p1 = Paths.get("/home/logfile");
 // Result is file:///home/logfile
 System.out.format("%s%n", p1.toUri());
@@ -237,7 +239,6 @@ public class FileTest {
         Path fullPath = inputPath.toAbsolutePath();
     }
 }
-```
 
 The `toAbsolutePath` method converts the user input and returns a `Path` that returns useful values when queried. The file does not need to exist for this method to work.
 
@@ -249,7 +250,6 @@ The [`toRealPath`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.
 
 This method throws an exception if the file does not exist or cannot be accessed. You can catch the exception when you want to handle any of these cases. For example:
 
-```
 try {
     Path fp = path.toRealPath();
 } catch (NoSuchFileException x) {
@@ -259,7 +259,6 @@ try {
     System.err.format("%s%n", x);
     // Logic for other sort of file error.
 }
-```
 
 ## Joining Two Paths
 
@@ -267,7 +266,6 @@ You can combine paths by using the `resolve` method. You pass in a *partial path
 
 For example, consider the following code snippet:
 
-```
 // Solaris
 Path p1 = Paths.get("/home/joe/foo");
 // Result is /home/joe/foo/bar
@@ -279,14 +277,13 @@ or
 Path p1 = Paths.get("C:\\home\\joe\\foo");
 // Result is C:\home\joe\foo\bar
 System.out.format("%s%n", p1.resolve("bar"));
-```
+```text
 
 Passing an absolute path to the `resolve` method returns the passed-in path:
 
 ```
 // Result is /home/joe
 Paths.get("foo").resolve("/home/joe");
-```
 
 ## Creating a Path Between Two Paths
 
@@ -294,10 +291,9 @@ A common requirement when you are writing file I/O code is the capability to con
 
 For example, consider two relative paths defined as `joe` and `sally`:
 
-```
 Path p1 = Paths.get("joe");
 Path p2 = Paths.get("sally");
-```
+```text
 
 In the absence of any other information, it is assumed that `joe` and `sally` are siblings, meaning nodes that reside at the same level in the tree structure. To navigate from `joe` to `sally`, you would expect to first navigate one level up to the parent node and then down to `sally`:
 
@@ -306,18 +302,17 @@ In the absence of any other information, it is assumed that `joe` and `sally` ar
 Path p1_to_p2 = p1.relativize(p2);
 // Result is ../joe
 Path p2_to_p1 = p2.relativize(p1);
-```
+```text
 
 Consider a slightly more complicated example:
 
-```
+```bash
 Path p1 = Paths.get("home");
 Path p3 = Paths.get("home/sally/bar");
 // Result is sally/bar
 Path p1_to_p3 = p1.relativize(p3);
 // Result is ../..
 Path p3_to_p1 = p3.relativize(p1);
-```
 
 In this example, the two paths share the same node, `home`. To navigate from `home` to `bar`, you first navigate one level down to `sally` and then one more level down to `bar`. Navigating from `bar` to `home` requires moving up two levels.
 
@@ -342,7 +337,6 @@ if (path.equals(otherPath)) {
 } else if (path.endsWith(ending)) {
     // path ends with "foo"
 }
-```
 
 The `Path` class implements the [`Iterable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html) interface. The [`iterator`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html#iterator--) method returns an object that enables you to iterate over the name elements in the path. The first element returned is that closest to the root in the directory tree. The following code snippet iterates over a path, printing each name element:
 

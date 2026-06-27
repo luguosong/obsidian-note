@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The if-then and if-then-else Statements (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -25,7 +27,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The `if-then` statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code *only if* a particular test evaluates to `true`. For example, the `Bicycle` class could allow the brakes to decrease the bicycle's speed *only if* the bicycle is already in motion. One possible implementation of the `applyBrakes` method could be as follows:
 
-```
+```java
 void applyBrakes() {
     // the "if" clause: bicycle must be moving
     if (isMoving){ 
@@ -39,7 +41,7 @@ If this test evaluates to `false` (meaning that the bicycle is not in motion), c
 
 In addition, the opening and closing braces are optional, provided that the "then" clause contains only one statement:
 
-```
+```java
 void applyBrakes() {
     // same as above, but without braces 
     if (isMoving)
@@ -53,7 +55,7 @@ Deciding when to omit the braces is a matter of personal taste. Omitting them ca
 
 The `if-then-else` statement provides a secondary path of execution when an "if" clause evaluates to `false`. You could use an `if-then-else` statement in the `applyBrakes` method to take some action if the brakes are applied when the bicycle is not in motion. In this case, the action is to simply print an error message stating that the bicycle has already stopped.
 
-```
+```java
 void applyBrakes() {
     if (isMoving) {
         currentSpeed--;
@@ -61,11 +63,11 @@ void applyBrakes() {
         System.err.println("The bicycle has already stopped!");
     } 
 }
-```
+```java
 
 The following program, [`IfElseDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/IfElseDemo.java), assigns a grade based on the value of a test score: an A for a score of 90% or above, a B for a score of 80% or above, and so on.
 
-```
+```java
 class IfElseDemo {
     public static void main(String[] args) {
 
@@ -90,7 +92,7 @@ class IfElseDemo {
 
 The output from the program is:
 
-```
+```text
 Grade = C
 ```
 

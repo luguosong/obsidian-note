@@ -1,51 +1,41 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Lesson: Working With Cookies (The Java™ Tutorials > Custom Networking)"
-描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
-来源: "https://docs.oracle.com/javase/tutorial/networking/cookies"
+标题: "使用 Cookie"
+描述: "《Java 教程》自定义网络路线课程，介绍如何在 Java 应用程序中利用 cookie，涵盖 CookieHandler、CookieManager、CookiePolicy 和 CookieStore 等类。"
+来源: "https://docs.oracle.com/javase/tutorial/networking/cookies/index.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 使用 Cookie
 
-Working With Cookies
+> 文档说明
 
-[[自定义网络-definition|HTTP State Management With Cookies]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[自定义网络-cookiehandler|CookieHandler Callback Mechanism]]
+## 课程：使用 Cookie
 
-[[自定义网络-cookiemanager|Default CookieManager]]
+虽然你可能已经熟悉 cookie，但你可能不知道如何在 Java 应用程序中利用它们。本课引导你了解 cookie 的概念，并解释如何设置 cookie 处理器以便你的 HTTP URL 连接使用它。
 
-[[自定义网络-custom|Custom CookieManager]]
+Java SE 为此功能提供了一个主要类 [`java.net.CookieHandler`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieHandler.html)，以及以下支持类和接口：[`java.net.CookieManager`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieManager.html)、[`java.net.CookiePolicy`](https://docs.oracle.com/javase/8/docs/api/java/net/CookiePolicy.html)、[`java.net.CookieStore`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieStore.html) 和 [`java.net.HttpCookie`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpCookie.html)。
 
-[[nifs-nifs|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/TOC.html) • [[自定义网络-definition|Next »]]
+## 使用 Cookie 进行 HTTP 状态管理
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+此页面描述 cookie 并解释它们如何用于提供会话。
 
-## Lesson: Working With Cookies
+## CookieHandler 回调机制
 
-Though you are probably already familiar with cookies, you might not know how to take advantage of them in your Java application. This lesson guides you through the concept of cookies and explains how to set a cookie handler so that your HTTP URL connections will use it.
+此页面解释访问网站时如何调用 cookie 处理器以及如何设置 cookie 处理器。
 
-Java SE provides one main class for this functionality, [`java.net.CookieHandler`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieHandler.html), and the following supporting classes and interfaces: [`java.net.CookieManager`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieManager.html), [`java.net.CookiePolicy`](https://docs.oracle.com/javase/8/docs/api/java/net/CookiePolicy.html), [`java.net.CookieStore`](https://docs.oracle.com/javase/8/docs/api/java/net/CookieStore.html), and [`java.net.HttpCookie`](https://docs.oracle.com/javase/8/docs/api/java/net/HttpCookie.html).
+## 默认 CookieManager
 
-## HTTP State Management With Cookies
+Java SE 提供了一个默认的 cookie 处理器实现，在大多数情况下足够使用且高度可定制。
 
-This page describes cookies and explains how they are used to provide sessions.
+## 自定义 CookieManager
 
-## CookieHandler Callback Mechanism
-
-This page explains how a cookie handler is called when you access a web site and how to set a cookie handler.
-
-## Default CookieManager
-
-Java SE provides a default cookie handler implementation that is sufficient in most cases and highly customizable.
-
-## Custom CookieManager
-
-Here are some examples of how to customize the cookie policy and write your own cookie store.
+以下是一些如何自定义 cookie 策略和编写自己的 cookie 存储的示例。

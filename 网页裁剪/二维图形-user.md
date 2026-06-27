@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Supporting User Interaction (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)
 
 Documentation
 
@@ -51,7 +53,7 @@ This applet allows the user to drag a `Shape` around within the applet window. T
 
 The `contains` method is called to determine whether the cursor is within the bounds of the rectangle when the mouse is pressed. If it is, the location of the rectangle is updated.
 
-```
+```java
 public void mousePressed(MouseEvent e){
     last_x = rect.x - e.getX();
     last_y = rect.y - e.getY();
@@ -64,7 +66,7 @@ public void updateLocation(MouseEvent e){
         last_y + e.getY());
     ...
     repaint();
-```
+```java
 
 You might notice that redrawing the `Shape` at every mouse location is slow, because the filled rectangle is rerendered every time it is moved. Using double buffering can eliminate this problem. If you use Swing, the drawing will be double buffered automatically; you don't have to change the rendering code at all. The code for a Swing version of this program is [`SwingShapeMover.java`](https://docs.oracle.com/javase/tutorial/2d/advanced/examples/SwingShapeMover.java).
 
@@ -84,7 +86,7 @@ The `mouseClicked` method uses `TextLayout.hitTestChar` to return a `java.awt.fo
 
 Information returned by the `TextLayout` `getAscent`, `getDescent`, and `getAdvance` methods is used to compute the location of the origin for the `TextLayout` object so it is horizontally and vertically centered.
 
-```
+```java
 ...
 
 private Point2D computeLayoutOrigin() {

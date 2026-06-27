@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use the System Tray (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -87,7 +89,7 @@ Unfortunately, the current implementation of the `TrayIcon` class provides limit
 
 The following code snippet shows how to add a tray icon to the system tray and apply a pop-up menu:
 
-```
+```java
 ...
         //Check the SystemTray is supported
         if (!SystemTray.isSupported()) {

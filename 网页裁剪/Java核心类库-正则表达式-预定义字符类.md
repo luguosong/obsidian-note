@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Predefined Character Classes (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -65,7 +67,7 @@ In the table above, each construct in the left-hand column is shorthand for the 
 
 Constructs beginning with a backslash are called *escaped constructs*. We previewed escaped constructs in the [[Java核心类库-正则表达式-字符串字面量|String Literals]] section where we mentioned the use of backslash and `\Q` and `\E` for quotation. If you are using an escaped construct within a string literal, you must precede the backslash with another backslash for the string to compile. For example:
 
-```
+```java
 private final String REGEX = "\\d"; // a single digit
 ```
 
@@ -73,7 +75,7 @@ In this example `\d` is the regular expression; the extra backslash is required 
 
 The following examples demonstrate the use of predefined character classes.
 
-```
+```text
 Enter your regex: .
 Enter input string to search: @
 I found the text "@" starting at index 0 and ending at index 1.

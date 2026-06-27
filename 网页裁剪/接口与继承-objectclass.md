@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Object as a Superclass (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -55,19 +57,19 @@ The `notify`, `notifyAll`, and `wait` methods of `Object` all play a part in syn
 
 If a class, or one of its superclasses, implements the `Cloneable` interface, you can use the `clone()` method to create a copy from an existing object. To create a clone, you write:
 
-```
+```text
 aCloneableObject.clone();
 ```
 
 `Object` 's implementation of this method checks to see whether the object on which `clone()` was invoked implements the `Cloneable` interface. If the object does not, the method throws a `CloneNotSupportedException` exception. Exception handling will be covered in a later lesson. For the moment, you need to know that `clone()` must be declared as
 
-```
+```java
 protected Object clone() throws CloneNotSupportedException
 ```
 
 or:
 
-```
+```java
 public Object clone() throws CloneNotSupportedException
 ```
 
@@ -85,7 +87,7 @@ The `equals()` method compares two objects for equality and returns `true` if th
 
 To test whether two objects are equal in the sense of *equivalency* (containing the same information), you must override the `equals()` method. Here is an example of a `Book` class that overrides `equals()`:
 
-```
+```java
 public class Book {
     String ISBN;
     
@@ -100,11 +102,11 @@ public class Book {
             return false;
     }
 }
-```
+```text
 
 Consider this code that tests two instances of the `Book` class for equality:
 
-```
+```java
 // Swing Tutorial, 2nd edition
 Book firstBook  = new Book("0201914670");
 Book secondBook = new Book("0201914670");
@@ -137,12 +139,11 @@ You cannot override `getClass`.
 
 The `getClass()` method returns a `Class` object, which has methods you can use to get information about the class, such as its name (`getSimpleName()`), its superclass (`getSuperclass()`), and the interfaces it implements (`getInterfaces()`). For example, the following method gets and displays the class name of an object:
 
-```
+```java
 void printClassName(Object obj) {
     System.out.println("The object's" + " class is " +
         obj.getClass().getSimpleName());
 }
-```
 
 The [`Class`](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html) class, in the `java.lang` package, has a large number of methods (more than 50). For example, you can test to see if the class is an annotation (`isAnnotation()`), an interface (`isInterface()`), or an enumeration (`isEnum()`). You can see what the object's fields are (`getFields()`) or what its methods are (`getMethods()`), and so on.
 
@@ -160,12 +161,11 @@ The `Object` 's `toString()` method returns a `String` representation of the obj
 
 You can use `toString()` along with `System.out.println()` to display a text representation of an object, such as an instance of `Book`:
 
-```
+```java
 System.out.println(firstBook.toString());
-```
 
 which would, for a properly overridden `toString()` method, print something useful, like this:
 
-```
+```text
 ISBN: 0201914670; The Swing Tutorial; A Guide to Constructing GUIs, 2nd Edition
 ```

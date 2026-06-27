@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Creating and Reading Directories (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -102,16 +104,14 @@ Iterable<Path> dirs = FileSystems.getDefault().getRootDirectories();
 for (Path name: dirs) {
     System.err.println(name);
 }
-```
 
 ## Creating a Directory
 
 You can create a new directory by using the [`createDirectory(Path, FileAttribute<?>)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createDirectory-java.nio.file.Path-java.nio.file.attribute.FileAttribute...-) method. If you don't specify any `FileAttributes`, the new directory will have default attributes. For example:
 
-```
 Path dir = ...;
 Files.createDirectory(path);
-```
+```text
 
 The following code snippet creates a new directory on a POSIX file system that has specific permissions:
 
@@ -125,7 +125,7 @@ Files.createDirectory(file, attr);
 
 To create a directory several levels deep when one or more of the parent directories might not yet exist, you can use the convenience method, [`createDirectories(Path, FileAttribute<?>)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createDirectories-java.nio.file.Path-java.nio.file.attribute.FileAttribute...-). As with the `createDirectory(Path, FileAttribute<?>)` method, you can specify an optional set of initial file attributes. The following code snippet uses default attributes:
 
-```
+```text
 Files.createDirectories(Paths.get("foo/bar/test"));
 ```
 
@@ -165,7 +165,6 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
     // In this snippet, it can only be thrown by newDirectoryStream.
     System.err.println(x);
 }
-```
 
 The `Path` objects returned by the iterator are the names of the entries resolved against the directory. So, if you are listing the contents of the `/tmp` directory, the entries are returned with the form `/tmp/a`, `/tmp/b`, and so on.
 
@@ -191,7 +190,6 @@ try (DirectoryStream<Path> stream =
     // In this snippet, it can // only be thrown by newDirectoryStream.
     System.err.println(x);
 }
-```
 
 ## Writing Your Own Directory Filter
 
@@ -212,7 +210,6 @@ DirectoryStream.Filter<Path> filter =
         }
     }
 };
-```
 
 Once the filter has been created, it can be invoked by using the [`newDirectoryStream(Path, DirectoryStream.Filter<? super Path>)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#newDirectoryStream-java.nio.file.Path-java.nio.file.DirectoryStream.Filter-) method. The following code snippet uses the `isDirectory` filter to print only the directory's subdirectories to standard output:
 
@@ -226,6 +223,5 @@ try (DirectoryStream<Path>
 } catch (IOException x) {
     System.err.println(x);
 }
-```
 
 This method is used to filter a single directory only. However, if you want to find all the subdirectories in a file tree, you would use the mechanism for [[Java核心类库-基本IO-遍历文件树|Walking the File Tree]].

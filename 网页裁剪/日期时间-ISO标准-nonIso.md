@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Non-ISO Date Conversion (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -29,7 +31,7 @@ This section shows you how to convert between an ISO-based date and a date in on
 
 You can convert an ISO-based date to a date in another chronology by using the from(TemporalAccessor) method, such as [JapaneseDate.from(TemporalAccessor)](https://docs.oracle.com/javase/8/docs/api/java/time/chrono/JapaneseDate.html#from-java.time.temporal.TemporalAccessor-). This method throws a DateTimeException if it is unable to convert the date to a valid instance. The following code converts a LocalDateTime instance to several predefined non-ISO calendar dates:
 
-```
+```text
 LocalDateTime date = LocalDateTime.of(2013, Month.JULY, 20, 19, 30);
 JapaneseDate jdate     = JapaneseDate.from(date);
 HijrahDate hdate       = HijrahDate.from(date);
@@ -74,7 +76,7 @@ public static String toString(LocalDate localDate, Chronology chrono) {
         return "";
     }
 }
-```
+```text
 
 When the method is invoked with the following date for the predefined chronologies:
 
@@ -92,7 +94,7 @@ System.out.printf("%s%n",
 
 The output looks like this:
 
-```
+```text
 10/29/0008 H
 10/29/0085 1
 10/29/2539 B.E.
@@ -103,7 +105,7 @@ The output looks like this:
 
 You can convert from a non-ISO date to a LocalDate instance using the static [LocalDate.from](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#from-java.time.temporal.TemporalAccessor-) method, as shown in the following example:
 
-```
+```text
 LocalDate date = LocalDate.from(JapaneseDate.now());
 ```
 
@@ -111,7 +113,7 @@ Other temporal-based classes also provide this method, which throws a DateTimeEx
 
 The fromString method, from the [`StringConverter`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/StringConverter.java) example, parses a String containing a non-ISO date and returns a LocalDate instance.
 
-```
+```java
 /**
  * Parses a String to a ChronoLocalDate using a DateTimeFormatter
  * with a short pattern based on the current Locale and the
@@ -155,11 +157,11 @@ System.out.printf("%s%n", StringConverter.fromString("10/29/2539 B.E.",
     ThaiBuddhistChronology.INSTANCE));
 System.out.printf("%s%n", StringConverter.fromString("6/16/1417 1",
     HijrahChronology.INSTANCE));
-```
+```text
 
 The printed strings should all convert back to October 29th, 1996:
 
-```
+```text
 1996-10-29
 1996-10-29
 1996-10-29

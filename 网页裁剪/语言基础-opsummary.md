@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Summary of Operators (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -25,24 +27,22 @@ The following quick reference summarizes the operators supported by the Java pro
 
 ## Simple Assignment Operator
 
-```
+```text
 =       Simple assignment operator
 ```
 
 ## Arithmetic Operators
 
-```
+```bash
 +       Additive operator (also used
         for String concatenation)
 -       Subtraction operator
 *       Multiplication operator
 /       Division operator
 %       Remainder operator
-```
 
 ## Unary Operators
 
-```
 +       Unary plus operator; indicates
         positive value (numbers are 
         positive without this, however)
@@ -54,38 +54,32 @@ The following quick reference summarizes the operators supported by the Java pro
         a value by 1
 !       Logical complement operator;
         inverts the value of a boolean
-```
 
 ## Equality and Relational Operators
 
-```
+```bash
 ==      Equal to
 !=      Not equal to
 >       Greater than
 >=      Greater than or equal to
 <       Less than
 <=      Less than or equal to
-```
 
 ## Conditional Operators
 
-```
+```bash
 &&      Conditional-AND
 ||      Conditional-OR
 ?:      Ternary (shorthand for 
         if-then-else statement)
-```
 
 ## Type Comparison Operator
 
-```
 instanceof      Compares an object to 
                 a specified type
-```
 
 ## Bitwise and Bit Shift Operators
 
-```
 ~       Unary bitwise complement
 <<      Signed left shift
 >>      Signed right shift

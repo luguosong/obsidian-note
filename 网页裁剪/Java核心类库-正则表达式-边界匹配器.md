@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Boundary Matchers (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -40,7 +42,7 @@ The following table lists and explains all the boundary matchers.
 
 The following examples demonstrate the use of boundary matchers `^` and `$`. As noted above, `^` matches the beginning of a line, and `$` matches the end.
 
-```
+```text
 Enter your regex: ^dog$
 Enter input string to search: dog
 I found the text "dog" starting at index 0 and ending at index 3.
@@ -62,7 +64,7 @@ The first example is successful because the pattern occupies the entire input st
 
 To check if a pattern begins and ends on a word boundary (as opposed to a substring within a longer string), just use `\b` on either side; for example, `\bdog\b`
 
-```
+```text
 Enter your regex: \bdog\b
 Enter input string to search: The dog plays in the yard.
 I found the text "dog" starting at index 4 and ending at index 7.
@@ -74,7 +76,7 @@ No match found.
 
 To match the expression on a non-word boundary, use `\B` instead:
 
-```
+```text
 Enter your regex: \bdog\B
 Enter input string to search: The dog plays in the yard.
 No match found.
@@ -86,7 +88,7 @@ I found the text "dog" starting at index 4 and ending at index 7.
 
 To require the match to occur only at the end of the previous match, use `\G`:
 
-```
+```text
 Enter your regex: dog 
 Enter input string to search: dog dog
 I found the text "dog" starting at index 0 and ending at index 3.

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Doing Without a Layout Manager (Absolute Positioning) (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -51,7 +53,7 @@ Click the Launch button to run AbsoluteLayoutDemo using [Java™ Web Start](http
 
 Its code is in [`AbsoluteLayoutDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/AbsoluteLayoutDemoProject/src/layout/AbsoluteLayoutDemo.java). The following code snippet shows how the components in the content pane are created and laid out.
 
-```
+```text
 pane.setLayout(null);
 
 JButton b1 = new JButton("one");

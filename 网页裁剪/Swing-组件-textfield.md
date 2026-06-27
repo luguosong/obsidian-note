@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Text Fields (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -124,7 +126,7 @@ Click the Launch button to run TextDemo using [Java™ Web Start](http://www.ora
 
 You can find the entire code for this program in [`TextDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TextDemoProject/src/components/TextDemo.java). The following code creates and sets up the text field:
 
-```
+```text
 textField = new JTextField(20);
 ```
 
@@ -140,7 +142,7 @@ We encourage you to specify the number of columns for each text field. If you do
 
 The next line of code registers a `TextDemo` object as an action listener for the text field.
 
-```
+```text
 textField.addActionListener(this);
 ```
 
@@ -154,7 +156,6 @@ public void actionPerformed(ActionEvent evt) {
     textArea.append(text + newline);
     textField.selectAll();
 }
-```
 
 Notice the use of `JTextField` 's `getText` method to retrieve the text currently contained by the text field. The text returned by this method does *not* include a newline character for the Enter key that fired the action event.
 
@@ -174,20 +175,19 @@ Click the Launch button ro run TextFieldDemo using [Java™ Web Start](http://ww
 
 To highlight text, this example uses a highlighter and a painter. The code below creates and sets up the highlighter and the painter for the text area.
 
-```
 final Highlighter hilit;
 final Highlighter.HighlightPainter painter;
 ...
 hilit = new DefaultHighlighter();
 painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
 textArea.setHighlighter(hilit);
-```
+```text
 
 This code adds a document listener to the text field's document.
 
 ```
 entry.getDocument().addDocumentListener(this);
-```
+```text
 
 Document listener's `insertUpdate` and `removeUpdate` methods call the `search` method, which not only performs a search in the text area but also handles highlighting. The following code highlights the found text, sets the caret to the end of the found match, sets the default background for the text field, and displays a message in the status bar.
 
@@ -196,7 +196,7 @@ hilit.addHighlight(index, end, painter);
 textArea.setCaretPosition(end);
 entry.setBackground(entryBg);
 message("'" + s + "' found. Press ESC to end search");
-```
+```text
 
 The status bar is a `JLabel` object. The code below shows how the `message` method is implemented.
 
@@ -206,14 +206,14 @@ private JLabel status;
 void message(String msg) {
     status.setText(msg);
 }
-```
+```text
 
 If there is no match in the text area, the following code changes the text field's background to pink and displays a proper information message.
 
 ```
 entry.setBackground(ERROR_COLOR);
 message("'" + s + "' not found. Press ESC to start a new search");
-```
+```java
 
 The `CancelAction` class is responsible for handling the Escape key as follows.
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Defining and Starting a Thread (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -24,7 +26,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 An application that creates an instance of `Thread` must provide the code that will run in that thread. There are two ways to do this:
 
 - *Provide a `Runnable` object.* The [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) interface defines a single method, `run`, meant to contain the code executed in the thread. The `Runnable` object is passed to the `Thread` constructor, as in the [`` `HelloRunnable` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/HelloRunnable.java) example:
-	```
+	```java
 	public class HelloRunnable implements Runnable {
 	    public void run() {
 	        System.out.println("Hello from a thread!");
@@ -33,9 +35,9 @@ An application that creates an instance of `Thread` must provide the code that w
 	        (new Thread(new HelloRunnable())).start();
 	    }
 	}
-	```
+```java
 - *Subclass `Thread`.* The `Thread` class itself implements `Runnable`, though its `run` method does nothing. An application can subclass `Thread`, providing its own implementation of `run`, as in the [`` `HelloThread` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/HelloThread.java) example:
-	```
+	```java
 	public class HelloThread extends Thread {
 	    public void run() {
 	        System.out.println("Hello from a thread!");
@@ -44,7 +46,7 @@ An application that creates an instance of `Thread` must provide the code that w
 	        (new HelloThread()).start();
 	    }
 	}
-	```
+```
 
 Notice that both examples invoke `Thread.start` in order to start the new thread.
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Creating a Package (The Java™ Tutorials >        
+            Learning the Java Language > Packages)
 
 Documentation
 
@@ -49,7 +51,7 @@ You can include non-public types in the same file as a public type (this is stro
 
 If you put the graphics interface and classes listed in the preceding section in a package called `graphics`, you would need six source files, like this:
 
-```
+```java
 //in the Draggable.java file
 package graphics;
 public interface Draggable {

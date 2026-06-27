@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Time Zone and Offset Classes (The Java™ Tutorials >        
+            Date Time > Standard Calendar)
 
 Documentation
 
@@ -88,11 +90,11 @@ for (String s : zoneList) {
     }
     ...
 }
-```
+```text
 
 This example prints the following list to standard out:
 
-```
+```sql
 America/Caracas     -04:30
      America/St_Johns     -02:30
         Asia/Calcutta     +05:30
@@ -119,7 +121,6 @@ Australia/Broken_Hill     +09:30
       Pacific/Chatham     +12:45
     Pacific/Marquesas     -09:30
       Pacific/Norfolk     +11:30
-```
 
 The TimeZoneId example also prints a list of all time zone IDs to a file called [`timeZones`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/timeZones).
 
@@ -178,7 +179,6 @@ if (arrivingZone.getRules().isDaylightSavings(arrival.toInstant()))
 else
     System.out.printf("  (%s standard time will be in effect.)%n",
                       arrivingZone);
-```
 
 This produces the following output:
 
@@ -186,7 +186,6 @@ This produces the following output:
 LEAVING:  Jul 20 2013  07:30 PM (America/Los_Angeles)
 ARRIVING: Jul 21 2013  10:20 PM (Asia/Tokyo)
   (Asia/Tokyo standard time will be in effect.)
-```
 
 ### OffsetDateTime
 
@@ -204,11 +203,10 @@ OffsetDateTime lastThursday =
         offsetDate.with(TemporalAdjusters.lastInMonth(DayOfWeek.THURSDAY));
 System.out.printf("The last Thursday in July 2013 is the %sth.%n",
                    lastThursday.getDayOfMonth());
-```
 
 The output from running this code is:
 
-```
+```text
 The last Thursday in July 2013 is the 25th.
 ```
 

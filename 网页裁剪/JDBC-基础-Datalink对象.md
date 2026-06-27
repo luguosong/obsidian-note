@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Datalink Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -100,7 +102,7 @@ public void addURLRow(String description, String url) throws SQLException {
     ex.printStackTrace();
   }
 }
-```
+```java
 
 ## Retrieving References to External Data
 
@@ -150,7 +152,7 @@ The sample [`DatalinkSample.java`](https://docs.oracle.com/javase/tutorial/jdbc/
 
 The sample retrieves the URL from the result set as a `java.net.URL` object with the following statement:
 
-```
+```text
 url = rs.getURL(2);
 ```
 
@@ -167,11 +169,11 @@ while ((pageContent = bReader.readLine()) != null ) {
   // Print the URL contents
   System.out.println(pageContent);
 }
-```
+```text
 
 The method `URLConnection.openConnection` can take no arguments, which means that the `URLConnection` represents a direct connection to the Internet. If you require a proxy server to connect to the Internet, the `openConnection` method accepts a `java.net.Proxy` object as an argument. The following statements demonstrate how to create an HTTP proxy with the server name `www-proxy.example.com` and port number `80`:
 
-```
+```text
 Proxy myProxy;
 InetSocketAddress myProxyServer;
 myProxyServer = new InetSocketAddress("www-proxy.example.com", 80);

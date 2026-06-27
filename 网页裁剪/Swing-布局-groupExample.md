@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# A GroupLayout Example (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -39,7 +41,7 @@ Examining the horizontal dimension *from left to right*, we can see there are 3 
 
 Let us sketch out the sequential group in code. Note that `GroupLayout.Alignment.LEADING` corresponds to left alignment in the horizontal dimension. Also note we do not specify gaps, assuming the *gap auto-insertion* feature is turned on.
 
-```
+```text
 layout.setHorizontalGroup(layout.createSequentialGroup()
     .addComponent(label)
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING))
@@ -53,7 +55,7 @@ Now let us decompose the group in the middle. This is the hardest one. There is 
 
 Let us add the corresponding code:
 
-```
+```text
 layout.setHorizontalGroup(layout.createSequentialGroup()
     .addComponent(label)
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -73,7 +75,7 @@ We want the text field to be resizable, but that happens automatically since `JT
 
 The remaining group on the right is trivial: it contains just two buttons. Here is the code:
 
-```
+```text
 layout.setHorizontalGroup(layout.createSequentialGroup()
     .addComponent(label)
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -93,7 +95,7 @@ layout.setHorizontalGroup(layout.createSequentialGroup()
 
 And finally, we would like the buttons to be always the same size, so let us link them:
 
-```
+```text
 layout.linkSize(SwingConstants.HORIZONTAL, findButton, cancelButton);
 ```
 
@@ -107,7 +109,7 @@ In the vertical dimension, we examine the layout from *top to bottom*. We defini
 
 Let us sketch out the code. First, we need to define two parallel groups. Note that `GroupLayout.Alignment.LEADING` corresponds to the top alignment in the vertical dimension.
 
-```
+```text
 layout.setVerticalGroup(layout.createSequentialGroup()
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE))
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING))
@@ -116,7 +118,7 @@ layout.setVerticalGroup(layout.createSequentialGroup()
 
 We can fill the baseline group right away:
 
-```
+```text
 layout.setVerticalGroup(layout.createSequentialGroup()
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
         .addComponent(label)
@@ -132,7 +134,7 @@ Now let us look at the bottom group. Note the Cancel button is not on a shared b
 
 The corresponding code looks as follows:
 
-```
+```text
 layout.setVerticalGroup(layout.createSequentialGroup()
     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
         .addComponent(label)
@@ -152,7 +154,7 @@ layout.setVerticalGroup(layout.createSequentialGroup()
 
 So, we have created a complete layout, including resize behavior, without specifying a single number in pixels—a true cross platform layout. Note that we do not need to specify gaps between components, we get correct spacing automatically and according to the look and feel guidelines. Here is the complete code for the Find dialog's layout:
 
-```
+```text
 GroupLayout layout = new GroupLayout(getContentPane());
 getContentPane().setLayout(layout);
 layout.setAutoCreateGaps(true);

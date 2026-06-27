@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Panels (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -134,13 +136,13 @@ Like other containers, a panel uses a layout manager to position and size its co
 
 Here is an example of how to set the layout manager when creating the panel.
 
-```
+```text
 JPanel p = new JPanel(new BorderLayout()); //PREFERRED!
 ```
 
 This approach does not work with `BoxLayout`, since the `BoxLayout` constructor requires a pre-existing container. Here is an example that uses `BoxLayout`.
 
-```
+```text
 JPanel p = new JPanel();
 p.setLayout(new BoxLayout(p, BoxLayout.PAGE_AXIS));
 ```
@@ -149,14 +151,14 @@ p.setLayout(new BoxLayout(p, BoxLayout.PAGE_AXIS));
 
 When you add components to a panel, you use the `add` method. Exactly which arguments you specify to the `add` method depend on which layout manager the panel uses. When the layout manager is `FlowLayout`, `BoxLayout`, `GridLayout`, or `SpringLayout`, you will typically use the one-argument `add` method, like this:
 
-```
+```text
 aFlowPanel.add(aComponent);
 aFlowPanel.add(anotherComponent);
 ```
 
 When the layout manager is `BorderLayout`, you need to provide an argument specifying the added component's position within the panel. For example:
 
-```
+```text
 aBorderPanel.add(aComponent, BorderLayout.CENTER);
 aBorderPanel.add(anotherComponent, BorderLayout.PAGE_END);
 ```

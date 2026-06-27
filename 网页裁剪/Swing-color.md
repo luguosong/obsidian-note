@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Changing the Color Theme (The Java™ Tutorials >        
+            Creating a GUI With Swing > Modifying the Look and Feel)
 
 Documentation
 
@@ -39,7 +41,7 @@ The Nimbus look and feel has a set of default colors, but you are not required t
 
 All of the colors used by Nimbus are stored as a set of `UIManager` properties. You can change any or all of these properties before you set the look and feel. For example:
 
-```
+```text
 UIManager.put("nimbusBase", new Color(...));
 UIManager.put("nimbusBlueGrey", new Color(...));
 UIManager.put("control", new Color(...));

@@ -1,59 +1,44 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Worker Threads and SwingWorker (The Java™ Tutorials >        
-            Creating a GUI With Swing > Concurrency in Swing)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "工作线程与 SwingWorker"
+描述: "《Java 教程》Swing 并发课程，介绍当 Swing 程序需要执行长时间运行的任务时，如何使用工作线程和 SwingWorker 类，涵盖完成回调、Future 接口、中间结果和绑定属性。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/concurrency/worker.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 工作线程与 SwingWorker
 
-[[Swing-initial|Initial Threads]]
+> 文档说明
 
-[[Swing-dispatch|The Event Dispatch Thread]]
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Worker Threads and SwingWorker
+## 工作线程与 SwingWorker
 
-[[Swing-simple|Simple Background Tasks]]
+当 Swing 程序需要执行长时间运行的任务时，通常使用一个*工作线程(worker thread)*，也称为*后台线程(background thread)*。在工作线程上运行的每个任务由 [`javax.swing.SwingWorker`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingWorker.html) 的实例表示。`SwingWorker` 本身是一个抽象类；你必须定义一个子类才能创建 `SwingWorker` 对象；匿名内部类通常对创建非常简单的 `SwingWorker` 对象很有用。
 
-[[Swing-interim|Tasks that Have Interim Results]]
+`SwingWorker` 提供了许多通信和控制功能：
 
-[[Swing-cancel|Canceling Background Tasks]]
+- `SwingWorker` 子类可以定义一个 `done` 方法，该方法在后台任务完成时自动在事件分发线程上调用。
+- `SwingWorker` 实现了 [`java.util.concurrent.Future`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html)。此接口允许后台任务向其他线程提供返回值。此接口中的其他方法允许取消后台任务以及发现后台任务是否已完成或被取消。
+- 后台任务可以通过调用 `SwingWorker.publish` 提供中间结果，从而使 `SwingWorker.process` 从事件分发线程被调用。
+- 后台任务可以定义绑定属性。这些属性的更改会触发事件，导致事件处理方法在事件分发线程上被调用。
 
-[[Swing-bound|Bound Properties and Status Methods]]
-
-[[Swing-dispatch|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-simple|Next »]]
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Worker Threads and SwingWorker
-
-When a Swing program needs to execute a long-running task, it usually uses one of the *worker threads*, also known as the *background threads*. Each task running on a worker thread is represented by an instance of [`javax.swing.SwingWorker`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingWorker.html). `SwingWorker` itself is an abstract class; you must define a subclass in order to create a `SwingWorker` object; anonymous inner classes are often useful for creating very simple `SwingWorker` objects.
-
-`SwingWorker` provides a number of communication and control features:
-
-- The `SwingWorker` subclass can define a method, `done`, which is automatically invoked on the event dispatch thread when the background task is finished.
-- `SwingWorker` implements [`java.util.concurrent.Future`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html). This interface allows the background task to provide a return value to the other thread. Other methods in this interface allow cancellation of the background task and discovering whether the background task has finished or been cancelled.
-- The background task can provide intermediate results by invoking `SwingWorker.publish`, causing `SwingWorker.process` to be invoked from the event dispatch thread.
-- The background task can define bound properties. Changes to these properties trigger events, causing event-handling methods to be invoked on the event dispatch thread.
-
-These features are discussed in the following subsections.
+以下各小节讨论这些功能。
 
 ---
 
-**Note:**
+**注意：**
 
-The `javax.swing.SwingWorker` class was added to the Java platform in Java SE 6. Prior to this, another class, also called `SwingWorker`, was widely used for some of the same purposes. The old `SwingWorker` was not part of the Java platform specification, and was not provided as part of the JDK.
+`javax.swing.SwingWorker` 类是在 Java SE 6 中添加到 Java 平台的。在此之前，另一个也称为 `SwingWorker` 的类被广泛用于某些相同目的。旧的 `SwingWorker` 不是 Java 平台规范的一部分，也不是 JDK 的一部分。
 
-The new `javax.swing.SwingWorker` is a completely new class. Its functionality is not a strict superset of the old `SwingWorker`. Methods in the two classes that have the same function do not have the same names. Also, instances of the old `SwingWorker` class were reusable, while a new instance of `javax.swing.SwingWorker` is needed for each new background task.
+新的 `javax.swing.SwingWorker` 是一个全新的类。其功能不是旧 `SwingWorker` 的严格超集。两个类中具有相同功能的方法名称不同。此外，旧 `SwingWorker` 类的实例是可重用的，而每个新的后台任务都需要一个新的 `javax.swing.SwingWorker` 实例。
 
-Throughout the Java Tutorials, any mention of `SwingWorker` now refers to `javax.swing.SwingWorker`.
+在 Java 教程中，任何对 `SwingWorker` 的提及现在都指 `javax.swing.SwingWorker`。
 
 ---

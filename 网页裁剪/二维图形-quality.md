@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Controlling Rendering Quality (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)
 
 Documentation
 

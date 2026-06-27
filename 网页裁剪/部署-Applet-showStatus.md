@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Displaying Short Status Strings (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -81,7 +83,7 @@ Applets display status lines with the [`showStatus`](https://docs.oracle.com/jav
 
 Here is an example of its use:
 
-```
+```text
 showStatus("MyApplet: Loading image file " + file);
 ```
 

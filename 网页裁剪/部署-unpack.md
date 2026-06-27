@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Extracting the Contents of a JAR File (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -65,7 +67,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The basic command to use for extracting the contents of a JAR file is:
 
-```
+```text
 jar xf jar-file [archived-file(s)]
 ```
 
@@ -90,7 +92,7 @@ When extracting files, the Jar tool makes copies of the desired files and writes
 
 Let's extract some files from the TicTacToe JAR file we've been using in previous sections. Recall that the contents of TicTacToe.jar are:
 
-```
+```text
 META-INF/MANIFEST.MF
 TicTacToe.class
 TicTacToe.class
@@ -109,7 +111,7 @@ images/not.gif
 
 Suppose you want to extract the TicTacToe class file and the cross.gif image file. To do so, you can use this command:
 
-```
+```text
 jar xf TicTacToe.jar TicTacToe.class images/cross.gif
 ```
 
@@ -122,6 +124,6 @@ The original TicTacToe JAR file remains unchanged.
 
 As many files as desired can be extracted from the JAR file in the same way. When the command doesn't specify which files to extract, the Jar tool extracts all files in the archive. For example, you can extract all the files in the TicTacToe archive by using this command:
 
-```
+```text
 jar xf TicTacToe.jar
 ```

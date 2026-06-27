@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Nested Classes (The Java™ Tutorials > Learning the Java Language >
+            Classes and Objects)
 
 Documentation
 
@@ -44,10 +46,10 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 2. **Exercise**: The following exercises involve modifying the class [`DataStructure.java`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/DataStructure.java), which the section [[类与对象-innerclasses|Inner Class Example]] discusses.
 	1. Define a method named `print(DataStructureIterator iterator)`. Invoke this method with an instance of the class `EvenIterator` so that it performs the same function as the method `printEven`.
 		**Hint**: These statements do not compile if you specify them in the `main` method:
-		```
+```text
 		DataStructure ds = new DataStructure();
 		ds.print(new EvenIterator());
-		```
+```
 		The compiler generates the error message, "non-static variable this cannot be referenced from a static context" when it encounters the expression `new EvenIterator()`. The class `EvenIterator` is an inner, non-static class. This means that you can create an instance of `EvenIterator` only inside an instance of the outer class, `DataStructure`.
 		You can define a method in `DataStructure` that creates and returns a new instance of `EvenIterator`.
 		2. Invoke the method `print(DataStructureIterator iterator)` so that it prints elements that have an odd index value. Use an anonymous class as the method's argument instead of an instance of the interface `DataStructureIterator`.
@@ -57,11 +59,11 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 		**Hint**: In this `print` method, you can step though the elements contained in the array `arrayOfInts` with a `for` expression. For each index value, invoke the method `function.apply`. If this method returns a true value for a particular index value, print the element contained in that index value.
 		To invoke this `print` method to print elements that have an even index value, you can specify a lambda expression that implements the method `Boolean Function.apply(Integer t)`. This lambda expression takes one `Integer` argument (the index) and returns a `Boolean` value (`Boolean.TRUE` if the index value is even, `Boolean.FALSE` otherwise).
 		4. Define two methods so that these statements print elements that have an even index value and then elements that have an odd index value:
-		```
+```text
 		DataStructure ds = new DataStructure()
 		// ...
 		ds.print(DataStructure::isEvenIndex);
 		ds.print(DataStructure::isOddIndex);
-		```
+```
 		**Hint**: Create two methods in the class `DataStructure` named `isEvenIndex` and `isOddIndex` that have the same parameter list and return type as the abstract method `Boolean Function<Integer, Boolean>.apply(Integer t)`. This means that the methods take one `Integer` argument (the index) and return a `Boolean` value.
 	**Answer**: See the file [`DataStructure.java`](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/DataStructure.java).

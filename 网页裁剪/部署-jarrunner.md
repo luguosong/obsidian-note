@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The JarRunner Class (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -65,7 +67,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The JarRunner application is launched with a command of this form:
 
-```
+```text
 java JarRunner url [arguments]
 ```
 
@@ -73,7 +75,7 @@ In the previous section, we've seen how JarClassLoader is able to identify and l
 
 It begins by creating a java.net.URL object from the URL specified on the command line:
 
-```
+```java
 public static void main(String[] args) {
     if (args.length < 1) {
         usage();
@@ -84,7 +86,7 @@ public static void main(String[] args) {
     } catch (MalformedURLException e) {
         fatal("Invalid URL: " + args[0]);
     }
-```
+```text
 
 If args.length < 1, that means no URL was specified on the command line, so a usage message is printed. If the first command-line argument is a good URL, a new URL object is created to represent it.
 
@@ -92,13 +94,13 @@ Next, JarRunner creates a new instance of JarClassLoader, passing to the constru
 
 ```
 JarClassLoader cl = new JarClassLoader(url);
-```
+```text
 
 As we saw in the previous section, it's through JarClassLoader that JarRunner taps into the JAR-handling APIs.
 
 The URL that's passed to the JarClassLoader constructor is the URL of the JAR-bundled application that you want to run. JarRunner next calls the class loader's getMainClassName method to identify the entry-point class for the application:
 
-```
+```java
 String name = null;
 try {
     name = cl.getMainClassName();
@@ -117,7 +119,7 @@ The key statement is highlighted in bold. The other statements are for error han
 
 Once JarRunner has identified the application's entry-point class, only two steps remain: passing any arguments to the application and actually launching the application. JarRunner performs these steps with this code:
 
-```
+```text
 // Get arguments for the application
 String[] newArgs = new String[args.length - 1];
 System.arraycopy(args, 1, newArgs, 0, newArgs.length);

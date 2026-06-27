@@ -25,7 +25,7 @@ The simplest form of search requires that you specify the set of attributes that
 
 The following code creates an attribute set matchAttrs, which has two attributes "sn" and "mail". It specifies that the qualifying entries must have a surname ("sn") attribute with a value of "Geisel" and a "mail" attribute with any value. It then invokes [DirContext.search()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#search-javax.naming.Name-javax.naming.directory.Attributes-) to search the context "ou=People" for entries that have the attributes specified by matchAttrs.
 
-```
+```text
 // Specify the attributes to match
 // Ask for objects that has a surname ("sn") attribute with 
 // the value "Geisel" and the "mail" attribute
@@ -47,7 +47,6 @@ while (answer.hasMore()) {
     System.out.println(">>>" + sr.getName());
     printAttrs(sr.getAttributes());
 }
-```
 
 printAttrs() is similar to the code in the getAttributes() example that prints an attribute set.
 
@@ -73,13 +72,12 @@ attribute: cn
 value: Ted Geisel
 attribute: telephonenumber
 value: +1 408 555 5252
-```
 
 ## Returning Selected Attributes
 
 The previous example returned all attributes associated with the entries that satisfy the specified query. You can select the attributes to return by passing search() an array of attribute identifiers that you want to include in the result. After creating the matchAttrs as shown previously, you also need to create the array of attribute identifiers, as shown next.
 
-```
+```text
 // Specify the ids of the attributes to return
 String[] attrIDs = {"sn", "telephonenumber", "golfhandicap", "mail"};
 

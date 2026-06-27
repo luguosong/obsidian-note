@@ -87,7 +87,6 @@ public class Hello
     private static final int DEFAULT_CACHE_SIZE = 200;
     private long sequenceNumber = 1;
 }
-```
 
 此 `Hello` MBean 实现继承了 `NotificationBroadcasterSupport` 类。`NotificationBroadcasterSupport` 实现了 `NotificationEmitter` 接口。
 
@@ -116,15 +115,12 @@ public class Hello
 2. 在终端窗口中使用以下命令解压示例类包。
 	```bash
 	unzip jmx_examples.zip
-	```
 3. 从 `work_dir` 目录中编译示例 Java 类。
 	```bash
 	javac com/example/*.java
-	```
 4. 启动 `Main` 应用程序。
 	```bash
 	java com.example.Main
-	```
 	将生成 `Main` 正在等待某事发生的确认。
 5. 在同一台机器上的不同终端窗口中启动 JConsole。
 	```bash

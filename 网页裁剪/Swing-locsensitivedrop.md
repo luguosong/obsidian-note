@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Location Sensitive Drop (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -73,7 +75,7 @@ This is simple to accomplish by installing the necessary logic in the [`canImpor
 
 For example, imagine a table that allows drop, but not in the first column. The `canImport` method might look something like this:
 
-```
+```bash
 public boolean canImport(TransferHandler.TransferSupport info) {
     // for the demo, we will only support drops (not clipboard paste)
     if (!info.isDrop()) {

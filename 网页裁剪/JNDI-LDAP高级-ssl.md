@@ -39,16 +39,14 @@ For the [Oracle Directory Server, v5.2](http://www.oracle.com/technetwork/testco
 
 **Client Requirements:** You need to ensure that the client trusts the LDAP server that you'll be using. You must install the server's certificate (or its CA's certificate) in your JRE's database of trusted certificates. Here is an example.
 
-```
 # cd JAVA_HOME/lib/security
 # keytool -import -file server_cert.cer -keystore jssecacerts
-```
 
 For information on how to use the security tools, see the [[安全|Security]] trail. For information on the JSSE, see the [Java Secure Socket Extension (JSSE) Reference Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html).
 
 ---
 
-```
+```text
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
@@ -81,7 +79,7 @@ Instead of requesting the use of SSL via the use of the [Context.SECURITY\_PROTO
 
 In the [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/Ldaps.java), the LDAP server is offering SSL at port 636. To run this program, you must enable SSL on port 636 on your LDAP server.
 
-```
+```text
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
@@ -117,7 +115,7 @@ The [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/exam
 
 ---
 
-```
+```sql
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>(11);
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
@@ -133,11 +131,11 @@ env.put(Context.SECURITY_PROTOCOL, "ssl");
 DirContext ctx = new InitialDirContext(env);
 
 ...
-```
+```text
 
 To run this program so that the client's certificate is used for authentication, you must provide (as system properties) the location and password of the keystore containing the client's certificate. Here is an example of how to run the program.
 
-```
+```bash
 java -Djavax.net.ssl.keyStore=MyKeystoreFile \
     -Djavax.net.ssl.keyStorePassword=mysecret \
     External
@@ -153,7 +151,7 @@ When using SSL, the LDAP provider will, by default, use the socket factory, [jav
 
 Here is an example of a [`custom socket factory`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/CustomSocketFactory.java) that produces plain sockets.
 
-```
+```java
 public class CustomSocketFactory extends SocketFactory {
     public static SocketFactory getDefault() {
 
@@ -162,13 +160,11 @@ public class CustomSocketFactory extends SocketFactory {
     }
         ...
 }
-```
 
 Note that this example creates a new instance of CustomSocketFactory each time a new LDAP connection is created. This might be appropriate for some applications and socket factories. If you want to reuse the same socket factory, getDefault() should return a singleton.
 
 To use this custom socket factory with a JNDI program, set the "java.naming.ldap.factory.socket" property, as shown in the [`following example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/UseFactory.java).
 
-```
 // Set up the environment for creating the initial context
 Hashtable<String, Object> env = new Hashtable<String, Object>();
 env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");

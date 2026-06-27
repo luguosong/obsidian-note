@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Introduction to Event Listeners (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -89,7 +91,7 @@ Click the Launch button to run Beeper using [Java™ Web Start](http://www.oracl
 
 You can find the entire program in [`Beeper.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/BeeperProject/src/events/Beeper.java). Here is the code that implements the event handling for the button:
 
-```
+```java
 public class Beeper ... implements ActionListener {
     ...
     //where initialization occurs:
@@ -99,7 +101,7 @@ public class Beeper ... implements ActionListener {
         ...//Make a beep sound...
     }
 }
-```
+```java
 
 The `Beeper` class implements the [[Swing-事件监听-actionlistener|`ActionListener`]] interface, which contains one method: `actionPerformed`. Since `Beeper` implements `ActionListener`, a `Beeper` object can register as a listener for the action events that buttons fire. Once the `Beeper` has been registered using the `Button` `addActionListener` method, the `Beeper` 's `actionPerformed` method is called every time the button is clicked.
 
@@ -130,7 +132,7 @@ The following example demonstrates that event listeners can be registered on mul
 
 You can find the entire program in [`MultiListener.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/MultiListenerProject/src/events/MultiListener.java). Here is the code that implements the event handling for the button:
 
-```
+```java
 public class MultiListener ... implements ActionListener {
     ...
     //where initialization occurs:

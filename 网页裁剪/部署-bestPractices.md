@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deployment Best Practices (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -30,6 +32,6 @@ You can improve the user experience of your rich Internet application (RIA) usin
 - Make sure that the client has the required version of the Java Runtime Environment software. See [[部署-ensuringJRE|Ensuring the Presence of the JRE Software]] for details on how the Deployment Toolkit script can be used for this purpose.
 - Embed the contents of your applet's JNLP file in the `<applet>` tag to avoid loading the JNLP file from the network. This feature was introduced in the Java SE 7 release. See [[部署-embeddingJNLPFileInWebPage|Embedding JNLP File in Applet Tag]] to learn how to embed the contents of the applet's JNLP file in the web page.
 - Preload your Java Web Start application, if possible. If you plan to deploy your RIA as a Java Web Start application in an enterprise where you have some administrative control, you can preload your application to various clients so that it is cached and ready to use. Use the following command to preload your Java Web Start application:
-	```
+```text
 	javaws -import -silent <jnlp url>
-	```
+```

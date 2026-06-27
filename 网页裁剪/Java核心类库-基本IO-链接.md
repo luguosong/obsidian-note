@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Links, Symbolic or Otherwise (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -121,7 +123,6 @@ try {
     // Some file systems do not support symbolic links.
     System.err.println(x);
 }
-```
 
 The `FileAttributes` vararg enables you to specify initial file attributes that are set atomically when the link is created. However, this argument is intended for future use and is not currently implemented.
 
@@ -142,13 +143,12 @@ try {
     // file to a directory.
     System.err.println(x);
 }
-```
 
 ## Detecting a Symbolic Link
 
 To determine whether a `Path` instance is a symbolic link, you can use the [`isSymbolicLink(Path)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#isSymbolicLink-java.nio.file.Path-) method. The following code snippet shows how:
 
-```
+```text
 Path file = ...;
 boolean isSymbolicLink =
     Files.isSymbolicLink(file);

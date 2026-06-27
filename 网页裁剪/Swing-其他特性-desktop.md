@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Integrate with the Desktop Class (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -99,7 +101,7 @@ The following example shows the capabilities mentioned above.
 
 The following code snippets provide more details on the DeskDemo application implementation. The DesktopDemo constructor disables the few components right after instantiating the UI and checks whether the Desktop API is available.
 
-```
+```bash
 public DesktopDemo() {
        // init all GUI components
        initComponents();
@@ -136,7 +138,7 @@ public DesktopDemo() {
    
 
   ...
-```
+```text
 
 Once a Desktop object is acquired, you can query the object to find out which specific actions are supported. If the Desktop object does not support specific actions, or if the Desktop API itself is unsupported, DesktopDemo simply keeps the affected graphical components disabled.
 
@@ -173,11 +175,11 @@ Once a Desktop object is acquired, you can query the object to find out which sp
             btnLaunchApplication.setEnabled(true);
         }
     }
-```
+```java
 
 The `browse(uri)` method can throw a variety of exceptions, including a NullPointerException if the URI is null, and an UnsupportedOperationException if the BROWSE action is unsupported. This method can throw an IOException if the default browser or application cannot be found or launched, and a SecurityException if a security manager denies the invocation.
 
-```
+```java
 private void onLaunchBrowser(ActionEvent evt) {
         URI uri = null;
         try {
@@ -196,7 +198,7 @@ private void onLaunchBrowser(ActionEvent evt) {
 
 Applications can launch the host's default email client, if that action is supported, by calling the `mail(uriMailTo)` method of this Desktop instance.
 
-```
+```java
 private void onLaunchMail(ActionEvent evt) {
         String mailTo = txtMailTo.getText();
         URI uriMailTo = null;
@@ -217,7 +219,7 @@ private void onLaunchMail(ActionEvent evt) {
 
 Java applications can open, edit, and print files from their associated application using the `open()`, `edit()`, and `print()` methods of the `Desktop` class, respectively.
 
-```
+```java
 private void onLaunchDefaultApplication(ActionEvent evt) {
         String fileName = txtFile.getText();
         File file = new File(fileName);

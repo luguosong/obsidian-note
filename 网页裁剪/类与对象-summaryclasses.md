@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Summary of Creating and Using Classes and Objects (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -87,19 +89,19 @@ You create an object from a class by using the `new` operator and a constructor.
 
 Instance variables and methods that are accessible to code outside of the class that they are declared in can be referred to by using a qualified name. The qualified name of an instance variable looks like this:
 
-```
+```text
 objectReference.variableName
 ```
 
 The qualified name of a method looks like this:
 
-```
+```text
 objectReference.methodName(argumentList)
 ```
 
 or:
 
-```
+```text
 objectReference.methodName()
 ```
 

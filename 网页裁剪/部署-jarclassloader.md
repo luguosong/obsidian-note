@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The JarClassLoader Class (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -71,7 +73,7 @@ In addition to subclassing URLClassLoader, JarClassLoader also makes use of feat
 
 The constructor takes an instance of java.net.URL as an argument. The URL passed to this constructor will be used elsewhere in JarClassLoader to find the JAR file from which classes are to be loaded.
 
-```
+```java
 public JarClassLoader(URL url) {
     super(new URL[] { url });
     this.url = url;
@@ -84,7 +86,7 @@ The URL object is passed to the constructor of the superclass, URLClassLoader, w
 
 Once a JarClassLoader object is constructed with the URL of a JAR-bundled application, it's going to need a way to determine which class in the JAR file is the application's entry point. That's the job of the getMainClassName method:
 
-```
+```css
 public String getMainClassName() throws IOException {
     URL u = new URL("jar", "", url + "!/");
     JarURLConnection uc = (JarURLConnection)u.openConnection();
@@ -93,7 +95,6 @@ public String getMainClassName() throws IOException {
                    ? attr.getValue(Attributes.Name.MAIN_CLASS)
                    : null;
 }
-```
 
 You may recall from a [[部署-run|previous lesson]] that a JAR-bundled application's entry point is specified by the Main-Class header of the JAR file's manifest. To understand how getMainClassName accesses the Main-Class header value, let's look at the method in detail, paying special attention to the new JAR-handling features that it uses:
 
@@ -101,21 +102,19 @@ You may recall from a [[部署-run|previous lesson]] that a JAR-bundled applicat
 
 The getMainClassName method uses the JAR URL format specified by the java.net.JarURLConnection class. The syntax for the URL of a JAR file is as in this example:
 
-```
 jar:http://www.example.com/jarfile.jar!/
-```
+```text
 
 The terminating !/ separator indicates that the URL refers to an entire JAR file. Anything following the separator refers to specific JAR-file contents, as in this example:
 
 ```
 jar:http://www.example.com/jarfile.jar!/mypackage/myclass.class
-```
+```text
 
 The first line in the getMainClassName method is:
 
 ```
 URL u = new URL("jar", "", url + "!/");
-```
 
 This statement constructs a new URL object representing a JAR URL, appending the !/ separator to the URL that was used in creating the JarClassLoader instance.
 
@@ -123,9 +122,7 @@ This statement constructs a new URL object representing a JAR URL, appending the
 
 This class represents a communications link between an application and a JAR file. It has methods for accessing the JAR file's manifest. The second line of getMainClassName is:
 
-```
 JarURLConnection uc = (JarURLConnection)u.openConnection();
-```
 
 In this statement, URL instance created in the first line opens a URLConnection. The URLConnection instance is then cast to JarURLConnection so it can take advantage of JarURLConnection 's JAR-handling features.
 
@@ -133,9 +130,8 @@ In this statement, URL instance created in the first line opens a URLConnection.
 
 With a JarURLConnection open to a JAR file, you can access the header information in the JAR file's manifest by using the getMainAttributes method of JarURLConnection. This method returns an instance of java.util.jar.Attributes, a class that maps header names in JAR-file manifests with their associated string values. The third line in getMainClassName creates an Attributes object:
 
-```
 Attributes attr = uc.getMainAttributes();
-```
+```text
 
 To get the value of the manifest's Main-Class header, the fourth line of getMainClassName invokes the Attributes.getValue method:
 
@@ -143,7 +139,7 @@ To get the value of the manifest's Main-Class header, the fourth line of getMain
 return attr != null
                ? attr.getValue(Attributes.Name.MAIN_CLASS)
                : null;
-```
+```java
 
 The method's argument, Attributes.Name.MAIN\_CLASS, specifies that it's the value of the Main-Class header that you want. (The Attributes.Name class also provides static fields such as MANIFEST\_VERSION, CLASS\_PATH, and SEALED for specifying other standard manifest headers.)
 
@@ -151,7 +147,7 @@ The method's argument, Attributes.Name.MAIN\_CLASS, specifies that it's the valu
 
 We've seen how JarURLClassLoader can identify the main class in a JAR-bundled application. The last method to consider, JarURLClassLoader.invokeClass, enables that main class to be invoked to launch the JAR-bundled application:
 
-```
+```java
 public void invokeClass(String name, String[] args)
     throws ClassNotFoundException,
            NoSuchMethodException,
@@ -175,7 +171,7 @@ public void invokeClass(String name, String[] args)
 
 The invokeClass method takes two arguments: the name of the application's entry-point class and an array of string arguments to pass to the entry-point class's main method. First, the main class is loaded:
 
-```
+```text
 Class c = loadClass(name);
 ```
 

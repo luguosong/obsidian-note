@@ -1,42 +1,43 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Processes and Threads (The Java™ Tutorials >        
-            Essential Java Classes > Concurrency)"
-描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+标题: "进程与线程"
+描述: "《Java 教程》并发课程，介绍并发编程中两种基本执行单元——进程与线程的概念。"
 来源: "https://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# 进程与线程
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+> 文档说明
 
-## Processes and Threads
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-In concurrent programming, there are two basic units of execution: *processes* and *threads*. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.
+## 进程与线程
 
-A computer system normally has many active processes and threads. This is true even in systems that only have a single execution core, and thus only have one thread actually executing at any given moment. Processing time for a single core is shared among processes and threads through an OS feature called time slicing.
+在并发编程中，有两种基本的执行单元：*进程(processes)* 和*线程(threads)*。在 Java 编程语言中，并发编程主要关注线程。然而，进程也很重要。
 
-It's becoming more and more common for computer systems to have multiple processors or processors with multiple execution cores. This greatly enhances a system's capacity for concurrent execution of processes and threads — but concurrency is possible even on simple systems, without multiple processors or execution cores.
+计算机系统通常有许多活动的进程和线程。即使是在只有一个执行核心的系统中也是如此，因此在任何给定时刻实际上只有一个线程在执行。单核心的处理时间通过操作系统的称为时间分片(time slicing) 的特性在进程和线程之间共享。
 
-## Processes
+计算机系统拥有多个处理器或具有多个执行核心的处理器变得越来越普遍。这极大地增强了系统并发执行进程和线程的能力——但即使在没有多个处理器或执行核心的简单系统上，并发也是可能的。
 
-A process has a self-contained execution environment. A process generally has a complete, private set of basic run-time resources; in particular, each process has its own memory space.
+## 进程
 
-Processes are often seen as synonymous with programs or applications. However, what the user sees as a single application may in fact be a set of cooperating processes. To facilitate communication between processes, most operating systems support *Inter Process Communication* (IPC) resources, such as pipes and sockets. IPC is used not just for communication between processes on the same system, but processes on different systems.
+进程具有自包含的执行环境。进程通常具有完整、私有的基本运行时资源集；特别是，每个进程都有自己的内存空间。
 
-Most implementations of the Java virtual machine run as a single process. A Java application can create additional processes using a [`ProcessBuilder`](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html) object. Multiprocess applications are beyond the scope of this lesson.
+进程通常被视为程序或应用程序的同义词。然而，用户视为单个应用程序的东西实际上可能是一组协作的进程。为了便于进程之间的通信，大多数操作系统支持*进程间通信(Inter Process Communication, IPC)* 资源，如管道和套接字。IPC 不仅用于同一系统上进程之间的通信，还用于不同系统上进程之间的通信。
 
-## Threads
+Java 虚拟机的大多数实现作为单个进程运行。Java 应用程序可以使用 [`ProcessBuilder`](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html) 对象创建额外的进程。多进程应用程序超出了本课的范围。
 
-Threads are sometimes called *lightweight processes*. Both processes and threads provide an execution environment, but creating a new thread requires fewer resources than creating a new process.
+## 线程
 
-Threads exist within a process — every process has at least one. Threads share the process's resources, including memory and open files. This makes for efficient, but potentially problematic, communication.
+线程有时被称为*轻量级进程(lightweight processes)*。进程和线程都提供执行环境，但创建新线程所需的资源比创建新进程少。
 
-Multithreaded execution is an essential feature of the Java platform. Every application has at least one thread — or several, if you count "system" threads that do things like memory management and signal handling. But from the application programmer's point of view, you start with just one thread, called the *main thread*. This thread has the ability to create additional threads, as we'll demonstrate in the next section.
+线程存在于进程中——每个进程至少有一个。线程共享进程的资源，包括内存和打开的文件。这使得通信高效，但也可能产生问题。
+
+多线程执行是 Java 平台的基本特性。每个应用程序至少有一个线程——如果算上执行内存管理和信号处理等工作的"系统"线程，则有多个。但从应用程序程序员的角度来看，你只从一个称为*主线程(main thread)* 的线程开始。此线程能够创建额外的线程，我们将在下一节中演示。

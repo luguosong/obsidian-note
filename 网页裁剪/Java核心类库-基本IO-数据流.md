@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Data Streams (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -95,7 +97,7 @@ The [`DataStreams`](https://docs.oracle.com/javase/tutorial/essential/io/example
 
 Let's examine crucial code in `DataStreams`. First, the program defines some constants containing the name of the data file and the data that will be written to it:
 
-```
+```java
 static final String dataFile = "invoicedata";
 
 static final double[] prices = { 19.99, 9.99, 15.99, 3.99, 4.99 };
@@ -111,14 +113,14 @@ static final String[] descs = {
 
 Then `DataStreams` opens an output stream. Since a `DataOutputStream` can only be created as a wrapper for an existing byte stream object, `DataStreams` provides a buffered file output byte stream.
 
-```
+```text
 out = new DataOutputStream(new BufferedOutputStream(
               new FileOutputStream(dataFile)));
 ```
 
 `DataStreams` writes out the records and closes the output stream.
 
-```
+```text
 for (int i = 0; i < prices.length; i ++) {
     out.writeDouble(prices[i]);
     out.writeInt(units[i]);
@@ -130,7 +132,7 @@ The `writeUTF` method writes out `String` values in a modified form of UTF-8. Th
 
 Now `DataStreams` reads the data back in again. First it must provide an input stream, and variables to hold the input data. Like `DataOutputStream`, `DataInputStream` must be constructed as a wrapper for a byte stream.
 
-```
+```text
 in = new DataInputStream(new
             BufferedInputStream(new FileInputStream(dataFile)));
 
@@ -142,7 +144,7 @@ double total = 0.0;
 
 Now `DataStreams` can read each record in the stream, reporting on the data it encounters.
 
-```
+```text
 try {
     while (true) {
         price = in.readDouble();

@@ -1,65 +1,50 @@
 ---
 分类:
   - "网页裁剪"
-标题: "The Synth Look and Feel (The Java™ Tutorials >        
-            Creating a GUI With Swing > Modifying the Look and Feel)"
-描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+标题: "Synth 外观"
+描述: "《Java 教程》Swing 外观课程，全面介绍 Synth 外观框架——通过 XML 文件创建自定义外观，涵盖 Synth 架构、区域(region)、SynthStyle、XML 文件格式、bind 元素、state 元素、颜色字体、图片绘制、属性和自定义画家的使用。"
 来源: "https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/synth.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
 
-Documentation
+# Synth 外观
 
-[[Swing-plaf|How to Set the Look and Feel]]
+> 文档说明
 
-The Synth Look and Feel
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[[Swing-synthExample|A Synth Example]]
+## Synth 外观
 
-[[Swing-nimbus|Nimbus Look and Feel]]
+创建自定义外观或修改现有外观可能是一项艰巨的任务。[`javax.swing.plaf.synth`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/package-summary.html) 包可用于以更少的工作量创建自定义外观。你可以通过编程方式或通过外部 XML 文件创建 Synth 外观。以下讨论致力于使用外部 XML 文件创建 Synth 外观。以编程方式创建 Synth 外观在 API 文档中讨论。
 
-[[Swing-custom|Changing the Look of Nimbus]]
+使用 Synth 外观时，你提供"外观"。Synth 本身提供"感觉"。因此，你可以将 Synth L&F 视为一种"皮肤(skin)"。
 
-[[Swing-size|Resizing a Component]]
+## Synth 架构
 
-[[Swing-color|Changing the Color Theme]]
+回想上一主题，每个 L&F 负责为 Swing 定义的许多 `ComponentUI` 子类中的每一个提供具体实现。Synth L&F 为你处理此问题。要使用 Synth，你不需要创建任何 `ComponentUI`——你只需指定每个组件的绘制方式以及影响布局和大小的各种属性。
 
-[[Swing-plaf|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-synthExample|Next »]]
+Synth 在比组件更细粒度的级别上操作——此细粒度级别称为"区域(region)"。每个组件有一个或多个区域。许多组件只有一个区域，如 `JButton`。其他组件有多个区域，如 `JScrollBar`。Synth 提供的每个 `ComponentUI` 将 `SynthStyle` 与 `ComponentUI` 定义的每个区域关联。例如，Synth 为 `JScrollBar` 定义三个区域：轨道、滑块和滚动条本身。Synth 的 `ScrollBarUI`（为 `JScrollBar` 定义的 `ComponentUI` 子类）实现将 `SynthStyle` 与这些区域中的每一个关联。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+![Synth 架构图](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/synthArch.gif)
 
-## The Synth Look and Feel
+`SynthStyle` 提供 Synth `ComponentUI` 实现使用的样式信息。例如，`SynthStyle` 定义前景色和背景色、字体信息等。此外，每个 `SynthStyle` 都有一个用于绘制区域的 `SynthPainter`。例如，`SynthPainter` 定义了 `paintScrollBarThumbBackground` 和 `paintScrollBarThumbBorder` 两个方法，用于绘制滚动条滑块区域。
 
-Creating a custom look and feel, or modifying an existing one, can be a daunting task. The [`javax.swing.plaf.synth`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/package-summary.html) package can be used to create a custom look and feel with much less effort. You can create a Synth look and feel either programmatically or through the use of an external XML file. The discussion below is devoted to the creation of a Synth look and feel using an external XML file. Creating a Synth c programmatically is discussed in the API documentation.
+Synth 中的每个 `ComponentUI` 使用 `SynthStyleFactory` 获取 `SynthStyle`。有两种定义 `SynthStyleFactory` 的方式：通过 Synth XML 文件或以编程方式。以下代码展示如何加载指定 Synth 外观的 XML 文件——这在底层创建了一个用 XML 文件中的 `SynthStyle` 填充的 `SynthStyleFactory` 实现：
 
-With the Synth look and feel, you provide the "look." Synth itself provides the "feel." Thus, you can think of the Synth L&F as a "skin."
-
-## The Synth Architecture
-
-Recall from the previous topic that it is the responsibility of each L&F to provide a concrete implementation for each of the many `ComponentUI` subclasses defined by Swing. The Synth L&F takes care of this for you. To use Synth, you need not create any `ComponentUI` s—rather you need only specify how each component is painted, along with various properties that effect the layout and size.
-
-Synth operates at a more granular level than a component—this granular level is called a "region." Each component has one or more regions. Many components have only one region, such as `JButton`. Others have multiple regions, such as `JScrollBar`. Each of the `ComponentUIs` provided by Synth associates a `SynthStyle` with each of the regions defined by the `ComponentUI`. For example, Synth defines three regions for `JScrollBar`: the track, the thumb and the scroll bar itself. The `ScrollBarUI` (the `ComponentUI` subclass defined for `JScrollBar`) implementation for Synth associates a `SynthStyle` with each of these regions.
-
-![Synth Architecture Drawing.](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/synthArch.gif)
-
-`SynthStyle` provides style information used by the Synth `ComponentUI` implementation. For example, `SynthStyle` defines the foreground and background color, font information, and so forth. In addition, each `SynthStyle` has a `SynthPainter` that is used to paint the region. For example, `SynthPainter` defines the two methods `paintScrollBarThumbBackground` and `paintScrollBarThumbBorder`, which are used to paint the scroll bar thumb regions.
-
-Each of the `ComponentUIs` in Synth obtain `SynthStyles` using a `SynthStyleFactory`. There are two ways to define a `SynthStyleFactory`: through a Synth XML file, or programmatically. The following code shows how to load an XML file dictating the look of Synth—beneath the covers this creates a `SynthStyleFactory` implementation populated with `SynthStyles` from the XML file:
-
-```
+```java
 SynthLookAndFeel laf = new SynthLookAndFeel();
 laf.load(MyClass.class.getResourceAsStream("laf.xml"), MyClass.class);
 UIManager.setLookAndFeel(laf);
 ```
 
-The programmatic route involves creating an implementation of `SynthStyleFactory` that returns `SynthStyles`. The following code creates a custom `SynthStyleFactory` that returns distinct `SynthStyles` for buttons and trees:
+编程方式涉及创建返回 `SynthStyle` 的 `SynthStyleFactory` 实现。以下代码创建一个自定义 `SynthStyleFactory`，为按钮和树返回不同的 `SynthStyle`：
 
-```
+```java
 class MyStyleFactory extends SynthStyleFactory {
     public SynthStyle getStyle(JComponent c, Region id) {
         if (id == Region.BUTTON) {
@@ -76,15 +61,15 @@ UIManager.setLookAndFeel(laf);
 SynthLookAndFeel.setStyleFactory(new MyStyleFactory());
 ```
 
-## The XML File
+## XML 文件
 
-An explanation of the DTD for the Synth XML file can be found at [`javax.swing.plaf.synth/doc-files/synthFileFormat.html`.](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/doc-files/synthFileFormat.html)
+Synth XML 文件的 DTD 说明可以在 [`javax.swing.plaf.synth/doc-files/synthFileFormat.html`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/doc-files/synthFileFormat.html) 找到。
 
-When you load a Synth look and feel, only those GUI components (or regions) for which there is a definition (a "style" bound to the region, as discussed below) are rendered. There is no default behavior for any components—without style definitions in the Synth XML file, the GUI is a blank canvas.
+加载 Synth 外观时，只有那些有定义（如下面讨论的绑定到区域的"样式"）的 GUI 组件（或区域）才会被渲染。任何组件都没有默认行为——如果没有 Synth XML 文件中的样式定义，GUI 就是一张空白画布。
 
-To specify the rendering of a component (or region), your XML file must contain a <style> element, which is then *bound* to the region using the <bind> element. As an example, let's define a style that includes the font, foreground color, and background color, and then bind that style to all components. It is a good idea to include such an element in your Synth XML file while you are developing it—then, any components you haven't yet defined will at least have colors and a font:
+要指定组件（或区域）的渲染，你的 XML 文件必须包含一个 `<style>` 元素，然后使用 `<bind>` 元素将其*绑定*到区域。例如，让我们定义一个包含字体、前景色和背景色的样式，然后将该样式绑定到所有组件。在开发 Synth XML 文件时包含这样的元素是个好主意——这样，你尚未定义的任何组件至少会有颜色和字体：
 
-```
+```xml
 <synth>
   <style id="basicStyle">
     <font name="Verdana" size="16"/>
@@ -97,36 +82,36 @@ To specify the rendering of a component (or region), your XML file must contain 
 </synth>
 ```
 
-Let's analyse this style definition:
+让我们分析此样式定义：
 
-1. The <style> element is the basic building block of the Synth XML file. It contains all the information needed to describe a region's rendering. A <style> element can describe more than one region, as is done here. In general, though, it is best to create a <style> element for each component or region. Note that the <style> element is given an identifier, the string "basicStyle." This identifier will be used later in the <bind> element.
-2. The <font> element of the <style> element sets the font to Verdana, size 16.
-3. The <state> element of the <style> element will be discussed below. The <state> element of a region can have one, or a mixture, of seven possible values. When the value is not specified, the definition applies to all states, which is the intention here. Therefore, the background and foreground colors "for all states" are defined in this element.
-4. Finally, the <style> element with the identifier "basicStyle" that has just been defined is *bound* to all regions. The <bind> element binds "basicStyle" to "region" types. Which region type or types the binding applies to is given by the "key" attribute, which is ".\*" in this case, the regular expression for "all."
+1. `<style>` 元素是 Synth XML 文件的基本构建块。它包含描述区域渲染所需的所有信息。一个 `<style>` 元素可以描述多个区域，如此处所做。但通常，最好为每个组件或区域创建一个 `<style>` 元素。注意 `<style>` 元素被赋予了一个标识符——字符串 "basicStyle"。此标识符稍后将在 `<bind>` 元素中使用。
+2. `<style>` 元素的 `<font>` 元素将字体设置为 Verdana，大小 16。
+3. `<style>` 元素的 `<state>` 元素将在下面讨论。区域的 `<state>` 元素可以有七种可能值中的一个或组合。当未指定值时，定义适用于所有状态，这就是这里的意图。因此，背景色和前景色"适用于所有状态"在此元素中定义。
+4. 最后，刚刚定义的标识符为 "basicStyle" 的 `<style>` 元素被*绑定*到所有区域。`<bind>` 元素将 "basicStyle" 绑定到 "region" 类型。绑定适用于哪些区域类型由 "key" 属性给出，在本例中为 ".*"，即"全部"的正则表达式。
 
-Let's look at the pieces of the Synth XML file before creating some working examples. We'll start with the <bind> element, showing how a given <style> is applied to a component or region.
+在创建一些可运行的示例之前，让我们看看 Synth XML 文件的各个部分。我们从 `<bind>` 元素开始，展示给定的 `<style>` 如何应用于组件或区域。
 
-## The <bind> Element
+## `<bind>` 元素
 
-Whenever a <style> element is defined, it must be bound to one or more components or regions before it has an effect. The <bind> element is used for this purpose. It requires three attributes:
+每当定义 `<style>` 元素时，它必须绑定到一个或多个组件或区域才能生效。`<bind>` 元素用于此目的。它需要三个属性：
 
-1. `style` is the unique identifier of a previously defined style.
-2. `type` is either "name" or "region." If `type` is a name, obtain the name with the `component.getName()` method. If `type` is a region, use the appropriate constant defined in the `Region` class in the `javax.swing.plaf.synth` package.
-3. `key` is a regular expression used to determine which components or regions the style is bound to.
+1. `style` 是先前定义的样式的唯一标识符。
+2. `type` 是 "name" 或 "region"。如果 `type` 是 name，则通过 `component.getName()` 方法获取名称。如果 `type` 是 region，则使用 `javax.swing.plaf.synth` 包中 `Region` 类中定义的适当常量。
+3. `key` 是用于确定样式绑定到哪些组件或区域的正则表达式。
 
-A Region is a way of identifying a component or part of a component. Regions are based on the constants in the [`Region`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/Region.html) class, modified by stripping out underscores:
+Region 是标识组件或组件部分的一种方式。区域基于 [`Region`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/Region.html) 类中的常量，通过去除下划线来修改。
 
-For example, to identify the SPLIT\_PANE region you would use SPLITPANE, splitpane, or SplitPane (case insensitive).
+例如，要标识 SPLIT\_PANE 区域，你可以使用 SPLITPANE、splitpane 或 SplitPane（不区分大小写）。
 
-When you bind a style to a region, that style will apply to *all* of the components with that region. You can bind a style to more than one region, and you can bind more than one style to a region. For example,
+当你将样式绑定到区域时，该样式将应用于具有该区域的*所有*组件。你可以将样式绑定到多个区域，也可以将多个样式绑定到一个区域。例如，
 
-```
+```xml
 <style id="styleOne">
-   <!-- styleOne definition goes here -->
+   <!-- styleOne 定义放在这里 -->
 </style>
 
 <style id="styleTwo">
-   <!-- styleTwo definition goes here -->
+   <!-- styleTwo 定义放在这里 -->
 </style>
 
 <bind style="styleOne" type="region" key="Button"/>
@@ -136,29 +121,29 @@ When you bind a style to a region, that style will apply to *all* of the compone
 <bind style="styleTwo" type="region" key="ArrowButton"/>
 ```
 
-You can bind to individual, named components, whether or not they are *also* bound as regions. For example, suppose you want to have the "OK" and "Cancel" buttons in your GUI treated differently than all the other buttons. First, you would give the OK and Cancel buttons names, using the `component.setName()` method. Then, you would define three styles: one for buttons in general (region = "Button"), one for the OK button (name = "OK"), and one for the Cancel button (name = "Cancel"). Finally, you would bind these styles like this:
+你可以绑定到单独的命名组件，无论它们是否*也*作为区域绑定。例如，假设你希望 GUI 中的"确定"和"取消"按钮与其他所有按钮不同处理。首先，你将使用 `component.setName()` 方法为确定和取消按钮命名。然后，你将定义三个样式：一个用于一般按钮（region = "Button"），一个用于确定按钮（name = "OK"），一个用于取消按钮（name = "Cancel"）。最后，你将像这样绑定这些样式：
 
-```
+```xml
 <bind style="styleButton" type="region" key="Button">
 <bind style="styleOK" type="name" key="OK">
 <bind style="styleCancel" type="name" key="Cancel">
 ```
 
-As a result, the "OK" button is bound to *both* "styleButton" and "styleOK," while the "Cancel" button is bound to *both* "styleButton" and "styleCancel."
+结果是"确定"按钮绑定到 "styleButton" *和* "styleOK"，而"取消"按钮绑定到 "styleButton" *和* "styleCancel"。
 
-When a component or region is bound to more than one style, the styles are merged
-
----
-
-**Note:**
-
-Just as a style can be bound to multiple regions or names, multiple styles can be bound to a region or name. These multiple styles are merged for the region or name. Precedence is given to styles defined later in the file.
+当一个组件或区域绑定到多个样式时，样式将合并。
 
 ---
 
-## The <state> Element
+**注意：**
 
-The <state> element allows you to define a look for a region that depends on its "state." For example, you will usually want a button that has been `PRESSED` to look different than the button in its `ENABLED` state. There are seven possible values for <state> that are defined in the Synth XML DTD. They are:
+正如样式可以绑定到多个区域或名称一样，多个样式也可以绑定到一个区域或名称。这些多个样式为该区域或名称合并。文件中后面定义的样式优先。
+
+---
+
+## `<state>` 元素
+
+`<state>` 元素允许你为区域定义取决于其"状态"的外观。例如，你通常希望被按下的按钮（`PRESSED`）看起来与其 `ENABLED` 状态下的按钮不同。`<state>` 有七种在 Synth XML DTD 中定义的可能值。它们是：
 
 1. ENABLED
 2. MOUSE\_OVER
@@ -168,11 +153,11 @@ The <state> element allows you to define a look for a region that depends on its
 6. SELECTED
 7. DEFAULT
 
-You can also have composite states, separated by 'and'—for example, ENABLED and FOCUSED. If you do not specify a value, the defined look will apply to all states.
+你还可以有以 'and' 分隔的复合状态——例如 ENABLED and FOCUSED。如果不指定值，则定义的外观适用于所有状态。
 
-As an example, here is a style that specifies painters per state. All buttons are painted a certain way, unless the state is "PRESSED," in which case they are painted differently:
+例如，以下是指定每个状态的画家的样式。所有按钮以某种方式绘制，除非状态为 "PRESSED"，在这种情况下它们以不同方式绘制：
 
-```
+```xml
 <style id="buttonStyle">
   <property key="Button.textShiftOffset" type="integer" value="1"/>
   <insets top="10" left="10" right="10" bottom="10"/>
@@ -190,11 +175,11 @@ As an example, here is a style that specifies painters per state. All buttons ar
 <bind style="buttonStyle" type="region" key="Button"/>
 ```
 
-Ignoring the <property> and <insets> elements for the moment, you can see that a pressed button is painted differently than an unpressed button.
+暂时忽略 `<property>` 和 `<insets>` 元素，你可以看到按下的按钮与未按下的按钮绘制方式不同。
 
-The <state> value that is used is the defined state that most closely matches the state of the region. Matching is determined by the number of values that match the state of the region. If none of the state values match, then the state with no value is used. If there are matches, the state with the most individual matches will be chosen. For example, the following code defines three states:
+使用的 `<state>` 值是最接近匹配区域状态的已定义状态。匹配由匹配区域状态值的数量确定。如果没有状态值匹配，则使用没有值的那个状态。如果有匹配，选择具有最多单独匹配的状态。例如，以下代码定义了三个状态：
 
-```
+```xml
 <state id="zero">
   <color value="RED" type="BACKGROUND"/>
 </state>
@@ -206,36 +191,36 @@ The <state> value that is used is the defined state that most closely matches th
 </state>
 ```
 
-If the state of the region contains at least SELECTED and PRESSED, state one will be chosen. If the state contains SELECTED, but not does not contain PRESSED, state two will be used. If the state contains neither SELECTED nor PRESSED, state zero will be used.
+如果区域状态至少包含 SELECTED 和 PRESSED，则选择状态一。如果状态包含 SELECTED 但不包含 PRESSED，则使用状态二。如果状态既不包含 SELECTED 也不包含 PRESSED，则使用状态零。
 
-When the current state matches the same number of values for two state definitions, the one that is used is the first one defined in the style. For example, the `MOUSE_OVER` state is always true of a `PRESSED` button (you can't press a button unless the mouse is over it). So, if the `MOUSE_OVER` state is declared first, it will always be chosen over `PRESSED`, and any painting defined for `PRESSED` will not be done.
+当当前状态与两个状态定义匹配相同数量的值时，使用样式中首先定义的那个。例如，`MOUSE_OVER` 状态对于 `PRESSED` 按钮总是为 true（除非鼠标悬停在按钮上，否则无法按下它）。因此，如果 `MOUSE_OVER` 状态先声明，它将始终优先于 `PRESSED` 被选择，为 `PRESSED` 定义的任何绘制都不会执行。
 
-```
-<state value="PRESSED"> 
+```xml
+<state value="PRESSED">
    <imagePainter method="buttonBackground" path="images/button_press.png"
                           sourceInsets="9 10 9 10" />
-   <color type="TEXT_FOREGROUND" value="#FFFFFF"/>      
+   <color type="TEXT_FOREGROUND" value="#FFFFFF"/>
 </state>
-      
-<state value="MOUSE_OVER">    
+
+<state value="MOUSE_OVER">
    <imagePainter method="buttonBackground" path="images/button_on.png"
                           sourceInsets="10 10 10 10" />
    <color type="TEXT_FOREGROUND" value="#FFFFFF"/>
 </state>
 ```
 
-The code above will work properly. However, if you reverse the order of the `MOUSE_OVER` and `PRESSED` states in the file, the `PRESSED` state will never be used. This is because any state that is `PRESSED` state is *also* a `MOUSE_OVER` state. Since the `MOUSE_OVER` state was defined first, it is the one that will be used.
+上面的代码将正常工作。但是，如果你在文件中反转 `MOUSE_OVER` 和 `PRESSED` 状态的顺序，`PRESSED` 状态将永远不会被使用。这是因为任何 `PRESSED` 状态*也*是 `MOUSE_OVER` 状态。由于 `MOUSE_OVER` 状态先定义，所以它是将被使用的。
 
-## Colors and Fonts
+## 颜色和字体
 
-The <color> element requires two attributes:
+`<color>` 元素需要两个属性：
 
-1. `value` can be any one of the `java.awt.Color` constants, such as RED, WHITE, BLACK, BLUE, etc. It can also be a hex representation of RGB values, such as #FF00FF or #326A3B.
-2. `type` describes where the color applies—it can be BACKGROUND, FOREGROUND, FOCUS, TEXT\_BACKGROUND, OR TEXT\_FOREGROUND.
+1. `value` 可以是任何 `java.awt.Color` 常量，如 RED、WHITE、BLACK、BLUE 等。它也可以是 RGB 值的十六进制表示，如 #FF00FF 或 #326A3B。
+2. `type` 描述颜色应用的位置——可以是 BACKGROUND、FOREGROUND、FOCUS、TEXT\_BACKGROUND 或 TEXT\_FOREGROUND。
 
-For example:
+例如：
 
-```
+```xml
 <style id="basicStyle">
   <state>
     <color value="WHITE" type="BACKGROUND"/>
@@ -244,23 +229,23 @@ For example:
 </style>
 ```
 
-The <font> element has three attributes:
+`<font>` 元素有三个属性：
 
-1. `name` —the name of the font. For example, Arial or Verdana.
-2. `size` —the size of the font in pixels.
-3. `style` (optional)—BOLD, ITALIC, OR BOLD ITALIC. If omitted, you get a normal font.
+1. `name` —— 字体名称。例如 Arial 或 Verdana。
+2. `size` —— 字体大小（以像素为单位）。
+3. `style`（可选）—— BOLD、ITALIC 或 BOLD ITALIC。如果省略，则获得正常字体。
 
-For example:
+例如：
 
-```
+```xml
 <style id="basicStyle">
   <font name="Verdana" size="16"/>
 </style>
 ```
 
-Each of the <color> element and the <font> element has an alternate usage. Each can have an `id` attribute or an `idref` attribute. Using the `id` attribute, you can define a color that you can reuse later by using the `idref` attribute. For example,
+`<color>` 元素和 `<font>` 元素都有另一种用法。每个都可以有 `id` 属性或 `idref` 属性。使用 `id` 属性，你可以定义一个颜色，稍后使用 `idref` 属性重用它。例如，
 
-```
+```xml
 <color id="backColor" value="WHITE" type="BACKGROUND"/>
 <font id="textFont" name="Verdana" size="16"/>
 ...
@@ -270,39 +255,37 @@ Each of the <color> element and the <font> element has an alternate usage. Each 
 <font idref="textFont"/>
 ```
 
-## Insets
+## 内边距
 
-The `insets` add to the size of a component as it is drawn. For example, without insets, a button with a caption of `Cancel` will be just large enough to contain the caption in the chosen font. With an <insets> element like this
+`insets` 在组件绘制时增加其大小。例如，没有内边距时，标题为 `Cancel` 的按钮刚好大到足以在所选字体中包含标题。使用如下 `<insets>` 元素
 
-```
-<insets top="15" left="20" right="20" bottom="15"/>,
-```
+`<insets top="15" left="20" right="20" bottom="15"/>`,
 
-the button will be made larger by 15 pixels above and below the caption and 20 pixels to the left and right of the caption.
+按钮将在标题上方和下方各增大 15 像素，在标题左右各增大 20 像素。
 
-## Painting With Images
+## 使用图片绘制
 
-Synth's file format allows customizing the painting by way of images. Synth's image painter breaks an image into nine distinct areas: top, top right, right, bottom right, bottom, bottom left, left, top left, and center. Each of the these areas is painted into the destination. The top, left, bottom, and right edges are tiled or stretched, while the corner portions (`sourceInsets`) remain fixed.
+Synth 的文件格式允许通过图片自定义绘制。Synth 的图片画家将图片分为九个不同的区域：上、右上、右、右下、下、左下、左、左上和中心。这些区域中的每一个都被绘制到目标中。上、左、下和右边缘被平铺或拉伸，而角落部分（`sourceInsets`）保持固定。
 
 ---
 
-**Note:**
+**注意：**
 
-There is no relation between the <insets> element and the `sourceInsets` attribute. The <insets> element defines the space taken up by a region, while the `sourceInsets` attributes define how to paint an image. The <insets> and `sourceInsets` will often be similar, but they need not be.
+`<insets>` 元素和 `sourceInsets` 属性之间没有关系。`<insets>` 元素定义区域占据的空间，而 `sourceInsets` 属性定义如何绘制图片。`<insets>` 和 `sourceInsets` 通常相似，但不必相同。
 
 ---
 
-You can specify whether the center area should be painted with the `paintCenter` attribute. The following image shows the nine areas:
+你可以使用 `paintCenter` 属性指定是否应绘制中心区域。下图显示了九个区域：
 
-![Nine Image Areas.](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/regions.gif)
+![九个图片区域](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/regions.gif)
 
-Let's create a button as an example. To do this we can use the following image (shown larger than its actual size):
+让我们创建一个按钮作为示例。为此我们可以使用以下图片（显示比实际尺寸更大）：
 
-![Button Image.](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/bigButton.png)
+![按钮图片](https://docs.oracle.com/javase/tutorial/figures/uiswing/lookandfeel/bigButton.png)
 
-The red box at the upper left corner is 10 pixels square (including the box border)—it shows the corner region that should not be stretched when painting. To achieve this, the top and left `sourceInsets` should be set to 10. We'll use the following style and binding:
+左上角的红框是 10 像素正方形（包括框边框）——它显示了绘制时不应拉伸的角落区域。为此，顶部和左侧的 `sourceInsets` 应设置为 10。我们将使用以下样式和绑定：
 
-```
+```xml
 <style id="buttonStyle">
    <insets top="15" left="20" right="20" bottom="15"/>
    <state>
@@ -313,20 +296,20 @@ The red box at the upper left corner is 10 pixels square (including the box bord
 <bind style="buttonStyle" type="region" key="button"/>
 ```
 
-The lines inside the <state> element specify that the background of buttons should be painted using the image `images/button.png`. That path is relative to the Class that is passed into SynthLookAndFeel's load method. The `sourceInsets` attribute specifies the areas of the image that are not to be stretched. In this case the top, left, bottom, and right insets are each 10. This will cause the painter not to stretch a 10 x 10 pixel area at each corner of the image.
+`<state>` 元素内的行指定按钮背景应使用图片 `images/button.png` 绘制。该路径相对于传递给 SynthLookAndFeel 的 load 方法的 Class。`sourceInsets` 属性指定不拉伸的图片区域。在本例中，上、左、下和右内边距各为 10。这将导致画家不拉伸图片每个角落的 10 x 10 像素区域。
 
-The <bind> binds `buttonStyle` to all buttons.
+`<bind>` 将 `buttonStyle` 绑定到所有按钮。
 
-The <imagePainter> element provides all the information needed to render a portion of a region. It requires only a few attributes:
+`<imagePainter>` 元素提供渲染区域部分所需的所有信息。它只需要几个属性：
 
-- method—this specifies which of the methods in the `javax.swing.plaf.synth.SynthPainter` class is to be used for painting. The `SynthPainter` class contains about 100 methods that begin with `paint`. When you determine which one you need, you remove the `paint` prefix, change the remaining first letter to lowercase, and use the result as the `method` attribute. For example, the `SynthPainter` method `paintButtonBackground` becomes the attribute `buttonBackground`.
-- path—the path to the image to be used, relative to the Class that is passed into SynthLookAndFeel's load method.
-- sourceInsets—the insets in pixels, representing the width and height of the corner areas that should not be stretched They map to the top, left, bottom, and right, in that order.
-- paintCenter (optional): This attribute lets you keep the center of an image or get rid of it (in a text field, for example, so text can be drawn).
+- method —— 指定要使用 `javax.swing.plaf.synth.SynthPainter` 类中的哪个方法进行绘制。`SynthPainter` 类包含约 100 个以 `paint` 开头的方法。确定需要哪个后，去掉 `paint` 前缀，将剩余首字母改为小写，并将结果用作 `method` 属性。例如，`SynthPainter` 方法 `paintButtonBackground` 变为属性 `buttonBackground`。
+- path —— 要使用的图片的路径，相对于传递给 SynthLookAndFeel 的 load 方法的 Class。
+- sourceInsets —— 以像素为单位的内边距，表示不应拉伸的角落区域的宽度和高度。它们按上、左、下、右的顺序映射。
+- paintCenter（可选）：此属性让你保留图片的中心或去除它（例如在文本字段中，以便绘制文本）。
 
-The listing below shows the XML code for loading different images depending on the <state> of the button
+以下清单显示根据按钮的 `<state>` 加载不同图片的 XML 代码
 
-```
+```xml
 <style id="buttonStyle">
   <property key="Button.textShiftOffset" type="integer" value="1"/>
   <insets top="15" left="20" right="20" bottom="15"/>
@@ -342,53 +325,53 @@ The listing below shows the XML code for loading different images depending on t
 <bind style="buttonStyle" type="region" key="button"/>
 ```
 
-button2.png shows the depressed version of button.png, shifted one pixel to the right. The line
+button2.png 显示 button.png 的按下版本，向右偏移一像素。行
 
-```
+```xml
 <property key="Button.textShiftOffset" type="integer" value="1"/>
 ```
 
-shifts the button text accordingly, as discussed in the next section.
+相应地偏移按钮文本，如下一节所述。
 
-## The <property> Element
+## `<property>` 元素
 
-<property> elements are used to add key value pairs to a <style> element. Many components use the key value pairs for configuring their visual appearance.
+`<property>` 元素用于向 `<style>` 元素添加键值对。许多组件使用键值对配置其视觉外观。
 
-The <property> element has three attributes:
+`<property>` 元素有三个属性：
 
-- `key` —the name of the property.
-- `type` —the data type of the property.
-- `value` —the value of the property.
+- `key` —— 属性的名称。
+- `type` —— 属性的数据类型。
+- `value` —— 属性的值。
 
-There is a property table (`componentProperties.html`) that lists the properties each component supports: [`javax/swing/plaf/synth/doc-files/componentProperties.html`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/doc-files/componentProperties.html).
+有一个属性表(`componentProperties.html`) 列出每个组件支持的属性：[`javax/swing/plaf/synth/doc-files/componentProperties.html`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/doc-files/componentProperties.html)。
 
-Since the button2.png image shifts the visual button one pixel when it is depressed, we should also shift the button text. There is a button property that does this:
+由于 button2.png 图片在按下时将可视按钮偏移一像素，我们还应偏移按钮文本。有一个按钮属性可以做到这一点：
 
-```
+```xml
 <property key="Button.textShiftOffset" type="integer" value="1"/>
 ```
 
-## An Example
+## 示例
 
-Here is an example, using the button style defined above. The button style, plus a "backing style" with definitions of font and colors that are bound to all regions (similar to the "basicStyle" shown in the section titled "The XML File," above) are combined in [`` `buttonSkin.xml` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/SynthApplicationProject/src/lookandfeel/buttonSkin.xml) Here is a listing of `buttonSkin.xml`:
+以下是一个示例，使用上面定义的按钮样式。按钮样式加上绑定到所有区域的字体和颜色定义的"背景样式"（类似于上面标题为"XML 文件"一节中显示的 "basicStyle"）组合在 [`buttonSkin.xml`](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/SynthApplicationProject/src/lookandfeel/buttonSkin.xml) 中。以下是 `buttonSkin.xml` 的清单：
 
-```
-<!-- Synth skin that includes an image for buttons -->
+```xml
+<!-- 包含按钮图片的 Synth 皮肤 -->
 <synth>
-  <!-- Style that all regions will use -->
+  <!-- 所有区域将使用的样式 -->
   <style id="backingStyle">
-    <!-- Make all the regions that use this skin opaque-->
+    <!-- 使使用此皮肤的所有区域不透明 -->
     <opaque value="TRUE"/>
     <font name="Dialog" size="12"/>
     <state>
-      <!-- Provide default colors -->
+      <!-- 提供默认颜色 -->
       <color value="#9BC3B1" type="BACKGROUND"/>
       <color value="RED" type="FOREGROUND"/>
     </state>
   </style>
   <bind style="backingStyle" type="region" key=".*"/>
   <style id="buttonStyle">
-    <!-- Shift the text one pixel when pressed -->
+    <!-- 按下时将文本偏移一像素 -->
     <property key="Button.textShiftOffset" type="integer" value="1"/>
     <insets top="15" left="20" right="20" bottom="15"/>
     <state>
@@ -400,52 +383,52 @@ Here is an example, using the button style defined above. The button style, plus
                     sourceInsets="10 10 10 10"/>
     </state>
   </style>
-  <!-- Bind buttonStyle to all JButtons -->
-  <bind style="buttonStyle" type="region" key="button"/> 
+  <!-- 将 buttonStyle 绑定到所有 JButton -->
+  <bind style="buttonStyle" type="region" key="button"/>
 </synth>
 ```
 
-We can load this XML file to use the Synth look and feel for a simple application called `SynthApplication.java`. The GUI for this application includes a button and a label. Every time the button is clicked, the label increments.
+我们可以加载此 XML 文件来为名为 `SynthApplication.java` 的简单应用程序使用 Synth 外观。此应用程序的 GUI 包含一个按钮和一个标签。每次单击按钮时，标签递增。
 
 ---
 
-**Note:**
+**注意：**
 
-The label is painted, even though `buttonSkin.xml` does not contain a style for it. This is because there is a general "backingStyle" that includes a font and colors.
-
----
-
-Here is the listing of the [`` `SynthApplication.java` ``](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/SynthApplicationProject/src/lookandfeel/SynthApplication.java) file.
+即使 `buttonSkin.xml` 不包含标签的样式，标签仍然被绘制。这是因为有一个包含字体和颜色的一般 "backingStyle"。
 
 ---
 
-**Try this:**
-
-Click the Launch button to run the SynthApplication example using [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) ([download JDK 7 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html)). Alternatively, to compile and run the example yourself, consult the [example index](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/index.html#SynthApplication).
+以下是 [`SynthApplication.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/SynthApplicationProject/src/lookandfeel/SynthApplication.java) 文件的清单。
 
 ---
 
-## Painting With Icons
+**试试看：**
 
-Radio buttons and check boxes typically render their state by fixed-size icons. For these, you can create an icon and bind it to the appropriate property (refer to the properties table, [`javax/swing/plaf/synth/doc-files/componentProperties.html`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/doc-files/componentProperties.html)). For example, to paint radio buttons that are selected or unselected, use this code:
+单击"启动"按钮使用 [Java™ Web Start](http://www.oracle.com/technetwork/java/javase/javawebstart/index.html) 运行 SynthApplication 示例（[下载 JDK 7 或更高版本](http://www.oracle.com/technetwork/java/javase/downloads/index.html)）。或者，要自己编译和运行示例，请参阅[示例索引](https://docs.oracle.com/javase/tutorial/uiswing/examples/lookandfeel/index.html#SynthApplication)。
 
-```
+---
+
+## 使用图标绘制
+
+单选按钮和复选框通常通过固定大小的图标渲染其状态。对于这些，你可以创建一个图标并将其绑定到适当的属性（参阅属性表 [`javax/swing/plaf/synth/doc-files/componentProperties.html`](https://docs.oracle.com/javase/8/docs/api/javax/swing/plaf/synth/doc-files/componentProperties.html)）。例如，要绘制选中或未选中的单选按钮，使用以下代码：
+
+```xml
 <style id="radioButton">
    <imageIcon id="radio_off" path="images/radio_button_off.png"/>
    <imageIcon id="radio_on" path="images/radio_button_on.png"/>
    <property key="RadioButton.icon" value="radio_off"/>
-   <state value="SELECTED">   
+   <state value="SELECTED">
       <property key="RadioButton.icon" value="radio_on"/>
    </state>
 </style>
 <bind style="radioButton" type="region" key="RadioButton"/>
 ```
 
-## Custom Painters
+## 自定义画家
 
-Synth's file format allows for embedding arbitrary objects by way of the [`long-term persistence of JavaBeans components`](http://www.oracle.com/technetwork/java/persistence3-139471.html). This ability is particularly useful in providing your own painters beyond the image-based ones Synth provides. For example, the following XML code specifies that a gradient should be rendered in the background of text fields:
+Synth 的文件格式允许通过 [`JavaBeans 组件的长期持久化`](http://www.oracle.com/technetwork/java/persistence3-139471.html) 嵌入任意对象。此能力在提供超出 Synth 提供的基于图片的画家的自定义画家方面特别有用。例如，以下 XML 代码指定应在文本字段的背景中渲染渐变：
 
-```
+```xml
 <synth>
   <object id="gradient" class="GradientPainter"/>
   <style id="textfield">
@@ -455,15 +438,15 @@ Synth's file format allows for embedding arbitrary objects by way of the [`long-
 </synth>
 ```
 
-Where the GradientPainter class looks like this:
+其中 GradientPainter 类如下所示：
 
-```
+```java
 public class GradientPainter extends SynthPainter {
    public void paintTextFieldBackground(SynthContext context,
                                         Graphics g, int x, int y,
                                         int w, int h) {
-      // For simplicity this always recreates the GradientPaint. In a
-      // real app you should cache this to avoid garbage.
+      // 为简单起见，这里总是重新创建 GradientPaint。在
+      // 实际应用中你应该缓存它以避免垃圾。
       Graphics2D g2 = (Graphics2D)g;
       g2.setPaint(new GradientPaint((float)x, (float)y, Color.WHITE,
                  (float)(x + w), (float)(y + h), Color.RED));
@@ -473,6 +456,6 @@ public class GradientPainter extends SynthPainter {
 }
 ```
 
-## Conclusion
+## 结论
 
-In this lesson, we have covered the use of the `javax.swing.plaf.synth` package to create a custom look and feel. The emphasis of the lesson has been on using an external XML file to define the look and feel. The next lesson presents a sample application that creates a search dialog box using the Synth framework with an XML file.
+在本课中，我们介绍了使用 `javax.swing.plaf.synth` 包创建自定义外观。本课的重点是使用外部 XML 文件定义外观。下一课展示一个示例应用程序，它使用 Synth 框架和 XML 文件创建搜索对话框。

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Setting Up a Web Server (The Java™ Tutorials >        
+            Deployment > Java Web Start)
 
 Documentation
 
@@ -43,7 +45,7 @@ Configure the web server so that files with the `.jnlp` extension are set to the
 
 The specific steps to set up the JNLP MIME type will vary depending on the web server. As an example, to configure an Apache web server, you should add the following line to the `mime.types` file.
 
-```
+```text
 application/x-java-jnlp-file JNLP
 ```
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deploying a Java Web Start Application (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -47,7 +49,7 @@ Parameters:
 Usage:
 
 - Specifying a minimum version of JRE software that is required to run the application
-	```
+	```xml
 	<script src="https://www.java.com/js/deployJava.js"></script>
 	<script>
 	    var url = "http://java.sun.com/javase/technologies/desktop/javawebstart/apps/notepad.jnlp";

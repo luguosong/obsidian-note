@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deploying an Applet (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -59,7 +61,7 @@ Usage:
 
 - Specifying deployment options as attribute and parameter name-value pairs
 	The attributes and parameters passed as name-value pairs are written out as attributes and nested `<param>` tags in the generated `<applet>` tag. Applets deployed in this manner can be run by the old Java Plug-in software.
-	```
+	```xml
 	// launch the Java 2D applet on JRE version 1.6.0
 	// or higher with one parameter (fontSize)
 	<script src=
@@ -71,28 +73,28 @@ Usage:
 	    var version = '1.6';
 	    deployJava.runApplet(attributes, parameters, version);
 	</script>
-	```
+```javascript
 	Open [`` `DeployUsingNameValuePairs.html` ``](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/examples/dist/depltoolkit_Java2Demo/DeployUsingNameValuePairs.html) in a browser to view the Java2D applet.
 	---
 	**Note:** If you don't see the applet running, you need to install at least the [Java SE Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/index.html) release.
 	---
 - Using the `jnlp_href` parameter to specify deployment options in a JNLP file
 	The attributes and parameters (`jnlp_href` in this case) passed as name-value pairs are written out as attributes and nested `<param>` tags in the generated `<applet>` tag. Applets deployed in this manner can be run by the next generation Java Plug-in software only. It is better to specify the applet's width and height as attributes as follows:
-	```
+	```xml
 	<script src="https://www.java.com/js/deployJava.js"></script>
 	<script> 
 	    var attributes = { code:'java2d.Java2DemoApplet', width:710, height:540 }; 
 	    var parameters = { jnlp_href: 'java2d.jnlp' }; 
 	    deployJava.runApplet(attributes, parameters, '1.6'); 
 	</script>
-	```
+```
 	Open [`` `DeployUsingJNLP.html` ``](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/examples/dist/depltoolkit_Java2Demo/DeployUsingJNLP.html) in a browser to view the Java2D applet.
 	---
 	**Note:** If you don't see the applet running, you need to install at least the [Java SE Development Kit (JDK) 6 update 10](http://www.oracle.com/technetwork/java/javase/downloads/index.html) release.
 	---
 - Specifying attribute and parameter name-value pairs *as well as* a JNLP file
 	Applets deployed by using JNLP will run only if end users have the next generation Java Plug-in software running on their browsers. If you would like your applet to run on the old Java Plug-in software also, specify deployment options using attribute and parameter name-value pairs *as well as* a JNLP file.
-	```
+	```xml
 	<script src="https://www.java.com/js/deployJava.js"></script>
 	<script>  
 	    var attributes = {code:'java2d.Java2DemoApplet.class', 

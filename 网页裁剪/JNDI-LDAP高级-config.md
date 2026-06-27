@@ -27,7 +27,7 @@ You configure connection pooling by using a number of system properties at progr
 
 Here is an example of a command line that sets the maximum pool size to 20, the preferred pool size to 10, and the idle timeout to a minute for pooled connections.
 
-```
+```bash
 # java -Dcom.sun.jndi.ldap.connect.pool.maxsize=20 \
        -Dcom.sun.jndi.ldap.connect.pool.prefsize=10 \
        -Dcom.sun.jndi.ldap.connect.pool.timeout=60000 \

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# The catch Blocks (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 You associate exception handlers with a `try` block by providing one or more `catch` blocks directly after the `try` block. No code can be between the end of the `try` block and the beginning of the first `catch` block.
 
-```
+```text
 try {
 
 } catch (ExceptionType name) {
@@ -39,7 +41,7 @@ The `catch` block contains code that is executed if and when the exception handl
 
 The following are two exception handlers for the `writeList` method:
 
-```
+```java
 try {
 
 } catch (IndexOutOfBoundsException e) {
@@ -47,7 +49,6 @@ try {
 } catch (IOException e) {
     System.err.println("Caught IOException: " + e.getMessage());
 }
-```
 
 Exception handlers can do more than just print error messages or halt the program. They can do error recovery, prompt the user to make a decision, or propagate the error up to a higher-level handler using chained exceptions, as described in the [[Java核心类库-异常-chained|Chained Exceptions]] section.
 
@@ -57,7 +58,6 @@ In Java SE 7 and later, a single `catch` block can handle more than one type of 
 
 In the `catch` clause, specify the types of exceptions that block can handle, and separate each exception type with a vertical bar (`|`):
 
-```
 catch (IOException|SQLException ex) {
     logger.log(ex);
     throw ex;

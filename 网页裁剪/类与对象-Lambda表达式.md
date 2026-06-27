@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Lambda Expressions (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -119,7 +121,7 @@ public class Person {
         // ...
     }
 }
-```
+```java
 
 Suppose that the members of your social networking application are stored in a `List<Person>` instance.
 
@@ -156,7 +158,7 @@ public static void printPersonsWithinAgeRange(
         }
     }
 }
-```
+```java
 
 What if you want to print members of a specified sex, or a combination of a specified gender and age range? What if you decide to change the `Person` class and add other attributes such as relationship status or geographical location? Although this method is more generic than `printPersonsOlderThan`, trying to create a separate method for each possible search query can still lead to brittle code. You can instead separate the code that specifies the criteria for which you want to search in a different class.
 
@@ -183,7 +185,7 @@ To specify the search criteria, you implement the `CheckPerson` interface:
 interface CheckPerson {
     boolean test(Person p);
 }
-```
+```text
 
 The following class implements the `CheckPerson` interface by specifying an implementation for the method `test`. This method filters members that are eligible for Selective Service in the United States: it returns a `true` value if its `Person` parameter is male and between the ages of 18 and 25:
 
@@ -195,14 +197,13 @@ class CheckPersonEligibleForSelectiveService implements CheckPerson {
             p.getAge() <= 25;
     }
 }
-```
+```text
 
 To use this class, you create a new instance of it and invoke the `printPersons` method:
 
-```
+```typescript
 printPersons(
     roster, new CheckPersonEligibleForSelectiveService());
-```
 
 Although this approach is less brittle—you don't have to rewrite methods if you change the structure of the `Person` —you still have additional code: a new interface and a local class for each search you plan to perform in your application. Because `CheckPersonEligibleForSelectiveService` implements an interface, you can use an anonymous class instead of a local class and bypass the need to declare a new class for each search.
 
@@ -210,7 +211,6 @@ Although this approach is less brittle—you don't have to rewrite methods if yo
 
 One of the arguments of the following invocation of the method `printPersons` is an anonymous class that filters members that are eligible for Selective Service in the United States: those who are male and between the ages of 18 and 25:
 
-```
 printPersons(
     roster,
     new CheckPerson() {
@@ -221,7 +221,6 @@ printPersons(
         }
     }
 );
-```
 
 This approach reduces the amount of code required because you don't have to create a new class for each search that you want to perform. However, the syntax of anonymous classes is bulky considering that the `CheckPerson` interface contains only one method. In this case, you can use a lambda expression instead of an anonymous class, as described in the next section.
 
@@ -229,14 +228,13 @@ This approach reduces the amount of code required because you don't have to crea
 
 The `CheckPerson` interface is a *functional interface*. A functional interface is any interface that contains only one [[接口与继承-抽象方法|abstract method]]. (A functional interface may contain one or more [[接口与继承-默认方法|default methods]] or [[接口与继承-默认方法|static methods]].) Because a functional interface contains only one abstract method, you can omit the name of that method when you implement it. To do this, instead of using an anonymous class expression, you use a *lambda expression*, which is highlighted in the following method invocation:
 
-```
 printPersons(
     roster,
     (Person p) -> p.getGender() == Person.Sex.MALE
         && p.getAge() >= 18
         && p.getAge() <= 25
 );
-```
+```java
 
 See [Syntax of Lambda Expressions](#syntax) for information about how to define lambda expressions.
 
@@ -260,7 +258,7 @@ For example, you can use the `Predicate<T>` interface in place of `CheckPerson`.
 interface Predicate<T> {
     boolean test(T t);
 }
-```
+```java
 
 The interface `Predicate<T>` is an example of a generic interface. (For more information about generics, see the [[学习Java语言-泛型|Generics (Updated)]] lesson.) Generic types (such as generic interfaces) specify one or more type parameters within angle brackets (`<>`). This interface contains only one type parameter, `T`. When you declare or instantiate a generic type with actual type arguments, you have a parameterized type. For example, the parameterized type `Predicate<Person>` is the following:
 
@@ -281,18 +279,16 @@ public static void printPersonsWithPredicate(
         }
     }
 }
-```
 
 As a result, the following method invocation is the same as when you invoked `printPersons` in [Approach 3: Specify Search Criteria Code in a Local Class](#approach3) to obtain members who are eligible for Selective Service:
 
-```
 printPersonsWithPredicate(
     roster,
     p -> p.getGender() == Person.Sex.MALE
         && p.getAge() >= 18
         && p.getAge() <= 25
 );
-```
+```java
 
 This is not the only possible place in this method to use a lambda expression. The following approach suggests other ways to use lambda expressions.
 
@@ -326,11 +322,9 @@ public static void processPersons(
             }
         }
 }
-```
 
 As a result, the following method invocation is the same as when you invoked `printPersons` in [Approach 3: Specify Search Criteria Code in a Local Class](#approach3) to obtain members who are eligible for Selective Service. The lambda expression used to print members is highlighted:
 
-```
 processPersons(
      roster,
      p -> p.getGender() == Person.Sex.MALE
@@ -338,7 +332,7 @@ processPersons(
          && p.getAge() <= 25,
      p -> p.printPerson()
 );
-```
+```java
 
 What if you want to do more with your members' profiles than printing them out. Suppose that you want to validate the members' profiles or retrieve their contact information? In this case, you need a functional interface that contains an abstract method that returns a value. The `Function<T,R>` interface contains the method `R apply(T t)`. The following method retrieves the data specified by the parameter `mapper`, and then performs an action on it specified by the parameter `block`:
 
@@ -368,13 +362,11 @@ processPersonsWithFunction(
     p -> p.getEmailAddress(),
     email -> System.out.println(email)
 );
-```
 
 ### Approach 8: Use Generics More Extensively
 
 Reconsider the method `processPersonsWithFunction`. The following is a generic version of it that accepts, as a parameter, a collection that contains elements of any data type:
 
-```
 public static <X, Y> void processElements(
     Iterable<X> source,
     Predicate<X> tester,
@@ -387,7 +379,7 @@ public static <X, Y> void processElements(
         }
     }
 }
-```
+```text
 
 To print the e-mail address of members who are eligible for Selective Service, invoke the `processElements` method as follows:
 
@@ -424,7 +416,7 @@ roster
             && p.getAge() <= 25)
     .map(p -> p.getEmailAddress())
     .forEach(email -> System.out.println(email));
-```
+```java
 
 The following table maps each of the operations the method `processElements` performs with the corresponding aggregate operation:
 
@@ -461,7 +453,6 @@ The method invocation `btn.setOnAction` specifies what happens when you select t
 btn.setOnAction(
   event -> System.out.println("Hello World!")
 );
-```
 
 ## Syntax of Lambda Expressions
 
@@ -469,30 +460,27 @@ A lambda expression consists of the following:
 
 - A comma-separated list of formal parameters enclosed in parentheses. The `CheckPerson.test` method contains one parameter, `p`, which represents an instance of the `Person` class.
 	**Note**: You can omit the data type of the parameters in a lambda expression. In addition, you can omit the parentheses if there is only one parameter. For example, the following lambda expression is also valid:
-	```
 	p -> p.getGender() == Person.Sex.MALE 
 	    && p.getAge() >= 18
 	    && p.getAge() <= 25
-	```
 - The arrow token, `->`
 - A body, which consists of a single expression or a statement block. This example uses the following expression:
-	```
 	p.getGender() == Person.Sex.MALE 
 	    && p.getAge() >= 18
 	    && p.getAge() <= 25
-	```
+```text
 	If you specify a single expression, then the Java runtime evaluates the expression and then returns its value. Alternatively, you can use a return statement:
-	```
+```
 	p -> {
 	    return p.getGender() == Person.Sex.MALE
 	        && p.getAge() >= 18
 	        && p.getAge() <= 25;
 	}
-	```
+```text
 	A return statement is not an expression; in a lambda expression, you must enclose statements in braces (`{}`). However, you do not have to enclose a void method invocation in braces. For example, the following is a valid lambda expression:
 	```java
 	email -> System.out.println(email)
-	```
+```
 
 Note that a lambda expression looks a lot like a method declaration; you can consider lambda expressions as anonymous methods—methods without a name.
 
@@ -520,14 +508,14 @@ public class Calculator {
             myApp.operateBinary(20, 10, subtraction));    
     }
 }
-```
+```text
 
 The method `operateBinary` performs a mathematical operation on two integer operands. The operation itself is specified by an instance of `IntegerMath`. The example defines two operations with lambda expressions, `addition` and `subtraction`. The example prints the following:
 
 ```
 40 + 2 = 42
 20 - 10 = 10
-```
+```java
 
 ## Accessing Local Variables of the Enclosing Scope
 
@@ -585,7 +573,7 @@ y = 23
 z = 2
 this.x = 1
 LambdaScopeTest.this.x = 0
-```
+```text
 
 If you substitute the parameter `x` in place of `y` in the declaration of the lambda expression `myConsumer`, then the compiler generates an error:
 
@@ -593,7 +581,7 @@ If you substitute the parameter `x` in place of `y` in the declaration of the la
 Consumer<Integer> myConsumer = (x) -> {
     // ...
 }
-```
+```text
 
 The compiler generates the error "Lambda expression's parameter x cannot redeclare another local variable defined in an enclosing scope" because the lambda expression does not introduce a new level of scoping. Consequently, you can directly access fields, methods, and local variables of the enclosing scope. For example, the lambda expression directly accesses the parameter `x` of the method `methodInFirstLevel`. To access variables in the enclosing class, use the keyword `this`. In this example, `this.x` refers to the member variable `FirstLevel.x`.
 
@@ -604,7 +592,6 @@ Consumer<Integer> myConsumer = (y) -> {
     z = 99;
     // ...
 }
-```
 
 Because of this assignment statement, the variable `z` is not effectively final anymore. As a result, the Java compiler generates an error message similar to "Local variable z defined in an enclosing scope must be final or effectively final".
 
@@ -612,11 +599,10 @@ Because of this assignment statement, the variable `z` is not effectively final 
 
 How do you determine the type of a lambda expression? Recall the lambda expression that selected members who are male and between the ages 18 and 25 years:
 
-```
 p -> p.getGender() == Person.Sex.MALE
     && p.getAge() >= 18
     && p.getAge() <= 25
-```
+```java
 
 This lambda expression was used in the following two methods:
 
@@ -654,7 +640,7 @@ The method `Runnable.run` does not return a value, whereas `Callable<V>.call` do
 
 Suppose that you have overloaded the method `invoke` as follows (see [[类与对象-方法|Defining Methods]] for more information about overloading methods):
 
-```
+```java
 void invoke(Runnable r) {
     r.run();
 }
@@ -666,7 +652,7 @@ void invoke(Runnable r) {
 
 Which method will be invoked in the following statement?
 
-```
+```text
 String s = invoke(() -> "done");
 ```
 

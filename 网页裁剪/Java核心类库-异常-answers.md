@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises (The Java™ Tutorials > Essential Java Classes >
+            Exceptions)
 
 Documentation
 
@@ -24,31 +26,31 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Questions
 
 1. **Question:** Is the following code legal?
-	```
+```text
 	try {
 	    
 	} finally {
 	   
 	}
-	```
+```
 	**Answer:** Yes, it's legal — and very useful A `try` statement does not have to have a `catch` block if it has a `finally` block. If the code in the `try` statement has multiple exit points and no associated `catch` clauses, the code in the `finally` block is executed no matter how the `try` block is exited. Thus it makes sense to provide a `finally` block whenever there is code that *must always* be executed. This include resource recovery code, such as the code to close I/O streams.
 2. **Question:** What exception types can be caught by the following handler?
-	```
+```text
 	catch (Exception e) {
 	     
 	}
-	```
+```
 	What is wrong with using this type of exception handler?
 	**Answer:** This handler catches exceptions of type `Exception`; therefore, it catches any exception. This can be a poor implementation because you are losing valuable information about the type of exception being thrown and making your code less efficient. As a result, your program may be forced to determine the type of exception before it can decide on the best recovery strategy.
 3. **Question:** Is there anything wrong with this exception handler as written? Will this code compile?
-	```
+```text
 	try {
 	} catch (Exception e) {
 	   
 	} catch (ArithmeticException a) {
 	    
 	}
-	```
+```
 	**Answer:** This first handler catches exceptions of type `Exception`; therefore, it catches any exception, including `ArithmeticException`. The second handler could never be reached. This code will not compile.
 4. **Question:** Match each situation in the first list with an item in the second list.
 	1. `int[] A;   A[0] = 0;`
@@ -70,7 +72,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 1. **Exercise:** Add a `readList` method to [`` `ListOfNumbers.java` ``](https://docs.oracle.com/javase/tutorial/essential/exceptions/examples/ListOfNumbers.java). This method should read in `int` values from a file, print each value, and append them to the end of the vector. You should catch all appropriate errors. You will also need a text file containing numbers to read in.
 	**Answer:** See ``` `` `ListOfNumbers2.java` ``.```
 2. **Exercise:** Modify the following `cat` method so that it will compile:
-	```
+	```java
 	public static void cat(File file) {
 	    RandomAccessFile input = null;
 	    String line = null;
@@ -86,9 +88,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        }
 	    }
 	}
-	```
+```java
 	**Answer:** The code to catch exceptions is shown in bold:
-	```
+	```java
 	public static void cat(File file) {
 	    RandomAccessFile input = null;
 	    String line = null;
@@ -111,4 +113,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        }
 	    }
 	}
-	```
+```

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Executor Interfaces (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -33,13 +35,13 @@ Typically, variables that refer to executor objects are declared as one of these
 
 The [`Executor`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html) interface provides a single method, `execute`, designed to be a drop-in replacement for a common thread-creation idiom. If `r` is a `Runnable` object, and `e` is an `Executor` object you can replace
 
-```
+```text
 (new Thread(r)).start();
 ```
 
 with
 
-```
+```text
 e.execute(r);
 ```
 

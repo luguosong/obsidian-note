@@ -25,7 +25,7 @@ In addition to specifying a search using a set of attributes, you can specify a 
 
 The following search filter specifies that the qualifying entries must have an "sn" attribute with a value of "Geisel" and a "mail" attribute with any value:
 
-```
+```text
 (&(sn=Geisel)(mail=*))
 ```
 
@@ -42,7 +42,6 @@ String filter = "(&(sn=Geisel)(mail=*))";
 
 // Search for objects using the filter
 NamingEnumeration answer = ctx.search("ou=People", filter, ctls);
-```
 
 Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchWithFilterRetAll.java) produces the following result.
 
@@ -66,7 +65,6 @@ attribute: cn
 value: Ted Geisel
 attribute: telephonenumber
 value: +1 408 555 5252
-```
 
 ## Quick Overview of Search Filter Syntax
 
@@ -102,7 +100,6 @@ The previous example returned all attributes associated with the entries that sa
 String[] attrIDs = {"sn", "telephonenumber", "golfhandicap", "mail"};
 SearchControls ctls = new SearchControls();
 ctls.setReturningAttributes(attrIDs);
-```
 
 This example is equivalent to the [[JNDI-操作-basicsearch|Returning Selected Attributes]] example in the Basic Search section. Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchWithFilter.java) produces the following results. (The entry does not have a "golfhandicap" attribute, so it is not returned.)
 
@@ -115,4 +112,3 @@ attribute: mail
 value: Ted.Geisel@JNDITutorial.example.com
 attribute: telephonenumber
 value: +1 408 555 5252
-```

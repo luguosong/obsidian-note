@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# File Operations (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -99,7 +101,7 @@ With file I/O, unexpected conditions are a fact of life: a file exists (or doesn
 
 All methods that access the file system can throw an `IOException`. It is best practice to catch these exceptions by embedding these methods into a `try-` with-resources statement, introduced in the Java SE 7 release. The `try-` with-resources statement has the advantage that the compiler automatically generates the code to close the resource(s) when no longer required. The following code shows how this might look:
 
-```
+```text
 Charset charset = Charset.forName("US-ASCII");
 String s = ...;
 try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
@@ -113,7 +115,7 @@ For more information, see [[Java核心类库-异常-tryResourceClose|The try-wit
 
 Alternatively, you can embed the file I/O methods in a `try` block and then catch any exceptions in a `catch` block. If your code has opened any streams or channels, you should close them in a `finally` block. The previous example would look something like the following using the try-catch-finally approach:
 
-```
+```text
 Charset charset = Charset.forName("US-ASCII");
 String s = ...;
 BufferedWriter writer = null;
@@ -133,7 +135,7 @@ In addition to `IOException`, many specific exceptions extend [`FileSystemExcept
 
 The following code snippet shows how the `getFile` method might be used:
 
-```
+```text
 try (...) {
     ...    
 } catch (NoSuchFileException x) {
@@ -147,7 +149,7 @@ For purposes of clarity, the file I/O examples in this lesson may not show excep
 
 Several `Files` methods accept an arbitrary number of arguments when flags are specified. For example, in the following method signature, the ellipses notation after the `CopyOption` argument indicates that the method accepts a variable number of arguments, or *varargs*, as they are typically called:
 
-```
+```text
 Path Files.move(Path, Path, CopyOption...)
 ```
 
@@ -155,7 +157,7 @@ When a method accepts a varargs argument, you can pass it a comma-separated list
 
 In the `move` example, the method can be invoked as follows:
 
-```
+```java
 import static java.nio.file.StandardCopyOption.*;
 
 Path source = ...;
@@ -180,7 +182,7 @@ Many of the file I/O methods support the concept of *method chaining*.
 
 You first invoke a method that returns an object. You then immediately invoke a method on *that* object, which returns yet another object, and so on. Many of the I/O examples use the following technique:
 
-```
+```text
 String value = Charset.defaultCharset().decode(buf).toString();
 UserPrincipal group =
     file.getFileSystem().getUserPrincipalLookupService().

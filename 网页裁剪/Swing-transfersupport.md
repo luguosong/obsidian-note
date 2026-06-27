@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# TransferSupport Class (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -82,7 +84,7 @@ The [`TransferSupport`](https://docs.oracle.com/javase/8/docs/api/javax/swing/Tr
 
 Now that you are familiar with the `TransferSupport` utility methods, let us look at sample `canImport` and `importData` methods:
 
-```
+```sql
 public boolean canImport(TransferSupport supp) {
     // Check for String flavor
     if (!supp.isDataFlavorSupported(stringFlavor)) {

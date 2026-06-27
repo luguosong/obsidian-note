@@ -71,7 +71,7 @@ To create a naming context, you supply to [createSubcontext()](https://docs.orac
 
 ---
 
-```
+```text
 // Create attributes to be associated with the new context
 Attributes attrs = new BasicAttributes(true); // case-ignore
 Attribute objclass = new BasicAttribute("objectclass");
@@ -90,7 +90,6 @@ Context result = ctx.createSubcontext("NewOu", attrs);
 ou=Groups: javax.naming.directory.DirContext
 ou=People: javax.naming.directory.DirContext
 ou=NewOu: javax.naming.directory.DirContext
-```
 
 [`This example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Create.java) creates a new context, called "NewOu", that is a child of ctx.
 
@@ -100,7 +99,6 @@ ou=NewOu: javax.naming.directory.DirContext
 
 To destroy a context, you supply to [destroySubcontext()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#destroySubcontext-javax.naming.Name-) the name of the context to destroy.
 
-```
 // Destroy the context
 ctx.destroySubcontext("NewOu");
 ```

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Manipulating DOM of Applet's Web Page (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -100,7 +102,7 @@ public void start() {
         // com.sun.java.browser.plugin.dom package
     }
 }
-```
+```java
 
 Now that you have a reference to the `Document` object, you can traverse and modify the DOM tree using the Common DOM API. The `DOMDump` applet traverses the DOM tree and writes its contents to the Java Console log.
 

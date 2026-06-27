@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use BorderLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -57,7 +59,7 @@ If the window is enlarged, the center area gets as much of the available space a
 
 The following code adds components to a frame's content pane. Because content panes use the `BorderLayout` class by default, the code does not need to set the layout manager. The complete program is in the [`BorderLayoutDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/BorderLayoutDemoProject/src/layout/BorderLayoutDemo.java) file.
 
-```
+```text
 ...//Container pane = aFrame.getContentPane()...
 JButton button = new JButton("Button 1 (PAGE_START)");
 pane.add(button, BorderLayout.PAGE_START);
@@ -82,13 +84,13 @@ Specify the component's location (for example, `BorderLayout.LINE_END`) as one o
 
 All tutorial examples that use the `BorderLayout` class specify the component as the first argument to the `add` method. For example:
 
-```
+```text
 add(component, BorderLayout.CENTER)  //preferred
 ```
 
 However, the code in other programs specifies the component as the second argument. For example, here are alternate ways of writing the preceding code:
 
-```
+```text
 add(BorderLayout.CENTER, component)  //valid but old fashioned
     or
 add("Center", component)             //valid but error prone

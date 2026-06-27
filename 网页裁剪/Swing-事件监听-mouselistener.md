@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Mouse Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -110,7 +112,7 @@ The following example shows a mouse listener. At the top of the window is a blan
 
 You can find the demo's code in [`MouseEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/MouseEventDemoProject/src/events/MouseEventDemo.java) and [`BlankArea.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/MouseEventDemoProject/src/events/BlankArea.java). Here is the demo's mouse event handling code:
 
-```
+```java
 public class MouseEventDemo ... implements MouseListener {
         //where initialization occurs:
         //Register for mouse events on blankArea and the panel.

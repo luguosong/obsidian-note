@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Solving Common Component Problems (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -161,9 +163,9 @@ This section discusses problems that you might encounter while using components.
 **Problem:** The buttons in my tool bar are too big.
 
 - Try reducing the margin for the buttons. For example:
-	```
+```text
 	button.setMargin(new Insets(0,0,0,0));
-	```
+```
 
 **Problem:** The components in my layered pane are not layered correctly. In fact, the layers seem to be inversed — the lower the depth the higher the component.
 

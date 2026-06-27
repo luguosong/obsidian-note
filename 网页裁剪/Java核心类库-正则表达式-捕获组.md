@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Capturing Groups (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)
 
 Documentation
 
@@ -50,7 +52,7 @@ The section of the input string matching the capturing group(s) is saved in memo
 
 To match any 2 digits, followed by the exact same two digits, you would use `(\d\d)\1` as the regular expression:
 
-```
+```text
 Enter your regex: (\d\d)\1
 Enter input string to search: 1212
 I found the text "1212" starting at index 0 and ending at index 4.
@@ -58,7 +60,7 @@ I found the text "1212" starting at index 0 and ending at index 4.
 
 If you change the last two digits the match will fail:
 
-```
+```text
 Enter your regex: (\d\d)\1
 Enter input string to search: 1234
 No match found.

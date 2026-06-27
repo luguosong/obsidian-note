@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Internal Frames (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -124,7 +126,7 @@ Here is a picture of an application that has two internal frames (one of which i
 
 The following code, taken from [`InternalFrameDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/InternalFrameDemoProject/src/components/InternalFrameDemo.java), creates the desktop and internal frames in the previous example.
 
-```
+```java
 ...//In the constructor of InternalFrameDemo, a JFrame subclass:
     desktop = new JDesktopPane();
     createFrame(); //Create first window
@@ -218,7 +220,7 @@ When a desktop has many internal frames, the user might notice that moving them 
 
 Use the `JDesktopPane` method `setDragMode` \* to specify outline dragging. For example:
 
-```
+```text
 desktop.setDragMode(JDesktopPane.OUTLINE_DRAG_MODE);
 ```
 

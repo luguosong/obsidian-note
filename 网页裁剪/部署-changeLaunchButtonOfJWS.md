@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Changing the Launch Button (The Java™ Tutorials >        
+            Deployment > Deployment In-Depth)
 
 Documentation
 
@@ -31,7 +33,7 @@ Use the `deployJava.launchButtonPNG` variable to point to the location of your L
 
 In this example, the Notepad application's Launch button is now an image of Duke waving.
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js"></script>
 <script>
     deployJava.launchButtonPNG='https://docs.oracle.com/javase/tutorial/images/DukeWave.gif';

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Handling Initialization Status With Event Handlers  (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -106,11 +108,9 @@ The following steps describe how to register event handlers and check an applet'
 	    }
 	<!-- ... -->
 	</script>
-	```
 2. Invoke the previously created `registerAppletStateHandler` function in the `body` tag's onload method. This ensures that the HTML tag for the applet has been created in the Document Object Model (DOM) tree of the web page before the applet's event handlers are registered.
 	```html
 	<body onload="registerAppletStateHandler()">
-	```
 3. Deploy the applet with the `java_status_events` parameter set to `"true"`.
 	```xml
 	<script src=

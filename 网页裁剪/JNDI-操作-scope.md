@@ -43,7 +43,6 @@ String filter = "(&(sn=Geisel)(mail=*))";
 
 // Search the subtree for objects by using the filter
 NamingEnumeration answer = ctx.search("", filter, ctls);
-```
 
 [`This example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchSubtree.java) searches the context ctx 's subtree for entries that satisfy the specified filter. It finds the entry "cn= Ted Geisel, ou=People" in this subtree that satisfies the filter.
 
@@ -56,7 +55,6 @@ attribute: mail
 value: Ted.Geisel@JNDITutorial.example.com
 attribute: telephonenumber
 value: +1 408 555 5252
-```
 
 ## Search the Named Object
 
@@ -77,7 +75,6 @@ String filter = "(&(sn=Geisel)(mail=*))";
 // Search the subtree for objects by using the filter
 NamingEnumeration answer = 
     ctx.search("cn=Ted Geisel, ou=People", filter, ctls);
-```
 
 [`This example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchObject.java) tests whether the object "cn=Ted Geisel, ou=People" satisfies the given filter.
 
@@ -90,6 +87,5 @@ attribute: mail
 value: Ted.Geisel@JNDITutorial.example.com
 attribute: telephonenumber
 value: +1 408 555 5252
-```
 
 The example found one answer and printed it. Notice that the name of the result is the empty string. This is because the name of the object is always named relative to the context of the search (in this case, "cn=Ted Geisel, ou=People").

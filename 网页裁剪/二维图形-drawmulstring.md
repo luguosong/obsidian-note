@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Drawing Multiple Lines of Text (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)
 
 Documentation
 
@@ -53,7 +55,7 @@ The complete code for this applet is in [`` `LineBreakSample.java` ``](https://d
 
 The following code creates an iterator with the string `vanGogh`. The start and end of the iterator is retrieved and a new `LineBreakMeasurer` is created from the iterator.
 
-```
+```text
 AttributedCharacterIterator paragraph = vanGogh.getIterator();
 paragraphStart = paragraph.getBeginIndex();
 paragraphEnd = paragraph.getEndIndex();

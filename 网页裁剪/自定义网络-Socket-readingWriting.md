@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Reading from and Writing to a Socket (The Java™ Tutorials >        
+            Custom Networking > All About Sockets)
 
 Documentation
 
@@ -37,7 +39,7 @@ Note that the `EchoClient` example both writes to and reads from its socket, the
 
 Let's walk through the program and investigate the interesting parts. The following statements in the [[Java核心类库-异常-tryResourceClose|`try` -with-resources]] statement in the `EchoClient` example are critical. These lines establish the socket connection between the client and the server and open a [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html) and a [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html) on the socket:
 
-```
+```text
 String hostName = args[0];
 int portNumber = Integer.parseInt(args[1]);
 
@@ -56,13 +58,13 @@ try (
 
 The first statement in the `try` -with resources statement creates a new [`Socket`](https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html) object and names it `echoSocket`. The `Socket` constructor used here requires the name of the computer and the port number to which you want to connect. The example program uses the first [[Java核心类库-平台环境-cmdLineArgs|command-line argument]] as the name of the computer (the host name) and the second command line argument as the port number. When you run this program on your computer, make sure that the host name you use is the fully qualified IP name of the computer to which you want to connect. For example, if your echo server is running on the computer `echoserver.example.com` and it is listening on port number 7, first run the following command from the computer `echoserver.example.com` if you want to use the `EchoServer` example as your echo server:
 
-```
+```text
 java EchoServer 7
 ```
 
 Afterward, run the `EchoClient` example with the following command:
 
-```
+```text
 java EchoClient echoserver.example.com 7
 ```
 

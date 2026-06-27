@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Document Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -102,7 +104,7 @@ The following example demonstrates document events on two plain text components.
 
 You can find the demo's code in [`DocumentEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/DocumentEventDemoProject/src/events/DocumentEventDemo.java). Here is the demo's document event handling code:
 
-```
+```sql
 public class DocumentEventDemo ... {
     ...//where initialization occurs:
     textField = new JTextField(20);

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Variables (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -21,7 +23,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 As you learned in the previous lesson, an object stores its state in *fields*.
 
-```
+```text
 int cadence = 0;
 int speed = 0;
 int gear = 1;

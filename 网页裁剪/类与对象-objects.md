@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Objects (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -109,11 +111,11 @@ public class CreateObjectDemo {
         System.out.println("Y Position of rectTwo: " + rectTwo.origin.y);
     }
 }
-```
+```text
 
 This program creates, manipulates, and displays information about various objects. Here's the output:
 
-```
+```text
 Width of rectOne: 100
 Height of rectOne: 200
 Area of rectOne: 20000

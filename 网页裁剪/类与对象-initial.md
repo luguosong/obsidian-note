@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Initializing Fields (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)
 
 Documentation
 
@@ -88,7 +90,6 @@ public class BedAndBreakfast {
     // initialize to false
     private boolean full = false;
 }
-```
 
 This works well when the initialization value is available and the initialization can be put on one line. However, this form of initialization has limitations because of its simplicity. If initialization requires some logic (for example, error handling or a `for` loop to fill a complex array), simple assignment is inadequate. Instance variables can be initialized in constructors, where error handling or other logic can be used. To provide the same capability for class variables, the Java programming language includes *static initialization blocks*.
 
@@ -102,17 +103,16 @@ This works well when the initialization value is available and the initializatio
 
 A *static initialization block* is a normal block of code enclosed in braces, `{ }`, and preceded by the `static` keyword. Here is an example:
 
-```
 static {
     // whatever code is needed for initialization goes here
 }
-```
+```text
 
 A class can have any number of static initialization blocks, and they can appear anywhere in the class body. The runtime system guarantees that static initialization blocks are called in the order that they appear in the source code.
 
 There is an alternative to static blocks — you can write a private static method:
 
-```
+```java
 class Whatever {
     public static varType myVar = initializeClassVariable();
         
@@ -121,7 +121,6 @@ class Whatever {
         // initialization code goes here
     }
 }
-```
 
 The advantage of private static methods is that they can be reused later if you need to reinitialize the class variable.
 
@@ -131,17 +130,16 @@ Normally, you would put code to initialize an instance variable in a constructor
 
 Initializer blocks for instance variables look just like static initializer blocks, but without the `static` keyword:
 
-```
 {
     // whatever code is needed for initialization goes here
 }
-```
+```text
 
 The Java compiler copies initializer blocks into every constructor. Therefore, this approach can be used to share a block of code between multiple constructors.
 
 A *final method* cannot be overridden in a subclass. This is discussed in the lesson on interfaces and inheritance. Here is an example of using a final method for initializing an instance variable:
 
-```
+```java
 class Whatever {
     private varType myVar = initializeInstanceVariable();
         

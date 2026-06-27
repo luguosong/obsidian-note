@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Frequently Asked Questions (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -41,7 +43,7 @@ Try using the "com.sun.jndi.ldap.trace.ber" environment property. If the value o
 
 For example, the following code will send the trace output to System.err.
 
-```
+```text
 env.put("com.sun.jndi.ldap.trace.ber", System.err);
 ```
 

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Equality, Relational, and Conditional Operators  (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -25,18 +27,18 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The equality and relational operators determine if one operand is greater than, less than, equal to, or not equal to another operand. The majority of these operators will probably look familiar to you as well. Keep in mind that you must use " `==` ", not " `=` ", when testing if two primitive values are equal.
 
-```
+```bash
 ==      equal to
 !=      not equal to
 >       greater than
 >=      greater than or equal to
 <       less than
 <=      less than or equal to
-```
+```java
 
 The following program, [`ComparisonDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ComparisonDemo.java), tests the comparison operators:
 
-```
+```java
 class ComparisonDemo {
 
     public static void main(String[] args){
@@ -58,7 +60,7 @@ class ComparisonDemo {
 
 Output:
 
-```
+```text
 value1 != value2
 value1 <  value2
 value1 <= value2
@@ -68,14 +70,12 @@ value1 <= value2
 
 The `&&` and `||` operators perform *Conditional-AND* and *Conditional-OR* operations on two boolean expressions. These operators exhibit "short-circuiting" behavior, which means that the second operand is evaluated only if needed.
 
-```
 && Conditional-AND
 || Conditional-OR
-```
 
 The following program, [`ConditionalDemo1`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ConditionalDemo1.java), tests these operators:
 
-```
+```java
 class ConditionalDemo1 {
 
     public static void main(String[] args){
@@ -87,13 +87,13 @@ class ConditionalDemo1 {
             System.out.println("value1 is 1 OR value2 is 1");
     }
 }
-```
+```java
 
 Another conditional operator is `?:`, which can be thought of as shorthand for an `if-then-else` statement (discussed in the [[语言基础-flow|Control Flow Statements]] section of this lesson). This operator is also known as the *ternary operator* because it uses three operands. In the following example, this operator should be read as: "If `someCondition` is `true`, assign the value of `value1` to `result`. Otherwise, assign the value of `value2` to `result`."
 
 The following program, [`ConditionalDemo2`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ConditionalDemo2.java), tests the `?:` operator:
 
-```
+```java
 class ConditionalDemo2 {
 
     public static void main(String[] args){
@@ -116,7 +116,7 @@ The `instanceof` operator compares an object to a specified type. You can use it
 
 The following program, [`InstanceofDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/InstanceofDemo.java), defines a parent class (named `Parent`), a simple interface (named `MyInterface`), and a child class (named `Child`) that inherits from the parent and implements the interface.
 
-```
+```java
 class InstanceofDemo {
     public static void main(String[] args) {
 
@@ -141,11 +141,11 @@ class InstanceofDemo {
 class Parent {}
 class Child extends Parent implements MyInterface {}
 interface MyInterface {}
-```
+```text
 
 Output:
 
-```
+```text
 obj1 instanceof Parent: true
 obj1 instanceof Child: false
 obj1 instanceof MyInterface: false

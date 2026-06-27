@@ -1,13 +1,14 @@
 ---
 分类:
   - "网页裁剪"
-标题: "rule"
+标题: "基于规则的 BreakIterator"
 描述: "This internationalization Java tutorial describes setting locale, isolating locale-specific data, formatting data, internationalized domain name and resource identifier"
 来源: "https://docs.oracle.com/javase/tutorial/i18n/text/rule.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:30:00+08:00"
 ---
+# 基于规则的 BreakIterator
 
 Documentation
 
@@ -24,7 +25,7 @@ The previous section discussed how to use the predefined rules for a locale to c
 
 Customized collation rules are contained in a `String` object that is passed to the `RuleBasedCollator` constructor. Here's a simple example:
 
-```
+```text
 String simpleRule = "< a < b < c < d";
 RuleBasedCollator simpleCollator =  new RuleBasedCollator(simpleRule);
 ```
@@ -35,7 +36,7 @@ The example that follows sorts a list of Spanish words with two collators. Full 
 
 The `RulesDemo` program starts by defining collation rules for English and Spanish. The program will sort the Spanish words in the traditional manner. When sorting by the traditional rules, the letters ch and ll and their uppercase equivalents each have their own positions in the sort order. These character pairs compare as if they were one character. For example, ch sorts as a single letter, following cz in the sort order. Note how the rules for the two collators differ:
 
-```
+```text
 String englishRules = (
     "< a,A < b,B < c,C < d,D < e,E < f,F " +
     "< g,G < h,H < i,I < j,J < k,K < l,L " +
@@ -61,7 +62,7 @@ String traditionalSpanishRules = (
 
 The following lines of code create the collators and invoke the sort routine:
 
-```
+```java
 try {
     RuleBasedCollator enCollator = new RuleBasedCollator(englishRules);
     RuleBasedCollator spCollator =
@@ -76,11 +77,11 @@ try {
 } catch (ParseException pe) {
     System.out.println("Parse exception for rules");
 }
-```
+```java
 
 The sort routine, called `sortStrings`, is generic. It will sort any array of words according to the rules of any `Collator` object:
 
-```
+```java
 public static void sortStrings(Collator collator, String[] words) {
     String tmp;
     for (int i = 0; i < words.length; i++) {
@@ -97,7 +98,7 @@ public static void sortStrings(Collator collator, String[] words) {
 
 When sorted with the English collation rules, the array of words is as follows:
 
-```
+```text
 chalina
 curioso
 llama
@@ -106,7 +107,7 @@ luz
 
 Compare the preceding list with the following, which is sorted according to the traditional Spanish rules of collation:
 
-```
+```text
 curioso
 chalina
 luz

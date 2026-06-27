@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Operators (The Java™ Tutorials > Learning the Java Language >
+            Language Basics)
 
 Documentation
 
@@ -24,16 +26,16 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Answers to Questions
 
 1. Consider the following code snippet:
-	```
+```text
 	arrayOfInts[j] > arrayOfInts[j+1]
-	```
+```
 	**Question:** What operators does the code contain?  
 	**Answer:** `>`, `+`
 2. Consider the following code snippet:
-	```
+```text
 	int i = 10;
 	int n = i++%5;
-	```
+```
 	1. **Question:** What are the values of `i` and `n` after the code is executed?  
 		**Answer:** `i` is 11, and `n` is 0.
 		2. **Question:** What are the final values of `i` and `n` if instead of using the postfix increment operator (`i++`), you use the prefix version (`++i)`)?  
@@ -48,7 +50,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Exercises
 
 1. Change the following program to use compound assignments:
-	```
+	```java
 	class ArithmeticDemo {
 	    public static void main (String[] args){
 	          
@@ -65,9 +67,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println(result);
 	    }
 	}
-	```
+```java
 	Here is one solution:
-	```
+	```java
 	class ArithmeticDemo {
 	    public static void main (String[] args){
 	        int result = 3;
@@ -83,9 +85,9 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println(result);
 	    }
 	}
-	```
+```
 2. In the following program, explain why the value "6" is printed twice in a row:
-	```
+	```java
 	class PrePostDemo {
 	    public static void main(String[] args){
 	        int i = 3;

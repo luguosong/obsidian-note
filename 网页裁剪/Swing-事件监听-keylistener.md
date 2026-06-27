@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Key Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -117,7 +119,7 @@ To make a component get the keyboard focus, follow these steps:
 
 The focus subsystem consumes focus traversal keys, such as Tab and Shift Tab. If you need to prevent the focus traversal keys from being consumed, you can call
 
-```
+```text
 component.setFocusTraversalKeysEnabled(false)
 ```
 
@@ -168,7 +170,7 @@ The following example demonstrates key events. It consists of a text field that 
 
 You can find the example's code in [`KeyEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/KeyEventDemoProject/src/events/KeyEventDemo.java). Here is the demo's key event handling code:
 
-```
+```sql
 public class KeyEventDemo ...  implements KeyListener ... {
     ...//where initialization occurs:
         typingArea = new JTextField(20);

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Inheritance (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)
 
 Documentation
 
@@ -51,7 +53,7 @@ At the top of the hierarchy, `Object` is the most general of all classes. Classe
 
 Here is the sample code for a possible implementation of a `Bicycle` class that was presented in the Classes and Objects lesson:
 
-```
+```java
 public class Bicycle {
         
     // the Bicycle class has three fields
@@ -84,11 +86,11 @@ public class Bicycle {
     }
         
 }
-```
+```java
 
 A class declaration for a `MountainBike` class that is a subclass of `Bicycle` might look like this:
 
-```
+```java
 public class MountainBike extends Bicycle {
         
     // the MountainBike subclass adds one field
@@ -137,7 +139,7 @@ A nested class has access to all the private members of its enclosing class—bo
 
 We have seen that an object is of the data type of the class from which it was instantiated. For example, if we write
 
-```
+```java
 public MountainBike myBike = new MountainBike();
 ```
 
@@ -149,7 +151,7 @@ The reverse is not necessarily true: a `Bicycle` *may be* a `MountainBike`, but 
 
 *Casting* shows the use of an object of one type in place of another type, among the objects permitted by inheritance and implementations. For example, if we write
 
-```
+```text
 Object obj = new MountainBike();
 ```
 
@@ -157,13 +159,13 @@ then `obj` is both an `Object` and a `MountainBike` (until such time as `obj` is
 
 If, on the other hand, we write
 
-```
+```text
 MountainBike myBike = obj;
 ```
 
 we would get a compile-time error because `obj` is not known to the compiler to be a `MountainBike`. However, we can *tell* the compiler that we promise to assign a `MountainBike` to `obj` by *explicit casting:*
 
-```
+```text
 MountainBike myBike = (MountainBike)obj;
 ```
 
@@ -173,7 +175,7 @@ This cast inserts a runtime check that `obj` is assigned a `MountainBike` so tha
 
 **Note:** You can make a logical test as to the type of a particular object using the `instanceof` operator. This can save you from a runtime error owing to an improper cast. For example:
 
-```
+```text
 if (obj instanceof MountainBike) {
     MountainBike myBike = (MountainBike)obj;
 }

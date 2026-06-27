@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Deploying With the Applet Tag (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -83,7 +85,7 @@ Follow the steps described in the [[部署-Applet-deployingApplet|Deploying An A
 
 The [`AppletPage_WithAppletTag.html`](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/dist/applet_ComponentArch_DynamicTreeDemo/AppletPage_WithAppletTagUsingJNLP.html) page deploys the Dynamic Tree Demo applet with an `<applet>` tag that has been manually coded (meaning, the applet is not deployed using the Deployment Toolkit which automatically generates the required HTML). The applet is still launched using JNLP. The JNLP file is specified in the `jnlp_href` attribute.
 
-```
+```text
 <applet code = 'appletComponentArch.DynamicTreeApplet' 
         jnlp_href = 'dynamictree_applet.jnlp'
         width = 300

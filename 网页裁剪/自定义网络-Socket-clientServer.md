@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Writing the Server Side of a Socket (The Java™ Tutorials >        
+            Custom Networking > All About Sockets)
 
 Documentation
 
@@ -46,13 +48,13 @@ This section walks through the code that implements the Knock Knock server progr
 
 The server program begins by creating a new [`ServerSocket`](https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html) object to listen on a specific port (see the statement in bold in the following code segment). When running this server, choose a port that is not already dedicated to some other service. For example, this command starts the server program `KnockKnockServer` so that it listens on port 4444:
 
-```
+```text
 java KnockKnockServer 4444
 ```
 
 The server program creates the `ServerSocket` object in a `try` -with-resources statement:
 
-```
+```text
 int portNumber = Integer.parseInt(args[0]);
 
 try ( 
@@ -69,7 +71,7 @@ try (
 
 If the server successfully binds to its port, then the `ServerSocket` object is successfully created and the server continues to the next step—accepting a connection from a client (the next statement in the `try` -with-resources statement):
 
-```
+```text
 clientSocket = serverSocket.accept();
 ```
 
@@ -77,7 +79,7 @@ The [`accept`](https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.h
 
 After the server successfully establishes a connection with a client, it communicates with the client using this code:
 
-```
+```bash
 try (
     // ...
     PrintWriter out =
@@ -98,7 +100,6 @@ try (
         if (outputLine.equals("Bye."))
             break;
     }
-```
 
 This code does the following:
 
@@ -128,7 +129,6 @@ The [`KnockKnockClient`](https://docs.oracle.com/javase/tutorial/networking/sock
 
 When you start the client program, the server should already be running and listening to the port, waiting for a client to request a connection. So, the first thing the client program does is to open a socket that is connected to the server running on the specified host name and port:
 
-```
 String hostName = args[0];
 int portNumber = Integer.parseInt(args[1]);
 
@@ -138,7 +138,7 @@ try (
     BufferedReader in = new BufferedReader(
         new InputStreamReader(kkSocket.getInputStream()));
 )
-```
+```text
 
 When creating its socket, the `KnockKnockClient` example uses the host name of the first command-line argument, the name of the computer on your network that is running the server program `KnockKnockServer`.
 
@@ -146,13 +146,13 @@ The `KnockKnockClient` example uses the second command-line argument as the port
 
 ```
 java KnockKnockClient knockknockserver.example.com 4444
-```
+```text
 
 The client's socket is bound to any available *local port* —a port on the client computer. Remember that the server gets a new socket as well. If you run the `KnockKnockClient` example with the command-line arguments in the previous example, then this socket is bound to local port number 4444 on the computer from which you ran the `KnockKnockClient` example. The server's socket and the client's socket are connected.
 
 Next comes the `while` loop that implements the communication between the client and the server. The server speaks first, so the client must listen first. The client does this by reading from the input stream attached to the socket. If the server does speak, it says "Bye." and the client exits the loop. Otherwise, the client displays the text to the standard output and then reads the response from the user, who types into the standard input. After the user types a carriage return, the client sends the text to the server through the output stream attached to the socket.
 
-```
+```java
 while ((fromServer = in.readLine()) != null) {
     System.out.println("Server: " + fromServer);
     if (fromServer.equals("Bye."))
@@ -174,13 +174,13 @@ The client automatically closes its input and output streams and the socket beca
 
 You must start the server program first. To do this, run the server program using the Java interpreter, just as you would any other Java application. Specify as a command-line argument the port number on which the server program listens:
 
-```
+```text
 java KnockKnockServer 4444
 ```
 
 Next, run the client program. Note that you can run the client on any computer on your network; it does not have to run on the same computer as the server. Specify as command-line arguments the host name and the port number of the computer running the `KnockKnockServer` server program:
 
-```
+```text
 java KnockKnockClient knockknockserver.example.com 4444
 ```
 
@@ -190,34 +190,34 @@ If you try to start a second client while the first client is connected to the s
 
 When you successfully get a connection between the client and server, you will see the following text displayed on your screen:
 
-```
+```text
 Server: Knock! Knock!
 ```
 
 Now, you must respond with:
 
-```
+```text
 Who's there?
 ```
 
 The client echoes what you type and sends the text to the server. The server responds with the first line of one of the many Knock Knock jokes in its repertoire. Now your screen should contain this (the text you typed is in bold):
 
-```
+```yaml
 Server: Knock! Knock!
 Who's there?
 Client: Who's there?
 Server: Turnip
-```
+```text
 
 Now, you respond with:
 
 ```
 Turnip who?
-```
+```text
 
 Again, the client echoes what you type and sends the text to the server. The server responds with the punch line. Now your screen should contain this:
 
-```
+```yaml
 Server: Knock! Knock!
 Who's there?
 Client: Who's there?
@@ -231,13 +231,13 @@ If you want to hear another joke, type **y**; if not, type **n**. If you type **
 
 If at any point you make a typing mistake, the `KnockKnockServer` object catches it and the server responds with a message similar to this:
 
-```
+```text
 Server: You're supposed to say "Who's there?"!
 ```
 
 The server then starts the joke over again:
 
-```
+```text
 Server: Try again. Knock! Knock!
 ```
 
@@ -249,7 +249,7 @@ To keep the `KnockKnockServer` example simple, we designed it to listen for and 
 
 The basic flow of logic in such a server is this:
 
-```
+```sql
 while (true) {
     accept a connection;
     create a thread to deal with the client;

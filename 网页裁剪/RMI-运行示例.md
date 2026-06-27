@@ -8,6 +8,7 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# RMI-运行示例
 
 Documentation
 
@@ -40,7 +41,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The server and client programs run with a security manager installed. When you run either program, you need to specify a security policy file so that the code is granted the security permissions it needs to run. Here is an example policy file, [`server.policy`](https://docs.oracle.com/javase/tutorial/rmi/examples/server.policy) to use with the server program running on Solaris or Linux:
 
-```
+```text
 grant codeBase "file:///home/ann/src/" {
     permission java.security.AllPermission;
 };
@@ -48,7 +49,7 @@ grant codeBase "file:///home/ann/src/" {
 
 Here is an example policy file, [`client.policy`](https://docs.oracle.com/javase/tutorial/rmi/examples/client.policy) to use with the client program running on Solaris or Linux:
 
-```
+```text
 grant codeBase "file:///home/jones/src/" {
     permission java.security.AllPermission;
 };
@@ -56,7 +57,7 @@ grant codeBase "file:///home/jones/src/" {
 
 Here is an example `server.policy` file for Windows:
 
-```
+```text
 grant codeBase "file://C:/home/ann/src/" {
     permission java.security.AllPermission;
 };
@@ -64,7 +65,7 @@ grant codeBase "file://C:/home/ann/src/" {
 
 Here is an example `client.policy` file for Windows:
 
-```
+```text
 grant codeBase "file://C:/home/jones/src/" {
     permission java.security.AllPermission;
 };
@@ -88,19 +89,19 @@ To start the registry on the server, execute the `rmiregistry` command. This com
 
 **Microsoft Windows**:
 
-```
+```text
 javaw rmiregistry -J-Djava.rmi.server.codebase=file://C:/home/ann/public_html/classes/
 ```
 
 **Solaris or Linux**:
 
-```
+```text
 rmiregistry -J-Djava.rmi.server.codebase=file:///home/ann/public_html/classes/ &
 ```
 
 As these examples demonstrate, when you start the registry on the server, you must specify where the server's classes are network accessible with the `java.rmi.server.codebase` property. You can also use an HTTP URL instead:
 
-```
+```text
 javaw rmiregistry -J-Djava.rmi.server.codebase=http://mycomputer.example.com/~ann/classes/
 ```
 
@@ -110,13 +111,13 @@ By default, the registry runs on port 1099. To start the registry on a different
 
 **Microsoft Windows**:
 
-```
+```text
 javaw rmiregistry -J-Djava.rmi.server.codebase=file://C:/home/ann/public_html/classes/ 2001
 ```
 
 **Solaris or Linux**:
 
-```
+```text
 rmiregistry -J-Djava.rmi.server.codebase=file:///home/ann/public_html/classes/ 2001 &
 ```
 
@@ -130,7 +131,7 @@ java -cp C:\home\ann\src;C:\home\ann\public_html\classes\compute.jar ^
      -Djava.rmi.server.hostname=mycomputer.example.com ^
      -Djava.security.policy=server.policy ^
         engine.ComputeEngine
-```
+```text
 
 **Solaris or Linux**:
 
@@ -162,7 +163,7 @@ Start the client on another host (a host named `mysecondcomputer`, for example) 
 
 **Microsoft Windows**:
 
-```
+```text
 java -cp C:\home\jones\src;C:\home\jones\public_html\classes\compute.jar ^
      -Djava.security.policy=client.policy ^
         client.ComputePi mycomputer.example.com 45
@@ -174,13 +175,13 @@ java -cp C:\home\jones\src;C:\home\jones\public_html\classes\compute.jar ^
 java -cp /home/jones/src:/home/jones/public_html/classes/compute.jar \
      -Djava.security.policy=client.policy \
         client.ComputePi mycomputer.example.com 45
-```
+```text
 
 Note that the class path is set on the command line so that the interpreter can find the client classes and the JAR file containing the interfaces.
 
 After you start the client, the following output is displayed:
 
-```
+```text
 3.141592653589793238462643383279502884197169399
 ```
 

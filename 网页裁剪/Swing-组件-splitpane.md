@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Split Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -124,7 +126,7 @@ Here's a picture of an application that uses a split pane to display a list and 
 
 Below is the code from `SplitPaneDemo` that creates and sets up the split pane.
 
-```
+```text
 //Create a split pane with the two scroll panes in it.
 splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
                            listScrollPane, pictureScrollPane);
@@ -194,39 +196,37 @@ The user can drag the divider to any position *as long as* neither contained com
 Now that you know the factors that affect a split pane's size and divider location, here are some rules for making them work well:
 
 - To ensure that the divider can be dragged when the split pane is at its preferred size, make sure the minimum size of one or both contained components is smaller than the contained component's preferred size. You can set the minimum size of a component either by invoking `setMinimumSize` on it or by overriding its `getMinimumSize` method. For example, if you want the user to be able to drag the divider all the way to both sides:
-	```
+```text
 	Dimension minimumSize = new Dimension(0, 0);
 	leftComponent.setMinimumSize(minimumSize);
 	rightComponent.setMinimumSize(minimumSize);
-	```
+```
 - To guarantee that both contained components appear, make sure that either the split pane is initially at or above its preferred size, or the minimum sizes of the contained components are greater than zero.
 	This should usually happen if the splitpane is given its preferred size, which depends upon the layout manager containing the split pane. Another option is to explicitly set a preferred size on the split pane that is larger than the size of the contained components.
 - If you want the bottom or right component to stay the same size and the top or left component to be flexible when the split pane gets bigger, set the resize weight to 1.0. You can do this by invoking `setResizeWeight`:
-	```
+```text
 	splitPane.setResizeWeight(1.0);
-	```
+```
 - If you want both halves of the split pane to share in the split pane's extra or removed space, set the resize weight to 0.5:
-	```
+```text
 	splitPane.setResizeWeight(0.5);
-	```
+```
 - Make sure each component contained by a split pane has a reasonable preferred size. If the component is a panel that uses a layout manager, you can generally just use the value it returns. If the component is a scroll pane, you have a few choices. You can invoke the `setPreferredSize` method on the scroll pane, invoke the appropriate method on the component in the scroll pane (such as the `setVisibleRowCount` method for `JList` or `JTree`).
 - Make sure each component contained by a split pane can display itself reasonably in varying amounts of space. For example, panels that contain multiple components should use layout managers that use extra space in a reasonable way.
 - If you want to set the size of contained components to something other than their preferred sizes, use the `setDividerLocation` method. For example, to make the left component 150 pixels wide:
-	```
+```text
 	splitPane.setDividerLocation(150 + splitPane.getInsets().left);
-	```
+```
 	Although the split pane does its best to honor the initial divider location (150 in this case), once the user drags the divider it may no longer be possible to drag to the programmatically specified size.
 	To make the right component 150 pixels wide:
-	```
 	splitPane.setDividerLocation(splitPane.getSize().width
 	                             - splitPane.getInsets().right
 	                             - splitPane.getDividerSize()
 	                             - 150);
-	```
 	If the split pane is already visible, you can set the divider location as a percentage of the split pane. For example, to make 25% of the space go to left/top:
-	```
+```text
 	splitPane.setDividerLocation(0.25);
-	```
+```
 	Note that this is implemented in terms of the current size and is therefore really only useful if the split pane is visible.
 - To lay out the split pane as if it just came up, likely repositioning the divider in the process, invoke `resetToPreferredSizes()` on the split pane.
 	---
@@ -297,7 +297,6 @@ public class SplitPaneDividerDemo extends JPanel ... {
     }
     ...
 }
-```
 
 The code is fairly self explanatory, except perhaps for the call to `setContinuousLayout`. Setting the *continuousLayout* property to true makes the split pane's contents be painted continuously while the user is moving the divider. Continuous layout is not on, by default, because it can have a negative performance impact. However, it makes sense to use it in this demo, when having the split pane's components as up-to-date as possible can improve the user experience.
 
@@ -313,7 +312,6 @@ If the top portion of the split pane looks familiar to you, it is because the pr
 
 Here's the interesting part of the code, which you can find in [`SplitPaneDemo2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/SplitPaneDemo2Project/src/components/SplitPaneDemo2.java):
 
-```
 //Create an instance of SplitPaneDemo
 SplitPaneDemo splitPaneDemo = new SplitPaneDemo();
 JSplitPane top = splitPaneDemo.getSplitPane();

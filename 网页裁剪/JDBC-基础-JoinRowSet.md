@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using JoinRowSet Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -99,7 +101,6 @@ try (CachedRowSet coffees = factory.createCachedRowSet();
   jrs.addRowSet(suppliers, "SUP_ID");
 
   // ...
-```
 
 The variable `jrs` holds nothing until `RowSet` objects are added to it.
 
@@ -116,7 +117,6 @@ String query =
     "WHERE SUPPLIERS.SUP_NAME = Acme.Inc. " +
     "and " +
     "SUPPLIERS.SUP_ID = COFFEES.SUP_ID";
-```
 
 In the world of `RowSet` technology, you can accomplish the same result without having to send a query to the data source. You can add `RowSet` objects containing the data in the two tables to a `JoinRowSet` object. Then, because all the pertinent data is in the `JoinRowSet` object, you can perform a query on it to get the desired data.
 
@@ -138,7 +138,6 @@ try (CachedRowSet coffees = factory.createCachedRowSet();
   suppliers.setUrl(settings.urlString);
   suppliers.execute();  
   // ...
-```
 
 ## Managing Match Columns
 
@@ -146,9 +145,8 @@ Looking at the `SUPPLIERS` table, you can see that Acme, Inc. has an identificat
 
 Each `RowSet` object added to a `JoinRowSet` object must have a match column, the column on which the `JOIN` is based. There are two ways to set the match column for a `RowSet` object. The first way is to pass the match column to the `JoinRowSet` method `addRowSet`, as shown in the following line of code:
 
-```
 jrs.addRowSet(coffees, "SUP_ID");
-```
+```text
 
 This line of code adds the `coffees` `CachedRowSet` to the `jrs` object and sets the `SUP_ID` column of `coffees` as the match column.
 
@@ -156,7 +154,7 @@ At this point, `jrs` has only `coffees` in it. The next `RowSet` object added to
 
 ```
 jrs.addRowSet(suppliers, "SUP_ID");
-```
+```text
 
 Now `jrs` contains a `JOIN` between `coffees` and `suppliers` from which the owner can get the names of the coffees supplied by Acme, Inc. Because the code did not set the type of `JOIN`, `jrs` holds an inner JOIN, which is the default. In other words, a row in `jrs` combines a row in `coffees` and a row in `suppliers`. It holds the columns in `coffees` plus the columns in `suppliers` for rows in which the value in the `COFFEES.SUP_ID` column matches the value in `SUPPLIERS.SUP_ID`. The following code prints out the names of coffees supplied by Acme, Inc., where the `String` `supplierName` is equal to `Acme, Inc.` Note that this is possible because the column `SUP_NAME`, which is from `suppliers`, and `COF_NAME`, which is from `coffees`, are now both included in the `JoinRowSet` object `jrs`.
 
@@ -172,7 +170,7 @@ while (jrs.next()) {
 
 This will produce output similar to the following:
 
-```
+```text
 Coffees bought from Acme, Inc.:
      Colombian
      Colombian_Decaf

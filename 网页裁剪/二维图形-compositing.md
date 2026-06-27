@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Compositing Graphics (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)
 
 Documentation
 
@@ -61,20 +63,20 @@ This program illustrates the effects of various compositing style and alpha comb
 
 A new `AlphaComposite` object *ac* is constructed by calling `AlphaComposite.getInstance` and specifying the desired compositing rule.
 
-```
+```text
 AlphaComposite ac =
   AlphaComposite.getInstance(AlphaComposite.SRC);
 ```
 
 When a different compositing rule or alpha value is selected, `AlphaComposite.getInstance` is called again, and the new `AlphaComposite` is assigned to *ac*. The selected alpha is applied in addition to the per-pixel alpha value and is passed as a second parameter to `AlphaComposite`.`getInstance`.
 
-```
+```text
 ac = AlphaComposite.getInstance(getRule(rule), alpha);
 ```
 
 The composite attribute is modified by passing the `AlphaComposite` object to `Graphics 2D` `setComposite`. The objects are rendered into a `BufferedImage` and are later copied to the screen, so the composite attribute is set on the `Graphics2D` context for the `BufferedImage`:
 
-```
+```text
 BufferedImage buffImg = new BufferedImage(w, h,
                         BufferedImage.TYPE_INT_ARGB);
 Graphics2D gbi = buffImg.createGraphics();

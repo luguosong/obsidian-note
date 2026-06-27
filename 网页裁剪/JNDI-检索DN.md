@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Retrieving Distinguished Name (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)
 
 Documentation
 
@@ -56,11 +58,9 @@ public static void printSearchEnumeration(NamingEnumeration retEnum) {
         e.printStackTrace();
     }
 }
-```
 
 The complete example can be obtained from [`here`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/FullName.java). This program generates the output as below:
 
-```
 >>cn=Jon Ruiz, ou=People, o=JNDITutorial
 >>cn=Scott Seligman, ou=People, o=JNDITutorial
 >>cn=Samuel Clemens, ou=People, o=JNDITutorial

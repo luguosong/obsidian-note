@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Creating and Using Packages (The Java™ Tutorials >        
+            Learning the Java Language > Packages)
 
 Documentation
 
@@ -45,7 +47,7 @@ The types that are part of the Java platform are members of various packages tha
 
 Suppose you write a group of classes that represent graphic objects, such as circles, rectangles, lines, and points. You also write an interface, `Draggable`, that classes implement if they can be dragged with the mouse.
 
-```
+```java
 //in the Draggable.java file
 public interface Draggable {
     ...

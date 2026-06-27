@@ -1,13 +1,14 @@
 ---
 分类:
   - "网页裁剪"
-标题: "locale"
+标题: "BreakIterator 与区域设置"
 描述: "This internationalization Java tutorial describes setting locale, isolating locale-specific data, formatting data, internationalized domain name and resource identifier"
 来源: "https://docs.oracle.com/javase/tutorial/i18n/text/locale.html"
 发布者: "Oracle-"
 发布时间:
 创建时间: "2026-06-27T18:30:00+08:00"
 ---
+# BreakIterator 与区域设置
 
 Documentation
 
@@ -24,13 +25,13 @@ Collation rules define the sort sequence of strings. These rules vary with local
 
 To instantiate the `Collator` class invoke the `getInstance` method. Usually, you create a `Collator` for the default `Locale`, as in the following example:
 
-```
+```text
 Collator myDefaultCollator = Collator.getInstance();
 ```
 
 You can also specify a particular `Locale` when you create a `Collator`, as follows:
 
-```
+```text
 Collator myFrenchCollator = Collator.getInstance(Locale.FRENCH);
 ```
 
@@ -46,14 +47,14 @@ You invoke the `Collator.compare` method to perform a locale-independent string 
 
 You use the `compare` method when performing sort operations. The sample program called [`CollatorDemo`](https://docs.oracle.com/javase/tutorial/i18n/text/examples/CollatorDemo.java) uses the `compare` method to sort an array of English and French words. This program shows what can happen when you sort the same list of words with two different collators:
 
-```
+```text
 Collator fr_FRCollator = Collator.getInstance(new Locale("fr","FR"));
 Collator en_USCollator = Collator.getInstance(new Locale("en","US"));
 ```
 
 The method for sorting, called `sortStrings`, can be used with any `Collator`. Notice that the `sortStrings` method invokes the `compare` method:
 
-```
+```java
 public static void sortStrings(Collator collator, String[] words) {
     String tmp;
     for (int i = 0; i < words.length; i++) {
@@ -66,20 +67,20 @@ public static void sortStrings(Collator collator, String[] words) {
         }
     }
 }
-```
+```text
 
 The English `Collator` sorts the words as follows:
 
-```
+```text
 peach
 péché
 pêche
 sin
-```
+```text
 
 According to the collation rules of the French language, the preceding list is in the wrong order. In French péché should follow pêche in a sorted list. The French `Collator` sorts the array of words correctly, as follows:
 
-```
+```text
 peach
 pêche
 péché

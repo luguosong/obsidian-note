@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Attribute Names (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)
 
 Documentation
 
@@ -45,7 +47,7 @@ When accessing directories that support synonyms for attribute names, you must b
 
 An extension to the LDAP v3 ( [RFC 2596](http://www.ietf.org/rfc/rfc2596.txt)) allows you to specify a language code along with an attribute name. This resembles attribute subclassing in that one attribute name can represent several different attributes. An example is a "description" attribute that has two language variations:
 
-```
+```text
 description: software
 description;lang-en: software products
 description;lang-de: Softwareprodukte

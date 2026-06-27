@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use GroupLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -64,7 +66,7 @@ We will express this layout using groups. Starting with the horizontal axis it i
 
 In pseudo code, the layout specification might look like this (the real code is in the *Writing Code* section below):
 
-```
+```text
 horizontal layout = sequential group { c1, c2, c3 }
 vertical layout = parallel group (BASELINE) { c1, c2, c3 }
 ```
@@ -81,7 +83,7 @@ Along the horizontal axis the new component occupies the same horizontal space a
 
 In pseudo code, the layout specification now looks like this:
 
-```
+```text
 horizontal layout = sequential group { c1, c2, parallel group (LEFT) { c3, c4 } }
 vertical layout = sequential group { parallel group (BASELINE) { c1, c2, c3 }, c4 }
 ```
@@ -106,21 +108,21 @@ Now, let us take a look at the actual code to create the layout described above.
 
 Let us assume we have a container named `panel` and the same four components already presented (`c1`, `c2`, `c3`, and `c4`). First, we create a new `GroupLayout` object and associate it with the panel:
 
-```
+```text
 GroupLayout layout = new GroupLayout(panel);
  panel.setLayout(layout);
 ```
 
 We specify automatic gap insertion:
 
-```
+```text
 layout.setAutoCreateGaps(true);
 layout.setAutoCreateContainerGaps(true);
 ```
 
 Then, we define the groups and add the components. We establish a root group for each dimension using the `setHorizontalGroup` and `setVerticalGroup` methods. Groups are created via `createSequentialGroup` and `createParallelGroup` methods. Components are added to groups by using the `addComponent` method.
 
-```
+```text
 layout.setHorizontalGroup(
    layout.createSequentialGroup()
       .addComponent(c1)
@@ -166,15 +168,15 @@ If not specified explicitly, the layout asks the component for its default sizes
 `GroupLayout` defines constants that provide precise control over resize behavior. They can be used as parameters in the `addComponent(Component comp, int min, int pref, int max)` method. Here are two examples:
 
 1. To force a component to be resizable (allow shrinking and growing):
-	```
+```text
 	group.addComponent(component, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE) ...
-	```
+```
 	This allows the component to resize between zero size (minimum) to any size (`Short.MAX_VALUE` as maximum size means "infinite"). If we wanted the component not to shrink below its default minimum size, we would use `GroupLayout.DEFAULT_SIZE` instead of `0` in the second parameter.
 2. To make a component fixed size (suppress resizing):
-	```
+```text
 	group.addComponent(component, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 	          GroupLayout.PREFERRED_SIZE) ...
-	```
+```
 
 In these examples the initial size of the component is not altered, its default size is the component's preferred size. If we wanted a specific size for the component, we would specify it in the second parameter instead of using `GroupLayout.DEFAULT_SIZE`.
 
@@ -182,7 +184,7 @@ Resizable gaps
 
 Specifying size and resizability applies to gaps as well, including the preferred ones. For example, you can specify a preferred gap between two components that acts like a *spring* pushing the components away from each other (to the opposite sides of the container). The preferred distance of the two components is only used as the minimum size of the gap. See the following snippet:
 
-```
+```text
 layout.createSequentialGroup()
     .addComponent(c1)
     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
@@ -196,7 +198,7 @@ Resizable elements placed in a parallel group are stretched to fill the space of
 
 Let us try to achieve the same size for two components from our example (`c3` and `c4` in the horizontal dimension):
 
-```
+```text
 layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
   .addComponent(c3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
   .addComponent(c4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE);
@@ -219,7 +221,7 @@ The answer is: because of platform and localization independence. Otherwise we w
 
 The previous case is special because the components are in the same parallel group. But what if we wanted unrelated components to have the same size? Clearly, the same size cannot always be ensured by grouping. The OK and Cancel buttons in a row at the bottom of a dialog are a good example. For this purpose `GroupLayout` provides a `linkSize` method. This method allows the size of arbitrary components to be linked regardless of where they are placed. The resulting size of the linked components is set according to the largest component. For example:
 
-```
+```text
 layout.linkSize(SwingConstants.HORIZONTAL, c3, c4);
 ```
 

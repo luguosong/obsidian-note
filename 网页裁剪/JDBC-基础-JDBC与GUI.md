@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using JDBC with GUI API (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -114,7 +116,6 @@ public CoffeesTableModel(CachedRowSet rowSetArg)
     }
     this.coffeesRowSet.beforeFirst();
 }
-```
 
 The following describes the member variables initialized in this constructor:
 
@@ -142,7 +143,6 @@ The following methods have not been implemented because this sample does not all
 
 The methods `getColumnCount` and `getRowCount` return the value of the member variables `numcols` and `numrows`, respectively:
 
-```
 public int getColumnCount() {
     return numcols;
 }
@@ -150,23 +150,19 @@ public int getColumnCount() {
 public int getRowCount() {
     return numrows;
 }
-```
 
 ### Implementing getColumnClass
 
 The `getColumnClass` method returns the data type of the specified column. To keep things simple, this method returns the `String` class, thereby converting all data in the table into `String` objects. The `JTable` class uses this method to determine how to render data in the GUI application.
 
-```
 public Class getColumnClass(int column) {
     return String.class;
 }
-```
 
 ### Implementing getColumnName
 
 The `getColumnName` method returns the name of the specified column. The `JTable` class uses this method to label each of its columns.
 
-```
 public String getColumnName(int column) {
     try {
         return this.metadata.getColumnLabel(column + 1);
@@ -174,13 +170,11 @@ public String getColumnName(int column) {
         return e.toString();
     }
 }
-```
 
 ### Implementing getColumnAt
 
 The `getColumnAt` method retrieves the value at the specified row and column in the row set `coffeesRowSet`. The `JTable` class uses this method to populate its table. Note that SQL starts numbering its rows and columns at 1, but the `TableModel` interface starts at 0; this is the reason why the `rowIndex` and `columnIndex` values are incremented by 1.
 
-```
 public Object getValueAt(int rowIndex, int columnIndex) {
 
     try {
@@ -194,17 +188,15 @@ public Object getValueAt(int rowIndex, int columnIndex) {
         return e.toString();
     }
 }
-```
 
 ### Implementing isCellEditable
 
 Because this sample does not allow users to directly edit the contents of the table (rows are added by another window control), this method returns `false` regardless of the values of `rowIndex` and `columnIndex`:
 
-```
 public boolean isCellEditable(int rowIndex, int columnIndex) {
     return false;
 }
-```
+```java
 
 ## Implementing javax.sql.RowSetListener
 
@@ -246,7 +238,7 @@ This method updates the table in the GUI application.
 
 The constructor of the class `CoffeesFrame` initializes and lays out the Swing components. The following statement retrieves the contents of the `COFFEES` table, stores the contents in the `CachedRowSet` object `myCachedRowSet`, and initializes the `JTable` Swing component:
 
-```
+```text
 CachedRowSet myCachedRowSet = getContentsOfCoffeesTable();
 myCoffeesTableModel = new CoffeesTableModel(myCachedRowSet);
 myCoffeesTableModel.addEventHandlersToRowSet(this);
@@ -266,7 +258,7 @@ The statement `table.setModel(myCoffeesTableModel)` specifies that it use the `C
 
 The following statements specify that the `CoffeesFrame` class use the layout `GridBagLayout` to lay out its Swing components:
 
-```
+```text
 Container contentPane = getContentPane();
 contentPane.setComponentOrientation(
     ComponentOrientation.LEFT_TO_RIGHT);
@@ -318,7 +310,7 @@ button_ADD_ROW.addActionListener(
         }
     }
 });
-```
+```java
 
 When a user clicks this button, it performs the following:
 

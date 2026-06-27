@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Buttons, Check Boxes, and Radio Buttons (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -203,7 +205,6 @@ protected static ImageIcon createImageIcon(String path) {
     ...//error handling omitted for clarity...
     return new ImageIcon(imgURL);
 }
-```
 
 ## How to Use JButton Features
 
@@ -215,10 +216,9 @@ At most one button in a top-level container can be the default button. The defau
 
 You set the default button by invoking the `setDefaultButton` method on a top-level container's root pane. Here is the code that sets up the default button for the `ListDialog` example:
 
-```
 //In the constructor for a JDialog subclass:
 getRootPane().setDefaultButton(setButton);
-```
+```java
 
 The exact implementation of the default button feature depends on the look and feel. For example, in the Windows look and feel, the default button changes to whichever button has the focus, so that pressing Enter clicks the focused button. When no button has the focus, the button you originally specified as the default button becomes the default button again.
 

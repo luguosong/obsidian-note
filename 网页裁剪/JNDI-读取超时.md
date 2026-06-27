@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Setting Timeout for Ldap Operations (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)
 
 Documentation
 
@@ -74,11 +76,11 @@ try {
 } catch (NamingException e) {
    e.printStackTrace();
 }
-```
+```text
 
 The above program prints the stack trace below, as the server does not even respond to the LDAP bind request when an InitialDirContext is created. The client times out waiting for the server's response.
 
-```
+```text
 Server: Connection accepted
 javax.naming.NamingException: LDAP response read timed out, timeout used:1000ms.
 :

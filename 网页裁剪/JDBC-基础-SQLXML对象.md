@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using SQLXML Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -81,7 +83,7 @@ The following topics are covered:
 
 In the following excerpt, the method `Connection.createSQLXML` is used to create an empty `SQLXML` object. The `SQLXML.setString` method is used to write data to the `SQLXML` object that was created.
 
-```
+```text
 Connection con = DriverManager.getConnection(url, props);
 SQLXML xmlVal = con.createSQLXML();
 xmlVal.setString(val);
@@ -93,7 +95,7 @@ The `SQLXML` data type is treated similarly to the more primitive built-in types
 
 For example, the following excerpt retrieves a `SQLXML` value from the first column of the `ResultSet` *rs*:
 
-```
+```text
 SQLXML xmlVar = rs.getSQLXML(1);
 ```
 
@@ -103,14 +105,14 @@ SQLXML xmlVar = rs.getSQLXML(1);
 
 The `SQLXML` interface provides the `getString`, `getBinaryStream`, `getCharacterStream`, and `getSource` methods to access its internal content. The following excerpt retrieves the contents of an `SQLXML` object using the `getString` method:
 
-```
+```text
 SQLXML xmlVal= rs.getSQLXML(1);
 String val = xmlVal.getString();
 ```
 
 The `getBinaryStream` or `getCharacterStream` methods can be used to obtain an `InputStream` or a `Reader` object that can be passed directly to an XML parser. The following excerpt obtains an `InputStream` object from an `SQLXML` Object and then processes the stream using a DOM (Document Object Model) parser:
 
-```
+```text
 SQLXML sqlxml = rs.getSQLXML(column);
 InputStream binaryStream = sqlxml.getBinaryStream();
 DocumentBuilder parser = 
@@ -122,7 +124,7 @@ The `getSource` method returns a `javax.xml.transform.Source` object. Sources ar
 
 The following excerpt retrieves and parses the data from a `SQLXML` object using the `SAXSource` object returned by invoking the `getSource` method:
 
-```
+```text
 SQLXML xmlVal= rs.getSQLXML(1);
 SAXSource saxSource = sqlxml.getSource(SAXSource.class);
 XMLReader xmlReader = saxSource.getXMLReader();
@@ -136,7 +138,7 @@ A `SQLXML` object can be passed as an input parameter to a `PreparedStatement` o
 
 In the following excerpt, `authorData` is an instance of the `java.sql.SQLXML` interface whose data was initialized previously.
 
-```
+```text
 PreparedStatement pstmt = conn.prepareStatement("INSERT INTO bio " +
                               "(xmlData, authId) VALUES (?, ?)");
 pstmt.setSQLXML(1, authorData);
@@ -153,7 +155,7 @@ The `SQLXML` interface provides the methods `setString`, `setBinaryStream`, `set
 
 The following excerpt uses the method `setResult` to return a `SAXResult` object to populate a newly created `SQLXML` object:
 
-```
+```text
 SQLXML sqlxml = con.createSQLXML();
 SAXResult saxResult = sqlxml.setResult(SAXResult.class);
 ContentHandler contentHandler = saxResult.getXMLReader().getContentHandler();
@@ -166,7 +168,7 @@ contentHandler.endDocument();
 
 The following excerpt uses the `setCharacterStream` method to obtain a `java.io.Writer` object in order to initialize a `SQLXML` object:
 
-```
+```text
 SQLXML sqlxml = con.createSQLXML();
 Writer out= sqlxml.setCharacterStream();
 BufferedReader in = new BufferedReader(new FileReader("xml/foo.xml"));
@@ -186,7 +188,7 @@ If an attempt is made to call the `setString`, `setBinaryStream`, `setCharacterS
 
 In the following excerpt, the `method SQLXML.free` is called to release the resources held for a previously created `SQLXML` object.
 
-```
+```text
 SQLXML xmlVar = con.createSQLXML();
 xmlVar.setString(val);
 xmlVar.free();
@@ -209,17 +211,15 @@ create table RSS_FEEDS
     (RSS_NAME varchar(32) NOT NULL,
     RSS_FEED_XML longtext NOT NULL,
     PRIMARY KEY (RSS_NAME));
-```
 
 MySQL does not support the XML data type. Instead, this sample stores XML data in a column of type `LONGTEXT`, which is a `CLOB` SQL data type. MySQL has four `CLOB` data types; the `LONGTEXT` data type holds the greatest amount of characters among the four.
 
 The method [`RSSFeedsTable.addRSSFeed`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/RSSFeedsTable.java) adds an RSS feed to the `RSS_FEEDS` table. The first statements of this method converts the RSS feed (which is represented by an XML file in this sample) into an object of type `org.w3c.dom.Document`, which represents a DOM (Document Object Model) document. This class, along with classes and interfaces contained in the package `javax.xml`, contain methods that enable you to manipulate XML data content. For example, the following statement uses an XPath expression to retrieve the title of the RSS feed from the `Document` object:
 
-```
 Node titleElement =
     (Node)xPath.evaluate("/rss/channel/title[1]",
         doc, XPathConstants.NODE);
-```
+```text
 
 The XPath expression `/rss/channel/title[1]` retrieves the contents of the first `<title>` element. For the file `rss-the-coffee-break-blog.xml`, this is the string `The Coffee Break Blog`.
 
@@ -263,7 +263,6 @@ create table RSS_FEEDS
     (RSS_NAME varchar(32) NOT NULL,
     RSS_FEED_XML xml NOT NULL,
     PRIMARY KEY (RSS_NAME));
-```
 
 Java DB supports the XML data type, but it does not support the `SQLXML` JDBC data type. Consequently, you must convert any XML data to a character format, and then use the Java DB operator `XMLPARSE` to convert it to the XML data type.
 
@@ -273,13 +272,11 @@ The `RSSFeedsTable.addRSSFeed` method converts the RSS feed to a `String` object
 
 Java DB has an operator named `XMLPARSE` that parses a character string representation into a Java DB XML value, which is demonstrated by the following excerpt:
 
-```
 String insertRowQuery =
     "insert into RSS_FEEDS " +
     "(RSS_NAME, RSS_FEED_XML) values " +
     "(?, xmlparse(document cast " +
     "(? as clob) preserve whitespace))";
-```
 
 The `XMLPARSE` operator requires that you convert the character representation of the XML document into a string data type that Java DB recognizes. In this example, it converts it into a `CLOB` data type. See [[JDBC-基础-入门|Getting Started]] and the Java DB documentation for more information about Apache Xalan and Java DB requirements.
 
@@ -291,6 +288,5 @@ String query =
     "xmlserialize " +
     "(RSS_FEED_XML as clob) " +
     "from RSS_FEEDS";
-```
 
 As with the `XMLPARSE` operator, the `XMLSERIALIZE` operator requires that Apache Xalan be listed in your Java class path.

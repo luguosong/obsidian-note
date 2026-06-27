@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write an Internal Frame Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -98,7 +100,7 @@ The application shown in the following figure demonstrates internal frame events
 
 Here is the internal frame event handling code:
 
-```
+```java
 public class InternalFrameEventDemo ...
                      implements InternalFrameListener ... {
     ...

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Layout Managers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -39,13 +41,13 @@ As a rule, the only containers whose layout managers you need to worry about are
 
 You can set a panel's layout manager using the `JPanel` constructor. For example:
 
-```
+```text
 JPanel panel = new JPanel(new BorderLayout());
 ```
 
 After a container has been created, you can set its layout manager using the `setLayout` method. For example:
 
-```
+```text
 Container contentPane = frame.getContentPane();
 contentPane.setLayout(new FlowLayout());
 ```
@@ -56,7 +58,7 @@ Although we *strongly recommend* that you use layout managers, you can perform l
 
 When you add components to a panel or content pane, the arguments you specify to the `add` method depend on the layout manager that the panel or content pane is using. In fact, some layout managers do not even require you to add the component explicitly; for example, `GroupLayout`. For example, `BorderLayout` requires that you specify the area to which the component should be added (using one of the constants defined in `BorderLayout`) using code like this:
 
-```
+```text
 pane.add(aComponent, BorderLayout.PAGE_START);
 ```
 
@@ -70,7 +72,7 @@ For information about how to add components to a specific container, see the how
 
 Sometimes you need to customize the size hints that a component provides to its container's layout manager, so that the component will be laid out well. You can do this by specifying one or more of the minimum, preferred, and maximum sizes of the component. You can invoke the component's methods for setting size hints — `setMinimumSize`, `setPreferredSize`, and `setMaximumSize`. Or you can create a subclass of the component that overrides the appropriate getter methods — `getMinimumSize`, `getPreferredSize`, and `getMaximumSize`. Here is an example of making a component's maximum size unlimited:
 
-```
+```text
 component.setMaximumSize(new Dimension(Integer.MAX_VALUE,
                                        Integer.MAX_VALUE));
 ```
@@ -101,7 +103,7 @@ This website is written in English, with text that runs from left to right, and 
 
 To set a container's orientation, you can use either the `Component` -defined method [`setComponentOrientation`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#setComponentOrientation-java.awt.ComponentOrientation-) or, to set the orientation on the container's children as well, [`applyComponentOrientation`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html#applyComponentOrientation-java.awt.ComponentOrientation-). The argument to either method can be a constant such as `ComponentOrientation.RIGHT_TO_LEFT`, or it can be a call to the `ComponentOrientation` method [`getOrientation(Locale)`](https://docs.oracle.com/javase/8/docs/api/java/awt/ComponentOrientation.html#getOrientation-java.util.Locale-). For example, the following code causes all `JComponent` s to be initialized with an Arabic-language locale, and then sets the orientation of the content pane and all components inside it accordingly:
 
-```
+```text
 JComponent.setDefaultLocale(new Locale("ar"));
 JFrame frame = new JFrame();
 ...

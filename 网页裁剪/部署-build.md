@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Creating a JAR File (The Java™ Tutorials >        
+            Deployment > Packaging Programs in JAR Files)
 
 Documentation
 
@@ -65,7 +67,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The basic format of the command for creating a JAR file is:
 
-```
+```text
 jar cf jar-file input-file(s)
 ```
 
@@ -118,13 +120,13 @@ The audio and images subdirectories contain sound files and GIF images used by t
 
 You can obtain all these files from *jar/examples* directory when you download the entire Tutorial online. To package this demo into a single JAR file named TicTacToe.jar, you would run this command from inside the TicTacToe directory:
 
-```
+```text
 jar cvf TicTacToe.jar TicTacToe.class audio images
 ```
 
 The audio and images arguments represent directories, so the Jar tool will recursively place them and their contents in the JAR file. The generated JAR file TicTacToe.jar will be placed in the current directory. Because the command used the v option for verbose output, you would see something similar to this output when you run the command:
 
-```
+```yaml
 adding: TicTacToe.class (in=3825) (out=2222) (deflated 41%)
 adding: audio/ (in=0) (out=0) (stored 0%)
 adding: audio/beep.au (in=4032) (out=3572) (deflated 11%)
@@ -135,13 +137,12 @@ adding: audio/yahoo2.au (in=7463) (out=4607) (deflated 38%)
 adding: images/ (in=0) (out=0) (stored 0%)
 adding: images/cross.gif (in=157) (out=160) (deflated -1%)
 adding: images/not.gif (in=158) (out=161) (deflated -1%)
-```
+```text
 
 You can see from this output that the JAR file TicTacToe.jar is compressed. The Jar tool compresses files by default. You can turn off the compression feature by using the 0 (zero) option, so that the command would look like:
 
-```
 jar cvf0 TicTacToe.jar TicTacToe.class audio images
-```
+```text
 
 You might want to avoid compression, for example, to increase the speed with which a JAR file could be loaded by a browser. Uncompressed JAR files can generally be loaded more quickly than compressed files because the need to decompress the files during loading is eliminated. However, there is a tradeoff in that download time over a network may be longer for larger, uncompressed files.
 
@@ -149,7 +150,7 @@ The Jar tool will accept arguments that use the wildcard \* symbol. As long as t
 
 ```
 jar cvf TicTacToe.jar *
-```
+```text
 
 Though the verbose output doesn't indicate it, the Jar tool automatically adds a manifest file to the JAR archive with path name META-INF/MANIFEST.MF. See the [[部署-manifestindex|Working with Manifest Files: The Basics]] section for information about manifest files.
 
@@ -159,7 +160,7 @@ As an example, suppose you wanted to put audio files and gif images used by the 
 
 ```
 jar cf ImageAudio.jar -C images . -C audio .
-```
+```text
 
 The \-C images part of this command directs the Jar tool to go to the images directory, and the . following \-C images directs the Jar tool to archive all the contents of that directory. The \-C audio. part of the command then does the same with the audio directory. The resulting JAR file would have this table of contents:
 
@@ -172,13 +173,13 @@ ding.au
 return.au
 yahoo1.au
 yahoo2.au
-```
+```text
 
 By contrast, suppose that you used a command that did not employ the \-C option:
 
 ```
 jar cf ImageAudio.jar images audio
-```
+```text
 
 The resulting JAR file would have this table of contents:
 
@@ -191,4 +192,3 @@ audio/ding.au
 audio/return.au
 audio/yahoo1.au
 audio/yahoo2.au
-```

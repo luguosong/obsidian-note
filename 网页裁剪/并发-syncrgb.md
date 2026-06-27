@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# A Synchronized Class Example (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -23,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The class, [`` `SynchronizedRGB` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/SynchronizedRGB.java), defines objects that represent colors. Each object represents the color as three integers that stand for primary color values and a string that gives the name of the color.
 
-```
+```java
 public class SynchronizedRGB {
 
     // Values must be between 0 and 255.
@@ -81,21 +83,21 @@ public class SynchronizedRGB {
         name = "Inverse of " + name;
     }
 }
-```
+```text
 
 `SynchronizedRGB` must be used carefully to avoid being seen in an inconsistent state. Suppose, for example, a thread executes the following code:
 
-```
+```text
 SynchronizedRGB color =
     new SynchronizedRGB(0, 0, 0, "Pitch Black");
 ...
 int myColorInt = color.getRGB();      //Statement 1
 String myColorName = color.getName(); //Statement 2
-```
+```text
 
 If another thread invokes `color.set` after Statement 1 but before Statement 2, the value of `myColorInt` won't match the value of `myColorName`. To avoid this outcome, the two statements must be bound together:
 
-```
+```text
 synchronized (color) {
     int myColorInt = color.getRGB();
     String myColorName = color.getName();

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Tree Expansion Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -100,7 +102,7 @@ This example demonstrates a simple tree expansion listener. The text area at the
 
 The following code shows how the program handles expansion events. You can find the source code for this example in [`TreeExpandEventDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/TreeExpandEventDemoProject/src/events/TreeExpandEventDemo.java).
 
-```
+```java
 public class TreeExpandEventDemo ... {
     ...
     void saySomething(String eventDescription, TreeExpansionEvent e) {

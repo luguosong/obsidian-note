@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Putting It All Together (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)
 
 Documentation
 
@@ -25,7 +27,7 @@ The previous sections described how to construct the `try`, `catch`, and `finall
 
 When all the components are put together, the `writeList` method looks like the following.
 
-```
+```java
 public void writeList() {
     PrintWriter out = null;
 
@@ -53,7 +55,6 @@ public void writeList() {
         }
     }
 }
-```
 
 As mentioned previously, this method's `try` block has three different exit possibilities; here are two of them.
 
@@ -74,15 +75,14 @@ After the exception handler executes, the runtime system passes control to the `
 
 Here's the complete output from the `ListOfNumbers` program that appears when an `IOException` is thrown.
 
-```
 Entering try statement
 Caught IOException: OutFile.txt
 PrintWriter not open
-```
+```java
 
 The boldface code in the following listing shows the statements that get executed during this scenario:
 
-```
+```java
 public void writeList() {
    PrintWriter out = null;
 
@@ -116,14 +116,14 @@ In this scenario, all the statements within the scope of the `try` block execute
 
 Here is the output from the `ListOfNumbers` program when no exceptions are thrown.
 
-```
+```text
 Entering try statement
 Closing PrintWriter
 ```
 
 The boldface code in the following sample shows the statements that get executed during this scenario.
 
-```
+```java
 public void writeList() {
     PrintWriter out = null;
     try {

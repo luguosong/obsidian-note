@@ -8,6 +8,7 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Java核心类库-基本IO-命令行IO对象
 
 Documentation
 
@@ -94,7 +95,7 @@ You might expect the Standard Streams to be character streams, but, for historic
 
 By contrast, `System.in` is a byte stream with no character stream features. To use Standard Input as a character stream, wrap `System.in` in `InputStreamReader`.
 
-```
+```text
 InputStreamReader cin = new InputStreamReader(System.in);
 ```
 

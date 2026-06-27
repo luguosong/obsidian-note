@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Establishing a Connection (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -113,7 +115,6 @@ public Connection getConnection() throws SQLException {
     System.out.println("Connected to database");
     return conn;
 }
-```
 
 The method `DriverManager.getConnection` establishes a database connection. This method requires a database URL, which varies depending on your DBMS. The following are some examples of database URLs:
 
@@ -139,9 +140,7 @@ A database connection URL is a string that your DBMS JDBC driver uses to connect
 
 The following is the database connection URL syntax for Java DB:
 
-```
 jdbc:derby:[subsubprotocol:][databaseName][;attribute=value]*
-```
 
 - `*subsubprotocol*` specifies where Java DB should search for the database, either in a directory, in memory, in a class path, or in a JAR file. It is typically omitted.
 - `*databaseName*` is the name of the database to connect to.
@@ -157,7 +156,6 @@ See *Java DB Developer's Guide* and *Java DB Reference Manual* from [Java DB Tec
 
 The following is the database connection URL syntax for MySQL Connector/J:
 
-```
 jdbc:mysql://[host][,failoverhost...]
     [:port]/[database]
     [?propertyName1][=propertyValue1]

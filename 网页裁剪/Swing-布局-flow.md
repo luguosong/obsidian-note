@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use FlowLayout (The Java™ Tutorials >        
+            Creating a GUI With Swing > Laying Out Components Within a Container)
 
 Documentation
 
@@ -41,7 +43,7 @@ The `FlowLayout` class puts components in a row, sized at their preferred size. 
 
 The code snippet below creates a `FlowLayout` object and the components it manages.
 
-```
+```text
 FlowLayout experimentLayout = new FlowLayout();
 
 ...
@@ -57,7 +59,7 @@ FlowLayout experimentLayout = new FlowLayout();
 
 Select either the Left to Right or Right to Left option and click the Apply orientation button to set up the component's orientation. The following code snippet applies the Left to Right components orientation to the `experimentLayout`.
 
-```
+```text
 compsToExperiment.setComponentOrientation(
         ComponentOrientation.LEFT_TO_RIGHT);
 ```

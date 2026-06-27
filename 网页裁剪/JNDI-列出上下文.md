@@ -34,7 +34,6 @@ while (list.hasMore()) {
     NameClassPair nc = (NameClassPair)list.next();
     System.out.println(nc);
 }
-```
 
 Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/List.java) yields the following output.
 
@@ -61,7 +60,6 @@ cn=Spuds Mackenzie: javax.naming.directory.DirContext
 cn=John Fowler: javax.naming.directory.DirContext
 cn=Londo Mollari: javax.naming.directory.DirContext
 cn=Ted Geisel: javax.naming.directory.DirContext
-```
 
 ## The Context.listBindings() Method
 
@@ -74,7 +72,6 @@ while (bindings.hasMore()) {
     Binding bd = (Binding)bindings.next();
     System.out.println(bd.getName() + ": " + bd.getObject());
 }
-```
 
 Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/ListBindings.java) yields the following output.
 
@@ -101,7 +98,6 @@ cn=Spuds Mackenzie: com.sun.jndi.ldap.LdapCtx@26d4f1
 cn=John Fowler: com.sun.jndi.ldap.LdapCtx@1662dc8
 cn=Londo Mollari: com.sun.jndi.ldap.LdapCtx@147c5fc
 cn=Ted Geisel: com.sun.jndi.ldap.LdapCtx@3eca90
-```
 
 ## Terminating a NamingEnumeration
 

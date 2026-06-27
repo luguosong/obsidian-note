@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Text Areas (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -115,7 +117,7 @@ Click the Launch button to run TextDemo using [Java™ Web Start](http://www.ora
 
 You can find the entire code for this program in [`TextDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TextDemoProject/src/components/TextDemo.java). The following code creates and initializes the text area:
 
-```
+```text
 textArea = new JTextArea(5, 20);
 JScrollPane scrollPane = new JScrollPane(textArea); 
 textArea.setEditable(false);
@@ -129,7 +131,7 @@ Text areas are editable by default. The code `setEditable(false)` makes the text
 
 The following code adds text to the text area. Note that the text system uses the '\\n' character internally to represent newlines; for details, see the API documentation for [`DefaultEditorKit`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/DefaultEditorKit.html).
 
-```
+```java
 private final static String newline = "\n";
 ...
 textArea.append(text + newline);
@@ -137,7 +139,7 @@ textArea.append(text + newline);
 
 Unless the user has moved the caret (insertion point) by clicking or dragging in the text area, the text area automatically scrolls so that the appended text is visible. You can force the text area to scroll to the bottom by moving the caret to the end of the text area after the call to `append`:
 
-```
+```text
 textArea.setCaretPosition(textArea.getDocument().getLength());
 ```
 
@@ -147,7 +149,7 @@ You can customize text areas in several ways. For example, although a given text
 
 The following code taken from [`TextSamplerDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TextSamplerDemoProject/src/components/TextSamplerDemo.java) demonstrates initializing an editable text area. The text area uses the specified italic font, and wraps lines between words.
 
-```
+```text
 JTextArea textArea = new JTextArea(
     "This is an editable JTextArea. " +
     "A text area is a \"plain\" text component, " +
@@ -163,7 +165,7 @@ By default, a text area does not wrap lines that are too long for the display ar
 
 To provide scrolling capability, the example puts the text area in a scroll pane.
 
-```
+```text
 JScrollPane areaScrollPane = new JScrollPane(textArea);
 areaScrollPane.setVerticalScrollBarPolicy(
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -184,7 +186,7 @@ You can find the entire code for this program in [`TextAreaDemo.java`](https://d
 
 This example provides a scrolling capacity for the text area with the default scroll bar policy. By default, the vertical scroll bar only appears when the display area is entirely filled with text and there is no room to append new words. You can provide a scroll pane of this type with the following code:
 
-```
+```text
 textArea.setWrapStyleWord(true);
 jScrollPane1 = new JScrollPane(textArea);
 ```
@@ -195,7 +197,7 @@ Now explore how the word completion function is implemented. Type in a word like
 
 The following code adds a document listener to the text area's document:
 
-```
+```text
 textArea.getDocument().addDocumentListener(this);
 ```
 
@@ -218,7 +220,7 @@ if (n < 0 && -n <= words.size()) {
     // Nothing found
     mode = Mode.INSERT;
 }
-```
+```java
 
 The code shown in bold illustrates how the selection is created. The caret is first set to the end of the complete word, then moved back to a position after the last character typed. The `moveCaretPosition` method not only moves the caret to a new position but also selects the text between the two positions. The completion task is implemented with the following code:
 

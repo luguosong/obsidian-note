@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use File Choosers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -141,7 +143,7 @@ Here is a picture of an application called `FileChooserDemo` that brings up an o
 
 Bringing up a standard open dialog requires only two lines of code:
 
-```
+```java
 //Create a file chooser
 final JFileChooser fc = new JFileChooser();
 ...
@@ -170,7 +172,6 @@ public void actionPerformed(ActionEvent e) {
         }
    } ...
 }
-```
 
 The `show*Xxx*Dialog` methods return an integer that indicates whether the user selected a file. Depending on how you use a file chooser, it is often sufficient to check whether the return value is `APPROVE_OPTION` and then not to change any other value. To get the chosen file (or directory, if you set up the file chooser to allow directory selections), call the `getSelectedFile` method on the file chooser. This method returns an instance of [`File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html).
 
@@ -178,9 +179,7 @@ The example obtains the name of the file and uses it in the log message. You can
 
 The example program uses the same instance of the `JFileChooser` class to display a standard save dialog. This time the program calls `showSaveDialog`:
 
-```
 int returnVal = fc.showSaveDialog(FileChooserDemo.this);
-```
 
 By using the same file chooser instance to display its open and save dialogs, the program reaps the following benefits:
 
@@ -189,9 +188,7 @@ By using the same file chooser instance to display its open and save dialogs, th
 
 Finally, the example program has commented-out lines of code that let you change the file selection mode. For example, the following line of code makes the file chooser able to select only directories, and not files:
 
-```
 fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-```
 
 Another possible selection mode is `FILES_AND_DIRECTORIES`. The default is `FILES_ONLY`. The following picture shows an open dialog with the file selection mode set to `DIRECTORIES_ONLY`. Note that, in the Java look and feel at least, only directories are visible — not files.
 
@@ -223,10 +220,8 @@ As you have seen, the `JFileChooser` class provides the `showOpenDialog` method 
 
 The class has another method, `showDialog`, for displaying a file chooser for a custom task in a dialog. In the Java look and feel, the only difference between this dialog and the other file chooser dialogs is the title on the dialog window and the label on the approve button. Here is the code from `FileChooserDemo2` that brings up the file chooser dialog for the Attach task:
 
-```
 JFileChooser fc = new JFileChooser();
 int returnVal = fc.showDialog(FileChooserDemo2.this, "Attach");
-```
 
 The first argument to the `showDialog` method is the parent component for the dialog. The second argument is a `String` object that provides both the title for the dialog window and the label for the approve button.
 
@@ -250,15 +245,14 @@ The application determines which files are shown. Create a custom subclass of [`
 
 The file chooser GUI provides a list of filters that the user can choose from. When the user chooses a filter, the file chooser shows only those files accepted by that filter. `FileChooserDemo2` adds a custom file filter to the list of user-choosable filters:
 
-```
 fc.addChoosableFileFilter(new ImageFilter());
-```
+```text
 
 By default, the list of user-choosable filters includes the Accept All filter, which enables the user to see all non-hidden files. This example uses the following code to disable the Accept All filter:
 
 ```
 fc.setAcceptAllFileFilterUsed(false);
-```
+```java
 
 Our custom file filter is implemented in [`ImageFilter.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemo2Project/src/components/ImageFilter.java) and is a subclass of `FileFilter`. The `ImageFilter` class implements the `getDescription` method to return "Just Images" — a string to put in the list of user-choosable filters. `ImageFilter` also implements the `accept` method so that it accepts all directories and any file that has a `.png`, `.jpg`, `.jpeg`, `.gif`, `.tif`, or `.tiff` filename extension.
 
@@ -314,15 +308,13 @@ public class Utils {
         return ext;
     }
 }
-```
 
 ## Customizing the File View
 
 In the Java look and feel, the chooser's list shows each file's name and displays a small icon that represents whether the file is a true file or a directory. You can customize this *file view* by creating a custom subclass of [`FileView`](https://docs.oracle.com/javase/8/docs/api/javax/swing/filechooser/FileView.html) and using an instance of the class as an argument to the `setFileView` method. The example uses an instance of a custom class, implemented in [`ImageFileView.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemo2Project/src/components/ImageFileView.java), as the file chooser's file view.
 
-```
 fc.setFileView(new ImageFileView());
-```
+```java
 
 The `ImageFileView` class shows a different icon for each type of image accepted by the image filter described previously.
 
@@ -378,7 +370,6 @@ public Icon getIcon(File f) {
     }
     return icon;
 }
-```
 
 **`String getName(File f)`**
 
@@ -398,9 +389,8 @@ The customized file chooser in `FileChooserDemo2` has an accessory component. If
 
 The example calls the `setAccessory` method to establish an instance of the `ImagePreview` class, implemented in [`ImagePreview.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemo2Project/src/components/ImagePreview.java), as the chooser's accessory component:
 
-```
 fc.setAccessory(new ImagePreview(fc));
-```
+```java
 
 Any object that inherits from the `JComponent` class can be an accessory component. The component should have a preferred size that looks good in the file chooser.
 

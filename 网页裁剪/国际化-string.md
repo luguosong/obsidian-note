@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Byte Encodings and Strings (The Java™ Tutorials >        
+            Internationalization > Working with Text)
 
 Documentation
 
@@ -27,19 +29,19 @@ The example that follows converts characters between UTF-8 and Unicode. UTF-8 is
 
 The `StringConverter` program starts by creating a `String` containing Unicode characters:
 
-```
+```text
 String original = new String("A" + "\u00ea" + "\u00f1" + "\u00fc" + "C");
 ```
 
 When printed, the `String` named `original` appears as:
 
-```
+```text
 AêñüC
 ```
 
 To convert the `String` object to UTF-8, invoke the `getBytes` method and specify the appropriate encoding identifier as a parameter. The `getBytes` method returns an array of bytes in UTF-8 format. To create a `String` object from an array of non-Unicode bytes, invoke the `String` constructor with the encoding parameter. The code that makes these calls is enclosed in a `try` block, in case the specified encoding is unsupported:
 
-```
+```java
 try {
     byte[] utf8Bytes = original.getBytes("UTF8");
     byte[] defaultBytes = original.getBytes();
@@ -54,13 +56,13 @@ try {
 catch (UnsupportedEncodingException e) {
     e.printStackTrace();
 }
-```
+```java
 
 The `StringConverter` program prints out the values in the `utf8Bytes` and `defaultBytes` arrays to demonstrate an important point: The length of the converted text might not be the same as the length of the source text. Some Unicode characters translate into single bytes, others into pairs or triplets of bytes.
 
 The `printBytes` method displays the byte arrays by invoking the `byteToHex` method, which is defined in the source file, [`UnicodeFormatter.java`](https://docs.oracle.com/javase/tutorial/i18n/text/examples/UnicodeFormatter.java). Here is the `printBytes` method:
 
-```
+```java
 public static void printBytes(byte[] array, String name) {
     for (int k = 0; k < array.length; k++) {
         System.out.println(name + "[" + k + "] = " + "0x" +
@@ -71,7 +73,7 @@ public static void printBytes(byte[] array, String name) {
 
 The output of the `printBytes` method follows. Note that only the first and last bytes, the A and C characters, are the same in both arrays:
 
-```
+```text
 utf8Bytes[0] = 0x41
 utf8Bytes[1] = 0xc3
 utf8Bytes[2] = 0xaa

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Questions and Exercises: Aggregate Operations (The Java™ Tutorials >        
+            Collections > Aggregate Operations)
 
 Documentation
 
@@ -36,14 +38,14 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 5. Describe one way in which the `forEach` aggregate operation differs from the enhanced `for` statement or iterators.
 6. True or False: A stream is similar to a collection in that it is a data structure that stores elements.
 7. Identify the intermediate and terminal operations in this code:
-	```
+```text
 	double average = roster
 	    .stream()
 	    .filter(p -> p.getGender() == Person.Sex.MALE)
 	    .mapToInt(Person::getAge)
 	    .average()
 	    .getAsDouble();
-	```
+```
 8. The code `  p -> p.getGender() == Person.Sex.MALE  ` is an example of what?
 9. The code `  Person::getAge  ` is an example of what?
 10. Terminal operations that combine the contents of a stream and return one value are known as what?
@@ -61,9 +63,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	        System.out.println(p.getName());
 	    }
 	}
-	```
 2. Convert the following code into a new implementation that uses lambda expressions and aggregate operations instead of nested `for` loops. Hint: Make a pipeline that invokes the `filter`, `sorted`, and `collect` operations, in that order.
-	```
 	List<Album> favs = new ArrayList<>();
 	for (Album a : albums) {
 	    boolean hasFavorite = false;

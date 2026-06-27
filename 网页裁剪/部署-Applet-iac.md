@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Communicating With Other Applets (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -103,7 +105,7 @@ Receiver Applet
 
 To enable communication with another applet, obtain a reference to an instance of the `netscape.javascript.JSObject` class. Use this instance to invoke JavaScript functions. The [`Sender`](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/applet_SenderReceiver/src/Sender.java) applet uses an instance of the `netscape.javascript.JSObject` class to invoke a JavaScript function called `sendMsgToIncrementCounter`.
 
-```
+```text
 try {
     JSObject window = JSObject.getWindow(this);
     window.eval("sendMsgToIncrementCounter()");
@@ -127,7 +129,7 @@ Write the JavaScript function that will receive requests from one applet and inv
         myReceiver.incrementCounter();
     } 
 <script>
-```
+```java
 
 Note that the JavaScript code uses the name `receiver` to obtain a reference to the Receiver applet on the web page. This name should be the same as the value of the `id` attribute that is specified when you deploy the Receiver applet.
 

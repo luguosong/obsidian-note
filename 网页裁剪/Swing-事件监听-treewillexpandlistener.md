@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Tree-Will-Expand Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -102,7 +104,7 @@ This demo adds a tree-will-expand listener to the `TreeExpandEventDemo` example 
 
 The following snippet shows the code that this program adds to `TreeExpandEventDemo`. The bold line prevents the tree expansion from happening. You can find all the demo's source code in [`TreeExpandEventDemo2.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/events/TreeExpandEventDemo2Project/src/events/TreeExpandEventDemo2.java).
 
-```
+```java
 public class TreeExpandEventDemo2 ... {
     ...
     class DemoArea ... implements ... TreeWillExpandListener {

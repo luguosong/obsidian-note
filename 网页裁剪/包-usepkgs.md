@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using Package Members (The Java™ Tutorials >        
+            Learning the Java Language > Packages)
 
 Documentation
 
@@ -51,13 +53,13 @@ So far, most of the examples in this tutorial have referred to types by their si
 
 However, if you are trying to use a member from a different package and that package has not been imported, you must use the member's fully qualified name, which includes the package name. Here is the fully qualified name for the `Rectangle` class declared in the `graphics` package in the previous example.
 
-```
+```text
 graphics.Rectangle
 ```
 
 You could use this qualified name to create an instance of `graphics.Rectangle`:
 
-```
+```text
 graphics.Rectangle myRect = new graphics.Rectangle();
 ```
 
@@ -67,13 +69,13 @@ Qualified names are all right for infrequent use. When a name is used repetitive
 
 To import a specific member into the current file, put an `import` statement at the beginning of the file before any type definitions but after the `package` statement, if there is one. Here's how you would import the `Rectangle` class from the `graphics` package created in the previous section.
 
-```
+```java
 import graphics.Rectangle;
 ```
 
 Now you can refer to the `Rectangle` class by its simple name.
 
-```
+```text
 Rectangle myRectangle = new Rectangle();
 ```
 
@@ -83,20 +85,20 @@ This approach works well if you use just a few members from the `graphics` packa
 
 To import all the types contained in a particular package, use the `import` statement with the asterisk `(*)` wildcard character.
 
-```
+```java
 import graphics.*;
 ```
 
 Now you can refer to any class or interface in the `graphics` package by its simple name.
 
-```
+```text
 Circle myCircle = new Circle();
 Rectangle myRectangle = new Rectangle();
 ```
 
 The asterisk in the `import` statement can be used only to specify all the classes within a package, as shown here. It cannot be used to match a subset of the classes in a package. For example, the following does not match all the classes in the `graphics` package that begin with `A`.
 
-```
+```java
 // does not work
 import graphics.A*;
 ```
@@ -107,7 +109,7 @@ Instead, it generates a compiler error. With the `import` statement, you general
 
 **Note:** Another, less common form of `import` allows you to import the public nested classes of an enclosing class. For example, if the `graphics.Rectangle` class contained useful nested classes, such as `Rectangle.DoubleWide` and `Rectangle.Square`, you could import `Rectangle` and its nested classes by using the following *two* statements.
 
-```
+```java
 import graphics.Rectangle;
 import graphics.Rectangle.*;
 ```
@@ -126,24 +128,21 @@ At first, packages appear to be hierarchical, but they are not. For example, the
 
 Importing `java.awt.*` imports all of the types in the `java.awt` package, but it *does not import* `java.awt.color`, `java.awt.font`, or any other `java.awt.xxxx` packages. If you plan to use the classes and other types in `java.awt.color` as well as those in `java.awt`, you must import both packages with all their files:
 
-```
+```java
 import java.awt.*;
 import java.awt.color.*;
-```
 
 ## Name Ambiguities
 
 If a member in one package shares its name with a member in another package and both packages are imported, you must refer to each member by its qualified name. For example, the `graphics` package defined a class named `Rectangle`. The `java.awt` package also contains a `Rectangle` class. If both `graphics` and `java.awt` have been imported, the following is ambiguous.
 
-```
 Rectangle rect;
-```
+```text
 
 In such a situation, you have to use the member's fully qualified name to indicate exactly which `Rectangle` class you want. For example,
 
-```
+```java
 graphics.Rectangle rect;
-```
 
 ## The Static Import Statement
 
@@ -151,38 +150,37 @@ There are situations where you need frequent access to static final fields (cons
 
 The `java.lang.Math` class defines the `PI` constant and many static methods, including methods for calculating sines, cosines, tangents, square roots, maxima, minima, exponents, and many more. For example,
 
-```
 public static final double PI 
     = 3.141592653589793;
 public static double cos(double a)
 {
     ...
 }
-```
+```text
 
 Ordinarily, to use these objects from another class, you prefix the class name, as follows.
 
-```
+```java
 double r = Math.cos(Math.PI * theta);
-```
+```text
 
 You can use the static import statement to import the static members of java.lang.Math so that you don't need to prefix the class name, `Math`. The static members of `Math` can be imported either individually:
 
 ```
 import static java.lang.Math.PI;
-```
+```text
 
 or as a group:
 
 ```
 import static java.lang.Math.*;
-```
+```text
 
 Once they have been imported, the static members can be used without qualification. For example, the previous code snippet would become:
 
 ```
 double r = cos(PI * theta);
-```
+```text
 
 Obviously, you can write your own classes that contain constants and static methods that you use frequently, and then use the static import statement. For example,
 

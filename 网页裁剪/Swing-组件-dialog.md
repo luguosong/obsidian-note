@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Make Dialogs (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -115,7 +117,7 @@ The code for simple dialogs can be minimal. For example, here is an informationa
 
 Here is the code that creates and shows it:
 
-```
+```text
 JOptionPane.showMessageDialog(frame, "Eggs are not supposed to be green.");
 ```
 
@@ -192,7 +194,7 @@ Displays a modal dialog with one button, which is labeled "OK" (or the localized
 
 Displays a modal dialog with the specified buttons, icons, message, title, and so on. With this method, you can change the text that appears on the buttons of standard dialogs. You can also perform many other kinds of customization. ![Yes/No/Cancel (in different words); showOptionDialog](https://docs.oracle.com/javase/tutorial/figures/uiswing/components/OptionDialogMetal.png)
 
-```
+```text
 //Custom button text
 Object[] options = {"Yes, please",
                     "No, thanks",
@@ -212,7 +214,7 @@ int n = JOptionPane.showOptionDialog(frame,
 
 Creates a `JOptionPane` with the specified buttons, icons, message, title, and so on. You must then add the option pane to a `JDialog`, register a property-change listener on the option pane, and show the dialog. See [Stopping Automatic Dialog Closing](#stayup) for details. ![Explicitly used the JOptionPane constructor](https://docs.oracle.com/javase/tutorial/figures/uiswing/components/JOptionPaneMetal.png)
 
-```
+```java
 final JOptionPane optionPane = new JOptionPane(
     "The only way to close this dialog is by\n"
     + "pressing one of the following buttons.\n"
@@ -233,7 +235,7 @@ The `JOptionPane` constructors do not include this argument. Instead, you specif
 
 This required argument specifies what the dialog should display in its main area. Generally, you specify a string, which results in the dialog displaying a label with the specified text. You can split the message over several lines by putting newline (`\n`) characters inside the message string. For example:
 
-```
+```text
 "Complete the sentence:\n \"Green eggs and...\""
 ```
 
@@ -283,7 +285,7 @@ The only form of `show*Xxx*Dialog` that does not return an integer is `showInput
 
 ![An input dialog with a combo box](https://docs.oracle.com/javase/tutorial/figures/uiswing/components/CustomizedDialogMetal.png)
 
-```
+```text
 Object[] possibilities = {"ham", "spam", "yam"};
 String s = (String)JOptionPane.showInputDialog(
                     frame,

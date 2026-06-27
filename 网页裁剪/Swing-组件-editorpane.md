@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Editor Panes and Text Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -150,7 +152,7 @@ editorScrollPane.setVerticalScrollBarPolicy(
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 editorScrollPane.setPreferredSize(new Dimension(250, 145));
 editorScrollPane.setMinimumSize(new Dimension(10, 10));
-```
+```json
 
 The code uses the default constructor to create the editor pane, then calls `setEditable(false)` so the user cannot edit the text. Next, the code creates the `URL` object, and calls the `setPage` method with it.
 

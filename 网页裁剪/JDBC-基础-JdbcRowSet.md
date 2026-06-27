@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Using JdbcRowSet Objects (The Java™ Tutorials >        
+            JDBC Database Access > JDBC Basics)
 
 Documentation
 
@@ -93,7 +95,6 @@ try (JdbcRowSet jdbcRs = factory.createJdbcRowSet()) {
   jdbcRs.setCommand("select * from COFFEES");
   jdbcRs.execute();
   // ...
-```
 
 The `RowSetFactory` interface contains methods to create the different types of `RowSet` implementations:
 
@@ -136,11 +137,10 @@ Another property that you must set is the `command` property. This property is t
 
 ```sql
 jdbcRs.setCommand("select * from COFFEES");
-```
 
 After you have set the `command` property and the properties necessary for making a connection, you are ready to populate the `jdbcRs` object with data by calling the `execute` method.
 
-```
+```text
 jdbcRs.execute();
 ```
 
@@ -171,7 +171,7 @@ A `ResultSet` object that is not scrollable can use only the `next` method to mo
 
 A `JdbcRowSet` object can call the method `next`, and it can also call any of the other `ResultSet` cursor movement methods. For example, the following lines of code move the cursor to the fourth row in the `jdbcRs` object and then back to the third row:
 
-```
+```text
 jdbcRs.absolute(4);
 jdbcRs.previous();
 ```
@@ -184,7 +184,7 @@ You update data in a `JdbcRowSet` object the same way you update data in a `Resu
 
 Assume that the Coffee Break owner wants to raise the price for a pound of Espresso coffee. If the owner knows that Espresso is in the third row of the `jdbcRs` object, the code for doing this might look like the following:
 
-```
+```text
 jdbcRs.absolute(3);
 jdbcRs.updateFloat("PRICE", 10.99f);
 jdbcRs.updateRow();
@@ -198,7 +198,7 @@ Calling the method `updateRow` updates the database because `jdbcRs` has maintai
 
 If the owner of the Coffee Break chain wants to add one or more coffees to what he offers, the owner will need to add one row to the `COFFEES` table for each new coffee, as is done in the following code fragment from `JdbcRowSetSample.java`. Notice that because the `jdbcRs` object is always connected to the database, inserting a row into a `JdbcRowSet` object is the same as inserting a row into a `ResultSet` object: You move to the cursor to the insert row, use the appropriate updater method to set a value for each column, and call the method `insertRow`:
 
-```
+```text
 jdbcRs.moveToInsertRow();
 jdbcRs.updateString("COF_NAME", "HouseBlend");
 jdbcRs.updateInt("SUP_ID", 49);
@@ -222,7 +222,7 @@ When you call the method `insertRow`, the new row is inserted into the `jdbcRs` 
 
 As is true with updating data and inserting a new row, deleting a row is just the same for a `JdbcRowSet` object as for a `ResultSet` object. The owner wants to discontinue selling French Roast decaffeinated coffee, which is the last row in the `jdbcRs` object. In the following lines of code, the first line moves the cursor to the last row, and the second line deletes the last row from the `jdbcRs` object and from the database:
 
-```
+```text
 jdbcRs.last();
 jdbcRs.deleteRow();
 ```

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Tabbed Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)
 
 Documentation
 
@@ -142,7 +144,7 @@ The default tab placement is set to the `TOP` location, as shown above. You can 
 
 The following code from [`TabbedPaneDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TabbedPaneDemoProject/src/components/TabbedPaneDemo.java) creates the tabbed pane in the previous example. Note that no event-handling code is necessary. The `JTabbedPane` object takes care of mouse and keyboard events for you.
 
-```
+```text
 JTabbedPane tabbedPane = new JTabbedPane();
 ImageIcon icon = createImageIcon("images/middle.gif");
 
@@ -223,13 +225,11 @@ public void actionPerformed(ActionEvent e) {
     pane.remove(i);
     }
 }
-```
 
 ## To Give Titles to Customized Tabs
 
 The code below, taken from [`ButtonTabComponent.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TabComponentsDemoProject/src/components/ButtonTabComponent.java), shows how a customized tab component gets a title from an original tabbed pane tab.
 
-```
 JLabel label = new JLabel(title) {
     public String getText() {
         int i = pane.indexOfTabComponent(ButtonTabComponent.this);

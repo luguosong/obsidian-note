@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Write a Property Change Listener (The Java™ Tutorials >        
+            Creating a GUI With Swing > Writing Event Listeners)
 
 Documentation
 
@@ -95,7 +97,7 @@ Although these are some of the more common uses for property-change listeners, y
 
 You can register a property change listener in two ways. The first uses the method `addPropertyChangeListener(PropertyChangeListener)`. When you register a listener this way, you are notified of every change to every bound property for that object. In the `propertyChange` method, you can get the name of the property that has changed using the `PropertyChangeEvent` `getPropertyName` method, as in the following code snippet:
 
-```
+```java
 KeyboardFocusManager focusManager =
    KeyboardFocusManager.getCurrentKeyboardFocusManager();
 focusManager.addPropertyChangeListener(new FocusManagerListener());
@@ -111,20 +113,20 @@ public FocusManagerListener implements PropertyChangeListener {
     }
     ...
 }
-```
+```text
 
 The second way to register a property change listener uses the method `addPropertyChangeListener(String, PropertyChangeListener)`. The `String` argument is the name of a property. Using this method means that you only receive notification when a change occurs to that particular property. So, for example, if you registered a property change listener like this:
 
 ```
 aComponent.addPropertyChangeListener("font",
                                      new FontListener());
-```
+```java
 
 `FontListener` only receives notification when the value of the component's *font* property changes. It does *not* receive notification when the value changes for *transferHandler*, *opaque*, *border*, or any other property.
 
 The following example shows how to register a property change listener on the *value* property of a formatted text field using the two-argument version of `addPropertyChangeListener`:
 
-```
+```sql
 //...where initialization occurs:
 double amount;
 JFormattedTextField amountField;

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Character and Byte Streams (The Java™ Tutorials >        
+            Internationalization > Working with Text)
 
 Documentation
 
@@ -27,14 +29,14 @@ The `java.io` package provides classes that allow you to convert between Unicode
 
 When you create `InputStreamReader` and `OutputStreamWriter` objects, you specify the byte encoding that you want to convert. For example, to translate a text file in the UTF-8 encoding into Unicode, you create an `InputStreamReader` as follows:
 
-```
+```text
 FileInputStream fis = new FileInputStream("test.txt");
 InputStreamReader isr = new InputStreamReader(fis, "UTF8");
 ```
 
 If you omit the encoding identifier, `InputStreamReader` and `OutputStreamWriter` rely on the default encoding. You can determine which encoding an `InputStreamReader` or `OutputStreamWriter` uses by invoking the `getEncoding` method, as follows:
 
-```
+```text
 InputStreamReader defaultReader = new InputStreamReader(fis);
 String defaultEncoding = defaultReader.getEncoding();
 ```
@@ -43,7 +45,7 @@ The example that follows shows you how to perform character-set conversions with
 
 The `StreamConverter` program converts a sequence of Unicode characters from a `String` object into a `FileOutputStream` of bytes encoded in UTF-8. The method that performs the conversion is called `writeOutput`:
 
-```
+```java
 static void writeOutput(String str) {
     try {
         FileOutputStream fos = new FileOutputStream("test.txt");
@@ -59,7 +61,7 @@ static void writeOutput(String str) {
 
 The `readInput` method reads the bytes encoded in UTF-8 from the file created by the `writeOutput` method. An `InputStreamReader` object converts the bytes from UTF-8 into Unicode and returns the result in a `String`. The `readInput` method is as follows:
 
-```
+```java
 static String readInput() {
     StringBuffer buffer = new StringBuffer();
     try {
@@ -82,7 +84,7 @@ static String readInput() {
 
 The `main` method of the `StreamConverter` program invokes the `writeOutput` method to create a file of bytes encoded in UTF-8. The `readInput` method reads the same file, converting the bytes back into Unicode. Here is the source code for the `main` method:
 
-```
+```java
 public static void main(String[] args) {
     String jaString = new String("\u65e5\u672c\u8a9e\u6587\u5b57\u5217");
     writeOutput(jaString); 

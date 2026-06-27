@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# How to Use Actions (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Other Swing Features)
 
 Documentation
 
@@ -59,7 +61,7 @@ You typically attach an action to a component using the `setAction` method. Here
 
 Here's an example of creating a tool-bar button and menu item that perform the same function:
 
-```
+```text
 Action leftAction = new LeftAction(); //LeftAction code is shown later
 ...
 button = new JButton(leftAction)
@@ -85,7 +87,6 @@ class LeftAction extends AbstractAction {
         displayResult("Action for first button/menu item", e);
     }
 }
-```
 
 When the action created by the preceding code is attached to a button and a menu item, the button and menu item display the text and icon associated with the action. The `L` character is used for mnemonics on the button and menu item, and their tool-tip text is set to the `SHORT_DESCRIPTION` string followed by a representation of the mnemonic key.
 
@@ -113,15 +114,12 @@ Here is what the user sees when the "Go left" action is disabled:
 
 Here's the code that disables the "Go left" action:
 
-```
 boolean selected = ...//true if the action should be enabled;
                       //false, otherwise
 leftAction.setEnabled(selected);
-```
 
 After you create components using an `Action`, you might well need to customize them. For example, you might want to customize the appearance of one of the components by adding or deleting the icon or text. For example, [`ActionDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/misc/ActionDemoProject/src/misc/ActionDemo.java) has no icons in its menus, and no text in its buttons. Here's the code that accomplishes this:
 
-```
 menuItem = new JMenuItem();
 menuItem.setAction(leftAction);
 menuItem.setIcon(null); //arbitrarily chose not to use icon in menu

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Choosing the Drop Action (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -75,7 +77,7 @@ The user action indicates a preference, but ultimately it is the target that dec
 
 This work happens in the `canImport` method, where the target's `TransferHandler` decides whether to accept the incoming data. An implementation that explicitly chooses the `COPY` action, if it is supported by the source, might look like this:
 
-```
+```bash
 public boolean canImport(TransferHandler.TransferSupport support) {
     // for the demo, we will only support drops (not clipboard paste)
     if (!support.isDrop()) {

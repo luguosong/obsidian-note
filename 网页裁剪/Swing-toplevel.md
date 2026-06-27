@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Top-Level Drop (The Java™ Tutorials >        
+            Creating a GUI With Swing > Drag and Drop and Data Transfer)
 
 Documentation
 
@@ -96,7 +98,7 @@ Note one undesirable side effect of disabling the default transfer handler on th
 
 Here is the source code for [`TopLevelTransferHandlerDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/TopLevelTransferHandlerDemoProject/src/dnd/TopLevelTransferHandlerDemo.java):
 
-```
+```sql
 /**
  * Demonstration of the top-level {@code TransferHandler}
  * support on {@code JFrame}.

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Atomic Variables (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -42,11 +44,9 @@ class Counter {
     }
 
 }
-```
 
 One way to make `Counter` safe from thread interference is to make its methods synchronized, as in [`` `SynchronizedCounter` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/SynchronizedCounter.java):
 
-```
 class SynchronizedCounter {
     private int c = 0;
 
@@ -63,7 +63,7 @@ class SynchronizedCounter {
     }
 
 }
-```
+```java
 
 For this simple class, synchronization is an acceptable solution. But for a more complicated class, we might want to avoid the liveness impact of unnecessary synchronization. Replacing the `int` field with an `AtomicInteger` allows us to prevent thread interference without resorting to synchronization, as in [`` `AtomicCounter` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/AtomicCounter.java):
 

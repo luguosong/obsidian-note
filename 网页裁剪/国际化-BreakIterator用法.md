@@ -8,6 +8,7 @@
 发布时间:
 创建时间: "2026-06-27T18:30:00+08:00"
 ---
+# BreakIterator 用法
 
 Documentation
 
@@ -24,7 +25,7 @@ This page contains some code snippets that show you several common scenarios.
 
 ## Creating a String from a Code Point
 
-```
+```text
 String newString(int codePoint) {
     return new String(Character.toChars(codePoint));
 }
@@ -34,7 +35,7 @@ String newString(int codePoint) {
 
 The `Character.toChars` method creates an temporary array that is used once and then discarded. If this negatively affects performance, you can use the following approach that is optimized for BMP characters (characters that are represented by a single `char` value). In this method, `toChars` is invoked only for supplementary characters.
 
-```
+```text
 String newString(int codePoint) {
     if (Character.charCount(codePoint) == 1) {
         return String.valueOf(codePoint);
@@ -48,7 +49,7 @@ String newString(int codePoint) {
 
 To create a large number of strings, the bulk version of the previous snippet reuses the array used by the `toChars` method. This method creates a separate `String` instance for each code point and is optimized for BMP characters.
 
-```
+```text
 String[] newStrings(int[] codePoints) {
     String[] result = new String[codePoints.length];
     char[] codeUnits = new char[2];
@@ -64,14 +65,14 @@ String[] newStrings(int[] codePoints) {
 
 The formatting API supports supplementary characters. The following example is a simple way to generate a message.
 
-```
+```java
 // recommended
 System.out.printf("Character %c is invalid.%n", codePoint);
-```
+```text
 
 This following approach is simple and avoids concatenation, which makes the text more difficult to localize as not all languages insert numeric values into a string in the same order as English.
 
-```
+```java
 // not recommended
 System.out.println("Character " + String.valueOf(char) + " is invalid.");
 ```

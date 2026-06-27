@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Scanning (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -111,7 +113,7 @@ public class ScanXan {
         }
     }
 }
-```
+```text
 
 Notice that `ScanXan` invokes `Scanner` 's `close` method when it is done with the scanner object. Even though a scanner is not a stream, you need to close it to indicate that you're done with its underlying stream.
 
@@ -127,13 +129,13 @@ A
 stately
 pleasure-dome
 ...
-```
+```text
 
 To use a different token separator, invoke `useDelimiter()`, specifying a regular expression. For example, suppose you wanted the token separator to be a comma, optionally followed by white space. You would invoke,
 
 ```
 s.useDelimiter(",\\s*");
-```
+```java
 
 ## Translating Individual Tokens
 
@@ -178,7 +180,7 @@ public class ScanSum {
 
 And here's the sample input file, [`usnumbers.txt`](https://docs.oracle.com/javase/tutorial/essential/io/examples/usnumbers.txt)
 
-```
+```text
 8.5
 32,767
 3.14159

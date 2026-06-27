@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Map Implementations (The Java™ Tutorials >        
+            Collections > Implementations)
 
 Documentation
 
@@ -49,7 +51,7 @@ The three general-purpose [`Map`](https://docs.oracle.com/javase/8/docs/api/java
 
 For example, this override will allow the map to grow up to as many as 100 entries and then it will delete the eldest entry each time a new entry is added, maintaining a steady state of 100 entries.
 
-```
+```java
 private static final int MAX_ENTRIES = 100;
 
 protected boolean removeEldestEntry(Map.Entry eldest) {

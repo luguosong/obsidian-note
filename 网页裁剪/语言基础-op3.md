@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Bitwise and Bit Shift Operators (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)
 
 Documentation
 
@@ -35,7 +37,7 @@ The bitwise `|` operator performs a bitwise inclusive OR operation.
 
 The following program, [`BitDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/BitDemo.java), uses the bitwise AND operator to print the number "2" to standard output.
 
-```
+```java
 class BitDemo {
     public static void main(String[] args) {
         int bitmask = 0x000F;

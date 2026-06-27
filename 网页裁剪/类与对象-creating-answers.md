@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Answers to Questions and Exercises: Classes (The Java™ Tutorials > Learning the Java Language >
+            Classes and Objects)
 
 Documentation
 
@@ -29,7 +31,6 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	    public static int x = 7;
 	    public int y = 3;
 	}
-	```
 	1. **Question**: What are the class variables?
 		**Answer**: x
 		2. **Question**: What are the instance variables?
@@ -47,7 +48,6 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 		System.out.println("a.x = " + a.x); 
 		System.out.println("b.x = " + b.x); 
 		System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
-		```
 		**Answer**: Here is the output:
 		```properties
 		a.y = 5 

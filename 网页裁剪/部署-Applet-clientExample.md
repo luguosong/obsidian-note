@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Network Client Applet Example (The Java™ Tutorials >        
+            Deployment > Java Applets)
 
 Documentation
 
@@ -94,22 +96,18 @@ Perform the following steps to test `QuoteClientApplet`.
 	      { codebase_lookup:'true', permissions:'sandbox' };
 	    deployJava.runApplet(attributes, parameters, '1.6'); 
 	</script>
-	```
 	Alternatively, you can use the [`quoteApplet.html`](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/quoteApplet.html) page that already contains this HTML code.
 3. Compile the `QuoteClientApplet.java` class. Copy the generated class files to the same directory where you saved your web page.
 4. Compile the classes for the server-side application, `QuoteServer.java` and `QuoteServerThread.java`.
 5. Copy the file `one-liners.txt` to the directory that has the class files for the server-side application (generated in the previous step).
 6. Start the server-side application.
-	```
 	java QuoteServer
-	```
+```text
 	You should see a message with the port number, as shown in the following example. Note the port number.
-	```
+```
 	QuoteServer listening on port:3862
-	```
 7. Open the web page containing your applet in a browser by entering the URL of the web page. The host name in the URL should be the same as the name of the host on which the server-side application is running.
 	For example, if the server-side application is running on a machine named `JohnDoeMachine`, you should enter a similar URL. The exact port number and path will vary depending on your web server setup.
-	```
 	http://JohnDoeMachine:8080/quoteApplet/quoteApplet.html
 	```
 	The `QuoteClientApplet` will be displayed on the web page.

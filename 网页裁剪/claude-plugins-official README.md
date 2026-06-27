@@ -8,6 +8,7 @@
 发布时间:
 创建时间: "2026-06-26T15:21:39+08:00"
 ---
+# Claude Code 插件官方目录 —— Anthropic 维护的高质量插件集合
 
 ## Claude Code 插件目录
 
@@ -44,7 +45,7 @@
 
 每个插件遵循标准结构：
 
-```
+```bash
 plugin-name/
 ├── .claude-plugin/
 │   └── plugin.json      # 插件元数据（必需）
@@ -53,13 +54,13 @@ plugin-name/
 ├── agents/              # 智能体(agent)定义（可选）
 ├── skills/              # 技能(skill)定义（可选）
 └── README.md            # 文档
-```
+```json
 
 ## 技能捆绑类插件
 
 当插件的源代码仓库随附了技能(skill)（`SKILL.md` 文件）但没有 `.claude-plugin/plugin.json` 清单时，市场条目可以使用 `strict: false` 和显式的 `skills` 数组直接声明这些技能。
 
-```
+```json
 {
   "name": "example-bundle",
   "description": "Brief description of the bundled skills.",

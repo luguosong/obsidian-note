@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Implementing SAX Validation (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)
 
 Documentation
 
@@ -39,7 +41,7 @@ The sample program SAXLocalNameCount uses the non-validating parser by default, 
 
 If no other factory class is specified, the default SAXParserFactory class is used. To use a parser from a different manufacturer, you can change the value of the environment variable that points to it. You can do that from the command line:
 
-```
+```text
 java -Djavax.xml.parsers.SAXParserFactory=yourFactoryHere [...]
 ```
 
@@ -64,7 +66,7 @@ On the other hand, if you are writing an application that filters an XML data fi
 public void ignorableWhitespace (char buf[], int start, int length) throws SAXException { 
     emit("IGNORABLE");
 }
-```
+```java
 
 This code simply generates a message to let you know that ignorable white space was seen. However, not all parsers are created equal. The SAX specification does not require that this method be invoked. The Java XML implementation does so whenever the DTD makes it possible.
 
@@ -156,7 +158,6 @@ public class SAXLocalNameCount extends DefaultHandler {
     static final String JAXP_SCHEMA_SOURCE =
         "http://java.sun.com/xml/jaxp/properties/schemaSource";
 }
-```
 
 ---
 
@@ -166,13 +167,12 @@ public class SAXLocalNameCount extends DefaultHandler {
 
 Then you must configure the parser to tell it which schema language to use. In SAXLocalNameCount, validation can be performed either against a DTD or against an XML Schema. The following code uses the constants defined above to specify the W3C's XML Schema language as the one to use if the \-xsd option is specified when the program is started.
 
-```
 // ...
 if (xsdValidate) {
     saxParser.setProperty(JAXP_SCHEMA_LANGUAGE, W3C_XML_SCHEMA);
     // ...
 }
-```
+```text
 
 In addition to the error handling described in [[JAXP-SAX-parsing|Setting up Error Handling]], there is one error that can occur when configuring the parser for schema-based validation. If the parser is not compliant with the JAXP spec, and therefore does not support XML Schema, it can throw a SAXNotRecognizedException. To handle that case, the setProperty() statement is wrapped in a try/catch block, as shown in the code below.
 
@@ -208,7 +208,7 @@ To validate the data using an XML Schema definition, it is necessary to ensure t
 
 To specify the schema definition in the document, you would create XML such as this:
 
-```
+```text
 <documentRoot
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation='YourSchemaDefinition.xsd'>
@@ -224,7 +224,7 @@ The first attribute defines the XML namespace (xmlns) prefix, xsi, which stands 
 
 You can also specify the schema file in the application, as is the case in SAXLocalNameCount.
 
-```
+```text
 // ...
 if (schemaSource != null) {
     saxParser.setProperty(JAXP_SCHEMA_SOURCE, new File(schemaSource));
@@ -257,7 +257,6 @@ public void fatalError(SAXParseException spe) throws SAXException {
 }
 
 // ...
-```
 
 If these exceptions are not thrown, the validation errors are simply ignored. In general, a SAX parsing error is a validation error, although it can also be generated if the file specifies a version of XML that the parser is not prepared to handle. Remember that your application will not generate a validation exception unless you supply an error handler such as the one here.
 
@@ -287,21 +286,18 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 
 1. If you have not already done so, save the [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) file in a directory named `sax`. Open the file in a text editor and make the changes described above.
 2. If you have not already done so, compile the file as follows:
-	```
 	javac sax/SAXLocalNameCount.java
-	```
 3. If you have not already done so, save the example XML files [`` `rich_iii.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/rich_iii.xml) and [`` `two_gent.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/two_gent.xml) in the `data` directory.
 4. Run the SAXLocalNameCount program, with DTD validation activated.
 	To do this, you must specify the \-dtd option when you run the program.
-	```
 	java sax/SAXLocalNameCount -dtd data/rich_iii.xml
-	```
+```text
 	The result you see will look something like this:
-	```
+```
 	Exception in thread "main" org.xml.sax.SAXException:
 	Error: URI=file:data/rich_iii.xml 
 	Line=4: Document is invalid: no grammar found.
-	```
+```html
 	This message says that there is no grammar against which the document rich\_iii.xml can be validated, so therefore it is automatically invalid. In other words, the message is saying that you are trying to validate the document, but no DTD has been declared, because no DOCTYPE declaration is present. So now you know that a DTD is a requirement for a valid document. That makes sense.
 5. Save the example DTD file [`` `play.dtd` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/play.dtd) in the `data` directory.
 6. Open the file data/rich\_iii.xml in a text editor. Insert the following DOCTYPE declaration at the beginning of data/rich\_iii.xml. (The declaration points a validating parser to a DTD file called play.dtd. If DTD validation is activated, the structure of the XML file being parsed will be checked against the structure provided in play.dtd.)
@@ -313,12 +309,11 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 	Again, do not forget to save the modification, and leave the file open.
 8. Run the SAXLocalNameCount program, with DTD validation activated.
 	This time, you will see a different error when you run the program:
-	```
+```sql
 	java sax/SAXLocalNameCount -dtd data/rich_iii.xml
 	Exception in thread "main" org.xml.sax.SAXException: 
 	Error: URI=file:data/rich_iii.xml 
 	Line=26: Element type "PERSON" must be declared.
-	```
 	Here you can see that the parser has objected to an element that is not included in the DTD data/play.dtd.
 9. In data/rich\_iii.xml correct the tags for "KING EDWARD The Fourth".
 	Return the start and end tags to their original versions, <PERSONA> and </PERSONA>.
@@ -326,30 +321,22 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 	Once more, do not forget to save the modification.
 11. Run the SAXLocalNameCount program, with DTD validation activated.
 	As before, you will see another validation error:
-	```
 	java sax/SAXLocalNameCount -dtd data/rich_iii.xml
 	Exception in thread "main" org.xml.sax.SAXException: 
 	Error: URI=file:data/rich_iii.xml 
 	Line=77: The content of element type "PERSONAE" must match "(TITLE,(PERSONA|PGROUP)+)".
-	```
 	By deleting the <TITLE> element from line 16, the <PERSONAE> element is rendered invalid because it does not contain the sub-elements that the DTD expects of a <PERSONAE> element. Note that the error message states that the error is in line 77 of data/rich\_iii.xml, even though you deleted the <TITLE> element from line 16. This is because the closing tag of the <PERSONAE> element is located at line 77 and the parser only throws the exception when it reaches the end of the element it parsing.
 12. Open the DTD file, data/play.dtd in a text editor.
 	In the DTD file, you can see the declaration of the <PERSONAE> element, as well as all the other elements that can be used in XML documents that conform to the play DTD. The declaration of <PERSONAE> looks like this.
-	```
 	<!ELEMENT PERSONAE (TITLE, (PERSONA | PGROUP)+)>
-	```
 	As you can see, the <PERSONAE> element requires a <TITLE> sub-element. The pipe (|) key means that either <PERSONA> or <PGROUP> sub-elements can be included in a <PERSONAE> element, and the plus (+) key after the (PERSONA | PGROUP) grouping means that at least one or more of either of these sub-elements must be included.
 13. Add a question mark (?) key after TITLE in the declaration of <PERSONAE>.
 	Adding a question mark to a sub-element's declaration in a DTD makes the presence of one instance of that sub-element optional.
-	```
 	<!ELEMENT PERSONAE (TITLE?, (PERSONA | PGROUP)+)>
-	```
 	If you were add an asterisk (\*) after the element, you could include either zero or multiple instances of that sub-element. However, in this case it does not make sense to have more than one title in a section of a document.
 	Do not forget to save the modification you have made to data/play.dtd.
 14. Run the SAXLocalNameCount program, with DTD validation activated.
-	```
 	java sax/SAXLocalNameCount -dtd data/rich_iii.xml
-	```
 	This time, you should see the proper output of SAXLocalNameCount, with no errors.
 
 ## Experimenting with Schema Validation Errors
@@ -360,9 +347,8 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 
 1. If you have not already done so, save the [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) file in a directory named `sax`. Open the file in a text editor and make the changes described above.
 2. If you have not already done so, compile the file as follows:
-	```
 	javac sax/SAXLocalNameCount.java
-	```
+```xml
 3. Save the example XML file [`` `personal-schema.xml` ``](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/personal-schema.xml) in the `data` directory, and then open it in a text editor.
 	This is a simple XML file that provides the names and contact details for the employees of a small company. In this XML file, you will see that it has been associated with a schema definition file personal.xsd.
 	`<personnel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='personal.xsd'>`
@@ -378,13 +364,13 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 	  <name><family>Worker</family> <given>One</given></name>
 	  <link manager="Big.Boss"/>
 	</person>
-	```
+```
 7. Run SAXLocalNameCount against personal-schema.xml, with no schema validation.
-	```
+```text
 	java sax/SAXLocalNameCount data/personal-schema.xml
-	```
+```
 	SAXLocalNameCount informs you of the number of times each element occurs in personal-schema.xml.
-	```
+```text
 	Local Name "email" occurs 5 times
 	Local Name "name" occurs 6 times
 	Local Name "person" occurs 6 times
@@ -392,43 +378,43 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 	Local Name "link" occurs 6 times
 	Local Name "personnel" occurs 1 times
 	Local Name "given" occurs 6 times
-	```
+```
 	You see that email only occurs five times, whereas there are six person elements in personal-schema.xml. So, because we set the minimum occurrences of the email element to 1 per person element, we know that this document is invalid. However, because SAXLocalNameCount was not told to validate against a schema, no error is reported.
 8. Run SAXLocalNameCount again, this time specifying that the personal—schema.xml document should be validated against a the personal.xsd schema definition.
 	As you saw in [Validating with XML Schema](#gcwtl) above, SAXLocalNameCount has an option to enable schema validation. Run SAXLocalNameCount with the following command.
-	```
+```text
 	java sax/SAXLocalNameCount -xsd data/personal-schema.xml
-	```
+```
 	This time, you will see the following error message.
-	```
+```text
 	Exception in thread "main" org.xml.sax.SAXException: Error: 
 	URI=file:data/personal-schema.xml 
 	Line=14: cvc-complex-type.2.4.a: Invalid content was found starting with 
 	element 'link'. 
 	One of '{email}' is expected.
-	```
+```
 9. Restore the email element to the person element one.worker.
 10. Run SAXLocalNameCount a third time, again specifying that the personal—schema.xml document should be validated against a the personal.xsd schema definition.
-	```
+```text
 	java sax/SAXLocalNameCount -xsd data/personal-schema.xml
-	```
+```
 	This time you will see the correct output, with no errors.
 11. Open personal-schema.xml in a text editor again.
 12. Delete the declaration of the schema definition personal.xsd from the personnel element.
 	Remove the italicized code from the personnel element.
 	`<personnel *xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='personal.xsd'/*>`
 13. Run SAXLocalNameCount, again specifying schema validation.
-	```
+```text
 	java sax/SAXLocalNameCount -xsd data/personal-schema.xml
-	```
+```
 	Obviously, this will not work, as the schema definition against which to validate the XML file has not been declared. You will see the following error.
-	```
+```text
 	Exception in thread "main" org.xml.sax.SAXException: 
 	Error: URI=file:data/personal-schema.xml 
 	Line=2: cvc-elt.1: Cannot find the declaration of element 'personnel'.
-	```
+```
 14. Run SAXLocalNameCount again, this time passing it the schema definition file at the command line.
-	```
+```text
 	java sax/SAXLocalNameCount -xsdss data/personal.xsd data/personal-schema.xml
-	```
+```
 	This time you use the SAXLocalNameCount option that allows you to specify a schema definition that is not hard-coded into the application. You should see the correct output.

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Download Extensions (The Java™ Tutorials >        
+            The Extension Mechanism > Creating and Using Extensions)
 
 Documentation
 
@@ -38,7 +40,7 @@ Note that at most one of each is allowed in a manifest. Download extensions indi
 
 Since download extensions that use the Class-Path headers are simpler, let's consider them first. Assume for example that a.jar and b.jar are two JAR files in the same directory, and that the manifest of a.jar contains this header:
 
-```
+```text
 Class-Path: b.jar
 ```
 
@@ -52,7 +54,7 @@ To get a better understanding of how download extensions work, let's create one 
 
 Suppose you want to create an applet that makes use of the `RectangleArea` class of the previous section:
 
-```
+```java
 public final class RectangleArea {  
     public static int area(java.awt.Rectangle r) {
         return r.width * r.height;
@@ -83,7 +85,7 @@ public class AreaApplet extends Applet {
                       + RectangleArea.area(r), 10, 10);
     }
 }
-```
+```text
 
 This applet instantiates a 10 x 5 rectangle and then displays the rectangle's area by using the RectangleArea.area method.
 
@@ -102,7 +104,7 @@ The value of the Class-Path header in this manifest is RectangleArea.jar with no
 
 If an applet or application uses more than one extension, you can list multiple URLs in a manifest. For example, the following is a valid header:
 
-```
+```text
 Class-Path: area.jar servlet.jar images/
 ```
 
@@ -110,7 +112,7 @@ In the Class-Path header any URLs listed that don't end with ' / ' are assumed t
 
 Note that only one Class-Path header is allowed in a manifest file, and that each line in a manifest must be no more than 72 characters long. If you need to specify more class path entries than will fit on one line, you can extend them onto subsequent continuation lines. Begin each continuation line with two spaces. For example:
 
-```
+```text
 Class-Path: area.jar servlet.jar monitor.jar datasource.jar
   provider.jar gui.jar
 ```
@@ -135,7 +137,7 @@ areatest-Specification-Version: 1.1
 areatest-Implementation-Version: 1.1.2
 areatest-Implementation-Vendor-Id: com.example
 areatest-Implementation-URL: http://www.example.com/test/area.jar
-```
+```text
 
 The manifest in area.jar would provide corresponding information:
 
@@ -151,13 +153,13 @@ Implementation-Version: 1.1.2
 
 Both the applet and the extension must be signed, by the same signer. Signing the jar files will modify them in-place, providing more information in their manifest files. Signing helps ensure that only trusted code gets installed. A simple way to sign jar files is to first create a keystore, and then use that to hold certificates for the applet and extension. For example:
 
-```
+```text
 keytool -genkey -dname "cn=Fred" -alias test  -validity 180
 ```
 
 You will be prompted for the keystore and key passwords. After generating a key, the jar files can be signed:
 
-```
+```text
 jarsigner AreaApplet.jar test
 jarsigner area.jar test
 ```

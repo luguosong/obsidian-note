@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# LDAP Unsolicited Notifications (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)
 
 Documentation
 
@@ -27,7 +29,7 @@ Because unsolicited notifications are sent asynchronously by the server, you can
 
 Here is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/RegUnsol.java) of an UnsolicitedNotificationListener.
 
-```
+```java
 public class UnsolListener implements UnsolicitedNotificationListener {
     public void notificationReceived(UnsolicitedNotificationEvent evt) {
         System.out.println("received: " + evt);
@@ -38,11 +40,9 @@ public class UnsolListener implements UnsolicitedNotificationListener {
             evt.getException().printStackTrace();
     }
 }
-```
 
 Following is [`an example`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/RegUnsol.java) that registers an implementation of UnsolicitedNotificationListener with an event source. Note that only the listener argument to [EventContext.addNamingListener()](https://docs.oracle.com/javase/8/docs/api/javax/naming/event/EventContext.html#addNamingListener-javax.naming.Name-int-javax.naming.event.NamingListener-) is relevant. The name and scope parameters are not relevant to unsolicited notifications.
 
-```
 // Get the event context for registering the listener
 EventContext ctx = (EventContext)
     (new InitialContext(env).lookup("ou=People"));

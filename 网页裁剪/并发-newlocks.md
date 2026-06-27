@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Lock Objects (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)
 
 Documentation
 
@@ -29,7 +31,7 @@ The biggest advantage of `Lock` objects over implicit locks is their ability to 
 
 Let's use `Lock` objects to solve the deadlock problem we saw in [[并发-liveness|Liveness]]. Alphonse and Gaston have trained themselves to notice when a friend is about to bow. We model this improvement by requiring that our `Friend` objects must acquire locks for *both* participants before proceeding with the bow. Here is the source code for the improved model, [`` `Safelock` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/Safelock.java). To demonstrate the versatility of this idiom, we assume that Alphonse and Gaston are so infatuated with their newfound ability to bow safely that they can't stop bowing to each other:
 
-```
+```java
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.Random;

@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Checking a File or Directory (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)
 
 Documentation
 
@@ -105,7 +107,7 @@ To verify that the program can access a file as needed, you can use the [`isRead
 
 The following code snippet verifies that a particular file exists and that the program has the ability to execute the file.
 
-```
+```text
 Path file = ...;
 boolean isRegularExecutableFile = Files.isRegularFile(file) &
          Files.isReadable(file) & Files.isExecutable(file);
@@ -121,7 +123,7 @@ boolean isRegularExecutableFile = Files.isRegularFile(file) &
 
 When you have a file system that uses symbolic links, it is possible to have two different paths that locate the same file. The [`isSameFile(Path, Path)`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#isSameFile-java.nio.file.Path-java.nio.file.Path-) method compares two paths to determine if they locate the same file on the file system. For example:
 
-```
+```text
 Path p1 = ...;
 Path p2 = ...;
 

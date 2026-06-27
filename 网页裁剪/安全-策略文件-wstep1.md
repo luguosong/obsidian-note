@@ -9,6 +9,8 @@
 发布时间:
 创建时间: "2026-06-27T18:00:00+08:00"
 ---
+# Start Policy Tool (The Java™ Tutorials >        
+            Security Features in Java SE > Creating a Policy File)
 
 Documentation
 
@@ -31,7 +33,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 To start Policy Tool, simply type the following at the command line:
 
-```
+```text
 policytool
 ```
 
