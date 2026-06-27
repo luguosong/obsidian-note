@@ -1,11 +1,11 @@
 ---
 name: defuddle
-description: Extract clean markdown content from web pages using Defuddle CLI, attach a unified Obsidian frontmatter, auto-translate English content into academic Chinese, and save to the 网页裁剪/ directory. Use instead of WebFetch when the user provides a URL to read, clip, or archive — for online documentation, articles, blog posts, GitHub READMEs, or any standard web page. Do NOT use for URLs ending in .md — those are already markdown, use WebFetch directly.
+description: Extract clean markdown content from web pages using Defuddle CLI, attach a unified Obsidian frontmatter, auto-translate English content into academic Chinese, download images to the local 附件/ folder (rewriting references to Obsidian ![[file]] embeds), and save to the 网页裁剪/ directory. Use instead of WebFetch when the user provides a URL to read, clip, or archive — for online documentation, articles, blog posts, GitHub READMEs, or any standard web page. Do NOT use for URLs ending in .md — those are already markdown, use WebFetch directly.
 ---
 
 # Defuddle
 
-Use Defuddle CLI to extract clean readable content from web pages, wrap it with a unified frontmatter, and — when the content is English — translate it into academic Chinese before saving.
+Use Defuddle CLI to extract clean readable content from web pages, wrap it with a unified frontmatter, and — when the content is English — translate it into academic Chinese before saving. **正文中的远程图片会自动下载到本地 `附件/` 目录，并将引用改写为 Obsidian 的 `![[文件名]]` 嵌入语法**，避免远程图片失效。
 
 If not installed: `npm install -g defuddle`
 
@@ -20,7 +20,7 @@ If not installed: `npm install -g defuddle`
 
 ## 标准抓取流程
 
-按顺序执行四步：**取元数据 → 抓正文 → 组装 frontmatter → 判断语言并按需翻译 → 落盘**。
+按顺序执行五步：**取元数据 → 抓正文 → 组装 frontmatter → 判断语言并按需翻译 → 下载图片并改写引用 → 落盘**。
 
 ### 1. 提取元数据
 
@@ -77,6 +77,25 @@ Windows / Git Bash 下路径含中文需加引号。
 
 不要局部翻译、不要逐句直译——先通读全文理解语境，再产出连贯译文，最后替换落盘。
 
+### 5. 下载图片到本地并改写引用（默认执行）
+
+翻译完成、最终正文确定后，**默认**对落盘文件运行图片本地化脚本：扫描正文中的远程图片（Markdown `![](https://…)` 与 HTML `<img src="https://…">`），下载到 `附件/` 目录，并把引用改写为 Obsidian 嵌入语法 `![[文件名]]`。
+
+```bash
+node ".zcode/skills/defuddle/scripts/download-images.js" "网页裁剪/<文件名>.md" --prefix "<可选前缀>"
+```
+
+要点：
+
+- 脚本位于本 skill 目录下的 `scripts/download-images.js`，路径相对仓库根目录。它**就地修改**传入的 Markdown 文件：下载成功的图片引用改写为 `![[文件名]]`，下载失败的保留原远程链接并在控制台告警。
+- **在翻译完成、文件最终落盘后运行**——否则脚本改写后的 `![[]]` 引用会被后续的整段译文替换覆盖掉。
+- **`--prefix`**（可选）：为该页所有图片加前缀，避免不同页面同名图片冲突。建议用与笔记相关的简短英文/拼音前缀加连字符，如 `--prefix context7-`、`--prefix jvm-`。无命名冲突风险时可省略。
+- 脚本会去重（同一 URL 只下载一次）、按 Content-Type 补全扩展名、对同名文件追加序号。下载失败（403/404/超时）不中断流程。
+- **图片压缩（默认开启）**：下载后自动用 `sharp` 压缩——PNG/JPEG/WebP/AVIF/BMP 转为 WebP（质量 82），体积通常降 50-90%；GIF 与 SVG 保留原格式不动。压缩后**直接覆盖**原图（原图删除），文件名扩展名改为 `.webp` 并同步更新引用。实测 1.7MB 的 JPEG → 139KB WebP（-92%）。压缩依赖 sharp，已在 `scripts/` 下安装（`node_modules` 被 gitignore）。如需关闭：加 `--no-compress`；如仅压缩大图：`--threshold 204800`（只压 >200KB 的）。
+- 仅当用户明确说「不要下载图片」「保留远程图片」时才跳过此步；否则一律执行。
+
+> 翻译时，正文里出现的 `![](https://…)` 远程图片占位**照原样保留**（URL 不改动），由本步骤统一改写。不要在翻译阶段手工改写图片链接。
+
 ## 学术翻译规范（英文 → 中文）
 
 当正文主体为英文时，按以下规范翻译。翻译完成后用译文**整体替换**正文。**frontmatter 的 `标题`、`描述` 字段同样按本规范翻译为中文**（`来源`、`发布者`、`创建时间` 等非文本字段保持原样）。
@@ -93,7 +112,7 @@ Windows / Git Bash 下路径含中文需加引号。
 6. **公式与科学记数法**：数学公式、等式、科学记数法准确保留，不改动符号。
 7. **术语一致性**：贯穿全文，同一术语的译法保持一致。
 8. **Markdown 结构**：标题层级、列表、代码块（含语言标注）、表格、引用块、链接 URL 原样保留；只翻译可读文本，不改动代码块内的代码本身（代码块的语言标识如 ` ```bash ` 不翻译）。
-9. **链接文本**：链接的显示文本译为中文，URL 不改动；图片 alt 文本可译。
+9. **链接文本**：链接的显示文本译为中文，URL 不改动；图片 alt 文本可译，但**图片引用本身（`![](https://…)`）照原样保留**，不要手工改成 `![[]]`——图片本地化由第 5 步的脚本统一处理。
 
 ### 常见技术术语对照（参考，非强制）
 
@@ -150,7 +169,11 @@ defuddle parse "https://github.com/upstash/context7" --md -o "网页裁剪/Conte
 date -Iseconds   # 生成创建时间
 ```
 
-读取落盘文件 → 顶部插入 frontmatter → 判定正文为英文 → 整篇按学术规范翻译 → 用译文替换正文 → 保存。
+读取落盘文件 → 顶部插入 frontmatter → 判定正文为英文 → 整篇按学术规范翻译 → 用译文替换正文 → **下载图片到 `附件/`** → 保存：
+
+```bash
+node ".zcode/skills/defuddle/scripts/download-images.js" "网页裁剪/Context7 README.md" --prefix "context7-"
+```
 
 最终文件头部形如：
 

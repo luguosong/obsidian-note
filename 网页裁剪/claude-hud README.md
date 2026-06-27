@@ -13,9 +13,9 @@
 
 一个 Claude Code 插件，用于展示当前会话中正在发生的一切 —— 上下文用量、活动工具、运行中的智能体(agent)以及待办事项(todo)进度。始终显示在输入框下方。
 
-[![License](https://camo.githubusercontent.com/c20a3095d3b72456fcd0dae08e126d48fa78be0595e71fb53c9ad9939a7bf8eb/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6a6172726f6477617474732f636c617564652d6875643f763d32)](https://github.com/jarrodwatts/claude-hud/blob/main/LICENSE) [![Stars](https://camo.githubusercontent.com/aa2f77bfeb23f75261f6ccdde8a3693114147d0d74ed4299d8a32f5f51e37073/68747470733a2f2f696d672e736869656c64732e696f2f73746172732f6a6172726f6477617474732f636c617564652d687564)](https://github.com/jarrodwatts/claude-hud/stargazers)
+[![[claude-hud-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6a6172726f6477617474732f636c617564652d6875643f763d32.svg]]](https://github.com/jarrodwatts/claude-hud/blob/main/LICENSE) [![Stars](https://camo.githubusercontent.com/aa2f77bfeb23f75261f6ccdde8a3693114147d0d74ed4299d8a32f5f51e37073/68747470733a2f2f696d672e736869656c64732e696f2f73746172732f6a6172726f6477617474732f636c617564652d687564)](https://github.com/jarrodwatts/claude-hud/stargazers)
 
-[![Claude HUD 实际效果](https://github.com/jarrodwatts/claude-hud/raw/main/claude-hud-preview-5-2.png)](https://github.com/jarrodwatts/claude-hud/blob/main/claude-hud-preview-5-2.png)
+[![[claude-hud-claude-hud-preview-5-2.webp]]](https://github.com/jarrodwatts/claude-hud/blob/main/claude-hud-preview-5-2.png)
 
 > 🌐 English | [中文文档](https://github.com/jarrodwatts/claude-hud/blob/main/README.zh.md)
 
@@ -441,4 +441,4 @@ MIT —— 参见 [LICENSE](https://github.com/jarrodwatts/claude-hud/blob/main/
 
 ---
 
-[![Star History Chart](https://camo.githubusercontent.com/8946fcd175bf67b3e4eeadfe2a527645ef9da620b7ef5b9ec12775d175019e41/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6a6172726f6477617474732f636c617564652d68756426747970653d44617465)](https://star-history.com/#jarrodwatts/claude-hud&Date)
+[![[claude-hud-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6a6172726f6477617474732f636c617564652d68756426747970653d44617465.svg]]](https://star-history.com/#jarrodwatts/claude-hud&Date)

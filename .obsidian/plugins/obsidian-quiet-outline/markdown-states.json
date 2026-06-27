@@ -4060,7 +4060,9 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/未命名.md": {
     "scroll": 0,
@@ -4077,14 +4079,14 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
-    "scroll": 16.476393884892087,
+    "scroll": 27.905555555555555,
     "cursor": {
       "from": {
-        "line": 42,
+        "line": 43,
         "ch": 0
       },
       "to": {
-        "line": 42,
+        "line": 43,
         "ch": 0
       }
     },
@@ -4343,12 +4345,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 34,
-        "ch": 0
+        "line": 13,
+        "ch": 23
       },
       "to": {
-        "line": 34,
-        "ch": 0
+        "line": 13,
+        "ch": 23
       }
     },
     "expandedKeys": [
@@ -4357,20 +4359,116 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
-    "scroll": 90.79605454017987,
+    "scroll": 28.766304347826086,
     "cursor": {
       "from": {
-        "line": 110,
-        "ch": 0
+        "line": 47,
+        "ch": 9
       },
       "to": {
-        "line": 110,
-        "ch": 0
+        "line": 47,
+        "ch": 9
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-1"
+    ]
+  },
+  "网页裁剪/Java教程学习路径.md": {
+    "scroll": 22.952338129496404,
+    "cursor": {
+      "from": {
+        "line": 43,
+        "ch": 0
+      },
+      "to": {
+        "line": 43,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java入门指南.md": {
+    "scroll": 6.944444444444445,
+    "cursor": {
+      "from": {
+        "line": 24,
+        "ch": 85
+      },
+      "to": {
+        "line": 24,
+        "ch": 85
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java技术现象.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 27,
+        "ch": 0
+      },
+      "to": {
+        "line": 27,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/关于Java技术.md": {
+    "scroll": 47.300925925925924,
+    "cursor": {
+      "from": {
+        "line": 35,
+        "ch": 39
+      },
+      "to": {
+        "line": 35,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java技术如何改变生活.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java技术能做什么.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
     ]
   }
 }

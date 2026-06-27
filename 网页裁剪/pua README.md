@@ -10,7 +10,7 @@
 ---
 ## pua
 
-[![PUA Skill — 效率翻倍](https://github.com/tanweai/pua/raw/main/assets/hero.jpeg)](https://github.com/tanweai/pua/blob/main/assets/hero.jpeg)
+[![[pua-hero.jpeg]]](https://github.com/tanweai/pua/blob/main/assets/hero.jpeg)
 
 ### 让你的 Codex / Claude Code 工作效率翻倍，产出翻倍
 
@@ -18,7 +18,7 @@
 
 **[🇺🇸 English](https://github.com/tanweai/pua/blob/main/README.md)** | **🇨🇳 中文** | **[🇯🇵 日本語](https://github.com/tanweai/pua/blob/main/README.ja.md)**
 
-[![WeChat Group QR Code](https://github.com/tanweai/pua/raw/main/assets/wechat-qr.jpg?v=9)](https://github.com/tanweai/pua/blob/main/assets/wechat-qr.jpg?v=9) [![小助手微信](https://github.com/tanweai/pua/raw/main/assets/xiao.jpg)](https://github.com/tanweai/pua/blob/main/assets/xiao.jpg)  
+[![[pua-wechat-qr.jpg]]](https://github.com/tanweai/pua/blob/main/assets/wechat-qr.jpg?v=9) [![[pua-xiao.jpg]]](https://github.com/tanweai/pua/blob/main/assets/xiao.jpg)  
 <sub>扫码加入微信交流群 添加小助手微信</sub>
 
 > 大部分人以为这个项目是在搞抽象，其实这个是最大的误解。让你的 Codex / Claude Code 工作效率翻倍，产出翻倍。
@@ -39,15 +39,15 @@
 
 **L3 触发 → 7 项检查清单强制执行：**
 
-[![PUA L3 触发 — 停止猜测，执行系统化检查清单，从 MCP 日志中找到真正的错误信息](https://github.com/tanweai/pua/raw/main/assets/pua1.jpg)](https://github.com/tanweai/pua/blob/main/assets/pua1.jpg)
+[![[pua-pua1.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua1.jpg)
 
 **根因定位 → 从日志追踪到注册机制：**
 
-[![根因发现 — claude mcp 管理的服务器注册方式和手动编辑 .claude.json 不同](https://github.com/tanweai/pua/raw/main/assets/pua2.jpg)](https://github.com/tanweai/pua/blob/main/assets/pua2.jpg)
+[![[pua-pua2.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua2.jpg)
 
 **复盘 → PUA 的实际效果：**
 
-[![对话复盘 — PUA skill 强制停止原地打转，系统化检查清单驱动找到了之前从未检查过的 Claude Code MCP 日志目录](https://github.com/tanweai/pua/raw/main/assets/pua3.jpg)](https://github.com/tanweai/pua/blob/main/assets/pua3.jpg)
+[![[pua-pua3.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua3.jpg)
 
 **关键转折点：** PUA skill 强制 AI 停止在同一思路上打转（改协议格式、猜版本号），转而执行 7 项检查清单。逐字读错误信息 → 找到 Claude Code 自身的 MCP 日志目录 → 发现 `claude mcp` 的注册机制和手动编辑 `.claude.json` 不同 → 根因解决。
 
@@ -722,7 +722,7 @@ ls ~/.codex/sessions/*.jsonl
 
 ## Star History
 
-[![Star History Chart](https://camo.githubusercontent.com/efa2836c10c5c8cd864424c46e40d4066eba88be4af9070fd3c69f4fd11a3543/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d74616e776561692f70756126747970653d44617465)](https://star-history.com/#tanweai/pua&Date)
+[![[pua-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d74616e776561692f70756126747970653d44617465.svg]]](https://star-history.com/#tanweai/pua&Date)
 
 ## License
 

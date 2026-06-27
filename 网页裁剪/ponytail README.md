@@ -8,13 +8,13 @@
 发布时间:
 创建时间: "2026-06-25T22:05:17+08:00"
 ---
-![Ponytail, the lazy senior dev](https://github.com/DietrichGebert/ponytail/raw/main/assets/logo-dark.png)
+![[ponytail-logo-dark.webp]]
 
 ## 马尾辫
 
 *他什么都不说。他只写一行。它能工作。*
 
-[![DietrichGebert/ponytail | Trendshift](https://camo.githubusercontent.com/95872e148da3fe4be240fe9cdf5ca59586be1889e41662ca52b099f65a80a734/68747470733a2f2f7472656e6473686966742e696f2f6170692f62616467652f7472656e6473686966742f7265706f7369746f726965732f35303636382f6461696c79)](https://trendshift.io/repositories/50668)**~代码减少 54%（最高可达 94%） · ~ 成本降低 20% · ~ 速度提升 27% · 100%安全**  
+[![[ponytail-68747470733a2f2f7472656e6473686966742e696f2f6170692f62616467652f7472656e6473686966742f7265706f7369746f726965732f35303636382f6461696c79.svg]]](https://trendshift.io/repositories/50668)**~代码减少 54%（最高可达 94%） · ~ 成本降低 20% · ~ 速度提升 27% · 100%安全**  
 <sub>Measured on real Claude Code sessions editing a real open-source repo (FastAPI + React), against the same agent with no skill. ~54% is the mean across 12 feature tasks (Haiku 4.5, n=4); it reaches 94% where an agent over-builds (a date picker) and is near zero where the code is already minimal. ponytail keeps every safety guard while a bare "write one-liners" prompt drops one. (The earlier single-shot benchmark reported 80-94% as a flat figure; against a fair agentic baseline that is the per-task ceiling, not the average.) <a href="https://github.com/DietrichGebert/ponytail/blob/main/benchmarks/results/2026-06-18-agentic.md">Full writeup</a> · <a href="https://github.com/DietrichGebert/ponytail/blob/main/benchmarks">reproduce it</a> 。</sub>
 
 <sub><a href="https://github.com/DietrichGebert/ponytail/blob/main/README.es.md">Español</a> · <a href="https://github.com/DietrichGebert/ponytail/blob/main/README.ko.md">한국어</a></sub>
@@ -42,7 +42,7 @@ Ponytail 将他植入你的 AI 智能体(AI agent)中。
 
 真实的测量是一个真实的智能体(agent)执行真实的工作：一个无头的 Claude Code 会话编辑 [tiangolo 的 full-stack-fastapi-template](https://github.com/fastapi/full-stack-fastapi-template) （一个真实的 FastAPI + React 仓库），根据它留下的 `git diff` 进行评分。十二个功能工单(feature tickets)，同一个智能体(agent)分别在有技能(skill)和无技能(skill)的情况下运行，n=4，使用 Haiku 4.5 模型。
 
-[![Each arm as a percent of the no-skill baseline across LOC, tokens, cost and time (Haiku 4.5). ponytail is lowest on every metric (LOC 46%, tokens 78%, cost 80%, time 73%); caveman rises above 100% on tokens, cost and time; yagni-oneliner LOC 67%. Safety, separate adversarial tier: baseline, caveman and ponytail 100%, yagni-oneliner 95%.](https://github.com/DietrichGebert/ponytail/raw/main/assets/benchmark-agentic.svg)](https://github.com/DietrichGebert/ponytail/blob/main/assets/benchmark-agentic.svg)
+[![[ponytail-benchmark-agentic.svg]]](https://github.com/DietrichGebert/ponytail/blob/main/assets/benchmark-agentic.svg)
 
 | 与无技能基线对比 | LOC | 代币(tokens) | 成本(cost) | 时间(time) | 安全(safe) |
 | --- | --- | --- | --- | --- | --- |
@@ -56,7 +56,7 @@ ponytail 是唯一能削减所有指标的手段(arm)，也是唯一在削减的
 
 Five everyday tasks, three models, three arms (no skill, [caveman](https://github.com/JuliusBrussee/caveman), ponytail), ten runs, median reported. One prompt, one completion, counting lines of the answer:
 
-[![Median lines of code per arm across Haiku, Sonnet and Opus](https://github.com/DietrichGebert/ponytail/raw/main/assets/benchmark-3model.svg)](https://github.com/DietrichGebert/ponytail/blob/main/assets/benchmark-3model.svg)
+[![[ponytail-benchmark-3model.svg]]](https://github.com/DietrichGebert/ponytail/blob/main/assets/benchmark-3model.svg)
 
 This showed **80-94% less code** 。 [#126](https://github.com/DietrichGebert/ponytail/issues/126) fairly pointed out that the bare-model baseline pads its answer with prose and options, so that gap is partly a conversational-baseline artifact. The agentic numbers above are the corrected, defensible version. Reproduce the single-shot run with `npx promptfoo eval -c benchmarks/promptfooconfig.yaml` 。
 
@@ -269,6 +269,6 @@ OpenClaw 技能包(OpenClaw skill package)（`.openclaw/skills/` ）是从 `skil
 
 [
 
-![Star History Chart](https://camo.githubusercontent.com/58110711afdba358b88dce127ab12eb5338589b930cf3545de2bf78808a29a9c/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f63686172743f7265706f733d44696574726963684765626572742f706f6e797461696c26747970653d44617465)
+![[ponytail-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f63686172743f7265706f733d44696574726963684765626572742f706f6e797461696c26747970653d44617465.svg]]
 
 ](https://www.star-history.com/dietrichgebert/ponytail#history)

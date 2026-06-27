@@ -9,13 +9,13 @@
 创建时间: "2026-06-26T14:34:17+08:00"
 ---
 
-[![Cover](https://github.com/upstash/context7/raw/master/public/cover.png?raw=true)](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)
+[![[context7-cover.webp]]](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)
 
-[![Install MCP Server](https://camo.githubusercontent.com/ae8711b98f6b99feccfa4c47b29a82aaee09b04829d6d29e6ed410468a4e8296/68747470733a2f2f637572736f722e636f6d2f646565706c696e6b2f6d63702d696e7374616c6c2d6461726b2e737667)](https://cursor.com/en/install-mcp?name=context7&config=eyJ1cmwiOiJodHRwczovL21jcC5jb250ZXh0Ny5jb20vbWNwIn0%3D)
+[![[context7-68747470733a2f2f637572736f722e636f6d2f646565706c696e6b2f6d63702d696e7374616c6c2d6461726b2e737667.svg]]](https://cursor.com/en/install-mcp?name=context7&config=eyJ1cmwiOiJodHRwczovL21jcC5jb250ZXh0Ny5jb20vbWNwIn0%3D)
 
 ## Context7 平台 —— 为任意提示词提供最新代码文档
 
-[![Website](https://camo.githubusercontent.com/9994d9f131941d058acc851a00dccc64df96f9c75944a6a4405d2f4dd83df9f1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f576562736974652d636f6e74657874372e636f6d2d626c7565)](https://context7.com/) [![smithery badge](https://camo.githubusercontent.com/64b96e6b5b02bca337100edd8425158d6169bb270891e590051e9d9d3631c62e/68747470733a2f2f736d6974686572792e61692f62616467652f40757073746173682f636f6e74657874372d6d6370)](https://smithery.ai/server/@upstash/context7-mcp) [![NPM Version](https://camo.githubusercontent.com/9a0bea7e6d75438e79937c02fed03dc748c72db5276f1d40054e73f58dc38c25/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f25343075707374617368253246636f6e74657874372d6d63703f636f6c6f723d726564)](https://www.npmjs.com/package/@upstash/context7-mcp) [![MIT licensed](https://camo.githubusercontent.com/16c17e881cb4ea270c67bab3bb00c1edad0da07a8546ee9aa4b7f4c1c4b0eacf/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f25343075707374617368253246636f6e74657874372d6d6370)](https://github.com/upstash/context7/blob/master/LICENSE)
+[![[context7-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f576562736974652d636f6e74657874372e636f6d2d626c7565.svg]]](https://context7.com/) [![[context7-68747470733a2f2f736d6974686572792e61692f62616467652f40757073746173682f636f6e74657874372d6d6370.svg]]](https://smithery.ai/server/@upstash/context7-mcp) [![[context7-68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f25343075707374617368253246636f6e74657874372d6d63703f636f6c6f723d726564.svg]]](https://www.npmjs.com/package/@upstash/context7-mcp) [![[context7-68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f25343075707374617368253246636f6e74657874372d6d6370.svg]]](https://github.com/upstash/context7/blob/master/LICENSE)
 
 ## ❌ 不使用 Context7 时
 
@@ -163,7 +163,7 @@ Always use Context7 when I need library/API documentation, code generation, setu
 
 ## ⭐ Star 历史
 
-[![Star History Chart](https://camo.githubusercontent.com/79cc57a553c7c78718ee9b502e905d3432df55993208879f45b019bae73955ed/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d757073746173682f636f6e746578743726747970653d44617465)](https://www.star-history.com/#upstash/context7&Date)
+[![[context7-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d757073746173682f636f6e746578743726747970653d44617465.svg]]](https://www.star-history.com/#upstash/context7&Date)
 
 ## 📄 许可证
 
