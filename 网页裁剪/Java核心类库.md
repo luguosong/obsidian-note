@@ -1,0 +1,33 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Java 核心类库"
+描述: "《Java 教程》中的「Java 核心类库」路线，介绍大多数程序员必不可少的 Java 平台类，包括异常、基本输入/输出、并发、平台环境和正则表达式。"
+来源: "https://docs.oracle.com/javase/tutorial/essential/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:36:09+08:00"
+---
+
+# Java 核心类库
+
+> 文档说明
+
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
+
+## 路线：Java 核心类库
+
+本路线讨论 Java 平台中对大多数程序员而言必不可少的类。
+
+[**异常**](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html) 解释异常机制以及如何用它来处理错误和其他异常情况。本课描述什么是异常、如何抛出和捕获异常、捕获异常后该如何处理，以及如何使用异常类层次结构。
+
+[**基本输入/输出**](https://docs.oracle.com/javase/tutorial/essential/io/index.html) 涵盖用于基本输入和输出的 Java 平台类。它主要关注*I/O 流(I/O Streams)*，这是一个极大地简化了 I/O 操作的强大概念。本课还涉及序列化(Serialization)，它允许程序将整个对象写入流中并再次读回。然后本课介绍一些文件系统操作，包括随机访问文件。最后，简要提及新 I/O API(New I/O API) 的高级特性。
+
+[**并发**](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html) 解释如何编写同时执行多个任务的应用程序。Java 平台从底层就被设计为支持并发编程，Java 编程语言和 Java 类库都提供了基本的并发支持。自 5.0 版本起，Java 平台还包含了高级并发 API。本课介绍平台的基本并发支持，并概述 `java.util.concurrent` 包中的部分高级 API。
+
+[**平台环境**](https://docs.oracle.com/javase/tutorial/essential/environment/index.html) 由底层操作系统、Java 虚拟机、类库以及应用程序启动时提供的各种配置数据共同定义。本课描述应用程序用来检查和配置其平台环境的部分 API。
+
+[**正则表达式**](https://docs.oracle.com/javase/tutorial/essential/regex/index.html) 是一种基于集合中每个字符串所共有的共同特征来描述一组字符串的方法。它们可用于搜索、编辑或操作文本和数据。正则表达式的复杂程度各异，但一旦你理解了它们构成方式的基础知识，就能解读（或创建）任何正则表达式。本课教授 `java.util.regex` API 支持的正则表达式语法，并给出若干可运行的示例来说明各种对象如何交互。

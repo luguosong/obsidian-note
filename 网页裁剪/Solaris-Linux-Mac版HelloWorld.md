@@ -1,8 +1,8 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Solaris OS、Linux 和 Mac OS X 版 HelloWorld（"Hello World!" for Solaris OS, Linux, and Mac OS X）"
-描述: "在 Solaris OS、Linux 和 Mac OS X 上使用 Pico 编辑器和终端创建、编译并运行第一个"Hello World!"应用程序的详细步骤。"
+标题: 'Solaris OS、Linux 和 Mac OS X 版 HelloWorld（"Hello World!" for Solaris OS, Linux, and Mac OS X）'
+描述: '在 Solaris OS、Linux 和 Mac OS X 上使用 Pico 编辑器和终端创建、编译并运行第一个 "Hello World!" 应用程序的详细步骤。'
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html"
 发布者: "Oracle-"
 发布时间:
@@ -73,7 +73,7 @@
 
 你创建的源文件应当保存在一个单独的目录中。你可以使用 `mkdir` 命令来创建目录。例如，要在 /tmp 目录下创建 `examples/java` 目录，使用以下命令：
 
-```
+```bash
 cd /tmp
 mkdir examples
 cd examples
@@ -94,14 +94,14 @@ cd /tmp/examples/java
 
 在新的缓冲区中输入以下代码：
 
-```
+```java
 /**
- * The HelloWorldApp class implements an application that
- * simply prints "Hello World!" to standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出打印 "Hello World!"。
  */
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
 ```

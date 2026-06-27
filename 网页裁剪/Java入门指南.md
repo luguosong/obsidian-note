@@ -26,6 +26,6 @@
 
 [[HelloWorld应用程序]] 这篇实战教程描述了创建一个简单的"Hello World!"应用程序需要下载什么、安装什么、输入什么。它为 NetBeans™ 集成开发环境(NetBeans IDE)、Microsoft Windows、Solaris™ 操作系统(Solaris OS)、Linux 和 Mac 用户分别提供了操作说明。
 
-[**深入剖析"Hello World!" (A Closer Look at "Hello World!")**](https://docs.oracle.com/javase/tutorial/getStarted/application/index.html) 讨论"Hello World!"应用程序，详细描述代码的各个部分。涵盖源代码注释、`HelloWorldApp` 类定义块以及 `main` 方法。
+[[深入剖析HelloWorld应用程序]]讨论"Hello World!"应用程序，详细描述代码的各个部分。涵盖源代码注释、`HelloWorldApp` 类定义块以及 `main` 方法。
 
-[**常见问题（及其解决方案） (Common Problems (and Their Solutions))**](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html) 如果你在编译或运行本学习路径中的程序时遇到问题，请参阅此处。
+[[常见问题及解决方案]] 如果你在编译或运行本学习路径中的程序时遇到问题，请参阅此处。

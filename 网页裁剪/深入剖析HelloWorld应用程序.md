@@ -1,8 +1,8 @@
 ---
 分类:
   - "网页裁剪"
-标题: "深入剖析 HelloWorld 应用程序（A Closer Look at the "Hello World!" Application）"
-描述: "逐段解析"Hello World!"应用程序的三个核心组成部分：源代码注释、HelloWorldApp 类定义与 main 方法，帮助初学者理解 Java 程序的基本结构。"
+标题: '深入剖析 HelloWorld 应用程序（A Closer Look at the "Hello World!" Application）'
+描述: '逐段解析 "Hello World!" 应用程序的三个核心组成部分：源代码注释、HelloWorldApp 类定义与 main 方法，帮助初学者理解 Java 程序的基本结构。'
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/application/index.html"
 发布者: "Oracle-"
 发布时间:
@@ -22,10 +22,10 @@
 
 既然你已经看过了 "Hello World!" 应用程序（甚至可能已经编译并运行了它），你或许会想知道它是如何运作的。下面再次给出它的代码：
 
-```
+```java
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
 ```
@@ -34,14 +34,14 @@ class HelloWorldApp {
 
 ## 源代码注释 (Source Code Comments)
 
-```
+```java
 /**
- * The HelloWorldApp class implements an application that
- * simply prints "Hello World!" to standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出打印 "Hello World!"。
  */
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
 ```
@@ -64,14 +64,14 @@ class HelloWorldApp {
 
 以下加粗文本开始了 "Hello World!" 应用程序的类定义块：
 
-```
+```java
 /**
- * The HelloWorldApp class implements an application that
- * simply displays "Hello World!" to the standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出显示 "Hello World!"。
  */
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
 ```
@@ -90,21 +90,21 @@ class name {
 
 以下加粗文本开始了 `main` 方法的定义：
 
-```
+```java
 /**
- * The HelloWorldApp class implements an application that
- * simply displays "Hello World!" to the standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出显示 "Hello World!"。
  */
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); //Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
 ```
 
 在 Java 编程语言中，每个应用程序都必须包含一个 `main` 方法，其签名为：
 
-```
+```java
 public static void main(String[] args)
 ```
 
@@ -114,7 +114,7 @@ public static void main(String[] args)
 
 `main` 方法接受单个参数：一个类型为 `String` 的元素数组。
 
-```
+```java
 public static void main(String[] args)
 ```
 
@@ -134,7 +134,7 @@ java MyApp arg1 arg2
 
 最后，这一行：
 
-```
+```java
 System.out.println("Hello World!");
 ```
 

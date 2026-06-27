@@ -1,8 +1,8 @@
 ---
 分类:
   - "网页裁剪"
-标题: "Microsoft Windows 版 HelloWorld（"Hello World!" for Microsoft Windows）"
-描述: "在 Microsoft Windows 上使用记事本和命令行创建、编译并运行第一个"Hello World!"应用程序的详细步骤。"
+标题: 'Microsoft Windows 版 HelloWorld（"Hello World!" for Microsoft Windows）'
+描述: '在 Microsoft Windows 上使用记事本和命令行创建、编译并运行第一个 "Hello World!" 应用程序的详细步骤。'
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html"
 发布者: "Oracle-"
 发布时间:
@@ -65,14 +65,14 @@
 
 首先，启动你的编辑器。你可以通过选择 **Start > Programs > Accessories > Notepad** 从「开始」菜单启动记事本编辑器。在一个新文档中，输入以下代码：
 
-```
+```java
 /**
- * The HelloWorldApp class implements an application that
- * simply prints "Hello World!" to standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出打印 "Hello World!"。
  */
 class HelloWorldApp {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 }
 ```
@@ -126,7 +126,7 @@ cd C:\myapplication
 
 要切换到另一个驱动器上的目录，你必须额外输入一个命令：驱动器的名称。例如，要切换到 `D` 盘上的 `myapplication` 目录，你必须输入 `D:`，如下所示：
 
-```
+```batch
 C:\>D:
 
 D:\>cd myapplication
@@ -138,7 +138,7 @@ D:\myapplication>
 
 如果你在提示符下输入 `dir`，应该能看到你的源文件，如下所示：
 
-```
+```batch
 C:\>cd myapplication
 
 C:\myapplication>dir

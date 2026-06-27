@@ -604,11 +604,15 @@
     "编程笔记/03-Java/01-基础/01-JavaSE": {
       "option": "property-asc",
       "propertyKey": "排序"
-    }
+    },
+    "附件": "created-asc"
   },
   "folderTreeSortOverrides": {},
   "folderAppearances": {
     "网页裁剪": {
+      "groupBy": "date"
+    },
+    "附件": {
       "groupBy": "date"
     }
   },

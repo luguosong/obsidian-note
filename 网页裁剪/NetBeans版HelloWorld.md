@@ -1,8 +1,8 @@
 ---
 分类:
   - "网页裁剪"
-标题: "NetBeans IDE 版 HelloWorld（"Hello World!" for the NetBeans IDE）"
-描述: "使用 NetBeans IDE 创建、编译并运行第一个"Hello World!"应用程序的详细图文步骤，涵盖项目创建、代码编写、编译与运行。"
+标题: 'NetBeans IDE 版 HelloWorld（"Hello World!" for the NetBeans IDE）'
+描述: '使用 NetBeans IDE 创建、编译并运行第一个 "Hello World!" 应用程序的详细图文步骤，涵盖项目创建、代码编写、编译与运行。'
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html"
 发布者: "Oracle-"
 发布时间:
@@ -112,8 +112,8 @@ IDE 现在已配置为使用 JDK 8。
 
 替换为这一行，来把 "Hello World!" 消息添加到骨架代码中：
 
-```
-System.out.println("Hello World!"); // Display the string.
+```java
+System.out.println("Hello World!"); // 显示该字符串。
 ```
 
 可选地，你可以把这四行生成的代码：
@@ -129,8 +129,8 @@ System.out.println("Hello World!"); // Display the string.
 
 ```
 /**
- * The HelloWorldApp class implements an application that
- * simply prints "Hello World!" to standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出打印 "Hello World!"。
  */
 ```
 
@@ -150,26 +150,26 @@ System.out.println("Hello World!"); // Display the string.
 
 文件应当类似于以下内容：
 
-```
+```java
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * 如需更改此模板，请选择 Tools | Templates
+ * 并在编辑器中打开该模板。
  */
 
 package helloworldapp;
 
 /**
- * The HelloWorldApp class implements an application that
- * simply prints "Hello World!" to standard output.
+ * HelloWorldApp 类实现了一个应用程序，
+ * 它仅向标准输出打印 "Hello World!"。
  */
 public class HelloWorldApp {
 
    
     /**
-     * @param args the command line arguments
+     * @param args 命令行参数
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!"); // Display the string.
+        System.out.println("Hello World!"); // 显示该字符串。
     }
 
 }

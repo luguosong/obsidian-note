@@ -1,0 +1,58 @@
+Documentation
+
+[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/misc/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html)
+
+The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
+See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
+See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
+See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+
+## Lesson: Laying Out Components Within a Container
+
+[Examples Index](https://docs.oracle.com/javase/tutorial/uiswing/examples/layout/index.html)  
+
+This lesson tells you how to use the layout managers provided by the Java platform. It also tells you how to use absolute positioning (no layout manager) and gives an example of writing a custom layout manager. For each layout manager (or lack thereof), this lesson points to an example that you can run using Java™ Web Start. By resizing an example's window, you can see how size changes affect the layout.
+
+---
+
+**Note:** This lesson covers writing layout code by hand, which can be challenging. If you are not interested in learning all the details of layout management, you might prefer to use the `GroupLayout` layout manager combined with a builder tool to lay out your GUI. One such builder tool is the [NetBeans IDE](https://docs.oracle.com/javase/tutorial/uiswing/learn/index.html). Otherwise, if you want to code by hand and do not want to use `GroupLayout`, then `GridBagLayout` is recommended as the next most flexible and powerful layout manager.
+
+---
+
+If you are interested in using JavaFX to create your GUI, see [Working With Layouts in JavaFX](https://docs.oracle.com/javase/8/javafx/layout-tutorial/index.html).
+
+## A Visual Guide to Layout Managers
+
+This section shows examples of the standard layout managers and points to the how-to section for each one.
+
+## Using Layout Managers
+
+This section gives general rules on using the standard layout managers. It includes how to set the layout manager, add components to a container, provide size and alignment hints, put space between components, and set the orientation of the container's layout so that it is appropriate for the locale in which the program is running. It also has some tips for choosing the right layout manager.
+
+## How Layout Management Works
+
+This section goes through a typical layout sequence and then describes what happens when a component's size changes.
+
+## How to Use...
+
+This series of sections tells you how to use each of the general-purpose layout managers that the Java platform provides.
+
+## Creating a Custom Layout Manager
+
+Instead of using one of the Java platform's layout managers, you can write your own.
+
+Layout managers must implement the `LayoutManager` interface, which specifies the five methods every layout manager must define. Optionally, layout managers can implement `LayoutManager2`, which is a subinterface of `LayoutManager`.
+
+## Doing Without a Layout Manager (Absolute Positioning)
+
+If necessary, you can position components without using a layout manager. Generally, this solution is used to specify absolute sizes and positions for components.
+
+## Solving Common Layout Problems
+
+Some of the most common layout problems involve components that are displayed too small — or not at all. This section tells you how to fix these and other common layout problems.
+
+## Questions and Exercises
+
+Try these questions and exercises to test what you have learned in this lesson.
+
+If you are interested in using JavaFX to create your GUI, see [Working With Layouts in JavaFX](https://docs.oracle.com/javase/8/javafx/layout-tutorial/index.html).

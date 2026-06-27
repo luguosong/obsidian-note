@@ -1,8 +1,8 @@
 ---
 分类:
   - "网页裁剪"
-标题: "HelloWorld应用程序（The "Hello World!" Application）"
-描述: "详细介绍如何编译并运行一个简单的"Hello World!"应用程序，涵盖 NetBeans IDE 与各操作系统命令行两种方式。"
+标题: 'HelloWorld应用程序（The "Hello World!" Application）'
+描述: '详细介绍如何编译并运行一个简单的 "Hello World!" 应用程序，涵盖 NetBeans IDE 与各操作系统命令行两种方式。'
 来源: "https://docs.oracle.com/javase/tutorial/getStarted/cupojava/index.html"
 发布者: "Oracle-"
 发布时间:
