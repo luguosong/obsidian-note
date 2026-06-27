@@ -1,68 +1,25 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "拖放与数据传输"
+描述: "《Java 教程》Swing 路线课程，介绍拖放以及剪切、复制和粘贴（统称数据传输），这些是大多数应用程序的基本特性，以及 Swing 提供的支持。"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/dnd/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Drag and Drop and Data Transfer
+# 拖放与数据传输
 
-[Introduction to DnD](https://docs.oracle.com/javase/tutorial/uiswing/dnd/intro.html)
+> 文档说明
 
-[Default DnD Support](https://docs.oracle.com/javase/tutorial/uiswing/dnd/defaultsupport.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Demo - BasicDnD](https://docs.oracle.com/javase/tutorial/uiswing/dnd/basicdemo.html)
+## 课程：拖放与数据传输
 
-[TransferHandler Class](https://docs.oracle.com/javase/tutorial/uiswing/dnd/transferhandler.html)
+[示例索引](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/index.html)
 
-[Export Methods](https://docs.oracle.com/javase/tutorial/uiswing/dnd/export.html)
-
-[Import Methods](https://docs.oracle.com/javase/tutorial/uiswing/dnd/import.html)
-
-[TransferSupport Class](https://docs.oracle.com/javase/tutorial/uiswing/dnd/transfersupport.html)
-
-[Setting the Drop Mode](https://docs.oracle.com/javase/tutorial/uiswing/dnd/dropmodes.html)
-
-[Demo - DropDemo](https://docs.oracle.com/javase/tutorial/uiswing/dnd/dropmodedemo.html)
-
-[Choosing the Drop Action](https://docs.oracle.com/javase/tutorial/uiswing/dnd/dropaction.html)
-
-[Demo - ChooseDropAction](https://docs.oracle.com/javase/tutorial/uiswing/dnd/dropactiondemo.html)
-
-[Showing the Drop Location](https://docs.oracle.com/javase/tutorial/uiswing/dnd/showdroploc.html)
-
-[Location Sensitive Drop](https://docs.oracle.com/javase/tutorial/uiswing/dnd/locsensitivedrop.html)
-
-[Demo - LocationSensitiveDemo](https://docs.oracle.com/javase/tutorial/uiswing/dnd/locsensitivedemo.html)
-
-[Empty Table Drop](https://docs.oracle.com/javase/tutorial/uiswing/dnd/emptytable.html)
-
-[Drop Location Rendering](https://docs.oracle.com/javase/tutorial/uiswing/dnd/droplocation.html)
-
-[Top-Level Drop](https://docs.oracle.com/javase/tutorial/uiswing/dnd/toplevel.html)
-
-[Adding Cut, Copy and Paste (CCP)](https://docs.oracle.com/javase/tutorial/uiswing/dnd/cutpaste.html)
-
-[CCP in a Text Component](https://docs.oracle.com/javase/tutorial/uiswing/dnd/textpaste.html)
-
-[CCP in a non-Text Component](https://docs.oracle.com/javase/tutorial/uiswing/dnd/listpaste.html)
-
-[Using and Creating a DataFlavor](https://docs.oracle.com/javase/tutorial/uiswing/dnd/dataflavor.html)
-
-[Putting it All Together - DnD and CCP](https://docs.oracle.com/javase/tutorial/uiswing/dnd/together.html)
-
-[Solving Common Data Transfer Problems](https://docs.oracle.com/javase/tutorial/uiswing/dnd/problems.html)
-
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/dnd/intro.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: Drag and Drop and Data Transfer
-
-[Examples Index](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/index.html)  
-
-Drag and drop, and cut, copy and paste (collectively called *data transfer*) are essential features of most applications. But what kind of support does Swing provide and how do you take advantage of it?
-
-For many components, when performing a drag and drop or a cut and paste operation, Swing handles all of the work for you. For a handful of components, most of the work is done for you and all that is left for you is to plug in the details of the data import and export.
-
-This lesson provides an introduction to the data transfer mechanism used by Swing and discusses, in particular, the `TransferHandler` class, the workhorse of the data transfer system.
-
-If you are interested in using JavaFX to create your GUI, see [Drag-and-Drop Feature in JavaFX Applications](https://docs.oracle.com/javase/8/javafx/events-tutorial/drag_drop_feature.htm).
+拖放以及剪切、复制和粘贴（统称*数据传输(data transfer)*）是大多数应用程序的基本特性。但是 Swing 提供了什么样的支持，你如何利用它？

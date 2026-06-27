@@ -54,7 +54,7 @@ Java 平台包含两个组件：
 
 我们已经介绍过 Java 虚拟机；它是 Java 平台的基础，并被移植到各种基于硬件的平台之上。
 
-API 是一大堆现成的软件组件集合，提供了许多有用的功能。它按照相关的类和接口被组织成库，这些库被称为*包(packages)*。下一节 [Java 技术能做什么？](https://docs.oracle.com/javase/tutorial/getStarted/intro/cando.html) 将重点介绍 API 所提供的部分功能。
+API 是一大堆现成的软件组件集合，提供了许多有用的功能。它按照相关的类和接口被组织成库，这些库被称为*包(packages)*。下一节 [[Java技术能做什么|Java 技术能做什么？]] 将重点介绍 API 所提供的部分功能。
 
 ![[java-about-getStarted-jvm.gif]]
 

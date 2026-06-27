@@ -22,10 +22,10 @@
 
 现在计算引擎示例的代码已经写好，需要编译和运行它。
 
-[编译示例程序](https://docs.oracle.com/javase/tutorial/rmi/compiling.html)
+[[RMI-编译示例|编译示例程序]]
 
 在本节中，你学习如何编译组成计算引擎示例的服务器和客户端程序。
 
-[运行示例程序](https://docs.oracle.com/javase/tutorial/rmi/running.html)
+[[RMI-运行示例|运行示例程序]]
 
 最后，你运行服务器和客户端程序，从而计算 π 的值。

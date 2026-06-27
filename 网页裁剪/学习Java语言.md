@@ -22,18 +22,18 @@
 
 本路线涵盖使用 Java 编程语言进行编程的基础知识。
 
-[**面向对象编程概念**](https://docs.oracle.com/javase/tutorial/java/concepts/index.html) 教你面向对象编程的核心概念：对象、消息、类和继承。本课最后展示这些概念如何转化为代码。如果你已经熟悉面向对象编程，可以跳过本课。
+[[学习Java语言-面向对象概念|**面向对象编程概念**]] 教你面向对象编程的核心概念：对象、消息、类和继承。本课最后展示这些概念如何转化为代码。如果你已经熟悉面向对象编程，可以跳过本课。
 
-[**语言基础**](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html) 描述该语言的传统特性，包括变量、数组、数据类型、运算符和控制流。
+[[学习Java语言-语言基础|**语言基础**]] 描述该语言的传统特性，包括变量、数组、数据类型、运算符和控制流。
 
-[**类与对象**](https://docs.oracle.com/javase/tutorial/java/javaOO/index.html) 描述如何编写创建对象的类，以及如何创建和使用对象。
+[[类与对象|**类与对象**]] 描述如何编写创建对象的类，以及如何创建和使用对象。
 
-[**注解**](https://docs.oracle.com/javase/tutorial/java/annotations/index.html) 是一种元数据形式，为编译器提供信息。本课描述在程序中何处以及如何有效地使用注解。
+[[学习Java语言-注解|**注解**]] 是一种元数据形式，为编译器提供信息。本课描述在程序中何处以及如何有效地使用注解。
 
-[**接口与继承**](https://docs.oracle.com/javase/tutorial/java/IandI/index.html) 描述接口——它是什么、为什么要编写接口以及如何编写。本节还描述如何从一个类派生出另一个类，即*子类*(subclass) 如何从*超类*(superclass) 继承字段和方法。你将了解到所有类都派生自 `Object` 类，以及如何修改子类从超类继承的方法。
+[[接口与继承|**接口与继承**]] 描述接口——它是什么、为什么要编写接口以及如何编写。本节还描述如何从一个类派生出另一个类，即*子类*(subclass) 如何从*超类*(superclass) 继承字段和方法。你将了解到所有类都派生自 `Object` 类，以及如何修改子类从超类继承的方法。
 
-[**数字与字符串**](https://docs.oracle.com/javase/tutorial/java/data/index.html) 本课描述如何使用 `Number` 和 `String` 对象，还展示如何为输出格式化数据。
+[[学习Java语言-数字与字符串|**数字与字符串**]] 本课描述如何使用 `Number` 和 `String` 对象，还展示如何为输出格式化数据。
 
-[**泛型**](https://docs.oracle.com/javase/tutorial/java/generics/index.html) 是 Java 编程语言的一项强大特性。它们能提高代码的类型安全性，使更多的 bug 可以在编译时被检测到。
+[[学习Java语言-泛型|**泛型**]] 是 Java 编程语言的一项强大特性。它们能提高代码的类型安全性，使更多的 bug 可以在编译时被检测到。
 
-[**包**](https://docs.oracle.com/javase/tutorial/java/package/index.html) 是 Java 编程语言的一项特性，帮助你组织并构建类以及它们彼此之间的关系。
+[[学习Java语言-包|**包**]] 是 Java 编程语言的一项特性，帮助你组织并构建类以及它们彼此之间的关系。

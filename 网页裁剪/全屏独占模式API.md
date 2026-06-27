@@ -24,26 +24,26 @@
 
 你想在 Java 开发环境中使用高性能图形吗？你一直想编写一个游戏，但你的图像移动得不够快吗？你的幻灯片程序因为没有对用户显示分辨率的控制而无法正常工作吗？如果你一直在问这些问题中的任何一个，那么在 1.4 版本中引入的全屏独占模式 API(full-screen exclusive mode API) 可能正是你在寻找的。
 
-[全屏独占模式](https://docs.oracle.com/javase/tutorial/extra/fullscreen/exclusivemode.html)
+[[全屏独占模式-独占模式|全屏独占模式]]
 
 全屏独占模式是一项强大的新特性，它使你能够挂起窗口系统，以便可以直接在屏幕上进行绘制。
 
-[显示模式](https://docs.oracle.com/javase/tutorial/extra/fullscreen/displaymode.html)
+[[全屏独占模式-显示模式|显示模式]]
 
 本节描述如何选择和设置显示模式。它还讨论了为什么你首先要设置显示模式。
 
-[被动渲染与主动渲染](https://docs.oracle.com/javase/tutorial/extra/fullscreen/rendering.html)
+[[全屏独占模式-渲染|被动渲染与主动渲染]]
 
 本节讨论被动渲染和主动渲染的优点。例如，在主事件循环上使用 `paint` 方法进行绘制是被动的，而在你自己的线程中进行渲染是主动的。还列出了主动渲染的技巧。
 
-[双缓冲和页面翻转](https://docs.oracle.com/javase/tutorial/extra/fullscreen/doublebuf.html)
+[[全屏独占模式-双缓冲|双缓冲和页面翻转]]
 
 本节解释双缓冲，并介绍页面翻转(page-flipping)，这是全屏独占模式下可用的一种双缓冲技术。
 
-[BufferStrategy 和 BufferCapabilities](https://docs.oracle.com/javase/tutorial/extra/fullscreen/bufferstrategy.html)
+[[全屏独占模式-缓冲策略|BufferStrategy 和 BufferCapabilities]]
 
 本节涵盖 `java.awt.image.BufferStrategy`，这是一个允许你在不必知道所用缓冲区数量或用于显示它们的技术的情况下绘制到表面和组件的类。本节还回顾 `java.awt.BufferCapabilities`，这是一个可以帮助你确定图形设备功能的类。
 
-[示例](https://docs.oracle.com/javase/tutorial/extra/fullscreen/example.html)
+[[全屏独占模式-示例|示例]]
 
 此页面列出几个全屏独占模式示例。

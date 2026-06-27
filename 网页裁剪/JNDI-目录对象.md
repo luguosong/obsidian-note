@@ -1,32 +1,31 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "目录中的 Java 对象"
+描述: "《Java 教程》JNDI 路线课程，介绍如何使用目录作为 Java 对象的存储库，通过 JNDI 的面向对象视图向目录添加和检索 Java 对象，涵盖对象工厂与状态工厂。"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/objects/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Java Objects in the Directory
+# 目录中的 Java 对象
 
-[Storing and Reading Objects](https://docs.oracle.com/javase/tutorial/jndi/objects/store.html)
+> 文档说明
 
-[Serializable Objects](https://docs.oracle.com/javase/tutorial/jndi/objects/serial.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ldap/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/objects/store.html)
+## 课程：目录中的 Java 对象
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+传统上，目录用于存储数据。用户和程序员将目录视为目录条目的层次结构，每个条目包含一组属性。你从目录中查找条目并提取感兴趣的属性。
 
-## Lesson: Java Objects in the Directory
+对于用 Java 编程语言编写的应用程序，Java 对象有时可能跨应用程序共享。对于此类应用程序，能够将目录用作 Java 对象的存储库是有意义的。目录为分布在网络上的 Java 应用程序提供集中管理且可能复制的服务。例如，应用程序服务器可能使用目录注册表示其管理的服务的对象，以便客户端稍后可以搜索目录以根据需要定位这些服务。JNDI 用作服务目录的一个示例是 Apache DS。有关此的更多信息可在 [Apache Directory](http://directory.apache.org/) 找到。
 
-Traditionally, directories have been used to store data. Users and programmers think of the directory as a hierarchy of directory entries, each containing a set of attributes. You look up an entry from the directory and extract the attribute(s) of interest.
+JNDI 提供目录的面向对象视图，从而允许 Java 对象被添加到目录和从目录检索，而无需客户端管理数据表示问题。本课讨论在基本级别使用目录存储和检索 Java 对象。JNDI 提供所谓的对象工厂和状态工厂，用于创建和存储从目录访问的对象。
 
-For applications written in the Java programming language, Java objects may sometimes be shared across applications. For such applications, it makes sense to be able to use the directory as a repository for Java objects. The directory provides a centrally administered, and possibly replicated, service for use by Java applications distributed across the network. For example, an application server might use the directory for registering objects that represent the services that it manages so that a client can later search the directory to locate those services as needed. An example of JNDI used as a directory of services is Apache DS. More information about this can be found at [Apache Directory](http://directory.apache.org/).
+## 对象工厂
 
-The JNDI provides an object-oriented view of the directory, thereby allowing Java objects to be added to and retrieved from the directory without requiring the client to manage data representation issues. This lesson discusses the use of the directory for storing and retrieving Java objects at a basic level. The JNDI provides what are known as object and state factories for creating and storing the objects accessed from the directory.
-
-## Object Factory
-
-An object factory is a producer of objects. It accepts some information about how to create an object, such as a reference, and then returns an instance of that object. For details about Object Factories and the format in which objects are stored in the directory please refer to the [JNDI Tutorial](https://docs.oracle.com/javase/jndi/tutorial/objects/factory/index.html).
-
-## State Factory
-
-A state factory transforms an object into another object. The input is the object and optional attributes, supplied to Context.bind() and the output is another object and optional attributes, to be stored in the underlying naming service or directory. For details about State Factories and on how to write your own state factory please refer to the [JNDI Tutorial](https://docs.oracle.com/javase/jndi/tutorial/objects/state/index.html).
-
-The next part of the lesson discusses how to access Objects in the Directory It describes how serializable objects can be stored and read in the directory. For other types of objects please check out the [JNDI Tutorial](https://docs.oracle.com/javase/jndi/tutorial/objects/index.html).
+对象工厂是对象的生产者。它接受有关如何创建对象的一些信息（例如引用），然后返回该对象的实例。有关对象工厂以及对象存储在目录中的格式的详细信息，请参阅 [JNDI 教程](https://docs.oracle.com/javase/jndi/tutorial/objects/factory/index.html)。

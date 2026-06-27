@@ -1,35 +1,28 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "JDK 5.0 和 JDK 6 中的新特性"
+描述: "《Java 教程》JNDI 路线课程，介绍 JDK 5.0 和 JDK 6 发行版中 JNDI 和 LDAP 服务提供者支持的新特性，包括从搜索结果检索 DN、标准 LDAP 控件、LDAP 名称操作和读取超时设置。"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/newstuff/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-New features in JDK 5.0 and JDK 6
+# JDK 5.0 和 JDK 6 中的新特性
 
-[Retrieving Distinguished Name](https://docs.oracle.com/javase/tutorial/jndi/newstuff/dn.html)
+> 文档说明
 
-[Standard LDAP Controls](https://docs.oracle.com/javase/tutorial/jndi/newstuff/controls-std.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Paged Results Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html)
+## 课程：JDK 5.0 和 JDK 6 中的新特性
 
-[Sort Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html)
+在本课中，我们将讨论 JDK 5.0 和 JDK 6 发行版中 JNDI 和 LDAP 服务提供者支持的以下新特性。
 
-[Manage Referral Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html)
-
-[Manipulating LdapName (Distinguished Name)](https://docs.oracle.com/javase/tutorial/jndi/newstuff/ldapname.html)
-
-[Manipulating Relative Distinguished Name (RDN)](https://docs.oracle.com/javase/tutorial/jndi/newstuff/rdn.html)
-
-[Setting Timeout for Ldap Operations](https://docs.oracle.com/javase/tutorial/jndi/newstuff/readtimeout.html)
-
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/objects/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/newstuff/dn.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: New features in JDK 5.0 and JDK 6
-
-In this lesson we will discuss about the new features listed below that are supported by the JNDI and the LDAP Service provider in the JDK 5.0 and JDK 6 releases.
-
-- [Retrieving the distinguished name (DN) from the search result](https://docs.oracle.com/javase/tutorial/jndi/newstuff/dn.html).
-- [Using standard LDAP controls](https://docs.oracle.com/javase/tutorial/jndi/newstuff/controls-std.html).
-- [Manipulation of LDAP names](https://docs.oracle.com/javase/tutorial/jndi/newstuff/ldapname.html).
-- [Setting read timeout for LDAP operations](https://docs.oracle.com/javase/tutorial/jndi/newstuff/readtimeout.html).
+- [[JNDI-检索DN|从搜索结果检索可分辨名称(DN)]]。
+- [[JNDI-标准LDAP控件|使用标准 LDAP 控件]]。
+- [[JNDI-LDAP名称操作|LDAP 名称的操作]]。
+- [[JNDI-读取超时|为 LDAP 操作设置读取超时]]。

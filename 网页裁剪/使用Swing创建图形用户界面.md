@@ -24,33 +24,33 @@
 
 本路线告诉你如何使用 Swing 组件为应用程序和 applet 创建图形用户界面(GUI)。如果你想将 JavaFX 集成到你的 Swing 应用程序中，请参阅[将 JavaFX 集成到 Swing 应用程序中](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/swing-fx-interoperability.htm)。
 
-[**Swing 入门**](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html) 是一节快速入门课。首先它给你一些关于 Swing 的背景。然后它告诉你如何编译和运行使用 Swing 组件的程序。
+[[Swing-入门|**Swing 入门**]] 是一节快速入门课。首先它给你一些关于 Swing 的背景。然后它告诉你如何编译和运行使用 Swing 组件的程序。
 
-[**使用 NetBeans IDE 学习 Swing**](https://docs.oracle.com/javase/tutorial/uiswing/learn/index.html) 是开始使用 Swing 最快、最简单的方式。本课探索 NetBeans IDE 的 GUI 构建器，这是一项强大的功能，让你能可视化地构建图形用户界面。
+[[Swing-NetBeans学习|**使用 NetBeans IDE 学习 Swing**]] 是开始使用 Swing 最快、最简单的方式。本课探索 NetBeans IDE 的 GUI 构建器，这是一项强大的功能，让你能可视化地构建图形用户界面。
 
-[**使用 Swing 组件**](https://docs.oracle.com/javase/tutorial/uiswing/components/index.html) 告诉你如何使用每个 Swing 组件——按钮、表格、文本组件以及其他所有组件。它还告诉你如何使用边框和图标。
+[[Swing-组件|**使用 Swing 组件**]] 告诉你如何使用每个 Swing 组件——按钮、表格、文本组件以及其他所有组件。它还告诉你如何使用边框和图标。
 
-[**Swing 中的并发**](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html) 讨论适用于 Swing 编程的并发。包括有关事件分发线程(event dispatch thread)和 SwingWorker 类的信息。
+[[Swing-并发|**Swing 中的并发**]] 讨论适用于 Swing 编程的并发。包括有关事件分发线程(event dispatch thread)和 SwingWorker 类的信息。
 
-[**使用其他 Swing 特性**](https://docs.oracle.com/javase/tutorial/uiswing/misc/index.html) 告诉你如何使用动作、计时器和系统托盘；如何与 desktop 类集成，如何支持辅助技术，如何打印表格和文本，如何创建启动画面，以及如何在对话框中使用模态。
+[[Swing-其他特性|**使用其他 Swing 特性**]] 告诉你如何使用动作、计时器和系统托盘；如何与 desktop 类集成，如何支持辅助技术，如何打印表格和文本，如何创建启动画面，以及如何在对话框中使用模态。
 
-[**在容器中布局组件**](https://docs.oracle.com/javase/tutorial/uiswing/layout/index.html) 告诉你如何选择布局管理器，如何使用 Java 平台提供的每个布局管理器类，如何使用绝对定位代替布局管理器，以及如何创建你自己的布局管理器。
+[[Swing-布局|**在容器中布局组件**]] 告诉你如何选择布局管理器，如何使用 Java 平台提供的每个布局管理器类，如何使用绝对定位代替布局管理器，以及如何创建你自己的布局管理器。
 
-[**修改外观**](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/index.html) 告诉你如何指定 Swing 组件的外观。
+[[Swing-外观|**修改外观**]] 告诉你如何指定 Swing 组件的外观。
 
-[**拖放与数据传输**](https://docs.oracle.com/javase/tutorial/uiswing/dnd/index.html) 告诉你需要知道什么才能在应用程序中实现数据传输。
+[[Swing-拖放|**拖放与数据传输**]] 告诉你需要知道什么才能在应用程序中实现数据传输。
 
-[**编写事件监听器**](https://docs.oracle.com/javase/tutorial/uiswing/events/index.html) 告诉你如何在你的程序中处理事件。
+[[Swing-事件监听|**编写事件监听器**]] 告诉你如何在你的程序中处理事件。
 
-[**执行自定义绘制**](https://docs.oracle.com/javase/tutorial/uiswing/painting/index.html) 提供有关绘制你自己的 Swing 组件的信息。它讨论特定于 Swing 组件的绘制问题，概述绘制概念，并提供了自行绘制的自定义组件示例。
+[[Swing-自定义绘制|**执行自定义绘制**]] 提供有关绘制你自己的 Swing 组件的信息。它讨论特定于 Swing 组件的绘制问题，概述绘制概念，并提供了自行绘制的自定义组件示例。
 
 ## 其他与 UI 相关的路线
 
 尽管这是学习 GUI 的主要路线，但它不是唯一包含 UI 相关信息的路线。
 
-- [二维图形](https://docs.oracle.com/javase/tutorial/2d/index.html)，描述 JDK 中可用的二维图形特性。
-- [声音](https://docs.oracle.com/javase/tutorial/sound/index.html)，讨论 JDK 中可用的声音功能。
-- [Java Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/index.html)，描述仅适用于 applet 的 API。
-- [Java 核心类库](https://docs.oracle.com/javase/tutorial/essential/index.html)，涵盖许多主题，包括属性和标准 I/O 流。
+- [[二维图形|二维图形]]，描述 JDK 中可用的二维图形特性。
+- [[声音|声音]]，讨论 JDK 中可用的声音功能。
+- [[部署-Applet|Java Applets]]，描述仅适用于 applet 的 API。
+- [[Java核心类库|Java 核心类库]]，涵盖许多主题，包括属性和标准 I/O 流。
 - [JavaFX 文档](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm)，描述如何使用 JavaFX 构建 UI。
-- 附加内容路线包含[全屏独占模式 API](https://docs.oracle.com/javase/tutorial/extra/fullscreen/index.html)，这是一节描述如何使用 v1.4 中引入的 API 直接将图形渲染到屏幕的课程。
+- 附加内容路线包含[[全屏独占模式API|全屏独占模式 API]]，这是一节描述如何使用 v1.4 中引入的 API 直接将图形渲染到屏幕的课程。

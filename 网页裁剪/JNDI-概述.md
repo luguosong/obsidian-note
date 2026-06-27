@@ -1,47 +1,31 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "JNDI 概述"
+描述: "《Java 教程》JNDI 路线课程，介绍 Java 命名与目录接口(JNDI)，提供独立于特定目录服务实现的命名与目录功能，涵盖其 API 与 SPI 架构及打包方式。"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/overview/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Overview of JNDI
+# JNDI 概述
 
-[Naming Package](https://docs.oracle.com/javase/tutorial/jndi/overview/naming.html)
+> 文档说明
 
-[Directory and LDAP Packages](https://docs.oracle.com/javase/tutorial/jndi/overview/dir.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Event and Service Provider Packages](https://docs.oracle.com/javase/tutorial/jndi/overview/event.html)
+## 课程：JNDI 概述
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/concepts/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/overview/naming.html)
+Java 命名与目录接口(Java Naming and Directory Interface, JNDI) 是一个应用程序编程接口(API)，为使用 Java™ 编程语言编写的应用程序提供[[JNDI-命名功能|命名]]和[[JNDI-目录功能|目录]]功能。它被定义为独立于任何特定目录服务实现。因此，各种目录——新的、新兴的和已部署的——可以以通用方式访问。
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+## 架构
 
-## Lesson: Overview of JNDI
+JNDI 架构由一个 API 和一个服务提供者接口(SPI)组成。Java 应用程序使用 JNDI API 访问各种命名和目录服务。SPI 使各种命名和目录服务可以透明地插入，从而允许使用 JNDI API 的 Java 应用程序访问其服务。参见下图：
 
-The Java Naming and Directory Interface™ (JNDI) is an application programming interface (API) that provides [naming](https://docs.oracle.com/javase/tutorial/jndi/overview/naming.html) and [directory](https://docs.oracle.com/javase/tutorial/jndi/overview/dir.html) functionality to applications written using the Java™ programming language. It is defined to be independent of any specific directory service implementation. Thus a variety of directories -new, emerging, and already deployed can be accessed in a common way.
+![[jndi-overview-jndiarch.gif]]
 
-## Architecture
-
-The JNDI architecture consists of an API and a service provider interface (SPI). Java applications use the JNDI API to access a variety of naming and directory services. The SPI enables a variety of naming and directory services to be plugged in transparently, thereby allowing the Java application using the JNDI API to access their services. See the following figure:
-
-![JNDI Architecture](https://docs.oracle.com/javase/tutorial/figures/jndi/jndiarch.gif)
-
-## Packaging
-
-JNDI is included in the Java SE Platform. To use the JNDI, you must have the JNDI classes and one or more service providers. The JDK includes service providers for the following naming/directory services:
-
-- Lightweight Directory Access Protocol (LDAP)
-- Common Object Request Broker Architecture (CORBA) Common Object Services (COS) name service
-- Java Remote Method Invocation (RMI) Registry
-- Domain Name Service (DNS)
-
-Other service providers can be downloaded from the [JNDI page](http://www.oracle.com/technetwork/java/jndi/index.html) or obtained from other vendors.
-
-The JNDI is divided into five packages:
-
-- [javax.naming](https://docs.oracle.com/javase/tutorial/jndi/overview/naming.html)
-- [javax.naming.directory](https://docs.oracle.com/javase/tutorial/jndi/overview/dir.html)
-- [javax.naming.ldap](https://docs.oracle.com/javase/tutorial/jndi/overview/dir.html)
-- [javax.naming.event](https://docs.oracle.com/javase/tutorial/jndi/overview/event.html)
-- [javax.naming.spi](https://docs.oracle.com/javase/tutorial/jndi/overview/event.html)
-
-The next part of the lesson has a brief description of the JNDI packages.
+## 打包

@@ -1,42 +1,27 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "平台环境"
+描述: "《Java 教程》Java 核心类库路线课程，介绍应用程序运行的平台环境，以及用于检查和配置平台环境的 API，涵盖配置实用工具、系统实用工具和 PATH 与 CLASSPATH。"
+来源: "https://docs.oracle.com/javase/tutorial/essential/environment/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-The Platform Environment
+# 平台环境
 
-[Configuration Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/config.html)
+> 文档说明
 
-[Properties](https://docs.oracle.com/javase/tutorial/essential/environment/properties.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+## 课程：平台环境
 
-[Environment Variables](https://docs.oracle.com/javase/tutorial/essential/environment/env.html)
+应用程序运行在*平台环境(platform environment)*中，由底层操作系统、Java 虚拟机、类库以及应用程序启动时提供的各种配置数据定义。本课描述应用程序用于检查和配置其平台环境的某些 API。本课由三节组成：
 
-[Other Configuration Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/other.html)
-
-[System Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/system.html)
-
-[Command-Line I/O Objects](https://docs.oracle.com/javase/tutorial/essential/environment/cl.html)
-
-[System Properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
-
-[The Security Manager](https://docs.oracle.com/javase/tutorial/essential/environment/security.html)
-
-[Miscellaneous Methods in System](https://docs.oracle.com/javase/tutorial/essential/environment/sysmisc.html)
-
-[PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
-
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/environment/QandE/questions.html)
-
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/environment/config.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: The Platform Environment
-
-An application runs in a *platform environment*, defined by the underlying operating system, the Java virtual machine, the class libraries, and various configuration data supplied when the application is launched. This lesson describes some of the APIs an application uses to examine and configure its platform environment. The lesson consists of three sections:
-
-- [Configuration Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/config.html) describes APIs used to access configuration data supplied when the application is deployed, or by the application's user.
-- [System Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/system.html) describes miscellaneous APIs defined in the `System` and `Runtime` classes.
-- [PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html) describes environment variables used to configure JDK development tools and other applications.
+- [[Java核心类库-平台环境-配置实用工具|配置实用工具]]描述用于访问应用程序部署时或应用程序用户提供的配置数据的 API。
+- [[Java核心类库-平台环境-系统实用工具|系统实用工具]]描述 `System` 和 `Runtime` 类中定义的其他 API。
+- [[Java核心类库-平台环境-PATH与CLASSPATH|PATH 和 CLASSPATH]]描述用于配置 JDK 开发工具和其他应用程序的环境变量。

@@ -1,26 +1,31 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "面向 LDAP 用户的高级主题"
+描述: "《Java 教程》JNDI 路线课程，介绍 LDAP 与 JNDI 之间的映射，以及通过 JNDI 访问 LDAP 服务的提示和技巧，涵盖 LDAP 协议、身份验证、SSL 和生产环境中的连接管理。"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ldap/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ldap/ldap.html)
+# 面向 LDAP 用户的高级主题
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+> 文档说明
 
-## Lesson: Advanced Topics for LDAP Users
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-The lessons in the **LDAP** trail provide details on the mapping between the LDAP and the JNDI. They also give hints and tips for accessing the LDAP service through the JNDI.
+## 课程：面向 LDAP 用户的高级主题
+
+**LDAP** 路线中的课程提供 LDAP 与 JNDI 之间映射的详细信息。它们还给出通过 JNDI 访问 LDAP 服务的提示和技巧。
 
 ## LDAP
 
-X.500, is a CCITT standard for directory services that is part of the OSI suite of services. X.500 standard defines a protocol (among others) for a client application to access the X.500 directory called the *Directory Access Protocol* (DAP). It is layered on top of the Open Systems Interconnection (OSI) protocol stack.
+X.500 是 CCITT 的目录服务标准，是 OSI 服务套件的一部分。X.500 标准定义了一种协议（除其他外），用于客户端应用程序访问称为*目录访问协议(Directory Access Protocol, DAP)* 的 X.500 目录。它分层在开放系统互连(OSI)协议栈之上。
 
-The Internet community, recognizing the need for an X.500-like service but faced with different underlying network infrastructure (TCP/IP instead of OSI), designed a new protocol based on the X.500 DAP protocol, called *Lightweight* DAP, or LDAP. [RFC 2251](http://www.ietf.org/rfc/rfc2251.txt) defines what is now called *version 3* of the LDAP (or LDAP v3), an improved version of its predecessor LDAP v2 specified in [RFC 1777](http://www.ietf.org/rfc/rfc1777.txt).
+互联网社区认识到需要类似 X.500 的服务，但面临不同的底层网络基础设施（TCP/IP 而非 OSI），设计了基于 X.500 DAP 协议的新协议，称为*轻量级*DAP(Lightweight DAP) 或 LDAP。[RFC 2251](http://www.ietf.org/rfc/rfc2251.txt) 定义了现在称为 LDAP 版本 3（或 LDAP v3）的内容，它是 [RFC 1777](http://www.ietf.org/rfc/rfc1777.txt) 中指定的前身 LDAP v2 的改进版本。
 
-The goal of the LDAP was a protocol that could be easily implemented, with special focus on being able to build small and simple clients. One way that it attempted to achieve simplification was to use a lot of strings and to minimize wherever possible the use of structures. DNs, for example, are represented in the protocol as strings, as are attribute type names and many attribute values.
-
-The protocol consists of the client's sending requests to the server, to which the server responds, though not necessarily in the same order in which the requests were sent. Each request is tagged with an ID so that requests and responses can be matched. The protocol works over either TCP or UDP, although the TCP version is most commonly used.
-
-Because of the focus on clients, the LDAP community also defined standards for the string representation of DNs ( [RFC 2553](http://www.ietf.org/rfc/rfc2553.txt)), search filters ( [RFC 1960](http://www.ietf.org/rfc/rfc1960.txt)), and attribute syntaxes ( [RFC 1778](http://www.ietf.org/rfc/rfc1778.txt)), for a C language based API ( [RFC 1823](http://www.ietf.org/rfc/rfc1823.txt)), and for the format of URLs for accessing LDAP services ( [RFC 1959](http://www.ietf.org/rfc/rfc1959.txt)).
-
-LDAP v3 supports internationalization, various authentication mechanisms, referrals, and a generic deployment mechanism. It allows new features to be added to the protocol without also requiring changes to the protocol by using *extensions* and *controls*.
+LDAP 的目标是一种可以轻松实现的协议，特别关注能够构建小型简单的客户端。它试图实现简化的一种方式是使用大量字符串，并尽可能减少结构的使用。例如，DN 在协议中表示为字符串，属性类型名称和许多属性值也是如此。

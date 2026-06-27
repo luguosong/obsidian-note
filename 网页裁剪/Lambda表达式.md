@@ -22,7 +22,7 @@
 
 匿名类的一个问题是，如果你的匿名类实现非常简单，例如一个只包含一个方法的接口，那么匿名类的语法可能显得笨拙且不清晰。在这些情况下，你通常试图将功能作为参数传递给另一个方法，比如当有人点击按钮时应采取什么操作。Lambda 表达式(Lambda expressions) 使你能够做到这一点——将功能视为方法参数，或将代码视为数据。
 
-上一节[匿名类](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html)向你展示了如何在不命名的情况下实现一个基类。尽管这通常比命名类更简洁，但对于只有一个方法的类，即使是匿名类也显得有些多余和繁琐。Lambda 表达式让你能更紧凑地表达单方法类的实例。
+上一节[[类与对象-匿名类|匿名类]]向你展示了如何在不命名的情况下实现一个基类。尽管这通常比命名类更简洁，但对于只有一个方法的类，即使是匿名类也显得有些多余和繁琐。Lambda 表达式让你能更紧凑地表达单方法类的实例。
 
 本节涵盖以下主题：
 
@@ -82,7 +82,7 @@ public static void printPersonsOlderThan(List<Person> roster, int age) {
 }
 ```
 
-**注意**：[`List`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) 是一个有序的 [`Collection`](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)。*集合*是一个将多个元素组合成单个单元的对象。集合用于存储、检索、操作和传递聚合数据。有关集合的更多信息，请参阅[集合](https://docs.oracle.com/javase/tutorial/collections/index.html)路线。
+**注意**：[`List`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) 是一个有序的 [`Collection`](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)。*集合*是一个将多个元素组合成单个单元的对象。集合用于存储、检索、操作和传递聚合数据。有关集合的更多信息，请参阅[[集合|集合]]路线。
 
 这种方法可能会使你的应用程序*脆弱*，即由于引入更新（例如更新的数据类型）而导致应用程序无法工作的可能性。假设你升级了应用程序并更改了 `Person` 类的结构，使其包含不同的成员变量；也许该类用不同的数据类型或算法记录和衡量年龄。你将不得不重写大量 API 来适应这一更改。此外，这种方法限制性过强；例如，如果你想打印小于某个年龄的成员怎么办？
 
@@ -170,7 +170,7 @@ printPersons(
 
 ### 方法 5：使用 Lambda 表达式指定搜索条件代码
 
-`CheckPerson` 接口是一个*函数式接口(functional interface)*。函数式接口是任何只包含一个[抽象方法](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)的接口。（函数式接口可能包含一个或多个[默认方法](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)或[静态方法](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html#static)。）由于函数式接口只包含一个抽象方法，你在实现它时可以省略该方法的名称。为此，你不使用匿名类表达式，而是使用 *Lambda 表达式*，它在以下方法调用中高亮显示：
+`CheckPerson` 接口是一个*函数式接口(functional interface)*。函数式接口是任何只包含一个[[接口与继承-抽象方法|抽象方法]]的接口。（函数式接口可能包含一个或多个[[接口与继承-默认方法|默认方法]]或[[接口与继承-默认方法|静态方法]]。）由于函数式接口只包含一个抽象方法，你在实现它时可以省略该方法的名称。为此，你不使用匿名类表达式，而是使用 *Lambda 表达式*，它在以下方法调用中高亮显示：
 
 ```java
 printPersons(
@@ -205,7 +205,7 @@ interface Predicate<T> {
 }
 ```
 
-接口 `Predicate<T>` 是泛型接口的一个例子。（有关泛型的更多信息，请参阅[泛型（更新版）](https://docs.oracle.com/javase/tutorial/java/generics/index.html)课程。）泛型类型（如泛型接口）在尖括号（`<>`）内指定一个或多个类型参数。此接口只包含一个类型参数 `T`。当你用实际类型参数声明或实例化泛型类型时，你就得到了一个参数化类型。例如，参数化类型 `Predicate<Person>` 如下：
+接口 `Predicate<T>` 是泛型接口的一个例子。（有关泛型的更多信息，请参阅[[学习Java语言-泛型|泛型（更新版）]]课程。）泛型类型（如泛型接口）在尖括号（`<>`）内指定一个或多个类型参数。此接口只包含一个类型参数 `T`。当你用实际类型参数声明或实例化泛型类型时，你就得到了一个参数化类型。例如，参数化类型 `Predicate<Person>` 如下：
 
 ```java
 interface Predicate<Person> {
@@ -380,13 +380,13 @@ roster
 
 操作 `filter`、`map` 和 `forEach` 是*聚合操作*。聚合操作从流而不是直接从集合处理元素（这就是本示例中第一个调用的方法是 `stream` 的原因）。*流*是一系列元素。与集合不同，它不是存储元素的数据结构。相反，流通过管道将值从源（如集合）传递出去。*管道*是一系列流操作，在此示例中是 `filter` - `map` - `forEach`。此外，聚合操作通常接受 Lambda 表达式作为参数，使你能自定义它们的行为方式。
 
-有关聚合操作的更深入讨论，请参阅[聚合操作](https://docs.oracle.com/javase/tutorial/collections/streams/index.html)课程。
+有关聚合操作的更深入讨论，请参阅[[聚合操作|聚合操作]]课程。
 
 ## GUI 应用程序中的 Lambda 表达式
 
 要处理图形用户界面(GUI)应用程序中的事件，如键盘操作、鼠标操作和滚动操作，你通常创建事件处理器，这通常涉及实现特定接口。通常，事件处理器接口是函数式接口；它们往往只有一个方法。
 
-在 JavaFX 示例 [`HelloWorld.java`](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/hello_world.htm)（在上一节[匿名类](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html)中讨论）中，你可以用 Lambda 表达式替换此语句中高亮显示的匿名类：
+在 JavaFX 示例 [`HelloWorld.java`](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/hello_world.htm)（在上一节[[类与对象-匿名类|匿名类]]中讨论）中，你可以用 Lambda 表达式替换此语句中高亮显示的匿名类：
 
 ```java
 btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -474,7 +474,7 @@ public class Calculator {
 
 ## 访问外围作用域的局部变量
 
-与局部类和匿名类一样，Lambda 表达式可以[捕获变量](https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html#accessing-members-of-an-enclosing-class)；它们对外围作用域的局部变量具有相同的访问权限。然而，与局部类和匿名类不同，Lambda 表达式没有任何遮蔽问题（更多信息请参阅[遮蔽](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html#shadowing)）。Lambda 表达式是词法作用域的。这意味着它们不从超类型继承任何名称，也不引入新的作用域层级。Lambda 表达式中的声明就像在外围环境中一样被解释。以下示例 [`LambdaScopeTest`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/LambdaScopeTest.java) 演示了这一点：
+与局部类和匿名类一样，Lambda 表达式可以[[类与对象-局部类|捕获变量]]；它们对外围作用域的局部变量具有相同的访问权限。然而，与局部类和匿名类不同，Lambda 表达式没有任何遮蔽问题（更多信息请参阅[[类与对象-嵌套类|遮蔽]]）。Lambda 表达式是词法作用域的。这意味着它们不从超类型继承任何名称，也不引入新的作用域层级。Lambda 表达式中的声明就像在外围环境中一样被解释。以下示例 [`LambdaScopeTest`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/LambdaScopeTest.java) 演示了这一点：
 
 ```java
 import java.util.function.Consumer;
@@ -596,7 +596,7 @@ public interface Callable<V> {
 
 方法 `Runnable.run` 不返回值，而 `Callable<V>.call` 返回值。
 
-假设你按如下方式重载了方法 `invoke`（有关重载方法的更多信息，请参阅[定义方法](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html)）：
+假设你按如下方式重载了方法 `invoke`（有关重载方法的更多信息，请参阅[[类与对象-方法|定义方法]]）：
 
 ```java
 void invoke(Runnable r) {
@@ -618,4 +618,4 @@ String s = invoke(() -> "done");
 
 ## 序列化
 
-如果 Lambda 表达式的目标类型及其捕获的参数是可序列化的，你可以[序列化](https://docs.oracle.com/javase/tutorial/jndi/objects/serial.html)该 Lambda 表达式。然而，与[内部类](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html#serialization)一样，强烈不建议对 Lambda 表达式进行序列化。
+如果 Lambda 表达式的目标类型及其捕获的参数是可序列化的，你可以[[JNDI-序列化对象|序列化]]该 Lambda 表达式。然而，与[[类与对象-嵌套类|内部类]]一样，强烈不建议对 Lambda 表达式进行序列化。

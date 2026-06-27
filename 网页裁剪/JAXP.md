@@ -33,16 +33,16 @@
 
 假定你已具备 DOM 和 SAX 的一些先验知识。本教程仅详细检查特定于 JAXP API 的代码。
 
-[JAXP 简介](https://docs.oracle.com/javase/tutorial/jaxp/intro/index.html) 提供 JAXP 技术的简要描述，包括其目的和主要特性。
+[[JAXP-简介|JAXP 简介]] 提供 JAXP 技术的简要描述，包括其目的和主要特性。
 
-[XML 简单 API](https://docs.oracle.com/javase/tutorial/jaxp/sax/index.html) 介绍 JAXP 技术中使用的一个概念，即 XML 简单 API(SAX)：何时使用 SAX、如何解析 XML 文件、如何实现 SAX 验证、如何运行 SAX 解析器以及如何处理词法事件。提供了进一步信息的链接。
+[[JAXP-SAX|XML 简单 API]] 介绍 JAXP 技术中使用的一个概念，即 XML 简单 API(SAX)：何时使用 SAX、如何解析 XML 文件、如何实现 SAX 验证、如何运行 SAX 解析器以及如何处理词法事件。提供了进一步信息的链接。
 
-[文档对象模型](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html) 介绍文档对象模型(DOM)使用的树结构，并向你展示如何使用 DOM 函数创建节点、移除节点、更改节点内容以及遍历节点层次结构。
+[[JAXP-DOM|文档对象模型]] 介绍文档对象模型(DOM)使用的树结构，并向你展示如何使用 DOM 函数创建节点、移除节点、更改节点内容以及遍历节点层次结构。
 
-[可扩展样式表语言转换](https://docs.oracle.com/javase/tutorial/jaxp/xslt/index.html) 包含有关如何将文档对象模型写入 XML 文件，以及如何从任意数据文件生成 DOM 以将其转换为 XML 的信息。
+[[JAXP-XSLT|可扩展样式表语言转换]] 包含有关如何将文档对象模型写入 XML 文件，以及如何从任意数据文件生成 DOM 以将其转换为 XML 的信息。
 
-[XML 流式 API](https://docs.oracle.com/javase/tutorial/jaxp/stax/index.html) 关注一种基于流式 Java 技术、事件驱动的拉取解析 API，用于读取和写入 XML 文档。StAX 使你能够创建快速、相对容易编程且内存占用小的双向 XML 解析器。
+[[JAXP-StAX|XML 流式 API]] 关注一种基于流式 Java 技术、事件驱动的拉取解析 API，用于读取和写入 XML 文档。StAX 使你能够创建快速、相对容易编程且内存占用小的双向 XML 解析器。
 
-[JAXP 1.5 和新属性](https://docs.oracle.com/javase/tutorial/jaxp/properties/index.html) 介绍已添加到 7u40 和 JDK8 的属性。
+[[JAXP-新属性|JAXP 1.5 和新属性]] 介绍已添加到 7u40 和 JDK8 的属性。
 
-[处理限制](https://docs.oracle.com/javase/tutorial/jaxp/limits/index.html) 讨论 JAXP 实现的限制，包括在 7u45 中添加的三个。
+[[JAXP-处理限制|处理限制]] 讨论 JAXP 实现的限制，包括在 7u45 中添加的三个。

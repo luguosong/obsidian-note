@@ -24,9 +24,9 @@
 
 本课的前三页展示如何使用 Java 平台中包含的图形 bean 创建一个简单的应用程序。最后一页演示将第三方 bean 合并到你的应用程序中是多么容易。
 
-- [创建项目](https://docs.oracle.com/javase/tutorial/javabeans/quick/project.html) 描述在 NetBeans 中设置新项目的步骤。
-- [按钮就是一个 Bean](https://docs.oracle.com/javase/tutorial/javabeans/quick/button.html) 展示如何将 bean 添加到应用程序的用户界面，并描述属性和事件。
-- [连接应用程序](https://docs.oracle.com/javase/tutorial/javabeans/quick/wiring.html) 涵盖使用 NetBeans 在你的应用程序中响应 bean 事件。
-- [使用第三方 Bean](https://docs.oracle.com/javase/tutorial/javabeans/quick/addbean.html) 展示将新 bean 添加到调色板并在应用程序中使用它是多么容易。
+- [[JavaBeans-快速入门-创建项目|创建项目]] 描述在 NetBeans 中设置新项目的步骤。
+- [[JavaBeans-快速入门-按钮|按钮就是一个 Bean]] 展示如何将 bean 添加到应用程序的用户界面，并描述属性和事件。
+- [[JavaBeans-快速入门-连接应用|连接应用程序]] 涵盖使用 NetBeans 在你的应用程序中响应 bean 事件。
+- [[JavaBeans-快速入门-使用第三方Bean|使用第三方 Bean]] 展示将新 bean 添加到调色板并在应用程序中使用它是多么容易。
 
-![一个即插即用的应用程序](https://docs.oracle.com/javase/tutorial/figures/javabeans/SnapApp-2.png)
+![[javabeans-quick-SnapApp-2.webp]]

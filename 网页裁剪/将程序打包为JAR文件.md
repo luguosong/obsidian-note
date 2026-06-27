@@ -48,7 +48,7 @@ JAR 文件格式提供了许多好处：
 
 ## 使用与 JAR 相关的 API
 
-本节介绍 Java 平台的一些 JAR 处理特性。JAR 文件格式是 Java 平台扩展机制的重要组成部分。你可以在本教程的[扩展机制](https://docs.oracle.com/javase/tutorial/ext/index.html)路线中了解更多关于 JAR 文件这方面的内容。
+本节介绍 Java 平台的一些 JAR 处理特性。JAR 文件格式是 Java 平台扩展机制的重要组成部分。你可以在本教程的[[扩展机制|扩展机制]]路线中了解更多关于 JAR 文件这方面的内容。
 
 ## 问题和练习：JAR
 

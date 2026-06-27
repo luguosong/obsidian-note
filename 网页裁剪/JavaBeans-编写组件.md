@@ -28,4 +28,4 @@
 
 bean 是一个具有遵循 JavaBeans 指南的方法名的 Java 类。bean 构建器工具使用*内省(introspection)*来检查 bean 类。基于此检查，bean 构建器工具可以找出 bean 的属性、方法和事件。
 
-以下各节描述 [属性](https://docs.oracle.com/javase/tutorial/javabeans/writing/properties.html)、[方法](https://docs.oracle.com/javase/tutorial/javabeans/writing/methods.html) 和 [事件](https://docs.oracle.com/javase/tutorial/javabeans/writing/events.html) 的 JavaBeans 指南。最后，关于 [`BeanInfo`](https://docs.oracle.com/javase/tutorial/javabeans/writing/beaninfo.html) 的一节展示你如何自定义开发者使用你的 bean 的体验。
+以下各节描述 [[JavaBeans-编写组件-属性|属性]]、[[JavaBeans-编写组件-方法|方法]] 和 [[JavaBeans-编写组件-事件|事件]] 的 JavaBeans 指南。最后，关于 [[JavaBeans-编写组件-使用BeanInfo|`BeanInfo`]] 的一节展示你如何自定义开发者使用你的 bean 的体验。

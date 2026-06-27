@@ -1,24 +1,25 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "文档对象模型 (DOM)"
+描述: "《Java 教程》JAXP 路线课程，介绍文档对象模型(DOM)——一种标准树结构，使用 DOM 函数可以创建节点、移除节点、更改节点内容并遍历节点层次结构。"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Document Object Model
+# 文档对象模型 (DOM)
 
-[When to Use DOM](https://docs.oracle.com/javase/tutorial/jaxp/dom/when.html)
+> 文档说明
 
-[Reading XML Data into a DOM](https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Validating with XML Schema](https://docs.oracle.com/javase/tutorial/jaxp/dom/validating.html)
+## 课程：文档对象模型
 
-[Further Information](https://docs.oracle.com/javase/tutorial/jaxp/dom/info.html)
+本课介绍文档对象模型(DOM)。DOM 是一种标准树结构，其中每个节点包含 XML 结构中的一个组件。两种最常见的节点类型是元素节点和文本节点。使用 DOM 函数使你能创建节点、移除节点、更改其内容并遍历节点层次结构。
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jaxp/sax/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jaxp/dom/when.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: Document Object Model
-
-This lesson presents the Document Object Model (DOM). A DOM is a standard tree structure, where each node contains one of the components from an XML structure. The two most common types of nodes are element nodes and text nodes. Using DOM functions lets you create nodes, remove nodes, change their contents, and traverse the node hierarchy.
-
-The examples in this lesson demonstrate how to parse an existing XML file to construct a DOM, display and inspect the DOM hierarchy, and explore the syntax of namespaces. It also shows how to create a DOM from scratch, and see how to use some of the implementation-specific features in Sun's JAXP implementation to convert an existing data set to XML.
+本课中的示例演示如何解析现有 XML 文件以构建 DOM、显示和检查 DOM 层次结构，以及探索命名空间的语法。它还展示如何从头创建 DOM，以及如何使用 Sun 的 JAXP 实现中一些特定于实现的特性将现有数据集转换为 XML。

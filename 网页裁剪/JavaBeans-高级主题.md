@@ -22,6 +22,6 @@
 
 入门 JavaBeans 开发很容易，但 bean 具有令人惊讶的深度。本课涵盖一些更高级的主题，包括如何存储（持久化）bean 以及如何为自定义数据类型提供自定义编辑器。
 
-- [Bean 持久化](https://docs.oracle.com/javase/tutorial/javabeans/advanced/persistence.html) 描述保存和重构 bean 的机制。
-- [长期持久化](https://docs.oracle.com/javase/tutorial/javabeans/advanced/longpersistence.html) 涵盖将 bean 表示为 XML。
-- [Bean 定制](https://docs.oracle.com/javase/tutorial/javabeans/advanced/customization.html) 提供为自定义数据类型创建编辑器组件的概述。
+- [[JavaBeans-高级主题-Bean持久化|Bean 持久化]] 描述保存和重构 bean 的机制。
+- [[JavaBeans-高级主题-长期持久化|长期持久化]] 涵盖将 bean 表示为 XML。
+- [[JavaBeans-高级主题-Bean定制|Bean 定制]] 提供为自定义数据类型创建编辑器组件的概述。

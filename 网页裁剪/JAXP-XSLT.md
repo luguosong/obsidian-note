@@ -1,26 +1,25 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "可扩展样式表语言转换 (XSLT)"
+描述: "《Java 教程》JAXP 路线课程，介绍 XSLT 标准——定义寻址 XML 数据(XPath)和指定数据转换的机制，将文档对象模型写为 XML 文件并将任意数据文件转换为 XML。"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/xslt/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Extensible Stylesheet Language Transformations
+# 可扩展样式表语言转换 (XSLT)
 
-[Introducing XSL, XSLT, and XPath](https://docs.oracle.com/javase/tutorial/jaxp/xslt/intro.html)
+> 文档说明
 
-[How XPath Works](https://docs.oracle.com/javase/tutorial/jaxp/xslt/xpath.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Writing Out a DOM as an XML File](https://docs.oracle.com/javase/tutorial/jaxp/xslt/writingDom.html)
+## 课程：可扩展样式表语言转换
 
-[Generating XML from an Arbitrary Data Structure](https://docs.oracle.com/javase/tutorial/jaxp/xslt/generatingXML.html)
+可扩展样式表语言转换(Extensible Stylesheet Language Transformations, XSLT) 标准定义了寻址 XML 数据(XPath)和指定数据转换以将其转换为其他形式的机制。JAXP 包含 XSLT 的解释实现。
 
-[Transforming XML Data with XSLT](https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html)
-
-[« Previous](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jaxp/xslt/intro.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: Extensible Stylesheet Language Transformations
-
-The Extensible Stylesheet Language Transformations (XSLT) standard defines mechanisms for addressing XML data (XPath) and for specifying transformations on the data in order to convert it into other forms. JAXP includes an interpreting implementation of XSLT.
-
-In this lesson, you will write out a Document Object Model as an XML file, and you will see how to generate a DOM from an arbitrary data file in order to convert it to XML. Finally, you will convert XML data into a different form, learning about the XPath addressing mechanism along the way.
+在本课中，你将把文档对象模型写为 XML 文件，并将看到如何从任意数据文件生成 DOM 以将其转换为 XML。最后，你将把 XML 数据转换为不同形式，同时学习 XPath 寻址机制。

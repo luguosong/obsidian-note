@@ -22,19 +22,19 @@
 
 本路线描述 JNDI™（Java 命名与目录接口），一个用于访问目录和命名服务的 API。在这里，你将学习基本的命名和目录服务，以及如何使用 JNDI 编写简单的应用程序来使用这些服务。最流行的目录服务 LDAP 被用来演示如何使用 JNDI 访问目录服务。
 
-[**命名与目录概念**](https://docs.oracle.com/javase/tutorial/jndi/concepts/index.html) 从这里开始，获取命名和目录概念的概述。
+[[JNDI-概念|**命名与目录概念**]] 从这里开始，获取命名和目录概念的概述。
 
-[**JNDI 概述**](https://docs.oracle.com/javase/tutorial/jndi/overview/index.html) 给你 JNDI 及其架构和打包的概述。
+[[JNDI-概述|**JNDI 概述**]] 给你 JNDI 及其架构和打包的概述。
 
-[**软件设置**](https://docs.oracle.com/javase/tutorial/jndi/software/index.html) 描述设置运行本路线中描述的示例以及任何其他 JNDI 应用程序所需环境的说明和步骤。
+[[JNDI-软件设置|**软件设置**]] 描述设置运行本路线中描述的示例以及任何其他 JNDI 应用程序所需环境的说明和步骤。
 
-[**命名与目录操作**](https://docs.oracle.com/javase/tutorial/jndi/ops/index.html) 描述各种命名和目录操作，并通过大量使用 JNDI 访问命名/目录服务的示例进行演示。
+[[JNDI-操作|**命名与目录操作**]] 描述各种命名和目录操作，并通过大量使用 JNDI 访问命名/目录服务的示例进行演示。
 
-[**面向 LDAP 用户的高级主题**](https://docs.oracle.com/javase/tutorial/jndi/ldap/index.html) 专为 LDAP 用户设计的专门课程。它讨论将 JNDI 建模为 LDAP API、如何执行 LDAP 身份验证、SSL 以及在生产环境中管理连接。
+[[JNDI-LDAP高级|**面向 LDAP 用户的高级主题**]] 专为 LDAP 用户设计的专门课程。它讨论将 JNDI 建模为 LDAP API、如何执行 LDAP 身份验证、SSL 以及在生产环境中管理连接。
 
-[**访问目录中的对象**](https://docs.oracle.com/javase/tutorial/jndi/objects/index.html) 向你展示如何将你的应用程序与目录集成，以便你可以在目录中存储和检索 Java 对象。
+[[JNDI-目录对象|**访问目录中的对象**]] 向你展示如何将你的应用程序与目录集成，以便你可以在目录中存储和检索 Java 对象。
 
-[**JDK 5.0 和 JDK 6 中的特性**](https://docs.oracle.com/javase/tutorial/jndi/newstuff/index.html) 介绍 JDK 5.0 和 JDK 6 中可用的 JNDI 和 LDAP 服务提供者特性。
+[[JNDI-新特性|**JDK 5.0 和 JDK 6 中的特性**]] 介绍 JDK 5.0 和 JDK 6 中可用的 JNDI 和 LDAP 服务提供者特性。
 
 ---
 

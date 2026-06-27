@@ -1,28 +1,25 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "JAXP 简介"
+描述: "《Java 教程》JAXP 路线课程，介绍用于 XML 处理的 Java API(JAXP)，它利用 SAX、DOM、XSLT 和 StAX 标准，通过可插拔层灵活处理 XML 数据。"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/intro/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Introduction to JAXP
+# JAXP 简介
 
-[Overview of the Packages](https://docs.oracle.com/javase/tutorial/jaxp/intro/package.html)
+> 文档说明
 
-[Simple API for XML APIs](https://docs.oracle.com/javase/tutorial/jaxp/intro/simple.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[Document Object Model APIs](https://docs.oracle.com/javase/tutorial/jaxp/intro/dom.html)
+## 课程：JAXP 简介
 
-[Extensible Stylesheet Language Transformations APIs](https://docs.oracle.com/javase/tutorial/jaxp/intro/extensible.html)
+用于 XML 处理的 Java API(Java API for XML Processing, JAXP) 用于使用 Java 编程语言编写的应用程序处理 XML 数据。JAXP 利用解析器标准 XML 解析简单 API(SAX) 和文档对象模型(DOM)，使你可以选择将数据解析为事件流或构建其对象表示。JAXP 还支持可扩展样式表语言转换(XSLT)标准，使你能控制数据的表示，并使你能将数据转换为其他 XML 文档或其他格式（如 HTML）。JAXP 还提供命名空间支持，允许你使用否则可能有命名冲突的 DTD。最后，从版本 1.4 起，JAXP 实现了 XML 流式 API(StAX) 标准。
 
-[Streaming API for XML APIs](https://docs.oracle.com/javase/tutorial/jaxp/intro/streaming.html)
-
-[Finding the JAXP Sample Programs](https://docs.oracle.com/javase/tutorial/jaxp/intro/sample.html)
-
-[Where Do You Go From Here?](https://docs.oracle.com/javase/tutorial/jaxp/intro/next.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: Introduction to JAXP
-
-The Java API for XML Processing (JAXP) is for processing XML data using applications written in the Java programming language. JAXP leverages the parser standards Simple API for XML Parsing (SAX) and Document Object Model (DOM) so that you can choose to parse your data as a stream of events or to build an object representation of it. JAXP also supports the Extensible Stylesheet Language Transformations (XSLT) standard, giving you control over the presentation of the data and enabling you to convert the data to other XML documents or to other formats, such as HTML. JAXP also provides namespace support, allowing you to work with DTDs that might otherwise have naming conflicts. Finally, as of version 1.4, JAXP implements the Streaming API for XML (StAX) standard.
-
-Designed to be flexible, JAXP allows you to use any XML-compliant parser from within your application. It does this with what is called a pluggability layer, which lets you plug in an implementation of the SAX or DOM API. The pluggability layer also allows you to plug in an XSL processor, letting you control how your XML data is displayed.
+JAXP 设计为灵活的，允许你在应用程序中使用任何符合 XML 的解析器。它通过所谓的可插拔层来实现这一点，该层让你插入 SAX 或 DOM API 的实现。可插拔层还允许你插入 XSL 处理器，让你控制 XML 数据的显示方式。

@@ -2949,11 +2949,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 10,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 10,
         "ch": 0
       }
     },
@@ -4345,20 +4345,21 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 0,
+    "scroll": 43.46388888888889,
     "cursor": {
       "from": {
-        "line": 13,
-        "ch": 23
+        "line": 18,
+        "ch": 0
       },
       "to": {
-        "line": 13,
-        "ch": 23
+        "line": 18,
+        "ch": 0
       }
     },
     "expandedKeys": [
+      "item-2-1",
       "item-1-0",
-      "item-2-5"
+      "item-3-2"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -4379,7 +4380,7 @@
     ]
   },
   "网页裁剪/Java教程学习路径.md": {
-    "scroll": 26.470323741007196,
+    "scroll": 26.089028776978417,
     "cursor": {
       "from": {
         "line": 80,
@@ -4627,11 +4628,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 27,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 27,
         "ch": 0
       }
     },
@@ -4722,5 +4723,83 @@
       }
     },
     "expandedKeys": []
+  },
+  "网页裁剪/学习Java语言-语言基础.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-入门.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 39,
+        "ch": 0
+      },
+      "to": {
+        "line": 39,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/JMX-通知.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java核心类库.md": {
+    "scroll": 4.434589800443459,
+    "cursor": {
+      "from": {
+        "line": 33,
+        "ch": 0
+      },
+      "to": {
+        "line": 33,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java核心类库-异常.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
   }
 }

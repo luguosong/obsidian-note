@@ -1,43 +1,56 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "异常"
+描述: "《Java 教程》Java 核心类库路线课程，介绍 Java 如何使用异常处理错误和其他异常事件，涵盖异常概念、捕获或指定要求、抛出异常、try-with-resources 等。"
+来源: "https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+# 异常
 
-## Lesson: Exceptions
+> 文档说明
 
-The Java programming language uses *exceptions* to handle errors and other exceptional events. This lesson describes when and how to use exceptions.
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-## What Is an Exception?
+## 课程：异常
 
-An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions.
+Java 编程语言使用*异常(exceptions)*来处理错误和其他异常事件。本课描述何时以及如何使用异常。
 
-## The Catch or Specify Requirement
+## 什么是异常？
 
-This section covers how to catch and handle exceptions. The discussion includes the try, catch, and finally blocks, as well as chained exceptions and logging.
+异常是在程序执行期间发生并破坏指令正常流的事件。
 
-## How to Throw Exceptions
+## 捕获或指定要求
 
-This section covers the throw statement and the Throwable class and its subclasses.
+本节涵盖如何捕获和处理异常。讨论包括 try、catch 和 finally 块，以及链式异常和日志记录。
 
-## The try-with-resources Statement
+## 如何抛出异常
 
-This section describes the `try` -with-resources statement, which is a `try` statement that declares one or more resources. A resource is as an object that must be closed after the program is finished with it. The `try` -with-resources statement ensures that each resource is closed at the end of the statement.
+本节涵盖 throw 语句和 Throwable 类及其子类。
 
-## Unchecked Exceptions — The Controversy
+## try-with-resources 语句
 
-This section explains the correct and incorrect use of the unchecked exceptions indicated by subclasses of `RuntimeException`.
+本节描述 try-with-resources 语句，它是一个声明一个或多个资源的 try 语句。资源是在程序使用完毕后必须关闭的对象。try-with-resources 语句确保每个资源在语句结束时被关闭。
 
-## Advantages of Exceptions
+## 非检查型异常——争议
 
-The use of exceptions to manage errors has some advantages over traditional error-management techniques. You'll learn more in this section.
+本节解释由 `RuntimeException` 子类指示的非检查型异常的正确和错误使用。
 
-## Summary
+## 异常的优势
 
-## Questions and Exercises
+使用异常管理错误相比传统错误管理技术有一些优势。你将在本节了解更多。
+
+## 总结
+
+## 问题和练习
 
 ---
 
-**Previous page:** Table of Contents  
-**Next page:** What Is an Exception?
+**上一页：** 目录
+**下一页：** 什么是异常？

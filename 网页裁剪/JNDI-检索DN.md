@@ -1,0 +1,90 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Retrieving Distinguished Name (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/newstuff/dn.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
+Documentation
+
+Retrieving Distinguished Name
+
+[[JNDI-标准LDAP控件|Standard LDAP Controls]]
+
+[Paged Results Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html)
+
+[Sort Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html)
+
+[Manage Referral Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html)
+
+[[JNDI-LDAP名称操作|Manipulating LdapName (Distinguished Name)]]
+
+[Manipulating Relative Distinguished Name (RDN)](https://docs.oracle.com/javase/tutorial/jndi/newstuff/rdn.html)
+
+[[JNDI-读取超时|Setting Timeout for Ldap Operations]]
+
+**Trail:** Java Naming and Directory Interface  
+**Lesson:** New features in JDK 5.0 and JDK 6
+
+The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
+See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
+See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
+See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+
+## Retrieving Distinguished Name
+
+In the JDK releases prior to 5.0, there is no direct way of obtaining the Distinguished Name (DN) from the search results. The SearchResults.getName() method always returns the name that is relative to the context on which the search is performed. In order to get the absolute, or full name of the search entry some amount of book-keeping is required to track the ancestor contexts. Two new APIs below are added in JDK 5.0 to retrieve the absolute name from the NameClassPair, whenever a search, list, or listBindings operation is performed on a context:
+
+- [NameClassPair.getNameInNameSpace(Name name)](https://docs.oracle.com/javase/8/docs/api/javax/naming/NameClassPair.html#getNameInNamespace-Name-)
+- [NameClassPair.getNameInNameSpace(String name)](https://docs.oracle.com/javase/8/docs/api/javax/naming/NameClassPair.html#getNameInNamespace-String-)
+
+Here is an example that retrieves DNs from an LDAP search:
+
+```java
+public static void printSearchEnumeration(NamingEnumeration retEnum) {
+    try {
+        while (retEnum.hasMore()) {
+            SearchResult sr = (SearchResult) retEnum.next();
+            System.out.println(">>" + sr.getNameInNamespace());
+        }
+    } catch (NamingException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+The complete example can be obtained from [`here`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/FullName.java). This program generates the output as below:
+
+```
+>>cn=Jon Ruiz, ou=People, o=JNDITutorial
+>>cn=Scott Seligman, ou=People, o=JNDITutorial
+>>cn=Samuel Clemens, ou=People, o=JNDITutorial
+>>cn=Rosanna Lee, ou=People, o=JNDITutorial
+>>cn=Maxine Erlund, ou=People, o=JNDITutorial
+>>cn=Niels Bohr, ou=People, o=JNDITutorial
+>>cn=Uri Geller, ou=People, o=JNDITutorial
+>>cn=Colleen Sullivan, ou=People, o=JNDITutorial
+>>cn=Vinnie Ryan, ou=People, o=JNDITutorial
+>>cn=Rod Serling, ou=People, o=JNDITutorial
+>>cn=Jonathan Wood, ou=People, o=JNDITutorial
+>>cn=Aravindan Ranganathan, ou=People, o=JNDITutorial
+>>cn=Ian Anderson, ou=People, o=JNDITutorial
+>>cn=Lao Tzu, ou=People, o=JNDITutorial
+>>cn=Don Knuth, ou=People, o=JNDITutorial
+>>cn=Roger Waters, ou=People, o=JNDITutorial
+>>cn=Ben Dubin, ou=People, o=JNDITutorial
+>>cn=Spuds Mackenzie, ou=People, o=JNDITutorial
+>>cn=John Fowler, ou=People, o=JNDITutorial
+>>cn=Londo Mollari, ou=People, o=JNDITutorial
+>>cn=Ted Geisel, ou=People,o=JNDITutorial
+```
+
+---
+
+**Previous page:** New features in JDK 5.0 and JDK 6  
+**Next page:** Standard LDAP Controls

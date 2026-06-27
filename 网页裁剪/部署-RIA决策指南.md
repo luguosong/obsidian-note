@@ -1,28 +1,30 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "Java 富互联网应用程序决策指南"
+描述: "《Java 教程》部署路线课程，评估 applet 和 Java Web Start 应用程序的特征，帮助你决定如何部署富互联网应用程序(RIA)。"
+来源: "https://docs.oracle.com/javase/tutorial/deployment/_riaDecisionGuide.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-[« Previous](https://docs.oracle.com/javase/tutorial/deployment/TOC.html) • [TOC](https://docs.oracle.com/javase/tutorial/deployment/TOC.html)
+# Java 富互联网应用程序决策指南
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+> 文档说明
 
-## Java Rich Internet Applications Decision Guide
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-Both applets and Java Web Start applications are considered *Rich Internet Applications (RIAs)*. RIAs prompt users for permission to run the first time they are launched and should be signed with a certificate from a trusted certificate authority. Evaluate the following characteristics of applets and Java Web Start applications to decide how to deploy your RIA.
+## Java 富互联网应用程序决策指南
 
-## Applets
+applet 和 Java Web Start 应用程序都被视为*富互联网应用程序(Rich Internet Applications, RIA)*。RIA 在首次启动时提示用户许可运行，并且应使用来自受信任证书颁发机构的证书签名。评估 applet 和 Java Web Start 应用程序的以下特征，以决定如何部署你的 RIA。
 
-- Applets run in the context of a browser.
-- Applets have access to session cookies and persistent cookies.
-- Applets can interact with the web page that they are embedded in. Applets can traverse and manipulate the Document Object Model of the web page and interact with JavaScript that is in the web page. JavaScript code can access public methods and variables of an applet.
-- Applets can be launched using Java Network Launch Protocol (JNLP). When launched using JNLP, sandbox applets are allowed access to persistent storage, download control, file I/O, and more. Applets launched using JNLP have capabilities that are comparable to that of a Java Web Start application.  
-	Applets can also be launched without JNLP, and can be restricted to the security sandbox or request all permissions.
-- Applets can request a particular version of the Java Runtime Environment software for execution.
+## Applet
 
-## Java Web Start applications
-
-- Java Web Start applications are launched from a web page the first time. Subsequently, they may be re-launched from the web page or from a desktop shortcut.
-- Java Web Start applications do not run in the context of a browser. The applications cannot interact with HTML and JavaScript in a web page and have access to persistent cookies only.
-- Java Web Start applications are allowed access to persistent storage, file I/O, and other client related services.
-- Java Web Start applications can request a particular version of the Java Runtime Environment software for execution.
+- Applet 在浏览器的上下文中运行。
+- Applet 可以访问会话 cookie 和持久 cookie。
+- Applet 可以与它们嵌入的网页交互。Applet 可以遍历和操作网页的文档对象模型，并与网页中的 JavaScript 交互。JavaScript 代码可以访问 applet 的公共方法和变量。
+- Applet 可以使用 Java 网络启动协议(JNLP) 启动。使用 JNLP 启动时，沙箱 applet 被允许访问持久存储、下载控制、文件 I/O 等。使用 JNLP 启动的 applet 具有与 Java Web Start 应用程序相当的能力。

@@ -1,60 +1,71 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "正则表达式"
+描述: "《Java 教程》Java 核心类库路线课程，介绍如何使用 java.util.regex API 进行正则表达式模式匹配，从基础逐步构建到涵盖字符类、量词、捕获组、边界匹配等高级技术。"
+来源: "https://docs.oracle.com/javase/tutorial/essential/regex/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/environment/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/regex/intro.html)
+# 正则表达式
 
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
+> 文档说明
 
-## Lesson: Regular Expressions
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-This lesson explains how to use the ``  `java.util.regex` `` API for pattern matching with regular expressions. Although the syntax accepted by this package is similar to the [Perl](http://www.perl.com/) programming language, knowledge of Perl is not a prerequisite. This lesson starts with the basics, and gradually builds to cover more advanced techniques.
+## 课程：正则表达式
 
-[Introduction](https://docs.oracle.com/javase/tutorial/essential/regex/intro.html)
+本课解释如何使用 `java.util.regex` API 进行正则表达式的模式匹配。虽然此包接受的语法类似于 [Perl](http://www.perl.com/) 编程语言，但 Perl 的知识不是先决条件。本课从基础知识开始，逐步构建以涵盖更高级的技术。
 
-Provides a general overview of regular expressions. It also introduces the core classes that comprise this API.
+[[Java核心类库-正则表达式-简介|简介]]
 
-[Test Harness](https://docs.oracle.com/javase/tutorial/essential/regex/test_harness.html)
+提供正则表达式的总体概述。它还介绍构成此 API 的核心类。
 
-Defines a simple application for testing pattern matching with regular expressions.
+[[Java核心类库-正则表达式-测试工具|测试工具]]
 
-[String Literals](https://docs.oracle.com/javase/tutorial/essential/regex/literals.html)
+定义一个简单的应用程序，用于测试正则表达式的模式匹配。
 
-Introduces basic pattern matching, metacharacters, and quoting.
+[[Java核心类库-正则表达式-字符串字面量|字符串字面量]]
 
-[Character Classes](https://docs.oracle.com/javase/tutorial/essential/regex/char_classes.html)
+介绍基本模式匹配、元字符和引用。
 
-Describes simple character classes, negation, ranges, unions, intersections, and subtraction.
+[[Java核心类库-正则表达式-字符类|字符类]]
 
-[Predefined Character Classes](https://docs.oracle.com/javase/tutorial/essential/regex/pre_char_classes.html)
+描述简单的字符类、否定、范围、并集、交集和差集。
 
-Describes the basic predefined character classes for whitespace, word, and digit characters.
+[[Java核心类库-正则表达式-预定义字符类|预定义字符类]]
 
-[Quantifiers](https://docs.oracle.com/javase/tutorial/essential/regex/quant.html)
+描述用于空白、单词和数字字符的基本预定义字符类。
 
-Explains greedy, reluctant, and possessive quantifiers for matching a specified expression *x* number of times.
+[[Java核心类库-正则表达式-量词|量词]]
 
-[Capturing Groups](https://docs.oracle.com/javase/tutorial/essential/regex/groups.html)
+解释贪婪、勉强和占有量词，用于匹配指定表达式 *x* 次。
 
-Explains how to treat multiple characters as a single unit.
+[[Java核心类库-正则表达式-捕获组|捕获组]]
 
-[Boundary Matchers](https://docs.oracle.com/javase/tutorial/essential/regex/bounds.html)
+解释如何将多个字符视为单个单元。
 
-Describes line, word, and input boundaries.
+[[Java核心类库-正则表达式-边界匹配器|边界匹配器]]
 
-[Methods of the Pattern Class](https://docs.oracle.com/javase/tutorial/essential/regex/pattern.html)
+描述行、单词和输入边界。
 
-Examines other useful methods of the `Pattern` class, and explores advanced features such as compiling with flags and using embedded flag expressions.
+[[Java核心类库-正则表达式-Pattern方法|Pattern 类的方法]]
 
-[Methods of the Matcher Class](https://docs.oracle.com/javase/tutorial/essential/regex/matcher.html)
+检查 `Pattern` 类的其他有用方法，并探索高级特性，如使用标志编译和使用嵌入式标志表达式。
 
-Describes the commonly-used methods of the `Matcher` class.
+[[Java核心类库-正则表达式-Matcher方法|Matcher 类的方法]]
 
-[Methods of the PatternSyntaxException Class](https://docs.oracle.com/javase/tutorial/essential/regex/pse.html)
+描述 `Matcher` 类的常用方法。
 
-Describes how to examine a `PatternSyntaxException`.
+[[Java核心类库-正则表达式-PatternSyntaxException方法|PatternSyntaxException 类的方法]]
 
-[Additional Resources](https://docs.oracle.com/javase/tutorial/essential/regex/resources.html)
+描述如何检查 `PatternSyntaxException`。
 
-To read more about regular expressions, consult this section for additional resources.
+[[Java核心类库-正则表达式-附加资源|附加资源]]
+
+要阅读有关正则表达式的更多信息，请咨询此部分以获取附加资源。

@@ -72,7 +72,7 @@ public class ComputePi {
 
 接下来，客户端创建一个新的 `Pi` 对象，将第二个命令行参数 `args[1]` 解析为整数后传递给 `Pi` 构造器。此参数指示计算中使用的小数位数。最后，客户端调用 `Compute` 远程对象的 `executeTask` 方法。传递给 `executeTask` 调用的对象返回一个 `BigDecimal` 类型的对象，程序将其存储在变量 `result` 中。最后，程序打印结果。下图描绘了 `ComputePi` 客户端、`rmiregistry` 和 `ComputeEngine` 之间的消息流。
 
-![计算引擎、注册表和客户端之间的消息流](https://docs.oracle.com/javase/tutorial/figures/rmi/rmi-4.gif)
+![[rmi-client-rmi-4.gif]]
 
 `Pi` 类实现 `Task` 接口并计算 π 到指定数量小数位的值。对于此示例，实际算法并不重要。重要的是该算法计算量大，意味着你会希望它在功能强大的服务器上执行。
 

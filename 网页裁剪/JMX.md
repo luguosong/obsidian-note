@@ -22,12 +22,12 @@
 
 **Java 管理扩展(Java Management Extensions, JMX)** 路线介绍了 JMX 技术，该技术包含在 Java 平台标准版(Java SE 平台)中。本路线展示了如何使用 JMX 技术最重要特性的示例。
 
-[JMX 技术概述](https://docs.oracle.com/javase/tutorial/jmx/overview/index.html) 提供 JMX 技术的简要描述，包括其目的和主要特性。
+[[JMX-概述|JMX 技术概述]] 提供 JMX 技术的简要描述，包括其目的和主要特性。
 
-[MBeans 简介](https://docs.oracle.com/javase/tutorial/jmx/mbeans/index.html) 介绍 JMX 技术的基本概念，*受管 bean(managed beans)*，也称为 **MBeans**。本课还介绍了 MXBeans。
+[[JMX-MBeans|MBeans 简介]] 介绍 JMX 技术的基本概念，*受管 bean(managed beans)*，也称为 **MBeans**。本课还介绍了 MXBeans。
 
-[通知](https://docs.oracle.com/javase/tutorial/jmx/notifs/index.html) 介绍 JMX 技术的通知机制。
+[[JMX-通知|通知]] 介绍 JMX 技术的通知机制。
 
-[远程管理](https://docs.oracle.com/javase/tutorial/jmx/remote/index.html) 展示如何实现 JMX API 的远程管理功能以及如何创建 JMX 客户端应用程序。
+[[JMX-远程管理|远程管理]] 展示如何实现 JMX API 的远程管理功能以及如何创建 JMX 客户端应用程序。
 
-[后续方向](https://docs.oracle.com/javase/tutorial/jmx/end.html) 提供指向描述 JMX 技术的更高级文档的指针。
+[[JMX-后续方向|后续方向]] 提供指向描述 JMX 技术的更高级文档的指针。

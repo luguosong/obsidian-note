@@ -20,9 +20,9 @@
 
 ## Microsoft Windows 版 "Hello World!" ("Hello World!" for Microsoft Windows)
 
-是时候编写你的第一个应用程序了！以下说明面向 Windows Vista、Windows 7 和 Windows 8 的用户。其他平台的说明请参阅 [Solaris OS、Linux 和 Mac OS X 版 "Hello World!"](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html) 和 [NetBeans IDE 版 "Hello World!"](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html)。
+是时候编写你的第一个应用程序了！以下说明面向 Windows Vista、Windows 7 和 Windows 8 的用户。其他平台的说明请参阅 [[Solaris-Linux-Mac版HelloWorld|Solaris OS、Linux 和 Mac OS X 版 "Hello World!"]] 和 [[NetBeans版HelloWorld|NetBeans IDE 版 "Hello World!"]]。
 
-如果你在遵循本页说明时遇到问题，请参阅 [常见问题（及其解决方案）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html)。
+如果你在遵循本页说明时遇到问题，请参阅 [[常见问题及解决方案|常见问题（及其解决方案）]]。
 
 - [清单](#win32-1)
 - [创建你的第一个应用程序](#win32-2)
@@ -185,7 +185,7 @@ C:\myapplication>
 
 现在你已经有了一个 `.class` 文件，可以运行程序了。
 
-如果你在遵循此步骤的说明时遇到问题，请参阅 [常见问题（及其解决方案）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html)。
+如果你在遵循此步骤的说明时遇到问题，请参阅 [[常见问题及解决方案|常见问题（及其解决方案）]]。
 
 ### 运行程序 (Run the Program)
 
@@ -206,4 +206,4 @@ C:\myapplication>
 
 恭喜！你的程序运行成功了！
 
-如果你在遵循此步骤的说明时遇到问题，请参阅 [常见问题（及其解决方案）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html)。
+如果你在遵循此步骤的说明时遇到问题，请参阅 [[常见问题及解决方案|常见问题（及其解决方案）]]。

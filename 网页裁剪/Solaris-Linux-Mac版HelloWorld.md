@@ -20,9 +20,9 @@
 
 ## Solaris OS、Linux 和 Mac OS X 版 "Hello World!" ("Hello World!" for Solaris OS, Linux, and Mac OS X)
 
-是时候编写你的第一个应用程序了！这些详细说明面向 Solaris OS、Linux 和 Mac OS X 的用户。其他平台的说明请参阅 [Microsoft Windows 版 "Hello World!"](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html) 和 [NetBeans IDE 版 "Hello World!"](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html)。
+是时候编写你的第一个应用程序了！这些详细说明面向 Solaris OS、Linux 和 Mac OS X 的用户。其他平台的说明请参阅 [[Windows版HelloWorld|Microsoft Windows 版 "Hello World!"]] 和 [[NetBeans版HelloWorld|NetBeans IDE 版 "Hello World!"]]。
 
-如果你在遵循本页说明时遇到问题，请参阅 [常见问题（及其解决方案）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html)。
+如果你在遵循本页说明时遇到问题，请参阅 [[常见问题及解决方案|常见问题（及其解决方案）]]。
 
 - [清单](#unix-1)
 - [创建你的第一个应用程序](#unix-2)
@@ -150,7 +150,7 @@ javac HelloWorldApp.java
 
 现在你已经有了一个 `.class` 文件，可以运行程序了。
 
-如果你在遵循此步骤的说明时遇到问题，请参阅 [常见问题（及其解决方案）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html)。
+如果你在遵循此步骤的说明时遇到问题，请参阅 [[常见问题及解决方案|常见问题（及其解决方案）]]。
 
 ### 运行程序 (Run the Program)
 
@@ -168,4 +168,4 @@ java HelloWorldApp
 
 恭喜！你的程序运行成功了！
 
-如果你在遵循此步骤的说明时遇到问题，请参阅 [常见问题（及其解决方案）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html)。
+如果你在遵循此步骤的说明时遇到问题，请参阅 [[常见问题及解决方案|常见问题（及其解决方案）]]。

@@ -1,43 +1,30 @@
-Documentation
+---
+分类:
+  - "网页裁剪"
+标题: "用 Java 富互联网应用程序做更多事"
+描述: "《Java 教程》部署路线课程，包含 applet 和 Java Web Start 应用程序（统称富互联网应用程序）开发和部署的通用主题。"
+来源: "https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/index.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T17:50:00+08:00"
+---
 
-Doing More With Java Rich Internet Applications
+# 用 Java 富互联网应用程序做更多事
 
-[Setting Trusted Arguments and Secure Properties](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/settingArgsProperties.html)
+> 文档说明
 
-[System Properties](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/properties.html)
+《Java 教程》(The Java Tutorials) 是基于 JDK 8 编写的。本页所描述的示例与实践未采用后续版本中引入的改进，并且可能使用了目前已不可用的技术。
+请参阅 [Dev.java](https://dev.java/learn/)，获取充分利用最新版本的更新版教程。
+请参阅 [Java 语言变更](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)，了解 Java SE 9 及后续版本中更新的语言特性摘要。
+请参阅 [JDK 发行说明](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)，获取所有 JDK 版本的新特性、增强功能以及已移除或弃用的选项的相关信息。
 
-[JNLP API](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/jnlpAPI.html)
+## 课程：用 Java 富互联网应用程序做更多事
 
-[Accessing the Client Using JNLP API](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/usingJNLPAPI.html)
+使用 Java 网络启动协议(JNLP) 启动的 applet 具有与 Java Web Start 应用程序类似的能力。本课包含 applet 和 Java Web Start 应用程序（统称富互联网应用程序）开发和部署的通用主题。如果你不熟悉 applet 或 Java Web Start 应用程序，可以在 Java 教程的以下课程中了解更多：
 
-[Cookies](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/cookies.html)
-
-[Accessing Cookies](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/accessingCookies.html)
-
-[Security in Rich Internet Applications](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/security.html)
-
-[Guidelines for Securing Rich Internet Applications](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/devGuidelines.html)
-
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/QandE/questions.html)
-
-**Trail:** Deployment
-
-[« Previous](https://docs.oracle.com/javase/tutorial/deployment/webstart/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/deployment/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/deployment/doingMoreWithRIA/settingArgsProperties.html)
-
-The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
-See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
-See [Java Language Changes](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes) for a summary of updated language features in Java SE 9 and subsequent releases.  
-See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html) for information about new features, enhancements, and removed or deprecated options for all JDK releases.
-
-## Lesson: Doing More With Java Rich Internet Applications
-
-Applets launched by using the Java Network Launch Protocol (JNLP) have capabilities similar to those of Java Web Start applications. This lesson contains topics common to the development and deployment of applets and Java Web Start applications (together known as rich Internet applications). If you are unfamiliar with applets or Java Web Start applications, you can learn more in the following lessons of the Java Tutorials:
-
-- To learn more about applet development and deployment, visit the [Java Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/index.html) lesson.
-- To learn more about the development and deployment of Java Web Start applications, visit the [Java Web Start](https://docs.oracle.com/javase/tutorial/deployment/webstart/index.html) lesson.
+- 要了解有关 applet 开发和部署的更多信息，请访问 [[部署-Applet|Java Applet]] 课程。
+- 要了解有关 Java Web Start 应用程序开发和部署的更多信息，请访问 [[部署-WebStart|Java Web Start]] 课程。
 
 ---
 
-**Note:** Please make sure you have at least [Java SE Development Kit (JDK) 6 update 10](http://www.oracle.com/technetwork/java/javase/downloads/index.html) release on your client machine before proceeding further. You will need this to view the sample rich internet applications and read subsequent sections without interruptions.
-
----
+**注意：** 在继续之前，请确保客户端机器上至少安装了 [Java SE 开发工具包(JDK) 6 update 10](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 发行版。你需要它来查看示例富互联网应用程序并无中断地阅读后续各节。
