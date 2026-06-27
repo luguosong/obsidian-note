@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Catching and Handling Exceptions (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/exceptions/catchOrDeclare.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/exceptions/try.html)
+[[Java核心类库-异常-catchOrDeclare|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-异常-try|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,9 +25,9 @@ This section describes how to use the three exception handler components — the
 
 The last part of this section walks through an example and analyzes what occurs during various scenarios.
 
-The following example defines and implements a class named `ListOfNumbers`. When constructed, `ListOfNumbers` creates an `ArrayList` that contains 10 `Integer` elements with sequential values 0 through 9. The `ListOfNumbers` class also defines a method named `writeList`, which writes the list of numbers into a text file called `OutFile.txt`. This example uses output classes defined in `java.io`, which are covered in [Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html).
+The following example defines and implements a class named `ListOfNumbers`. When constructed, `ListOfNumbers` creates an `ArrayList` that contains 10 `Integer` elements with sequential values 0 through 9. The `ListOfNumbers` class also defines a method named `writeList`, which writes the list of numbers into a text file called `OutFile.txt`. This example uses output classes defined in `java.io`, which are covered in [[Java核心类库-基本IO|Basic I/O]].
 
-```
+```java
 // Note: This class will not compile yet.
 import java.io.*;
 import java.util.List;

@@ -15,7 +15,7 @@ Documentation
 **Trail:** Java Naming and Directory Interface  
 **Lesson:** New features in JDK 5.0 and JDK 6
 
-[[JNDI-检索DN|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html)
+[[JNDI-检索DN|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-新特性-paged-results|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

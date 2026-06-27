@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Answers to Questions and Exercises: Classes (The Java™ Tutorials > Learning the Java Language >
+            Classes and Objects)"
+描述: ""
+来源: "https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/creating-answers.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/creating-questions.html) • [TOC](https://docs.oracle.com/javase/tutorial/java/TOC.html)
+[[类与对象-创建类练习|« Previous]] • [TOC](https://docs.oracle.com/javase/tutorial/java/TOC.html)
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -12,7 +24,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Questions
 
 1. Consider the following class:
-	```
+	```java
 	public class IdentifyMyParts {
 	    public static int x = 7;
 	    public int y = 3;
@@ -23,7 +35,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 		2. **Question**: What are the instance variables?
 		**Answer**: y
 		3. **Question**: What is the output from the following code:
-		```
+		```java
 		IdentifyMyParts a = new IdentifyMyParts(); 
 		IdentifyMyParts b = new IdentifyMyParts(); 
 		a.y = 5; 
@@ -37,7 +49,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 		System.out.println("IdentifyMyParts.x = " + IdentifyMyParts.x);
 		```
 		**Answer**: Here is the output:
-		```
+		```properties
 		a.y = 5 
 		b.y = 6 
 		a.x = 2 
@@ -45,11 +57,11 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 		IdentifyMyParts.x = 2
 		```
 		Because `x` is defined as a `public static int` in the class `IdentifyMyParts`, every reference to `x` will have the value that was last assigned because `x` is a static variable (and therefore a class variable) shared across all instances of the class. That is, there is only one `x`: when the value of `x` changes in any instance it affects the value of `x` for all instances of `IdentifyMyParts`.
-		This is covered in the Class Variables section of [Understanding Instance and Class Members](https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html).
+		This is covered in the Class Variables section of [[类与对象-类成员|Understanding Instance and Class Members]].
 
 ## Exercises
 
-1. **Exercise**: Write a class whose instances represent a single playing card from a deck of cards. Playing cards have two distinguishing properties: rank and suit. Be sure to keep your solution as you will be asked to rewrite it in [Enum Types](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/enum-questions.html).
+1. **Exercise**: Write a class whose instances represent a single playing card from a deck of cards. Playing cards have two distinguishing properties: rank and suit. Be sure to keep your solution as you will be asked to rewrite it in [[类与对象-enum-questions|Enum Types]].
 	**Answer**: [`` `Card.java` ``](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Card.java).
 2. **Exercise**: Write a class whose instances represents a **full** deck of cards. You should also keep this solution.
 	**Answer**: See [`` `Deck.java` ``](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Deck.java).

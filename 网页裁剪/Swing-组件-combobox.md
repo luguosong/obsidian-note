@@ -1,90 +1,102 @@
+---
+分类:
+  - "网页裁剪"
+标题: "How to Use Combo Boxes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)"
+描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
-[How to Make Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html)
+[[Swing-组件-applet|How to Make Applets]]
 
-[How to Use Buttons, Check Boxes, and Radio Buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
-[How to Use Color Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html)
+[[Swing-组件-colorchooser|How to Use Color Choosers]]
 
 How to Use Combo Boxes
 
-[How to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-dialog|How to Make Dialogs]]
 
-[How to Use Editor Panes and Text Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-editorpane|How to Use Editor Panes and Text Panes]]
 
-[How to Use File Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-filechooser|How to Use File Choosers]]
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
-[How to Use Sliders](https://docs.oracle.com/javase/tutorial/uiswing/components/slider.html)
+[[Swing-滑块|How to Use Sliders]]
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-colorchooser|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-组件-dialog|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -100,7 +112,7 @@ A [`JComboBox`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.
 | ![An uneditable combo box](https://docs.oracle.com/javase/tutorial/figures/uiswing/components/UneditableComboMenu2Metal.png) | ![An editable combo box](https://docs.oracle.com/javase/tutorial/figures/uiswing/components/EditableComboBoxMenuMetal2.png) |
 | Uneditable combo box, before (top)   and after the button is clicked | Editable combo box, before and after   the arrow button is clicked |
 
-Combo boxes require little screen space, and their editable (text field) form is useful for letting the user quickly choose a value without limiting the user to the displayed values. Other components that can display one-of-many choices are groups of [radio buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html#radiobutton) and [lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html). Groups of radio buttons are generally the easiest for users to understand, but combo boxes can be more appropriate when space is limited or more than a few choices are available. Lists are not terribly attractive, but they're more appropriate than combo boxes when the number of items is large (say, over 20) or when selecting multiple items might be valid.
+Combo boxes require little screen space, and their editable (text field) form is useful for letting the user quickly choose a value without limiting the user to the displayed values. Other components that can display one-of-many choices are groups of [[Swing-按钮|radio buttons]] and [[Swing-组件-list|lists]]. Groups of radio buttons are generally the easiest for users to understand, but combo boxes can be more appropriate when space is limited or more than a few choices are available. Lists are not terribly attractive, but they're more appropriate than combo boxes when the number of items is large (say, over 20) or when selecting multiple items might be valid.
 
 Because editable and uneditable combo boxes are so different, this section treats them separately. This section covers these topics:
 
@@ -121,7 +133,7 @@ The application shown here uses an uneditable combo box for choosing a pet pictu
 
 The following code, taken from [`ComboBoxDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/ComboBoxDemoProject/src/components/ComboBoxDemo.java), creates an uneditable combo box and sets it up:
 
-```
+```sql
 String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
 
 //Create the combo box, select item at index 4.
@@ -143,7 +155,7 @@ No matter which constructor you use, a combo box uses a combo box model to conta
 
 Be careful when implementing a custom model for a combo box. The `JComboBox` methods that change the items in the combo box's menu, such as `insertItemAt`, work only if the data model implements the [`MutableComboBoxModel`](https://docs.oracle.com/javase/8/docs/api/javax/swing/MutableComboBoxModel.html) interface (a subinterface of `ComboBoxModel`). Refer to the [API](#api) tables to see which methods are affected.
 
-Something else to watch out for — even for uneditable combo boxes — is ensuring that your custom model fires [list data events](https://docs.oracle.com/javase/tutorial/uiswing/events/listdatalistener.html) when the combo box's data or state changes. Even immutable combo box models, whose data never changes, must fire a list data event (a `CONTENTS_CHANGED` event) when the selection changes. One way to get the list data event firing code for free is to make your combo box model a subclass of [`AbstractListModel`](https://docs.oracle.com/javase/8/docs/api/javax/swing/AbstractListModel.html).
+Something else to watch out for — even for uneditable combo boxes — is ensuring that your custom model fires [[Swing-事件监听-listdatalistener|list data events]] when the combo box's data or state changes. Even immutable combo box models, whose data never changes, must fire a list data event (a `CONTENTS_CHANGED` event) when the selection changes. One way to get the list data event firing code for free is to make your combo box model a subclass of [`AbstractListModel`](https://docs.oracle.com/javase/8/docs/api/javax/swing/AbstractListModel.html).
 
 ---
 
@@ -151,7 +163,7 @@ Something else to watch out for — even for uneditable combo boxes — is ensur
 
 Here's the code from `ComboBoxDemo.java` that registers and implements an action listener on the combo box:
 
-```
+```java
 public class ComboBoxDemo ... implements ActionListener {
     . . .
         petList.addActionListener(this) {
@@ -165,11 +177,11 @@ public class ComboBoxDemo ... implements ActionListener {
 }
 ```
 
-This action listener gets the newly selected item from the combo box, uses it to compute the name of an image file, and updates a label to display the image. The combo box fires an action event when the user selects an item from the combo box's menu. See [How to Write an Action Listener](https://docs.oracle.com/javase/tutorial/uiswing/events/actionlistener.html), for general information about implementing action listeners.
+This action listener gets the newly selected item from the combo box, uses it to compute the name of an image file, and updates a label to display the image. The combo box fires an action event when the user selects an item from the combo box's menu. See [[Swing-事件监听-actionlistener|How to Write an Action Listener]], for general information about implementing action listeners.
 
-Combo boxes also generate item events, which are fired when any of the items' selection state changes. Only one item at a time can be selected in a combo box, so when the user makes a new selection the previously selected item becomes unselected. Thus two item events are fired each time the user selects a different item from the menu. If the user chooses the same item, no item events are fired. Use `addItemListener` to register an item listener on a combo box. [How to Write an Item Listener](https://docs.oracle.com/javase/tutorial/uiswing/events/itemlistener.html) gives general information about implementing item listeners.
+Combo boxes also generate item events, which are fired when any of the items' selection state changes. Only one item at a time can be selected in a combo box, so when the user makes a new selection the previously selected item becomes unselected. Thus two item events are fired each time the user selects a different item from the menu. If the user chooses the same item, no item events are fired. Use `addItemListener` to register an item listener on a combo box. [[Swing-事件监听-itemlistener|How to Write an Item Listener]] gives general information about implementing item listeners.
 
-Although `JComboBox` inherits methods to register listeners for low-level events — focus, key, and mouse events, for example — we recommend that you don't listen for low-level events on a combo box. Here's why: A combo box is a *compound component* — it is comprised of two or more other components. The combo box itself fires high-level events such as action events. Its subcomponents fire low-level events such as mouse, key, and focus events. The low-level events and the subcomponent that fires them are look-and-feel-dependent. To avoid writing look-and-feel-dependent code, you should listen only for high-level events on a compound component such as a combo box. For information about events, including a discussion about high- and low-level events, refer to [Writing Event Listeners](https://docs.oracle.com/javase/tutorial/uiswing/events/index.html).
+Although `JComboBox` inherits methods to register listeners for low-level events — focus, key, and mouse events, for example — we recommend that you don't listen for low-level events on a combo box. Here's why: A combo box is a *compound component* — it is comprised of two or more other components. The combo box itself fires high-level events such as action events. Its subcomponents fire low-level events such as mouse, key, and focus events. The low-level events and the subcomponent that fires them are look-and-feel-dependent. To avoid writing look-and-feel-dependent code, you should listen only for high-level events on a compound component such as a combo box. For information about events, including a discussion about high- and low-level events, refer to [[Swing-事件监听|Writing Event Listeners]].
 
 ## Using an Editable Combo Box
 
@@ -210,7 +222,7 @@ This code is very similar to the previous example, but warrants a few words of e
 
 An editable combo box fires an action event when the user chooses an item from the menu and when the user types Enter. Note that the menu remains unchanged when the user enters a value into the combo box. If you want, you can easily write an action listener that adds a new item to the combo box's menu each time the user types in a unique value.
 
-See [Internationalization](https://docs.oracle.com/javase/tutorial/i18n/index.html) to learn more about formatting dates and other types of data.
+See [[国际化|Internationalization]] to learn more about formatting dates and other types of data.
 
 ## Providing a Custom Renderer
 
@@ -239,7 +251,7 @@ petList.setMaximumRowCount(3);
 
 The last line sets the combo box's maximum row count, which determines the number of items visible when the menu is displayed. If the number of items in the combo box is larger than its maximum row count, the menu has a scroll bar. The icons are pretty big for a menu, so our code limits the number of rows to 3. Here's the implementation of `ComboBoxRenderer`, a renderer that puts an icon and text side-by-side:
 
-```
+```bash
 class ComboBoxRenderer extends JLabel
                        implements ListCellRenderer {
     . . .
@@ -300,11 +312,11 @@ These arguments are passed to `getListCellRendererComponent`:
 - `boolean isSelected` — indicates whether the object to render is selected. Used by the example to determine which colors to use.
 - `boolean cellHasFocus` — indicates whether the object to render has the focus.
 
-Note that combo boxes and [lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html) use the same type of renderer — `ListCellRenderer`. You can save yourself some time by sharing renderers between combo boxes and lists, if it makes sense for your program.
+Note that combo boxes and [[Swing-组件-list|lists]] use the same type of renderer — `ListCellRenderer`. You can save yourself some time by sharing renderers between combo boxes and lists, if it makes sense for your program.
 
 ## The Combo Box API
 
-The following tables list the commonly used `JComboBox` constructors and methods. Other methods you are most likely to invoke on a `JComboBox` object are those it inherits from its superclasses, such as `setPreferredSize`. See [The JComponent API](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html#api) for tables of commonly used inherited methods.
+The following tables list the commonly used `JComboBox` constructors and methods. Other methods you are most likely to invoke on a `JComboBox` object are those it inherits from its superclasses, such as `setPreferredSize`. See [[Swing-组件-jcomponent|The JComponent API]] for tables of commonly used inherited methods.
 
 The API for using combo boxes falls into two categories:
 
@@ -319,7 +331,7 @@ The API for using combo boxes falls into two categories:
 | [void removeAllItems()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#removeAllItems--)   [void removeItemAt(int)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#removeItemAt-int-)   [void removeItem(Object)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#removeItem-java.lang.Object-) | Remove one or more items from the combo box's menu. These methods require that the combo box's data model be an instance of `MutableComboBoxModel`. |
 | [int getItemCount()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#getItemCount--) | Get the number of items in the combo box's menu. |
 | [void setModel(ComboBoxModel)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#setModel-javax.swing.ComboBoxModel-)   [ComboBoxModel getModel()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#getModel--) | Set or get the data model that provides the items in the combo box's menu. |
-| [void setAction(Action)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#setAction-javax.swing.Action-)   [Action getAction()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#getAction--) | Set or get the `Action` associated with the combo box. For further information, see [How to Use Actions](https://docs.oracle.com/javase/tutorial/uiswing/misc/action.html). |
+| [void setAction(Action)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#setAction-javax.swing.Action-)   [Action getAction()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JComboBox.html#getAction--) | Set or get the `Action` associated with the combo box. For further information, see [[Swing-其他特性-action|How to Use Actions]]. |
 
 | Method or Constructor | Purpose |
 | --- | --- |
@@ -338,4 +350,4 @@ This table shows the examples that use `JComboBox` and where those examples are 
 | [`ComboBoxDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#ComboBoxDemo) | This section | Uses an uneditable combo box. |
 | [`ComboBoxDemo2`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#ComboBoxDemo2) | This section | Uses an editable combo box. |
 | [`CustomComboBoxDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#CustomComboBoxDemo) | This section | Provides a custom renderer for a combo box. |
-| [`TableRenderDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TableRenderDemo) | How to Use Tables ([Using a Combo Box as an Editor](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html#combobox)) | Shows how to use a combo box as a table cell editor. |
+| [`TableRenderDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TableRenderDemo) | How to Use Tables ([[Swing-组件-table|Using a Combo Box as an Editor]]) | Shows how to use a combo box as a table cell editor. |

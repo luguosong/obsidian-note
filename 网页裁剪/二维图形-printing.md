@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Printing (The Java™ Tutorials >        
+            2D Graphics > Overview of the Java 2D API Concepts)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/overview/printing.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Coordinates](https://docs.oracle.com/javase/tutorial/2d/overview/coordinate.html)
+[[二维图形-坐标系|Coordinates]]
 
-[Java 2D Rendering](https://docs.oracle.com/javase/tutorial/2d/overview/rendering.html)
+[[二维图形-渲染|Java 2D Rendering]]
 
-[Geometric Primitives](https://docs.oracle.com/javase/tutorial/2d/overview/primitives.html)
+[[二维图形-几何原语|Geometric Primitives]]
 
-[Text](https://docs.oracle.com/javase/tutorial/2d/overview/text.html)
+[[二维图形-text|Text]]
 
-[Images](https://docs.oracle.com/javase/tutorial/2d/overview/images.html)
+[[二维图形-images|Images]]
 
 Printing
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/overview/images.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/basic2d/index.html)
+[[二维图形-images|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-图形入门|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

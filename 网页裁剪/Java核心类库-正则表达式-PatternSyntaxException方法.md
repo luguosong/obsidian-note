@@ -34,13 +34,13 @@ Documentation
 
 Methods of the PatternSyntaxException Class
 
-[Unicode Support](https://docs.oracle.com/javase/tutorial/essential/regex/unicode.html)
+[[Java核心类库-正则表达式-unicode|Unicode Support]]
 
 [[Java核心类库-正则表达式-附加资源|Additional Resources]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/regex/QandE/questions.html)
+[[Java核心类库-正则表达式-questions|Questions and Exercises]]
 
-[[Java核心类库-正则表达式-Matcher方法|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/regex/unicode.html)
+[[Java核心类库-正则表达式-Matcher方法|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-正则表达式-unicode|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

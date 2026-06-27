@@ -1,3 +1,15 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Fields (The Java™ Tutorials >        
+            The Reflection API > Members)"
+描述: "This reflection Java tutorial describes using reflection for accessing and manipulating classes, fields, methods, and constructors"
+来源: "https://docs.oracle.com/javase/tutorial/reflect/member/field.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
@@ -7,12 +19,12 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## Fields
 
-A *field* is a class, interface, or enum with an associated value. Methods in the [`java.lang.reflect.Field`](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html) class can retrieve information about the field, such as its name, type, modifiers, and annotations. (The section [Examining Class Modifiers and Types](https://docs.oracle.com/javase/tutorial/reflect/class/classModifiers.html) in the [Classes](https://docs.oracle.com/javase/tutorial/reflect/class/index.html) lesson describes how to retrieve annotations.) There are also methods which enable dynamic access and modification of the value of the field. These tasks are covered in the following sections:
+A *field* is a class, interface, or enum with an associated value. Methods in the [`java.lang.reflect.Field`](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html) class can retrieve information about the field, such as its name, type, modifiers, and annotations. (The section [[反射-类-类修饰符类型|Examining Class Modifiers and Types]] in the [[反射-类|Classes]] lesson describes how to retrieve annotations.) There are also methods which enable dynamic access and modification of the value of the field. These tasks are covered in the following sections:
 
-- [Obtaining Field Types](https://docs.oracle.com/javase/tutorial/reflect/member/fieldTypes.html) describes how to get the declared and generic types of a field
-- [Retrieving and Parsing Field Modifiers](https://docs.oracle.com/javase/tutorial/reflect/member/fieldModifiers.html) shows how to get portions of the field declaration such as `public` or `transient`
-- [Getting and Setting Field Values](https://docs.oracle.com/javase/tutorial/reflect/member/fieldValues.html) illustrates how to access field values
-- [Troubleshooting](https://docs.oracle.com/javase/tutorial/reflect/member/fieldTrouble.html) describes some common coding errors which may cause confusion
+- [[反射-成员-字段类型|Obtaining Field Types]] describes how to get the declared and generic types of a field
+- [[反射-成员-字段修饰符|Retrieving and Parsing Field Modifiers]] shows how to get portions of the field declaration such as `public` or `transient`
+- [[反射-成员-字段值|Getting and Setting Field Values]] illustrates how to access field values
+- [[反射-成员-字段故障排除|Troubleshooting]] describes some common coding errors which may cause confusion
 
 When writing an application such as a class browser, it might be useful to find out which fields belong to a particular class. A class's fields are identified by invoking [`Class.getFields()`](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getFields--). The [`getFields()`](https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#getFields--) method returns an array of [`Field`](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Field.html) objects containing one object per accessible public field.
 

@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Atomic Variables (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/concurrency/atomicvars.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/concurrency/collections.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/concurrency/threadlocalrandom.html)
+[[并发-并发集合|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[并发-threadlocalrandom|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,7 +25,7 @@ The [`java.util.concurrent.atomic`](https://docs.oracle.com/javase/8/docs/api/ja
 
 To see how this package might be used, let's return to the [`` `Counter` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/Counter.java) class we originally used to demonstrate thread interference:
 
-```
+```java
 class Counter {
     private int c = 0;
 
@@ -55,7 +67,7 @@ class SynchronizedCounter {
 
 For this simple class, synchronization is an acceptable solution. But for a more complicated class, we might want to avoid the liveness impact of unnecessary synchronization. Replacing the `int` field with an `AtomicInteger` allows us to prevent thread interference without resorting to synchronization, as in [`` `AtomicCounter` ``](https://docs.oracle.com/javase/tutorial/essential/concurrency/examples/AtomicCounter.java):
 
-```
+```java
 import java.util.concurrent.atomic.AtomicInteger;
 
 class AtomicCounter {

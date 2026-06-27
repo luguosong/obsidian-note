@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 [[Java核心类库-基本IO-字节流|Byte Streams]]
 
@@ -22,9 +22,9 @@ Documentation
 
 Scanning and Formatting
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Scanning and Formatting
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,11 +70,11 @@ Scanning and Formatting
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
-[[Java核心类库-基本IO-缓冲流|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-缓冲流|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-scanning|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -83,4 +83,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## Scanning and Formatting
 
-Programming I/O often involves translating to and from the neatly formatted data humans like to work with. To assist you with these chores, the Java platform provides two APIs. The [scanner](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html) API breaks input into individual tokens associated with bits of data. The [formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html) API assembles data into nicely formatted, human-readable form.
+Programming I/O often involves translating to and from the neatly formatted data humans like to work with. To assist you with these chores, the Java platform provides two APIs. The [[Java核心类库-基本IO-scanning|scanner]] API breaks input into individual tokens associated with bits of data. The [[Java核心类库-基本IO-formatting|formatting]] API assembles data into nicely formatted, human-readable form.

@@ -1,3 +1,15 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Naming Exceptions (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/exception.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
@@ -9,7 +21,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 Many methods in the JNDI packages throw a [NamingException](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingException.html) when they need to indicate that the operation requested cannot be performed. Commonly, you will see a try/catch wrapper around the methods that can throw a NamingException:
 
-```
+```java
 try {
     Context ctx = new InitialContext();
     Object obj = ctx.lookup("somename");
@@ -25,7 +37,7 @@ The JNDI has a rich exception hierarchy stemming from the NamingException class.
 
 To handle a particular subclass of NamingException specially, you catch the subclass separately. For example, the following code specially treats the AuthenticationException and its subclasses.
 
-```
+```java
 try {
     Context ctx = new InitialContext();
     Object obj = ctx.lookup("somename");
@@ -42,7 +54,7 @@ try {
 
 Operations such as [Context.list()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#list-javax.naming.Name-) and [DirContext.search()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html#search-javax.naming.Name-java.lang.String-javax.naming.directory.SearchControls-) return a [NamingEnumeration](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingEnumeration.html). In these cases, if an error occurs and no results are returned, then NamingException or one of its appropriate subclasses will be thrown at the time that the method is invoked. If an error occurs but there are some results to be returned, then a NamingEnumeration is returned so that you can get those results. When all of the results are exhausted, invoking [NamingEnumeration.hasMore()](https://docs.oracle.com/javase/8/docs/api/javax/naming/NamingEnumeration.html#hasMore--) will cause a NamingException (or one of its subclasses) to be thrown to indicate the error. At that point, the enumeration becomes invalid and no more methods should be invoked on it.
 
-For example, if you perform a search() and specify a count limit (*n*) of how many answers to return, then the search() will return an enumeration consisting of at most *n* results. If the number of results exceeds *n*, then when NamingEnumeration.hasMore() is invoked for the *n+1* time, a SizeLimitExceededException will be thrown. See the [Result Count](https://docs.oracle.com/javase/tutorial/jndi/ops/countlimit.html) of this lesson for a sample code.
+For example, if you perform a search() and specify a count limit (*n*) of how many answers to return, then the search() will return an enumeration consisting of at most *n* results. If the number of results exceeds *n*, then when NamingEnumeration.hasMore() is invoked for the *n+1* time, a SizeLimitExceededException will be thrown. See the [[JNDI-操作-countlimit|Result Count]] of this lesson for a sample code.
 
 ## Examples in This Tutorial
 

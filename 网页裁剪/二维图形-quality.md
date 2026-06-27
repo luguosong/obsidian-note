@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Controlling Rendering Quality (The Java™ Tutorials >        
+            2D Graphics > Advanced Topics in Java2D)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/advanced/quality.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Transforming Shapes, Text, and Images](https://docs.oracle.com/javase/tutorial/2d/advanced/transforming.html)
+[[二维图形-transforming|Transforming Shapes, Text, and Images]]
 
-[Clipping the Drawing Region](https://docs.oracle.com/javase/tutorial/2d/advanced/clipping.html)
+[[二维图形-clipping|Clipping the Drawing Region]]
 
-[Compositing Graphics](https://docs.oracle.com/javase/tutorial/2d/advanced/compositing.html)
+[[二维图形-compositing|Compositing Graphics]]
 
 Controlling Rendering Quality
 
-[Constructing Complex Shapes from Geometry Primitives](https://docs.oracle.com/javase/tutorial/2d/advanced/complexshapes.html)
+[[二维图形-complexshapes|Constructing Complex Shapes from Geometry Primitives]]
 
-[Supporting User Interaction](https://docs.oracle.com/javase/tutorial/2d/advanced/user.html)
+[[二维图形-user|Supporting User Interaction]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/advanced/compositing.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/advanced/complexshapes.html)
+[[二维图形-compositing|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-complexshapes|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -27,7 +39,7 @@ To set or change the rendering hints attribute in the `Graphics2D` context, cons
 
 For example, to set a preference for antialiasing to be used if possible, you could use `setRenderingHint`:
 
-```
+```java
 public void paint (graphics g){
     Graphics2D g2 = (Graphics2D)g;
     RenderingHints rh = new RenderingHints(

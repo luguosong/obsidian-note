@@ -12,11 +12,11 @@
 
 Documentation
 
-[Storing and Reading Objects](https://docs.oracle.com/javase/tutorial/jndi/objects/store.html)
+[[JNDI-目录对象-store|Storing and Reading Objects]]
 
 Serializable Objects
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/objects/store.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-新特性|Next »]]
+[[JNDI-目录对象-store|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-新特性|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

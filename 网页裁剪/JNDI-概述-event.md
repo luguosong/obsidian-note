@@ -1,12 +1,24 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Event and Service Provider Packages (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Overview of JNDI)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/overview/event.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Naming Package](https://docs.oracle.com/javase/tutorial/jndi/overview/naming.html)
+[[JNDI-命名功能|Naming Package]]
 
-[Directory and LDAP Packages](https://docs.oracle.com/javase/tutorial/jndi/overview/dir.html)
+[[JNDI-目录功能|Directory and LDAP Packages]]
 
 Event and Service Provider Packages
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/overview/dir.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/software/index.html)
+[[JNDI-目录功能|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-软件设置|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -35,13 +47,13 @@ The [javax.naming.spi](https://docs.oracle.com/javase/8/docs/api/javax/naming/sp
 
 Plug-In Architecture
 
-The javax.naming.spi package allows different implementations to be plugged in dynamically. These implementations include those for the [initial context](https://docs.oracle.com/javase/tutorial/jndi/ops/index.html) and for contexts that can be reached from the initial context.
+The javax.naming.spi package allows different implementations to be plugged in dynamically. These implementations include those for the [[JNDI-操作|initial context]] and for contexts that can be reached from the initial context.
 
 Java Object Support
 
-The javax.naming.spi package supports implementors of [lookup](https://docs.oracle.com/javase/tutorial/jndi/ops/lookup.html) and related methods to return Java objects that are natural and intuitive for the Java programmer. For example, if you look up a printer name from the directory, then you likely would expect to get back a printer object on which to operate. This support is provided in the form of [object factories](https://docs.oracle.com/javase/tutorial/jndi/objects/index.html#OBJFAC).
+The javax.naming.spi package supports implementors of [[JNDI-查找对象|lookup]] and related methods to return Java objects that are natural and intuitive for the Java programmer. For example, if you look up a printer name from the directory, then you likely would expect to get back a printer object on which to operate. This support is provided in the form of [[JNDI-目录对象|object factories]].
 
-This package also provides support for doing the reverse. That is, implementors of [Context.bind()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#bind-javax.naming.Name-java.lang.Object-) and related methods can accept Java objects and store the objects in a format acceptable to the underlying naming/directory service. This support is provided in the form of [state factories](https://docs.oracle.com/javase/tutorial/jndi/objects/index.html#STATEFAC).
+This package also provides support for doing the reverse. That is, implementors of [Context.bind()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#bind-javax.naming.Name-java.lang.Object-) and related methods can accept Java objects and store the objects in a format acceptable to the underlying naming/directory service. This support is provided in the form of [[JNDI-目录对象|state factories]].
 
 Multiple Naming Systems (Federation)
 

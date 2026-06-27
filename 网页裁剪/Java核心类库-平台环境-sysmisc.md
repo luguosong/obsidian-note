@@ -1,30 +1,42 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Miscellaneous Methods in System (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/environment/sysmisc.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Configuration Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/config.html)
+[[Java核心类库-平台环境-配置实用工具|Configuration Utilities]]
 
-[Properties](https://docs.oracle.com/javase/tutorial/essential/environment/properties.html)
+[[Java核心类库-平台环境-properties|Properties]]
 
-[Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+[[Java核心类库-平台环境-cmdLineArgs|Command-Line Arguments]]
 
-[Environment Variables](https://docs.oracle.com/javase/tutorial/essential/environment/env.html)
+[[Java核心类库-平台环境-env|Environment Variables]]
 
-[Other Configuration Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/other.html)
+[[Java核心类库-平台环境-other|Other Configuration Utilities]]
 
-[System Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/system.html)
+[[Java核心类库-平台环境-系统实用工具|System Utilities]]
 
-[Command-Line I/O Objects](https://docs.oracle.com/javase/tutorial/essential/environment/cl.html)
+[[Java核心类库-平台环境-cl|Command-Line I/O Objects]]
 
-[System Properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
+[[Java核心类库-平台环境-sysprop|System Properties]]
 
-[The Security Manager](https://docs.oracle.com/javase/tutorial/essential/environment/security.html)
+[[Java核心类库-平台环境-security|The Security Manager]]
 
 Miscellaneous Methods in System
 
-[PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
+[[Java核心类库-平台环境-PATH与CLASSPATH|PATH and CLASSPATH]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/environment/QandE/questions.html)
+[[Java核心类库-平台环境-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/environment/security.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
+[[Java核心类库-平台环境-security|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-平台环境-PATH与CLASSPATH|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -35,7 +47,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 This section describes some of the methods in `System` that aren't covered in the previous sections.
 
-The `arrayCopy` method efficiently copies data between arrays. For more information, refer to [Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html) in the [Language Basics](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html) lesson.
+The `arrayCopy` method efficiently copies data between arrays. For more information, refer to [[语言基础-arrays|Arrays]] in the [[学习Java语言-语言基础|Language Basics]] lesson.
 
 The [`currentTimeMillis`](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--) and [`nanoTime`](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#nanoTime--) methods are useful for measuring time intervals during execution of an application. To measure a time interval in milliseconds, invoke `currentTimeMillis` twice, at the beginning and end of the interval, and subtract the first value returned from the second. Similarly, invoking `nanoTime` twice measures an interval in nanoseconds.
 

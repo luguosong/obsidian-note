@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Parsing an XML File Using SAX (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)"
+描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[When to Use SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/when.html)
+[[JAXP-何时使用SAX|When to Use SAX]]
 
 Parsing an XML File Using SAX
 
-[Implementing SAX Validation](https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html)
+[[JAXP-SAX-validation|Implementing SAX Validation]]
 
-[Handling Lexical Events](https://docs.oracle.com/javase/tutorial/jaxp/sax/events.html)
+[[JAXP-SAX-events|Handling Lexical Events]]
 
-[Using the DTDHandler and EntityResolver](https://docs.oracle.com/javase/tutorial/jaxp/sax/using.html)
+[[JAXP-SAX-using|Using the DTDHandler and EntityResolver]]
 
-[Further Information](https://docs.oracle.com/javase/tutorial/jaxp/sax/info.html)
+[[JAXP-SAX-info|Further Information]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jaxp/sax/when.html) • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html)
+[[JAXP-何时使用SAX|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-SAX-validation|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -27,7 +39,7 @@ In real-life applications, you will want to use the SAX parser to process XML da
 
 The SAXLocalNameCount program is created in a file named SAXLocalNameCount.java.
 
-```
+```java
 public class SAXLocalNameCount {
     static public void main(String[] args) {
         // ...
@@ -41,7 +53,7 @@ Because you will run it standalone, you need a main() method. And you need comma
 
 The import statements for the classes the application will use are the following.
 
-```
+```java
 package sax;
 import javax.xml.parsers.*;
 import org.xml.sax.*;
@@ -61,7 +73,7 @@ The javax.xml.parsers package contains the SAXParserFactory class that creates t
 
 The first order of business is to process the command-line arguments, which at this stage only serve to get the name of the file to process. The following code in the main method tells the application what file you want SAXLocalNameCount to process.
 
-```
+```java
 static public void main(String[] args) throws Exception {
     String filename = null;
 
@@ -82,7 +94,7 @@ This code sets the main method to throw an Exception when it encounters problems
 
 The filename String that you give when you run the application will be converted to a java.io.File URL by an internal method, convertToFileURL(). This is done by the following code in SAXLocalNameCount.
 
-```
+```java
 public class SAXLocalNameCount {
     private static String convertToFileURL(String filename) {
         String path = new File(filename).getAbsolutePath();
@@ -102,7 +114,7 @@ public class SAXLocalNameCount {
 
 If the incorrect command-line arguments are specified when the program is run, then the SAXLocalNameCount application's usage() method is invoked, to print out the correct options onscreen.
 
-```
+```java
 private static void usage() {
     System.err.println("Usage: SAXLocalNameCount <file.xml>");
     System.err.println("       -usage or -help = this message");
@@ -118,7 +130,7 @@ The most important interface in SAXLocalNameCount is ContentHandler. This interf
 
 The easiest way to implement this interface is to extend the DefaultHandler class, defined in the org.xml.sax.helpers package. That class provides do-nothing methods for all the ContentHandler events. The example program extends that class.
 
-```
+```java
 public class SAXLocalNameCount extends DefaultHandler {
     // ...
 }
@@ -142,7 +154,7 @@ When a start tag or end tag is encountered, the name of the tag is passed as a S
 
 The following code handles the start-document and end-document events:
 
-```
+```java
 public class SAXLocalNameCount extends DefaultHandler {
     
     private Hashtable tags;
@@ -177,7 +189,7 @@ Both of these ContentHandler methods throw SAXException s. You will learn more a
 
 As mentioned in [Document Events](#gclmb), the hash table created by the startDocument method needs to be populated with the various elements that the parser finds in the document. The following code processes the start-element event:
 
-```
+```java
 public void startDocument() throws SAXException {
     tags = new Hashtable();
 }
@@ -250,7 +262,7 @@ The existence of CDATA makes the proper echoing of XML a bit tricky. If the text
 
 The following code sets up the parser and gets it started:
 
-```
+```java
 static public void main(String[] args) throws Exception {
 
     // Code to parse command-line arguments 
@@ -289,7 +301,7 @@ You could start using your parser now, but it is safer to implement some error h
 
 As shown in [Document Events](#gclmb), the application's event handling methods throw SAXException. For example, the signature of the startDocument() method in the ContentHandler interface is defined as returning a SAXException.
 
-```
+```java
 public void startDocument() throws SAXException { /* ... */ }
 ```
 
@@ -297,7 +309,7 @@ A SAXException can be constructed using a message, another exception, or both.
 
 Because the default parser only generates exceptions for fatal errors, and because the information about the errors provided by the default parser is somewhat limited, the SAXLocalNameCount program defines its own error handling, through the MyErrorHandler class.
 
-```
+```java
 xmlReader.setErrorHandler(new MyErrorHandler(System.err));
 
 // ...

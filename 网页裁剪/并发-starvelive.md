@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Starvation and Livelock (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/concurrency/starvelive.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/concurrency/deadlock.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/concurrency/guardmeth.html)
+[[并发-deadlock|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[并发-guardmeth|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

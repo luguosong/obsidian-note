@@ -12,7 +12,7 @@
 
 Documentation
 
-[Naming Exceptions](https://docs.oracle.com/javase/tutorial/jndi/ops/exception.html)
+[[JNDI-操作-exception|Naming Exceptions]]
 
 [[JNDI-查找对象|Lookup an Object]]
 
@@ -24,27 +24,27 @@ Add, Replace or Remove a Binding
 
 [[JNDI-创建子上下文|Create and Destroy Subcontexts]]
 
-[Attribute Names](https://docs.oracle.com/javase/tutorial/jndi/ops/attrnames.html)
+[[JNDI-操作-attrnames|Attribute Names]]
 
-[Read Attributes](https://docs.oracle.com/javase/tutorial/jndi/ops/getattrs.html)
+[[JNDI-操作-getattrs|Read Attributes]]
 
-[Modify Attributes](https://docs.oracle.com/javase/tutorial/jndi/ops/modattrs.html)
+[[JNDI-操作-modattrs|Modify Attributes]]
 
-[Add, Replace Bindings with Attributes](https://docs.oracle.com/javase/tutorial/jndi/ops/bindattr.html)
+[[JNDI-操作-bindattr|Add, Replace Bindings with Attributes]]
 
-[Search](https://docs.oracle.com/javase/tutorial/jndi/ops/search.html)
+[[JNDI-操作-search|Search]]
 
-[Basic Search](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html)
+[[JNDI-操作-basicsearch|Basic Search]]
 
-[Filters](https://docs.oracle.com/javase/tutorial/jndi/ops/filter.html)
+[[JNDI-操作-filter|Filters]]
 
-[Scope](https://docs.oracle.com/javase/tutorial/jndi/ops/scope.html)
+[[JNDI-操作-scope|Scope]]
 
-[Result Count](https://docs.oracle.com/javase/tutorial/jndi/ops/countlimit.html)
+[[JNDI-操作-countlimit|Result Count]]
 
-[Time Limit](https://docs.oracle.com/javase/tutorial/jndi/ops/timelimit.html)
+[[JNDI-操作-timelimit|Time Limit]]
 
-[Trouble Shooting Tips](https://docs.oracle.com/javase/tutorial/jndi/ops/faq.html)
+[[JNDI-操作-faq|Trouble Shooting Tips]]
 
 [[JNDI-列出上下文|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-重命名对象|Next »]]
 
@@ -63,7 +63,7 @@ The Context interface contains methods for [adding](#BIND), [replacing](#REBIND)
 
 ---
 
-**Before you go on:** The examples in this lesson require that you make additions to the schema. You must either turn off schema-checking in the LDAP server or add [`the schema`](https://docs.oracle.com/javase/tutorial/jndi/software/config/java.schema) that accompanies this tutorial to the server. Both of these tasks are typically performed by the directory server's administrator. See the [LDAP Setup](https://docs.oracle.com/javase/tutorial/jndi/software/content.html) lesson.
+**Before you go on:** The examples in this lesson require that you make additions to the schema. You must either turn off schema-checking in the LDAP server or add [`the schema`](https://docs.oracle.com/javase/tutorial/jndi/software/config/java.schema) that accompanies this tutorial to the server. Both of these tasks are typically performed by the directory server's administrator. See the [[JNDI-content|LDAP Setup]] lesson.
 
 ---
 

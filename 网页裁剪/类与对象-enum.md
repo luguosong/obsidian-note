@@ -1,62 +1,74 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Enum Types (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)"
+描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+来源: "https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html)
+[[类与对象-classes|Classes]]
 
-[Declaring Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classdecl.html)
+[[类与对象-classdecl|Declaring Classes]]
 
-[Declaring Member Variables](https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html)
+[[类与对象-variables|Declaring Member Variables]]
 
-[Defining Methods](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html)
+[[类与对象-方法|Defining Methods]]
 
-[Providing Constructors for Your Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html)
+[[类与对象-constructors|Providing Constructors for Your Classes]]
 
-[Passing Information to a Method or a Constructor](https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html)
+[[类与对象-arguments|Passing Information to a Method or a Constructor]]
 
-[Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objects.html)
+[[类与对象-objects|Objects]]
 
-[Creating Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objectcreation.html)
+[[类与对象-objectcreation|Creating Objects]]
 
-[Using Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/usingobject.html)
+[[类与对象-usingobject|Using Objects]]
 
-[More on Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/more.html)
+[[类与对象-more|More on Classes]]
 
-[Returning a Value from a Method](https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html)
+[[类与对象-returnvalue|Returning a Value from a Method]]
 
-[Using the this Keyword](https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html)
+[[类与对象-thiskey|Using the this Keyword]]
 
-[Controlling Access to Members of a Class](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+[[类与对象-accesscontrol|Controlling Access to Members of a Class]]
 
-[Understanding Class Members](https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html)
+[[类与对象-类成员|Understanding Class Members]]
 
-[Initializing Fields](https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html)
+[[类与对象-initial|Initializing Fields]]
 
-[Summary of Creating and Using Classes and Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/summaryclasses.html)
+[[类与对象-summaryclasses|Summary of Creating and Using Classes and Objects]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/creating-questions.html)
+[[类与对象-创建类练习|Questions and Exercises]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/objects-questions.html)
+[[类与对象-objects-questions|Questions and Exercises]]
 
-[Nested Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
+[[类与对象-嵌套类|Nested Classes]]
 
-[Inner Class Example](https://docs.oracle.com/javase/tutorial/java/javaOO/innerclasses.html)
+[[类与对象-innerclasses|Inner Class Example]]
 
-[Local Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html)
+[[类与对象-局部类|Local Classes]]
 
-[Anonymous Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html)
+[[类与对象-匿名类|Anonymous Classes]]
 
-[Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
+[[类与对象-Lambda表达式|Lambda Expressions]]
 
-[Method References](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
+[[类与对象-方法引用|Method References]]
 
-[When to Use Nested Classes, Local Classes, Anonymous Classes, and Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/whentouse.html)
+[[类与对象-whentouse|When to Use Nested Classes, Local Classes, Anonymous Classes, and Lambda Expressions]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/nested-questions.html)
+[[类与对象-nested-questions|Questions and Exercises]]
 
 Enum Types
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/enum-questions.html)
+[[类与对象-enum-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/nested-questions.html) • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/enum-questions.html)
+[[类与对象-nested-questions|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[类与对象-enum-questions|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -71,7 +83,7 @@ Because they are constants, the names of an enum type's fields are in uppercase 
 
 In the Java programming language, you define an enum type by using the `enum` keyword. For example, you would specify a days-of-the-week enum type as:
 
-```
+```java
 public enum Day {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
     THURSDAY, FRIDAY, SATURDAY 
@@ -82,7 +94,7 @@ You should use enum types any time you need to represent a fixed set of constant
 
 Here is some code that shows you how to use the `Day` enum defined above:
 
-```
+```java
 public class EnumTest {
     Day day;
     
@@ -137,7 +149,7 @@ Weekends are best.
 
 Java programming language enum types are much more powerful than their counterparts in other languages. The `enum` declaration defines a *class* (called an *enum type*). The enum class body can include methods and other fields. The compiler automatically adds some special methods when it creates an enum. For example, they have a static `values` method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type. For example, this code from the `Planet` class example below iterates over all the planets in the solar system.
 
-```
+```java
 for (Planet p : Planet.values()) {
     System.out.printf("Your weight on %s is %f%n",
                       p, p.surfaceWeight(mass));
@@ -146,7 +158,7 @@ for (Planet p : Planet.values()) {
 
 ---
 
-**Note:** *All* enums implicitly extend `java.lang.Enum`. Because a class can only extend one parent (see [Declaring Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classdecl.html)), the Java language does not support multiple inheritance of state (see [Multiple Inheritance of State, Implementation, and Type](https://docs.oracle.com/javase/tutorial/java/IandI/multipleinheritance.html)), and therefore an enum cannot extend anything else.
+**Note:** *All* enums implicitly extend `java.lang.Enum`. Because a class can only extend one parent (see [[类与对象-classdecl|Declaring Classes]]), the Java language does not support multiple inheritance of state (see [[接口与继承-multipleinheritance|Multiple Inheritance of State, Implementation, and Type]]), and therefore an enum cannot extend anything else.
 
 ---
 
@@ -162,7 +174,7 @@ Each enum constant is declared with values for the mass and radius parameters. T
 
 In addition to its properties and constructor, `Planet` has methods that allow you to retrieve the surface gravity and weight of an object on each planet. Here is a sample program that takes your weight on earth (in any unit) and calculates and prints your weight on all of the planets (in the same unit):
 
-```
+```java
 public enum Planet {
     MERCURY (3.303e+23, 2.4397e6),
     VENUS   (4.869e+24, 6.0518e6),
@@ -207,7 +219,7 @@ public enum Planet {
 
 If you run `Planet.class` from the command line with an argument of 175, you get this output:
 
-```
+```bash
 $ java Planet 175
 Your weight on MERCURY is 66.107583
 Your weight on VENUS is 158.374842

@@ -1,24 +1,36 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Displaying Antialiased Text by Using Rendering Hints (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/text/renderinghints.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Font Concepts](https://docs.oracle.com/javase/tutorial/2d/text/fontconcepts.html)
+[[二维图形-fontconcepts|Font Concepts]]
 
-[Text Layout Concepts](https://docs.oracle.com/javase/tutorial/2d/text/textlayoutconcepts.html)
+[[二维图形-textlayoutconcepts|Text Layout Concepts]]
 
-[Physical and Logical Fonts](https://docs.oracle.com/javase/tutorial/2d/text/fonts.html)
+[[二维图形-物理与逻辑字体|Physical and Logical Fonts]]
 
-[Measuring Text](https://docs.oracle.com/javase/tutorial/2d/text/measuringtext.html)
+[[二维图形-测量文本|Measuring Text]]
 
-[Advanced Text Display](https://docs.oracle.com/javase/tutorial/2d/text/advanced.html)
+[[二维图形-高级文本显示|Advanced Text Display]]
 
 Displaying Antialiased Text by Using Rendering Hints
 
-[Using Text Attributes to Style Text](https://docs.oracle.com/javase/tutorial/2d/text/textattributes.html)
+[[二维图形-textattributes|Using Text Attributes to Style Text]]
 
-[Drawing Multiple Lines of Text](https://docs.oracle.com/javase/tutorial/2d/text/drawmulstring.html)
+[[二维图形-drawmulstring|Drawing Multiple Lines of Text]]
 
-[Working with Bidirectional Text](https://docs.oracle.com/javase/tutorial/2d/text/textlayoutbidirectionaltext.html)
+[[二维图形-textlayoutbidirectionaltext|Working with Bidirectional Text]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/text/advanced.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/text/textattributes.html)
+[[二维图形-高级文本显示|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-textattributes|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

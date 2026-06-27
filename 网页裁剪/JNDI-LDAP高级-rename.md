@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "More LDAP Operations (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Advanced Topics for LDAP Users)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ldap/rename.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ldap/ssl.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ldap/compare.html)
+[[JNDI-LDAP高级-ssl|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-LDAP高级-compare|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,7 +25,7 @@ The rest of the LDAP lesson covers how the JNDI provides ability to perform cert
 
 ## Renaming Objects
 
-You use [Context.rename()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#rename-javax.naming.Name-javax.naming.Name-) to rename an object in the directory. In the [LDAP v2](http://www.ietf.org/rfc/rfc1777.txt), this corresponds to the "modify RDN" operation that renames an entry within the same context (that is, renaming a sibling). In the [LDAP v3](http://www.ietf.org/rfc/rfc2251.txt), this corresponds to the "modify DN" operation, which is like "modify RDN," except that the old and new entries need not be in the same context. You can use Context.rename() to rename a leaf entry or an interior node. The example shown in the [Naming and Directory Operations](https://docs.oracle.com/javase/tutorial/jndi/ops/rename.html) lesson renames a leaf entry. The following [`code`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/RenameInterior.java) renames an interior node from "ou=NewHires" to "ou=OldHires":
+You use [Context.rename()](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#rename-javax.naming.Name-javax.naming.Name-) to rename an object in the directory. In the [LDAP v2](http://www.ietf.org/rfc/rfc1777.txt), this corresponds to the "modify RDN" operation that renames an entry within the same context (that is, renaming a sibling). In the [LDAP v3](http://www.ietf.org/rfc/rfc2251.txt), this corresponds to the "modify DN" operation, which is like "modify RDN," except that the old and new entries need not be in the same context. You can use Context.rename() to rename a leaf entry or an interior node. The example shown in the [[JNDI-重命名对象|Naming and Directory Operations]] lesson renames a leaf entry. The following [`code`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/RenameInterior.java) renames an interior node from "ou=NewHires" to "ou=OldHires":
 
 ```
 ctx.rename("ou=NewHires", "ou=OldHires");
@@ -45,7 +57,7 @@ In the LDAP, when you rename an entry, you have the option of keeping the entry'
 
 To specify whether you want to keep the old name attribute when you use Context.rename(), use the "java.naming.ldap.deleteRDN" environment property. If this property's value is "true" (the default), the old RDN is removed. If its value is "false", then the old RDN is kept as an attribute of the updated entry. The complete example is [`here`](https://docs.oracle.com/javase/tutorial/jndi/ldap/examples/RenameKeepRDN.java).
 
-```
+```bash
 // Set the property to keep RDN
 env.put("java.naming.ldap.deleteRDN", "false");
 

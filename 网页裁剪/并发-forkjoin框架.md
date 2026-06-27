@@ -12,7 +12,7 @@
 
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[并发-并发集合|Next »]]
+[[并发-pools|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[并发-并发集合|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

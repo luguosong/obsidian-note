@@ -1,22 +1,34 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Set Implementations (The Java™ Tutorials >        
+            Collections > Implementations)"
+描述: "This collections Java tutorial describes interfaces, implementations, and algorithms in the Java Collections framework"
+来源: "https://docs.oracle.com/javase/tutorial/collections/implementations/set.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 Set Implementations
 
-[List Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/list.html)
+[[集合-实现-list|List Implementations]]
 
-[Map Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/map.html)
+[[集合-实现-map|Map Implementations]]
 
-[Queue Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/queue.html)
+[[集合-实现-queue|Queue Implementations]]
 
-[Deque Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/deque.html)
+[[集合-实现-deque|Deque Implementations]]
 
-[Wrapper Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/wrapper.html)
+[[集合-实现-包装器实现|Wrapper Implementations]]
 
-[Convenience Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/convenience.html)
+[[集合-实现-convenience|Convenience Implementations]]
 
-[Summary of Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/summary.html)
+[[集合-实现-summary|Summary of Implementations]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/collections/implementations/QandE/questions.html)
+[[集合-实现-questions|Questions and Exercises]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -35,7 +47,7 @@ There are three general-purpose [`Set`](https://docs.oracle.com/javase/8/docs/ap
 
 One thing worth keeping in mind about `HashSet` is that iteration is linear in the sum of the number of entries and the number of buckets (the *capacity*). Thus, choosing an initial capacity that's too high can waste both space and time. On the other hand, choosing an initial capacity that's too low wastes time by copying the data structure each time it's forced to increase its capacity. If you don't specify an initial capacity, the default is 16. In the past, there was some advantage to choosing a prime number as the initial capacity. This is no longer true. Internally, the capacity is always rounded up to a power of two. The initial capacity is specified by using the `int` constructor. The following line of code allocates a `HashSet` whose initial capacity is 64.
 
-```
+```batch
 Set<String> s = new HashSet<String>(64);
 ```
 
@@ -51,7 +63,7 @@ There are two special-purpose `Set` implementations — [`EnumSet`](https://docs
 
 `EnumSet` is a high-performance `Set` implementation for enum types. All of the members of an enum set must be of the same enum type. Internally, it is represented by a bit-vector, typically a single `long`. Enum sets support iteration over ranges of enum types. For example, given the enum declaration for the days of the week, you can iterate over the weekdays. The `EnumSet` class provides a static factory that makes it easy.
 
-```
+```java
 for (Day d : EnumSet.range(Day.MONDAY, Day.FRIDAY))
     System.out.println(d);
 ```

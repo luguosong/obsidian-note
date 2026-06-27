@@ -1,14 +1,26 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Download Extensions (The Java™ Tutorials >        
+            The Extension Mechanism > Creating and Using Extensions)"
+描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+来源: "https://docs.oracle.com/javase/tutorial/ext/basics/download.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Installed Extensions](https://docs.oracle.com/javase/tutorial/ext/basics/install.html)
+[[扩展机制-install|Installed Extensions]]
 
 Download Extensions
 
-[Understanding Extension Class Loading](https://docs.oracle.com/javase/tutorial/ext/basics/load.html)
+[[扩展机制-load|Understanding Extension Class Loading]]
 
-[Creating Extensible Applications](https://docs.oracle.com/javase/tutorial/ext/basics/spi.html)
+[[扩展机制-服务提供者机制|Creating Extensible Applications]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/ext/basics/install.html) • [Trail](https://docs.oracle.com/javase/tutorial/ext/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/ext/basics/load.html)
+[[扩展机制-install|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/ext/TOC.html) • [[扩展机制-load|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -52,7 +64,7 @@ In the previous section, you made the RectangleArea class into an installed exte
 
 If you want to be able to use the RectangleArea class from an applet, the situation is a little different. Suppose, for example, that you have an applet, `AreaApplet`, that makes use of class RectangleArea:
 
-```
+```java
 import java.applet.Applet;
 import java.awt.*;
 
@@ -79,7 +91,7 @@ However, you can't assume that everyone who downloads and uses your applet is go
 
 To see how that's done, let's assume that you've bundled `AreaApplet` in a JAR file called AreaApplet.jar and that the class RectangleArea is bundled in RectangleArea.jar. In order for RectangleArea.jar to be treated as a download extension, RectangleArea.jar must be listed in the Class-Path header in AreaApplet.jar 's manifest. AreaApplet.jar 's manifest might look like this, for example:
 
-```
+```yaml
 Manifest-Version: 1.0
 Class-Path: RectangleArea.jar
 ```
@@ -115,7 +127,7 @@ Since this mechanism extends the platform's core API, its use should be judiciou
 
 The basic requirements are that both the applet and the extensions it uses provide version information in their manifests, and that they be signed. The version information allows Java Plug-in to ensure that the extension code has the version expected by the applet. For example, the AreaApplet could specify an areatest extension in its manifest:
 
-```
+```yaml
 Manifest-Version: 1.0
 Extension-List: areatest
 areatest-Extension-Name: area
@@ -127,7 +139,7 @@ areatest-Implementation-URL: http://www.example.com/test/area.jar
 
 The manifest in area.jar would provide corresponding information:
 
-```
+```yaml
 Manifest-Version: 1.0
 Extension-Name: area
 Specification-Vendor: Example Tech, Inc
@@ -154,7 +166,7 @@ You will be prompted for the keystore and key passwords. More information on key
 
 Here is AreaDemo.html, which loads the applet and causes the extension code to be downloaded and installed:
 
-```
+```html
 <html>
 <body>
   <applet code="AreaApplet.class" archive="AreaApplet.jar"/>

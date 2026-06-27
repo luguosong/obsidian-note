@@ -1,90 +1,102 @@
+---
+分类:
+  - "网页裁剪"
+标题: "How to Use Color Choosers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)"
+描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
-[How to Make Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html)
+[[Swing-组件-applet|How to Make Applets]]
 
-[How to Use Buttons, Check Boxes, and Radio Buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
 How to Use Color Choosers
 
-[How to Use Combo Boxes](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-combobox|How to Use Combo Boxes]]
 
-[How to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-dialog|How to Make Dialogs]]
 
-[How to Use Editor Panes and Text Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-editorpane|How to Use Editor Panes and Text Panes]]
 
-[How to Use File Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-filechooser|How to Use File Choosers]]
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
-[How to Use Sliders](https://docs.oracle.com/javase/tutorial/uiswing/components/slider.html)
+[[Swing-滑块|How to Use Sliders]]
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-buttongroup|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-组件-combobox|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -93,7 +105,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## How to Use Color Choosers
 
-Use the [`JColorChooser`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html) class to enable users to choose from a palette of colors. A color chooser is a component that you can place anywhere within your program GUI. The `JColorChooser` API also makes it easy to bring up a [dialog](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html) (modal or not) that contains a color chooser.
+Use the [`JColorChooser`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html) class to enable users to choose from a palette of colors. A color chooser is a component that you can place anywhere within your program GUI. The `JColorChooser` API also makes it easy to bring up a [[Swing-组件-dialog|dialog]] (modal or not) that contains a color chooser.
 
 Here is a picture of an application that uses a color chooser to set the text color in a banner:
 
@@ -105,7 +117,7 @@ The color chooser consists of everything within the box labeled **Choose Text Co
 
 Here is the code from the example that creates a `JColorChooser` instance and adds it to a container:
 
-```
+```java
 public class ColorChooserDemo extends JPanel ... {
     public ColorChooserDemo() {
         super(new BorderLayout());
@@ -123,7 +135,7 @@ The `JColorChooser` constructor in the previous code snippet takes a `Color` arg
 
 A color chooser uses an instance of [`ColorSelectionModel`](https://docs.oracle.com/javase/8/docs/api/javax/swing/colorchooser/ColorSelectionModel.html) to contain and manage the current selection. The color selection model fires a change event whenever the user changes the color in the color chooser. The example program registers a change listener with the color selection model so that it can update the banner at the top of the window. The following code registers and implements the change listener:
 
-```
+```java
 tcc.getSelectionModel().addChangeListener(this);
 . . .
 public void stateChanged(ChangeEvent e) {
@@ -132,7 +144,7 @@ public void stateChanged(ChangeEvent e) {
 }
 ```
 
-See [How to Write a Change Listener](https://docs.oracle.com/javase/tutorial/uiswing/events/changelistener.html) for general information about change listeners and change events.
+See [[Swing-事件监听-changelistener|How to Write a Change Listener]] for general information about change listeners and change events.
 
 A basic color chooser, like the one used in the example program, is sufficient for many programs. However, the color chooser API allows you to customize a color chooser by providing it with a preview panel of your own design, by adding your own chooser panels to it, or by removing existing chooser panels from the color chooser. Additionally, the `JColorChooser` class provides two methods that make it easy to use a color chooser within a dialog.
 
@@ -184,7 +196,7 @@ if (newColor != null) {
 }
 ```
 
-The dialog created by `showDialog` is modal. If you want a non-modal dialog, you can use `JColorChooser` 's `createDialog` method to create the dialog. This method also lets you specify action listeners for the **OK** and **Cancel** buttons in the dialog window. Use `JDialog` 's `show` method to display the dialog created by this method. For an example that uses this method, see [Specifying Other Editors](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html#editor) in the [How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html) section.
+The dialog created by `showDialog` is modal. If you want a non-modal dialog, you can use `JColorChooser` 's `createDialog` method to create the dialog. This method also lets you specify action listeners for the **OK** and **Cancel** buttons in the dialog window. Use `JDialog` 's `show` method to display the dialog created by this method. For an example that uses this method, see [[Swing-组件-table|Specifying Other Editors]] in the [[Swing-组件-table|How to Use Tables]] section.
 
 ## Removing or Replacing the Preview Panel
 
@@ -230,7 +242,7 @@ Creates the GUI that comprises the chooser panel. The example creates four toggl
 
 This method is called whenever the chooser panel is displayed. The implementation of this method selects the toggle button that represents the currently selected color.
 
-```
+```java
 public void updateChooser() {
     Color color = getColorFromModel();
     if (Color.red.equals(color)) {
@@ -265,7 +277,7 @@ Returns a large icon to represent this chooser panel. This is currently unused. 
 
 ## The Color Chooser API
 
-The following tables list the commonly used `JColorChooser` constructors and methods. Other methods you might call are listed in the API tables in [The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html). The API for using color choosers falls into these categories:
+The following tables list the commonly used `JColorChooser` constructors and methods. Other methods you might call are listed in the API tables in [[Swing-组件-jcomponent|The JComponent Class]]. The API for using color choosers falls into these categories:
 
 - [Creating and Displaying the Color Chooser](#creating)
 - [Customizing the Color Chooser GUI](#customizing)
@@ -282,7 +294,7 @@ The following tables list the commonly used `JColorChooser` constructors and met
 | [void setPreviewPanel(JComponent)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#setPreviewPanel-javax.swing.JComponent-)   [JComponent getPreviewPanel()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#getPreviewPanel--) | Set or get the component used to preview the color selection. To remove the preview panel, use `new JPanel()` as an argument. To specify the default preview panel, use `null`. |
 | [void setChooserPanels(AbstractColorChooserPanel\[\])](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#setChooserPanels-javax.swing.colorchooser.AbstractColorChooserPanel:A-)   [AbstractColorChooserPanel\[\] getChooserPanels()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#getChooserPanels--) | Set or get the chooser panels in the color chooser. |
 | [void addChooserPanel(AbstractColorChooserPanel)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#addChooserPanel-javax.swing.colorchooser.AbstractColorChooserPanel-)   [AbstractColorChooserPanel removeChooserPanel(AbstractColorChooserPanel)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#removeChooserPanel-javax.swing.colorchooser.AbstractColorChooserPanel-) | Add a chooser panel to the color chooser or remove a chooser panel from it. |
-| [void setDragEnabled(boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#setDragEnabled-boolean-)   [boolean getDragEnabled()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#getDragEnabled--) | Set or get the `dragEnabled` property, which must be true to enable drag handling on this component. The default value is false. See [Drag and Drop and Data Transfer](https://docs.oracle.com/javase/tutorial/uiswing/dnd/index.html) for more details. |
+| [void setDragEnabled(boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#setDragEnabled-boolean-)   [boolean getDragEnabled()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JColorChooser.html#getDragEnabled--) | Set or get the `dragEnabled` property, which must be true to enable drag handling on this component. The default value is false. See [[Swing-拖放|Drag and Drop and Data Transfer]] for more details. |
 
 | Method | Purpose |
 | --- | --- |
@@ -297,5 +309,5 @@ This table shows the examples that use `JColorChooser` and where those examples 
 | --- | --- | --- |
 | [ColorChooserDemo](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#ColorChooserDemo) | This section | Uses a standard color chooser. |
 | [ColorChooserDemo2](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#ColorChooserDemo2) | This section | Uses one customized color chooser and one standard color chooser in a dialog created with `showDialog`. |
-| [TableDialogEditDemo](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TableDialogEditDemo) | [How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html) | Shows how to use a color chooser as a custom cell editor in a table. The color chooser used by this example is created with `createDialog`. |
-| [BasicDnD](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/index.html#BasicDnD) | [Introduction to DnD](https://docs.oracle.com/javase/tutorial/uiswing/dnd/intro.html) | Uses a color chooser that is not in a dialog; demonstrates default drag-and-drop capabilities of Swing components, including color choosers. |
+| [TableDialogEditDemo](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TableDialogEditDemo) | [[Swing-组件-table|How to Use Tables]] | Shows how to use a color chooser as a custom cell editor in a table. The color chooser used by this example is created with `createDialog`. |
+| [BasicDnD](https://docs.oracle.com/javase/tutorial/uiswing/examples/dnd/index.html#BasicDnD) | [[Swing-intro|Introduction to DnD]] | Uses a color chooser that is not in a dialog; demonstrates default drag-and-drop capabilities of Swing components, including color choosers. |

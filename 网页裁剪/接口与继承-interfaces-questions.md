@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Questions and Exercises: Interfaces (The Java™ Tutorials >        
+            Learning the Java Language > Interfaces and Inheritance)"
+描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+来源: "https://docs.oracle.com/javase/tutorial/java/IandI/QandE/interfaces-questions.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/IandI/summary-interface.html) • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
+[[接口与继承-summary-interface|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[接口与继承-subclasses|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,7 +25,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1. What methods would a class that implements the `java.lang.CharSequence` interface have to implement?
 2. What is wrong with the following interface?
-	```
+	```java
 	public interface SomethingIsWrong {
 	    void aMethod(int aValue){
 	        System.out.println("Hi Mom");
@@ -22,7 +34,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	```
 3. Fix the interface in question 2.
 4. Is the following interface valid?
-	```
+	```java
 	public interface Marker {
 	}
 	```
@@ -32,4 +44,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 1. Write a class that implements the `CharSequence` interface found in the `java.lang` package. Your implementation should return the string backwards. Select one of the sentences from this book to use as the data. Write a small `main` method to test your class; make sure to call all four methods.
 2. Suppose you have written a time server that periodically notifies its clients of the current date and time. Write an interface the server could use to enforce a particular protocol on its clients.
 
-[Check your answers.](https://docs.oracle.com/javase/tutorial/java/IandI/QandE/interfaces-answers.html)
+[[接口与继承-接口练习答案|Check your answers.]]

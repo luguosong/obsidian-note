@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 [[Java核心类库-基本IO-字节流|Byte Streams]]
 
@@ -22,9 +22,9 @@ Documentation
 
 [[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Documentation
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,9 +70,9 @@ File Operations
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
 **Trail:** Essential Java Classes  
 **Lesson:** Basic I/O  
@@ -109,7 +109,7 @@ try (BufferedWriter writer = Files.newBufferedWriter(file, charset)) {
 }
 ```
 
-For more information, see [The try-with-resources Statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html).
+For more information, see [[Java核心类库-异常-tryResourceClose|The try-with-resources Statement]].
 
 Alternatively, you can embed the file I/O methods in a `try` block and then catch any exceptions in a `catch` block. If your code has opened any streams or channels, you should close them in a `finally` block. The previous example would look something like the following using the try-catch-finally approach:
 
@@ -127,7 +127,7 @@ try {
 }
 ```
 
-For more information, see [Catching and Handling Exceptions](https://docs.oracle.com/javase/tutorial/essential/exceptions/handling.html).
+For more information, see [[Java核心类库-异常-handling|Catching and Handling Exceptions]].
 
 In addition to `IOException`, many specific exceptions extend [`FileSystemException`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystemException.html). This class has some useful methods that return the file involved [(`getFile`)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystemException.html#getFile--), the detailed message string [(`getMessage`)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystemException.html#getMessage--), the reason why the file system operation failed [(`getReason`)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystemException.html#getReason--), and the "other" file involved, if any [(`getOtherFile`)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystemException.html#getOtherFile--).
 
@@ -166,7 +166,7 @@ Files.move(source,
            ATOMIC_MOVE);
 ```
 
-For more information about varargs syntax, see [Arbitrary Number of Arguments](https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html#varargs).
+For more information about varargs syntax, see [[类与对象-arguments|Arbitrary Number of Arguments]].
 
 ## Atomic Operations
 

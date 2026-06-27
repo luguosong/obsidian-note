@@ -1,12 +1,24 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Reading from and Writing to a Socket (The Java™ Tutorials >        
+            Custom Networking > All About Sockets)"
+描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
+来源: "https://docs.oracle.com/javase/tutorial/networking/sockets/readingWriting.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[What Is a Socket?](https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html)
+[[自定义网络-Socket-definition|What Is a Socket?]]
 
 Reading from and Writing to a Socket
 
-[Writing the Server Side of a Socket](https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html)
+[[自定义网络-Socket-clientServer|Writing the Server Side of a Socket]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/networking/sockets/definition.html) • [Trail](https://docs.oracle.com/javase/tutorial/networking/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html)
+[[自定义网络-Socket-definition|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/networking/TOC.html) • [[自定义网络-Socket-clientServer|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -23,7 +35,7 @@ The `EchoClient` example creates a socket, thereby getting a connection to the e
 
 Note that the `EchoClient` example both writes to and reads from its socket, thereby sending data to and receiving data from the echo server.
 
-Let's walk through the program and investigate the interesting parts. The following statements in the [`try` -with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) statement in the `EchoClient` example are critical. These lines establish the socket connection between the client and the server and open a [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html) and a [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html) on the socket:
+Let's walk through the program and investigate the interesting parts. The following statements in the [[Java核心类库-异常-tryResourceClose|`try` -with-resources]] statement in the `EchoClient` example are critical. These lines establish the socket connection between the client and the server and open a [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html) and a [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html) on the socket:
 
 ```
 String hostName = args[0];
@@ -42,7 +54,7 @@ try (
 )
 ```
 
-The first statement in the `try` -with resources statement creates a new [`Socket`](https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html) object and names it `echoSocket`. The `Socket` constructor used here requires the name of the computer and the port number to which you want to connect. The example program uses the first [command-line argument](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html) as the name of the computer (the host name) and the second command line argument as the port number. When you run this program on your computer, make sure that the host name you use is the fully qualified IP name of the computer to which you want to connect. For example, if your echo server is running on the computer `echoserver.example.com` and it is listening on port number 7, first run the following command from the computer `echoserver.example.com` if you want to use the `EchoServer` example as your echo server:
+The first statement in the `try` -with resources statement creates a new [`Socket`](https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html) object and names it `echoSocket`. The `Socket` constructor used here requires the name of the computer and the port number to which you want to connect. The example program uses the first [[Java核心类库-平台环境-cmdLineArgs|command-line argument]] as the name of the computer (the host name) and the second command line argument as the port number. When you run this program on your computer, make sure that the host name you use is the fully qualified IP name of the computer to which you want to connect. For example, if your echo server is running on the computer `echoserver.example.com` and it is listening on port number 7, first run the following command from the computer `echoserver.example.com` if you want to use the `EchoServer` example as your echo server:
 
 ```
 java EchoServer 7
@@ -54,11 +66,11 @@ Afterward, run the `EchoClient` example with the following command:
 java EchoClient echoserver.example.com 7
 ```
 
-The second statement in the `try` -with resources statement gets the socket's output stream and opens a `PrintWriter` on it named `out`. Similarly, the third statement gets the socket's input stream and opens a `BufferedReader` on it named `in`. The example uses readers and writers so that it can write Unicode characters over the socket. If you are not yet familiar with the Java platform's I/O classes, you may wish to read [Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html).
+The second statement in the `try` -with resources statement gets the socket's output stream and opens a `PrintWriter` on it named `out`. Similarly, the third statement gets the socket's input stream and opens a `BufferedReader` on it named `in`. The example uses readers and writers so that it can write Unicode characters over the socket. If you are not yet familiar with the Java platform's I/O classes, you may wish to read [[Java核心类库-基本IO|Basic I/O]].
 
 The next interesting part of the program is the `while` loop. The loop reads a line at a time from the standard input stream with the `BufferedReader` object `stdIn`, which is created in the fourth statement in the `try` -with resources statement. The loop then immediately sends the line to the server by writing it to the `PrintWriter` connected to the socket:
 
-```
+```java
 String userInput;
 while ((userInput = stdIn.readLine()) != null) {
     out.println(userInput);

@@ -1,3 +1,15 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Font Concepts (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/text/fontconcepts.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
@@ -12,7 +24,7 @@ This section introduces you to the [`Font`](https://docs.oracle.com/javase/8/doc
 A [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object represents an instance of a font face from the collection of font faces available on the system. Examples of common font faces include Helvetica Bold and Courier Bold Italic. Three names are associated with a [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object: its logical name, family name, and font face name:
 
 - A [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object's *logical name* is a name mapped onto a physical font, which is one of the specific fonts available on the system. When specifying a [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) in Java, use the *font face name* instead of the logical name. You can get the logical name from the `Font` by calling the [`getName`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html#getName--) method. To get a list of the logical names that are mapped onto the specific fonts available on a system, call the [java.awt.GraphicsEnvironment.getAvailableFontFamilyNames](https://docs.oracle.com/javase/8/docs/api/java/awt/GraphicsEnvironment.html#getAvailableFontFamilyNames--) method.
-	See [**Physical and Logical Fonts**](https://docs.oracle.com/javase/tutorial/2d/text/fonts.html) for more information.
+	See [[二维图形-物理与逻辑字体|**Physical and Logical Fonts**]] for more information.
 - A [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object's *family name* is the name of the font family that determines the typographic design across several faces, such as Helvetica. Retrieve the family name through the [`getFamily`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html#getFamily--) method.
 - A [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object's *font face name* refers to an actual font installed on a system. This is the name you should use when specifying a font. It's often referred to as just the *font name*. Retrieve the font name by calling [`getFontName`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html#getFontName--). To determine which font faces are available on the system, call the [`java.awt.GraphicsEnvironment.getAllFonts`](https://docs.oracle.com/javase/8/docs/api/java/awt/GraphicsEnvironment.html#getAllFonts--) method.
 

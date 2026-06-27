@@ -1,24 +1,36 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Working with Bidirectional Text (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/text/textlayoutbidirectionaltext.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Font Concepts](https://docs.oracle.com/javase/tutorial/2d/text/fontconcepts.html)
+[[二维图形-fontconcepts|Font Concepts]]
 
-[Text Layout Concepts](https://docs.oracle.com/javase/tutorial/2d/text/textlayoutconcepts.html)
+[[二维图形-textlayoutconcepts|Text Layout Concepts]]
 
-[Physical and Logical Fonts](https://docs.oracle.com/javase/tutorial/2d/text/fonts.html)
+[[二维图形-物理与逻辑字体|Physical and Logical Fonts]]
 
-[Measuring Text](https://docs.oracle.com/javase/tutorial/2d/text/measuringtext.html)
+[[二维图形-测量文本|Measuring Text]]
 
-[Advanced Text Display](https://docs.oracle.com/javase/tutorial/2d/text/advanced.html)
+[[二维图形-高级文本显示|Advanced Text Display]]
 
-[Displaying Antialiased Text by Using Rendering Hints](https://docs.oracle.com/javase/tutorial/2d/text/renderinghints.html)
+[[二维图形-renderinghints|Displaying Antialiased Text by Using Rendering Hints]]
 
-[Using Text Attributes to Style Text](https://docs.oracle.com/javase/tutorial/2d/text/textattributes.html)
+[[二维图形-textattributes|Using Text Attributes to Style Text]]
 
-[Drawing Multiple Lines of Text](https://docs.oracle.com/javase/tutorial/2d/text/drawmulstring.html)
+[[二维图形-drawmulstring|Drawing Multiple Lines of Text]]
 
 Working with Bidirectional Text
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/text/drawmulstring.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/images/index.html)
+[[二维图形-drawmulstring|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-图像|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -31,7 +43,7 @@ This section discusses how to work with bidirectional text with classes in the [
 
 The following topics are covered:
 
-If you plan to work with Swing components see [Working with Bidirectional Text with the JTextComponent Class](https://docs.oracle.com/javase/tutorial/i18n/text/bidi.html) and [Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html) for more information.
+If you plan to work with Swing components see [[国际化-bidi|Working with Bidirectional Text with the JTextComponent Class]] and [[Swing-组件-text|Using Text Components]] for more information.
 
 ## Ordering Text
 
@@ -129,8 +141,8 @@ The sample [`` `SelectionSample.java` ``](https://docs.oracle.com/javase/tutoria
 
 Depending on which Java APIs you use, you can have as little or as much control over text layout as you need:
 
-- If you just want to display a block of text or need an editable text control, you can use [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html), which will perform the text layout for you. [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html) is designed to handle the needs of most international applications and supports bidirectional text For more information about [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html), see [Working with Bidirectional Text with the JTextComponent Class](https://docs.oracle.com/javase/tutorial/i18n/text/bidi.html) and [Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html) for more information.
-- If you want to display a simple text string, you can call the method [`Graphics2D.drawString`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html#drawString-java.text.AttributedCharacterIterator-int-int-) and let Java 2D lay out the string for you. You can also use [`Graphics2D.drawString`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html#drawString-java.text.AttributedCharacterIterator-int-int-) to render styled strings and strings that contain bidirectional text. For more information about rendering text through [`Graphics2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html), see [Working with Text APIs](https://docs.oracle.com/javase/tutorial/2d/text/index.html).
+- If you just want to display a block of text or need an editable text control, you can use [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html), which will perform the text layout for you. [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html) is designed to handle the needs of most international applications and supports bidirectional text For more information about [`JTextComponent`](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/JTextComponent.html), see [[国际化-bidi|Working with Bidirectional Text with the JTextComponent Class]] and [[Swing-组件-text|Using Text Components]] for more information.
+- If you want to display a simple text string, you can call the method [`Graphics2D.drawString`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html#drawString-java.text.AttributedCharacterIterator-int-int-) and let Java 2D lay out the string for you. You can also use [`Graphics2D.drawString`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html#drawString-java.text.AttributedCharacterIterator-int-int-) to render styled strings and strings that contain bidirectional text. For more information about rendering text through [`Graphics2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html), see [[二维图形-文本|Working with Text APIs]].
 - If you want to implement your own text editing routines, you can use [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) to manage text layout, highlighting, and hit detection. The facilities provided by [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) handle most common cases, including text strings with mixed fonts, mixed languages, and bidirectional text. For more information about using TextLayout, see [Managing Text Layout](#managing_text_layout).
 - If you want total control over how text is shaped and positioned, you can construct your own [`GlyphVector`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/GlyphVector.html) instances using the [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) class and then render them through the [`Graphics2D`](https://docs.oracle.com/javase/8/docs/api/java/awt/Graphics2D.html) class.
 
@@ -157,7 +169,7 @@ The [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextL
 [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) automatically lays out text, including bidirectional text, with the correct shaping and ordering. To correctly shape and order the glyphs representing a line of text, [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) must know the full context of the text:
 
 - If the text fits on a single line, such as a single-word label for a button or a line in a dialog box, you can construct a [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) directly from the text.
-- If you have more text than can fit on a single line or want to break text on a single line into tabbed segments, you cannot construct a [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) directly. You must use a [`LineBreakMeasurer`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/LineBreakMeasurer.html) to provide sufficient context. See [Drawing Multiple Lines of Text](https://docs.oracle.com/javase/tutorial/2d/text/drawmulstring.html) for more information.
+- If you have more text than can fit on a single line or want to break text on a single line into tabbed segments, you cannot construct a [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) directly. You must use a [`LineBreakMeasurer`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/LineBreakMeasurer.html) to provide sufficient context. See [[二维图形-drawmulstring|Drawing Multiple Lines of Text]] for more information.
 
 The base direction of the text is normally set by an attribute (style) on the text. If that attribute is missing, [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextLayout.html) follows the Unicode bidirectional algorithm and derives the base direction from the initial characters in the paragraph.
 
@@ -189,7 +201,7 @@ You can also use the [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/ja
 
 The following excerpt from the sample [`` `ArrowKeySample.java` ``](https://docs.oracle.com/javase/tutorial/2d/text/examples/ArrowKeySample.java) demonstrates how to determine the resulting insertion offset when a user presses the left or right arrow key:
 
-```
+```sql
 public class ArrowKeySample extends JPanel implements KeyListener {
 
   // ...
@@ -239,7 +251,7 @@ The [`TextLayout`](https://docs.oracle.com/javase/8/docs/api/java/awt/font/TextL
 
 The following excerpt from [`` `HitTestSample.java` ``](https://docs.oracle.com/javase/tutorial/2d/text/examples/HitTestSample.java) retrieves the offset from a mouse click:
 
-```
+```java
 private class HitTestMouseListener extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
       Point2D origin = computeLayoutOrigin();
@@ -262,7 +274,7 @@ You can get a [`Shape`](https://docs.oracle.com/javase/8/docs/api/java/awt/Shape
 
 The following excerpt from [`` `SelectionSample.java` ``](https://docs.oracle.com/javase/tutorial/2d/text/examples/SelectionSample.java) demonstrates one way to display highlighted text:
 
-```
+```sql
 public void paint(Graphics g) {
 
     // ...

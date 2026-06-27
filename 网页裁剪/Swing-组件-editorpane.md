@@ -1,90 +1,102 @@
+---
+分类:
+  - "网页裁剪"
+标题: "How to Use Editor Panes and Text Panes (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)"
+描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
-[How to Make Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html)
+[[Swing-组件-applet|How to Make Applets]]
 
-[How to Use Buttons, Check Boxes, and Radio Buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
-[How to Use Color Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html)
+[[Swing-组件-colorchooser|How to Use Color Choosers]]
 
-[How to Use Combo Boxes](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-combobox|How to Use Combo Boxes]]
 
-[How to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-dialog|How to Make Dialogs]]
 
 How to Use Editor Panes and Text Panes
 
-[How to Use File Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-filechooser|How to Use File Choosers]]
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
-[How to Use Sliders](https://docs.oracle.com/javase/tutorial/uiswing/components/slider.html)
+[[Swing-滑块|How to Use Sliders]]
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-dialog|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-组件-filechooser|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -93,7 +105,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## How to Use Editor Panes and Text Panes
 
-Two Swing classes support styled text: [`JEditorPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JEditorPane.html) and its subclass [`JTextPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextPane.html). The `JEditorPane` class is the foundation for Swing's styled text components and provides a mechanism through which you can add support for custom text formats. If you want unstyled text, use a [text area](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html) instead.
+Two Swing classes support styled text: [`JEditorPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JEditorPane.html) and its subclass [`JTextPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextPane.html). The `JEditorPane` class is the foundation for Swing's styled text components and provides a mechanism through which you can add support for custom text formats. If you want unstyled text, use a [[Swing-组件-textarea|text area]] instead.
 
 You can see an editor pane and a text pane in use by running TextSamplerDemo. Here is a picture of the `TextSamplerDemo` example.
 
@@ -117,7 +129,7 @@ The Swing text API is powerful and immense, and we could devote an entire book j
 
 One task that you can accomplish without knowing anything about the Swing text system is displaying text from a URL. Here is the code from [`TextSamplerDemo.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/TextSamplerDemoProject/src/components/TextSamplerDemo.java) that creates an uneditable editor pane that displays text formatted with HTML tags.
 
-```
+```java
 JEditorPane editorPane = new JEditorPane();
 editorPane.setEditable(false);
 java.net.URL helpURL = TextSamplerDemo.class.getResource(
@@ -146,7 +158,7 @@ The `setPage` method opens the resource pointed to by the URL and figures out th
 
 ## Editor Panes vs. Text Panes
 
-In order to use editor panes and text panes, you need to understand the text system, which is described in [Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html). Several facts about editor panes and text panes are scattered throughout that section. Here we list the facts again and provide a bit more detail. The information here should help you understand the differences between editor panes and text panes, and when to use which.
+In order to use editor panes and text panes, you need to understand the text system, which is described in [[Swing-组件-generaltext|Text Component Features]]. Several facts about editor panes and text panes are scattered throughout that section. Here we list the facts again and provide a bit more detail. The information here should help you understand the differences between editor panes and text panes, and when to use which.
 
 - An editor pane or a text pane can easily be loaded with text from a URL using the `setPage` method. The `JEditorPane` class also provides constructors that let you initialize an editor pane from a URL. The `JTextPane` class has no such constructors. See [Using an Editor Pane to Display Text From a URL](#editorpane) for an example that uses this feature to load an uneditable editor pane with HTML-formatted text.
 	Be aware that the document and editor kit might change when using the `setPage` method. For example, if an editor pane contains plain text (the default), and you load it with HTML, the document will change to an `HTMLDocument` instance and the editor kit will change to an `HTMLEditorKit` instance. If your program uses the `setPage` method, make sure you adjust your code for possible changes to the pane's document and editor kit instances (re-register document listeners on the new document, and so on).
@@ -160,7 +172,7 @@ In order to use editor panes and text panes, you need to understand the text sys
 
 Here is the code from the `TextSamplerDemo` example that creates and initializes a text pane.
 
-```
+```java
 String[] initString =
         { /* ...  fill array with initial text  ... */ };
 
@@ -188,7 +200,7 @@ Although this is an interesting example that concisely demonstrates several feat
 
 ## The Editor Pane and Text Pane API
 
-This section lists some of the API related to text and editor panes. Many of the most useful methods for [JEditorPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JEditorPane.html) and its subclass [JTextPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextPane.html) are inherited from the `JTextComponent` class. You can find the API tables for `JTextComponent` in [The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html). Also see [The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html), which describes the API inherited from `JComponent`.
+This section lists some of the API related to text and editor panes. Many of the most useful methods for [JEditorPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JEditorPane.html) and its subclass [JTextPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextPane.html) are inherited from the `JTextComponent` class. You can find the API tables for `JTextComponent` in [[Swing-组件-textapi|The Text Component API]]. Also see [[Swing-组件-jcomponent|The JComponent Class]], which describes the API inherited from `JComponent`.
 
 | Method or Constructor | Description |
 | --- | --- |
@@ -207,8 +219,8 @@ To begin using text, you might want to run these programs and examine their code
 
 | Example | Where Described | Notes |
 | --- | --- | --- |
-| [`TextSamplerDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TextSamplerDemo) | [Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html) | Uses each Swing text component. |
-| [`TextComponentDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TextComponentDemo) | [Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html) | Provides a customized text pane. Illustrates many text component features, such as undo and redo, document filters, document listeners, caret change listeners, and how to associate editing actions with menus and key strokes. |
-| [`TreeDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TreeDemo) | [How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html) | Uses an editor pane to display help loaded from an HTML file. |
+| [`TextSamplerDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TextSamplerDemo) | [[Swing-组件-text|Using Text Components]] | Uses each Swing text component. |
+| [`TextComponentDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TextComponentDemo) | [[Swing-组件-generaltext|Text Component Features]] | Provides a customized text pane. Illustrates many text component features, such as undo and redo, document filters, document listeners, caret change listeners, and how to associate editing actions with menus and key strokes. |
+| [`TreeDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#TreeDemo) | [[Swing-组件-tree|How to Use Trees]] | Uses an editor pane to display help loaded from an HTML file. |
 
 Learn to edit HTML text in JavaFX with the [Using JavaFX UI Controls: HTML Editor](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/editor.htm) tutorial.

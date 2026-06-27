@@ -195,4 +195,4 @@ try (Statement stmt = con.createStatement()) {
 }
 ```
 
-See [The `try` -with-resources Statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) in the [[Java核心类库|Essential Classes]] trail for more information.
+See [[Java核心类库-异常-tryResourceClose|The `try` -with-resources Statement]] in the [[Java核心类库|Essential Classes]] trail for more information.

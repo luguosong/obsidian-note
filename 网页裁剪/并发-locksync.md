@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Intrinsic Locks and Synchronization (The Java™ Tutorials >        
+            Essential Java Classes > Concurrency)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html)
+[[并发-syncmeth|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[并发-atomic|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -25,7 +37,7 @@ You might wonder what happens when a static synchronized method is invoked, sinc
 
 Another way to create synchronized code is with *synchronized statements*. Unlike synchronized methods, synchronized statements must specify the object that provides the intrinsic lock:
 
-```
+```java
 public void addName(String name) {
     synchronized(this) {
         lastName = name;
@@ -35,11 +47,11 @@ public void addName(String name) {
 }
 ```
 
-In this example, the `addName` method needs to synchronize changes to `lastName` and `nameCount`, but also needs to avoid synchronizing invocations of other objects' methods. (Invoking other objects' methods from synchronized code can create problems that are described in the section on [Liveness](https://docs.oracle.com/javase/tutorial/essential/concurrency/liveness.html).) Without synchronized statements, there would have to be a separate, unsynchronized method for the sole purpose of invoking `nameList.add`.
+In this example, the `addName` method needs to synchronize changes to `lastName` and `nameCount`, but also needs to avoid synchronizing invocations of other objects' methods. (Invoking other objects' methods from synchronized code can create problems that are described in the section on [[并发-liveness|Liveness]].) Without synchronized statements, there would have to be a separate, unsynchronized method for the sole purpose of invoking `nameList.add`.
 
 Synchronized statements are also useful for improving concurrency with fine-grained synchronization. Suppose, for example, class `MsLunch` has two instance fields, `c1` and `c2`, that are never used together. All updates of these fields must be synchronized, but there's no reason to prevent an update of c1 from being interleaved with an update of c2 — and doing so reduces concurrency by creating unnecessary blocking. Instead of using synchronized methods or otherwise using the lock associated with `this`, we create two objects solely to provide locks.
 
-```
+```java
 public class MsLunch {
     private long c1 = 0;
     private long c2 = 0;

@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Summary (The Java™ Tutorials >        
+            Date Time > Standard Calendar)"
+描述: "This date-time Java tutorial describes how to use the java.time APIs introduced in JDK 8 to write date and time code. The core package uses the standard calendar as defined in the ISO calendar system."
+来源: "https://docs.oracle.com/javase/tutorial/datetime/iso/summary.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/datetime/iso/legacy.html) • [Trail](https://docs.oracle.com/javase/tutorial/datetime/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/datetime/iso/QandE/questions.html)
+[[日期时间-遗留日期时间代码|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/datetime/TOC.html) • [[日期时间-ISO标准-questions|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -18,6 +30,6 @@ The java.time package contains many classes that your programs can use to repres
 - The Duration class measures an amount of time in seconds and nanoseconds.
 - The Period class measures an amount of time using years, months, and days.
 
-Other non-ISO calendar systems can be represented using the java.time.chrono package. This package is beyond the scope of this tutorial, though the [Non-ISO Date Conversion](https://docs.oracle.com/javase/tutorial/datetime/iso/nonIso.html) page provides information about converting an ISO-based date to another calendar system.
+Other non-ISO calendar systems can be represented using the java.time.chrono package. This package is beyond the scope of this tutorial, though the [[日期时间-ISO标准-nonIso|Non-ISO Date Conversion]] page provides information about converting an ISO-based date to another calendar system.
 
 The Date Time API was developed as part of the Java community process under the designation of JSR 310. For more information, see [JSR 310: Date and Time API](http://jcp.org/en/jsr/detail?id=310).

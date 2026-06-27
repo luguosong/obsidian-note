@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Search (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/search.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/bindattr.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html)
+[[JNDI-操作-bindattr|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-操作-basicsearch|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,6 +25,6 @@ One of the most useful features that a directory offers is its *yellow pages*, o
 
 The [DirContext](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html) interface provides several methods for searching the directory, with progressive degrees of complexity and power. The various aspects of searching the directory are covered in the following sections:
 
-- [basic search](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html)
-- [Search Filters](https://docs.oracle.com/javase/tutorial/jndi/ops/filter.html)
-- [Search Controls](https://docs.oracle.com/javase/tutorial/jndi/ops/scope.html)
+- [[JNDI-操作-basicsearch|basic search]]
+- [[JNDI-操作-filter|Search Filters]]
+- [[JNDI-操作-scope|Search Controls]]

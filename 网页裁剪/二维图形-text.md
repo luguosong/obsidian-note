@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Text (The Java™ Tutorials >        
+            2D Graphics > Overview of the Java 2D API Concepts)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/overview/text.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Coordinates](https://docs.oracle.com/javase/tutorial/2d/overview/coordinate.html)
+[[二维图形-坐标系|Coordinates]]
 
-[Java 2D Rendering](https://docs.oracle.com/javase/tutorial/2d/overview/rendering.html)
+[[二维图形-渲染|Java 2D Rendering]]
 
-[Geometric Primitives](https://docs.oracle.com/javase/tutorial/2d/overview/primitives.html)
+[[二维图形-几何原语|Geometric Primitives]]
 
 Text
 
-[Images](https://docs.oracle.com/javase/tutorial/2d/overview/images.html)
+[[二维图形-images|Images]]
 
-[Printing](https://docs.oracle.com/javase/tutorial/2d/overview/printing.html)
+[[二维图形-printing|Printing]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/overview/primitives.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/overview/images.html)
+[[二维图形-几何原语|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-images|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -46,4 +58,4 @@ Before text can be displayed, it must be laid out so that the characters are rep
 
 The Java 2D API enables you to control the quality of shapes and text rendering by using *rendering hints*. Rendering hints are encapsulated by the `java.awt.RenderingHints` class.
 
-As applied to text, this capability is used for antialiasing (which is also known as an smooth edges). For example, the `KEY_TEXT_ANTIALIASING` hint enables you to control the antialiasing of text separately from the antialiasing of other shapes. To learn more about rendering hints see the [Controlling Rendering Quality](https://docs.oracle.com/javase/tutorial/2d/advanced/quality.html) lesson.
+As applied to text, this capability is used for antialiasing (which is also known as an smooth edges). For example, the `KEY_TEXT_ANTIALIASING` hint enables you to control the antialiasing of text separately from the antialiasing of other shapes. To learn more about rendering hints see the [[二维图形-quality|Controlling Rendering Quality]] lesson.

@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Implementing SAX Validation (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)"
+描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[When to Use SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/when.html)
+[[JAXP-何时使用SAX|When to Use SAX]]
 
-[Parsing an XML File Using SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html)
+[[JAXP-SAX-parsing|Parsing an XML File Using SAX]]
 
 Implementing SAX Validation
 
-[Handling Lexical Events](https://docs.oracle.com/javase/tutorial/jaxp/sax/events.html)
+[[JAXP-SAX-events|Handling Lexical Events]]
 
-[Using the DTDHandler and EntityResolver](https://docs.oracle.com/javase/tutorial/jaxp/sax/using.html)
+[[JAXP-SAX-using|Using the DTDHandler and EntityResolver]]
 
-[Further Information](https://docs.oracle.com/javase/tutorial/jaxp/sax/info.html)
+[[JAXP-SAX-info|Further Information]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html) • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jaxp/sax/events.html)
+[[JAXP-SAX-parsing|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-SAX-events|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -48,7 +60,7 @@ When a DTD is present, the parser will no longer call the characters() method on
 
 On the other hand, if you are writing an application that filters an XML data file and if you want to output an equally readable version of the file, then that white space would no longer be irrelevant: it would be essential. To get those characters, you would add the ignorableWhitespace method to your application. To process any (generally) ignorable white space that the parser sees, you would need to add something like the following code to implement the ignorableWhitespace event handler.
 
-```
+```java
 public void ignorableWhitespace (char buf[], int start, int length) throws SAXException { 
     emit("IGNORABLE");
 }
@@ -60,7 +72,7 @@ This code simply generates a message to let you know that ignorable white space 
 
 The SAXParserFactory needs to be set up such that it uses a validating parser instead of the default non-validating parser. The following code from the SAXLocalNameCount example's main() method shows how to configure the factory so that it implements the validating parser.
 
-```
+```java
 static public void main(String[] args) throws Exception {
 
     String filename = null;
@@ -110,7 +122,7 @@ static public void main(String[] args) throws Exception {
 }
 ```
 
-Here, the SAXLocalNameCount program is configured to take additional arguments when it is started, which tell it to implement no validation, DTD validation, XML Schema Definition (XSD) validation, or XSD validation against a specific schema source file. (Descriptions of these options, \-dtd, \-xsd, and \-xsdss are also added to the usage() method, but are not shown here.) Then, the factory is configured so that it will produce the appropriate validating parser when newSAXParser is invoked. As seen in [Setting up the Parser](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html#gclmt), you can also use setNamespaceAware(true) to configure the factory to return a namespace-aware parser. Oracle's implementation supports any combination of configuration options. (If a combination is not supported by a particular implementation, it is required to generate a factory configuration error).
+Here, the SAXLocalNameCount program is configured to take additional arguments when it is started, which tell it to implement no validation, DTD validation, XML Schema Definition (XSD) validation, or XSD validation against a specific schema source file. (Descriptions of these options, \-dtd, \-xsd, and \-xsdss are also added to the usage() method, but are not shown here.) Then, the factory is configured so that it will produce the appropriate validating parser when newSAXParser is invoked. As seen in [[JAXP-SAX-parsing|Setting up the Parser]], you can also use setNamespaceAware(true) to configure the factory to return a namespace-aware parser. Oracle's implementation supports any combination of configuration options. (If a combination is not supported by a particular implementation, it is required to generate a factory configuration error).
 
 ## Validating with XML Schema
 
@@ -132,7 +144,7 @@ To be notified of validation errors in an XML document, the parser factory must 
 
 It is helpful to start by defining the constants you will use when setting the properties. The SAXLocalNameCount example sets the following constants.
 
-```
+```java
 public class SAXLocalNameCount extends DefaultHandler {
 
     static final String JAXP_SCHEMA_LANGUAGE =
@@ -148,7 +160,7 @@ public class SAXLocalNameCount extends DefaultHandler {
 
 ---
 
-**Note -** The parser factory must be configured to generate a parser that is namespace-aware as well as validating. This was shown in [Configuring the Factory](#gcwtg). More information about namespaces is provided in [Document Object Model](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html) but for now, understand that schema validation is a namespace-oriented process. Because JAXP-compliant parsers are not namespace-aware by default, it is necessary to set the property for schema validation to work.
+**Note -** The parser factory must be configured to generate a parser that is namespace-aware as well as validating. This was shown in [Configuring the Factory](#gcwtg). More information about namespaces is provided in [[JAXP-DOM|Document Object Model]] but for now, understand that schema validation is a namespace-oriented process. Because JAXP-compliant parsers are not namespace-aware by default, it is necessary to set the property for schema validation to work.
 
 ---
 
@@ -162,9 +174,9 @@ if (xsdValidate) {
 }
 ```
 
-In addition to the error handling described in [Setting up Error Handling](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html#gcnsr), there is one error that can occur when configuring the parser for schema-based validation. If the parser is not compliant with the JAXP spec, and therefore does not support XML Schema, it can throw a SAXNotRecognizedException. To handle that case, the setProperty() statement is wrapped in a try/catch block, as shown in the code below.
+In addition to the error handling described in [[JAXP-SAX-parsing|Setting up Error Handling]], there is one error that can occur when configuring the parser for schema-based validation. If the parser is not compliant with the JAXP spec, and therefore does not support XML Schema, it can throw a SAXNotRecognizedException. To handle that case, the setProperty() statement is wrapped in a try/catch block, as shown in the code below.
 
-```
+```java
 // ...
 if (xsdValidate) {
     try {
@@ -206,7 +218,7 @@ The first attribute defines the XML namespace (xmlns) prefix, xsi, which stands 
 
 ---
 
-**Note -** More information about namespaces is included in Validating with XML Schema in [Document Object Model](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html). For now, think of these attributes as the "magic incantation" you use to validate a simple XML file that does not use them. After you have learned more about namespaces, you will see how to use XML Schema to validate complex documents that do use them. Those ideas are discussed in Validating with Multiple Namespaces in [Document Object Model](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html).
+**Note -** More information about namespaces is included in Validating with XML Schema in [[JAXP-DOM|Document Object Model]]. For now, think of these attributes as the "magic incantation" you use to validate a simple XML file that does not use them. After you have learned more about namespaces, you will see how to use XML Schema to validate complex documents that do use them. Those ideas are discussed in Validating with Multiple Namespaces in [[JAXP-DOM|Document Object Model]].
 
 ---
 
@@ -225,9 +237,9 @@ In the code above, the variable schemaSource relates to a schema source file tha
 
 ## Error Handling in the Validating Parser
 
-It is important to recognize that the only reason an exception is thrown when a file fails validation is as a result of the error-handling code shown in [Setting up Error Handling](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html#gcnsr). That code is reproduced here as a reminder:
+It is important to recognize that the only reason an exception is thrown when a file fails validation is as a result of the error-handling code shown in [[JAXP-SAX-parsing|Setting up Error Handling]]. That code is reproduced here as a reminder:
 
-```
+```java
 // ...
 
 public void warning(SAXParseException spe) throws SAXException {
@@ -271,7 +283,7 @@ In this section, the SAXLocalNameCount sample program used previously will be us
 
 ## Experimenting with DTD Validation Errors
 
-As stated above, these examples reuse the SAXLocalNameCount program. The locations where you will find the sample and its associated files are given in [Running the SAX Parser Example without Validation](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html#gcnrx).
+As stated above, these examples reuse the SAXLocalNameCount program. The locations where you will find the sample and its associated files are given in [[JAXP-SAX-parsing|Running the SAX Parser Example without Validation]].
 
 1. If you have not already done so, save the [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) file in a directory named `sax`. Open the file in a text editor and make the changes described above.
 2. If you have not already done so, compile the file as follows:
@@ -344,7 +356,7 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 
 The previous exercise demonstrated using SAXLocalNameCount to validate an XML file against a DTD. In this exercise you will use SAXLocalNameCount to validate a different XML file against both the standard XML Schema definition and a custom schema source file. Again, this type of validation will be demonstrated by breaking the parsing process by modifying the XML file and the schema, so that the parser throws errors.
 
-As stated above, these examples reuse the SAXLocalNameCount program. The locations where you will find the sample and its associated files are given in [Running the SAX Parser Example without Validation](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html#gcnrx).
+As stated above, these examples reuse the SAXLocalNameCount program. The locations where you will find the sample and its associated files are given in [[JAXP-SAX-parsing|Running the SAX Parser Example without Validation]].
 
 1. If you have not already done so, save the [`SAXLocalNameCount.java`](https://docs.oracle.com/javase/tutorial/jaxp/sax/examples/SAXLocalNameCount.java) file in a directory named `sax`. Open the file in a text editor and make the changes described above.
 2. If you have not already done so, compile the file as follows:
@@ -361,7 +373,7 @@ As stated above, these examples reuse the SAXLocalNameCount program. The locatio
 	`<xs:element ref="email" minOccurs='1' maxOccurs='unbounded'/>`
 6. In data/personal-schema.xml, delete the email element from the person element one.worker.
 	Worker One now looks like this:
-	```
+	```xml
 	<person id="one.worker">
 	  <name><family>Worker</family> <given>One</given></name>
 	  <link manager="Big.Boss"/>

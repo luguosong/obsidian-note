@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Trouble Shooting Tips (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/faq.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/timelimit.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ldap/index.html)
+[[JNDI-操作-timelimit|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-LDAP高级|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -15,7 +27,7 @@ Here are the most common problems that you might encounter when you try to run a
 
 *Cause*: You did not specify which implementation to use for the initial context. Specifically, the [Context.INITIAL\_CONTEXT\_FACTORY](https://docs.oracle.com/javase/8/docs/api/javax/naming/Context.html#INITIAL_CONTEXT_FACTORY) environment property was not set to the class name of the factory that will create the initial context. Or, you did not make available to the program the classes of the service provider named by Context.INITIAL\_CONTEXT\_FACTORY.
 
-*Solution*: Set the Context.INITIAL\_CONTEXT\_FACTORY environment property to the class name of the initial context implementation that you are using. See [Configuration](https://docs.oracle.com/javase/tutorial/jndi/ops/index.html) section for details.
+*Solution*: Set the Context.INITIAL\_CONTEXT\_FACTORY environment property to the class name of the initial context implementation that you are using. See [[JNDI-操作|Configuration]] section for details.
 
 If the property was set, then make sure that the class name was not mistyped, and that the class named is available to your program (either in its classpath or installed in the jre/lib/ext directory of the JRE). The Java Platform includes service providers for LDAP, COS naming, DNS, and the RMI registry. All other service providers must be installed and added to the execution environment.
 
@@ -75,7 +87,7 @@ Here are some problems that you might encounter when trying to deploy an applet 
 
 *Cause*: Your applet was not signed, so it can connect only to the machine from which it was loaded. Or, if the applet was signed, the browser has not granted the applet permission to connect to the directory server machine.
 
-*Solution*: If you want to allow the applet to connect to directory servers running on arbitrary machines, then you need to sign *both* your applet *and* all of the JNDI JARs that your applet will be using. For information on signing jars, see [Signing and Verifying JAR files](https://docs.oracle.com/javase/tutorial/deployment/jar/signindex.html).
+*Solution*: If you want to allow the applet to connect to directory servers running on arbitrary machines, then you need to sign *both* your applet *and* all of the JNDI JARs that your applet will be using. For information on signing jars, see [[部署-signindex|Signing and Verifying JAR files]].
 
 7\. You get an AppletSecurityException when your applet attempts to set up the environment properties using system properties.
 

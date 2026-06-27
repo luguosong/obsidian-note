@@ -1,12 +1,24 @@
+---
+分类:
+  - "网页裁剪"
+标题: "When to Use DOM (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Document Object Model)"
+描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/dom/when.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 When to Use DOM
 
-[Reading XML Data into a DOM](https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html)
+[[JAXP-DOM-readingXML|Reading XML Data into a DOM]]
 
-[Validating with XML Schema](https://docs.oracle.com/javase/tutorial/jaxp/dom/validating.html)
+[[JAXP-DOM-validating|Validating with XML Schema]]
 
-[Further Information](https://docs.oracle.com/javase/tutorial/jaxp/dom/info.html)
+[[JAXP-DOM-info|Further Information]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -79,7 +91,7 @@ Although JDOM and dom4j make allowances for elements having mixed content, they 
 
 The elements in a data structure typically contain either text or other elements, but not both. For example, here is some XML that represents a simple address book:
 
-```
+```xml
 <addressbook>
     <entry>
         <name>Fred</name>
@@ -101,7 +113,7 @@ So for simple data structures such as the address book, you can save yourself a 
 
 Here is an example of that kind of structure, which would also be easily processed in JDOM or dom4j:
 
-```
+```xml
 <addressbook>
     <entry>Fred
         <email>fred@home</email>
@@ -118,7 +130,7 @@ But for you to get a full understanding of the kind of processing you need to do
 
 Here is an example that illustrates this point. It is a representation of this data:
 
-```
+```xml
 <sentence>
     The &projectName; <![CDATA[<i>project</i>]]> is
     <?editor: red><bold>important</bold><?editor: normal>.
@@ -129,7 +141,7 @@ This sentence contains an **entity reference** - a pointer to an entity that is 
 
 Here is the DOM structure for that data. It is representative of the kind of structure that a robust application should be prepared to handle:
 
-```
+```xml
 + ELEMENT: sentence
        + TEXT: The
        + ENTITY REF: projectName
@@ -165,7 +177,7 @@ To be more robust, a DOM application must do these things:
 
 Of course, many applications will not have to worry about such things, because the kind of data they see will be strictly controlled. But if the data can come from a variety of external sources, then the application will probably need to take these possibilities into account.
 
-The code you need to carry out these functions is given near the end of this lesson in [Searching for Nodes](https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html#ggdwa) and [Obtaining Node Content](https://docs.oracle.com/javase/tutorial/jaxp/dom/readingXML.html#ggdxv). Right now, the goal is simply to determine whether DOM is suitable for your application.
+The code you need to carry out these functions is given near the end of this lesson in [[JAXP-DOM-readingXML|Searching for Nodes]] and [[JAXP-DOM-readingXML|Obtaining Node Content]]. Right now, the goal is simply to determine whether DOM is suitable for your application.
 
 ## Choosing Your Model
 

@@ -1,28 +1,40 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Questions and Exercises: Interfaces (The Java™ Tutorials >        
+            Collections > Interfaces)"
+描述: "This collections Java tutorial describes interfaces, implementations, and algorithms in the Java Collections framework"
+来源: "https://docs.oracle.com/javase/tutorial/collections/interfaces/QandE/questions.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[The Collection Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/collection.html)
+[[集合-接口-Collection接口|The Collection Interface]]
 
-[The Set Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html)
+[[集合-接口-Set接口|The Set Interface]]
 
-[The List Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/list.html)
+[[集合-接口-List接口|The List Interface]]
 
-[The Queue Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/queue.html)
+[[集合-接口-Queue接口|The Queue Interface]]
 
-[The Deque Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/deque.html)
+[[集合-接口-Deque接口|The Deque Interface]]
 
-[The Map Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/map.html)
+[[集合-接口-Map接口|The Map Interface]]
 
-[Object Ordering](https://docs.oracle.com/javase/tutorial/collections/interfaces/order.html)
+[[集合-接口-对象排序|Object Ordering]]
 
-[The SortedSet Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/sorted-set.html)
+[[集合-接口-SortedSet接口|The SortedSet Interface]]
 
-[The SortedMap Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/sorted-map.html)
+[[集合-接口-SortedMap接口|The SortedMap Interface]]
 
-[Summary of Interfaces](https://docs.oracle.com/javase/tutorial/collections/interfaces/summary.html)
+[[集合-接口-summary|Summary of Interfaces]]
 
 Questions and Exercises
 
-[« Previous](https://docs.oracle.com/javase/tutorial/collections/interfaces/summary.html) • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/collections/streams/index.html)
+[[集合-接口-summary|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [[聚合操作|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -55,4 +67,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 		3. WTI decides that it only wants to use the most popular names for its toys. Count up the number of employees who have each first name.
 		4. WTI acquires season tickets for the local lacrosse team, to be shared by employees. Create a waiting list for this popular sport.
 
-[Check your answers.](https://docs.oracle.com/javase/tutorial/collections/interfaces/QandE/answers.html)
+[[集合-接口-answers|Check your answers.]]

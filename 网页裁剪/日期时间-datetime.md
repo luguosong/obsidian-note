@@ -1,3 +1,14 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Trail: Date Time (The Java™ Tutorials)"
+描述: "This date-time Java tutorial describes how to use the java.time APIs introduced in JDK 8 to write date and time code. The core package uses the standard calendar as defined in the ISO calendar system."
+来源: "https://docs.oracle.com/javase/tutorial/datetime"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  

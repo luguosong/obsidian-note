@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Text Layout Concepts (The Java™ Tutorials >        
+            2D Graphics > Working with Text APIs)"
+描述: "This 2d Java tutorial describes 2d graphics, geometry, text APIs, images, printing, advanced 2d topics"
+来源: "https://docs.oracle.com/javase/tutorial/2d/text/textlayoutconcepts.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/text/fontconcepts.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/text/fonts.html)
+[[二维图形-fontconcepts|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-物理与逻辑字体|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -15,7 +27,7 @@ Before a piece of text can be displayed, it must be properly shaped and position
 - Properly ordering the text
 - Measuring and positioning the text
 
-The information used to lay out text is also necessary for performing text operations such as caret positioning, hit detection, and highlighting. See [Working with Bidirectional Text](https://docs.oracle.com/javase/tutorial/2d/text/textlayoutbidirectionaltext.html) for more information about these text operations.
+The information used to lay out text is also necessary for performing text operations such as caret positioning, hit detection, and highlighting. See [[二维图形-textlayoutbidirectionaltext|Working with Bidirectional Text]] for more information about these text operations.
 
 To develop software that can be deployed in international markets, text must be laid out in different languages in a way that conforms to the rules of the appropriate writing system.
 
@@ -51,7 +63,7 @@ In the Java programming language, text is encoded using Unicode character encodi
 
 The visual order for glyphs in a particular writing system (script) is called the *script order*. For example, the script order for Roman text is left-to-right and the script order for Arabic and Hebrew is right-to-left.
 
-Some writing systems have rules in addition to script order for arranging glyphs and words on lines of text. For example, Arabic and Hebrew numbers run left to right, even though the letters run right to left. This means that Arabic and Hebrew, even with no embedded English text, are truly bidirectional. See [Working with Bidirectional Text](https://docs.oracle.com/javase/tutorial/2d/text/textlayoutbidirectionaltext.html) for more information.
+Some writing systems have rules in addition to script order for arranging glyphs and words on lines of text. For example, Arabic and Hebrew numbers run left to right, even though the letters run right to left. This means that Arabic and Hebrew, even with no embedded English text, are truly bidirectional. See [[二维图形-textlayoutbidirectionaltext|Working with Bidirectional Text]] for more information.
 
 ## Measuring and Positioning Text
 
@@ -61,4 +73,4 @@ Text is often displayed using multiple fonts and styles, such as bold or italic.
 
 To properly display text in languages such as Hebrew and Arabic, each individual character needs to be measured and positioned within the context of neighboring characters. Because the shapes and positions of the characters can change depending on the context, measuring and positioning such text without taking the context into account produces unacceptable results.
 
-In addition, Java SE provides you with the [`FontMetrics`](https://docs.oracle.com/javase/8/docs/api/java/awt/FontMetrics.html) class, which enables you to obtain measurements of text rendered by a [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object such as the height of a line of text in the font. You can use this information to precisely position text in Java graphical applications. See [Measuring Text](https://docs.oracle.com/javase/tutorial/2d/text/measuringtext.html) for more information.
+In addition, Java SE provides you with the [`FontMetrics`](https://docs.oracle.com/javase/8/docs/api/java/awt/FontMetrics.html) class, which enables you to obtain measurements of text rendered by a [`Font`](https://docs.oracle.com/javase/8/docs/api/java/awt/Font.html) object such as the height of a line of text in the font. You can use this information to precisely position text in Java graphical applications. See [[二维图形-测量文本|Measuring Text]] for more information.

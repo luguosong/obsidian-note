@@ -1,68 +1,80 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Scanning (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/io/scanning.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
-[Byte Streams](https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html)
+[[Java核心类库-基本IO-字节流|Byte Streams]]
 
-[Character Streams](https://docs.oracle.com/javase/tutorial/essential/io/charstreams.html)
+[[Java核心类库-基本IO-字符流|Character Streams]]
 
-[Buffered Streams](https://docs.oracle.com/javase/tutorial/essential/io/buffers.html)
+[[Java核心类库-基本IO-缓冲流|Buffered Streams]]
 
-[Scanning and Formatting](https://docs.oracle.com/javase/tutorial/essential/io/scanfor.html)
+[[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
 Scanning
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
-[I/O from the Command Line](https://docs.oracle.com/javase/tutorial/essential/io/cl.html)
+[[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
-[Data Streams](https://docs.oracle.com/javase/tutorial/essential/io/datastreams.html)
+[[Java核心类库-基本IO-数据流|Data Streams]]
 
-[Object Streams](https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)
+[[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
-[What Is a Path? (And Other File System Facts)](https://docs.oracle.com/javase/tutorial/essential/io/path.html)
+[[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
-[The Path Class](https://docs.oracle.com/javase/tutorial/essential/io/pathClass.html)
+[[Java核心类库-基本IO-Path类|The Path Class]]
 
-[Path Operations](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
+[[Java核心类库-基本IO-路径操作|Path Operations]]
 
-[File Operations](https://docs.oracle.com/javase/tutorial/essential/io/fileOps.html)
+[[Java核心类库-基本IO-文件操作|File Operations]]
 
-[Checking a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
+[[Java核心类库-基本IO-检查文件目录|Checking a File or Directory]]
 
-[Deleting a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/delete.html)
+[[Java核心类库-基本IO-删除文件目录|Deleting a File or Directory]]
 
-[Copying a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/copy.html)
+[[Java核心类库-基本IO-复制文件目录|Copying a File or Directory]]
 
-[Moving a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/move.html)
+[[Java核心类库-基本IO-移动文件目录|Moving a File or Directory]]
 
-[Managing Metadata (File and File Store Attributes)](https://docs.oracle.com/javase/tutorial/essential/io/fileAttr.html)
+[[Java核心类库-基本IO-管理元数据|Managing Metadata (File and File Store Attributes)]]
 
-[Reading, Writing, and Creating Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+[[Java核心类库-基本IO-读写创建文件|Reading, Writing, and Creating Files]]
 
-[Random Access Files](https://docs.oracle.com/javase/tutorial/essential/io/rafs.html)
+[[Java核心类库-基本IO-随机访问文件|Random Access Files]]
 
-[Creating and Reading Directories](https://docs.oracle.com/javase/tutorial/essential/io/dirs.html)
+[[Java核心类库-基本IO-创建读取目录|Creating and Reading Directories]]
 
-[Links, Symbolic or Otherwise](https://docs.oracle.com/javase/tutorial/essential/io/links.html)
+[[Java核心类库-基本IO-链接|Links, Symbolic or Otherwise]]
 
-[Walking the File Tree](https://docs.oracle.com/javase/tutorial/essential/io/walk.html)
+[[Java核心类库-基本IO-遍历文件树|Walking the File Tree]]
 
-[Finding Files](https://docs.oracle.com/javase/tutorial/essential/io/find.html)
+[[Java核心类库-基本IO-查找文件|Finding Files]]
 
-[Watching a Directory for Changes](https://docs.oracle.com/javase/tutorial/essential/io/notification.html)
+[[Java核心类库-基本IO-监视目录变化|Watching a Directory for Changes]]
 
-[Other Useful Methods](https://docs.oracle.com/javase/tutorial/essential/io/misc.html)
+[[Java核心类库-基本IO-其他方法|Other Useful Methods]]
 
-[Legacy File I/O Code](https://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
+[[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/io/scanfor.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-扫描与格式化|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-formatting|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -77,7 +89,7 @@ Objects of type [`Scanner`](https://docs.oracle.com/javase/8/docs/api/java/util/
 
 By default, a scanner uses white space to separate tokens. (White space characters include blanks, tabs, and line terminators. For the full list, refer to the documentation for [`Character.isWhitespace`](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isWhitespace-char-).) To see how scanning works, let's look at [`ScanXan`](https://docs.oracle.com/javase/tutorial/essential/io/examples/ScanXan.java), a program that reads the individual words in `xanadu.txt` and prints them out, one per line.
 
-```
+```java
 import java.io.*;
 import java.util.Scanner;
 
@@ -131,7 +143,7 @@ We have to mention the locale, because thousands separators and decimal symbols 
 
 The [`ScanSum`](https://docs.oracle.com/javase/tutorial/essential/io/examples/ScanSum.java) example reads a list of `double` values and adds them up. Here's the source:
 
-```
+```java
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -173,4 +185,4 @@ And here's the sample input file, [`usnumbers.txt`](https://docs.oracle.com/java
 1,000,000.1
 ```
 
-The output string is "1032778.74159". The period will be a different character in some locales, because `System.out` is a `PrintStream` object, and that class doesn't provide a way to override the default locale. We could override the locale for the whole program — or we could just use formatting, as described in the next topic, [Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html).
+The output string is "1032778.74159". The period will be a different character in some locales, because `System.out` is a `PrintStream` object, and that class doesn't provide a way to override the default locale. We could override the locale for the whole program — or we could just use formatting, as described in the next topic, [[Java核心类库-基本IO-formatting|Formatting]].

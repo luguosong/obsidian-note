@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Handling Lexical Events (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)"
+描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/events.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[When to Use SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/when.html)
+[[JAXP-何时使用SAX|When to Use SAX]]
 
-[Parsing an XML File Using SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html)
+[[JAXP-SAX-parsing|Parsing an XML File Using SAX]]
 
-[Implementing SAX Validation](https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html)
+[[JAXP-SAX-validation|Implementing SAX Validation]]
 
 Handling Lexical Events
 
-[Using the DTDHandler and EntityResolver](https://docs.oracle.com/javase/tutorial/jaxp/sax/using.html)
+[[JAXP-SAX-using|Using the DTDHandler and EntityResolver]]
 
-[Further Information](https://docs.oracle.com/javase/tutorial/jaxp/sax/info.html)
+[[JAXP-SAX-info|Further Information]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html) • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jaxp/sax/using.html)
+[[JAXP-SAX-validation|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-SAX-using|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -21,7 +33,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## Handling Lexical Events
 
-At this point, you have digested many XML concepts, including DTDs and external entities. You have also learned your way around the SAX parser. The remainder of this lesson covers advanced topics that you will need to understand only if you are writing SAX-based applications. If your primary goal is to write DOM-based applications, you can skip ahead to [Document Object Model](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html).
+At this point, you have digested many XML concepts, including DTDs and external entities. You have also learned your way around the SAX parser. The remainder of this lesson covers advanced topics that you will need to understand only if you are writing SAX-based applications. If your primary goal is to write DOM-based applications, you can skip ahead to [[JAXP-DOM|Document Object Model]].
 
 You saw earlier that if you are writing text out as XML, you need to know whether you are in a CDATA section. If you are, then angle brackets (<) and ampersands (&) should be output unchanged. But if you are not in a CDATA section, they should be replaced by the predefined entities &lt; and &amp;. But how do you know whether you are processing a CDATA section?
 
@@ -73,7 +85,7 @@ Here, you configure the XMLReader using the setProperty() method defined in the 
 
 Finally, add something like the following code to define the appropriate methods that will implement the interface.
 
-```
+```java
 // ...
 
 public void warning(SAXParseException err) {

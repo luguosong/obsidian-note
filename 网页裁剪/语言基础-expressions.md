@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Expressions, Statements, and Blocks (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)"
+描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+来源: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/expressions.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/QandE/questions_operators.html) • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/QandE/questions_expressions.html)
+[[语言基础-questions_operators|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[语言基础-questions_expressions|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -15,7 +27,7 @@ Now that you understand variables and operators, it's time to learn about *expre
 
 An *expression* is a construct made up of variables, operators, and method invocations, which are constructed according to the syntax of the language, that evaluates to a single value. You've already seen examples of expressions, illustrated in bold below:
 
-```
+```java
 int cadence = 0;
 anArray[0] = 100;
 System.out.println("Element 1 at index 0: " + anArray[0]);
@@ -66,7 +78,7 @@ Statements are roughly equivalent to sentences in natural languages. A *statemen
 
 Such statements are called *expression statements*. Here are some examples of expression statements.
 
-```
+```java
 // assignment statement
 aValue = 8933.234;
 // increment statement
@@ -84,13 +96,13 @@ In addition to expression statements, there are two other kinds of statements: *
 double aValue = 8933.234;
 ```
 
-Finally, *control flow statements* regulate the order in which statements get executed. You'll learn about control flow statements in the next section, [Control Flow Statements](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
+Finally, *control flow statements* regulate the order in which statements get executed. You'll learn about control flow statements in the next section, [[语言基础-flow|Control Flow Statements]]
 
 ## Blocks
 
 A *block* is a group of zero or more statements between balanced braces and can be used anywhere a single statement is allowed. The following example, [`BlockDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/BlockDemo.java), illustrates the use of blocks:
 
-```
+```java
 class BlockDemo {
      public static void main(String[] args) {
           boolean condition = true;

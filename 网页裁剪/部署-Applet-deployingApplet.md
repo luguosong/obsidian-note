@@ -1,56 +1,68 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Deploying an Applet (The Java™ Tutorials >        
+            Deployment > Java Applets)"
+描述: "This deployment Java tutorial describes development and deployment of applets, Java Web Start applications, rich Internet applications, and JAR related tools"
+来源: "https://docs.oracle.com/javase/tutorial/deployment/applet/deployingApplet.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Getting Started With Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/getStarted.html)
+[[部署-Applet-getStarted|Getting Started With Applets]]
 
-[Defining an Applet Subclass](https://docs.oracle.com/javase/tutorial/deployment/applet/subclass.html)
+[[部署-Applet-subclass|Defining an Applet Subclass]]
 
-[Methods for Milestones](https://docs.oracle.com/javase/tutorial/deployment/applet/appletMethods.html)
+[[部署-Applet-appletMethods|Methods for Milestones]]
 
-[Life Cycle of an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/lifeCycle.html)
+[[部署-Applet-lifeCycle|Life Cycle of an Applet]]
 
-[Applet's Execution Environment](https://docs.oracle.com/javase/tutorial/deployment/applet/appletExecutionEnv.html)
+[[部署-Applet-appletExecutionEnv|Applet's Execution Environment]]
 
-[Developing an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/developingApplet.html)
+[[部署-Applet-developingApplet|Developing an Applet]]
 
 Deploying an Applet
 
-[Deploying With the Applet Tag](https://docs.oracle.com/javase/tutorial/deployment/applet/html.html)
+[[部署-Applet-html|Deploying With the Applet Tag]]
 
-[Doing More With Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/doingMoreWithApplets.html)
+[[部署-Applet-doingMoreWithApplets|Doing More With Applets]]
 
-[Finding and Loading Data Files](https://docs.oracle.com/javase/tutorial/deployment/applet/data.html)
+[[部署-Applet-data|Finding and Loading Data Files]]
 
-[Defining and Using Applet Parameters](https://docs.oracle.com/javase/tutorial/deployment/applet/param.html)
+[[部署-Applet-param|Defining and Using Applet Parameters]]
 
-[Displaying Short Status Strings](https://docs.oracle.com/javase/tutorial/deployment/applet/showStatus.html)
+[[部署-Applet-showStatus|Displaying Short Status Strings]]
 
-[Displaying Documents in the Browser](https://docs.oracle.com/javase/tutorial/deployment/applet/browser.html)
+[[部署-Applet-browser|Displaying Documents in the Browser]]
 
-[Invoking JavaScript Code From an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/invokingJavaScriptFromApplet.html)
+[[部署-Applet-invokingJavaScriptFromApplet|Invoking JavaScript Code From an Applet]]
 
-[Invoking Applet Methods From JavaScript Code](https://docs.oracle.com/javase/tutorial/deployment/applet/invokingAppletMethodsFromJavaScript.html)
+[[部署-Applet-invokingAppletMethodsFromJavaScript|Invoking Applet Methods From JavaScript Code]]
 
-[Handling Initialization Status With Event Handlers](https://docs.oracle.com/javase/tutorial/deployment/applet/appletStatus.html)
+[[部署-Applet-appletStatus|Handling Initialization Status With Event Handlers]]
 
-[Manipulating DOM of Applet's Web Page](https://docs.oracle.com/javase/tutorial/deployment/applet/manipulatingDOMFromApplet.html)
+[[部署-Applet-manipulatingDOMFromApplet|Manipulating DOM of Applet's Web Page]]
 
-[Writing Diagnostics to Standard Output and Error Streams](https://docs.oracle.com/javase/tutorial/deployment/applet/stdout.html)
+[[部署-Applet-stdout|Writing Diagnostics to Standard Output and Error Streams]]
 
-[Developing Draggable Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/draggableApplet.html)
+[[部署-Applet-draggableApplet|Developing Draggable Applets]]
 
-[Communicating With Other Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/iac.html)
+[[部署-Applet-iac|Communicating With Other Applets]]
 
-[Working With a Server-Side Application](https://docs.oracle.com/javase/tutorial/deployment/applet/server.html)
+[[部署-Applet-server|Working With a Server-Side Application]]
 
-[Network Client Applet Example](https://docs.oracle.com/javase/tutorial/deployment/applet/clientExample.html)
+[[部署-Applet-clientExample|Network Client Applet Example]]
 
-[What Applets Can and Cannot Do](https://docs.oracle.com/javase/tutorial/deployment/applet/security.html)
+[[部署-Applet-安全|What Applets Can and Cannot Do]]
 
-[Solving Common Applet Problems](https://docs.oracle.com/javase/tutorial/deployment/applet/problemsindex.html)
+[[部署-Applet-problemsindex|Solving Common Applet Problems]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/deployment/applet/QandE/questions.html)
+[[部署-Applet-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/deployment/applet/developingApplet.html) • [Trail](https://docs.oracle.com/javase/tutorial/deployment/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/deployment/applet/html.html)
+[[部署-Applet-developingApplet|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/deployment/TOC.html) • [[部署-Applet-html|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -68,7 +80,7 @@ Java applets can be launched in two ways.
 
 The Deployment Toolkit script contains useful JavaScript functions that can be used to deploy applets in a web page.
 
-If you are unfamiliar with these deployment technologies, review the [Deployment In-Depth](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/index.html) lesson before proceeding further.
+If you are unfamiliar with these deployment technologies, review the [[部署-深入部署|Deployment In-Depth]] lesson before proceeding further.
 
 Here are some step-by-step instructions to package and deploy your applet. The Dynamic Tree Demo applet is used to illustrate applet deployment. You might want to set up build scripts to execute some of the following steps.
 
@@ -82,26 +94,26 @@ Here are some step-by-step instructions to package and deploy your applet. The D
 	In the case of the DynamicTree Demo applet, the compiled classes are placed in the `build/classes/appletComponentArch` directory.
 2. Create a text file that contains any JAR file manifest attributes that your applet needs.
 	For the DynamicTree Demo applet, create a file named `mymanifest.txt` in the `build/classes` directory, and add the `Permissions`, `Codebase`, and `Application-Name` attributes. The applet does not require access to the user's system resources, so use `sandbox` for the permissions. Use the domain from which you will load the sample for the code base, for example, `myserver.com`. Add the following attributes to the `mymanifest.txt` file.
-	```
+	```yaml
 	Permissions: sandbox
 	Codebase: myserver.com
 	Application-Name: Dynamic Tree Demo
 	```
-	Other manifest attributes are available to restrict an applet to using only trusted code, and to provide security for applets that need to make calls between privileged Java code and sandbox Java code, or have JavaScript code that calls the applet. See the [Enhancing Security with Manifest Attributes](https://docs.oracle.com/javase/tutorial/deployment/jar/secman.html) lesson to learn more about the manifest attributes that are available.
+	Other manifest attributes are available to restrict an applet to using only trusted code, and to provide security for applets that need to make calls between privileged Java code and sandbox Java code, or have JavaScript code that calls the applet. See the [[部署-secman|Enhancing Security with Manifest Attributes]] lesson to learn more about the manifest attributes that are available.
 3. Create a JAR file containing your applet's class files and resources. Include the manifest attributes in the `mymanifest.txt` file that you created in the previous step.
 	For example, the following command creates a JAR file with the class files in the `build/classes/appletComponentArch` directory and the manifest file in the `build/classes` directory.
 	```
 	% cd build/classes
 	% jar cvfm DynamicTreeDemo.jar mymanifest.txt appletComponentArch
 	```
-	See the [Packaging Programs in JAR Files](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html) lesson to learn more about creating and using JAR files.
+	See the [[将程序打包为JAR文件|Packaging Programs in JAR Files]] lesson to learn more about creating and using JAR files.
 4. Sign the JAR file for your applet and time stamp the signature. Use a valid, current code signing certificate issued by a trusted certificate authority to provide your users with assurance that it is safe to run the applet.
-	See the [Signing JAR Files](https://docs.oracle.com/javase/tutorial/deployment/jar/signing.html) lesson for more information.
+	See the [[部署-signing|Signing JAR Files]] lesson for more information.
 	If you want to use a signed JNLP file for security, create the JNLP file as described in the next step and include it in the JAR file before the JAR file is signed. See [Signed JNLP Files](https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/signedJNLP.html) in the Java Platform, Standard Edition Deployment Guide for information.
 5. Create a JNLP file that describes how your applet should be launched.
 	Here is the JNLP file used to launch the Dynamic Tree Demo applet.
 	The source for [`` `dynamictree_applet.jnlp` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/applet_ComponentArch_DynamicTreeDemo/src/dynamictree_applet.jnlp) follows:
-	```
+	```xml
 	<?xml version="1.0" encoding="UTF-8"?>
 	<jnlp spec="1.0+" codebase="" href="">
 	    <information>
@@ -124,10 +136,10 @@ Here are some step-by-step instructions to package and deploy your applet. The D
 	</jnlp>
 	```
 	Note that the security element for requesting additional permissions is not present in the JNLP file, therefore the applet runs only in the security sandbox.
-	The topic, [Structure of the JNLP File](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/jnlpFileSyntax.html), describes JNLP file syntax and options.
+	The topic, [[部署-jnlpFileSyntax|Structure of the JNLP File]], describes JNLP file syntax and options.
 6. Create the HTML page that will display the applet. Invoke Deployment Toolkit functions to deploy the applet.
 	In our example, the Dynamic Tree Demo applet is deployed in [`` `AppletPage.html` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/dist/applet_ComponentArch_DynamicTreeDemo/AppletPage.html).
-	```
+	```html
 	<body>
 	    <!-- ... -->
 	    <script src="https://www.java.com/js/deployJava.js"></script>
@@ -144,4 +156,4 @@ Here are some step-by-step instructions to package and deploy your applet. The D
 	For this example, place `DynamicTreeDemo.jar`, `dynamictree_applet.jnlp`, and `AppletPage.html` in the same directory on the local machine or a web server. A web server is preferred. To run from the local machine, you must add your application to the exception site list, which is managed from the Security tab of the Java Control Panel.
 8. Open the applet's HTML page in a browser to view the applet. Agree to run the applet when prompted. Check the Java Console log for error and debugging messages.
 
-[Download source code](https://docs.oracle.com/javase/tutorial/deployment/applet/examplesIndex.html#ComponentArchDynamicTreeDemo) for the *Dynamic Tree Demo Applet* example to experiment further.
+[[部署-Applet-examplesIndex|Download source code]] for the *Dynamic Tree Demo Applet* example to experiment further.

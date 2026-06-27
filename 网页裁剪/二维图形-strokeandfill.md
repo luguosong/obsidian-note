@@ -1,12 +1,24 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Stroking and Filling Graphics Primitives (The Java™ Tutorials >        
+            2D Graphics > Working with Geometry)"
+描述: "Java Tutorials lesson shows how to use the Graphics2D class to draw graphic primitives, arbitrary shapes, and to display graphics with outline and fill styles"
+来源: "https://docs.oracle.com/javase/tutorial/2d/geometry/strokeandfill.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Drawing Geometric Primitives](https://docs.oracle.com/javase/tutorial/2d/geometry/primitives.html)
+[[二维图形-primitives|Drawing Geometric Primitives]]
 
-[Drawing Arbitrary Shapes](https://docs.oracle.com/javase/tutorial/2d/geometry/arbitrary.html)
+[[二维图形-arbitrary|Drawing Arbitrary Shapes]]
 
 Stroking and Filling Graphics Primitives
 
-[« Previous](https://docs.oracle.com/javase/tutorial/2d/geometry/arbitrary.html) • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/2d/text/index.html)
+[[二维图形-arbitrary|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/2d/TOC.html) • [[二维图形-文本|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

@@ -1,8 +1,20 @@
+---
+分类:
+  - "网页裁剪"
+标题: "LDAP Setup (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Software Setup)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/software/content.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 LDAP Setup
 
-[Java Application Setup](https://docs.oracle.com/javase/tutorial/jndi/software/package.html)
+[[JNDI-package|Java Application Setup]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -14,10 +26,10 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 Below are the steps involved in building a Java Application that accesses an LDAP Directory Server.
 
 1. Install the Java Platform Software.
-2. Get the Directory Server software as discussed [earlier](https://docs.oracle.com/javase/tutorial/jndi/software/index.html#SERVER).
+2. Get the Directory Server software as discussed [[JNDI-软件设置|earlier]].
 3. Configure the Directory Server with the desired schema. For using the examples in this tutorial a special [schema](#SCHEMA) needs to be configured on the server.
 4. Populate the directory server with the desired content. For using the examples in this tutorial a special [content](#LDIF) needs to be populated on the server.
-5. Write a JNDI application to access the Directory, compile and run it against the Directory Server to get your desired results. The JNDI examples are covered in the next [lesson](https://docs.oracle.com/javase/tutorial/jndi/ops/index.html).
+5. Write a JNDI application to access the Directory, compile and run it against the Directory Server to get your desired results. The JNDI examples are covered in the next [[JNDI-操作|lesson]].
 
 The *first two* steps are covered in the previous section. The rest of this lesson discusses steps *three* and part of step *four*. The step *five* that involves writing a JNDI application is covered in the next lesson that shows how to write JNDI applications to perform various operations on the directory.
 
@@ -65,7 +77,7 @@ ldapmodify -a -c -v -h hostname -p 389\
 
 ---
 
-**Installation Note: Access Control.** Different directory servers handle access control differently. Some examples in this tutorial perform updates to the directory. Also, the part of the namespace where you have installed the tutorial might have read access restrictions. Therefore, you need to take server-specific actions to make the directory readable and/or updatable in order for those examples to work. For the [Oracle Directory Server](http://www.oracle.com/technetwork/testcontent/index-085178.html) add the aci entry suggested in the [`sunds.aci.ldif`](https://docs.oracle.com/javase/tutorial/jndi/software/config/sunds.aci.ldif) file to the dn: o=JNDITutorial entry to make the entire directory readable and updatable. Alternatively, you may change the examples so that they authenticate to the directory. Details of how to do this are described in the [Security](https://docs.oracle.com/javase/tutorial/jndi/ldap/security.html) lesson.
+**Installation Note: Access Control.** Different directory servers handle access control differently. Some examples in this tutorial perform updates to the directory. Also, the part of the namespace where you have installed the tutorial might have read access restrictions. Therefore, you need to take server-specific actions to make the directory readable and/or updatable in order for those examples to work. For the [Oracle Directory Server](http://www.oracle.com/technetwork/testcontent/index-085178.html) add the aci entry suggested in the [`sunds.aci.ldif`](https://docs.oracle.com/javase/tutorial/jndi/software/config/sunds.aci.ldif) file to the dn: o=JNDITutorial entry to make the entire directory readable and updatable. Alternatively, you may change the examples so that they authenticate to the directory. Details of how to do this are described in the [[JNDI-LDAP高级-security|Security]] lesson.
 
 **Installation Note: Namespace Setup.** The entries in the [`tutorial.ldif`](https://docs.oracle.com/javase/tutorial/jndi/software/config/tutorial.ldif) file use the distinguished name (DN) "o=JNDITutorial" for the root naming context. If you have not configured your directory server to have "o=JNDITutorial" as a root naming context, then your attempt to import tutorial.ldif will fail. The easiest way to get around this problem is to add the DN of an existing root naming context to each "dn:" line in the tutorial.ldif file. For example, if your server already has the root naming context "dc=imc,dc=org", then you should change the line
 

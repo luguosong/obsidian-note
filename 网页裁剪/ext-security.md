@@ -1,12 +1,23 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Lesson: Making Extensions Secure (The Java™ Tutorials > The Extension Mechanism)"
+描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+来源: "https://docs.oracle.com/javase/tutorial/ext/security"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 Making Extensions Secure
 
-[Setting Privileges for Extensions](https://docs.oracle.com/javase/tutorial/ext/policy.html)
+[[ext-policy|Setting Privileges for Extensions]]
 
-[Sealing Packages in Extensions](https://docs.oracle.com/javase/tutorial/ext/sealing.html)
+[[ext-sealing|Sealing Packages in Extensions]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/basics/index.html) • [Trail](https://docs.oracle.com/javase/tutorial/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/ext/policy.html)
+[[basics-basics|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/TOC.html) • [[ext-policy|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

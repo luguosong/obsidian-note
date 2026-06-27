@@ -1,12 +1,24 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Questions and Exercises: Aggregate Operations (The Java™ Tutorials >        
+            Collections > Aggregate Operations)"
+描述: "This collections Java tutorial describes interfaces, implementations, and algorithms in the Java Collections framework"
+来源: "https://docs.oracle.com/javase/tutorial/collections/streams/QandE/questions.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Reduction](https://docs.oracle.com/javase/tutorial/collections/streams/reduction.html)
+[[聚合操作-归约|Reduction]]
 
-[Parallelism](https://docs.oracle.com/javase/tutorial/collections/streams/parallelism.html)
+[[聚合操作-并行|Parallelism]]
 
 Questions and Exercises
 
-[« Previous](https://docs.oracle.com/javase/tutorial/collections/streams/parallelism.html) • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/collections/implementations/index.html)
+[[聚合操作-并行|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [[集合-实现|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -43,7 +55,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 ## Exercises
 
 1. Write the following enhanced `for` statement as a pipeline with lambda expressions. Hint: Use the `filter` intermediate operation and the `forEach` terminal operation.  
-	```
+	```java
 	for (Person p : roster) {
 	    if (p.getGender() == Person.Sex.MALE) {
 	        System.out.println(p.getName());
@@ -70,4 +82,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 	                           }});
 	```
 
-[Check your answers.](https://docs.oracle.com/javase/tutorial/collections/streams/QandE/answers.html)
+[[聚合操作-answers|Check your answers.]]

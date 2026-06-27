@@ -12,7 +12,7 @@
 
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/exception.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-列出上下文|Next »]]
+[[JNDI-操作-exception|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-列出上下文|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

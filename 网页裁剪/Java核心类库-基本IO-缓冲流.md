@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 [[Java核心类库-基本IO-字节流|Byte Streams]]
 
@@ -22,9 +22,9 @@ Buffered Streams
 
 [[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Buffered Streams
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,9 +70,9 @@ Buffered Streams
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
 [[Java核心类库-基本IO-字符流|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-扫描与格式化|Next »]]
 
@@ -100,6 +100,6 @@ There are four buffered stream classes used to wrap unbuffered streams: [`Buffer
 
 It often makes sense to write out a buffer at critical points, without waiting for it to fill. This is known as *flushing* the buffer.
 
-Some buffered output classes support *autoflush*, specified by an optional constructor argument. When autoflush is enabled, certain key events cause the buffer to be flushed. For example, an autoflush `PrintWriter` object flushes the buffer on every invocation of `println` or `format`. See [Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html) for more on these methods.
+Some buffered output classes support *autoflush*, specified by an optional constructor argument. When autoflush is enabled, certain key events cause the buffer to be flushed. For example, an autoflush `PrintWriter` object flushes the buffer on every invocation of `println` or `format`. See [[Java核心类库-基本IO-formatting|Formatting]] for more on these methods.
 
 To flush a stream manually, invoke its `flush` method. The `flush` method is valid on any output stream, but has no effect unless the stream is buffered.

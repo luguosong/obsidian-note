@@ -30,9 +30,9 @@ The SortedSet Interface
 
 [[集合-接口-SortedMap接口|The SortedMap Interface]]
 
-[Summary of Interfaces](https://docs.oracle.com/javase/tutorial/collections/interfaces/summary.html)
+[[集合-接口-summary|Summary of Interfaces]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/collections/interfaces/QandE/questions.html)
+[[集合-接口-questions|Questions and Exercises]]
 
 [[集合-接口-对象排序|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [[集合-接口-SortedMap接口|Next »]]
 

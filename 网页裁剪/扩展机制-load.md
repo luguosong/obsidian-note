@@ -1,14 +1,26 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Understanding Extension Class Loading (The Java™ Tutorials >        
+            The Extension Mechanism > Creating and Using Extensions)"
+描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+来源: "https://docs.oracle.com/javase/tutorial/ext/basics/load.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Installed Extensions](https://docs.oracle.com/javase/tutorial/ext/basics/install.html)
+[[扩展机制-install|Installed Extensions]]
 
-[Download Extensions](https://docs.oracle.com/javase/tutorial/ext/basics/download.html)
+[[扩展机制-download|Download Extensions]]
 
 Understanding Extension Class Loading
 
-[Creating Extensible Applications](https://docs.oracle.com/javase/tutorial/ext/basics/spi.html)
+[[扩展机制-服务提供者机制|Creating Extensible Applications]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/ext/basics/download.html) • [Trail](https://docs.oracle.com/javase/tutorial/ext/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/ext/basics/spi.html)
+[[扩展机制-download|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/ext/TOC.html) • [[扩展机制-服务提供者机制|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -41,7 +53,7 @@ Here are some highlights of the class-loading API:
 - The findClass method of ClassLoader searches for the class in the current class loader if the class wasn't found by the parent class loader. You will probably want to override this method when you instantiate a class loader subclass in your application.
 - The class java.net.URLClassLoader serves as the basic class loader for extensions and other JAR files, overriding the findClass method of java.lang.ClassLoader to search one or more specified URLs for classes and resources.
 
-To see a sample application that uses some of the API as it relates to JAR files, see the [Using JAR-related APIs](https://docs.oracle.com/javase/tutorial/deployment/jar/apiindex.html) lesson in this tutorial.
+To see a sample application that uses some of the API as it relates to JAR files, see the [[部署-apiindex|Using JAR-related APIs]] lesson in this tutorial.
 
 ## Class Loading and the java Command
 
@@ -49,4 +61,4 @@ The Java platform's class-loading mechanism is reflected in the java command.
 
 - In the java tool, the \-classpath option is a shorthand way to set the java.class.path property.
 - The \-cp and \-classpath options are equivalent.
-- The \-jar option runs applications that are packaged in JAR files. For a description and examples of this option, see the [Running JAR-Packaged Software](https://docs.oracle.com/javase/tutorial/deployment/jar/run.html) lesson in this tutorial.
+- The \-jar option runs applications that are packaged in JAR files. For a description and examples of this option, see the [[部署-run|Running JAR-Packaged Software]] lesson in this tutorial.

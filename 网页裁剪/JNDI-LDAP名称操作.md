@@ -16,22 +16,22 @@ Documentation
 
 [[JNDI-标准LDAP控件|Standard LDAP Controls]]
 
-[Paged Results Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html)
+[[JNDI-新特性-paged-results|Paged Results Control]]
 
-[Sort Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html)
+[[JNDI-新特性-sort|Sort Control]]
 
-[Manage Referral Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html)
+[[JNDI-新特性-mdsaIT|Manage Referral Control]]
 
 Manipulating LdapName (Distinguished Name)
 
-[Manipulating Relative Distinguished Name (RDN)](https://docs.oracle.com/javase/tutorial/jndi/newstuff/rdn.html)
+[[JNDI-新特性-rdn|Manipulating Relative Distinguished Name (RDN)]]
 
 [[JNDI-读取超时|Setting Timeout for Ldap Operations]]
 
 **Trail:** Java Naming and Directory Interface  
 **Lesson:** New features in JDK 5.0 and JDK 6
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/newstuff/rdn.html)
+[[JNDI-新特性-mdsaIT|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-新特性-rdn|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

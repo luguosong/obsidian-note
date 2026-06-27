@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "The try-with-resources Statement (The Java™ Tutorials >        
+            Essential Java Classes > Exceptions)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/exceptions/finally.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/exceptions/putItTogether.html)
+[[Java核心类库-异常-finally|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-异常-putItTogether|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -48,7 +60,7 @@ If the methods `readLine` and `close` both throw exceptions, then the method `re
 
 The following example retrieves the names of the files packaged in the zip file `zipFileName` and creates a text file that contains the names of these files:
 
-```
+```java
 public static void writeToFileZipFileContents(String zipFileName,
                                            String outputFileName)
                                            throws java.io.IOException {
@@ -85,7 +97,7 @@ In this example, the `try` -with-resources statement contains two declarations t
 
 The following example uses a `try` -with-resources statement to automatically close a `java.sql.Statement` object:
 
-```
+```sql
 public static void viewTable(Connection con) throws SQLException {
 
     String query = "select COF_NAME, SUP_ID, PRICE, SALES, TOTAL from COFFEES";

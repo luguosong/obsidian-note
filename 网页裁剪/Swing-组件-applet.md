@@ -1,90 +1,102 @@
+---
+分类:
+  - "网页裁剪"
+标题: "How to Make Applets (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)"
+描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
 How to Make Applets
 
-[How to Use Buttons, Check Boxes, and Radio Buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
-[How to Use Color Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html)
+[[Swing-组件-colorchooser|How to Use Color Choosers]]
 
-[How to Use Combo Boxes](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-combobox|How to Use Combo Boxes]]
 
-[How to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-dialog|How to Make Dialogs]]
 
-[How to Use Editor Panes and Text Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-editorpane|How to Use Editor Panes and Text Panes]]
 
-[How to Use File Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-filechooser|How to Use File Choosers]]
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
-[How to Use Sliders](https://docs.oracle.com/javase/tutorial/uiswing/components/slider.html)
+[[Swing-滑块|How to Use Sliders]]
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-组件-componentlist|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-按钮|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -93,7 +105,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## How to Make Applets
 
-This section covers `JApplet` — a class that enables applets to use Swing components. `JApplet` is a subclass of [`java.applet.Applet`](https://docs.oracle.com/javase/8/docs/api/java/applet/Applet.html), which is covered in the [Java Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/index.html) trail. If you've never written a regular applet before, we urge you to read that trail before proceeding with this section. The information provided in that trail applies to Swing applets, with a few exceptions that this section explains.
+This section covers `JApplet` — a class that enables applets to use Swing components. `JApplet` is a subclass of [`java.applet.Applet`](https://docs.oracle.com/javase/8/docs/api/java/applet/Applet.html), which is covered in the [[部署-Applet|Java Applets]] trail. If you've never written a regular applet before, we urge you to read that trail before proceeding with this section. The information provided in that trail applies to Swing applets, with a few exceptions that this section explains.
 
 Any applet that contains Swing components must be implemented with a subclass of [`JApplet`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JApplet.html). Here's a Swing version of one of the applets that helped make Java famous — an animation applet that (in its most well known configuration) shows our mascot Duke doing cartwheels:
 
@@ -109,22 +121,22 @@ This section discusses the following topics:
 
 ## Features Provided by JApplet
 
-Because `JApplet` is a top-level Swing container, each Swing applet has a root pane. The most noticeable effects of the root pane's presence are support for adding a [menu bar](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html) and the need to use a content pane.
+Because `JApplet` is a top-level Swing container, each Swing applet has a root pane. The most noticeable effects of the root pane's presence are support for adding a [[Swing-组件-menu|menu bar]] and the need to use a content pane.
 
-As described in [Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html), each top-level container such as a `JApplet` has a single content pane. The content pane makes Swing applets different from regular applets in the following ways:
+As described in [[Swing-组件-toplevel|Using Top-Level Containers]], each top-level container such as a `JApplet` has a single content pane. The content pane makes Swing applets different from regular applets in the following ways:
 
-- You add components to a Swing applet's content pane, not directly to the applet. [Adding Components to the Content Pane](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html#contentpane) shows you how.
+- You add components to a Swing applet's content pane, not directly to the applet. [[Swing-组件-toplevel|Adding Components to the Content Pane]] shows you how.
 - You set the layout manager on a Swing applet's content pane, not directly on the applet.
 - The default layout manager for a Swing applet's content pane is `BorderLayout`. This differs from the default layout manager for `Applet`, which is `FlowLayout`.
-- You should not put painting code directly in a `JApplet` object. See [Performing Custom Painting](https://docs.oracle.com/javase/tutorial/uiswing/painting/index.html) for examples of how to perform custom painting in applets.
+- You should not put painting code directly in a `JApplet` object. See [[Swing-自定义绘制|Performing Custom Painting]] for examples of how to perform custom painting in applets.
 
 ## Threads in Applets
 
-Swing components should be created, queried, and manipulated on the event-dispatching thread, but browsers don't invoke applet "milestone" methods from that thread. For this reason, the milestone methods — `init`, `start`, `stop`, and `destroy` — should use the `SwingUtilities` method `invokeAndWait` (or, if appropriate, `invokeLater`) so that code that refers to the Swing components is executed on the event-dispatching thread. More information about these methods and the event-dispatching thread is in [Concurrency in Swing](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html).
+Swing components should be created, queried, and manipulated on the event-dispatching thread, but browsers don't invoke applet "milestone" methods from that thread. For this reason, the milestone methods — `init`, `start`, `stop`, and `destroy` — should use the `SwingUtilities` method `invokeAndWait` (or, if appropriate, `invokeLater`) so that code that refers to the Swing components is executed on the event-dispatching thread. More information about these methods and the event-dispatching thread is in [[Swing-并发|Concurrency in Swing]].
 
 Here is an example of an `init` method:
 
-```
+```java
 public void init() {
     //Execute a job on the event-dispatching thread:
     //creating this applet's GUI.
@@ -150,9 +162,9 @@ private void createGUI() {
 
 The `invokeLater` method is not appropriate for this implementation because it allows `init` to return before initialization is complete, which can cause applet problems that are difficult to debug.
 
-The `init` method in `TumbleItem` is more complex, as the following code shows. Like the first example, this `init` method implementation uses `SwingUtilities.invokeAndWait` to execute the GUI creation code on the event-dispatching thread. This `init` method sets up a [Swing timer](https://docs.oracle.com/javase/tutorial/uiswing/misc/timer.html) to fire action events the update the animation. Also, `init` uses [`javax.swing.SwingWorker`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingWorker.html) to create a background task that loads the animation image files, letting the applet present a GUI right away, without waiting for all resources to be loaded.
+The `init` method in `TumbleItem` is more complex, as the following code shows. Like the first example, this `init` method implementation uses `SwingUtilities.invokeAndWait` to execute the GUI creation code on the event-dispatching thread. This `init` method sets up a [[Swing-其他特性-timer|Swing timer]] to fire action events the update the animation. Also, `init` uses [`javax.swing.SwingWorker`](https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingWorker.html) to create a background task that loads the animation image files, letting the applet present a GUI right away, without waiting for all resources to be loaded.
 
-```
+```java
 private void createGUI() {
     ...
     animator = new Animator();
@@ -207,11 +219,11 @@ You can find the applet's source code in [`TumbleItem.java`](https://docs.oracle
 
 ## Using Images in a Swing Applet
 
-The `Applet` class provides the `getImage` method for loading images into an applet. The `getImage` method creates and returns an `Image` object that represents the loaded image. Because Swing components use `Icon` s rather than `Image` s to refer to pictures, Swing applets tend not to use `getImage`. Instead Swing applets create instances of `ImageIcon` — an icon loaded from an image file. `ImageIcon` comes with a code-saving benefit: it handles image tracking automatically. Refer to [How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html) for more information.
+The `Applet` class provides the `getImage` method for loading images into an applet. The `getImage` method creates and returns an `Image` object that represents the loaded image. Because Swing components use `Icon` s rather than `Image` s to refer to pictures, Swing applets tend not to use `getImage`. Instead Swing applets create instances of `ImageIcon` — an icon loaded from an image file. `ImageIcon` comes with a code-saving benefit: it handles image tracking automatically. Refer to [[Swing-组件-icon|How to Use Icons]] for more information.
 
 The animation of Duke doing cartwheels requires 17 different pictures. The applet uses one `ImageIcon` per picture and loads them in its `init` method. Because images can take a long time to load, the icons are loaded in a separate thread implemented by a `SwingWorker` object. Here's the code:
 
-```
+```java
 public void init() {
     ...
     imgs = new ImageIcon[nimgs];
@@ -257,13 +269,13 @@ protected ImageIcon loadImage(int imageNum) {
 }
 ```
 
-The `loadImage` method loads the image for the specified frame of animation. It uses the `getResourceAsStream` method rather than the usual `getResource` method to get the images. The resulting code isn't pretty, but `getResourceAsStream` is more efficient than `getResource` for loading images from JAR files into applets that are executed using Java Plug-in™ software. For further details, see [Loading Images Into Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html#applet).
+The `loadImage` method loads the image for the specified frame of animation. It uses the `getResourceAsStream` method rather than the usual `getResource` method to get the images. The resulting code isn't pretty, but `getResourceAsStream` is more efficient than `getResource` for loading images from JAR files into applets that are executed using Java Plug-in™ software. For further details, see [[Swing-组件-icon|Loading Images Into Applets]].
 
 ## Embedding an Applet in an HTML Page
 
 You can deploy a simple applet by using the `applet` tag. Or, you can use the Deployment Toolkit. Here is the code for the cartwheeling Duke applet:
 
-```
+```xml
 <script src="https://www.java.com/js/deployJava.js" type="text/javascript">
 </script><script type="text/javascript">
 //<![CDATA[
@@ -277,11 +289,11 @@ You can deploy a simple applet by using the `applet` tag. Or, you can use the De
 </script><noscript>A browser with Javascript enabled is required for this page to operate properly.</noscript>
 ```
 
-For more information, see [Deploying an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/deployingApplet.html) in the [Java Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/index.html) lesson.
+For more information, see [[部署-Applet-deployingApplet|Deploying an Applet]] in the [[部署-Applet|Java Applets]] lesson.
 
 ## The JApplet API
 
-The next table lists the interesting methods that `JApplet` adds to the applet API. They give you access to features provided by the root pane. Other methods you might use are defined by the [`Component`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html) and [`Applet`](https://docs.oracle.com/javase/8/docs/api/java/applet/Applet.html) classes. See [Component Methods](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html#complookapi) for a list of commonly used `Component` methods, and [Java Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/index.html) for help in using `Applet` methods.
+The next table lists the interesting methods that `JApplet` adds to the applet API. They give you access to features provided by the root pane. Other methods you might use are defined by the [`Component`](https://docs.oracle.com/javase/8/docs/api/java/awt/Component.html) and [`Applet`](https://docs.oracle.com/javase/8/docs/api/java/applet/Applet.html) classes. See [[Swing-组件-jcomponent|Component Methods]] for a list of commonly used `Component` methods, and [[部署-Applet|Java Applets]] for help in using `Applet` methods.
 
 | Method | Purpose |
 | --- | --- |

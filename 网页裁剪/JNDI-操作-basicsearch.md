@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Basic Search (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/search.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ops/filter.html)
+[[JNDI-操作-search|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-操作-filter|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -29,7 +41,7 @@ NamingEnumeration answer = ctx.search("ou=People", matchAttrs);
 
 You can then print the results as follows.
 
-```
+```java
 while (answer.hasMore()) {
     SearchResult sr = (SearchResult)answer.next();
     System.out.println(">>>" + sr.getName());
@@ -41,7 +53,7 @@ printAttrs() is similar to the code in the getAttributes() example that prints a
 
 Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchRetAll.java) produces the following result.
 
-```
+```yaml
 # java SearchRetAll
 >>>cn=Ted Geisel
 attribute: sn
@@ -77,7 +89,7 @@ NamingEnumeration answer = ctx.search("ou=People", matchAttrs, attrIDs);
 
 [`This example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Search.java) returns the attributes "sn", "telephonenumber", "golfhandicap", and "mail" of entries that have an attribute "mail" and have a "sn" attribute with the value "Geisel". This example produces the following result. (The entry does not have a "golfhandicap" attribute, so it is not returned.)
 
-```
+```yaml
 # java Search 
 >>>cn=Ted Geisel
 attribute: sn

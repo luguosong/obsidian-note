@@ -16,15 +16,15 @@ Retrieving Distinguished Name
 
 [[JNDI-标准LDAP控件|Standard LDAP Controls]]
 
-[Paged Results Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html)
+[[JNDI-新特性-paged-results|Paged Results Control]]
 
-[Sort Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html)
+[[JNDI-新特性-sort|Sort Control]]
 
-[Manage Referral Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html)
+[[JNDI-新特性-mdsaIT|Manage Referral Control]]
 
 [[JNDI-LDAP名称操作|Manipulating LdapName (Distinguished Name)]]
 
-[Manipulating Relative Distinguished Name (RDN)](https://docs.oracle.com/javase/tutorial/jndi/newstuff/rdn.html)
+[[JNDI-新特性-rdn|Manipulating Relative Distinguished Name (RDN)]]
 
 [[JNDI-读取超时|Setting Timeout for Ldap Operations]]
 

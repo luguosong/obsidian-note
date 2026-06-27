@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Time Limit (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/timelimit.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/countlimit.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ops/faq.html)
+[[JNDI-操作-countlimit|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-操作-faq|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,7 +25,7 @@ A time limit on a search places an upper bound on the amount of time that the se
 
 To set the time limit of a search, pass the number of milliseconds to [SearchControls.setTimeLimit()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SearchControls.html#setTimeLimit-int-). The following [`example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchTimeLimit.java) sets the time limit to 1 second.
 
-```
+```bash
 // Set the search controls to limit the time to 1 second (1000 ms)
 SearchControls ctls = new SearchControls();
 ctls.setTimeLimit(1000);

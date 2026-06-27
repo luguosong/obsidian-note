@@ -1,56 +1,68 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Defining and Using Applet Parameters (The Java™ Tutorials >        
+            Deployment > Java Applets)"
+描述: "This deployment Java tutorial describes development and deployment of applets, Java Web Start applications, rich Internet applications, and JAR related tools"
+来源: "https://docs.oracle.com/javase/tutorial/deployment/applet/param.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Getting Started With Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/getStarted.html)
+[[部署-Applet-getStarted|Getting Started With Applets]]
 
-[Defining an Applet Subclass](https://docs.oracle.com/javase/tutorial/deployment/applet/subclass.html)
+[[部署-Applet-subclass|Defining an Applet Subclass]]
 
-[Methods for Milestones](https://docs.oracle.com/javase/tutorial/deployment/applet/appletMethods.html)
+[[部署-Applet-appletMethods|Methods for Milestones]]
 
-[Life Cycle of an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/lifeCycle.html)
+[[部署-Applet-lifeCycle|Life Cycle of an Applet]]
 
-[Applet's Execution Environment](https://docs.oracle.com/javase/tutorial/deployment/applet/appletExecutionEnv.html)
+[[部署-Applet-appletExecutionEnv|Applet's Execution Environment]]
 
-[Developing an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/developingApplet.html)
+[[部署-Applet-developingApplet|Developing an Applet]]
 
-[Deploying an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/deployingApplet.html)
+[[部署-Applet-deployingApplet|Deploying an Applet]]
 
-[Deploying With the Applet Tag](https://docs.oracle.com/javase/tutorial/deployment/applet/html.html)
+[[部署-Applet-html|Deploying With the Applet Tag]]
 
-[Doing More With Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/doingMoreWithApplets.html)
+[[部署-Applet-doingMoreWithApplets|Doing More With Applets]]
 
-[Finding and Loading Data Files](https://docs.oracle.com/javase/tutorial/deployment/applet/data.html)
+[[部署-Applet-data|Finding and Loading Data Files]]
 
 Defining and Using Applet Parameters
 
-[Displaying Short Status Strings](https://docs.oracle.com/javase/tutorial/deployment/applet/showStatus.html)
+[[部署-Applet-showStatus|Displaying Short Status Strings]]
 
-[Displaying Documents in the Browser](https://docs.oracle.com/javase/tutorial/deployment/applet/browser.html)
+[[部署-Applet-browser|Displaying Documents in the Browser]]
 
-[Invoking JavaScript Code From an Applet](https://docs.oracle.com/javase/tutorial/deployment/applet/invokingJavaScriptFromApplet.html)
+[[部署-Applet-invokingJavaScriptFromApplet|Invoking JavaScript Code From an Applet]]
 
-[Invoking Applet Methods From JavaScript Code](https://docs.oracle.com/javase/tutorial/deployment/applet/invokingAppletMethodsFromJavaScript.html)
+[[部署-Applet-invokingAppletMethodsFromJavaScript|Invoking Applet Methods From JavaScript Code]]
 
-[Handling Initialization Status With Event Handlers](https://docs.oracle.com/javase/tutorial/deployment/applet/appletStatus.html)
+[[部署-Applet-appletStatus|Handling Initialization Status With Event Handlers]]
 
-[Manipulating DOM of Applet's Web Page](https://docs.oracle.com/javase/tutorial/deployment/applet/manipulatingDOMFromApplet.html)
+[[部署-Applet-manipulatingDOMFromApplet|Manipulating DOM of Applet's Web Page]]
 
-[Writing Diagnostics to Standard Output and Error Streams](https://docs.oracle.com/javase/tutorial/deployment/applet/stdout.html)
+[[部署-Applet-stdout|Writing Diagnostics to Standard Output and Error Streams]]
 
-[Developing Draggable Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/draggableApplet.html)
+[[部署-Applet-draggableApplet|Developing Draggable Applets]]
 
-[Communicating With Other Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/iac.html)
+[[部署-Applet-iac|Communicating With Other Applets]]
 
-[Working With a Server-Side Application](https://docs.oracle.com/javase/tutorial/deployment/applet/server.html)
+[[部署-Applet-server|Working With a Server-Side Application]]
 
-[Network Client Applet Example](https://docs.oracle.com/javase/tutorial/deployment/applet/clientExample.html)
+[[部署-Applet-clientExample|Network Client Applet Example]]
 
-[What Applets Can and Cannot Do](https://docs.oracle.com/javase/tutorial/deployment/applet/security.html)
+[[部署-Applet-安全|What Applets Can and Cannot Do]]
 
-[Solving Common Applet Problems](https://docs.oracle.com/javase/tutorial/deployment/applet/problemsindex.html)
+[[部署-Applet-problemsindex|Solving Common Applet Problems]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/deployment/applet/QandE/questions.html)
+[[部署-Applet-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/deployment/applet/data.html) • [Trail](https://docs.oracle.com/javase/tutorial/deployment/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/deployment/applet/showStatus.html)
+[[部署-Applet-data|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/deployment/TOC.html) • [[部署-Applet-showStatus|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -65,11 +77,11 @@ Parameters are to Java applets what command-line arguments are to applications. 
 
 You can specify an applet's input parameters in the applet's Java Network Launch Protocol (JNLP) file or in the `<parameter>` element of the `<applet>` tag. It is usually better to specify the parameters in the applet's JNLP file so that the parameters can be supplied consistently even if the applet is deployed on multiple web pages. If the applet's parameters will vary by web page, then you should specify the parameters in the `<parameter>` element of the `<applet>` tag.
 
-If you are unfamiliar with JNLP, see the [Java Network Launch Protocol](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/jnlp.html) topic for more information.
+If you are unfamiliar with JNLP, see the [[部署-jnlp|Java Network Launch Protocol]] topic for more information.
 
 Consider an applet that takes three parameters. The `paramStr` and `paramInt` parameters are specified in the applet's JNLP file, [`` `applettakesparams.jnlp` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/applet_AppletWithParameters/src/applettakesparams.jnlp).
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <jnlp spec="1.0+" codebase="" href="">
     <!-- ... -->
@@ -88,7 +100,7 @@ Consider an applet that takes three parameters. The `paramStr` and `paramInt` pa
 
 The `paramOutsideJNLPFile` parameter is specified in the `parameters` variable passed to the Deployment Toolkit script's `runApplet` function in [`` `AppletPage.html` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/dist/applet_AppletWithParameters/AppletPage.html).
 
-```
+```html
 <html>
   <head>
     <title>Applet Takes Params</title>
@@ -113,13 +125,13 @@ The `paramOutsideJNLPFile` parameter is specified in the `parameters` variable p
 </html>
 ```
 
-See [Deploying an Applet](https://docs.oracle.com/javase/tutorial/deployment/deploymentInDepth/runAppletFunction.html) for more information about the `runApplet` function.
+See [[部署-runAppletFunction|Deploying an Applet]] for more information about the `runApplet` function.
 
 ## Retrieving the Applet's Input Parameters
 
 You can retrieve the applet's input parameters by using the [`getParameter`](https://docs.oracle.com/javase/8/docs/api/java/applet/Applet.html#getParameter-java.lang.String-) method of the `Applet` class. The [`` `AppletTakesParams.java` ``](https://docs.oracle.com/javase/tutorial/deployment/applet/examples/applet_AppletWithParameters/src/AppletTakesParams.java) applet retrieves and displays all its input parameters (`paramStr`, `paramInt`, and `paramOutsideJNLPFile`).
 
-```
+```java
 import javax.swing.JApplet;
 import javax.swing.SwingUtilities;
 import javax.swing.JLabel;
@@ -164,4 +176,4 @@ The `AppletTakesParams` applet is shown next.
 
 ---
 
-[Download source code](https://docs.oracle.com/javase/tutorial/deployment/applet/examplesIndex.html#AppletWithParameters) for the *Applet With Parameters* example to experiment further.
+[[部署-Applet-examplesIndex|Download source code]] for the *Applet With Parameters* example to experiment further.

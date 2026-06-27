@@ -1,9 +1,21 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Sort Control (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 **Trail:** Java Naming and Directory Interface  
 **Lesson:** New features in JDK 5.0 and JDK 6
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html)
+[[JNDI-新特性-paged-results|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-新特性-mdsaIT|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -25,7 +37,7 @@ The SortKey is an ordered list of keys based upon which the server sorts the res
 The example below illustrates the client-server interaction between a client performing a search requesting a server-side sorting based on the attribute "cn".
 
 1. Client sends a search request asking for
-	```
+	```bash
 	// Activate sorting
 	 String sortKey = "cn";
 	 ctx.setRequestControls(new Control[] { 
@@ -35,7 +47,7 @@ The example below illustrates the client-server interaction between a client per
 	     ctx.search("", "(objectclass=*)", new SearchControls());
 	```
 2. The server responds with entries that are sorted based on the "cn" attribute and its corresponding matching rule.
-	```
+	```java
 	// Iterate over sorted search results
 	 while (results != null && results.hasMore()) {
 	     // Display an entry

@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 Byte Streams
 
@@ -22,9 +22,9 @@ Byte Streams
 
 [[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Byte Streams
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,11 +70,11 @@ Byte Streams
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/io/streams.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-字符流|Next »]]
+[[Java核心类库-基本IO-streams|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-字符流|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

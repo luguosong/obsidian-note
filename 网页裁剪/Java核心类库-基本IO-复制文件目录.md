@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 [[Java核心类库-基本IO-字节流|Byte Streams]]
 
@@ -22,9 +22,9 @@ Documentation
 
 [[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Documentation
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,9 +70,9 @@ Copying a File or Directory
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
 **Trail:** Essential Java Classes  
 **Lesson:** Basic I/O  
@@ -99,7 +99,7 @@ This method takes a varargs argument. The following `StandardCopyOption` and `Li
 - `COPY_ATTRIBUTES` – Copies the file attributes associated with the file to the target file. The exact file attributes supported are file system and platform dependent, but `last-modified-time` is supported across platforms and is copied to the target file.
 - `NOFOLLOW_LINKS` – Indicates that symbolic links should not be followed. If the file to be copied is a symbolic link, the link is copied (and not the target of the link).
 
-If you are not familiar with `enums`, see [Enum Types](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html).
+If you are not familiar with `enums`, see [[类与对象-enum|Enum Types]].
 
 The following shows how to use the `copy` method:
 

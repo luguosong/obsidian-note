@@ -1,9 +1,21 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Paged Results Control (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 **Trail:** Java Naming and Directory Interface  
 **Lesson:** New features in JDK 5.0 and JDK 6
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/newstuff/controls-std.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html)
+[[JNDI-标准LDAP控件|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-新特性-sort|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -30,7 +42,7 @@ The server uses a cookie (similar to the HTTP session cookie mechanism) to maint
 The example below illustrates the client-server interaction between a client doing a search requesting a page size limit of 5. The entire result set returned by the server contains 21 entries.
 
 1. Client sends a search request asking for paged results with a page size of 5.
-	```
+	```bash
 	// Activate paged results
 	 int pageSize = 5; // 5 entries per page
 	 byte[] cookie = null;
@@ -42,7 +54,7 @@ The example below illustrates the client-server interaction between a client doi
 	                                        new SearchControls());
 	```
 2. The server responds with entries plus an indication of 21 total entries in the search result and an opaque cookie to be used by the client when retrieving subsequent pages.
-	```
+	```java
 	// Iterate over a batch of search results sent by the server
 	      while (results != null && results.hasMore()) {
 	          // Display an entry
@@ -69,7 +81,7 @@ The example below illustrates the client-server interaction between a client doi
 	      }
 	```
 3. Client sends an identical search request, returning the opaque cookie, asking for the next page.
-	```
+	```bash
 	// Re-activate paged results
 	       ctx.setRequestControls(new Control[]{
 	           new PagedResultsControl(pageSize, cookie, Control.CRITICAL) });

@@ -1,3 +1,14 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Trail: Custom Networking (The Java™ Tutorials)"
+描述: "This networking Java tutorial describes networking capabilities of the Java platform, working with URLs, sockets, datagrams, and cookies"
+来源: "https://docs.oracle.com/javase/tutorial/networking"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
@@ -11,17 +22,17 @@ The Java platform is highly regarded in part because of its suitability for writ
 
 This trail walks you through the complexities of writing Java applications and applets that can be used on the Internet.
 
-[**Overview of Networking**](https://docs.oracle.com/javase/tutorial/overview/index.html) has two sections. The first describes the networking capabilities of the Java platform that you may already be using without realizing that you are using the network. The second provides a brief overview of networking to familiarize you with terms and concepts that you should understand before reading how to use URLs, sockets, and datagrams.
+[[overview-overview|**Overview of Networking**]] has two sections. The first describes the networking capabilities of the Java platform that you may already be using without realizing that you are using the network. The second provides a brief overview of networking to familiarize you with terms and concepts that you should understand before reading how to use URLs, sockets, and datagrams.
 
-[**Working With URLs**](https://docs.oracle.com/javase/tutorial/urls/index.html) discusses how your Java programs can use URLs to access information on the Internet. A URL (Uniform Resource Locator) is the address of a resource on the Internet. Your Java programs can use URLs to connect to and retrieve information over a network. This lesson provides a more complete definition of a URL and shows you how to create and parse a URL, how to open a connection to a URL, and how to read from and write to that connection.
+[[urls-urls|**Working With URLs**]] discusses how your Java programs can use URLs to access information on the Internet. A URL (Uniform Resource Locator) is the address of a resource on the Internet. Your Java programs can use URLs to connect to and retrieve information over a network. This lesson provides a more complete definition of a URL and shows you how to create and parse a URL, how to open a connection to a URL, and how to read from and write to that connection.
 
-[**All About Sockets**](https://docs.oracle.com/javase/tutorial/sockets/index.html) explains how to use sockets so that your programs can communicate with other programs on the network. A socket is one endpoint of a two-way communication link between two programs running on the network. This lesson shows you how a client can connect to a standard server, the Echo server, and communicate with it via a socket. It then walks you through the details of a complete client/server example, which shows you how to implement both the client side and the server side of a client/server pair.
+[[sockets-sockets|**All About Sockets**]] explains how to use sockets so that your programs can communicate with other programs on the network. A socket is one endpoint of a two-way communication link between two programs running on the network. This lesson shows you how a client can connect to a standard server, the Echo server, and communicate with it via a socket. It then walks you through the details of a complete client/server example, which shows you how to implement both the client side and the server side of a client/server pair.
 
-[**All About Datagrams**](https://docs.oracle.com/javase/tutorial/datagrams/index.html) takes you step by step through a simple client/server example that uses datagrams to communicate. It then challenges you to rewrite the example using multicast socket instead.
+[[datagrams-datagrams|**All About Datagrams**]] takes you step by step through a simple client/server example that uses datagrams to communicate. It then challenges you to rewrite the example using multicast socket instead.
 
-[**Programmatic Access to Network Parameters**](https://docs.oracle.com/javase/tutorial/nifs/index.html) explains why you might want to access network interface parameters and how to do so. It gives examples of how to list all the IP addresses assigned to the machine as well as other useful information such as whether the interface is running.
+[[nifs-nifs|**Programmatic Access to Network Parameters**]] explains why you might want to access network interface parameters and how to do so. It gives examples of how to list all the IP addresses assigned to the machine as well as other useful information such as whether the interface is running.
 
-[**Working With Cookies**](https://docs.oracle.com/javase/tutorial/cookies/index.html) discusses how cookies are used to create a session between a client and server, and how you can take advantage of cookies in your HTTP URL connections.
+[[cookies-cookies|**Working With Cookies**]] discusses how cookies are used to create a session between a client and server, and how you can take advantage of cookies in your HTTP URL connections.
 
 ---
 

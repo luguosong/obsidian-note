@@ -1,24 +1,36 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Deque Implementations (The Java™ Tutorials >        
+            Collections > Implementations)"
+描述: "This collections Java tutorial describes interfaces, implementations, and algorithms in the Java Collections framework"
+来源: "https://docs.oracle.com/javase/tutorial/collections/implementations/deque.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Set Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/set.html)
+[[集合-实现-set|Set Implementations]]
 
-[List Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/list.html)
+[[集合-实现-list|List Implementations]]
 
-[Map Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/map.html)
+[[集合-实现-map|Map Implementations]]
 
-[Queue Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/queue.html)
+[[集合-实现-queue|Queue Implementations]]
 
 Deque Implementations
 
-[Wrapper Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/wrapper.html)
+[[集合-实现-包装器实现|Wrapper Implementations]]
 
-[Convenience Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/convenience.html)
+[[集合-实现-convenience|Convenience Implementations]]
 
-[Summary of Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/summary.html)
+[[集合-实现-summary|Summary of Implementations]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/collections/implementations/QandE/questions.html)
+[[集合-实现-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/collections/implementations/queue.html) • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/collections/implementations/wrapper.html)
+[[集合-实现-queue|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [[集合-实现-包装器实现|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -45,7 +57,7 @@ The `LinkedList` implementation consumes more memory than the `ArrayDeque` imple
 
 The `foreach` is fast and can be used for all kinds of lists.
 
-```
+```java
 ArrayDeque<String> aDeque = new ArrayDeque<String>();
 
 . . .
@@ -58,7 +70,7 @@ for (String str : aDeque) {
 
 The `Iterator` can be used for the forward traversal on all kinds of lists for all kinds of data.
 
-```
+```java
 ArrayDeque<String> aDeque = new ArrayDeque<String>();
 . . .
 for (Iterator<String> iter = aDeque.iterator(); iter.hasNext();  ) {

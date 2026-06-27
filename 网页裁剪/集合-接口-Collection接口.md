@@ -30,9 +30,9 @@ The Collection Interface
 
 [[集合-接口-SortedMap接口|The SortedMap Interface]]
 
-[Summary of Interfaces](https://docs.oracle.com/javase/tutorial/collections/interfaces/summary.html)
+[[集合-接口-summary|Summary of Interfaces]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/collections/interfaces/QandE/questions.html)
+[[集合-接口-questions|Questions and Exercises]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -110,7 +110,7 @@ The Collections framework has always provided a number of so-called "bulk operat
 
 ### for-each Construct
 
-The `for-each` construct allows you to concisely traverse a collection or array using a `for` loop — see [The for Statement](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html). The following code uses the `for-each` construct to print out each element of a collection on a separate line.
+The `for-each` construct allows you to concisely traverse a collection or array using a `for` loop — see [[语言基础-for|The for Statement]]. The following code uses the `for-each` construct to print out each element of a collection on a separate line.
 
 ```java
 for (Object o : collection)

@@ -1,12 +1,24 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Installed Extensions (The Java™ Tutorials >        
+            The Extension Mechanism > Creating and Using Extensions)"
+描述: "This Java tutorial describes how to create and use extensions or optional packages and make them secure"
+来源: "https://docs.oracle.com/javase/tutorial/ext/basics/install.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 Installed Extensions
 
-[Download Extensions](https://docs.oracle.com/javase/tutorial/ext/basics/download.html)
+[[扩展机制-download|Download Extensions]]
 
-[Understanding Extension Class Loading](https://docs.oracle.com/javase/tutorial/ext/basics/load.html)
+[[扩展机制-load|Understanding Extension Class Loading]]
 
-[Creating Extensible Applications](https://docs.oracle.com/javase/tutorial/ext/basics/spi.html)
+[[扩展机制-服务提供者机制|Creating Extensible Applications]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -51,7 +63,7 @@ This class has a single method, area, that takes an instance of java.awt.Rectang
 
 Suppose that you want to test RectangleArea with an application called `AreaApp`:
 
-```
+```java
 import java.awt.*;
 
 public class AreaApp {

@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Questions and Exercises: Regular Expressions (The Java™ Tutorials >        
+            Essential Java Classes > Regular Expressions)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/regex/QandE/questions.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/regex/resources.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/end.html)
+[[Java核心类库-正则表达式-附加资源|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/end.html)
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -24,4 +36,4 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 1. Use a backreference to write an expression that will match a person's name only if that person's first name and last name are the same.
 
-[Check your answers.](https://docs.oracle.com/javase/tutorial/essential/regex/QandE/answers.html)
+[[Java核心类库-正则表达式-answers|Check your answers.]]

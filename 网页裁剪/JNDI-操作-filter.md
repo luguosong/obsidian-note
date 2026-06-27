@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Filters (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/filter.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ops/scope.html)
+[[JNDI-操作-basicsearch|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-操作-scope|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -17,9 +29,9 @@ The following search filter specifies that the qualifying entries must have an "
 (&(sn=Geisel)(mail=*))
 ```
 
-The following code creates a filter and default [SearchControls](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SearchControls.html), and uses them to perform a search. The search is equivalent to the one presented in the [basic search](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html) example.
+The following code creates a filter and default [SearchControls](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SearchControls.html), and uses them to perform a search. The search is equivalent to the one presented in the [[JNDI-操作-basicsearch|basic search]] example.
 
-```
+```bash
 // Create the default search controls
 SearchControls ctls = new SearchControls();
 
@@ -34,7 +46,7 @@ NamingEnumeration answer = ctx.search("ou=People", filter, ctls);
 
 Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchWithFilterRetAll.java) produces the following result.
 
-```
+```yaml
 # java SearchWithFilterRetAll
 >>>cn=Ted Geisel
 attribute: sn
@@ -85,16 +97,16 @@ For a complete description of the syntax, see [RFC 2254](http://ietf.org/rfc/rfc
 
 The previous example returned all attributes associated with the entries that satisfy the specified filter. You can select the attributes to return by setting the search controls argument. You create an array of attribute identifiers that you want to include in the result and pass it to [SearchControls.setReturningAttributes()](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/SearchControls.html#setReturningAttributes-java.lang.String:A-). Here's an example.
 
-```
+```bash
 // Specify the ids of the attributes to return
 String[] attrIDs = {"sn", "telephonenumber", "golfhandicap", "mail"};
 SearchControls ctls = new SearchControls();
 ctls.setReturningAttributes(attrIDs);
 ```
 
-This example is equivalent to the [Returning Selected Attributes](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html#SELECT) example in the Basic Search section. Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchWithFilter.java) produces the following results. (The entry does not have a "golfhandicap" attribute, so it is not returned.)
+This example is equivalent to the [[JNDI-操作-basicsearch|Returning Selected Attributes]] example in the Basic Search section. Running [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/SearchWithFilter.java) produces the following results. (The entry does not have a "golfhandicap" attribute, so it is not returned.)
 
-```
+```yaml
 # java SearchWithFilter
 >>>cn=Ted Geisel
 attribute: sn

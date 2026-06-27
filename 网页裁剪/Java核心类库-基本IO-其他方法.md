@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 [[Java核心类库-基本IO-字节流|Byte Streams]]
 
@@ -22,9 +22,9 @@ Documentation
 
 [[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Documentation
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,9 +70,9 @@ Other Useful Methods
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
 **Trail:** Essential Java Classes  
 **Lesson:** Basic I/O  
@@ -144,7 +144,7 @@ The [`getSeparator`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Fil
 
 A file system has one or more file stores to hold its files and directories. The *file store* represents the underlying storage device. In UNIX operating systems, each mounted file system is represented by a file store. In Microsoft Windows, each volume is represented by a file store: `C:`, `D:`, and so on.
 
-To retrieve a list of all the file stores for the file system, you can use the [`getFileStores`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getFileStores--) method. This method returns an `Iterable`, which allows you to use the [enhanced for](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) statement to iterate over all the root directories.
+To retrieve a list of all the file stores for the file system, you can use the [`getFileStores`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getFileStores--) method. This method returns an `Iterable`, which allows you to use the [[语言基础-for|enhanced for]] statement to iterate over all the root directories.
 
 ```
 for (FileStore store: FileSystems.getDefault().getFileStores()) {

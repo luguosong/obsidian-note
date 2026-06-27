@@ -1,62 +1,74 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Providing Constructors for Your Classes (The Java™ Tutorials >        
+            Learning the Java Language > Classes and Objects)"
+描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+来源: "https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html)
+[[类与对象-classes|Classes]]
 
-[Declaring Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/classdecl.html)
+[[类与对象-classdecl|Declaring Classes]]
 
-[Declaring Member Variables](https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html)
+[[类与对象-variables|Declaring Member Variables]]
 
-[Defining Methods](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html)
+[[类与对象-方法|Defining Methods]]
 
 Providing Constructors for Your Classes
 
-[Passing Information to a Method or a Constructor](https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html)
+[[类与对象-arguments|Passing Information to a Method or a Constructor]]
 
-[Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objects.html)
+[[类与对象-objects|Objects]]
 
-[Creating Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/objectcreation.html)
+[[类与对象-objectcreation|Creating Objects]]
 
-[Using Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/usingobject.html)
+[[类与对象-usingobject|Using Objects]]
 
-[More on Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/more.html)
+[[类与对象-more|More on Classes]]
 
-[Returning a Value from a Method](https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html)
+[[类与对象-returnvalue|Returning a Value from a Method]]
 
-[Using the this Keyword](https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html)
+[[类与对象-thiskey|Using the this Keyword]]
 
-[Controlling Access to Members of a Class](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+[[类与对象-accesscontrol|Controlling Access to Members of a Class]]
 
-[Understanding Class Members](https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html)
+[[类与对象-类成员|Understanding Class Members]]
 
-[Initializing Fields](https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html)
+[[类与对象-initial|Initializing Fields]]
 
-[Summary of Creating and Using Classes and Objects](https://docs.oracle.com/javase/tutorial/java/javaOO/summaryclasses.html)
+[[类与对象-summaryclasses|Summary of Creating and Using Classes and Objects]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/creating-questions.html)
+[[类与对象-创建类练习|Questions and Exercises]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/objects-questions.html)
+[[类与对象-objects-questions|Questions and Exercises]]
 
-[Nested Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
+[[类与对象-嵌套类|Nested Classes]]
 
-[Inner Class Example](https://docs.oracle.com/javase/tutorial/java/javaOO/innerclasses.html)
+[[类与对象-innerclasses|Inner Class Example]]
 
-[Local Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html)
+[[类与对象-局部类|Local Classes]]
 
-[Anonymous Classes](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html)
+[[类与对象-匿名类|Anonymous Classes]]
 
-[Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
+[[类与对象-Lambda表达式|Lambda Expressions]]
 
-[Method References](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
+[[类与对象-方法引用|Method References]]
 
-[When to Use Nested Classes, Local Classes, Anonymous Classes, and Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/whentouse.html)
+[[类与对象-whentouse|When to Use Nested Classes, Local Classes, Anonymous Classes, and Lambda Expressions]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/nested-questions.html)
+[[类与对象-nested-questions|Questions and Exercises]]
 
-[Enum Types](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+[[类与对象-enum|Enum Types]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/java/javaOO/QandE/enum-questions.html)
+[[类与对象-enum-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/javaOO/methods.html) • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html)
+[[类与对象-方法|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[类与对象-arguments|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

@@ -1,24 +1,36 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Map Implementations (The Java™ Tutorials >        
+            Collections > Implementations)"
+描述: "This collections Java tutorial describes interfaces, implementations, and algorithms in the Java Collections framework"
+来源: "https://docs.oracle.com/javase/tutorial/collections/implementations/map.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Set Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/set.html)
+[[集合-实现-set|Set Implementations]]
 
-[List Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/list.html)
+[[集合-实现-list|List Implementations]]
 
 Map Implementations
 
-[Queue Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/queue.html)
+[[集合-实现-queue|Queue Implementations]]
 
-[Deque Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/deque.html)
+[[集合-实现-deque|Deque Implementations]]
 
-[Wrapper Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/wrapper.html)
+[[集合-实现-包装器实现|Wrapper Implementations]]
 
-[Convenience Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/convenience.html)
+[[集合-实现-convenience|Convenience Implementations]]
 
-[Summary of Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/summary.html)
+[[集合-实现-summary|Summary of Implementations]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/collections/implementations/QandE/questions.html)
+[[集合-实现-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/collections/implementations/list.html) • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/collections/implementations/queue.html)
+[[集合-实现-list|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/collections/TOC.html) • [[集合-实现-queue|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -31,7 +43,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## General-Purpose Map Implementations
 
-The three general-purpose [`Map`](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html) implementations are [`HashMap`](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html), [`TreeMap`](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) and [`LinkedHashMap`](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html). If you need `SortedMap` operations or key-ordered `Collection` -view iteration, use `TreeMap`; if you want maximum speed and don't care about iteration order, use `HashMap`; if you want near- `HashMap` performance and insertion-order iteration, use `LinkedHashMap`. In this respect, the situation for `Map` is analogous to `Set`. Likewise, everything else in the [Set Implementations](https://docs.oracle.com/javase/tutorial/collections/implementations/set.html) section also applies to `Map` implementations.
+The three general-purpose [`Map`](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html) implementations are [`HashMap`](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html), [`TreeMap`](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html) and [`LinkedHashMap`](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html). If you need `SortedMap` operations or key-ordered `Collection` -view iteration, use `TreeMap`; if you want maximum speed and don't care about iteration order, use `HashMap`; if you want near- `HashMap` performance and insertion-order iteration, use `LinkedHashMap`. In this respect, the situation for `Map` is analogous to `Set`. Likewise, everything else in the [[集合-实现-set|Set Implementations]] section also applies to `Map` implementations.
 
 `LinkedHashMap` provides two capabilities that are not available with `LinkedHashSet`. When you create a `LinkedHashMap`, you can order it based on key access rather than insertion. In other words, merely looking up the value associated with a key brings that key to the end of the map. Also, `LinkedHashMap` provides the `removeEldestEntry` method, which may be overridden to impose a policy for removing stale mappings automatically when new mappings are added to the map. This makes it very easy to implement a custom cache.
 

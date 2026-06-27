@@ -14,7 +14,7 @@ Documentation
 
 Standard MBeans
 
-[MXBeans](https://docs.oracle.com/javase/tutorial/jmx/mbeans/mxbeans.html)
+[[JMX-MBeans-mxbeans|MXBeans]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

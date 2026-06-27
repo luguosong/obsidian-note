@@ -1,38 +1,50 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Time Zone and Offset Classes (The Java™ Tutorials >        
+            Date Time > Standard Calendar)"
+描述: "This date-time Java tutorial describes how to use the java.time APIs introduced in JDK 8 to write date and time code. The core package uses the standard calendar as defined in the ISO calendar system."
+来源: "https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Overview](https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html)
+[[日期时间-ISO标准-overview|Overview]]
 
-[DayOfWeek and Month Enums](https://docs.oracle.com/javase/tutorial/datetime/iso/enum.html)
+[[日期时间-ISO标准-enum|DayOfWeek and Month Enums]]
 
-[Date Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/date.html)
+[[日期时间-ISO标准-date|Date Classes]]
 
-[Date and Time Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html)
+[[日期时间-ISO标准-datetime|Date and Time Classes]]
 
 Time Zone and Offset Classes
 
-[Instant Class](https://docs.oracle.com/javase/tutorial/datetime/iso/instant.html)
+[[日期时间-ISO标准-instant|Instant Class]]
 
-[Parsing and Formatting](https://docs.oracle.com/javase/tutorial/datetime/iso/format.html)
+[[日期时间-ISO标准-format|Parsing and Formatting]]
 
-[The Temporal Package](https://docs.oracle.com/javase/tutorial/datetime/iso/temporal.html)
+[[日期时间-ISO标准-temporal|The Temporal Package]]
 
-[Temporal Adjuster](https://docs.oracle.com/javase/tutorial/datetime/iso/adjusters.html)
+[[日期时间-ISO标准-adjusters|Temporal Adjuster]]
 
-[Temporal Query](https://docs.oracle.com/javase/tutorial/datetime/iso/queries.html)
+[[日期时间-ISO标准-queries|Temporal Query]]
 
-[Period and Duration](https://docs.oracle.com/javase/tutorial/datetime/iso/period.html)
+[[日期时间-ISO标准-period|Period and Duration]]
 
-[Clock](https://docs.oracle.com/javase/tutorial/datetime/iso/clock.html)
+[[日期时间-ISO标准-clock|Clock]]
 
-[Non-ISO Date Conversion](https://docs.oracle.com/javase/tutorial/datetime/iso/nonIso.html)
+[[日期时间-ISO标准-nonIso|Non-ISO Date Conversion]]
 
-[Legacy Date-Time Code](https://docs.oracle.com/javase/tutorial/datetime/iso/legacy.html)
+[[日期时间-遗留日期时间代码|Legacy Date-Time Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/datetime/iso/summary.html)
+[[日期时间-ISO标准-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/datetime/iso/QandE/questions.html)
+[[日期时间-ISO标准-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html) • [Trail](https://docs.oracle.com/javase/tutorial/datetime/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/datetime/iso/instant.html)
+[[日期时间-ISO标准-datetime|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/datetime/TOC.html) • [[日期时间-ISO标准-instant|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -52,7 +64,7 @@ The Date-Time API provides two classes for specifying a time zone or an offset:
 
 Offsets from Greenwich/UTC time are usually defined in whole hours, but there are exceptions. The following code, from the [`TimeZoneId`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/TimeZoneId.java) example, prints a list of all time zones that use offsets from Greenwich/UTC that are not defined in whole hours.
 
-```
+```java
 Set<String> allZones = ZoneId.getAvailableZoneIds();
 LocalDateTime dt = LocalDateTime.now();
 
@@ -131,7 +143,7 @@ The following code, from the [`Flight`](https://docs.oracle.com/javase/tutorial/
 
 A DateTimeFormatter object is used to format the ZonedDateTime instances for printing:
 
-```
+```java
 DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM d yyyy  hh:mm a");
 
 // Leaving from San Francisco on July 20, 2013, at 7:30 p.m.
@@ -170,7 +182,7 @@ else
 
 This produces the following output:
 
-```
+```yaml
 LEAVING:  Jul 20 2013  07:30 PM (America/Los_Angeles)
 ARRIVING: Jul 21 2013  10:20 PM (Asia/Tokyo)
   (Asia/Tokyo standard time will be in effect.)
@@ -182,7 +194,7 @@ The [OffsetDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetD
 
 The following example uses OffsetDateTime with the TemporalAdjuster.lastDay method to find the last Thursday in July 2013.
 
-```
+```java
 // Find the last Thursday in July 2013.
 LocalDateTime localDate = LocalDateTime.of(2013, Month.JULY, 20, 19, 30);
 ZoneOffset offset = ZoneOffset.of("-08:00");

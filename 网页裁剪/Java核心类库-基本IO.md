@@ -65,7 +65,7 @@
 
 ## I/O 类的实际应用
 
-下一路线[自定义网络](https://docs.oracle.com/javase/tutorial/networking/index.html)中的许多示例使用本课描述的 I/O 流来读取和写入网络连接。
+下一路线[[自定义网络-networking|自定义网络]]中的许多示例使用本课描述的 I/O 流来读取和写入网络连接。
 
 ---
 

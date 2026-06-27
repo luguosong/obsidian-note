@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Non-ISO Date Conversion (The Java™ Tutorials >        
+            Date Time > Standard Calendar)"
+描述: "This date-time Java tutorial describes how to use the java.time APIs introduced in JDK 8 to write date and time code. The core package uses the standard calendar as defined in the ISO calendar system."
+来源: "https://docs.oracle.com/javase/tutorial/datetime/iso/nonIso.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/datetime/iso/clock.html) • [Trail](https://docs.oracle.com/javase/tutorial/datetime/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/datetime/iso/legacy.html)
+[[日期时间-ISO标准-clock|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/datetime/TOC.html) • [[日期时间-遗留日期时间代码|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -27,7 +39,7 @@ ThaiBuddhistDate tdate = ThaiBuddhistDate.from(date);
 
 The [`StringConverter`](https://docs.oracle.com/javase/tutorial/datetime/iso/examples/StringConverter.java) example converts from a LocalDate to a ChronoLocalDate to a String and back. The toString method takes an instance of LocalDate and a Chronology and returns the converted string by using the provided Chronology. The DateTimeFormatterBuilder is used to build a string that can be used for printing the date:
 
-```
+```java
 /**
  * Converts a LocalDate (ISO) value to a ChronoLocalDate date
  * using the provided Chronology, and then formats the
@@ -66,7 +78,7 @@ public static String toString(LocalDate localDate, Chronology chrono) {
 
 When the method is invoked with the following date for the predefined chronologies:
 
-```
+```java
 LocalDate date = LocalDate.of(1996, Month.OCTOBER, 29);
 System.out.printf("%s%n",
      StringConverter.toString(date, JapaneseChronology.INSTANCE));
@@ -134,7 +146,7 @@ return null;
 
 When the method is invoked with the following strings:
 
-```
+```java
 System.out.printf("%s%n", StringConverter.fromString("10/29/0008 H",
     JapaneseChronology.INSTANCE));
 System.out.printf("%s%n", StringConverter.fromString("10/29/0085 1",

@@ -1,3 +1,15 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Overview (The Java™ Tutorials >        
+            Date Time > Standard Calendar)"
+描述: "This date-time Java tutorial describes how to use the java.time APIs introduced in JDK 8 to write date and time code. The core package uses the standard calendar as defined in the ISO calendar system."
+来源: "https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
@@ -23,19 +35,19 @@ The following table summarizes the temporal-based classes in the java.time packa
 
 | Class or Enum | Year | Month | Day | Hours | Minutes | Seconds\* | Zone Offset | Zone ID | toString Output | Where Discussed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Instant |  |  |  |  |  |  |  |  | 2013-08-20T15:16:26.355Z | [Instant Class](https://docs.oracle.com/javase/tutorial/datetime/iso/instant.html) |
-| LocalDate |  |  |  |  |  |  |  |  | 2013-08-20 | [Date Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/date.html) |
-| LocalDateTime |  |  |  |  |  |  |  |  | 2013-08-20T08:16:26.937 | [Date and Time Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html) |
-| ZonedDateTime |  |  |  |  |  |  |  |  | 2013-08-21T00:16:26.941+09:00\[Asia/Tokyo\] | [Time Zone and Offset Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html) |
-| LocalTime |  |  |  |  |  |  |  |  | 08:16:26.943 | [Date and Time Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html) |
-| MonthDay |  |  |  |  |  |  |  |  | \--08-20 | [Date Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/date.html) |
-| Year |  |  |  |  |  |  |  |  | 2013 | [Date Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/date.html) |
-| YearMonth |  |  |  |  |  |  |  |  | 2013-08 | [Date Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/date.html) |
-| Month |  |  |  |  |  |  |  |  | AUGUST | [DayOfWeek and Month Enums](https://docs.oracle.com/javase/tutorial/datetime/iso/enum.html) |
-| OffsetDateTime |  |  |  |  |  |  |  |  | 2013-08-20T08:16:26.954-07:00 | [Time Zone and Offset Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html) |
-| OffsetTime |  |  |  |  |  |  |  |  | 08:16:26.957-07:00 | [Time Zone and Offset Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html) |
-| Duration |  |  | \*\* | \*\* | \*\* |  |  |  | PT20H (20 hours) | [Period and Duration](https://docs.oracle.com/javase/tutorial/datetime/iso/period.html) |
-| Period |  |  |  |  |  |  | \*\*\* | \*\*\* | P10D (10 days) | [Period and Duration](https://docs.oracle.com/javase/tutorial/datetime/iso/period.html) |
+| Instant |  |  |  |  |  |  |  |  | 2013-08-20T15:16:26.355Z | [[日期时间-ISO标准-instant|Instant Class]] |
+| LocalDate |  |  |  |  |  |  |  |  | 2013-08-20 | [[日期时间-ISO标准-date|Date Classes]] |
+| LocalDateTime |  |  |  |  |  |  |  |  | 2013-08-20T08:16:26.937 | [[日期时间-ISO标准-datetime|Date and Time Classes]] |
+| ZonedDateTime |  |  |  |  |  |  |  |  | 2013-08-21T00:16:26.941+09:00\[Asia/Tokyo\] | [[日期时间-ISO标准-timezones|Time Zone and Offset Classes]] |
+| LocalTime |  |  |  |  |  |  |  |  | 08:16:26.943 | [[日期时间-ISO标准-datetime|Date and Time Classes]] |
+| MonthDay |  |  |  |  |  |  |  |  | \--08-20 | [[日期时间-ISO标准-date|Date Classes]] |
+| Year |  |  |  |  |  |  |  |  | 2013 | [[日期时间-ISO标准-date|Date Classes]] |
+| YearMonth |  |  |  |  |  |  |  |  | 2013-08 | [[日期时间-ISO标准-date|Date Classes]] |
+| Month |  |  |  |  |  |  |  |  | AUGUST | [[日期时间-ISO标准-enum|DayOfWeek and Month Enums]] |
+| OffsetDateTime |  |  |  |  |  |  |  |  | 2013-08-20T08:16:26.954-07:00 | [[日期时间-ISO标准-timezones|Time Zone and Offset Classes]] |
+| OffsetTime |  |  |  |  |  |  |  |  | 08:16:26.957-07:00 | [[日期时间-ISO标准-timezones|Time Zone and Offset Classes]] |
+| Duration |  |  | \*\* | \*\* | \*\* |  |  |  | PT20H (20 hours) | [[日期时间-ISO标准-period|Period and Duration]] |
+| Period |  |  |  |  |  |  | \*\*\* | \*\*\* | P10D (10 days) | [[日期时间-ISO标准-period|Period and Duration]] |
 
 | \* | Seconds are captured to nanosecond precision. |
 | --- | --- |

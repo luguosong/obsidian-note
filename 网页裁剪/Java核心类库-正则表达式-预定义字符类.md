@@ -34,11 +34,11 @@ Predefined Character Classes
 
 [[Java核心类库-正则表达式-PatternSyntaxException方法|Methods of the PatternSyntaxException Class]]
 
-[Unicode Support](https://docs.oracle.com/javase/tutorial/essential/regex/unicode.html)
+[[Java核心类库-正则表达式-unicode|Unicode Support]]
 
 [[Java核心类库-正则表达式-附加资源|Additional Resources]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/regex/QandE/questions.html)
+[[Java核心类库-正则表达式-questions|Questions and Exercises]]
 
 [[Java核心类库-正则表达式-字符类|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-正则表达式-量词|Next »]]
 

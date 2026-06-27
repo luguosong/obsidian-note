@@ -1,30 +1,42 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Other Configuration Utilities (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/environment/other.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Configuration Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/config.html)
+[[Java核心类库-平台环境-配置实用工具|Configuration Utilities]]
 
-[Properties](https://docs.oracle.com/javase/tutorial/essential/environment/properties.html)
+[[Java核心类库-平台环境-properties|Properties]]
 
-[Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+[[Java核心类库-平台环境-cmdLineArgs|Command-Line Arguments]]
 
-[Environment Variables](https://docs.oracle.com/javase/tutorial/essential/environment/env.html)
+[[Java核心类库-平台环境-env|Environment Variables]]
 
 Other Configuration Utilities
 
-[System Utilities](https://docs.oracle.com/javase/tutorial/essential/environment/system.html)
+[[Java核心类库-平台环境-系统实用工具|System Utilities]]
 
-[Command-Line I/O Objects](https://docs.oracle.com/javase/tutorial/essential/environment/cl.html)
+[[Java核心类库-平台环境-cl|Command-Line I/O Objects]]
 
-[System Properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)
+[[Java核心类库-平台环境-sysprop|System Properties]]
 
-[The Security Manager](https://docs.oracle.com/javase/tutorial/essential/environment/security.html)
+[[Java核心类库-平台环境-security|The Security Manager]]
 
-[Miscellaneous Methods in System](https://docs.oracle.com/javase/tutorial/essential/environment/sysmisc.html)
+[[Java核心类库-平台环境-sysmisc|Miscellaneous Methods in System]]
 
-[PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)
+[[Java核心类库-平台环境-PATH与CLASSPATH|PATH and CLASSPATH]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/environment/QandE/questions.html)
+[[Java核心类库-平台环境-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/environment/env.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/environment/system.html)
+[[Java核心类库-平台环境-env|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-平台环境-系统实用工具|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -37,10 +49,10 @@ Here is a summary of some other configuration utilities.
 
 The *Preferences API* allows applications to store and retrieve configuration data in an implementation-dependent backing store. Asynchronous updates are supported, and the same set of preferences can be safely updated by multiple threads and even multiple applications. For more information, refer to the [Preferences API Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/preferences/index.html).
 
-An application deployed in a *JAR archive* uses a *manifest* to describe the contents of the archive. For more information, refer to the [Packaging Programs in JAR Files](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html) lesson.
+An application deployed in a *JAR archive* uses a *manifest* to describe the contents of the archive. For more information, refer to the [[将程序打包为JAR文件|Packaging Programs in JAR Files]] lesson.
 
-The configuration of a *Java Web Start application* is contained in a *JNLP file*. For more information, refer to the [Java Web Start](https://docs.oracle.com/javase/tutorial/deployment/webstart/index.html) lesson.
+The configuration of a *Java Web Start application* is contained in a *JNLP file*. For more information, refer to the [[部署-WebStart|Java Web Start]] lesson.
 
-The configuration of a *Java Plug-in applet* is partially determined by the HTML tags used to embed the applet in the web page. Depending on the applet and the browser, these tags can include `<applet>`, `<object>`, `<embed>`, and `<param>`. For more information, refer to the [Java Applets](https://docs.oracle.com/javase/tutorial/deployment/applet/index.html) lesson.
+The configuration of a *Java Plug-in applet* is partially determined by the HTML tags used to embed the applet in the web page. Depending on the applet and the browser, these tags can include `<applet>`, `<object>`, `<embed>`, and `<param>`. For more information, refer to the [[部署-Applet|Java Applets]] lesson.
 
-The class [`java.util.ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) provides a simple *service provider* facility. A service provider is an implementation of a *service* — a well-known set of interfaces and (usually abstract) classes. The classes in a service provider typically implement the interfaces and subclass the classes defined in the service. Service providers can be installed as extensions (see [The Extension Mechanism](https://docs.oracle.com/javase/tutorial/ext/index.html)). Providers can also be made available by adding them to the class path or by some other platform-specific means.
+The class [`java.util.ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) provides a simple *service provider* facility. A service provider is an implementation of a *service* — a well-known set of interfaces and (usually abstract) classes. The classes in a service provider typically implement the interfaces and subclass the classes defined in the service. Service providers can be installed as extensions (see [[扩展机制|The Extension Mechanism]]). Providers can also be made available by adding them to the class path or by some other platform-specific means.

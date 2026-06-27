@@ -39,6 +39,6 @@ Java 2D API 提供以下能力：
 
 - [[二维图形-渲染|Java 2D 渲染]]
 - [[二维图形-几何原语|几何原语]]
-- [文本](https://docs.oracle.com/javase/tutorial/2d/overview/text.html)
-- [图像](https://docs.oracle.com/javase/tutorial/2d/overview/images.html)
-- [打印](https://docs.oracle.com/javase/tutorial/2d/overview/printing.html)
+- [[二维图形-text|文本]]
+- [[二维图形-images|图像]]
+- [[二维图形-printing|打印]]

@@ -1,68 +1,80 @@
+---
+分类:
+  - "网页裁剪"
+标题: "File I/O (Featuring NIO.2) (The Java™ Tutorials >        
+            Essential Java Classes > Basic I/O)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/io/fileio.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
-[Byte Streams](https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html)
+[[Java核心类库-基本IO-字节流|Byte Streams]]
 
-[Character Streams](https://docs.oracle.com/javase/tutorial/essential/io/charstreams.html)
+[[Java核心类库-基本IO-字符流|Character Streams]]
 
-[Buffered Streams](https://docs.oracle.com/javase/tutorial/essential/io/buffers.html)
+[[Java核心类库-基本IO-缓冲流|Buffered Streams]]
 
-[Scanning and Formatting](https://docs.oracle.com/javase/tutorial/essential/io/scanfor.html)
+[[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
-[I/O from the Command Line](https://docs.oracle.com/javase/tutorial/essential/io/cl.html)
+[[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
-[Data Streams](https://docs.oracle.com/javase/tutorial/essential/io/datastreams.html)
+[[Java核心类库-基本IO-数据流|Data Streams]]
 
-[Object Streams](https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)
+[[Java核心类库-基本IO-对象流|Object Streams]]
 
 File I/O (Featuring NIO.2)
 
-[What Is a Path? (And Other File System Facts)](https://docs.oracle.com/javase/tutorial/essential/io/path.html)
+[[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
-[The Path Class](https://docs.oracle.com/javase/tutorial/essential/io/pathClass.html)
+[[Java核心类库-基本IO-Path类|The Path Class]]
 
-[Path Operations](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
+[[Java核心类库-基本IO-路径操作|Path Operations]]
 
-[File Operations](https://docs.oracle.com/javase/tutorial/essential/io/fileOps.html)
+[[Java核心类库-基本IO-文件操作|File Operations]]
 
-[Checking a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
+[[Java核心类库-基本IO-检查文件目录|Checking a File or Directory]]
 
-[Deleting a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/delete.html)
+[[Java核心类库-基本IO-删除文件目录|Deleting a File or Directory]]
 
-[Copying a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/copy.html)
+[[Java核心类库-基本IO-复制文件目录|Copying a File or Directory]]
 
-[Moving a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/move.html)
+[[Java核心类库-基本IO-移动文件目录|Moving a File or Directory]]
 
-[Managing Metadata (File and File Store Attributes)](https://docs.oracle.com/javase/tutorial/essential/io/fileAttr.html)
+[[Java核心类库-基本IO-管理元数据|Managing Metadata (File and File Store Attributes)]]
 
-[Reading, Writing, and Creating Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+[[Java核心类库-基本IO-读写创建文件|Reading, Writing, and Creating Files]]
 
-[Random Access Files](https://docs.oracle.com/javase/tutorial/essential/io/rafs.html)
+[[Java核心类库-基本IO-随机访问文件|Random Access Files]]
 
-[Creating and Reading Directories](https://docs.oracle.com/javase/tutorial/essential/io/dirs.html)
+[[Java核心类库-基本IO-创建读取目录|Creating and Reading Directories]]
 
-[Links, Symbolic or Otherwise](https://docs.oracle.com/javase/tutorial/essential/io/links.html)
+[[Java核心类库-基本IO-链接|Links, Symbolic or Otherwise]]
 
-[Walking the File Tree](https://docs.oracle.com/javase/tutorial/essential/io/walk.html)
+[[Java核心类库-基本IO-遍历文件树|Walking the File Tree]]
 
-[Finding Files](https://docs.oracle.com/javase/tutorial/essential/io/find.html)
+[[Java核心类库-基本IO-查找文件|Finding Files]]
 
-[Watching a Directory for Changes](https://docs.oracle.com/javase/tutorial/essential/io/notification.html)
+[[Java核心类库-基本IO-监视目录变化|Watching a Directory for Changes]]
 
-[Other Useful Methods](https://docs.oracle.com/javase/tutorial/essential/io/misc.html)
+[[Java核心类库-基本IO-其他方法|Other Useful Methods]]
 
-[Legacy File I/O Code](https://docs.oracle.com/javase/tutorial/essential/io/legacy.html)
+[[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/io/path.html)
+[[Java核心类库-基本IO-对象流|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-什么是路径|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -79,13 +91,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 The `java.nio.file` package and its related package, `java.nio.file.attribute`, provide comprehensive support for file I/O and for accessing the default file system. Though the API has many classes, you need to focus on only a few entry points. You will see that this API is very intuitive and easy to use.
 
-The tutorial starts by asking [what is a path?](https://docs.oracle.com/javase/tutorial/essential/io/path.html) Then, the [Path class](https://docs.oracle.com/javase/tutorial/essential/io/pathClass.html), the primary entry point for the package, is introduced. Methods in the `Path` class relating to [syntactic operations](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html) are explained. The tutorial then moves on to the other primary class in the package, the `Files` class, which contains methods that deal with file operations. First, some concepts common to many [file operations](https://docs.oracle.com/javase/tutorial/essential/io/fileOps.html) are introduced. The tutorial then covers methods for [checking](https://docs.oracle.com/javase/tutorial/essential/io/check.html), [deleting](https://docs.oracle.com/javase/tutorial/essential/io/delete.html), [copying](https://docs.oracle.com/javase/tutorial/essential/io/copy.html), and [moving](https://docs.oracle.com/javase/tutorial/essential/io/move.html) files.
+The tutorial starts by asking [[Java核心类库-基本IO-什么是路径|what is a path?]] Then, the [[Java核心类库-基本IO-Path类|Path class]], the primary entry point for the package, is introduced. Methods in the `Path` class relating to [[Java核心类库-基本IO-路径操作|syntactic operations]] are explained. The tutorial then moves on to the other primary class in the package, the `Files` class, which contains methods that deal with file operations. First, some concepts common to many [[Java核心类库-基本IO-文件操作|file operations]] are introduced. The tutorial then covers methods for [[Java核心类库-基本IO-检查文件目录|checking]], [[Java核心类库-基本IO-删除文件目录|deleting]], [[Java核心类库-基本IO-复制文件目录|copying]], and [[Java核心类库-基本IO-移动文件目录|moving]] files.
 
-The tutorial shows how [metadata](https://docs.oracle.com/javase/tutorial/essential/io/fileAttr.html) is managed, before moving on to [file I/O](https://docs.oracle.com/javase/tutorial/essential/io/file.html) and [directory I/O](https://docs.oracle.com/javase/tutorial/essential/io/dirs.html). [Random access files](https://docs.oracle.com/javase/tutorial/essential/io/rafs.html) are explained and issues specific to [symbolic and hard links](https://docs.oracle.com/javase/tutorial/essential/io/links.html) are examined.
+The tutorial shows how [[Java核心类库-基本IO-管理元数据|metadata]] is managed, before moving on to [[Java核心类库-基本IO-读写创建文件|file I/O]] and [[Java核心类库-基本IO-创建读取目录|directory I/O]]. [[Java核心类库-基本IO-随机访问文件|Random access files]] are explained and issues specific to [[Java核心类库-基本IO-链接|symbolic and hard links]] are examined.
 
-Next, some of the very powerful, but more advanced, topics are covered. First, the capability to [recursively walk the file tree](https://docs.oracle.com/javase/tutorial/essential/io/walk.html) is demonstrated, followed by information about how to [search for files using wild cards](https://docs.oracle.com/javase/tutorial/essential/io/find.html). Next, how to [watch a directory for changes](https://docs.oracle.com/javase/tutorial/essential/io/notification.html) is explained and demonstrated. Then, [methods that didn't fit elsewhere](https://docs.oracle.com/javase/tutorial/essential/io/misc.html) are given some attention.
+Next, some of the very powerful, but more advanced, topics are covered. First, the capability to [[Java核心类库-基本IO-遍历文件树|recursively walk the file tree]] is demonstrated, followed by information about how to [[Java核心类库-基本IO-查找文件|search for files using wild cards]]. Next, how to [[Java核心类库-基本IO-监视目录变化|watch a directory for changes]] is explained and demonstrated. Then, [[Java核心类库-基本IO-其他方法|methods that didn't fit elsewhere]] are given some attention.
 
-Finally, if you have file I/O code written prior to the Java SE 7 release, there is a [map from the old API to the new API](https://docs.oracle.com/javase/tutorial/essential/io/legacy.html#mapping), as well as important information about the `File.toPath` method for developers who would like to [leverage the new API without rewriting existing code](https://docs.oracle.com/javase/tutorial/essential/io/legacy.html#interop).
+Finally, if you have file I/O code written prior to the Java SE 7 release, there is a [[Java核心类库-基本IO-遗留文件IO|map from the old API to the new API]], as well as important information about the `File.toPath` method for developers who would like to [[Java核心类库-基本IO-遗留文件IO|leverage the new API without rewriting existing code]].
 
 ---
 

@@ -1,40 +1,52 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Add, Replace Bindings with Attributes (The Java™ Tutorials >        
+            Java Naming and Directory Interface > Naming and Directory Operations)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/ops/bindattr.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Naming Exceptions](https://docs.oracle.com/javase/tutorial/jndi/ops/exception.html)
+[[JNDI-操作-exception|Naming Exceptions]]
 
-[Lookup an Object](https://docs.oracle.com/javase/tutorial/jndi/ops/lookup.html)
+[[JNDI-查找对象|Lookup an Object]]
 
-[List the Context](https://docs.oracle.com/javase/tutorial/jndi/ops/list.html)
+[[JNDI-列出上下文|List the Context]]
 
-[Add, Replace or Remove a Binding](https://docs.oracle.com/javase/tutorial/jndi/ops/bind.html)
+[[JNDI-添加绑定|Add, Replace or Remove a Binding]]
 
-[Rename](https://docs.oracle.com/javase/tutorial/jndi/ops/rename.html)
+[[JNDI-重命名对象|Rename]]
 
-[Create and Destroy Subcontexts](https://docs.oracle.com/javase/tutorial/jndi/ops/create.html)
+[[JNDI-创建子上下文|Create and Destroy Subcontexts]]
 
-[Attribute Names](https://docs.oracle.com/javase/tutorial/jndi/ops/attrnames.html)
+[[JNDI-操作-attrnames|Attribute Names]]
 
-[Read Attributes](https://docs.oracle.com/javase/tutorial/jndi/ops/getattrs.html)
+[[JNDI-操作-getattrs|Read Attributes]]
 
-[Modify Attributes](https://docs.oracle.com/javase/tutorial/jndi/ops/modattrs.html)
+[[JNDI-操作-modattrs|Modify Attributes]]
 
 Add, Replace Bindings with Attributes
 
-[Search](https://docs.oracle.com/javase/tutorial/jndi/ops/search.html)
+[[JNDI-操作-search|Search]]
 
-[Basic Search](https://docs.oracle.com/javase/tutorial/jndi/ops/basicsearch.html)
+[[JNDI-操作-basicsearch|Basic Search]]
 
-[Filters](https://docs.oracle.com/javase/tutorial/jndi/ops/filter.html)
+[[JNDI-操作-filter|Filters]]
 
-[Scope](https://docs.oracle.com/javase/tutorial/jndi/ops/scope.html)
+[[JNDI-操作-scope|Scope]]
 
-[Result Count](https://docs.oracle.com/javase/tutorial/jndi/ops/countlimit.html)
+[[JNDI-操作-countlimit|Result Count]]
 
-[Time Limit](https://docs.oracle.com/javase/tutorial/jndi/ops/timelimit.html)
+[[JNDI-操作-timelimit|Time Limit]]
 
-[Trouble Shooting Tips](https://docs.oracle.com/javase/tutorial/jndi/ops/faq.html)
+[[JNDI-操作-faq|Trouble Shooting Tips]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/ops/modattrs.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/ops/search.html)
+[[JNDI-操作-modattrs|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-操作-search|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -43,7 +55,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## Add, Replace Bindings with Attributes
 
-The naming examples discussed how you can use [bind(), rebind()](https://docs.oracle.com/javase/tutorial/jndi/ops/bind.html). The [DirContext](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html) interface contains overloaded versions of these methods that accept attributes. You can use these DirContext methods to associate attributes with the object at the time that the binding or subcontext is added to the namespace. For example, you might create a Person object and bind it to the namespace and at the same time associate attributes about that Person object.
+The naming examples discussed how you can use [[JNDI-添加绑定|bind(), rebind()]]. The [DirContext](https://docs.oracle.com/javase/8/docs/api/javax/naming/directory/DirContext.html) interface contains overloaded versions of these methods that accept attributes. You can use these DirContext methods to associate attributes with the object at the time that the binding or subcontext is added to the namespace. For example, you might create a Person object and bind it to the namespace and at the same time associate attributes about that Person object.
 
 ## Adding a Binding That Has Attributes
 
@@ -66,7 +78,7 @@ ctx.bind("ou=favorite, ou=Fruits", fruit, attrs);
 
 [`This example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Bind.java) creates an object of class [`Fruit`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Fruit.java) and binds it to the name "ou=favorite" into the context named "ou=Fruits", relative to ctx. This binding has the "objectclass" attribute. If you subsequently looked up the name "ou=favorite, ou=Fruits" in ctx, then you would get the fruit object. If you then got the attributes of "ou=favorite, ou=Fruits", you would get those attributes with which the object was created. Following is this example's output.
 
-```
+```yaml
 # java Bind
 orange
 attribute: objectclass
@@ -109,7 +121,7 @@ ctx.rebind("ou=favorite, ou=Fruits", fruit, attrs);
 
 When you run [`this example`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Rebind.java), it replaces the binding that the [`bind()`](https://docs.oracle.com/javase/tutorial/jndi/ops/examples/Bind.java) example created.
 
-```
+```yaml
 # java Rebind
 lemon
 attribute: objectclass

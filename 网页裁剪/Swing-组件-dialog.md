@@ -1,90 +1,102 @@
+---
+分类:
+  - "网页裁剪"
+标题: "How to Make Dialogs (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)"
+描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
-[How to Make Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html)
+[[Swing-组件-applet|How to Make Applets]]
 
-[How to Use Buttons, Check Boxes, and Radio Buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
-[How to Use Color Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html)
+[[Swing-组件-colorchooser|How to Use Color Choosers]]
 
-[How to Use Combo Boxes](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-combobox|How to Use Combo Boxes]]
 
 How to Make Dialogs
 
-[How to Use Editor Panes and Text Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-editorpane|How to Use Editor Panes and Text Panes]]
 
-[How to Use File Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-filechooser|How to Use File Choosers]]
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
-[How to Use Sliders](https://docs.oracle.com/javase/tutorial/uiswing/components/slider.html)
+[[Swing-滑块|How to Use Sliders]]
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-combobox|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-组件-editorpane|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -95,7 +107,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 A Dialog window is an independent sub window meant to carry temporary notice apart from the main Swing Application Window. Most Dialogs present an error message or warning to a user, but Dialogs can present images, directory trees, or just about anything compatible with the main Swing Application that manages them.
 
-For convenience, several Swing component classes can directly instantiate and display *dialogs*. To create simple, standard dialogs, you use the [`JOptionPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html) class. The [`ProgressMonitor`](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html) class can put up a dialog that shows the progress of an operation. Two other classes, [`JColorChooser`](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html) and [`JFileChooser`](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html), also supply standard dialogs. To bring up a print dialog, you can use the [Printing](https://docs.oracle.com/javase/tutorial/2d/printing/index.html) API. To create a custom dialog, use the [`JDialog`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html) class directly.
+For convenience, several Swing component classes can directly instantiate and display *dialogs*. To create simple, standard dialogs, you use the [`JOptionPane`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html) class. The [[Swing-组件-progress|`ProgressMonitor`]] class can put up a dialog that shows the progress of an operation. Two other classes, [[Swing-组件-colorchooser|`JColorChooser`]] and [[Swing-组件-filechooser|`JFileChooser`]], also supply standard dialogs. To bring up a print dialog, you can use the [[二维图形-打印|Printing]] API. To create a custom dialog, use the [`JDialog`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html) class directly.
 
 The code for simple dialogs can be minimal. For example, here is an informational dialog:
 
@@ -117,7 +129,7 @@ A Dialog can be *modal*. When a modal Dialog is visible, it blocks user input to
 
 Starting with JDK 7, you can modify dialog window modality behavior using the new Modality API. See [The New Modality API](http://www.oracle.com/technetwork/articles/javase/modality-137604.html) for details.
 
-The `JDialog` class is a subclass of the AWT [`java.awt.Dialog`](https://docs.oracle.com/javase/8/docs/api/java/awt/Dialog.html) class. It adds a [root pane](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html) container and support for a default close operation to the `Dialog` object. These are the same features that `JFrame` has, and using `JDialog` directly is very similar to using `JFrame`. If you're going to use `JDialog` directly, then you should understand the material in [Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html) and [How to Make Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html), especially [Responding to Window-Closing Events](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html#windowevents).
+The `JDialog` class is a subclass of the AWT [`java.awt.Dialog`](https://docs.oracle.com/javase/8/docs/api/java/awt/Dialog.html) class. It adds a [[Swing-组件-rootpane|root pane]] container and support for a default close operation to the `Dialog` object. These are the same features that `JFrame` has, and using `JDialog` directly is very similar to using `JFrame`. If you're going to use `JDialog` directly, then you should understand the material in [[Swing-组件-toplevel|Using Top-Level Containers]] and [[Swing-组件-frame|How to Make Frames]], especially [[Swing-组件-frame|Responding to Window-Closing Events]].
 
 Even when you use `JOptionPane` to implement a dialog, you're still using a `JDialog` behind the scenes. The reason is that `JOptionPane` is simply a container that can automatically create a `JDialog` and add itself to the `JDialog` 's content pane.
 
@@ -142,7 +154,7 @@ Here is a picture of an application that displays dialogs.
 
 ## JOptionPane Features
 
-Using `JOptionPane`, you can quickly create and customize several different kinds of dialogs. `JOptionPane` provides support for laying out standard dialogs, providing icons, specifying the dialog title and text, and customizing the button text. Other features allow you to customize the components the dialog displays and specify where the dialog should appear onscreen. You can even specify that an option pane put itself into an [internal frame](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html) (`JInternalFrame`) instead of a `JDialog`.
+Using `JOptionPane`, you can quickly create and customize several different kinds of dialogs. `JOptionPane` provides support for laying out standard dialogs, providing icons, specifying the dialog title and text, and customizing the button text. Other features allow you to customize the components the dialog displays and specify where the dialog should appear onscreen. You can even specify that an option pane put itself into an [[Swing-组件-internalframe|internal frame]] (`JInternalFrame`) instead of a `JDialog`.
 
 When you create a `JOptionPane`, look-and-feel-specific code adds components to the `JOptionPane` and determines the layout of those components.
 
@@ -157,7 +169,7 @@ When you create a `JOptionPane`, look-and-feel-specific code adds components to 
 
 ## Creating and Showing Simple Dialogs
 
-For most simple modal dialogs, you create and show the dialog using one of `JOptionPane` 's `show*Xxx*Dialog` methods. If your dialog should be an [internal frame](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html), then add `Internal` after `show` — for example, `showMessageDialog` changes to `showInternalMessageDialog`. If you need to control the dialog window-closing behavior or if you do not want the dialog to be modal, then you should directly instantiate `JOptionPane` and add it to a `JDialog` instance. Then invoke `setVisible(true)` on the `JDialog` to make it appear.
+For most simple modal dialogs, you create and show the dialog using one of `JOptionPane` 's `show*Xxx*Dialog` methods. If your dialog should be an [[Swing-组件-internalframe|internal frame]], then add `Internal` after `show` — for example, `showMessageDialog` changes to `showInternalMessageDialog`. If you need to control the dialog window-closing behavior or if you do not want the dialog to be modal, then you should directly instantiate `JOptionPane` and add it to a `JDialog` instance. Then invoke `setVisible(true)` on the `JDialog` to make it appear.
 
 The two most useful `show*Xxx*Dialog` methods are `showMessageDialog` and `showOptionDialog`. The `showMessageDialog` method displays a simple, one-button dialog. The `showOptionDialog` method displays a customized dialog — it can display a variety of buttons with customized button text, and can contain a standard text message or a collection of components.
 
@@ -309,7 +321,7 @@ By default, when the user clicks a `JOptionPane` -created button, the dialog clo
 
 Besides setting the property change listener, the following code also calls the `JDialog` 's `setDefaultCloseOperation` method and implements a window listener that handles the window close attempt properly. If you do not care to be notified when the user closes the window explicitly, then ignore the bold code.
 
-```
+```java
 final JOptionPane optionPane = new JOptionPane(
                 "The only way to close this dialog is by\n"
                 + "pressing one of the following buttons.\n"
@@ -377,23 +389,23 @@ The API is listed as follows:
 | Method or Constructor | Purpose |
 | --- | --- |
 | [JOptionPane()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane--)   [JOptionPane(Object)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane-java.lang.Object-)   [JOptionPane(Object, int)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane-java.lang.Object-int-)   [JOptionPane(Object, int, int)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane-java.lang.Object-int-int-)   [JOptionPane(Object, int, int, Icon)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane-java.lang.Object-int-int-javax.swing.Icon-)   [JOptionPane(Object, int, int, Icon, Object\[\])](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane-java.lang.Object-int-int-javax.swing.Icon-java.lang.Object:A-)   [JOptionPane(Object, int, int, Icon, Object\[\], Object)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#JOptionPane-java.lang.Object-int-int-javax.swing.Icon-java.lang.Object:A-java.lang.Object-) | Creates a `JOptionPane` instance. See [Creating and Showing Simple Dialogs](#create) for a discussion of the arguments and their effects. |
-| [static Frame getFrameForComponent(Component)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#getFrameForComponent-java.awt.Component-)   [static JDesktopPane getDesktopPaneForComponent(Component)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#getDesktopPaneForComponent-java.awt.Component-) | Handy `JOptionPane` class methods that find the [frame](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html) or [desktop pane](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html), respectively, that the specified component is in. |
+| [static Frame getFrameForComponent(Component)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#getFrameForComponent-java.awt.Component-)   [static JDesktopPane getDesktopPaneForComponent(Component)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#getDesktopPaneForComponent-java.awt.Component-) | Handy `JOptionPane` class methods that find the [[Swing-组件-frame|frame]] or [[Swing-组件-internalframe|desktop pane]], respectively, that the specified component is in. |
 | [int getMaxCharactersPerLineCount()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html#getMaxCharactersPerLineCount--) | Determines where line breaks will be automatically inserted in the option pane text. (The default is `Integer.MAX_VALUE`.) To use this method, you must create a `JOptionPane` subclass. For example, the following code results in an option pane with one word per line, due to the fact that each word in the string is 5 characters or less:  ``` JOptionPane op = new JOptionPane("This is the text.") {     public int getMaxCharactersPerLineCount() {         return 5;     } }; ``` |
 
 | Method or Constructor | Purpose |
 | --- | --- |
 | [JDialog()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog--)   [JDialog(Dialog)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Dialog-)   [JDialog(Dialog, boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Dialog-boolean-)   [JDialog(Dialog, String)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Dialog-java.lang.String-)   [JDialog(Dialog, String, boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Dialog-java.lang.String-boolean-)   [JDialog(Dialog, String, boolean, GraphicsConfiguration)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Dialog-java.lang.String-boolean-java.awt.GraphicsConfiguration-)   [JDialog(Frame)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Frame-)   [JDialog(Frame, boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Frame-boolean-)   [JDialog(Frame, String)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Frame-java.lang.String-)   [JDialog(Frame, String, boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Frame-java.lang.String-boolean-)   [JDialog(Frame, String, boolean, GraphicsConfiguration)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Frame-java.lang.String-boolean-java.awt.GraphicsConfiguration-)   [JDialog(Window owner)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Frame-java.lang.String-boolean-java.awt.GraphicsConfiguration-)   [JDialog(Window owner, Dialog.ModalityType modalityType)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Window-java.awt.Dialog.ModalityType-)   [JDialog(Window owner, String title)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Window-java.lang.String-)   [JDialog(Window owner, String title, Dialog.ModalityType modalityType)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Window-java.lang.String-java.awt.Dialog.ModalityType-)   [JDialog(Window owner, String title, Dialog.ModalityType modalityType, GraphicsConfiguration gc)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#JDialog-java.awt.Window-java.lang.String-java.awt.Dialog.ModalityType-java.awt.GraphicsConfiguration-) | Creates a `JDialog` instance. The `Frame` argument, if any, is the frame (usually a `JFrame` object) that the dialog depends on. Make the boolean argument `true` to specify a modal dialog, `false` or absent to specify a non-modal dialog. You can also specify the title of the dialog, using a string argument. |
-| [void setContentPane(Container)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setContentPane-java.awt.Container-)   [Container getContentPane()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#getContentPane--) | Get and set the content pane, which is usually the container of all the dialog's components. See [Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html) for more information. |
-| [void setDefaultCloseOperation(int)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setDefaultCloseOperation-int-)   [int getDefaultCloseOperation()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#getDefaultCloseOperation--) | Get and set what happens when the user tries to close the dialog. Possible values: `DISPOSE_ON_CLOSE`, `DO_NOTHING_ON_CLOSE`, `HIDE_ON_CLOSE` (the default). See [Responding to Window-Closing Events](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html#windowevents) for more information. |
+| [void setContentPane(Container)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setContentPane-java.awt.Container-)   [Container getContentPane()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#getContentPane--) | Get and set the content pane, which is usually the container of all the dialog's components. See [[Swing-组件-toplevel|Using Top-Level Containers]] for more information. |
+| [void setDefaultCloseOperation(int)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setDefaultCloseOperation-int-)   [int getDefaultCloseOperation()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#getDefaultCloseOperation--) | Get and set what happens when the user tries to close the dialog. Possible values: `DISPOSE_ON_CLOSE`, `DO_NOTHING_ON_CLOSE`, `HIDE_ON_CLOSE` (the default). See [[Swing-组件-frame|Responding to Window-Closing Events]] for more information. |
 | [void setLocationRelativeTo(Component)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setLocationRelativeTo-java.awt.Component-) | Centers the dialog over the specified component. |
-| [static void setDefaultLookAndFeelDecorated(boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setDefaultLookAndFeelDecorated-boolean-)   [static boolean isDefaultLookAndFeelDecorated()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#isDefaultLookAndFeelDecorated--) | Set or get a hint as to whether the dialog's window decorations (such as borders, or widgets to close the window) should be provided by the current look and feel. Otherwise the dialog's decorations will be provided by the current window manager. See [Specifying Window Decorations](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html#setDefaultLookAndFeelDecorated) for more information. |
+| [static void setDefaultLookAndFeelDecorated(boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#setDefaultLookAndFeelDecorated-boolean-)   [static boolean isDefaultLookAndFeelDecorated()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JDialog.html#isDefaultLookAndFeelDecorated--) | Set or get a hint as to whether the dialog's window decorations (such as borders, or widgets to close the window) should be provided by the current look and feel. Otherwise the dialog's decorations will be provided by the current window manager. See [[Swing-组件-frame|Specifying Window Decorations]] for more information. |
 
 ## Examples that Use Dialogs
 
-This table lists examples that use `JOptionPane` or `JDialog`. To find other examples that use dialogs, see the example lists for [progress bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html#eg), [color choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html#eg), and [file choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html#eg).
+This table lists examples that use `JOptionPane` or `JDialog`. To find other examples that use dialogs, see the example lists for [[Swing-组件-progress|progress bars]], [[Swing-组件-colorchooser|color choosers]], and [[Swing-组件-filechooser|file choosers]].
 
 | Example | Where Described | Notes |
 | --- | --- | --- |
 | [`DialogDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#DialogDemo),   [`CustomDialog`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#DialogDemo) | This section | Creates many kinds of dialogs, using `JOptionPane` and `JDialog`. |
 | [`Framework`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#Framework) | — | Brings up a confirmation dialog when the user selects the Quit menu item. |
-| [`ListDialog`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#ListDialog) | [How to Use BoxLayout](https://docs.oracle.com/javase/tutorial/uiswing/layout/box.html) | Implements a modal dialog containing a scrolling list and two buttons. Does not use `JOptionPane`, except for the utility method `getFrameForComponent`. |
+| [`ListDialog`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#ListDialog) | [[Swing-布局-box|How to Use BoxLayout]] | Implements a modal dialog containing a scrolling list and two buttons. Does not use `JOptionPane`, except for the utility method `getFrameForComponent`. |

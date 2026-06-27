@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "The for Statement (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)"
+描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+来源: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/branch.html)
+[[语言基础-while|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[语言基础-branch|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -26,7 +38,7 @@ When using this version of the `for` statement, keep in mind that:
 
 The following program, [`ForDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ForDemo.java), uses the general form of the `for` statement to print the numbers 1 through 10 to standard output:
 
-```
+```java
 class ForDemo {
     public static void main(String[] args){
          for(int i=1; i<11; i++){
@@ -63,7 +75,7 @@ for ( ; ; ) {
 }
 ```
 
-The `for` statement also has another form designed for iteration through [Collections](https://docs.oracle.com/javase/tutorial/collections/index.html) and [arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html) This form is sometimes referred to as the *enhanced for* statement, and can be used to make your loops more compact and easy to read. To demonstrate, consider the following array, which holds the numbers 1 through 10:
+The `for` statement also has another form designed for iteration through [[集合|Collections]] and [[语言基础-arrays|arrays]] This form is sometimes referred to as the *enhanced for* statement, and can be used to make your loops more compact and easy to read. To demonstrate, consider the following array, which holds the numbers 1 through 10:
 
 ```
 int[] numbers = {1,2,3,4,5,6,7,8,9,10};
@@ -71,7 +83,7 @@ int[] numbers = {1,2,3,4,5,6,7,8,9,10};
 
 The following program, [`EnhancedForDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/EnhancedForDemo.java), uses the enhanced `for` to loop through the array:
 
-```
+```java
 class EnhancedForDemo {
     public static void main(String[] args){
          int[] numbers = 

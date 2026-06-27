@@ -37,4 +37,4 @@ ctx.rename("cn=Scott Seligman", "cn=Scott S");
 ctx.rename("cn=Scott S", "cn=Scott Seligman");
 ```
 
-For more examples on renaming of LDAP entries check out the [Advanced Topics for LDAP users](https://docs.oracle.com/javase/tutorial/jndi/ldap/rename.html) lesson.
+For more examples on renaming of LDAP entries check out the [[JNDI-LDAP高级-rename|Advanced Topics for LDAP users]] lesson.

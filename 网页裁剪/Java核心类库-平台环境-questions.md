@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Questions and Exercises: The Platform Environment (The Java™ Tutorials >        
+            Essential Java Classes > The Platform Environment)"
+描述: "This Java tutorial describes exceptions, basic input/output, concurrency, regular expressions, and the platform environment"
+来源: "https://docs.oracle.com/javase/tutorial/essential/environment/QandE/questions.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html) • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
+[[Java核心类库-平台环境-PATH与CLASSPATH|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-正则表达式|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -28,4 +40,4 @@ In this case, the `Hello` class is compiled into a.class file in the current dir
 - If `PersistentEcho` is run with no command line arguments, it looks for an environment variable called PERSISTENTECHO. If that variable exists, `PersistentEcho` prints out its value, and also saves the value in the same way it does for command line arguments.
 - If `PersistentEcho` is run with no command line arguments, and the PERSISTENTECHO environment variable is not defined, it retrieves the property value from `PersistentEcho.txt` and prints that out.
 
-[Check your answers.](https://docs.oracle.com/javase/tutorial/essential/environment/QandE/answers.html)
+[[Java核心类库-平台环境-answers|Check your answers.]]

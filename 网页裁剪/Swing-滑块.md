@@ -12,91 +12,91 @@
 
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
-[How to Make Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html)
+[[Swing-组件-applet|How to Make Applets]]
 
 [[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
-[How to Use Color Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html)
+[[Swing-组件-colorchooser|How to Use Color Choosers]]
 
-[How to Use Combo Boxes](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-combobox|How to Use Combo Boxes]]
 
-[How to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-dialog|How to Make Dialogs]]
 
-[How to Use Editor Panes and Text Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-editorpane|How to Use Editor Panes and Text Panes]]
 
-[How to Use File Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html)
+[[Swing-组件-filechooser|How to Use File Choosers]]
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
 How to Use Sliders
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-separator|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-组件-spinner|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -105,7 +105,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## How to Use Sliders
 
-A [`JSlider`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JSlider.html) component is intended to let the user easily enter a numeric value bounded by a minimum and maximum value. If space is limited, a [spinner](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html) is a possible alternative to a slider.
+A [`JSlider`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JSlider.html) component is intended to let the user easily enter a numeric value bounded by a minimum and maximum value. If space is limited, a [[Swing-组件-spinner|spinner]] is a possible alternative to a slider.
 
 The following picture shows an application that uses a slider to control animation speed:
 
@@ -145,7 +145,7 @@ Font font = new Font("Serif", Font.ITALIC, 15);
 framesPerSecond.setFont(font);
 ```
 
-When you move the slider's knob, the `stateChanged` method of the slider's `ChangeListener` is called. For information about change listeners, refer to [How to Write a Change Listener](https://docs.oracle.com/javase/tutorial/uiswing/events/changelistener.html). Here is the change listener code that reacts to slider value changes:
+When you move the slider's knob, the `stateChanged` method of the slider's `ChangeListener` is called. For information about change listeners, refer to [[Swing-事件监听-changelistener|How to Write a Change Listener]]. Here is the change listener code that reacts to slider value changes:
 
 ```java
 public void stateChanged(ChangeEvent e) {
@@ -202,7 +202,7 @@ Use the `createStandardLabels` method of the `JSlider` class to create a set of 
 
 ## The Slider API
 
-The following tables list the commonly used `JSlider` constructors and methods. See [The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html) for tables of commonly used inherited methods.
+The following tables list the commonly used `JSlider` constructors and methods. See [[Swing-组件-jcomponent|The JComponent Class]] for tables of commonly used inherited methods.
 
 The API for using sliders is divided into these categories:
 
@@ -250,6 +250,6 @@ This table shows the examples that use `JSlider` and where those examples are de
 | --- | --- | --- |
 | [`SliderDemo`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#SliderDemo) | This section | Shows a slider with labels at major tick marks. |
 | [`SliderDemo2`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#SliderDemo2) | This section | Shows a vertical slider with custom labels. |
-| [`Converter`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#Converter) | [Using Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html), [How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html) | A measurement conversion application featuring two sliders that share data and have custom `BoundedRangeModel` s. |
+| [`Converter`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#Converter) | [[Swing-组件-model|Using Models]], [[Swing-组件-panel|How to Use Panels]] | A measurement conversion application featuring two sliders that share data and have custom `BoundedRangeModel` s. |
 
 If you are programming in JavaFX, see [Slider](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/slider.htm).

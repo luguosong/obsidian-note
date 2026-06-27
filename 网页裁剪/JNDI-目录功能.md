@@ -16,9 +16,9 @@ Documentation
 
 Directory and LDAP Packages
 
-[Event and Service Provider Packages](https://docs.oracle.com/javase/tutorial/jndi/overview/event.html)
+[[JNDI-概述-event|Event and Service Provider Packages]]
 
-[[JNDI-命名功能|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/overview/event.html)
+[[JNDI-命名功能|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-概述-event|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  

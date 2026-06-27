@@ -1,25 +1,37 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Manipulating Relative Distinguished Name (RDN) (The Java™ Tutorials >        
+            Java Naming and Directory Interface > New features in JDK 5.0 and JDK 6)"
+描述: "This JNDI Java tutorial describes Java Naming and Directory Interface (JNDI) technology, naming and directory operations, and LDAP"
+来源: "https://docs.oracle.com/javase/tutorial/jndi/newstuff/rdn.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Retrieving Distinguished Name](https://docs.oracle.com/javase/tutorial/jndi/newstuff/dn.html)
+[[JNDI-检索DN|Retrieving Distinguished Name]]
 
-[Standard LDAP Controls](https://docs.oracle.com/javase/tutorial/jndi/newstuff/controls-std.html)
+[[JNDI-标准LDAP控件|Standard LDAP Controls]]
 
-[Paged Results Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/paged-results.html)
+[[JNDI-新特性-paged-results|Paged Results Control]]
 
-[Sort Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/sort.html)
+[[JNDI-新特性-sort|Sort Control]]
 
-[Manage Referral Control](https://docs.oracle.com/javase/tutorial/jndi/newstuff/mdsaIT.html)
+[[JNDI-新特性-mdsaIT|Manage Referral Control]]
 
-[Manipulating LdapName (Distinguished Name)](https://docs.oracle.com/javase/tutorial/jndi/newstuff/ldapname.html)
+[[JNDI-LDAP名称操作|Manipulating LdapName (Distinguished Name)]]
 
 Manipulating Relative Distinguished Name (RDN)
 
-[Setting Timeout for Ldap Operations](https://docs.oracle.com/javase/tutorial/jndi/newstuff/readtimeout.html)
+[[JNDI-读取超时|Setting Timeout for Ldap Operations]]
 
 **Trail:** Java Naming and Directory Interface  
 **Lesson:** New features in JDK 5.0 and JDK 6
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jndi/newstuff/ldapname.html) • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jndi/newstuff/readtimeout.html)
+[[JNDI-LDAP名称操作|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jndi/TOC.html) • [[JNDI-读取超时|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -28,7 +40,7 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## Manipulating Relative Distinguished Name (RDN)
 
-The class [javax.naming.ldap.Rdn](https://docs.oracle.com/javase/8/docs/api/javax/naming/ldap/Rdn.html) represents a Relative Distinguished name (RDN) as specified in [RFC 2253](http://www.ietf.org/rfc/rfc2253.txt). An RDN represents a component of a DN as explained in the [Manipulating LdapName](https://docs.oracle.com/javase/tutorial/jndi/newstuff/ldapname.html) lesson. An RDN is made up of type and value pair(s). Examples of RDNs are:
+The class [javax.naming.ldap.Rdn](https://docs.oracle.com/javase/8/docs/api/javax/naming/ldap/Rdn.html) represents a Relative Distinguished name (RDN) as specified in [RFC 2253](http://www.ietf.org/rfc/rfc2253.txt). An RDN represents a component of a DN as explained in the [[JNDI-LDAP名称操作|Manipulating LdapName]] lesson. An RDN is made up of type and value pair(s). Examples of RDNs are:
 
 - OU=Sun
 - OU=Sales+CN=J.Smith.  
@@ -42,7 +54,7 @@ The Rdn class is immutable.
 
 An Rdn can be constructed with the specified name and value pair, if it's a single name/value paired RDN. For a multi-valued RDN, you should create an attribute set consisting of all the name/value pairs and use a constructor that takes Attributes as an argument. You can also create an Rdn from its string representation specified in [RFC 2253](http://www.ietf.org/rfc/rfc2253.txt). Finally, you can clone an Rdn using its copy constructor. Here is an [`example`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/RdnConstructors.java) that creates RDNs using different types of constructors.
 
-```
+```java
 Rdn rdn1 = new Rdn("ou= Juicy\\, Fruit");
 System.out.println("rdn1:" + rdn1.toString());
 
@@ -69,7 +81,7 @@ The type/values of and RDN can be obtained using the methods below:
 
 For a an RDN made up of single type/value pair, the [getType()](https://docs.oracle.com/javase/8/docs/api/javax/naming/ldap/Rdn.html#getType--) method returns the type and the [getValue()](https://docs.oracle.com/javase/8/docs/api/javax/naming/ldap/Rdn.html#getValue--) method returns the value of the RDN. The method [toAttributes()](https://docs.oracle.com/javase/8/docs/api/javax/naming/ldap/Rdn.html#toAttributes--) returns the attribute view of the type/value pairs. The [`example`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/RdnGetters.java) below prints the type/value pairs of RDNs.
 
-```
+```java
 Attributes attrs = new BasicAttributes();
 attrs.put("o", "Yellow");
 attrs.put("cn", "Mango");
@@ -102,7 +114,7 @@ When you use the Rdn constructor that takes a String argument, you supply the st
 
 Here's an [`example`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/RdntoString.java):
 
-```
+```java
 Rdn rdn = new Rdn("cn=Juicy\\,Fruit");
 String str = rdn.toString();
 System.out.println(str);
@@ -121,7 +133,7 @@ You can use compareTo() to sort a list of Rdn instances. equals() lets you deter
 
 Here's an [`example`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/CompareRdns.java):
 
-```
+```java
 Rdn one = new Rdn("ou=Sales+cn=Bob");
 Rdn two = new Rdn("cn=Bob+ou=Sales");
 Rdn three = new Rdn("ou=Sales+cn=Bob+c=US");
@@ -144,7 +156,7 @@ For example, consider an RDN: `cn=Juicy, Fruit` The character, (comma) appearing
 
 The [`example`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/EscapingDNs.java) below shows how to get the string representation of a DN without having to deal with the syntax for handling special characters defined in [RFC 2253](http://www.ietf.org/rfc/rfc2253.txt).
 
-```
+```java
 // DN with ',' (comma)
 String unformatted = "Juicy, Fruit";
 String formatted = Rdn.escapeValue(unformatted);
@@ -164,7 +176,7 @@ System.out.println("Orig val: " + bytes + "Escaped val: " + formatted);
 
 Similarly the using the static unescapeValue() method one can obtain the original string from the formatted value. [`Here`](https://docs.oracle.com/javase/tutorial/jndi/newstuff/examples/UnescapingValues.java) is an example for retrieving the original value.
 
-```
+```java
 // DN with ',' (comma)
 String unformatted = "Juicy, Fruit";
 String formatted = Rdn.escapeValue(unformatted);

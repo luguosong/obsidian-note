@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Arrays (The Java™ Tutorials >        
+            Learning the Java Language > Language Basics)"
+描述: "This beginner Java tutorial describes fundamentals of programming in the Java programming language"
+来源: "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variablesummary.html)
+[[语言基础-datatypes|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/java/TOC.html) • [[语言基础-variablesummary|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -21,7 +33,7 @@ Each item in an array is called an *element*, and each element is accessed by it
 
 The following program, [`ArrayDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ArrayDemo.java), creates an array of integers, puts some values in the array, and prints each value to standard output.
 
-```
+```java
 class ArrayDemo {
     public static void main(String[] args) {
         // declares an array of integers
@@ -83,7 +95,7 @@ Element at index 8: 900
 Element at index 9: 1000
 ```
 
-In a real-world programming situation, you would probably use one of the supported *looping constructs* to iterate through each element of the array, rather than write each line individually as in the preceding example. However, the example clearly illustrates the array syntax. You will learn about the various looping constructs (`for`, `while`, and `do-while`) in the [Control Flow](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html) section.
+In a real-world programming situation, you would probably use one of the supported *looping constructs* to iterate through each element of the array, rather than write each line individually as in the preceding example. However, the example clearly illustrates the array syntax. You will learn about the various looping constructs (`for`, `while`, and `do-while`) in the [[语言基础-flow|Control Flow]] section.
 
 ## Declaring a Variable to Refer to an Array
 
@@ -94,7 +106,7 @@ The preceding program declares an array (named `anArray`) with the following lin
 int[] anArray;
 ```
 
-Like declarations for variables of other types, an array declaration has two components: the array's type and the array's name. An array's type is written as `*type*[]`, where `*type*` is the data type of the contained elements; the brackets are special symbols indicating that this variable holds an array. The size of the array is not part of its type (which is why the brackets are empty). An array's name can be anything you want, provided that it follows the rules and conventions as previously discussed in the [naming](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html#naming) section. As with variables of other types, the declaration does not actually create an array; it simply tells the compiler that this variable will hold an array of the specified type.
+Like declarations for variables of other types, an array declaration has two components: the array's type and the array's name. An array's type is written as `*type*[]`, where `*type*` is the data type of the contained elements; the brackets are special symbols indicating that this variable holds an array. The size of the array is not part of its type (which is why the brackets are empty). An array's name can be anything you want, provided that it follows the rules and conventions as previously discussed in the [[语言基础-variables|naming]] section. As with variables of other types, the declaration does not actually create an array; it simply tells the compiler that this variable will hold an array of the specified type.
 
 Similarly, you can declare arrays of other types:
 
@@ -143,7 +155,7 @@ anArray[2] = 300; // and so forth
 
 Each array element is accessed by its numerical index:
 
-```
+```java
 System.out.println("Element 1 at index 0: " + anArray[0]);
 System.out.println("Element 2 at index 1: " + anArray[1]);
 System.out.println("Element 3 at index 2: " + anArray[2]);
@@ -165,7 +177,7 @@ You can also declare an array of arrays (also known as a *multidimensional* arra
 
 In the Java programming language, a multidimensional array is an array whose components are themselves arrays. This is unlike arrays in C or Fortran. A consequence of this is that the rows are allowed to vary in length, as shown in the following [`MultiDimArrayDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/MultiDimArrayDemo.java) program:
 
-```
+```java
 class MultiDimArrayDemo {
     public static void main(String[] args) {
         String[][] names = {
@@ -189,7 +201,7 @@ Ms. Jones
 
 Finally, you can use the built-in `length` property to determine the size of any array. The following code prints the array's size to standard output:
 
-```
+```java
 System.out.println(anArray.length);
 ```
 
@@ -197,7 +209,7 @@ System.out.println(anArray.length);
 
 The `System` class has an `arraycopy` method that you can use to efficiently copy data from one array into another:
 
-```
+```java
 public static void arraycopy(Object src, int srcPos,
                              Object dest, int destPos, int length)
 ```
@@ -206,7 +218,7 @@ The two `Object` arguments specify the array to copy *from* and the array to cop
 
 The following program, [`ArrayCopyDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ArrayCopyDemo.java), declares an array of `String` elements. It uses the `System.arraycopy` method to copy a subsequence of array components into a second array:
 
-```
+```java
 class ArrayCopyDemo {
     public static void main(String[] args) {
         String[] copyFrom = {
@@ -235,7 +247,7 @@ Arrays are a powerful and useful concept used in programming. Java SE provides m
 
 For your convenience, Java SE provides several methods for performing array manipulations (common tasks, such as copying, sorting and searching arrays) in the [`java.util.Arrays`](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html) class. For instance, the previous example can be modified to use the `copyOfRange` method of the `java.util.Arrays` class, as you can see in the [`ArrayCopyOfDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ArrayCopyOfDemo.java) example. The difference is that using the `copyOfRange` method does not require you to create the destination array before calling the method, because the destination array is returned by the method:
 
-```
+```java
 class ArrayCopyOfDemo {
     public static void main(String[] args) {
         String[] copyFrom = {
@@ -263,9 +275,9 @@ Some other useful operations provided by methods in the `java.util.Arrays` class
 	```
 	java.util.Arrays.stream(copyTo).map(coffee -> coffee + " ").forEach(System.out::print);
 	```
-	See [Aggregate Operations](https://docs.oracle.com/javase/tutorial/collections/streams/index.html) for more information about streams.
+	See [[聚合操作|Aggregate Operations]] for more information about streams.
 - Converting an array to a string. The `toString` method converts each element of the array to a string, separates them with commas, then surrounds them with brackets. For example, the following statement converts the `copyTo` array to a string and prints it:
-	```
+	```java
 	System.out.println(java.util.Arrays.toString(copyTo));
 	```
 	This statement prints the following:

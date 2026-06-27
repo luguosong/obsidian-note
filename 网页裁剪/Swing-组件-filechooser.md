@@ -1,90 +1,102 @@
+---
+分类:
+  - "网页裁剪"
+标题: "How to Use File Choosers (The Java™ Tutorials >        
+            Creating a GUI With Swing > Using Swing Components)"
+描述: "This Swing Java Tutorial describes developing graphical user interfaces (GUIs) for applications and applets using Swing components"
+来源: "https://docs.oracle.com/javase/tutorial/uiswing/components/filechooser.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Using Top-Level Containers](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+[[Swing-组件-toplevel|Using Top-Level Containers]]
 
-[The JComponent Class](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html)
+[[Swing-组件-jcomponent|The JComponent Class]]
 
-[Using Text Components](https://docs.oracle.com/javase/tutorial/uiswing/components/text.html)
+[[Swing-组件-text|Using Text Components]]
 
-[Text Component Features](https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html)
+[[Swing-组件-generaltext|Text Component Features]]
 
-[The Text Component API](https://docs.oracle.com/javase/tutorial/uiswing/components/textapi.html)
+[[Swing-组件-textapi|The Text Component API]]
 
-[How to Use Various Components](https://docs.oracle.com/javase/tutorial/uiswing/components/componentlist.html)
+[[Swing-组件-componentlist|How to Use Various Components]]
 
-[How to Make Applets](https://docs.oracle.com/javase/tutorial/uiswing/components/applet.html)
+[[Swing-组件-applet|How to Make Applets]]
 
-[How to Use Buttons, Check Boxes, and Radio Buttons](https://docs.oracle.com/javase/tutorial/uiswing/components/button.html)
+[[Swing-按钮|How to Use Buttons, Check Boxes, and Radio Buttons]]
 
-[How to Use the ButtonGroup Component](https://docs.oracle.com/javase/tutorial/uiswing/components/buttongroup.html)
+[[Swing-组件-buttongroup|How to Use the ButtonGroup Component]]
 
-[How to Use Color Choosers](https://docs.oracle.com/javase/tutorial/uiswing/components/colorchooser.html)
+[[Swing-组件-colorchooser|How to Use Color Choosers]]
 
-[How to Use Combo Boxes](https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html)
+[[Swing-组件-combobox|How to Use Combo Boxes]]
 
-[How to Make Dialogs](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html)
+[[Swing-组件-dialog|How to Make Dialogs]]
 
-[How to Use Editor Panes and Text Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html)
+[[Swing-组件-editorpane|How to Use Editor Panes and Text Panes]]
 
 How to Use File Choosers
 
-[How to Use Formatted Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-formattedtextfield|How to Use Formatted Text Fields]]
 
-[How to Make Frames (Main Windows)](https://docs.oracle.com/javase/tutorial/uiswing/components/frame.html)
+[[Swing-组件-frame|How to Make Frames (Main Windows)]]
 
-[How to Use Internal Frames](https://docs.oracle.com/javase/tutorial/uiswing/components/internalframe.html)
+[[Swing-组件-internalframe|How to Use Internal Frames]]
 
-[How to Use Labels](https://docs.oracle.com/javase/tutorial/uiswing/components/label.html)
+[[Swing-组件-label|How to Use Labels]]
 
-[How to Use Layered Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/layeredpane.html)
+[[Swing-组件-layeredpane|How to Use Layered Panes]]
 
-[How to Use Lists](https://docs.oracle.com/javase/tutorial/uiswing/components/list.html)
+[[Swing-组件-list|How to Use Lists]]
 
-[How to Use Menus](https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html)
+[[Swing-组件-menu|How to Use Menus]]
 
-[How to Use Panels](https://docs.oracle.com/javase/tutorial/uiswing/components/panel.html)
+[[Swing-组件-panel|How to Use Panels]]
 
-[How to Use Password Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/passwordfield.html)
+[[Swing-组件-passwordfield|How to Use Password Fields]]
 
-[How to Use Progress Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html)
+[[Swing-组件-progress|How to Use Progress Bars]]
 
-[How to Use Root Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html)
+[[Swing-组件-rootpane|How to Use Root Panes]]
 
-[How to Use Scroll Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/scrollpane.html)
+[[Swing-组件-scrollpane|How to Use Scroll Panes]]
 
-[How to Use Separators](https://docs.oracle.com/javase/tutorial/uiswing/components/separator.html)
+[[Swing-组件-separator|How to Use Separators]]
 
-[How to Use Sliders](https://docs.oracle.com/javase/tutorial/uiswing/components/slider.html)
+[[Swing-滑块|How to Use Sliders]]
 
-[How to Use Spinners](https://docs.oracle.com/javase/tutorial/uiswing/components/spinner.html)
+[[Swing-组件-spinner|How to Use Spinners]]
 
-[How to Use Split Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/splitpane.html)
+[[Swing-组件-splitpane|How to Use Split Panes]]
 
-[How to Use Tabbed Panes](https://docs.oracle.com/javase/tutorial/uiswing/components/tabbedpane.html)
+[[Swing-组件-tabbedpane|How to Use Tabbed Panes]]
 
-[How to Use Tables](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+[[Swing-组件-table|How to Use Tables]]
 
-[How to Use Text Areas](https://docs.oracle.com/javase/tutorial/uiswing/components/textarea.html)
+[[Swing-组件-textarea|How to Use Text Areas]]
 
-[How to Use Text Fields](https://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html)
+[[Swing-组件-textfield|How to Use Text Fields]]
 
-[How to Use Tool Bars](https://docs.oracle.com/javase/tutorial/uiswing/components/toolbar.html)
+[[Swing-组件-toolbar|How to Use Tool Bars]]
 
-[How to Use Tool Tips](https://docs.oracle.com/javase/tutorial/uiswing/components/tooltip.html)
+[[Swing-组件-tooltip|How to Use Tool Tips]]
 
-[How to Use Trees](https://docs.oracle.com/javase/tutorial/uiswing/components/tree.html)
+[[Swing-组件-tree|How to Use Trees]]
 
-[How to Use HTML in Swing Components](https://docs.oracle.com/javase/tutorial/uiswing/components/html.html)
+[[Swing-组件-html|How to Use HTML in Swing Components]]
 
-[How to Use Models](https://docs.oracle.com/javase/tutorial/uiswing/components/model.html)
+[[Swing-组件-model|How to Use Models]]
 
-[How to Use Icons](https://docs.oracle.com/javase/tutorial/uiswing/components/icon.html)
+[[Swing-组件-icon|How to Use Icons]]
 
-[How to Use Borders](https://docs.oracle.com/javase/tutorial/uiswing/components/border.html)
+[[Swing-组件-border|How to Use Borders]]
 
-[Solving Common Component Problems](https://docs.oracle.com/javase/tutorial/uiswing/components/problems.html)
+[[Swing-组件-problems|Solving Common Component Problems]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/uiswing/components/editorpane.html) • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/uiswing/components/formattedtextfield.html)
+[[Swing-组件-editorpane|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/uiswing/TOC.html) • [[Swing-组件-formattedtextfield|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -93,13 +105,13 @@ See [JDK Release Notes](https://www.oracle.com/technetwork/java/javase/jdk-relno
 
 ## How to Use File Choosers
 
-File choosers provide a GUI for navigating the file system, and then either choosing a file or directory from a list, or entering the name of a file or directory. To display a file chooser, you usually use the `JFileChooser` API to show a modal [dialog](https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html) containing the file chooser. Another way to present a file chooser is to add an instance of [`JFileChooser`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html) to a container.
+File choosers provide a GUI for navigating the file system, and then either choosing a file or directory from a list, or entering the name of a file or directory. To display a file chooser, you usually use the `JFileChooser` API to show a modal [[Swing-组件-dialog|dialog]] containing the file chooser. Another way to present a file chooser is to add an instance of [`JFileChooser`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html) to a container.
 
 ---
 
 **Note:**
 
-If you intend to distribute your program as a sandbox Java Web Start application, then instead of using the `JFileChooser` API you should use the file services provided by the JNLP API. These services — `FileOpenService` and `FileSaveService` — not only provide support for choosing files in a restricted environment, but also take care of actually opening and saving them. An example of using these services is in [JWSFileChooserDemo](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#JWSFileChooserDemo). Documentation for using the JNLP API can be found in the [Java Web Start](https://docs.oracle.com/javase/tutorial/deployment/webstart/index.html) lesson.
+If you intend to distribute your program as a sandbox Java Web Start application, then instead of using the `JFileChooser` API you should use the file services provided by the JNLP API. These services — `FileOpenService` and `FileSaveService` — not only provide support for choosing files in a restricted environment, but also take care of actually opening and saving them. An example of using these services is in [JWSFileChooserDemo](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/index.html#JWSFileChooserDemo). Documentation for using the JNLP API can be found in the [[部署-WebStart|Java Web Start]] lesson.
 
 ---
 
@@ -107,7 +119,7 @@ Click the Launch button to run JWSFileChooserDemo using [Java™ Web Start](http
 
 When working with the `JWSFileChooserDemo` example, be careful not to lose files that you need. Whenever you click the save button and select an existing file, this demo brings up the File Exists dialog box with a request to replace the file. Accepting the request overwrites the file.
 
-The rest of this section discusses how to use the `JFileChooser` API. A `JFileChooser` object only presents the GUI for choosing files. Your program is responsible for doing something with the chosen file, such as opening or saving it. Refer to [Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html) for information on how to read and write files.
+The rest of this section discusses how to use the `JFileChooser` API. A `JFileChooser` object only presents the GUI for choosing files. Your program is responsible for doing something with the chosen file, such as opening or saving it. Refer to [[Java核心类库-基本IO|Basic I/O]] for information on how to read and write files.
 
 The `JFileChooser` API makes it easy to bring up open and save dialogs. The type of look and feel determines what these standard dialogs look like and how they differ. In the Java look and feel, the save dialog looks the same as the open dialog, except for the title on the dialog's window and the text on the button that approves the operation. Here is a picture of a standard open dialog in the Java look and feel:
 
@@ -143,7 +155,7 @@ By default, a file chooser that has not been shown before displays all files in 
 
 The call to `showOpenDialog` appears in the `actionPerformed` method of the Open a File button's action listener:
 
-```
+```java
 public void actionPerformed(ActionEvent e) {
     //Handle open button action.
     if (e.getSource() == openButton) {
@@ -162,7 +174,7 @@ public void actionPerformed(ActionEvent e) {
 
 The `show*Xxx*Dialog` methods return an integer that indicates whether the user selected a file. Depending on how you use a file chooser, it is often sufficient to check whether the return value is `APPROVE_OPTION` and then not to change any other value. To get the chosen file (or directory, if you set up the file chooser to allow directory selections), call the `getSelectedFile` method on the file chooser. This method returns an instance of [`File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html).
 
-The example obtains the name of the file and uses it in the log message. You can call other methods on the `File` object, such as `getPath`, `isDirectory`, or `exists` to obtain information about the file. You can also call other methods such as `delete` and `rename` to change the file in some way. Of course, you might also want to open or save the file by using one of the reader or writer classes provided by the Java platform. See [Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html) for information about using readers and writers to read and write data to the file system.
+The example obtains the name of the file and uses it in the log message. You can call other methods on the `File` object, such as `getPath`, `isDirectory`, or `exists` to obtain information about the file. You can also call other methods such as `delete` and `rename` to change the file in some way. Of course, you might also want to open or save the file by using one of the reader or writer classes provided by the Java platform. See [[Java核心类库-基本IO|Basic I/O]] for information about using readers and writers to read and write data to the file system.
 
 The example program uses the same instance of the `JFileChooser` class to display a standard save dialog. This time the program calls `showSaveDialog`:
 
@@ -250,7 +262,7 @@ fc.setAcceptAllFileFilterUsed(false);
 
 Our custom file filter is implemented in [`ImageFilter.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemo2Project/src/components/ImageFilter.java) and is a subclass of `FileFilter`. The `ImageFilter` class implements the `getDescription` method to return "Just Images" — a string to put in the list of user-choosable filters. `ImageFilter` also implements the `accept` method so that it accepts all directories and any file that has a `.png`, `.jpg`, `.jpeg`, `.gif`, `.tif`, or `.tiff` filename extension.
 
-```
+```bash
 public boolean accept(File f) {
     if (f.isDirectory()) {
         return true;
@@ -278,7 +290,7 @@ By accepting all directories, this filter allows the user to navigate around the
 
 The preceding code sample uses the `getExtension` method and several string constants from [`Utils.java`](https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemo2Project/src/components/Utils.java), shown here:
 
-```
+```java
 public class Utils {
 
     public final static String jpeg = "jpeg";
@@ -320,7 +332,7 @@ The `ImageFileView` class overrides the five abstract methods defined in the `Fi
 
 Returns a description of the file type. Here is `ImageFileView` 's implementation of this method:
 
-```
+```bash
 public String getTypeDescription(File f) {
     String extension = Utils.getExtension(f);
     String type = null;
@@ -346,7 +358,7 @@ public String getTypeDescription(File f) {
 
 Returns an icon representing the file or its type. Here is `ImageFileView` 's implementation of this method:
 
-```
+```bash
 public Icon getIcon(File f) {
     String extension = Utils.getExtension(f);
     Icon icon = null;
@@ -396,7 +408,7 @@ The file chooser fires a property change event when the user selects an item in 
 
 Here is the example's implementation of the `propertyChange` method, which is the method called when a property change event is fired:
 
-```
+```sql
 //where member variables are declared
 File file = null;
 ...
@@ -457,7 +469,7 @@ The API for using file choosers falls into these categories:
 | [void setCurrentDirectory(File)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#setCurrentDirectory-java.io.File-)   [File getCurrentDirectory()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#getCurrentDirectory--) | Sets or obtains the directory whose files are displayed in the file chooser's list. |
 | [void changeToParentDirectory()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#changeToParentDirectory--) | Changes the list to display the current directory's parent. |
 | [void rescanCurrentDirectory()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#rescanCurrentDirectory--) | Checks the file system and updates the chooser's list. |
-| [void setDragEnabled(boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#setDragEnabled-boolean-)   [boolean getDragEnabled()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#getDragEnabled--) | Sets or obtains the property that determines whether automatic drag handling is enabled. See [Drag and Drop and Data Transfer](https://docs.oracle.com/javase/tutorial/uiswing/dnd/index.html) for more details. |
+| [void setDragEnabled(boolean)](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#setDragEnabled-boolean-)   [boolean getDragEnabled()](https://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html#getDragEnabled--) | Sets or obtains the property that determines whether automatic drag handling is enabled. See [[Swing-拖放|Drag and Drop and Data Transfer]] for more details. |
 
 | Method | Purpose |
 | --- | --- |

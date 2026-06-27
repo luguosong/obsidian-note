@@ -274,7 +274,7 @@ contentPane.setLayout(new GridBagLayout());
 GridBagConstraints c = new GridBagConstraints();
 ```
 
-See [How to Use GridBagLayout](https://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html) in the [[使用Swing创建图形用户界面|Creating a GUI With JFC/Swing]] for more information about using the layout `GridBagLayout`.
+See [[Swing-布局-gridbag|How to Use GridBagLayout]] in the [[使用Swing创建图形用户界面|Creating a GUI With JFC/Swing]] for more information about using the layout `GridBagLayout`.
 
 See the source code for [`CoffeesFrame.java`](https://docs.oracle.com/javase/tutorial/jdbc/basics/examples/JDBCTutorial/src/com/oracle/tutorial/jdbc/CoffeesFrame.java) to see how the Swing components of this sample are added to the layout `GridBagLayout`.
 

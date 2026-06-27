@@ -1,6 +1,18 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Methods (The Java™ Tutorials >        
+            The Reflection API > Members)"
+描述: "This reflection Java tutorial describes using reflection for accessing and manipulating classes, fields, methods, and constructors"
+来源: "https://docs.oracle.com/javase/tutorial/reflect/member/method.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[« Previous](https://docs.oracle.com/javase/tutorial/reflect/member/fieldTrouble.html) • [Trail](https://docs.oracle.com/javase/tutorial/reflect/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/reflect/member/methodType.html)
+[[反射-成员-字段故障排除|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/reflect/TOC.html) • [[反射-成员-方法类型|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -13,8 +25,8 @@ A *method* contains executable code which may be invoked. Methods are inherited 
 
 The [`java.lang.reflect.Method`](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Method.html) class provides APIs to access information about a method's modifiers, return type, parameters, annotations, and thrown exceptions. It also be used to invoke methods. These topics are covered by the following sections:
 
-- [Obtaining Method Type Information](https://docs.oracle.com/javase/tutorial/reflect/member/methodType.html) shows how to enumerate methods declared in a class and obtains type information
-- [Obtaining Names of Method Parameters](https://docs.oracle.com/javase/tutorial/reflect/member/methodparameterreflection.html) shows how to retrieve names and other information of a method or constructor's parameters
-- [Retrieving and Parsing Method Modifiers](https://docs.oracle.com/javase/tutorial/reflect/member/methodModifiers.html) describes how to access and decode modifiers and other information associated with the method
-- [Invoking Methods](https://docs.oracle.com/javase/tutorial/reflect/member/methodInvocation.html) illustrates how to execute a method and obtain its return value
-- [Troubleshooting](https://docs.oracle.com/javase/tutorial/reflect/member/methodTrouble.html) covers common errors encountered when finding or invoking methods
+- [[反射-成员-方法类型|Obtaining Method Type Information]] shows how to enumerate methods declared in a class and obtains type information
+- [[反射-成员-方法参数名|Obtaining Names of Method Parameters]] shows how to retrieve names and other information of a method or constructor's parameters
+- [[反射-成员-方法修饰符|Retrieving and Parsing Method Modifiers]] describes how to access and decode modifiers and other information associated with the method
+- [[反射-成员-调用方法|Invoking Methods]] illustrates how to execute a method and obtain its return value
+- [[反射-成员-方法故障排除|Troubleshooting]] covers common errors encountered when finding or invoking methods

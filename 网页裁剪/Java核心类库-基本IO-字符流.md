@@ -12,7 +12,7 @@
 
 Documentation
 
-[I/O Streams](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+[[Java核心类库-基本IO-streams|I/O Streams]]
 
 [[Java核心类库-基本IO-字节流|Byte Streams]]
 
@@ -22,9 +22,9 @@ Character Streams
 
 [[Java核心类库-基本IO-扫描与格式化|Scanning and Formatting]]
 
-[Scanning](https://docs.oracle.com/javase/tutorial/essential/io/scanning.html)
+[[Java核心类库-基本IO-scanning|Scanning]]
 
-[Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
+[[Java核心类库-基本IO-formatting|Formatting]]
 
 [[Java核心类库-基本IO-命令行IO对象|I/O from the Command Line]]
 
@@ -32,7 +32,7 @@ Character Streams
 
 [[Java核心类库-基本IO-对象流|Object Streams]]
 
-[File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+[[Java核心类库-基本IO-fileio|File I/O (Featuring NIO.2)]]
 
 [[Java核心类库-基本IO-什么是路径|What Is a Path? (And Other File System Facts)]]
 
@@ -70,9 +70,9 @@ Character Streams
 
 [[Java核心类库-基本IO-遗留文件IO|Legacy File I/O Code]]
 
-[Summary](https://docs.oracle.com/javase/tutorial/essential/io/summary.html)
+[[Java核心类库-基本IO-summary|Summary]]
 
-[Questions and Exercises](https://docs.oracle.com/javase/tutorial/essential/io/QandE/questions.html)
+[[Java核心类库-基本IO-questions|Questions and Exercises]]
 
 [[Java核心类库-基本IO-字节流|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/essential/TOC.html) • [[Java核心类库-基本IO-缓冲流|Next »]]
 
@@ -130,13 +130,13 @@ public class CopyCharacters {
 
 Character streams are often "wrappers" for byte streams. The character stream uses the byte stream to perform the physical I/O, while the character stream handles translation between characters and bytes. `FileReader`, for example, uses `FileInputStream`, while `FileWriter` uses `FileOutputStream`.
 
-There are two general-purpose byte-to-character "bridge" streams: [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html) and [`OutputStreamWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/OutputStreamWriter.html). Use them to create character streams when there are no prepackaged character stream classes that meet your needs. The [sockets lesson](https://docs.oracle.com/javase/tutorial/networking/sockets/readingWriting.html) in the [networking trail](https://docs.oracle.com/javase/tutorial/networking/index.html) shows how to create character streams from the byte streams provided by socket classes.
+There are two general-purpose byte-to-character "bridge" streams: [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html) and [`OutputStreamWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/OutputStreamWriter.html). Use them to create character streams when there are no prepackaged character stream classes that meet your needs. The [[自定义网络-Socket-readingWriting|sockets lesson]] in the [[自定义网络-networking|networking trail]] shows how to create character streams from the byte streams provided by socket classes.
 
 ## Line-Oriented I/O
 
 Character I/O usually occurs in bigger units than single characters. One common unit is the line: a string of characters with a line terminator at the end. A line terminator can be a carriage-return/line-feed sequence (`"\r\n"`), a single carriage-return (`"\r"`), or a single line-feed (`"\n"`). Supporting all possible line terminators allows programs to read text files created on any of the widely used operating systems.
 
-Let's modify the `CopyCharacters` example to use line-oriented I/O. To do this, we have to use two classes we haven't seen before, [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html) and [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html). We'll explore these classes in greater depth in [[Java核心类库-基本IO-缓冲流|Buffered I/O]] and [Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html). Right now, we're just interested in their support for line-oriented I/O.
+Let's modify the `CopyCharacters` example to use line-oriented I/O. To do this, we have to use two classes we haven't seen before, [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html) and [`PrintWriter`](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html). We'll explore these classes in greater depth in [[Java核心类库-基本IO-缓冲流|Buffered I/O]] and [[Java核心类库-基本IO-formatting|Formatting]]. Right now, we're just interested in their support for line-oriented I/O.
 
 The [`CopyLines`](https://docs.oracle.com/javase/tutorial/essential/io/examples/CopyLines.java) example invokes `BufferedReader.readLine` and `PrintWriter.println` to do input and output one line at a time.
 

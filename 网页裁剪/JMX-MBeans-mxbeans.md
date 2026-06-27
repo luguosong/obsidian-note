@@ -1,10 +1,22 @@
+---
+分类:
+  - "网页裁剪"
+标题: "MXBeans (The Java™ Tutorials >        
+            Java Management Extensions (JMX) > Introducing MBeans)"
+描述: "This JMX Java tutorial describes the Java Management Extensions (JMX) technology - mbeans, notifications, and remote management"
+来源: "https://docs.oracle.com/javase/tutorial/jmx/mbeans/mxbeans.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[Standard MBeans](https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html)
+[[JMX-MBeans-标准MBeans|Standard MBeans]]
 
 MXBeans
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html) • [Trail](https://docs.oracle.com/javase/tutorial/jmx/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jmx/notifs/index.html)
+[[JMX-MBeans-标准MBeans|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jmx/TOC.html) • [[JMX-通知|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -43,7 +55,7 @@ The MXBean example uses these classes to perform the following actions:
 
 The following code shows the example [`QueueSamplerMXBean`](https://docs.oracle.com/javase/tutorial/jmx/examples/QueueSamplerMXBean.java) MXBean interface:
 
-```
+```java
 package com.example; 
  
 public interface QueueSamplerMXBean { 
@@ -58,7 +70,7 @@ Note that you declare an MXBean interface in exactly the same way as you declare
 
 The MXBean operations are declared in the [`QueueSampler`](https://docs.oracle.com/javase/tutorial/jmx/examples/QueueSampler.java) example class, as follows:
 
-```
+```java
 package com.example; 
  
 import java.util.Date; 
@@ -94,7 +106,7 @@ public class QueueSampler
 
 The `QueueSample` instance returned by `QueueSampler` is defined in the [`QueueSample`](https://docs.oracle.com/javase/tutorial/jmx/examples/QueueSample.java) class, as follows:
 
-```
+```java
 package com.example; 
  
 import java.beans.ConstructorProperties; 
@@ -132,9 +144,9 @@ In the `QueueSample` class, the MXBean framework calls all the getters in `Queue
 
 ## Creating and Registering the MXBean in the MBean Server
 
-So far, the following have been defined: an MXBean interface and the class that implements it, as well as the Java type that is returned. Next, the MXBean must be created and registered in an MBean server. These actions are performed by the same [`Main`](https://docs.oracle.com/javase/tutorial/jmx/examples/Main.java) example JMX agent that was used in the standard MBean example, but the relevant code was not shown in the [Standard MBean](https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html) lesson.
+So far, the following have been defined: an MXBean interface and the class that implements it, as well as the Java type that is returned. Next, the MXBean must be created and registered in an MBean server. These actions are performed by the same [`Main`](https://docs.oracle.com/javase/tutorial/jmx/examples/Main.java) example JMX agent that was used in the standard MBean example, but the relevant code was not shown in the [[JMX-MBeans-标准MBeans|Standard MBean]] lesson.
 
-```
+```java
 package com.example; 
  
 import java.lang.management.ManagementFactory; 
@@ -176,7 +188,7 @@ The `Main` class performs the following actions:
 
 ## Running the MXBean Example
 
-The MXBean example uses classes from the [`jmx_examples.zip`](https://docs.oracle.com/javase/tutorial/jmx/examples/jmx_examples.zip) bundle that you used in the [Standard MBeans](https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html) section. This example requires version 6 of the Java SE platform. To run the MXBeans example follow these steps:
+The MXBean example uses classes from the [`jmx_examples.zip`](https://docs.oracle.com/javase/tutorial/jmx/examples/jmx_examples.zip) bundle that you used in the [[JMX-MBeans-标准MBeans|Standard MBeans]] section. This example requires version 6 of the Java SE platform. To run the MXBeans example follow these steps:
 
 1. If you have not done so already, save [`jmx_examples.zip`](https://docs.oracle.com/javase/tutorial/jmx/examples/jmx_examples.zip) into your `work_dir` directory.
 2. Unzip the bundle of sample classes by using the following command in a terminal window.

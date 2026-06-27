@@ -1,18 +1,30 @@
+---
+分类:
+  - "网页裁剪"
+标题: "Using the <tt>DTDHandler</tt> and <tt>EntityResolver</tt> (The Java™ Tutorials >        
+            Java API for XML Processing (JAXP) > Simple API for XML)"
+描述: "This JAXP Java tutorial describes Java API for XML Processing (jaxp), XSLT, SAX, and related XML topics"
+来源: "https://docs.oracle.com/javase/tutorial/jaxp/sax/using.html"
+发布者: "Oracle-"
+发布时间:
+创建时间: "2026-06-27T18:00:00+08:00"
+---
+
 Documentation
 
-[When to Use SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/when.html)
+[[JAXP-何时使用SAX|When to Use SAX]]
 
-[Parsing an XML File Using SAX](https://docs.oracle.com/javase/tutorial/jaxp/sax/parsing.html)
+[[JAXP-SAX-parsing|Parsing an XML File Using SAX]]
 
-[Implementing SAX Validation](https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html)
+[[JAXP-SAX-validation|Implementing SAX Validation]]
 
-[Handling Lexical Events](https://docs.oracle.com/javase/tutorial/jaxp/sax/events.html)
+[[JAXP-SAX-events|Handling Lexical Events]]
 
 Using the DTDHandler and EntityResolver
 
-[Further Information](https://docs.oracle.com/javase/tutorial/jaxp/sax/info.html)
+[[JAXP-SAX-info|Further Information]]
 
-[« Previous](https://docs.oracle.com/javase/tutorial/jaxp/sax/events.html) • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [Next »](https://docs.oracle.com/javase/tutorial/jaxp/sax/info.html)
+[[JAXP-SAX-events|« Previous]] • [Trail](https://docs.oracle.com/javase/tutorial/jaxp/TOC.html) • [[JAXP-SAX-info|Next »]]
 
 The Java Tutorials have been written for JDK 8. Examples and practices described in this page don't take advantage of improvements introduced in later releases and might use technology no longer available.  
 See [Dev.java](https://dev.java/learn/) for updated tutorials taking advantage of the latest releases.  
@@ -25,7 +37,7 @@ This section presents the two remaining SAX event handlers: DTDHandler and Entit
 
 ## The DTDHandler API
 
-[Choosing the Parser Implementation](https://docs.oracle.com/javase/tutorial/jaxp/sax/validation.html) showed a method for referencing a file that contains binary data, such as an image file, using MIME data types. That is the simplest, most extensible mechanism. For compatibility with older SGML-style data, though, it is also possible to define an unparsed entity.
+[[JAXP-SAX-validation|Choosing the Parser Implementation]] showed a method for referencing a file that contains binary data, such as an image file, using MIME data types. That is the simplest, most extensible mechanism. For compatibility with older SGML-style data, though, it is also possible to define an unparsed entity.
 
 The NDATA keyword defines an unparsed entity:
 
