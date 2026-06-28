@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "-path:数据库/分类索引.base",
+  "search": "-path:数据库/分类索引.base -path:模版/",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -23,15 +23,15 @@
     }
   ],
   "collapse-display": false,
-  "showArrow": false,
+  "showArrow": true,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1.05,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.4453125,
-  "repelStrength": 9.01041666666667,
+  "centerStrength": 0.1015625,
+  "repelStrength": 10.0520833333333,
   "linkStrength": 1,
-  "linkDistance": 124,
-  "scale": 0.2726859917359813,
+  "linkDistance": 30,
+  "scale": 0.19450022690612848,
   "close": true
 }

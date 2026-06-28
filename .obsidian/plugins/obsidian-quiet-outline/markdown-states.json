@@ -3587,7 +3587,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 9.084925690021231,
+    "scroll": 6.898148148148148,
     "cursor": {
       "from": {
         "line": 15,
@@ -3967,11 +3967,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 3,
+        "line": 0,
         "ch": 0
       },
       "to": {
-        "line": 3,
+        "line": 0,
         "ch": 0
       }
     },
@@ -4082,15 +4082,15 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
-    "scroll": 25.989166666666666,
+    "scroll": 23.67528735632184,
     "cursor": {
       "from": {
-        "line": 42,
-        "ch": 0
+        "line": 39,
+        "ch": 15
       },
       "to": {
-        "line": 42,
-        "ch": 0
+        "line": 39,
+        "ch": 15
       }
     },
     "expandedKeys": [
@@ -4345,14 +4345,14 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 170.42638888888888,
+    "scroll": 320.3861111111111,
     "cursor": {
       "from": {
-        "line": 199,
+        "line": 370,
         "ch": 0
       },
       "to": {
-        "line": 199,
+        "line": 370,
         "ch": 0
       }
     },
@@ -4361,8 +4361,9 @@
       "item-1-0",
       "item-3-2",
       "item-2-5",
-      "item-2-17",
-      "item-2-22"
+      "item-2-19",
+      "item-2-24",
+      "item-2-16"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -4383,7 +4384,7 @@
     ]
   },
   "网页裁剪/Java教程学习路径.md": {
-    "scroll": 22.484712230215827,
+    "scroll": 26.592625899280577,
     "cursor": {
       "from": {
         "line": 80,
@@ -4730,15 +4731,15 @@
     ]
   },
   "网页裁剪/学习Java语言-语言基础.md": {
-    "scroll": 0,
+    "scroll": 9.955654101995565,
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 0
+        "line": 35,
+        "ch": 41
       },
       "to": {
-        "line": 10,
-        "ch": 0
+        "line": 35,
+        "ch": 41
       }
     },
     "expandedKeys": [
@@ -4875,7 +4876,9 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "网页裁剪/Swing-defaultsupport.md": {
     "scroll": 69.33611111111111,
@@ -5122,7 +5125,7 @@
     "expandedKeys": []
   },
   "网页裁剪/Swing-answers-ch3.md": {
-    "scroll": 2.172949002217295,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 63,
@@ -5136,5 +5139,786 @@
     "expandedKeys": [
       "item-1-0"
     ]
+  },
+  "网页裁剪/Swing-布局-using.md": {
+    "scroll": 36.208333333333336,
+    "cursor": {
+      "from": {
+        "line": 116,
+        "ch": 0
+      },
+      "to": {
+        "line": 116,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-export.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-refining.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/并发-questions.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-closer.md": {
+    "scroll": 11.629080118694361,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/真正工程师的技能.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/mattpocock skills README.md": {
+    "scroll": 11.659403669724771,
+    "cursor": {
+      "from": {
+        "line": 20,
+        "ch": 0
+      },
+      "to": {
+        "line": 20,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-1",
+      "item-2-7"
+    ]
+  },
+  "网页裁剪/JDBC-基础-检索修改值.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-9"
+    ]
+  },
+  "网页裁剪/JDBC-基础-预编译语句.md": {
+    "scroll": 0.9544994944388271,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-4",
+      "item-2-6"
+    ]
+  },
+  "网页裁剪/JDBC-基础-事务.md": {
+    "scroll": 158.13611111111112,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-progress.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/扩展机制-download.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java核心类库-基本IO-遗留文件IO.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/类与对象-nested-questions.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java核心类库-基本IO-字符流.md": {
+    "scroll": 75.48333333333333,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Java核心类库-基本IO-扫描与格式化.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/二维图形-compositing.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-jcomponent.md": {
+    "scroll": 91.52741171772492,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-label.md": {
+    "scroll": 85.59129023532594,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/语言基础-answers_variables.md": {
+    "scroll": 4.878048780487805,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/语言基础-variablesummary.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-applet.md": {
+    "scroll": 12.170542635658915,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-documentlistener.md": {
+    "scroll": 50.24166666666667,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-problems.md": {
+    "scroll": 60.28888888888889,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-generaltext.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-mousewheellistener.md": {
+    "scroll": 8.477707006369426,
+    "cursor": {
+      "from": {
+        "line": 21,
+        "ch": 0
+      },
+      "to": {
+        "line": 21,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-mouselistener.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-handling.md": {
+    "scroll": 7.006369426751593,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-componentlistener.md": {
+    "scroll": 11.688427299703264,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-tablemodellistener.md": {
+    "scroll": 2.335456475583864,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-组件-table.md": {
+    "scroll": 4.878048780487805,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/聚合操作-answers.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/JavaFX入门.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Swing-事件监听-internalframelistener.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-事件监听-itemlistener.md": {
+    "scroll": 3.3397027600849256,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Swing-按钮.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/日期时间-ISO标准-datetime.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/JAXP-SAX.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Scene Builder入门.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/语言基础-variables.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/学习Java语言-面向对象概念.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "部署-signing.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/01-JavaSE/Java教程学习路径.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Java 官方教程.md": {
+    "scroll": 48.477777777777774,
+    "cursor": {
+      "from": {
+        "line": 95,
+        "ch": 0
+      },
+      "to": {
+        "line": 95,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/入门.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 30,
+        "ch": 0
+      },
+      "to": {
+        "line": 30,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/声音.md": {
+    "scroll": 84.071108815427,
+    "cursor": {
+      "from": {
+        "line": 43,
+        "ch": 0
+      },
+      "to": {
+        "line": 43,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Java 技术现象.md": {
+    "scroll": 2.5462962962962963,
+    "cursor": {
+      "from": {
+        "line": 34,
+        "ch": 0
+      },
+      "to": {
+        "line": 34,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/关于 Java 技术.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Java 技术能做什么.md": {
+    "scroll": 7.81712962962963,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Java 技术将如何改变我的生活.md": {
+    "scroll": 5.092592592592593,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
   }
 }
