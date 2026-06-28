@@ -9,56 +9,15 @@
 创建时间: "2026-06-28T09:28:54+08:00"
 ---
 
-Documentation
-
 ![[java-tutorial-ThinkingDuke.webp]]
 Duke 正在思考该学习什么
 
-不知道从何开始？
-请参见 [学习路径（Learning Paths）](https://docs.oracle.com/javase/tutorial/learning/index.html)。
-
-## 教程目录（Tutorial Contents）
-
-## 教程资源（Tutorial Resources）
-
-最近更新：[2024-10-25](https://docs.oracle.com/javase/tutorial/information/history.html)
-
-[Dev.java：Java 开发者之家](https://dev.java/) 提供了来自专家的数百篇教程、新闻和视频。
-
-[Java 教程博客（The Java Tutorials' Blog）](https://blogs.oracle.com/thejavatutorials/) 发布有关 Java SE 教程的新闻与更新。
-
-[下载最新的 Java 教程压缩包（Download the latest Java Tutorials bundle）](http://www.oracle.com/technetwork/java/javase/java-tutorial-downloads-2005894.html)。
-
-## 图书形式（In Book Form）
-
-*The Java Tutorial, Sixth Edition.*（[Amazon.com](http://www.amazon.com/The-Java-Tutorial-Course-Edition/dp/0134034082)）。
-
-## 其他资源（Other Resources）
-
-[Java SE 8 开发者指南（Java SE 8 Developer Guides）](https://docs.oracle.com/javase/8/docs/)
-
-[JDK 8 API 文档（JDK 8 API Documentation）](https://docs.oracle.com/javase/8/docs/api)
-
-## Oracle 培训与专业认证（Oracle Training and Professional Certification）
-
-[Java 认证与培训（Java Certification and Training）](http://education.oracle.com/pls/web_prod-plq-dad/ou_product_category.getFamilyPage?p_family_id=48)
-
-[Oracle 大学（Oracle University）](http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=3)
-
-## 软件（Software）
-
-[Java 开发工具包（Java Development Kit，JDK）](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-本 Java 教程是面向 JDK 8 编写的。本页所述的示例与实践并未利用后续版本中引入的改进，且可能使用了现已不再可用的技术。
-如需利用最新版本改进的更新版教程，请参见 [Dev.java](https://dev.java/learn/)。
-如需了解 Java SE 9 及后续各版本中语言特性的更新摘要，请参见 [Java 语言变更（Java Language Changes）](https://docs.oracle.com/pls/topic/lookup?ctx=en/java/javase&id=java_language_changes)。
-如需了解所有 JDK 版本的新特性、增强功能以及被移除或弃用的选项，请参见 [JDK 发行说明（JDK Release Notes）](https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)。
-
-Java 教程是为希望使用 Java 编程语言创建应用程序的程序员编写的实用指南。它们包含数百个完整且可运行的示例，以及数十节课。相互关联的课程被组织成「学习路径（trails）」。
+Java 教程是为希望使用 Java 编程语言创建应用程序的程序员编写的实用指南。它们包含数百个完整且可运行的示例，以及数十节课。相互关联的课程被组织成「学习路径（trails）」。不知道从何开始？请参见 [学习路径（Learning Paths）](https://docs.oracle.com/javase/tutorial/learning/index.html)。
 
 ## 基础学习路径（Trails Covering the Basics）
 
-这些学习路径以图书形式收录在 *The Java Tutorial, Sixth Edition* 中。购买此书请参见右侧的链接框。
+这些学习路径以图书形式收录在 *The Java Tutorial, Sixth Edition* 中。
+
 - [[入门|入门（Getting Started）]] —— Java 技术简介，以及安装 Java 开发软件并用其创建一个简单程序的课程。
 - [[学习 Java 语言|学习 Java 语言（Learning the Java Language）]] —— 描述 Java 编程语言核心概念与特性的课程。
 - [[Java 核心类|Java 核心类（Essential Java Classes）]] —— 关于异常、基本输入/输出、并发、正则表达式以及平台环境的课程。
@@ -93,3 +52,21 @@ Java 教程是为希望使用 Java 编程语言创建应用程序的程序员编
 - [[套接字直接协议|套接字直接协议（Sockets Direct Protocol）]] —— 如何启用套接字直接协议以利用 InfiniBand。
 - [[声音|声音（Sound）]] —— 一种用于从应用程序播放声音数据的 API。
 - [[2D 图形|2D 图形（2D Graphics）]] —— 如何在应用程序中显示与打印 2D 图形。
+
+## 相关资源
+
+> [!info]- 教程更新与下载
+> - 最近更新：[2024-10-25](https://docs.oracle.com/javase/tutorial/information/history.html)
+> - [Dev.java：Java 开发者之家](https://dev.java/) —— 数百篇教程、新闻和视频。
+> - [Java 教程博客（The Java Tutorials' Blog）](https://blogs.oracle.com/thejavatutorials/)
+> - [下载最新的 Java 教程压缩包（Download the latest Java Tutorials bundle）](http://www.oracle.com/technetwork/java/javase/java-tutorial-downloads-2005894.html)
+
+> [!info]- 图书与文档
+> - 图书形式：*The Java Tutorial, Sixth Edition*（[Amazon.com](http://www.amazon.com/The-Java-Tutorial-Course-Edition/dp/0134034082)）。
+> - [Java SE 8 开发者指南（Java SE 8 Developer Guides）](https://docs.oracle.com/javase/8/docs/)
+> - [JDK 8 API 文档（JDK 8 API Documentation）](https://docs.oracle.com/javase/8/docs/api)
+
+> [!info]- 培训、认证与软件
+> - [Java 认证与培训（Java Certification and Training）](http://education.oracle.com/pls/web_prod-plq-dad/ou_product_category.getFamilyPage?p_family_id=48)
+> - [Oracle 大学（Oracle University）](http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=3)
+> - [Java 开发工具包（Java Development Kit，JDK）](http://www.oracle.com/technetwork/java/javase/downloads/index.html)

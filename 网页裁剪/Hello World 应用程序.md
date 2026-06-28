@@ -14,13 +14,13 @@ Documentation
 
 「Hello World!」应用程序（The "Hello World!" Application）
 
-[NetBeans IDE 下的「Hello World!」("Hello World!" for the NetBeans IDE)](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html)
+[[NetBeans IDE 下的 Hello World|NetBeans IDE 下的「Hello World!」("Hello World!" for the NetBeans IDE)]]
 
-[Microsoft Windows 下的「Hello World!」("Hello World!" for Microsoft Windows)](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html)
+[[Windows 下的 Hello World|Microsoft Windows 下的「Hello World!」("Hello World!" for Microsoft Windows)]]
 
-[Solaris OS、Linux 和 Mac OS X 下的「Hello World!」("Hello World!" for Solaris OS, Linux, and Mac OS X)](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html)
+[[Solaris Linux Mac 下的 Hello World|Solaris OS、Linux 和 Mac OS X 下的「Hello World!」("Hello World!" for Solaris OS, Linux, and Mac OS X)]]
 
-[« 上一页](https://docs.oracle.com/javase/tutorial/getStarted/intro/index.html) • [学习路径](https://docs.oracle.com/javase/tutorial/getStarted/TOC.html) • [下一页 »](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html)
+[« 上一页](https://docs.oracle.com/javase/tutorial/getStarted/intro/index.html) • [学习路径](https://docs.oracle.com/javase/tutorial/getStarted/TOC.html) • [[NetBeans IDE 下的 Hello World|下一页 »]]
 
 本 Java 教程是面向 JDK 8 编写的。本页所述的示例与实践并未利用后续版本中引入的改进，且可能使用了现已不再可用的技术。
 如需利用最新版本改进的更新版教程，请参见 [Dev.java](https://dev.java/learn/)。
@@ -31,11 +31,11 @@ Documentation
 
 以下各节提供了编译和运行一个简单的「Hello World!」应用程序的详细说明。第一节提供了 NetBeans IDE（一个极大简化软件开发过程的集成开发环境）的入门信息。NetBeans IDE 可在以下列出的所有平台上运行。其余各节提供了在没有集成开发环境的情况下入门的平台特定说明。如果遇到问题，请务必查阅常见问题部分；它为新用户遇到的许多问题提供了解决方案。
 
-[NetBeans IDE 下的「Hello World!」("Hello World!" for the NetBeans IDE)](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/netbeans.html) 这些说明适用于 NetBeans IDE 用户。NetBeans IDE 运行在 Java 平台上，这意味着您可以在任何提供 JDK 7 的操作系统上使用它。这些操作系统包括 Microsoft Windows、Solaris OS、Linux 和 Mac OS X。我们建议尽可能使用 NetBeans IDE 而非命令行。
+[[NetBeans IDE 下的 Hello World|NetBeans IDE 下的「Hello World!」("Hello World!" for the NetBeans IDE)]] 这些说明适用于 NetBeans IDE 用户。NetBeans IDE 运行在 Java 平台上，这意味着您可以在任何提供 JDK 7 的操作系统上使用它。这些操作系统包括 Microsoft Windows、Solaris OS、Linux 和 Mac OS X。我们建议尽可能使用 NetBeans IDE 而非命令行。
 
-[Microsoft Windows 下的「Hello World!」("Hello World!" for Microsoft Windows)](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/win32.html) 这些命令行说明适用于 Windows XP Professional、Windows XP Home、Windows Server 2003、Windows 2000 Professional 和 Windows Vista 的用户。
+[[Windows 下的 Hello World|Microsoft Windows 下的「Hello World!」("Hello World!" for Microsoft Windows)]] 这些命令行说明适用于 Windows XP Professional、Windows XP Home、Windows Server 2003、Windows 2000 Professional 和 Windows Vista 的用户。
 
-[Solaris OS、Linux 和 Mac OS X 下的「Hello World!」("Hello World!" for Solaris OS, Linux, and Mac OS X)](https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html) 这些命令行说明适用于 Solaris OS、Linux 和 Mac OS X 的用户。[常见问题及其解决方案（Common Problems (and Their Solutions)）](https://docs.oracle.com/javase/tutorial/getStarted/problems/index.html) 如果您在编译或运行应用程序时遇到问题，请查阅此页。
+[[Solaris Linux Mac 下的 Hello World|Solaris OS、Linux 和 Mac OS X 下的「Hello World!」("Hello World!" for Solaris OS, Linux, and Mac OS X)]] 这些命令行说明适用于 Solaris OS、Linux 和 Mac OS X 的用户。[[常见问题及其解决方案|常见问题及其解决方案（Common Problems (and Their Solutions)）]] 如果您在编译或运行应用程序时遇到问题，请查阅此页。
 
 ---
 

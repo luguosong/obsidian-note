@@ -70,7 +70,17 @@ const RULES = [
       /\bpublic\s+(static\s+)?(class|void|interface|enum)\b/.test(c) ||
       /\bSystem\.(out|err)\.(print|println)/.test(c) ||
       /\bimport\s+java\./.test(c) ||
-      /\bpackage\s+[a-z][\w.]*\s*;/.test(c) && /\bclass\s+\w+/.test(c),
+      (/\bpackage\s+[a-z][\w.]*\s*;/.test(c) && /\bclass\s+\w+/.test(c)) ||
+      // 带类型的变量声明：int gear = 1; / double aValue; / String s = "...";
+      /\b(int|long|short|byte|float|double|boolean|char|String)\s+\w+\s*[=;]/.test(c) ||
+      // 数组类型声明：int[] anArray; / byte[] data; / String[] names
+      /\b(int|long|short|byte|float|double|boolean|char|String)\s*\[\s*\]/.test(c) ||
+      // 后缀括号数组声明（不推荐但仍合法）：float anArrayOfFloats[];
+      /\b(int|long|short|byte|float|double|boolean|char|String)\s+\w+\s*\[\s*\]\s*[=;]/.test(c) ||
+      // 数组元素赋值：anArray[0] = 100;
+      /\w+\s*\[\s*\d+\s*\]\s*=[^=]/.test(c) ||
+      // 数组/对象创建：anArray = new int[10]; / copyTo = new String[7];
+      /\bnew\s+\w+\s*\[/.test(c),
   },
   // Kotlin
   {
@@ -223,13 +233,19 @@ const RULES = [
 ];
 
 /**
- * 判定代码块语言。返回语言标识或 null（无法判定）。
+ * 判定代码块语言。
+ *
+ * 设计原则：**保证不出现裸围栏**。返回值恒为字符串——命中某条规则就返回该语言；
+ * 没有规则命中时返回 "text"（等宽、不高亮），而不是 null。这样程序输出、编译器
+ * 报错、纯片段等「不是任何语言代码」的内容也会被显式标记为 text，渲染一致，
+ * 不再留下裸 ```。只有真正空的代码块才返回 null（无需高亮、也无内容可标）。
+ *
+ * 调用方可通过 `lang === "text"` 判断本次是「识别出语言」还是「回退到 text」。
  */
 function detectLang(code) {
   const content = code.trim();
-  if (!content) return null;
+  if (!content) return null; // 空块：无内容，保持原样
 
-  // 注释掉的多行——先看内容
   for (const rule of RULES) {
     try {
       if (rule.test(content)) return rule.lang;
@@ -237,7 +253,8 @@ function detectLang(code) {
       /* ignore regex errors */
     }
   }
-  return null;
+  // 没有任何规则命中：回退到 text，避免裸围栏
+  return "text";
 }
 
 // ---------- 主流程 ----------
@@ -247,7 +264,9 @@ function processFile(filePath) {
     return null;
   }
   let text = fs.readFileSync(filePath, "utf8");
-  let changed = 0;
+  let changed = 0; // 补了语言标识的代码块数（含识别出的语言 + 回退到 text 的）
+  let identified = 0; // 其中识别出具体语言的块数
+  let fallbackText = 0; // 其中回退到 text 的块数（不是任何语言代码）
   let total = 0;
 
   // 匹配代码围栏：``` 可选语言 ... ```
@@ -294,6 +313,8 @@ function processFile(filePath) {
               }
             }
             changed++;
+            if (lang === "text") fallbackText++;
+            else identified++;
           }
         }
         // 关键：把围栏内的代码行写回输出（buf 内容），再写闭合围栏
@@ -314,7 +335,7 @@ function processFile(filePath) {
   if (changed > 0) {
     fs.writeFileSync(filePath, result, "utf8");
   }
-  return { total, changed };
+  return { total, changed, identified, fallbackText };
 }
 
 // ---------- CLI ----------
@@ -326,16 +347,22 @@ if (files.length === 0) {
 
 let totBlock = 0,
   totChanged = 0,
+  totIdentified = 0,
+  totFallback = 0,
   totFiles = 0;
 for (const f of files) {
   const r = processFile(f);
   if (r) {
     totBlock += r.total;
     totChanged += r.changed;
+    totIdentified += r.identified;
+    totFallback += r.fallbackText;
     if (r.total > 0) {
       totFiles++;
-      console.log(`${r.changed > 0 ? "✓" : "•"} ${f}  ${r.changed}/${r.total} 个代码块补全语言`);
+      const detail = `识别语言 ${r.identified}` + (r.fallbackText ? `，回退 text ${r.fallbackText}` : "");
+      console.log(`${r.changed > 0 ? "✓" : "•"} ${f}  ${r.changed}/${r.total} 个代码块补全（${detail}）`);
     }
   }
 }
-console.log(`\n完成: ${totChanged}/${totBlock} 个代码块补全语言标识，涉及 ${totFiles} 个文件。`);
+const idInfo = totIdentified ? `（其中 ${totIdentified} 个识别出具体语言` + (totFallback ? `，${totFallback} 个回退 text` : "") + `）` : "";
+console.log(`\n完成: ${totChanged}/${totBlock} 个代码块补全语言标识，涉及 ${totFiles} 个文件${idInfo}。`);
