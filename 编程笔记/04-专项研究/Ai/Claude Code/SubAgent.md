@@ -2,6 +2,9 @@
 分类:
   - "[[Claude Code]]"
 关联笔记:
+  - "[[Agent Teams]]"
+  - "[[skills]]"
+  - "[[Hooks]]"
 描述: Claude Code Subagent 的存放位置、文件格式、管理命令与调用方式
 排序: 468
 分组:
@@ -9,10 +12,12 @@
 ---
 # SubAgent
 
+## 是什么
+
 > [!note] 定义
 > Subagent 是带 frontmatter 的 `Markdown` 文件，把聚焦的任务委派给运行在**隔离上下文**中的专用 agent 执行，主 agent 不会看到子代理的中间过程，只拿回最终结果。
 
-## 分类
+## 在哪配
 
 Subagent 文件按作用域分两级存放：
 
@@ -21,7 +26,7 @@ Subagent 文件按作用域分两级存放：
 | 项目级 | `.claude/agents/` | 仅当前项目，可随仓库共享给团队 |
 | 用户级 | `~/.claude/agents/` | 当前用户的全部项目 |
 
-## 文件格式
+## 怎么配
 
 Subagent 本体是一个带 frontmatter 的 Markdown 文件，frontmatter 描述「叫什么 / 何时调用 / 能用什么」，正文是任务提示词。下面是一个 `code-reviewer` 示例：
 
@@ -62,7 +67,9 @@ tools: Read, Grep, Bash
 | 限制 Bash | 去掉 `Bash` | 禁止执行 shell 命令，降低风险 |
 | 允许更强工具集 | 显式列出 `Bash, Write, Edit` | 给予完整的修改与执行权限 |
 
-## 管理 agent
+## 怎么用
+
+### 管理 agent
 
 用 `/agents` 斜杠命令管理当前会话的 subagent：
 
@@ -77,7 +84,7 @@ tools: Read, Grep, Bash
 claude agents
 ```
 
-## 使用 agent
+### 使用 agent
 
 主 agent 调用 subagent 有以下几种方式：
 
@@ -90,3 +97,5 @@ claude agents
 
 ## Agent Teams
 
+> [!tip] 协作模式：Subagents vs Agent Teams
+> Subagent 适合「专注委派」——目标单一、只要最终结果；若需要多角色**讨论、相互校验、并行推进**的复杂协作，改用 [[Agent Teams]]。两者的核心差异（独立上下文 / 通信方式 / 协调机制）详见 [[Agent Teams#核心差异对比]]。

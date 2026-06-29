@@ -9,9 +9,13 @@
 创建时间: "2026-06-28T07:40:21+08:00"
 ---
 
-[![[mattpocock-skills-68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f746f74616c2d747970657363726970742f696d6167652f75706c6f61642f76313737373338323237372f736b696c6c2d7265706f2d6c696768745f32782e706e67.webp]]](https://www.aihero.dev/s/skills-newsletter)## 给真正工程师用的技能
+# mattpocock skills
+
+[![[mattpocock-skills-68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f746f74616c2d747970657363726970742f696d6167652f75706c6f6164/v317773822772f736b696c6c2d7265706f2d6c696768745f32782e706e67.webp]]](https://www.aihero.dev/s/skills-newsletter)
 
 [![[mattpocock-skills-68747470733a2f2f736b696c6c732e73682f622f6d617474706f636f636b2f736b696c6c73.svg]]](https://skills.sh/mattpocock/skills)
+
+## 给真正工程师用的技能
 
 这些是我每天用来做真正工程的智能体(agent)技能——而非氛围编码(vibe coding)。
 
@@ -26,14 +30,16 @@
 ## 快速开始（30 秒设置）
 
 1. 运行 skills.sh 安装器：
-```bash
-npx skills@latest add mattpocock/skills
-```
+
+    ```bash
+    npx skills@latest add mattpocock/skills
+    ```
+
 2. 挑选你想要的技能，以及要把它们安装到哪些编码智能体上。**务必勾选 `/setup-matt-pocock-skills`**。
 3. 在你的智能体中运行 `/setup-matt-pocock-skills`，它会：
-	- 询问你要使用哪个 issue 跟踪器（GitHub、Linear，或本地文件）
-		- 询问你在分流(triage)工单时给它们打上哪些标签（`/triage` 会用到标签）
-		- 询问你想把创建的文档保存到哪里
+    - 询问你要使用哪个 issue 跟踪器（GitHub、Linear，或本地文件）
+        - 询问你在分流(triage)工单时给它们打上哪些标签（`/triage` 会用到标签）
+        - 询问你想把创建的文档保存到哪里
 4. 好了——一切就绪。
 
 ## 这些技能为何存在
@@ -69,7 +75,7 @@ npx skills@latest add mattpocock/skills
 
 **解决办法**是一套共享语言(shared language)。它是一份帮助智能体解码项目中行话的文档。
 
-示例
+**示例**
 
 下面这个示例 [`CONTEXT.md`](https://github.com/mattpocock/course-video-manager/blob/076a5a7a182db0fe1e62971dd7a68bcadf010f1c/CONTEXT.md)，来自我的 `course-video-manager` 仓库。哪一种更好读？
 
@@ -141,21 +147,25 @@ npx skills@latest add mattpocock/skills
 
 **用户调用**
 
-- **[ask-matt](https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md)**——询问哪种技能或流程适合你的处境。它是本仓库中用户调用技能之上的一个路由器。
-- **[grill-with-docs](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md)**——盘问环节，同时构建你项目的领域模型，打磨术语，并就地更新 `CONTEXT.md` 和 ADR。
-- **[triage](https://github.com/mattpocock/skills/blob/main/skills/engineering/triage/SKILL.md)**——通过一个分流角色状态机流转工单。
-- **[improve-codebase-architecture](https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/SKILL.md)**——扫描代码库寻找加深(deepening)机会，以可视化的 HTML 报告呈现，然后针对你选中的那个进行盘问。
-- **[setup-matt-pocock-skills](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md)**——为本仓库配置工程技能（issue 跟踪器、分流标签、领域文档布局）。在使用其他工程技能前，每个仓库运行一次。
-- **[to-issues](https://github.com/mattpocock/skills/blob/main/skills/engineering/to-issues/SKILL.md)**——使用垂直切片(vertical slices)，把任何计划、规格或 PRD 拆解为可独立认领的工单。
-- **[to-prd](https://github.com/mattpocock/skills/blob/main/skills/engineering/to-prd/SKILL.md)**——把当前对话转成 PRD 并发布到 issue 跟踪器。不做访谈——只是综合你已经讨论过的内容。
-- **[prototype](https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md)**——构建一次性原型来充实设计——可以是一个可运行的终端应用（用于状态/业务逻辑问题），也可以是从同一路由切换的几个截然不同的 UI 变体。
+| 技能 | 说明 |
+| --- | --- |
+| [`/ask-matt`](https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md) | 询问哪种技能或流程适合你的处境。它是本仓库中用户调用技能之上的一个路由器。 |
+| [`/grill-with-docs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md) | 盘问环节，同时构建你项目的领域模型，打磨术语，并就地更新 `CONTEXT.md` 和 ADR。 |
+| [`/triage`](https://github.com/mattpocock/skills/blob/main/skills/engineering/triage/SKILL.md) | 通过一个分流角色状态机流转工单。 |
+| [`/improve-codebase-architecture`](https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/SKILL.md) | 扫描代码库寻找加深(deepening)机会，以可视化的 HTML 报告呈现，然后针对你选中的那个进行盘问。 |
+| [`/setup-matt-pocock-skills`](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md) | 为本仓库配置工程技能（issue 跟踪器、分流标签、领域文档布局）。在使用其他工程技能前，每个仓库运行一次。 |
+| [`/to-issues`](https://github.com/mattpocock/skills/blob/main/skills/engineering/to-issues/SKILL.md) | 使用垂直切片(vertical slices)，把任何计划、规格或 PRD 拆解为可独立认领的工单。 |
+| [`/to-prd`](https://github.com/mattpocock/skills/blob/main/skills/engineering/to-prd/SKILL.md) | 把当前对话转成 PRD 并发布到 issue 跟踪器。不做访谈——只是综合你已经讨论过的内容。 |
+| [`/prototype`](https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md) | 构建一次性原型来充实设计——可以是一个可运行的终端应用（用于状态/业务逻辑问题），也可以是从同一路由切换的几个截然不同的 UI 变体。 |
 
 **模型调用**
 
-- **[diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md)**——用于疑难缺陷和性能回归的严谨诊断循环：复现 → 最小化 → 假设 → 插桩 → 修复 → 回归测试。
-- **[tdd](https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md)**——采用红-绿-重构循环的测试驱动开发。每次构建一个垂直切片的功能或修复一个缺陷。
-- **[domain-modeling](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md)**——主动构建并打磨项目的领域模型——用术语表挑战术语、用边界场景做压力测试，并就地更新 `CONTEXT.md` 和 ADR。
-- **[codebase-design](https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md)**——用于设计深模块(deep modules)的共享纪律与词汇：大量行为隐藏在一个小接口背后，放置在干净的接缝(seam)处，并可通过该接口测试。
+| 技能 | 说明 |
+| --- | --- |
+| [`/diagnosing-bugs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md) | 用于疑难缺陷和性能回归的严谨诊断循环：复现 → 最小化 → 假设 → 插桩 → 修复 → 回归测试。 |
+| [`/tdd`](https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md) | 采用红-绿-重构循环的测试驱动开发。每次构建一个垂直切片的功能或修复一个缺陷。 |
+| [`/domain-modeling`](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md) | 主动构建并打磨项目的领域模型——用术语表挑战术语、用边界场景做压力测试，并就地更新 `CONTEXT.md` 和 ADR。 |
+| [`/codebase-design`](https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md) | 用于设计深模块(deep modules)的共享纪律与词汇：大量行为隐藏在一个小接口背后，放置在干净的接缝(seam)处，并可通过该接口测试。 |
 
 ### Productivity（生产力）
 
@@ -163,20 +173,26 @@ npx skills@latest add mattpocock/skills
 
 **用户调用**
 
-- **[grill-me](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md)**——被毫不留情地盘问某个计划或设计，直到决策树的每一条分支都被解决。
-- **[handoff](https://github.com/mattpocock/skills/blob/main/skills/productivity/handoff/SKILL.md)**——把当前对话压缩成一份交接文档，以便另一个智能体继续这项工作。
-- **[teach](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md)**——跨越多个会话向用户教授一项新技能或概念，把当前目录作为有状态的教学工作区。
-- **[writing-great-skills](https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-great-skills/SKILL.md)**——编写和编辑优秀技能的参考：那些让技能变得可预测的词汇与原则。
+| 技能 | 说明 |
+| --- | --- |
+| [`/grill-me`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) | 被毫不留情地盘问某个计划或设计，直到决策树的每一条分支都被解决。 |
+| [`/handoff`](https://github.com/mattpocock/skills/blob/main/skills/productivity/handoff/SKILL.md) | 把当前对话压缩成一份交接文档，以便另一个智能体继续这项工作。 |
+| [`/teach`](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md) | 跨越多个会话向用户教授一项新技能或概念，把当前目录作为有状态的教学工作区。 |
+| [`/writing-great-skills`](https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-great-skills/SKILL.md) | 编写和编辑优秀技能的参考：那些让技能变得可预测的词汇与原则。 |
 
 **模型调用**
 
-- **[grilling](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md)**——毫不留情地盘问用户关于某个计划或设计，直到决策树的每一条分支都被解决。它是 `grill-me` 和 `grill-with-docs` 背后的可复用循环。
+| 技能 | 说明 |
+| --- | --- |
+| [`/grilling`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md) | 毫不留情地盘问用户关于某个计划或设计，直到决策树的每一条分支都被解决。它是 `grill-me` 和 `grill-with-docs` 背后的可复用循环。 |
 
 ### Misc（杂项）
 
 我保留着但很少使用的工具。
 
-- **[git-guardrails-claude-code](https://github.com/mattpocock/skills/blob/main/skills/misc/git-guardrails-claude-code/SKILL.md)**——设置 Claude Code 钩子(hooks)，在危险 git 命令（push、reset --hard、clean 等）执行前拦截它们。
-- **[migrate-to-shoehorn](https://github.com/mattpocock/skills/blob/main/skills/misc/migrate-to-shoehorn/SKILL.md)**——把测试文件从 `as` 类型断言迁移到 @total-typescript/shoehorn。
-- **[scaffold-exercises](https://github.com/mattpocock/skills/blob/main/skills/misc/scaffold-exercises/SKILL.md)**——创建带章节、题目、解答和讲解的练习目录结构。
-- **[setup-pre-commit](https://github.com/mattpocock/skills/blob/main/skills/misc/setup-pre-commit/SKILL.md)**——设置 Husky pre-commit 钩子，配合 lint-staged、Prettier、类型检查和测试。
+| 技能 | 说明 |
+| --- | --- |
+| [`/git-guardrails-claude-code`](https://github.com/mattpocock/skills/blob/main/skills/misc/git-guardrails-claude-code/SKILL.md) | 设置 Claude Code 钩子(hooks)，在危险 git 命令（push、reset --hard、clean 等）执行前拦截它们。 |
+| [`/migrate-to-shoehorn`](https://github.com/mattpocock/skills/blob/main/skills/misc/migrate-to-shoehorn/SKILL.md) | 把测试文件从 `as` 类型断言迁移到 @total-typescript/shoehorn。 |
+| [`/scaffold-exercises`](https://github.com/mattpocock/skills/blob/main/skills/misc/scaffold-exercises/SKILL.md) | 创建带章节、题目、解答和讲解的练习目录结构。 |
+| [`/setup-pre-commit`](https://github.com/mattpocock/skills/blob/main/skills/misc/setup-pre-commit/SKILL.md) | 设置 Husky pre-commit 钩子，配合 lint-staged、Prettier、类型检查和测试。 |

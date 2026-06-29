@@ -3587,7 +3587,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 6.898148148148148,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 15,
@@ -3705,18 +3705,22 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/ponytail.md": {
-    "scroll": 0,
+    "scroll": 143.56560283687944,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 168,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 168,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5"
+    ]
   },
   "网页裁剪/ponytail README.md": {
     "scroll": 10.440238260816981,
@@ -4354,15 +4358,15 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 487.6402777777778,
+    "scroll": 502.3569444444444,
     "cursor": {
       "from": {
-        "line": 508,
-        "ch": 13
+        "line": 543,
+        "ch": 9
       },
       "to": {
-        "line": 508,
-        "ch": 13
+        "line": 543,
+        "ch": 9
       }
     },
     "expandedKeys": [
@@ -4374,7 +4378,8 @@
       "item-2-16",
       "item-3-20",
       "item-3-29",
-      "item-3-25"
+      "item-3-25",
+      "item-3-35"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -5232,7 +5237,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/真正工程师的技能.md": {
-    "scroll": 0,
+    "scroll": 29.480416572334164,
     "cursor": {
       "from": {
         "line": 12,
@@ -5243,18 +5248,24 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-3-6",
+      "item-2-5",
+      "item-3-11"
+    ]
   },
   "网页裁剪/mattpocock skills README.md": {
-    "scroll": 11.659403669724771,
+    "scroll": 4.62962962962963,
     "cursor": {
       "from": {
-        "line": 20,
-        "ch": 0
+        "line": 25,
+        "ch": 15
       },
       "to": {
-        "line": 20,
-        "ch": 0
+        "line": 25,
+        "ch": 15
       }
     },
     "expandedKeys": [
@@ -6360,39 +6371,43 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/Claude Code/MCP.md": {
-    "scroll": 0,
+    "scroll": 101.2331223628692,
     "cursor": {
       "from": {
-        "line": 9,
+        "line": 36,
         "ch": 0
       },
       "to": {
-        "line": 9,
-        "ch": 0
-      }
-    },
-    "expandedKeys": []
-  },
-  "编程笔记/04-专项研究/Ai/Claude Code/Hooks.md": {
-    "scroll": 38.638888888888886,
-    "cursor": {
-      "from": {
-        "line": 141,
-        "ch": 0
-      },
-      "to": {
-        "line": 141,
+        "line": 36,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-1",
-      "item-2-4"
+      "item-2-3",
+      "item-2-7"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/Hooks.md": {
+    "scroll": 22.683333333333334,
+    "cursor": {
+      "from": {
+        "line": 145,
+        "ch": 2
+      },
+      "to": {
+        "line": 145,
+        "ch": 2
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-5",
+      "item-2-2"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/SubAgent.md": {
-    "scroll": 51.5505376344086,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 90,
@@ -6857,7 +6872,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/Claude Code/Agent Teams.md": {
-    "scroll": 55.67777777777778,
+    "scroll": 71.50277777777778,
     "cursor": {
       "from": {
         "line": 89,
@@ -6871,6 +6886,75 @@
     "expandedKeys": [
       "item-1-0",
       "item-2-2"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/CodeGraph.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/CodeGraph README.md": {
+    "scroll": 5.201698513800425,
+    "cursor": {
+      "from": {
+        "line": 26,
+        "ch": 521
+      },
+      "to": {
+        "line": 26,
+        "ch": 521
+      }
+    },
+    "expandedKeys": [
+      "item-2-1",
+      "item-2-4",
+      "item-2-10"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/codebase-memory-mcp.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/codebase-memory-mcp README.md": {
+    "scroll": 357.07152777777776,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-2",
+      "item-2-7",
+      "item-2-18",
+      "item-2-20",
+      "item-2-29",
+      "item-2-32",
+      "item-2-38",
+      "item-2-46"
     ]
   }
 }
