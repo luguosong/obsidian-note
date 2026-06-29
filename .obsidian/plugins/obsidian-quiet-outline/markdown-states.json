@@ -4004,15 +4004,15 @@
     "expandedKeys": []
   },
   "网页裁剪/pua README.md": {
-    "scroll": 693.7686746987952,
+    "scroll": 41.44347973163443,
     "cursor": {
       "from": {
-        "line": 277,
-        "ch": 0
+        "line": 41,
+        "ch": 11
       },
       "to": {
-        "line": 277,
-        "ch": 0
+        "line": 41,
+        "ch": 11
       }
     },
     "expandedKeys": [
@@ -4020,7 +4020,11 @@
       "item-1-22",
       "item-2-29",
       "item-2-36",
-      "item-1-42"
+      "item-1-42",
+      "item-2-0",
+      "item-2-5",
+      "item-2-8",
+      "item-2-14"
     ]
   },
   "编程笔记/04-专项研究/Redis/相关资源.md": {
@@ -5831,7 +5835,7 @@
     "expandedKeys": []
   },
   "网页裁剪/Java 官方教程.md": {
-    "scroll": 0,
+    "scroll": 2.314814814814815,
     "cursor": {
       "from": {
         "line": 72,
@@ -6017,14 +6021,14 @@
     "expandedKeys": []
   },
   "网页裁剪/数字和字符串.md": {
-    "scroll": 0,
+    "scroll": 5.092592592592593,
     "cursor": {
       "from": {
-        "line": 0,
+        "line": 38,
         "ch": 0
       },
       "to": {
-        "line": 0,
+        "line": 38,
         "ch": 0
       }
     },
@@ -6342,7 +6346,7 @@
     "expandedKeys": []
   },
   "网页裁剪/注解.md": {
-    "scroll": 0,
+    "scroll": 5.092592592592593,
     "cursor": {
       "from": {
         "line": 12,
@@ -6370,32 +6374,39 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/Claude Code/Hooks.md": {
-    "scroll": 0,
+    "scroll": 38.638888888888886,
     "cursor": {
       "from": {
-        "line": 9,
+        "line": 141,
         "ch": 0
       },
       "to": {
-        "line": 9,
+        "line": 141,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-4"
+    ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/SubAgent.md": {
-    "scroll": 0,
+    "scroll": 51.5505376344086,
     "cursor": {
       "from": {
-        "line": 9,
-        "ch": 0
+        "line": 90,
+        "ch": 14
       },
       "to": {
-        "line": 9,
-        "ch": 0
+        "line": 90,
+        "ch": 3
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/skills.md": {
     "scroll": 0,
@@ -6480,5 +6491,386 @@
       }
     },
     "expandedKeys": []
+  },
+  "网页裁剪/JavaBeans.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/接口和继承.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 35,
+        "ch": 0
+      },
+      "to": {
+        "line": 35,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/接口.md": {
+    "scroll": 69.90555555555555,
+    "cursor": {
+      "from": {
+        "line": 95,
+        "ch": 0
+      },
+      "to": {
+        "line": 95,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/继承.md": {
+    "scroll": 156.61944444444444,
+    "cursor": {
+      "from": {
+        "line": 182,
+        "ch": 0
+      },
+      "to": {
+        "line": 182,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/定义接口.md": {
+    "scroll": 18.466666666666665,
+    "cursor": {
+      "from": {
+        "line": 47,
+        "ch": 0
+      },
+      "to": {
+        "line": 47,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/接口问题和练习.md": {
+    "scroll": 3.412037037037037,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/默认方法.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/状态实现类型的多重继承.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/重写和隐藏方法.md": {
+    "scroll": 192.70555555555555,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/多态.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/隐藏字段.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/继承小结.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/数字.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 34,
+        "ch": 0
+      },
+      "to": {
+        "line": 34,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/字符串.md": {
+    "scroll": 163.44305555555556,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/格式化数字输出.md": {
+    "scroll": 53.327777777777776,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/泛型.md": {
+    "scroll": 7.638888888888889,
+    "cursor": {
+      "from": {
+        "line": 41,
+        "ch": 0
+      },
+      "to": {
+        "line": 41,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/为什么使用泛型？.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/泛型类型.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/泛型方法.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/有界类型参数.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/泛型继承和子类型.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/类型推断.md": {
+    "scroll": 14.022222222222222,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/泛型的限制.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/泛型问题和练习.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/为什么使用泛型.md": {
+    "scroll": 2.5462962962962963,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/cli.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/Agent Teams.md": {
+    "scroll": 55.67777777777778,
+    "cursor": {
+      "from": {
+        "line": 89,
+        "ch": 0
+      },
+      "to": {
+        "line": 89,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
   }
 }
