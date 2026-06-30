@@ -3587,7 +3587,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 0,
+    "scroll": 14.3267292075049,
     "cursor": {
       "from": {
         "line": 15,
@@ -3666,12 +3666,12 @@
     "scroll": 18.132919452403694,
     "cursor": {
       "from": {
-        "line": 38,
-        "ch": 0
+        "line": 28,
+        "ch": 17
       },
       "to": {
-        "line": 38,
-        "ch": 0
+        "line": 28,
+        "ch": 2
       }
     },
     "expandedKeys": []
@@ -3892,11 +3892,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 16,
+        "line": 15,
         "ch": 0
       },
       "to": {
-        "line": 16,
+        "line": 15,
         "ch": 0
       }
     },
@@ -4155,11 +4155,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 13,
+        "line": 12,
         "ch": 0
       },
       "to": {
-        "line": 13,
+        "line": 12,
         "ch": 0
       }
     },
@@ -4182,15 +4182,15 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
-    "scroll": 30.95158850226929,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 107,
-        "ch": 10
+        "ch": 97
       },
       "to": {
         "line": 107,
-        "ch": 10
+        "ch": 97
       }
     },
     "expandedKeys": [
@@ -4216,15 +4216,15 @@
     ]
   },
   "编程笔记/04-专项研究/Obsidian/markdown语法.md": {
-    "scroll": 66.87825520833333,
+    "scroll": 48.339080459770116,
     "cursor": {
       "from": {
-        "line": 92,
-        "ch": 3
+        "line": 80,
+        "ch": 0
       },
       "to": {
-        "line": 92,
-        "ch": 3
+        "line": 80,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -4358,29 +4358,29 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 599.15,
+    "scroll": 522.4631944444444,
     "cursor": {
       "from": {
-        "line": 602,
-        "ch": 0
+        "line": 545,
+        "ch": 4
       },
       "to": {
-        "line": 602,
-        "ch": 0
+        "line": 545,
+        "ch": 10
       }
     },
     "expandedKeys": [
-      "item-2-1",
       "item-1-0",
+      "item-2-1",
       "item-3-2",
       "item-2-5",
-      "item-2-19",
       "item-2-16",
+      "item-2-19",
       "item-3-20",
-      "item-3-29",
       "item-3-25",
-      "item-2-42",
-      "item-3-36"
+      "item-3-29",
+      "item-3-36",
+      "item-2-39"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -6958,5 +6958,36 @@
       "item-2-38",
       "item-2-46"
     ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/官方skill.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-2",
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Agent Skills 仓库.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
   }
 }

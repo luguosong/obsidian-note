@@ -5,7 +5,7 @@
   - "[[gstack README]]"
 描述: (❗卸载了，太重了，某些skill很好用，但一大堆用不到的内容站上下文，而且搞得我skill目录很混乱)。gstack 是 Y Combinator CEO Garry Tan 开源的 Claude Code 技能包，内置 23 个模拟 CEO、设计师、工程经理、QA 等角色的专业 Agent 技能与 8 个核心工具，旨在让单兵开发者拥有整个初创团队的协同作战能力。
 排序: 7000
-分组:
+分组: 工程方法论与工作流
 创建时间: 2026年06月25日
 ---
 # gstack
