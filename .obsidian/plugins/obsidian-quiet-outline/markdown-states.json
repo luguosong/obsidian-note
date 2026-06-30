@@ -4358,15 +4358,15 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 502.3569444444444,
+    "scroll": 599.15,
     "cursor": {
       "from": {
-        "line": 543,
-        "ch": 9
+        "line": 602,
+        "ch": 0
       },
       "to": {
-        "line": 543,
-        "ch": 9
+        "line": 602,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -4379,7 +4379,8 @@
       "item-3-20",
       "item-3-29",
       "item-3-25",
-      "item-3-35"
+      "item-2-42",
+      "item-3-36"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -5237,7 +5238,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/真正工程师的技能.md": {
-    "scroll": 29.480416572334164,
+    "scroll": 107.03982067510549,
     "cursor": {
       "from": {
         "line": 12,
@@ -5257,20 +5258,21 @@
     ]
   },
   "网页裁剪/mattpocock skills README.md": {
-    "scroll": 4.62962962962963,
+    "scroll": 51.25555555555555,
     "cursor": {
       "from": {
-        "line": 25,
-        "ch": 15
+        "line": 57,
+        "ch": 0
       },
       "to": {
-        "line": 25,
-        "ch": 15
+        "line": 57,
+        "ch": 0
       }
     },
     "expandedKeys": [
-      "item-2-1",
-      "item-2-7"
+      "item-1-0",
+      "item-2-3",
+      "item-2-9"
     ]
   },
   "网页裁剪/JDBC-基础-检索修改值.md": {
