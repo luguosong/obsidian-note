@@ -12,5 +12,6 @@
   "minimal-style@@h1-l": true,
   "minimal-style@@h2-l": true,
   "minimal-style@@code-size": "1em",
-  "minimal-style@@image-grid-background@@dark": "#FFFFFF"
+  "minimal-style@@image-grid-background@@dark": "#FFFFFF",
+  "minimal-style@@maximize-tables-off": "maximize-tables-off"
 }

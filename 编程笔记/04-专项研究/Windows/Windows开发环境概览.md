@@ -154,8 +154,10 @@ pip：26.1
 - **无自升级命令**：升级需手动下载 [release](https://github.com/rtk-ai/rtk/releases) 的 `rtk-x86_64-pc-windows-msvc.zip`，解压后用 `rtk.exe` 覆盖 `C:\Users\10545\.local\bin\rtk.exe`（单点安装，全机只此一份）。
 - 接入 AI 工具：`rtk init -g`（写入 `~/.claude/settings.json` 与 `~/.claude/CLAUDE.md`，可 `rtk init -g --uninstall` 卸载）。
 
-> [!warning] 原生 Windows 的 hook 限制
-> 自动改写 hook（`rtk-rewrite.sh`）依赖 Unix shell。官方称原生 Windows（cmd / PowerShell）会退化为 CLAUDE.md 注入模式——AI 收到 RTK 指令但命令不会自动改写，需手动 `rtk xxx`。但实测 **Git Bash** 下 Claude Code 的 PreToolUse hook 可正常运行，自动改写有望生效；完整支持需 WSL。
+> [!warning] 原生 Windows 的 hook 兼容性（实测 2026-07-02）
+> 旧版 rtk 的 `init -g` 生成 `.sh` 脚本（`rtk-rewrite.sh`），原生 Windows 跑不了（issue #502 / discussion #1212 需 WSL workaround）。**0.43 改用 native binary hook**（`command: "rtk hook claude"` 直接调 rtk.exe，不依赖 .sh），绕开了该坑。实测 **Git Bash + Claude Code 2.1.x 下自动改写生效**：`rtk gain` 账本里 Total commands 实时增长，`git commit` 代理 500+ 次省 ~95%，`mvn compile` 等同样在压缩。
+>
+> ⚠️ **判断是否生效看 `rtk gain` 账本 + 输出格式**（变简洁），**别看 Claude Code UI 的命令名**——UI 显示的是原始 `Bash(git status)`，hook 改写发生在执行前、UI 不反映，盯着 UI 会误判"没生效"。眼见为实：`git status`（被改写，简洁）vs `rtk proxy git status`（强制绕过，冗长），差异即 rtk 省掉的部分。
 
 ## 关键环境变量
 

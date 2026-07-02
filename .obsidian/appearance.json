@@ -8,7 +8,8 @@
   "enabledCssSnippets": [
     "inline-code",
     "headings",
-    "callout-compact"
+    "callout-compact",
+    "table-width"
   ],
   "showRibbon": true
 }

@@ -1,0 +1,33 @@
+/*
+ * 表格宽度约束（不超出页面宽度）
+ * 根因：默认 table-layout: auto 会按内容计算列宽，遇到长命令/链接/行内代码
+ *       会把表格顶出容器、产生横向滚动条。
+ * 方案：容器与表格限宽 100% + table-layout: fixed 列宽均分 + 单元格任意换行。
+ * 同时适配「阅读模式」与「实时预览（Live Preview）」
+ *
+ * 启用路径：设置 → 外观 → CSS 代码片段 → 勾选 table-width
+ */
+
+/* ===== 容器与表格：限宽，不溢出页面 ===== */
+.markdown-rendered .table-wrapper,
+.markdown-rendered table,
+.is-live-preview .table-wrapper,
+.is-live-preview table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ===== 列宽均分：不再被长内容撑开 ===== */
+.markdown-rendered table,
+.is-live-preview table {
+  table-layout: fixed !important;
+}
+
+/* ===== 单元格换行：吸收超长文本 / 命令 / 链接 ===== */
+.markdown-rendered td,
+.markdown-rendered th,
+.is-live-preview td,
+.is-live-preview th {
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}

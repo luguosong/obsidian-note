@@ -8,7 +8,7 @@
 发布时间:
 创建时间: "2026-06-29T08:48:38+08:00"
 ---
-## codebase-memory-mcp
+# codebase-memory-mcp
 
 [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f44657573446174612f636f6465626173652d6d656d6f72792d6d63703f7374796c653d666c617426636f6c6f723d626c7565.svg]]](https://github.com/DeusData/codebase-memory-mcp/releases/latest) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d677265656e.svg]]](https://github.com/DeusData/codebase-memory-mcp/blob/main/LICENSE) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f44657573446174612f636f6465626173652d6d656d6f72792d6d63702f6472792d72756e2e796d6c3f6c6162656c3d4349.svg]]](https://github.com/DeusData/codebase-memory-mcp/actions/workflows/dry-run.yml) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74657374732d353630345f70617373696e672d627269676874677265656e.svg]]](https://github.com/DeusData/codebase-memory-mcp) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e6775616765732d3135382d6f72616e6765.svg]]](https://github.com/DeusData/codebase-memory-mcp) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4879627269645f4c53502d395f6c616e6775616765732d626c7565.svg]]](#hybrid-lsp) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6167656e74732d31312d707572706c65.svg]]](https://github.com/DeusData/codebase-memory-mcp) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707572655f432d7a65726f5f646570656e64656e636965732d626c7565.svg]]](https://github.com/DeusData/codebase-memory-mcp) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d61634f535f2537435f4c696e75785f2537435f57696e646f77732d737570706f727465642d6c6967687467726579.svg]]](https://github.com/DeusData/codebase-memory-mcp/releases/latest) [![[codebase-mcp-68747470733a2f2f6170692e73636f7265636172642e6465762f70726f6a656374732f6769746875622e636f6d2f44657573446174612f636f6465626173652d6d656d6f72792d6d63702f6261646765.svg]]](https://scorecard.dev/viewer/?uri=github.com/DeusData/codebase-memory-mcp) [![[codebase-mcp-68747470733a2f2f736c73612e6465762f696d616765732f67682d62616467652d6c6576656c332e737667.svg]]](https://slsa.dev/) [![[codebase-mcp-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5669727573546f74616c2d7363616e6e65645f65766572795f72656c656173652d627269676874677265656e3f6c6f676f3d7669727573746f74616c.svg]]](https://github.com/DeusData/codebase-memory-mcp/releases/latest) [![arXiv](https://camo.githubusercontent.com/15cc54571dd4f65469ba35262f87ec39207b06ce9562913888f1a7b7ab173df0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f61725869762d323630332e32373237372d6233316231623f6c6f676f3d6172626976)](https://arxiv.org/abs/2603.27277)
 
@@ -65,17 +65,22 @@ notepad install.ps1
 
 重启你的编程智能体。说一句 **"Index this project"（索引本项目）** —— 完成。
 
-手动安装
+### 手动安装
+
 1. **下载**适合你平台的归档包，从[最新发布版本](https://github.com/DeusData/codebase-memory-mcp/releases/latest)：
 	- `codebase-memory-mcp-<os>-<arch>.tar.gz`（macOS/Linux）或 `.zip`（Windows）—— 标准版
 		- `codebase-memory-mcp-ui-<os>-<arch>.tar.gz` / `.zip` —— 带图谱可视化
 2. **解压并安装**（每个归档包都包含 `install.sh` 或 `install.ps1`）：
-	macOS / Linux：
+
+	**macOS / Linux：**
+
 	```bash
 	tar xzf codebase-memory-mcp-*.tar.gz
 	./install.sh
 	```
-	Windows（PowerShell）：
+
+	**Windows（PowerShell）：**
+
 	```powershell
 	Expand-Archive codebase-memory-mcp-windows-amd64.zip -DestinationPath .
 	.\install.ps1
@@ -187,7 +192,7 @@ codebase-memory-mcp uninstall
 - **格式**：SQLite 数据库，剥离索引、`VACUUM INTO` 压紧，再用 zstd 1.5.7 压缩（典型压缩比 8–13:1）
 - **两个层级**：
 	- **Best**（`zstd -9` + 剥离索引 + `VACUUM INTO`）—— 显式执行 `index_repository` 时写入
-		- **Fast**（`zstd -3`）—— 由监视器为低延迟增量更新写入
+	- **Fast**（`zstd -3`）—— 由监视器为低延迟增量更新写入
 - **引导（Bootstrap）**：当本地不存在 DB 但工件存在时，`index_repository` 先导入工件，再运行增量索引 —— 从而避免全量重新索引的开销
 - **无合并烦恼**：首次导出时会自动创建一行带 `merge=ours` 的 `.gitattributes`，使并发编辑不会在该二进制工件上产生冲突
 - **可选**：除非你想要，否则从不提交。若你更希望所有人都从零开始重新索引，把 `.codebase-memory/` 加入 `.gitignore`。
@@ -269,8 +274,6 @@ level=info msg=diagnostics.start snapshot=/tmp/cbm-diagnostics-12345.json trajec
 
 ### 安装脚本
 
-自动下载 + 安装
-
 **macOS / Linux：**
 
 ```bash
@@ -321,9 +324,7 @@ scripts/build.sh --with-ui          # 带图谱可视化
 
 ### 手动 MCP 配置
 
-若你不想使用 install 命令
-
-添加到 `~/.claude/.mcp.json`（全局）或项目 `.mcp.json`：
+若你不想使用 install 命令，可手动添加到 `~/.claude/.mcp.json`（全局）或项目 `.mcp.json`：
 
 ```json
 {

@@ -3498,7 +3498,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
-    "scroll": 0.046296296296296294,
+    "scroll": 14.382118232890704,
     "cursor": {
       "from": {
         "line": 15,
@@ -3587,14 +3587,14 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 14.396632595911509,
+    "scroll": 14.342866143937272,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 15,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 15,
         "ch": 0
       }
     },
@@ -4049,15 +4049,17 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 14,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 14,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/01-JavaSE.md": {
     "scroll": 0,
@@ -4180,15 +4182,15 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
-    "scroll": 243.58783333333332,
+    "scroll": 471.96421961752003,
     "cursor": {
       "from": {
-        "line": 265,
-        "ch": 28
+        "line": 381,
+        "ch": 116
       },
       "to": {
-        "line": 265,
-        "ch": 28
+        "line": 381,
+        "ch": 144
       }
     },
     "expandedKeys": [
@@ -4309,15 +4311,15 @@
     ]
   },
   "编程笔记/04-专项研究/Obsidian/skill说明.md": {
-    "scroll": 0,
+    "scroll": 14.954166666666667,
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 9
+        "line": 11,
+        "ch": 8
       },
       "to": {
-        "line": 10,
-        "ch": 9
+        "line": 11,
+        "ch": 8
       }
     },
     "expandedKeys": [
@@ -6412,8 +6414,8 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 90,
-        "ch": 14
+        "line": 91,
+        "ch": 2
       },
       "to": {
         "line": 90,
@@ -6421,23 +6423,24 @@
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-2-2"
+      "item-1-0"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/skills.md": {
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 13,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 13,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/上下文管理.md": {
     "scroll": 0,
@@ -6937,7 +6940,7 @@
     "expandedKeys": []
   },
   "网页裁剪/codebase-memory-mcp README.md": {
-    "scroll": 4.434589800443459,
+    "scroll": 22.409054325955733,
     "cursor": {
       "from": {
         "line": 14,
@@ -6948,7 +6951,13 @@
         "ch": 162
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-8",
+      "item-2-19",
+      "item-2-21"
+    ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方skill.md": {
     "scroll": 33.295833333333334,
@@ -6982,15 +6991,15 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Windows/Windows开发环境概览.md": {
-    "scroll": 122.84722222222223,
+    "scroll": 135.09469696969697,
     "cursor": {
       "from": {
-        "line": 144,
-        "ch": 0
+        "line": 161,
+        "ch": 9
       },
       "to": {
-        "line": 144,
-        "ch": 0
+        "line": 161,
+        "ch": 9
       }
     },
     "expandedKeys": [
@@ -6998,19 +7007,20 @@
     ]
   },
   "编程笔记/04-专项研究/Windows/PowerShell配置Claude多账号切换.md": {
-    "scroll": 84.22916666666667,
+    "scroll": 60.86805555555556,
     "cursor": {
       "from": {
-        "line": 116,
-        "ch": 24
+        "line": 140,
+        "ch": 0
       },
       "to": {
-        "line": 116,
-        "ch": 38
+        "line": 140,
+        "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-2"
     ]
   },
   "编程笔记/04-专项研究/Ai/Github Copilot App/未命名.md": {
@@ -7086,6 +7096,29 @@
     "expandedKeys": [
       "item-1-0",
       "item-2-4"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
+    "scroll": 34.56495633187773,
+    "cursor": {
+      "from": {
+        "line": 73,
+        "ch": 15
+      },
+      "to": {
+        "line": 47,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-9",
+      "item-2-25",
+      "item-2-20",
+      "item-3-13",
+      "item-2-3",
+      "item-3-9",
+      "item-3-4"
     ]
   }
 }
