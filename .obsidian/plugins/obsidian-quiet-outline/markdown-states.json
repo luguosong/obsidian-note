@@ -3587,7 +3587,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 14.3267292075049,
+    "scroll": 8.842592592592593,
     "cursor": {
       "from": {
         "line": 15,
@@ -4182,7 +4182,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
-    "scroll": 0,
+    "scroll": 14.299126637554584,
     "cursor": {
       "from": {
         "line": 107,
@@ -4358,15 +4358,15 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 557.5034722222222,
+    "scroll": 752.275939849624,
     "cursor": {
       "from": {
-        "line": 556,
-        "ch": 0
+        "line": 757,
+        "ch": 8
       },
       "to": {
-        "line": 556,
-        "ch": 0
+        "line": 757,
+        "ch": 8
       }
     },
     "expandedKeys": [
@@ -4380,7 +4380,9 @@
       "item-3-25",
       "item-3-29",
       "item-3-36",
-      "item-2-50"
+      "item-2-43",
+      "item-3-44",
+      "item-2-52"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -6937,7 +6939,7 @@
     "expandedKeys": []
   },
   "网页裁剪/codebase-memory-mcp README.md": {
-    "scroll": 357.07152777777776,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 10,
@@ -6949,14 +6951,11 @@
       }
     },
     "expandedKeys": [
-      "item-2-2",
-      "item-2-7",
-      "item-2-18",
-      "item-2-20",
       "item-2-29",
-      "item-2-32",
-      "item-2-38",
-      "item-2-46"
+      "item-2-20",
+      "item-2-18",
+      "item-2-7",
+      "item-2-2"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方skill.md": {
@@ -6989,5 +6988,38 @@
       }
     },
     "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Windows/Windows开发环境概览.md": {
+    "scroll": 70.08888888888889,
+    "cursor": {
+      "from": {
+        "line": 155,
+        "ch": 0
+      },
+      "to": {
+        "line": 155,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Windows/PowerShell配置Claude多账号切换.md": {
+    "scroll": 119.78333333333333,
+    "cursor": {
+      "from": {
+        "line": 140,
+        "ch": 0
+      },
+      "to": {
+        "line": 140,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
   }
 }
