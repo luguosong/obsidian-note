@@ -1,0 +1,9 @@
+{
+  "id": "open-pwsh",
+  "name": "Open PowerShell 7",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "在功能区添加按钮，点击以当前 vault 根目录打开 PowerShell 7。",
+  "author": "luguosong",
+  "isDesktopOnly": true
+}
