@@ -32,6 +32,7 @@
 | Maven | 3.9.16 | 3.9.16 ✅ | `D:\apache-maven-3.9.16` | https://maven.apache.org/download.cgi |
 | Docker | 29.2.1 | — | `C:\Program Files\Docker\Docker` | https://www.docker.com/products/docker-desktop |
 | SVN (TortoiseSVN) | 1.14.5 | 1.14.9 ⚠️ | `D:\TortoiseSVN` | https://tortoisesvn.net/downloads.html |
+| rtk | 0.43.0 | 0.43.0 ✅ | `C:\Users\10545\.local\bin` | https://github.com/rtk-ai/rtk |
 
 ## Git
 
@@ -141,6 +142,21 @@ pip：26.1
 > [!tip] 升级方式
 > 重新运行 [TortoiseSVN 安装包](https://tortoisesvn.net/downloads.html) 覆盖安装即可，会保留已有的右键菜单与关联配置。
 
+## rtk
+
+```
+版本：rtk 0.43.0（2026-07-02 安装）
+安装位置：C:\Users\10545\.local\bin\rtk.exe
+```
+
+- **用途**：CLI 代理，夹在 shell 与 AI coding agent（Claude Code / Codex / Cursor 等 14 种）之间，把 `git status` / `cargo test` / `pytest` 等 100+ 常用命令的输出压缩 60-90% 再喂给 LLM。单 Rust 二进制、零依赖。
+- 与 [[uv]] 同目录（`C:\Users\10545\.local\bin`，已在 Windows User PATH），Git Bash / PowerShell / cmd 三种 shell 均可直接调用。
+- **无自升级命令**：升级需手动下载 [release](https://github.com/rtk-ai/rtk/releases) 的 `rtk-x86_64-pc-windows-msvc.zip`，解压后用 `rtk.exe` 覆盖 `C:\Users\10545\.local\bin\rtk.exe`（单点安装，全机只此一份）。
+- 接入 AI 工具：`rtk init -g`（写入 `~/.claude/settings.json` 与 `~/.claude/CLAUDE.md`，可 `rtk init -g --uninstall` 卸载）。
+
+> [!warning] 原生 Windows 的 hook 限制
+> 自动改写 hook（`rtk-rewrite.sh`）依赖 Unix shell。官方称原生 Windows（cmd / PowerShell）会退化为 CLAUDE.md 注入模式——AI 收到 RTK 指令但命令不会自动改写，需手动 `rtk xxx`。但实测 **Git Bash** 下 Claude Code 的 PreToolUse hook 可正常运行，自动改写有望生效；完整支持需 WSL。
+
 ## 关键环境变量
 
 | 变量 | 值 | 级别 |
@@ -152,6 +168,15 @@ pip：26.1
 
 > [!note] 修改环境变量后需重开终端
 > 修改系统级环境变量（`MAVEN_HOME`、`Path` 等）后，已打开的终端窗口不会自动刷新，需关闭重开才能生效。
+
+> [!tip] 跨 shell 查 PATH 的污染陷阱
+> 从 Git Bash 调 `powershell -c "... $env:PATH ..."` 时，子 PowerShell 继承的是 **Git Bash 的 PATH**（被污染），不能反映独立打开的 PowerShell 的真实 PATH。排查 rtk 时就踩过：Git Bash 与 PowerShell 对 `rtk` 解析到不同文件，根因是 `C:\Users\10545\bin` 只存在于 Git Bash PATH（`.bashrc` 注入），而 Windows User PATH 里只有 `.local\bin`。
+>
+> 查某 shell「独立启动时」的真实 PATH，读注册表级环境变量（不走当前进程 PATH）：
+> ```powershell
+> [Environment]::GetEnvironmentVariable('PATH','User')     # 用户级
+> [Environment]::GetEnvironmentVariable('PATH','Machine')  # 系统级
+> ```
 
 ## 维护建议
 

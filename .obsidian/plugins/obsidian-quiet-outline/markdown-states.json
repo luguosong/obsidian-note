@@ -3587,14 +3587,14 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 8.842592592592593,
+    "scroll": 14.396632595911509,
     "cursor": {
       "from": {
-        "line": 15,
+        "line": 10,
         "ch": 0
       },
       "to": {
-        "line": 15,
+        "line": 10,
         "ch": 0
       }
     },
@@ -3646,7 +3646,9 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/gstack.md": {
     "scroll": 0,
@@ -3705,7 +3707,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/ponytail.md": {
-    "scroll": 143.56560283687944,
+    "scroll": 116.57996894409938,
     "cursor": {
       "from": {
         "line": 168,
@@ -3723,7 +3725,7 @@
     ]
   },
   "网页裁剪/ponytail README.md": {
-    "scroll": 10.440238260816981,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 229,
@@ -3734,7 +3736,10 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
   },
   "编程笔记/04-专项研究/mysql/mysql.md": {
     "scroll": 0,
@@ -4008,7 +4013,7 @@
     "expandedKeys": []
   },
   "网页裁剪/pua README.md": {
-    "scroll": 41.44347973163443,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 41,
@@ -4020,15 +4025,8 @@
       }
     },
     "expandedKeys": [
-      "item-2-19",
-      "item-1-22",
-      "item-2-29",
-      "item-2-36",
-      "item-1-42",
-      "item-2-0",
-      "item-2-5",
-      "item-2-8",
-      "item-2-14"
+      "item-1-0",
+      "item-2-0"
     ]
   },
   "编程笔记/04-专项研究/Redis/相关资源.md": {
@@ -4182,21 +4180,21 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
-    "scroll": 14.299126637554584,
+    "scroll": 243.58783333333332,
     "cursor": {
       "from": {
-        "line": 107,
-        "ch": 97
+        "line": 265,
+        "ch": 28
       },
       "to": {
-        "line": 107,
-        "ch": 97
+        "line": 265,
+        "ch": 28
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-1",
-      "item-2-8"
+      "item-2-2",
+      "item-2-9"
     ]
   },
   "网页裁剪/claude-plugins-official README.md": {
@@ -6393,7 +6391,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/Hooks.md": {
-    "scroll": 22.683333333333334,
+    "scroll": 6.015037593984962,
     "cursor": {
       "from": {
         "line": 145,
@@ -6939,27 +6937,21 @@
     "expandedKeys": []
   },
   "网页裁剪/codebase-memory-mcp README.md": {
-    "scroll": 0,
+    "scroll": 4.434589800443459,
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 0
+        "line": 14,
+        "ch": 162
       },
       "to": {
-        "line": 10,
-        "ch": 0
+        "line": 14,
+        "ch": 162
       }
     },
-    "expandedKeys": [
-      "item-2-29",
-      "item-2-20",
-      "item-2-18",
-      "item-2-7",
-      "item-2-2"
-    ]
+    "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/Claude Code/官方skill.md": {
-    "scroll": 0,
+    "scroll": 33.295833333333334,
     "cursor": {
       "from": {
         "line": 12,
@@ -6990,14 +6982,14 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Windows/Windows开发环境概览.md": {
-    "scroll": 70.08888888888889,
+    "scroll": 122.84722222222223,
     "cursor": {
       "from": {
-        "line": 155,
+        "line": 144,
         "ch": 0
       },
       "to": {
-        "line": 155,
+        "line": 144,
         "ch": 0
       }
     },
@@ -7006,20 +6998,94 @@
     ]
   },
   "编程笔记/04-专项研究/Windows/PowerShell配置Claude多账号切换.md": {
-    "scroll": 119.78333333333333,
+    "scroll": 84.22916666666667,
     "cursor": {
       "from": {
-        "line": 140,
+        "line": 116,
+        "ch": 24
+      },
+      "to": {
+        "line": 116,
+        "ch": 38
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Github Copilot App/未命名.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 0,
         "ch": 0
       },
       "to": {
-        "line": 140,
+        "line": 0,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Github Copilot App/使用说明.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Github Copilot App/Github Copilot App.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/插件.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/Claude Code/Checkpoints 与 Rewind.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-2"
+      "item-2-4"
     ]
   }
 }
