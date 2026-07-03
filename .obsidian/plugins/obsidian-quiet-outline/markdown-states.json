@@ -3599,7 +3599,8 @@
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-0"
     ]
   },
   "编程笔记/04-专项研究/Ai/Ai.md": {
@@ -3737,8 +3738,7 @@
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-2-2"
+      "item-1-0"
     ]
   },
   "编程笔记/04-专项研究/mysql/mysql.md": {
@@ -5240,7 +5240,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/真正工程师的技能.md": {
-    "scroll": 107.03982067510549,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 12,
@@ -5260,7 +5260,7 @@
     ]
   },
   "网页裁剪/mattpocock skills README.md": {
-    "scroll": 51.25555555555555,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 57,
@@ -5273,8 +5273,7 @@
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-3",
-      "item-2-9"
+      "item-2-3"
     ]
   },
   "网页裁剪/JDBC-基础-检索修改值.md": {
