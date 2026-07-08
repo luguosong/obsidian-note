@@ -8,23 +8,23 @@
 发布时间:
 创建时间: "2026-07-03T11:24:46+08:00"
 ---
-[![[taste-skill-readme-banner.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/assets/readme-banner.webp)
+[![[2ee8933393eb1519.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/assets/readme-banner.webp)
 
 ## Taste Skill
 
 *面向 AI 智能体(AI agent)的反劣质(anti-slop)前端框架*
 
-[![[taste-skill-btn-site.webp]]](https://tasteskill.dev/ "访问 tasteskill.dev")
+[![[1b776c5c6d91b4d3.webp]]](https://tasteskill.dev/ "访问 tasteskill.dev")
 
 ### 赞助商
 
-[![[taste-skill-animations-dev.webp]]](https://animations.dev/) <sub><a href="https://github.com/emilkowalski"><strong>Emil Kowalski</strong></a> · <a href="https://animations.dev/">animations.dev</a></sub>
+[![[5860105a4ccd67a9.webp]]](https://animations.dev/) <sub><a href="https://github.com/emilkowalski"><strong>Emil Kowalski</strong></a> · <a href="https://animations.dev/">animations.dev</a></sub>
 
 <sub><a href="https://github.com/sponsors/Leonxlnx">成为赞助商</a></sub>
 
 一组可移植的**智能体技能(Agent Skills)**，用于升级 AI 生成的界面：用更强的布局、排版、动效与间距，取代千篇一律的模板化(boilerplate)UI。本仓库还包含用于参考板的**图像生成技能**（Web、移动端、品牌识别包）。可将其与 **ChatGPT Images** 等图像生成器配合使用，再把生成的设计稿交给 Codex、Cursor 或 Claude Code 进行实现。
 
-[![[taste-skill-btn-mit.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/LICENSE) [![[taste-skill-btn-agent-skills.webp]]](https://github.com/vercel-labs/agent-skills) [![[taste-skill-btn-tools.webp]]](#installing) [![[taste-skill-btn-changelog.webp]]](https://www.tasteskill.dev/changelog)
+[![[ce87211af13ccb11.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/LICENSE) [![[b1c4844cd59ce0b6.webp]]](https://github.com/vercel-labs/agent-skills) [![[0fb2189928c22144.webp]]](#installing) [![[49650fcb4739ad33.webp]]](https://www.tasteskill.dev/changelog)
 
 ## 免责声明
 
@@ -134,7 +134,7 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 
 以下作品由 taste-skill 创作生成：
 
-[![[taste-skill-floria-top.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/examples/floria-top.webp) [![[taste-skill-floria-bottom.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/examples/floria-bottom.webp)
+[![[5de90622fc0adb62.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/examples/floria-top.webp) [![[cd9f6c6588b988a6.webp]]](https://github.com/Leonxlnx/taste-skill/blob/main/examples/floria-bottom.webp)
 
 ## 支持本项目
 
@@ -144,7 +144,7 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 
 ### 当前赞助商
 
-[![[taste-skill-animations-dev.webp]]](https://animations.dev/ "Emil Kowalski · animations.dev") [![[taste-skill-dnakov.webp]]](https://github.com/dnakov) [![[taste-skill-AkramReshad.webp]]](https://github.com/AkramReshad) [![[taste-skill-ajmalaksar25.webp]]](https://github.com/ajmalaksar25) [![[taste-skill-krikkkk.webp]]](https://github.com/krikkkk) [![[taste-skill-navanchauhan.webp]]](https://github.com/navanchauhan) [![[taste-skill-robinebers.webp]]](https://github.com/robinebers) [![[taste-skill-JKc66.webp]]](https://github.com/JKc66) [![[taste-skill-u2393696078-rgb.webp]]](https://github.com/u2393696078-rgb) [![[taste-skill-a-human-created-this.webp]]](https://github.com/a-human-created-this) [![[taste-skill-AtharvaJaiswal005.webp]]](https://github.com/AtharvaJaiswal005) [![[taste-skill-ghughes7.webp]]](https://github.com/ghughes7) [![[taste-skill-mccun934.webp]]](https://github.com/mccun934) [![[taste-skill-techmedic5.webp]]](https://github.com/techmedic5) [![[taste-skill-bytewerk-dev.webp]]](https://github.com/bytewerk-dev)[![[taste-skill-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f62616467653f7265706f3d4c656f6e786c6e782f74617374652d736b696c6c.svg]]](https://www.star-history.com/leonxlnx/taste-skill)
+[![[5860105a4ccd67a9.webp]]](https://animations.dev/ "Emil Kowalski · animations.dev") [![[7375175956633dde.webp]]](https://github.com/dnakov) [![[ce9a8893fc7075a5.webp]]](https://github.com/AkramReshad) [![[a9cc58dbec6e46eb.webp]]](https://github.com/ajmalaksar25) [![[507ed5ebda5c5b50.webp]]](https://github.com/krikkkk) [![[7389d8923c9999de.webp]]](https://github.com/navanchauhan) [![[d69836ab1f7ebe1a.webp]]](https://github.com/robinebers) [![[c394a19f06ac41cc.webp]]](https://github.com/JKc66) [![[56e32a11234e4a62.webp]]](https://github.com/u2393696078-rgb) [![[e4aee533a16a5c0a.webp]]](https://github.com/a-human-created-this) [![[27b9a0e96317f447.webp]]](https://github.com/AtharvaJaiswal005) [![[818b7a9855b768b2.webp]]](https://github.com/ghughes7) [![[36cf35f741444ccf.webp]]](https://github.com/mccun934) [![[6747bf11253aef3f.webp]]](https://github.com/techmedic5) [![[f8e8ad5c6234bf79.webp]]](https://github.com/bytewerk-dev)[![[9c9f655a1f4eec4e.svg]]](https://www.star-history.com/leonxlnx/taste-skill)
 
 ## 研究
 

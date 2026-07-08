@@ -12,3 +12,20 @@
 ---
 # mattpocock skills
 
+## 安装
+
+```shell
+# 通过npx安装
+npx skills@latest add mattpocock/skills
+```
+
+> [!warning] 
+> 
+> `setup-matt-pocock-skills` 这个skill必装,用来初始化项目的
+## skill
+
+初始化项目：
+
+| skill                    | 描述                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| setup-matt-pocock-skills | 询问你想要使用哪个问题跟踪器（GitHub、Linear 或本地文件）<br>询问你在整理工单时应用了哪些标签（/triage 使用标签）<br>询问你想在哪里保存我们创建的任何文档 |

@@ -11,7 +11,7 @@
 
 > **注意：** 本仓库包含 Anthropic 为 Claude 实现的技能(skills)。有关智能体技能(Agent Skills)标准的信息，请参阅 [agentskills.io](http://agentskills.io/)。
 
-[![[agent-skills-68747470733a2f2f736b696c6c732e73682f622f616e7468726f706963732f736b696c6c73.svg]]](https://skills.sh/anthropics/skills)
+[![[03e1b8f9046e6ae2.svg]]](https://skills.sh/anthropics/skills)
 
 ## 技能(Skills)
 

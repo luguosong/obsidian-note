@@ -9,7 +9,7 @@
 创建时间: "2026-07-03T13:58:03+08:00"
 ---
 
-[![[firecrawl-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f66697265637261776c2f66697265637261776c.svg]]](https://github.com/firecrawl/firecrawl/blob/main/LICENSE)[![[firecrawl-68747470733a2f2f7374617469632e706570792e746563682f62616467652f66697265637261776c2d7079.svg]] ](https://pepy.tech/project/firecrawl-py)[![[firecrawl-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732f66697265637261776c2f66697265637261776c2e737667.svg]] ](https://github.com/firecrawl/firecrawl/graphs/contributors)[![[firecrawl-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f56697369742d66697265637261776c2e6465762d6f72616e6765.svg]]](https://firecrawl.dev/)
+[![[097f2f07f5af9783.svg]]](https://github.com/firecrawl/firecrawl/blob/main/LICENSE)[![[783c6524b56ccfb0.svg]] ](https://pepy.tech/project/firecrawl-py)[![[d20d414f9b395bfd.svg]] ](https://github.com/firecrawl/firecrawl/graphs/contributors)[![[a0c493dc08a1ca0f.svg]]](https://firecrawl.dev/)
 
 ---
 
@@ -19,7 +19,7 @@
 
 *嘿嘿，说你呢，加入我们的 stargazer 行列吧 :)*
 
-[![[firecrawl-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f66697265637261776c2f66697265637261776c2e7376673f7374796c653d736f6369616c266c6162656c3d53746172266d61784167653d32353932303030.svg]]](https://github.com/firecrawl/firecrawl)
+[![[1a46a5b656f1f1d3.svg]]](https://github.com/firecrawl/firecrawl)
 
 ---
 
@@ -724,7 +724,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 Firecrawl 以 AGPL-3.0 协议开源。[firecrawl.dev](https://firecrawl.dev/) 的云端版包含额外功能：
 
-[![[firecrawl-open-source-cloud.webp]]](https://raw.githubusercontent.com/firecrawl/firecrawl/main/img/open-source-cloud.png)
+[![[ba53e301c7356e41.webp]]](https://raw.githubusercontent.com/firecrawl/firecrawl/main/img/open-source-cloud.png)
 
 本地运行请见[贡献指南](https://github.com/firecrawl/firecrawl/blob/main/CONTRIBUTING.md)。自托管(self-host)请见[自托管指南](https://docs.firecrawl.dev/contributing/self-host)。
 
@@ -736,7 +736,7 @@ Firecrawl 以 AGPL-3.0 协议开源。[firecrawl.dev](https://firecrawl.dev/) �
 
 ### 贡献者
 
-[![[firecrawl-68747470733a2f2f636f6e747269622e726f636b732f696d6167653f7265706f3d66697265637261776c2f66697265637261776c.svg]]](https://github.com/firecrawl/firecrawl/graphs/contributors)
+[![[65115a2ddb39521c.svg]]](https://github.com/firecrawl/firecrawl/graphs/contributors)
 
 ---
 

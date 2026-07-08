@@ -22,11 +22,11 @@
 
 **2026年——1,237次提交，还在继续增加：**
 
-[![[gstack-github-2026.webp]]](https://github.com/garrytan/gstack/blob/main/docs/images/github-2026.png)
+[![[030cb8e9153bf502.webp]]](https://github.com/garrytan/gstack/blob/main/docs/images/github-2026.png)
 
 **2013 年——当我在 YC 建立 Bookface 时（772 次提交）：**
 
-[![[gstack-github-2013.webp]]](https://github.com/garrytan/gstack/blob/main/docs/images/github-2013.png)
+[![[b350c8846d5fa072.webp]]](https://github.com/garrytan/gstack/blob/main/docs/images/github-2013.png)
 
 同一个人。不同的时代。区别在于工具。
 

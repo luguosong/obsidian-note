@@ -48,7 +48,7 @@ harness（harness）由五个扩展点构成——CLAUDE.md 文件、hooks（hoo
 
 [**子代理(Subagents)**](https://code.claude.com/docs/en/sub-agents) **将探索与编辑分离。** 子代理(Subagents)是一个独立的 Claude 实例(Claude Code)，拥有自己的上下文窗口，接收任务、完成工作，并仅将最终结果返回给父代理。一旦 harness 就位，有些团队会启动一个只读子代理(Subagents)来映射子系统并将发现写入文件，然后由主代理在掌握全貌后进行编辑。
 
-![[claudecode-large-6a04aaf1c37c6196e5ee19bb_fig1-the-claude-code-harness-v1@2x.webp]]
+![[dfb507e1e91fb246.webp]]
 
 Claude Code 的扩展层概览。
 
@@ -87,7 +87,7 @@ Claude 在大型代码库中提供帮助的能力受限于其查找正确上下�
 
 传播速度最快的部署在全面开放之前就有专门的基础设施投入。一个小团队，有时甚至只有一人，搭建好了工具链，使得开发者在第一次接触 Claude Code 时它就已融入工作流。在一家公司的例子中，有几位工程师在首日就构建了一套可用的插件和 MCPs。在另一家，则有一个专门负责管理 AI 编码工具的整个团队在部署开始前就准备好了基础设施。在这两种情况下，开发者的首次体验是高产而非令人沮丧的，采用率也由此扩散。
 
-![[claudecode-large-6a04e25f1984beb50dc5525b_fig2-phases-of-claude-code-rollout-v1@2x.webp]]
+![[19d852072215461b.webp]]
 
 目前从事这项工作的团队通常隶属于开发者体验或开发者生产力部门，这些部门通常负责新工程师的入职和开发者工具的构建。在若干组织中出现的一种新角色是 agent manager：一种兼具产品经理/工程师职能、专门负责管理 Claude Code 生态系统的混合角色。对于没有专门团队的组织，最小可行版本是一个 DRI：由一人负责 Claude Code (Claude Code) 配置的所有权，有权就设置、权限策略、插件市场以及 CLAUDE.md 约定做出决策，并负责保持其最新。
 
@@ -101,7 +101,7 @@ Claude 在大型代码库中提供帮助的能力受限于其查找正确上下�
 
 Claude Code 是围绕传统软件工程环境设计的，在这些环境中工程师是主要的代码库贡献者，代码库使用 Git，并且代码遵循标准的目录结构。大多数大型代码库符合这种模式，但非传统的设置（例如带有大量二进制资产的游戏引擎、使用非常规版本控制的环境，或非工程人员参与代码库贡献）则需要额外的配置工作。我们的指导假定为传统设置，而且我们所描述的模式已在许多客户中运行良好。任何剩余的复杂性都需要根据贵组织的代码库、工具链和组织结构作出具体判断。这正是 Anthropic 的 Applied AI 团队直接与工程团队合作、将这些模式转化为贵组织特定需求的地方。
 
-![[claudecode-large-6a04e2860abbe67418ca0f8b_fig3-getting-started-checklist-v2@2x.webp]]
+![[286c508d06d96f7e.webp]]
 
 *开始使用* [*Claude Code for Enterprise*](https://claude.com/product/claude-code/enterprise) *。*
 

@@ -10,7 +10,7 @@
 ---
 
 # mattpocock skills
-[![[mattpocock-skills-68747470733a2f2f736b696c6c732e73682f622f6d617474706f636f636b2f736b696c6c73.svg]]](https://skills.sh/mattpocock/skills)
+[![[0ff28262b14b69a6.svg]]](https://skills.sh/mattpocock/skills)
 
 ## 给真正工程师用的技能
 

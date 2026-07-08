@@ -3667,7 +3667,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
-    "scroll": 29.982007575757578,
+    "scroll": 25.088068181818183,
     "cursor": {
       "from": {
         "line": 55,
@@ -7334,15 +7334,18 @@
   "编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 14,
+        "line": 31,
         "ch": 0
       },
       "to": {
-        "line": 14,
+        "line": 31,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 5.466970387243736
   },
   "网页裁剪/Number 类.md": {
     "expandedKeys": [],

@@ -10,13 +10,13 @@
 ---
 # Context7 平台 —— 为大语言模型(LLM)和 AI 代码编辑器提供最新代码文档
 
-[![[context7-cover.webp]]](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)
+[![[f2ee0bd5830c10c2.webp]]](https://github.com/upstash/context7/blob/master/public/cover.png?raw=true)
 
-[![[context7-68747470733a2f2f637572736f722e636f6d2f646565706c696e6b2f6d63702d696e7374616c6c2d6461726b2e737667.svg]]](https://cursor.com/en/install-mcp?name=context7&config=eyJ1cmwiOiJodHRwczovL21jcC5jb250ZXh0Ny5jb20vbWNwIn0%3D)
+[![[7fd2806ee6577650.svg]]](https://cursor.com/en/install-mcp?name=context7&config=eyJ1cmwiOiJodHRwczovL21jcC5jb250ZXh0Ny5jb20vbWNwIn0%3D)
 
 ## Context7 平台 —— 为任意提示词提供最新代码文档
 
-[![[context7-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f576562736974652d636f6e74657874372e636f6d2d626c7565.svg]]](https://context7.com/) [![[context7-68747470733a2f2f736d6974686572792e61692f62616467652f40757073746173682f636f6e74657874372d6d6370.svg]]](https://smithery.ai/server/@upstash/context7-mcp) [![[context7-68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f25343075707374617368253246636f6e74657874372d6d63703f636f6c6f723d726564.svg]]](https://www.npmjs.com/package/@upstash/context7-mcp) [![[context7-68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f25343075707374617368253246636f6e74657874372d6d6370.svg]]](https://github.com/upstash/context7/blob/master/LICENSE)
+[![[36fb5c5d85c661ec.svg]]](https://context7.com/) [![[0909af6ff8ea17d2.svg]]](https://smithery.ai/server/@upstash/context7-mcp) [![[c2ec8bf8e867ccd7.svg]]](https://www.npmjs.com/package/@upstash/context7-mcp) [![[01e9b608bb708e26.svg]]](https://github.com/upstash/context7/blob/master/LICENSE)
 
 ## ❌ 不使用 Context7 时
 
@@ -162,7 +162,7 @@ Always use Context7 when I need library/API documentation, code generation, setu
 
 ## ⭐ Star 历史
 
-[![[context7-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d757073746173682f636f6e746578743726747970653d44617465.svg]]](https://www.star-history.com/#upstash/context7&Date)
+[![[d857203a8aa10166.svg]]](https://www.star-history.com/#upstash/context7&Date)
 
 ## 📄 许可证
 

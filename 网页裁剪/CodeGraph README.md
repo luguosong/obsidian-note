@@ -22,15 +22,15 @@
 
 ### 文档与官网 →
 
-[![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f40636f6c62796d6368656e72792f636f646567726170682e737667.svg]]](https://www.npmjs.com/package/@colbymchenry/codegraph) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667.svg]]](https://opensource.org/licenses/MIT) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d62756e646c65642532302543322542372532306e6f6e6525323072657175697265642d627269676874677265656e2e737667.svg]]](https://nodejs.org/)
+[![[3947ab6ee3356429.svg]]](https://www.npmjs.com/package/@colbymchenry/codegraph) [![[db531ea522213924.svg]]](https://opensource.org/licenses/MIT) [![[7149873546279844.svg]]](https://nodejs.org/)
 
-[![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f57696e646f77732d737570706f727465642d626c75652e737667.svg]]](#supported-platforms) [![macOS](https://camo.githubusercontent.com/4dcef7af08cde5cff53d43f82f22ceae144d61ade6b92719967026c8ce5d2f0f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d61634f532d737570706f727465642d626c75652e737667)](#supported-platforms) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c696e75782d737570706f727465642d626c75652e737667.svg]]](#supported-platforms)
+[![[269f87af9cba1263.svg]]](#supported-platforms) [![macOS](https://camo.githubusercontent.com/4dcef7af08cde5cff53d43f82f22ceae144d61ade6b92719967026c8ce5d2f0f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d61634f532d737570706f727465642d626c75652e737667)](#supported-platforms) [![[65e524a91d8db9d4.svg]]](#supported-platforms)
 
-[![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436c617564655f436f64652d737570706f727465642d626c756576696f6c65742e737667.svg]]](#supported-agents) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f437572736f722d737570706f727465642d626c756576696f6c65742e737667.svg]]](#supported-agents) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436f6465782d737570706f727465642d626c756576696f6c65742e737667.svg]]](#supported-agents) [![opencode](https://camo.githubusercontent.com/c5855e973fae42a8b7511db3e65368563aecc79caee42472eee8b8d3af3d72d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f70656e636f64652d737570706f727465642d626c756576696f6c65742e737667)](#supported-agents) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4865726d65735f4167656e742d737570706f727465642d626c756576696f6c65742e737667.svg]]](#supported-agents) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f47656d696e692d737570706f727465642d626c756576696f6c65742e737667.svg]]](#supported-agents) [![Antigravity](https://camo.githubusercontent.com/cd81fbcdcb41417bf6ebc4be29ddcdac6d376faa986c0a2076601be5fae65168/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f416e7469677261766974792d737570706f727465642d626c756576696f6c65742e737667)](#supported-agents) [![[codegraph-68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4b69726f2d737570706f727465642d626c756576696f6c65742e737667.svg]]](#supported-agents)
+[![[be2a2e46ae1c783f.svg]]](#supported-agents) [![[79c52dcccbde1441.svg]]](#supported-agents) [![[4b65653a3ef2258a.svg]]](#supported-agents) [![opencode](https://camo.githubusercontent.com/c5855e973fae42a8b7511db3e65368563aecc79caee42472eee8b8d3af3d72d7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f70656e636f64652d737570706f727465642d626c756576696f6c65742e737667)](#supported-agents) [![[d80f7029a3999481.svg]]](#supported-agents) [![[4a7556a5a684e5f9.svg]]](#supported-agents) [![Antigravity](https://camo.githubusercontent.com/cd81fbcdcb41417bf6ebc4be29ddcdac6d376faa986c0a2076601be5fae65168/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f416e7469677261766974792d737570706f727465642d626c756576696f6c65742e737667)](#supported-agents) [![[c523c0ac6259b7d3.svg]]](#supported-agents)
 
 **CodeGraph 平台即将上线** —— 针对每一个 PR，精确告诉你该测什么、什么可能出问题、哪些流程受影响、业务逻辑是否被破坏。
 
-[![[codegraph-waitlist.svg]]](https://getcodegraph.com/)
+[![[36bab4c2f3ffd050.svg]]](https://getcodegraph.com/)
 
 <sub>获取托管产品的<b>抢先内测资格</b> · <a href="https://getcodegraph.com/">getcodegraph.com</a></sub>
 
@@ -75,7 +75,7 @@ codegraph init
 
 <sub><code>codegraph init</code> 会创建本地 <code>.codegraph/</code> 目录并在同一步骤内构建完整图谱 —— 一条命令搞定。</sub>
 
-[![[codegraph-578288862-f168182f-4d9a-44e0-94d7-08d018cc8a3a.gif]]](https://private-user-images.githubusercontent.com/18431132/578288862-f168182f-4d9a-44e0-94d7-08d018cc8a3a.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODI2OTM4NDMsIm5iZiI6MTc4MjY5MzU0MywicGF0aCI6Ii8xODQzMTEzMi81NzgyODg4NjItZjE2ODE4MmYtNGQ5YS00NGUwLTk0ZDctMDhkMDE4Y2M4YTNhLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjI5VDAwMzkwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMDMyMjlkNWNhZTE2MjZlOGUzMTFjYzQ0MDA5OTlhMzc5NTdlZDEwY2I0ZDIyNGNkZTVhZmRlZmE1YzZkOWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.LE8v3JbU6WrKksYrtEHTsBmsyjB4oCqj0GzaOmAYGV0)
+[![[6fb04e0cef606af0.gif]]](https://private-user-images.githubusercontent.com/18431132/578288862-f168182f-4d9a-44e0-94d7-08d018cc8a3a.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODI2OTM4NDMsIm5iZiI6MTc4MjY5MzU0MywicGF0aCI6Ii8xODQzMTEzMi81NzgyODg4NjItZjE2ODE4MmYtNGQ5YS00NGUwLTk0ZDctMDhkMDE4Y2M4YTNhLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjI5VDAwMzkwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVmMDMyMjlkNWNhZTE2MjZlOGUzMTFjYzQ0MDA5OTlhMzc5NTdlZDEwY2I0ZDIyNGNkZTVhZmRlZmE1YzZkOWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmdpZiJ9.LE8v3JbU6WrKksYrtEHTsBmsyjB4oCqj0GzaOmAYGV0)
 
 ### 4\. 无需再手动同步！
 
@@ -99,7 +99,7 @@ codegraph uninstall
 
 **CodeGraph 让智能体一次调用就拿到所需的确切代码。** 它是一张预先构建好的知识图谱，覆盖你代码库中每一个符号、调用边与依赖 —— 因此智能体不必逐文件爬取，而是问一个问题就能拿回相关源码、这些符号之间的调用路径（包括 grep 跟踪不到的动态分发跳转），以及某次变更的影响半径。**精准上下文，而非逐文件搜索** —— 这意味着无论代码库大小，工具调用都更少、答案都更快。
 
-[![[codegraph-611291174-eb74a11a-a3ab-4b01-80a6-19f78352ae8e.webp]]](https://private-user-images.githubusercontent.com/18431132/611291174-eb74a11a-a3ab-4b01-80a6-19f78352ae8e.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODI2OTM4NDMsIm5iZiI6MTc4MjY5MzU0MywicGF0aCI6Ii8xODQzMTEzMi82MTEyOTExNzQtZWI3NGExMWEtYTNhYi00YjAxLTgwYTYtMTlmNzgzNTJhZThlLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjI5VDAwMzkwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM3YmNjZTNkMDg0MDM3ZDVmODFjNjc5NzAyOTM2OGRhNDE5OWVlZDE5ZjA3MmI3NGY4OTgyMDU0N2MzNGE0Y2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmpwZWcifQ.BrnbZNPAtpNpWQaJKqMGUrRW5nLm6y9mfWjRVZYL0u4)
+[![[1beca49cc01f4212.webp]]](https://private-user-images.githubusercontent.com/18431132/611291174-eb74a11a-a3ab-4b01-80a6-19f78352ae8e.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODI2OTM4NDMsIm5iZiI6MTc4MjY5MzU0MywicGF0aCI6Ii8xODQzMTEzMi82MTEyOTExNzQtZWI3NGExMWEtYTNhYi00YjAxLTgwYTYtMTlmNzgzNTJhZThlLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA2MjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNjI5VDAwMzkwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWM3YmNjZTNkMDg0MDM3ZDVmODFjNjc5NzAyOTM2OGRhNDE5OWVlZDE5ZjA3MmI3NGY4OTgyMDU0N2MzNGE0Y2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmpwZWcifQ.BrnbZNPAtpNpWQaJKqMGUrRW5nLm6y9mfWjRVZYL0u4)
 
 > **关于成本的一点说明：** CodeGraph 在*任何*代码库上的收益都是精准与速度 —— 更少的工具调用、更快的答案。它也能削减 token 与金钱成本，但这些节省是**随规模变化的**：在中等规模的代码库上既小又有噪声，只有当仓库变得庞大且错综复杂时（达到 Google 或 Microsoft 单体仓库的量级，再乘以整个团队每天的智能体使用量）才会累积成一笔真正的开销。在 500 文件的项目上，请为速度而采用 CodeGraph；成本的节省要在代码库（以及团队）变大之后才会显现。
 
@@ -703,7 +703,7 @@ codegraph telemetry off    # 或：CODEGRAPH_TELEMETRY=0，或 DO_NOT_TRACK=1
 
 [
 
-![[codegraph-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f63686172743f7265706f733d636f6c62796d6368656e72792f636f6465677261706826747970653d64617465266c6567656e643d746f702d6c656674.svg]]
+![[9aa61f4142d187e3.svg]]
 
 ](https://www.star-history.com/?repos=colbymchenry%2Fcodegraph&type=date&legend=top-left)
 

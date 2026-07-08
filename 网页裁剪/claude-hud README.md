@@ -14,9 +14,9 @@
 
 一个 Claude Code 插件，用于展示当前会话中正在发生的一切 —— 上下文用量、活动工具、运行中的智能体(agent)以及待办事项(todo)进度。始终显示在输入框下方。
 
-[![[claude-hud-68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6a6172726f6477617474732f636c617564652d6875643f763d32.svg]]](https://github.com/jarrodwatts/claude-hud/blob/main/LICENSE) [![Stars](https://camo.githubusercontent.com/aa2f77bfeb23f75261f6ccdde8a3693114147d0d74ed4299d8a32f5f51e37073/68747470733a2f2f696d672e736869656c64732e696f2f73746172732f6a6172726f6477617474732f636c617564652d687564)](https://github.com/jarrodwatts/claude-hud/stargazers)
+[![[01e9b608bb708e26.svg]]](https://github.com/jarrodwatts/claude-hud/blob/main/LICENSE) [![Stars](https://camo.githubusercontent.com/aa2f77bfeb23f75261f6ccdde8a3693114147d0d74ed4299d8a32f5f51e37073/68747470733a2f2f696d672e736869656c64732e696f2f73746172732f6a6172726f6477617474732f636c617564652d687564)](https://github.com/jarrodwatts/claude-hud/stargazers)
 
-[![[claude-hud-claude-hud-preview-5-2.webp]]](https://github.com/jarrodwatts/claude-hud/blob/main/claude-hud-preview-5-2.png)
+[![[a3fe31eb584c7b38.webp]]](https://github.com/jarrodwatts/claude-hud/blob/main/claude-hud-preview-5-2.png)
 
 > 🌐 English | [中文文档](https://github.com/jarrodwatts/claude-hud/blob/main/README.zh.md)
 
@@ -428,4 +428,4 @@ MIT —— 参见 [LICENSE](https://github.com/jarrodwatts/claude-hud/blob/main/
 
 ---
 
-[![[claude-hud-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6a6172726f6477617474732f636c617564652d68756426747970653d44617465.svg]]](https://star-history.com/#jarrodwatts/claude-hud&Date)
+[![[a74aef13eae8a178.svg]]](https://star-history.com/#jarrodwatts/claude-hud&Date)

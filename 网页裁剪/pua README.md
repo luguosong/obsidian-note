@@ -10,7 +10,7 @@
 ---
 ## pua
 
-[![[pua-hero.jpeg]]](https://github.com/tanweai/pua/blob/main/assets/hero.jpeg)
+[![[38ea8e22060451f9.jpg]]](https://github.com/tanweai/pua/blob/main/assets/hero.jpeg)
 
 ### 让你的 Codex / Claude Code 工作效率翻倍，产出翻倍
 
@@ -18,7 +18,7 @@
 
 **[🇺🇸 English](https://github.com/tanweai/pua/blob/main/README.md)** | **🇨🇳 中文** | **[🇯🇵 日本語](https://github.com/tanweai/pua/blob/main/README.ja.md)**
 
-[![[pua-wechat-qr.jpg]]](https://github.com/tanweai/pua/blob/main/assets/wechat-qr.jpg?v=9) [![[pua-xiao.jpg]]](https://github.com/tanweai/pua/blob/main/assets/xiao.jpg)  
+[![[3c8f768b822682c5.jpg]]](https://github.com/tanweai/pua/blob/main/assets/wechat-qr.jpg?v=9) [![[bf922e387803e6a0.jpg]]](https://github.com/tanweai/pua/blob/main/assets/xiao.jpg)  
 <sub>扫码加入微信交流群 添加小助手微信</sub>
 
 > 大部分人以为这个项目是在搞抽象，其实这个是最大的误解。让你的 Codex / Claude Code 工作效率翻倍，产出翻倍。
@@ -39,15 +39,15 @@
 
 **L3 触发 → 7 项检查清单强制执行：**
 
-[![[pua-pua1.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua1.jpg)
+[![[8577e8d2be6eb83c.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua1.jpg)
 
 **根因定位 → 从日志追踪到注册机制：**
 
-[![[pua-pua2.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua2.jpg)
+[![[3f41be2b018b48f5.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua2.jpg)
 
 **复盘 → PUA 的实际效果：**
 
-[![[pua-pua3.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua3.jpg)
+[![[752d7c0cba49a0b7.jpg]]](https://github.com/tanweai/pua/blob/main/assets/pua3.jpg)
 
 **关键转折点：** PUA skill 强制 AI 停止在同一思路上打转（改协议格式、猜版本号），转而执行 7 项检查清单。逐字读错误信息 → 找到 Claude Code 自身的 MCP 日志目录 → 发现 `claude mcp` 的注册机制和手动编辑 `.claude.json` 不同 → 根因解决。
 
@@ -712,7 +712,7 @@ ls ~/.codex/sessions/*.jsonl
 
 ## Star History
 
-[![[pua-68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d74616e776561692f70756126747970653d44617465.svg]]](https://star-history.com/#tanweai/pua&Date)
+[![[c064f1494930243c.svg]]](https://star-history.com/#tanweai/pua&Date)
 
 ## License
 
