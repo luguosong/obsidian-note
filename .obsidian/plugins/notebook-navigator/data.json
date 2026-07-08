@@ -181,6 +181,7 @@
   "navItemHeightScaleText": false,
   "collapseBehavior": "all",
   "smartCollapse": false,
+  "excludeVaultRootFromCollapse": false,
   "collapseOtherBranchesOnExpand": false,
   "autoSelectFirstFileOnFocusChange": false,
   "autoExpandNavItems": true,
@@ -266,6 +267,7 @@
   "fileNameIconMap": {},
   "showCategoryIcons": false,
   "fileTypeIconMap": {},
+  "fileTypeIconPreset": "none",
   "fileNameRows": 1,
   "useFolderColorForTitles": true,
   "showFilePreview": true,
@@ -370,6 +372,12 @@
         "modifiers": []
       }
     ],
+    "pane:rename": [
+      {
+        "key": "F2",
+        "modifiers": []
+      }
+    ],
     "navigation:collapse-or-parent": [
       {
         "key": "ArrowLeft",
@@ -441,6 +449,22 @@
         "key": "ArrowDown",
         "modifiers": [
           "Shift"
+        ]
+      }
+    ],
+    "list:manual-sort-up": [
+      {
+        "key": "ArrowUp",
+        "modifiers": [
+          "Mod"
+        ]
+      }
+    ],
+    "list:manual-sort-down": [
+      {
+        "key": "ArrowDown",
+        "modifiers": [
+          "Mod"
         ]
       }
     ],
@@ -591,10 +615,7 @@
   "folderBackgroundColors": {},
   "folderSortOverrides": {
     "网页裁剪": "created-desc",
-    "编程笔记/04-专项研究/Ai/推荐扩展": {
-      "option": "property-asc",
-      "propertyKey": "排序"
-    },
+    "编程笔记/04-专项研究/Ai/推荐扩展": "filename-asc",
     "编程笔记/04-专项研究/Obsidian": {
       "option": "property-asc",
       "propertyKey": "排序"
@@ -655,7 +676,7 @@
     "#404040",
     "#404040"
   ],
-  "lastShownVersion": "3.2.0",
+  "lastShownVersion": "3.2.2",
   "rootFolderOrder": [],
   "rootTagOrder": [],
   "rootPropertyOrder": []

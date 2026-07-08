@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 1 课 · superpowers 的自动触发机制</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+  <header>
+    <p class="eyebrow">superpowers 系统课 · 第 1 课</p>
+    <h1>自动触发机制：skill 靠什么决定该不该上场</h1>
+    <p class="lede">
+      你以为 skill 是<strong>按名字调用</strong>的。其实它靠
+      <code>description</code> 被匹配——而 <code>using-superpowers</code> 给了一条几乎不讲理的强制规则。
+      搞懂这一层，「该用时没触发」就从玄学变成<strong>可诊断、可主动控制</strong>的问题。
+    </p>
+  </header>
+
+  <section class="win">
+    <p><strong>这节课的收获：</strong>给一句用户请求，你能预测哪个 skill 该触发、为什么有时不触发、以及怎么<strong>改写请求让它必触发</strong>。</p>
+  </section>
+
+  <section>
+    <h2>1. 入口只有一个：Skill 工具</h2>
+    <p>
+      在 Claude Code 里，你（或 agent）不「加载」一个 skill，你 <strong>invoke</strong>（调用）它。
+      唯一的入口是 <code>Skill</code> 工具。调一次，skill 的正文就被读进上下文，agent 按它走。
+    </p>
+    <p>
+      那么问题来了：agent 凭什么决定<strong>调哪个</strong>、<strong>调不调</strong>？
+      这就是你要的「触发机制」。它分两层。
+    </p>
+  </section>
+
+  <section>
+    <h2>2. 两层机制（全课的核心）</h2>
+
+    <h3>Tier 1 — <code>using-superpowers</code>：常驻 bootloader</h3>
+    <p>
+      你在每次会话开头都能看到一段以 <code>&lt;EXTREMELY_IMPORTANT&gt;</code> 包起来的注入文本——
+      那就是 <code>using-superpowers</code> skill 的全文。它为什么每次都出现？因为它的 description 是：
+    </p>
+    <blockquote>Use when <strong>starting any conversation</strong> — establishes how to find and use skills, requiring skill invocation before ANY response…</blockquote>
+    <p>
+      「任何对话开始时」→ 每次都匹配 → 每次都注入。<strong>它注入的不是某个能力，而是「调度总则」本身</strong>——
+      「进任何回复前先查 skill、1% 可能就 invoke、process 先于 implementation」这三条军规，全靠它常驻在 system prompt 里强制执行。
+    </p>
+
+    <h3>Tier 2 — 其它 13 个 skill：按需 invoke</h3>
+    <p>
+      其余的 skill（<code>brainstorming</code>、<code>systematic-debugging</code>、<code>test-driven-development</code>…）
+      <strong>不会自动注入</strong>。它们躺在那里，等当前任务匹配上自己的 <code>description</code>，再被 Skill 工具按需调起。
+    </p>
+
+    <p>一句话记住这层关系：</p>
+    <blockquote><code>using-superpowers</code> 是<strong>调度员</strong>，其它 skill 是<strong>被调度的人</strong>。调度员一直在岗，被调度的人要按铃才来。</blockquote>
+  </section>
+
+  <section>
+    <h2>3. description 就是触发契约</h2>
+    <p>
+      每个 superpowers skill 的描述都以 <strong>「Use when…」</strong> 开头。匹配发生在 <em>description 文本</em> 上，
+      <strong>不在 skill 名字上</strong>。所以诊断「为什么没触发」的第一步，永远是去读它的 description。
+    </p>
+    <p>看四个真实的 description（原文，未改写）：</p>
+
+    <table>
+      <thead><tr><th>Skill</th><th>description（触发契约）</th><th>锚词</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>systematic-debugging</code></td>
+          <td>Use when encountering any <strong>bug</strong>, <strong>test failure</strong>, or <strong>unexpected behavior</strong>, <em>before proposing fixes</em></td>
+          <td>bug / 失败 / 异常</td>
+        </tr>
+        <tr>
+          <td><code>brainstorming</code></td>
+          <td>You <strong>MUST</strong> use this before any <strong>creative work</strong> — creating features, building components…</td>
+          <td>创造性工作 / 建功能</td>
+        </tr>
+        <tr>
+          <td><code>verification-before-completion</code></td>
+          <td>Use when about to <strong>claim work is complete</strong>, fixed, or passing, <em>before committing or creating PRs</em></td>
+          <td>声称完成 / 提交前</td>
+        </tr>
+        <tr>
+          <td><code>test-driven-development</code></td>
+          <td>Use when <strong>implementing any feature or bugfix</strong>, <em>before writing implementation code</em></td>
+          <td>实现功能 / 修 bug</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      看出来了吗？<strong>触发词就埋在 description 里</strong>。你的请求里有没有「bug / 失败 / 异常」「建功能」「完成了」「实现」这类词，
+      直接决定 Tier 2 的匹配成不成立。
+    </p>
+  </section>
+
+  <section>
+    <h2>4. 调度员的三条军规</h2>
+    <p><code>using-superpowers</code> 常驻注入的，是这三条：</p>
+    <ol>
+      <li><strong>次序在前：</strong>查 skill 发生在<strong>任何回复之前</strong>——包括澄清提问、探代码、读文件之前。</li>
+      <li><strong>门槛极低：</strong>只要有 <strong>1% 的可能</strong>一个 skill 适用，<strong>必须 invoke</strong>。「不确定要不要用」→ 用。</li>
+      <li><strong>process 先于 implementation：</strong>
+        <ul>
+          <li>「帮我做个 X」→ <code>brainstorming</code> 先上（先理需求/设计），再谈实现。</li>
+          <li>「修这个 bug」→ <code>systematic-debugging</code> 先上（先定位根因），再谈修。</li>
+        </ul>
+      </li>
+    </ol>
+    <p>
+      还有那张 <strong>Red Flags 表</strong>——它列的是「你在<strong>合理化跳过</strong> skill」的念头：
+      「这就是个简单问题」「我记得这个 skill 怎么用」「这不算个任务」……
+      <strong>你「觉得不需要」本身，就是表里的一面红旗。</strong>
+    </p>
+  </section>
+
+  <section>
+    <h2>5. 为什么你的触发「不稳定」</h2>
+    <p>
+      因为 Tier 2 是<strong>模型每一轮做的判断</strong>：这个任务，匹配上哪个 description？判断靠的是你请求里的词。
+      <strong>同样意图，措辞不同 → 匹配不同 → 触发不同。</strong>
+    </p>
+
+    <table>
+      <thead><tr><th>请求措辞</th><th>能不能稳匹配</th><th>为什么</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>「这个功能有时候快有时候慢，帮我看看」</td>
+          <td>❌ 大概率不触发</td>
+          <td>只有「慢」这种模糊感受，<strong>没踩中</strong> bug/失败/异常 的锚词</td>
+        </tr>
+        <tr>
+          <td>「这是个<strong>性能 bug</strong>：复现 X，预期 Y，实际 Z」</td>
+          <td>✅ 稳稳触发 <code>systematic-debugging</code></td>
+          <td>「bug」+ 复现 + 预期/实际——description 的锚词齐了</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      所以触发的<strong>把手在你手里</strong>：触发活在请求的<strong>动词和症状</strong>里。
+      <strong>改写请求 = 改变匹配。</strong> 这不是玄学，是可主动控制的。
+    </p>
+    <p>
+      还有最稳的一招：<strong>显式点名</strong>。「用 systematic-debugging 帮我排查」——
+      显式 invoke 永远比隐式匹配可靠。显式 &gt; 隐式。
+    </p>
+  </section>
+
+  <!-- 练习 1：预测触发 -->
+  <section class="exercise">
+    <h2>练习 · 预测触发</h2>
+    <p>下面三句用户请求，第一个该触发的 superpowers skill 是哪个？选完即时给反馈。</p>
+
+    <form class="quiz" data-answer="C"
+      data-explain="「bug + 报错日志」直接踩中 systematic-debugging 的锚词（bug / test failure / unexpected behavior），且军规要求「提出修复之前」先系统定位。">
+      <p class="quiz-q">Q1.「帮我修这个 bug，报错日志在下面」——第一个该触发的 skill？</p>
+      <label class="opt"><input type="radio" name="q1" value="A"><span><code>brainstorming</code></span></label>
+      <label class="opt"><input type="radio" name="q1" value="B"><span><code>test-driven-development</code></span></label>
+      <label class="opt"><input type="radio" name="q1" value="C"><span><code>systematic-debugging</code></span></label>
+      <label class="opt"><input type="radio" name="q1" value="D"><span><code>verification-before-completion</code></span></label>
+      <output class="quiz-fb" hidden></output>
+    </form>
+
+    <form class="quiz" data-answer="B"
+      data-explain="「我想做一个 XX 功能」= 创造性工作，且还没问需求。军规：creative work 之前 MUST 先 brainstorming——先理意图和设计，再谈实现。">
+      <p class="quiz-q">Q2.「我想做一个 XX 功能」（你还没问需求）——第一个该触发的 skill？</p>
+      <label class="opt"><input type="radio" name="q2" value="A"><span><code>writing-plans</code></span></label>
+      <label class="opt"><input type="radio" name="q2" value="B"><span><code>brainstorming</code></span></label>
+      <label class="opt"><input type="radio" name="q2" value="C"><span><code>using-superpowers</code></span></label>
+      <label class="opt"><input type="radio" name="q2" value="D"><span><code>test-driven-development</code></span></label>
+      <output class="quiz-fb" hidden></output>
+    </form>
+
+    <form class="quiz" data-answer="A"
+      data-explain="「改好了 / 应该能跑了」= 即将声称完成，但没跑验证。verification-before-completion 的契约就是「声称完成之前」先跑验证、拿到证据。证据先于断言。">
+      <p class="quiz-q">Q3.「改好了，应该能跑了」（但还没跑测试）——哪个 skill 在拦你？</p>
+      <label class="opt"><input type="radio" name="q3" value="A"><span><code>verification-before-completion</code></span></label>
+      <label class="opt"><input type="radio" name="q3" value="B"><span><code>requesting-code-review</code></span></label>
+      <label class="opt"><input type="radio" name="q3" value="C"><span><code>finishing-a-development-branch</code></span></label>
+      <label class="opt"><input type="radio" name="q3" value="D"><span><code>systematic-debugging</code></span></label>
+      <output class="quiz-fb" hidden></output>
+    </form>
+  </section>
+
+  <!-- 练习 2：诊断漏触发 -->
+  <section class="exercise">
+    <h2>练习 · 诊断漏触发</h2>
+    <p>先自己想 30 秒，再点开看答案。</p>
+
+    <details>
+      <summary>「这个功能有时候快有时候慢，帮我看看」——为什么 systematic-debugging 可能没触发？怎么改写让它必触发？</summary>
+      <p><strong>为什么没触发：</strong><code>systematic-debugging</code> 的 description 锚词是
+        <em>bug / test failure / unexpected behavior</em>。原句只有「慢」这种模糊感受，<strong>一个锚词都没踩中</strong>，
+        模型判断「相关性不足」→ 跳过 → 直接猜个原因。</p>
+      <p><strong>怎么改写（三档，从隐到显）：</strong></p>
+      <ul>
+        <li><em>补锚词：</em>「这是个<strong>性能 bug</strong>，偶发，复现步骤 X，预期 Y、实际 Z」</li>
+        <li><em>给症状：</em>「这个功能有<strong>异常行为</strong>：压测下 P99 会突刺」</li>
+        <li><em>显式点名（最稳）：</em>「<strong>用 systematic-debugging</strong> 帮我系统排查这个性能问题」</li>
+      </ul>
+      <p>记住：<strong>显式 invoke &gt; 隐式匹配</strong>。当你<strong>知道</strong>自己要哪个 skill 时，直接点名，别赌模型猜对。</p>
+    </details>
+
+    <details>
+      <summary>「帮我看一下这段代码」——为什么可能<strong>一个 superpowers skill 都不触发</strong>？</summary>
+      <p>「看一下」既不是创造性工作（→ brainstorming），也不是 bug（→ systematic-debugging），
+        也没声称完成（→ verification）。「看一下」是<strong>阅读/浏览</strong>，没有动词踩中任何 description 的锚词。
+        所以模型大概率直接读代码回答——这在 superpowers 的规则下<strong>是合理的</strong>，不是漏触发。
+        <strong>不是每个请求都该触发 skill</strong>；触发是为了把方法论带进来，没有方法论需求时，裸读裸答没错。</p>
+    </details>
+  </section>
+
+  <section class="source">
+    <h2>推荐一手源</h2>
+    <p>
+      重读 <code>using-superpowers</code> 的 SKILL.md，重点两段：
+    </p>
+    <ul>
+      <li><strong>Skill Priority</strong>（process 先于 implementation 的原始表述）</li>
+      <li><strong>Red Flags</strong> 表（12 种「你在合理化跳过 skill」的念头——下次你在心里冒出其中任何一句，停）</li>
+    </ul>
+    <p>
+      本地路径：<code>~/.claude/plugins/cache/claude-plugins-official/superpowers/6.1.0/skills/using-superpowers/SKILL.md</code>
+    </p>
+  </section>
+
+  <section class="followup">
+    <p><strong>有不清楚的地方？直接问我。</strong></p>
+    <p>
+      我是你的老师，任何一处含糊都可以追问——比如「那 process 和 implementation 具体怎么区分？」
+      「我装了 hookify/PUA，它们和 superpowers 谁优先？」这节是后面所有课的地基，一处含糊后面全歪，别攒着。
+    </p>
+  </section>
+
+  <footer>
+    <span>第 1 课 / 共 N 课</span>
+    <span><a href="0002-skill-dispatch-map.html">下一课：何时用哪个 skill —— 14 个 skill 的 dispatch 全图 →</a></span>
+  </footer>
+
+</article>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

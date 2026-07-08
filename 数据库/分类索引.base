@@ -1,14 +1,12 @@
 filters:
   and:
     - file.ext == "md"
-    - file.hasLink(this)
-    - file.name != file.folder.split("/").slice(-1).join("")
+    - file.folder == this.file.folder
+    - file.name != this.file.name
 formulas:
   is_folder_note: if(file.name == this.name, "📁", "")
   created_day: if(file.ctime, file.ctime.format("YYYY-MM-DD"), "")
 properties:
-  note.分类:
-    displayName: 分类
   formula.created_day:
     displayName: 创建
 views:

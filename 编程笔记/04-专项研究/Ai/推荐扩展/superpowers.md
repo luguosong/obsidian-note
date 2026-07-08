@@ -1,64 +1,55 @@
 ---
+排序: 2000
 分类:
   - "[[推荐扩展]]"
 关联笔记:
   - "[[superpowers README]]"
-描述: 一套面向主流 AI 编程助手（如 Claude Code、Cursor、Codex 等）的代理技能框架与标准化软件工程方法论，它通过强制 AI 遵循需求细化、TDD（测试驱动开发）、子代理协同等严谨的完整工作流，将 AI 从单纯的“代码生成器”升级为“具备完整 SDLC（软件开发生命周期）掌控力的自主开发团队”。
-排序: 2000
+描述: 面向编码 agent 的完整软件开发方法论 skill 库（作者 obra，经 Claude 官方插件市场分发），把需求细化、TDD、子代理协同、系统化调试、验证先行固化为可调用 skill，让 AI 掌控完整 SDLC。
 分组: 工程方法论与工作流
 创建时间: 2026年06月25日
 ---
 # superpowers
 
-> Claude Code **superpowers** 插件（`claude-plugins-official/superpowers@6.0.3`）的 skill 速查表。
-> 核心规则：**只要某 skill 有 1% 可能适用，就必须在回复前先调用它**（含澄清提问）；优先级：用户指令 > superpowers skill > 系统默认。
 
-**入口与编排**
+## 安装
 
-| Skill | 何时触发 |
-|---|---|
-| `using-superpowers` | 每次对话开始时——建立如何发现与使用 skill 的机制，要求在任何回复（含澄清提问）前先调用相关 skill |
-| `using-git-worktrees` | 开始需要与当前工作区隔离的功能开发，或执行实现计划前——确保存在隔离工作区（原生工具或 git worktree 兜底） |
-| `dispatching-parallel-agents` | 面对 2+ 个可在无共享状态、无顺序依赖下并行处理的独立任务时 |
+```shell
+# 直接从Anthropic 的官方 marketplace（市场）安装 plugin（插件）
+/plugin install superpowers@claude-plugins-official
+```
 
-**设计与规划**
+## Skill介绍
 
-| Skill           | 何时触发                                                |
-| --------------- | --------------------------------------------------- |
-| `brainstorming` | **任何创意工作前必须用**：创建功能、构建组件、新增能力或修改行为；在实现前探索用户意图、需求与设计 |
-| `writing-plans` | 有了 spec 或需求、要做多步骤任务时，在动代码前——编写实现计划                  |
+基本工作流:
 
-**执行与实现**
+| skill                          | 描述                                                                                                              |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| brainstorming(头脑风暴)            | 苏格拉底式设计优化<br><br>在编写代码前激活。通过问题细化粗略想法，探索替代方案，分段呈现设计以供验证。保存`设计文档`。                                                |
+| using-git-worktrees            | 并行开发分支<br><br>在设计批准后激活。在新分支上创建隔离工作区，运行项目设置，验证干净的测试基线。                                                           |
+| writing-plans                  | 详细的实现计划<br><br>在设计获批后激活。将工作分解为小任务（每个 2-5 分钟）。每个任务都有确切的文件路径、完整代码和验证步骤。                                           |
+| subagent-driven-development    | 快速迭代与两阶段审查（规范合规性，然后代码质量）<br><br>为每个任务分配新的 subagent 进行两阶段审查（规范合规性，然后代码质量）                                        |
+| executing-plans                | 带检查点的批量执行<br><br>以批处理方式执行并设置人工检查点                                                                               |
+| test-driven-development        | 在实现期间激活。强制执行 RED-GREEN-REFACTOR：编写失败的测试，观察其失败，编写最小代码，观察其通过，提交。删除在测试之前编写的代码。<br>RED-GREEN-REFACTOR 循环（包括测试反模式参考） |
+| requesting-code-review         | 审查前检查清单<br><br>在任务之间激活。根据计划进行审查，按严重程度报告问题。关键问题会阻止进度。                                                            |
+| finishing-a-development-branch | 合并/PR 决策工作流<br><br>在任务完成时激活。验证测试，呈现选项（合并/PR/保留/丢弃），清理工作树。                                                       |
 
-| Skill | 何时触发 |
-|---|---|
-| `executing-plans` | 有了写好的实现计划，要在**带审查检查点的独立会话**中执行时 |
-| `subagent-driven-development` | 在**当前会话**中执行包含独立任务的实现计划时 |
-| `test-driven-development` | 实现任何功能或修复 bug 时，在写实现代码前——先写测试（TDD） |
+调试：
 
-**调试与验证**
+| skill                          | 描述                                                                                                  |
+| ------------------------------ | --------------------------------------------------------------------------------------------------- |
+| systematic-debugging           | 4 阶段根本原因流程（包括 root-cause-tracing（根本原因追踪）、defense-in-depth（纵深防御）、condition-based-waiting（基于条件的等待）技术） |
+| verification-before-completion | 确保问题确实已修复                                                                                           |
 
-| Skill | 何时触发 |
-|---|---|
-| `systematic-debugging` | 遇到任何 bug、测试失败或非预期行为时，**在提出修复方案前**——系统化定位根因 |
-| `verification-before-completion` | 即将声称工作「完成/修复/通过」、在提交或建 PR 前——必须运行验证命令并确认输出；**始终先证据后断言** |
+协作：
 
-**代码审查**
+| skill                       | 描述              |
+| --------------------------- | --------------- |
+| dispatching-parallel-agents | 并发 subagent 工作流 |
+| receiving-code-review       | 响应反馈            |
 
-| Skill | 何时触发 |
-|---|---|
-| `requesting-code-review` | 完成任务、实现重大功能或合并前——验证工作满足需求 |
-| `receiving-code-review` | 收到代码审查反馈、在采纳建议前；尤其当反馈含糊或技术存疑时——要求技术严谨与验证，而非表演式认同或盲目实现 |
+元技能：
 
-**收尾与沉淀**
-
-| Skill | 何时触发 |
-|---|---|
-| `finishing-a-development-branch` | 实现完成、所有测试通过，需要决定如何整合工作时——给出合并 / PR / 清理的结构化选项 |
-| `writing-skills` | 创建新 skill、编辑现有 skill 或部署前验证 skill 时 |
-
----
-
-> **调用方式**：Claude Code 中通过 `Skill` 工具调用，或输入 `/superpowers:<skill名>`（如 `/superpowers:brainstorming`）。
-> **Skill 类型**：**Rigid**（`test-driven-development`、`systematic-debugging`——严格按步骤、不可简化）/ **Flexible**（其余——按上下文调整）。skill 本体会标明属于哪类。
-> **来源**：`~/.claude/plugins/cache/claude-plugins-official/superpowers/6.0.3/skills/<name>/SKILL.md`
+| skill             | 描述                             |
+| ----------------- | ------------------------------ |
+| writing-skills    | 按照最佳实践创建新的 Skills(技能)（包括测试方法论） |
+| using-superpowers | Skills(技能)系统介绍                 |

@@ -2949,11 +2949,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 9,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 9,
         "ch": 0
       }
     },
@@ -3019,11 +3019,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 8,
+        "line": 2,
         "ch": 0
       },
       "to": {
-        "line": 8,
+        "line": 2,
         "ch": 0
       }
     },
@@ -3587,20 +3587,19 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
-    "scroll": 14.342866143937272,
+    "scroll": 2.314814814814815,
     "cursor": {
       "from": {
-        "line": 15,
+        "line": 14,
         "ch": 0
       },
       "to": {
-        "line": 15,
+        "line": 14,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-2-0"
+      "item-1-0"
     ]
   },
   "编程笔记/04-专项研究/Ai/Ai.md": {
@@ -3663,35 +3662,43 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
-    "scroll": 18.132919452403694,
+    "scroll": 29.982007575757578,
     "cursor": {
       "from": {
-        "line": 28,
-        "ch": 17
+        "line": 55,
+        "ch": 0
       },
       "to": {
-        "line": 28,
-        "ch": 2
+        "line": 55,
+        "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "网页裁剪/superpowers README.md": {
-    "scroll": 0,
+    "scroll": 188.13611111111112,
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 0
+        "line": 218,
+        "ch": 26
       },
       "to": {
-        "line": 10,
-        "ch": 0
+        "line": 218,
+        "ch": 26
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-3-7",
+      "item-2-6"
+    ]
   },
   "网页裁剪/DietrichGebertponytail Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.md": {
     "scroll": 10.805717365977499,
@@ -3708,21 +3715,19 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/ponytail.md": {
-    "scroll": 116.57996894409938,
+    "scroll": 34.15843857634903,
     "cursor": {
       "from": {
-        "line": 168,
+        "line": 56,
         "ch": 0
       },
       "to": {
-        "line": 168,
+        "line": 56,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-2-1",
-      "item-2-5"
+      "item-1-0"
     ]
   },
   "网页裁剪/ponytail README.md": {
@@ -3985,18 +3990,20 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Ai/推荐扩展/pua.md": {
-    "scroll": 0,
+    "scroll": 11.916666666666666,
     "cursor": {
       "from": {
-        "line": 13,
+        "line": 12,
         "ch": 0
       },
       "to": {
-        "line": 13,
+        "line": 12,
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "网页裁剪/tanweaipua 你是一个曾经被寄予厚望的 P8 级工程师。Anthropic 当初给你定级的时候，对你的期望是很高的。  一个agent使用的高能动性的skill。  Your AI has been placed on a PIP. 30 days to show improvement.md": {
     "scroll": 0,
@@ -4046,30 +4053,31 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
-    "scroll": 0,
+    "scroll": 14.016293279022403,
     "cursor": {
       "from": {
-        "line": 14,
+        "line": 50,
         "ch": 0
       },
       "to": {
-        "line": 14,
+        "line": 50,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-1"
     ]
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/01-JavaSE.md": {
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 14,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 14,
         "ch": 0
       }
     },
@@ -4092,14 +4100,14 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
-    "scroll": 29.066789215686274,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 42,
+        "line": 40,
         "ch": 0
       },
       "to": {
-        "line": 42,
+        "line": 40,
         "ch": 0
       }
     },
@@ -4279,7 +4287,7 @@
     ]
   },
   "网页裁剪/我如何使用Obsidian.md": {
-    "scroll": 0,
+    "scroll": 4.62962962962963,
     "cursor": {
       "from": {
         "line": 20,
@@ -4358,31 +4366,30 @@
     "expandedKeys": []
   },
   "编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
-    "scroll": 752.275939849624,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 757,
-        "ch": 8
+        "line": 81,
+        "ch": 3
       },
       "to": {
-        "line": 757,
-        "ch": 8
+        "line": 81,
+        "ch": 6
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-1",
       "item-3-2",
-      "item-2-5",
-      "item-2-16",
-      "item-2-19",
+      "item-2-7",
+      "item-2-10",
+      "item-3-11",
+      "item-3-16",
       "item-3-20",
-      "item-3-25",
-      "item-3-29",
-      "item-3-36",
-      "item-2-43",
-      "item-3-44",
-      "item-2-52"
+      "item-3-27",
+      "item-2-34",
+      "item-3-35",
+      "item-2-43"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/斜杠命令.md": {
@@ -5244,36 +5251,29 @@
     "cursor": {
       "from": {
         "line": 12,
-        "ch": 0
+        "ch": 2
       },
       "to": {
         "line": 12,
-        "ch": 0
+        "ch": 2
       }
     },
-    "expandedKeys": [
-      "item-1-0",
-      "item-2-2",
-      "item-3-6",
-      "item-2-5",
-      "item-3-11"
-    ]
+    "expandedKeys": []
   },
   "网页裁剪/mattpocock skills README.md": {
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 57,
+        "line": 13,
         "ch": 0
       },
       "to": {
-        "line": 57,
+        "line": 13,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0",
-      "item-2-3"
+      "item-1-0"
     ]
   },
   "网页裁剪/JDBC-基础-检索修改值.md": {
@@ -6392,7 +6392,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/Hooks.md": {
-    "scroll": 6.015037593984962,
+    "scroll": 0.18045112781954886,
     "cursor": {
       "from": {
         "line": 145,
@@ -6426,7 +6426,7 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/skills.md": {
-    "scroll": 0,
+    "scroll": 68.4987814784728,
     "cursor": {
       "from": {
         "line": 13,
@@ -6438,7 +6438,9 @@
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-3",
+      "item-2-7"
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/上下文管理.md": {
@@ -6990,7 +6992,7 @@
     "expandedKeys": []
   },
   "编程笔记/04-专项研究/Windows/Windows开发环境概览.md": {
-    "scroll": 135.09469696969697,
+    "scroll": 85.10972222222222,
     "cursor": {
       "from": {
         "line": 161,
@@ -7006,15 +7008,15 @@
     ]
   },
   "编程笔记/04-专项研究/Windows/PowerShell配置Claude多账号切换.md": {
-    "scroll": 60.86805555555556,
+    "scroll": 79.47777777777777,
     "cursor": {
       "from": {
-        "line": 140,
-        "ch": 0
+        "line": 78,
+        "ch": 67
       },
       "to": {
-        "line": 140,
-        "ch": 0
+        "line": 78,
+        "ch": 100
       }
     },
     "expandedKeys": [
@@ -7098,26 +7100,380 @@
     ]
   },
   "编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
-    "scroll": 34.56495633187773,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 73,
-        "ch": 15
+        "line": 173,
+        "ch": 0
       },
       "to": {
-        "line": 47,
+        "line": 173,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-9",
-      "item-2-25",
-      "item-2-20",
-      "item-3-13",
-      "item-2-3",
-      "item-3-9",
-      "item-3-4"
+      "item-3-4",
+      "item-2-3"
     ]
+  },
+  "编程笔记/04-专项研究/Windows/localhost连接Docker服务慢的IPv6问题.md": {
+    "scroll": 6.45933014354067,
+    "cursor": {
+      "from": {
+        "line": 53,
+        "ch": 59
+      },
+      "to": {
+        "line": 53,
+        "ch": 59
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-4"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/taste-skill.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/Impeccable.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/taste-skill README.md": {
+    "scroll": 26.83253029178054,
+    "cursor": {
+      "from": {
+        "line": 84,
+        "ch": 51
+      },
+      "to": {
+        "line": 84,
+        "ch": 28
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-13",
+      "item-2-6",
+      "item-2-4",
+      "item-2-0"
+    ]
+  },
+  "网页裁剪/Impeccable README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/awesome-design-md README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-3",
+      "item-2-5",
+      "item-2-16"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/awesome-design.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/Firecrawl.md": {
+    "scroll": 5.012531328320802,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "网页裁剪/Firecrawl README.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-3",
+      "item-2-7",
+      "item-2-11",
+      "item-3-12",
+      "item-3-16",
+      "item-3-18",
+      "item-2-21"
+    ]
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/playwright-cli.md": {
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/playwright-cli README.md": {
+    "scroll": 296.49444444444447,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-0",
+      "item-2-5",
+      "item-2-12"
+    ]
+  },
+  "编程笔记/03-Java/01-基础/05-Java日志/05-Java日志.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "编程笔记/04-专项研究/消息队列/消息队列.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
+  },
+  "编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
+    "cursor": {
+      "from": {
+        "line": 14,
+        "ch": 0
+      },
+      "to": {
+        "line": 14,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Number 类.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "网页裁剪/字符和字符串问题和练习.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/自动装箱和拆箱.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/集合.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "网页裁剪/Java 核心类.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "编程笔记/03-Java/01-基础/01-JavaSE/Java 官方教程.md": {
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "learning/superpowers/NOTES.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/消息队列/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "mattpocock-skills-68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f746f74616c2d747970657363726970742f696d6167652f75706c6f6164/v3177738227727f736b696c6c2d7265706f2d6c696768745f32782e706e67.webp.md": {
+    "expandedKeys": []
+  },
+  "learning/superpowers/MISSION.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "编程笔记/04-专项研究/Linux/Linux.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
+  },
+  "编程笔记/04-专项研究/Redis/Redis.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "docs/agents/domain.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "docs/agents/issue-tracker.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "uv.md": {
+    "expandedKeys": [],
+    "scroll": 0
   }
 }
