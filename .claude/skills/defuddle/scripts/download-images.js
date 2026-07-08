@@ -105,6 +105,40 @@ function extFromContentType(ct) {
   return map[ct] || "";
 }
 
+// SSRF 防护：判断 URL 是否指向私有/本地/保留网络地址。
+// 图片 URL 来自抓取的网页（外部输入），下载前校验，避免被恶意网页诱导请求
+// 内网或本机服务（如云元数据 169.254.169.254、本机 dev server、Docker 端口）。
+// 仅校验字面量；DNS rebinding 在本地 CLI 风险极低，不做 DNS 解析校验。
+function isPrivateTarget(urlStr) {
+  let u;
+  try {
+    u = new URL(urlStr);
+  } catch {
+    return true; // 非法 URL 视为不可信
+  }
+  const host = u.hostname.toLowerCase().replace(/^\[|\]$/g, ""); // 去掉 IPv6 方括号
+
+  if (host === "localhost" || host.endsWith(".localhost")) return true;
+  if (host === "::1") return true;
+
+  // IPv4 字面量
+  const v4 = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  if (v4) {
+    const a = +v4[1], b = +v4[2];
+    if (a === 0 || a === 10 || a === 127) return true;
+    if (a === 169 && b === 254) return true; // 链路本地 + 云元数据 169.254.169.254
+    if (a === 172 && b >= 16 && b <= 31) return true;
+    if (a === 192 && b === 168) return true;
+    if (a >= 224) return true; // 组播/保留段
+    return false;
+  }
+
+  // IPv6 私有/链路本地
+  if (/^f[cd][0-9a-f]{2}:/.test(host)) return true; // fc00::/7 唯一本地
+  if (/^fe[89ab][0-9a-f]:/.test(host)) return true; // fe80::/10 链路本地
+  return false;
+}
+
 // hash 碰撞兜底（极罕见，不同内容却同 hash 前 16 位）：同名追加序号
 function uniqueName(name, used) {
   if (!used.has(name)) {
@@ -190,6 +224,13 @@ async function main() {
   for (const item of matches) {
     const url = item.url;
     if (urlToName.has(url)) continue; // 同 URL 去重
+
+    // SSRF 防护：拒绝私有/本地/保留网络地址
+    if (isPrivateTarget(url)) {
+      fail++;
+      console.warn(`✗ 拒绝内部地址，保留远程链接: ${url}`);
+      continue;
+    }
 
     try {
       const res = await fetch(url, {
