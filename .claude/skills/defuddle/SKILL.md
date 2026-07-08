@@ -107,7 +107,7 @@ Windows / Git Bash 下路径含中文需加引号。
 翻译完成、最终正文确定后，运行代码语言检测脚本：扫描正文里无语言标识的代码围栏（裸 ` ``` `），根据代码内容启发式判定语言并补上标识（如 ` ```java `、` ```bash `），使 Obsidian 能正确语法高亮。
 
 ```bash
-node ".zcode/skills/defuddle/scripts/detect-code-languages.js" "网页裁剪/<文件名>.md"
+node ".claude/skills/defuddle/scripts/detect-code-languages.js" "网页裁剪/<文件名>.md"
 ```
 
 要点：
@@ -124,16 +124,17 @@ node ".zcode/skills/defuddle/scripts/detect-code-languages.js" "网页裁剪/<�
 翻译完成、最终正文确定后，**默认**对落盘文件运行图片本地化脚本：扫描正文中的远程图片（Markdown `![](https://…)` 与 HTML `<img src="https://…">`），下载到 `附件/` 目录，并把引用改写为 Obsidian 嵌入语法 `![[文件名]]`。
 
 ```bash
-node ".zcode/skills/defuddle/scripts/download-images.js" "网页裁剪/<文件名>.md" --prefix "<可选前缀>"
+node ".claude/skills/defuddle/scripts/download-images.js" "网页裁剪/<文件名>.md" --prefix "<可选前缀>"
 ```
 
 要点：
 
 - 脚本位于本 skill 目录下的 `scripts/download-images.js`，路径相对仓库根目录。它**就地修改**传入的 Markdown 文件：下载成功的图片引用改写为 `![[文件名]]`，下载失败的保留原远程链接并在控制台告警。
 - **在翻译完成、文件最终落盘后运行**——否则脚本改写后的 `![[]]` 引用会被后续的整段译文替换覆盖掉。
-- **`--prefix`**（可选）：为该页所有图片加前缀，避免不同页面同名图片冲突。建议用与笔记相关的简短英文/拼音前缀加连字符，如 `--prefix context7-`、`--prefix jvm-`。无命名冲突风险时可省略。
-- 脚本会去重（同一 URL 只下载一次）、按 Content-Type 补全扩展名、对同名文件追加序号。下载失败（403/404/超时）不中断流程。
-- **图片压缩（默认开启）**：下载后自动用 `sharp` 压缩——PNG/JPEG/WebP/AVIF/BMP 转为 WebP（质量 82），体积通常降 50-90%；GIF 与 SVG 保留原格式不动。压缩后**直接覆盖**原图（原图删除），文件名扩展名改为 `.webp` 并同步更新引用。实测 1.7MB 的 JPEG → 139KB WebP（-92%）。压缩依赖 sharp，已在 `scripts/` 下安装（`node_modules` 被 gitignore）。如需关闭：加 `--no-compress`；如仅压缩大图：`--threshold 204800`（只压 >200KB 的）。
+- **命名：基于内容 hash**——文件名为图片内容的 sha256 前 16 位 + 扩展名，形如 `1c55b4dff2677827.svg`。定长干净，不会因 URL 过长而产出超长文件名（早期曾把整段 URL 编码进文件名）；同内容图片（不同 URL）自动命中同一文件名并直接复用，天然去重、不重复写入。
+- `--prefix`（可选，通常不需要）：加在 hash 前。hash 已保证唯一，仅当想为某篇笔记的图片做人工分组时才用，如 `--prefix context7-`。
+- 脚本对同一 URL 只下载一次；按 URL 末段 / Content-Type 推断扩展名（兜底 `png`）；下载失败（403/404/超时）保留原远程链接，不中断流程。
+- **图片压缩（默认开启）**：下载后自动用 `sharp` 压缩——PNG/JPEG/WebP/AVIF/BMP 转为 WebP（质量 82），体积通常降 50-90%；GIF 与 SVG 保留原格式不动。压缩在内存完成，直接以最终名（`<hash>.webp`）落盘并写入引用。实测 1.7MB 的 JPEG → 139KB WebP（-92%）。压缩依赖 sharp，已在 `scripts/` 下安装（`node_modules` 被 gitignore）。如需关闭：加 `--no-compress`；如仅压缩大图：`--threshold 204800`（只压 >200KB 的）。
 - 仅当用户明确说「不要下载图片」「保留远程图片」时才跳过此步；否则一律执行。
 
 > 翻译时，正文里出现的 `![](https://…)` 远程图片占位**照原样保留**（URL 不改动），由本步骤统一改写。不要在翻译阶段手工改写图片链接。
@@ -372,6 +373,25 @@ node ".zcode/skills/defuddle/scripts/download-images.js" "网页裁剪/<文件�
 
 > 遇到对照表外的术语，按规则 2 处理；产品名、命令名（如 `defuddle`、`ctx7`、`Cursor`）直接保留英文。
 
+## 历史附件迁移（rename-to-hash.js）
+
+早期版本曾用 URL 末段或整段 URL 编码命名附件，产出过超长 / 混乱的文件名（如 `awesome-design-md-68747470733a2f2f….svg`）。`scripts/rename-to-hash.js` 把 `附件/` 下所有图片批量改名为 `<sha256前16位>.<ext>`，并同步更新全仓库 `.md` 中的 `![[引用]]`（含 `![[名|尺寸]]` 变体）：
+
+- 同内容图片（hash 相同）去重：保留一份，删除重复，引用统一指向保留文件。
+- hash 碰撞（前 16 位相同但内容不同，极罕见）追加序号，绝不误删。
+- 已是 hash 命名（16 位 hex stem）的文件跳过，幂等可重复运行。
+- 非图片文件不动；GIF/SVG 等保留原扩展名，只改名。
+
+```bash
+# 预览改名映射（不实际改动）
+node .claude/skills/defuddle/scripts/rename-to-hash.js --dry-run
+
+# 确认后实跑
+node .claude/skills/defuddle/scripts/rename-to-hash.js
+```
+
+建议先 `--dry-run` 看映射与「去重删除 / 碰撞」计数，确认无误再实跑。迁移前确保已 git 提交，便于回退。
+
 ## Usage
 
 仅查看内容不保存（临时阅读）：
@@ -413,8 +433,8 @@ date -Iseconds   # 生成创建时间
 读取落盘文件 → 顶部插入 frontmatter → 判定正文为英文 → 整篇按学术规范翻译 → 用译文替换正文 → **补全代码块语言标识** → **下载图片到 `附件/`** → 保存：
 
 ```bash
-node ".zcode/skills/defuddle/scripts/detect-code-languages.js" "网页裁剪/Context7 README.md"
-node ".zcode/skills/defuddle/scripts/download-images.js" "网页裁剪/Context7 README.md" --prefix "context7-"
+node ".claude/skills/defuddle/scripts/detect-code-languages.js" "网页裁剪/Context7 README.md"
+node ".claude/skills/defuddle/scripts/download-images.js" "网页裁剪/Context7 README.md" --prefix "context7-"
 ```
 
 最终文件头部形如：

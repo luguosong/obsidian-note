@@ -5,28 +5,31 @@
  * 扫描 Markdown 文件中的远程图片链接，下载到本地「附件」目录，
  * 并将引用改写为 Obsidian 的 wikilink 嵌入语法：![[文件名]]
  *
+ * 命名：基于图片【内容】的 sha256 前 16 位，即 <hash16>.<ext>。
+ * - 同内容图片（不同 URL）命中同一文件名并直接复用，天然去重，不重复写入。
+ * - 文件名定长，不会因 URL 过长而超长（早期版本曾产出整段 URL 编码的超长文件名）。
+ * - 可选 --prefix 加在 hash 前；hash 已保证唯一，通常不需要 prefix。
+ *
  * 用法：
  *   node download-images.js <markdown文件路径> [--dir 附件目录] [--prefix 前缀]
+ *                            [--no-compress] [--threshold 字节]
  *
  * 默认附件目录为仓库根目录下的「附件」（相对脚本所在 skills/defuddle/scripts 上溯）。
- * --prefix 会加在每张图片的文件名前，用于避免跨页面命名冲突，如 --prefix ctx7-
  *
  * 压缩策略（默认开启，--no-compress 关闭）：
- * - PNG/JPEG/WebP/AVIF → 转 WebP（质量 82），体积通常降 50-70%。
- * - GIF（含动图）保留原格式，仅做无损压缩（gifsicle 风格的调色板优化）。
- * - SVG 视为文本，不做位图压缩（已是矢量最优）。
- * - 压缩后【直接覆盖】原文件；文件名扩展名改为 .webp，并同步更新引用。
- * - 小于阈值（默认 0，即全部压缩；可用 --threshold N 仅压缩 >N bytes 的图）的跳过。
+ * - PNG/JPEG/WebP/AVIF/BMP → 转 WebP（质量 82），体积通常降 50-70%。
+ * - GIF / SVG 保留原格式不动（已是各自的最优形态）。
+ * - 压缩在【内存】完成，直接以最终名落盘；同内容已入库则复用、不重复写入。
  *
  * 设计说明：
  * - 同时处理 Markdown 图片 ![](url) 和 HTML <img src="url">。
- * - 文件名取自 URL 路径末段；去除非法字符；无扩展名时按 Content-Type 推断。
- * - 同一 URL 只下载一次（去重）；不同 URL 但同名时追加序号避免覆盖。
+ * - 扩展名优先取 URL 末段，其次按 Content-Type 推断，兜底 png。
  * - 下载失败（403/404/超时等）不中断流程，保留原远程链接并在控制台告警。
  */
 
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 // ---------- 参数解析 ----------
 const args = process.argv.slice(2);
@@ -52,7 +55,7 @@ for (let i = 0; i < args.length; i++) {
 }
 
 if (!mdPath) {
-  console.error("用法: node download-images.js <markdown文件路径> [--dir 附件目录] [--prefix 前缀]");
+  console.error("用法: node download-images.js <markdown文件路径> [--dir 附件目录] [--prefix 前缀] [--no-compress] [--threshold 字节]");
   process.exit(1);
 }
 
@@ -63,7 +66,7 @@ if (!fs.existsSync(mdPath)) {
 }
 
 // 默认附件目录：仓库根目录下的「附件」
-// 脚本位于 .zcode/skills/defuddle/scripts/，仓库根在向上四级
+// 脚本位于 .claude/skills/defuddle/scripts/，仓库根向上四级
 if (!dir) {
   dir = path.resolve(__dirname, "..", "..", "..", "..", "附件");
 }
@@ -72,30 +75,18 @@ if (!fs.existsSync(dir)) {
 }
 
 // ---------- 工具函数 ----------
-const ILLEGAL = /[\/\\:*?"<>|]/g;
-
-function sanitize(name) {
-  return name.replace(ILLEGAL, "_").replace(/\s+/g, "_").replace(/_+/g, "_").replace(/^_|_$/g, "");
-}
-
-// 由 URL 推断文件名（含扩展名）
-function nameFromUrl(url, contentType) {
+// 从 URL 末段提取图片扩展名（小写，jpeg→jpg）；无则返回空
+function extFromUrl(url) {
   let pathname = "";
   try {
     pathname = new URL(url).pathname;
   } catch {
     pathname = url;
   }
-  let base = decodeURIComponent(pathname.split("/").filter(Boolean).pop() || "");
-  base = sanitize(base) || "image";
-
-  // 无扩展名或无意义的扩展名，用 Content-Type 补
-  const knownExt = /\.(png|jpe?g|gif|webp|svg|bmp|ico|avif)$/i;
-  if (!knownExt.test(base)) {
-    const ext = extFromContentType(contentType);
-    if (ext) base = `${base}.${ext}`;
-  }
-  return prefix + base;
+  const base = decodeURIComponent(pathname.split("/").filter(Boolean).pop() || "");
+  const m = base.match(/\.(png|jpe?g|gif|webp|svg|bmp|ico|avif)$/i);
+  if (!m) return "";
+  return m[1].toLowerCase().replace("jpeg", "jpg");
 }
 
 function extFromContentType(ct) {
@@ -114,7 +105,7 @@ function extFromContentType(ct) {
   return map[ct] || "";
 }
 
-// 处理同名冲突：若文件名已存在（且不是本次同一 URL），追加序号
+// hash 碰撞兜底（极罕见，不同内容却同 hash 前 16 位）：同名追加序号
 function uniqueName(name, used) {
   if (!used.has(name)) {
     used.add(name);
@@ -147,43 +138,29 @@ const COMPRESSIBLE = /\.(png|jpe?g|webp|avif|bmp|tiff?)$/i;
 const KEEP_EXT = /\.(gif|svg)$/i; // GIF / SVG 保留原扩展名
 
 /**
- * 压缩单张图片（PNG/JPEG/... → WebP q82；GIF/SVG 原样保留）。
- * @param {string} src 源文件绝对路径
- * @returns {{dest: string, ratio: number} | null} 新文件路径与压缩比；null 表示未压缩
+ * 在内存压缩 buffer：可压缩格式 → WebP q82 buffer；GIF/SVG/不可压缩 → null。
+ * @param {Buffer} buf 原图字节
+ * @param {string} srcExt 原扩展名（不含点，如 "png"）
+ * @returns {Promise<Buffer | null>} 压缩后的 buffer；null 表示未压缩（保留原图）
  */
-async function compressImage(src) {
+async function compressBuffer(buf, srcExt) {
   if (!sharp) {
-    console.warn("  ⚠ sharp 未安装，跳过压缩。安装: cd .zcode/skills/defuddle/scripts && npm install");
+    console.warn("  ⚠ sharp 未安装，跳过压缩。安装: cd .claude/skills/defuddle/scripts && npm install");
     return null;
   }
-  const ext = path.extname(src).toLowerCase();
-
-  // GIF / SVG：不做位图压缩
+  const ext = "." + srcExt;
   if (KEEP_EXT.test(ext)) return null;
-
   if (!COMPRESSIBLE.test(ext)) return null;
 
-  const dest = src.replace(new RegExp("\\" + ext + "$", "i"), ".webp");
-  const before = fs.statSync(src).size;
-
-  await sharp(src, { animated: false })
+  const out = await sharp(buf, { animated: false })
     .rotate() // 按 EXIF 方向自动旋转
-    .flatten({ background: "#ffffff" }) // 透明通道合成到白底（WebP 仍可带 alpha，这里保底）
+    .flatten({ background: "#ffffff" }) // 透明通道合成到白底
     .webp({ quality: 82, effort: 4 })
-    .toFile(dest);
+    .toBuffer();
 
-  const after = fs.statSync(dest).size;
-
-  // 如果压缩后反而更大，丢弃压缩版，保留原图（不改扩展名）
-  if (after >= before) {
-    fs.unlinkSync(dest);
-    return null;
-  }
-
-  // 删除原始未压缩文件
-  fs.unlinkSync(src);
-  const ratio = (1 - after / before) * 100;
-  return { dest, ratio: ratio };
+  // 压缩后反而更大：丢弃压缩版，保留原图
+  if (out.length >= buf.length) return null;
+  return out;
 }
 
 // ---------- 主流程 ----------
@@ -212,7 +189,7 @@ async function main() {
 
   for (const item of matches) {
     const url = item.url;
-    if (urlToName.has(url)) continue; // 去重
+    if (urlToName.has(url)) continue; // 同 URL 去重
 
     try {
       const res = await fetch(url, {
@@ -227,40 +204,45 @@ async function main() {
       const buf = Buffer.from(await res.arrayBuffer());
       if (buf.length === 0) throw new Error("空响应");
 
-      const finalName = uniqueName(
-        nameFromUrl(url, res.headers.get("content-type")),
-        usedNames
-      );
-      const dest = path.join(dir, finalName);
-      fs.writeFileSync(dest, buf);
+      // 内容 hash 命名：sha256 前 16 位 + 扩展名
+      const hash = crypto.createHash("sha256").update(buf).digest("hex").slice(0, 16);
+      const srcExt = extFromUrl(url) || extFromContentType(res.headers.get("content-type")) || "png";
 
-      // 默认压缩：PNG/JPEG/... → WebP（可能改变文件名扩展名）
-      let displayName = finalName;
+      // 先在内存决定最终内容与扩展名（压缩可能把 ext 改为 webp）
+      let outBuf = buf;
+      let finalExt = srcExt;
       if (compress && buf.length > threshold) {
         try {
-          const result = await compressImage(dest);
-          if (result) {
-            const newName = path.basename(result.dest);
-            // 压缩成功：更新已用名集合（移除旧名，加入新名）
-            usedNames.delete(finalName);
-            usedNames.add(newName);
-            displayName = newName;
-            console.log(
-              `✓ ${newName}  (${(fs.statSync(result.dest).size / 1024).toFixed(1)} KB, -${result.ratio.toFixed(0)}%)  ← ${url}`
-            );
-          } else {
-            console.log(`✓ ${finalName}  (${(buf.length / 1024).toFixed(1)} KB, 未压缩)  ← ${url}`);
+          const comp = await compressBuffer(buf, srcExt);
+          if (comp) {
+            outBuf = comp;
+            finalExt = "webp";
           }
         } catch (ce) {
           console.warn(`  ⚠ 压缩失败，保留原图: ${ce.message}`);
-          console.log(`✓ ${finalName}  (${(buf.length / 1024).toFixed(1)} KB)  ← ${url}`);
         }
-      } else {
-        console.log(`✓ ${finalName}  (${(buf.length / 1024).toFixed(1)} KB)  ← ${url}`);
       }
 
-      urlToName.set(url, displayName);
+      const finalName = uniqueName(
+        (prefix ? prefix : "") + hash + "." + finalExt,
+        usedNames
+      );
+      const dest = path.join(dir, finalName);
+
+      // 内容 hash 命中：同内容图片已入库，直接复用，不重复写入
+      if (fs.existsSync(dest)) {
+        urlToName.set(url, finalName);
+        ok++;
+        const sizeKb = (fs.statSync(dest).size / 1024).toFixed(1);
+        console.log(`= ${finalName}  (${sizeKb} KB, 已存在复用)  ← ${url}`);
+        continue;
+      }
+
+      fs.writeFileSync(dest, outBuf);
+      urlToName.set(url, finalName);
       ok++;
+      const ratio = outBuf.length < buf.length ? ` -${((1 - outBuf.length / buf.length) * 100).toFixed(0)}%` : "";
+      console.log(`✓ ${finalName}  (${(outBuf.length / 1024).toFixed(1)} KB${ratio})  ← ${url}`);
     } catch (e) {
       fail++;
       console.warn(`✗ 下载失败，保留远程链接: ${url}\n  原因: ${e.message}`);
