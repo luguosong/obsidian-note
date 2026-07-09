@@ -38,4 +38,3 @@ npx impeccable install
 ## 相关
 
 - 完整说明：[[Impeccable README]]
-- 同类：[[taste-skill]]、[[awesome-design]]

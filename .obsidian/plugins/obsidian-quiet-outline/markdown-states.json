@@ -3019,12 +3019,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 9,
-        "ch": 26
+        "line": 13,
+        "ch": 0
       },
       "to": {
-        "line": 9,
-        "ch": 26
+        "line": 13,
+        "ch": 0
       }
     },
     "expandedKeys": []
@@ -5261,7 +5261,7 @@
     "expandedKeys": []
   },
   "网页裁剪/mattpocock skills README.md": {
-    "scroll": 65.56527777777778,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 13,
@@ -7197,15 +7197,15 @@
     "expandedKeys": []
   },
   "网页裁剪/awesome-design-md README.md": {
-    "scroll": 0,
+    "scroll": 67.66084484159221,
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 0
+        "line": 41,
+        "ch": 27
       },
       "to": {
-        "line": 10,
-        "ch": 0
+        "line": 41,
+        "ch": 1
       }
     },
     "expandedKeys": [
@@ -7482,11 +7482,11 @@
   "其它/电子印章管理平台/电子印章管理平台.md": {
     "cursor": {
       "from": {
-        "line": 9,
+        "line": 15,
         "ch": 0
       },
       "to": {
-        "line": 9,
+        "line": 15,
         "ch": 0
       }
     }
@@ -7502,5 +7502,186 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/Impeccable.md": {
+    "scroll": 9.569377990430622,
+    "cursor": {
+      "from": {
+        "line": 39,
+        "ch": 28
+      },
+      "to": {
+        "line": 39,
+        "ch": 28
+      }
+    }
+  },
+  "11-其它/电子印章管理平台/电子印章管理平台.md": {
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    }
+  },
+  "11-其它/电子印章管理平台/平台搭建.md": {
+    "cursor": {
+      "from": {
+        "line": 13,
+        "ch": 9
+      },
+      "to": {
+        "line": 13,
+        "ch": 9
+      }
+    },
+    "scroll": 0,
+    "expandedKeys": []
+  },
+  "11-其它/电子印章管理平台/电子印章基础知识.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "11-其它/电子印章管理平台/相关资源.md": {
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 0
+      },
+      "to": {
+        "line": 16,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "01-编程笔记/04-专项研究/Ai/Ai.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 5.578703703703703
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
+    "cursor": {
+      "from": {
+        "line": 43,
+        "ch": 66
+      },
+      "to": {
+        "line": 43,
+        "ch": 66
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 25.441666666666666
+  },
+  "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 76,
+        "ch": 0
+      },
+      "to": {
+        "line": 76,
+        "ch": 0
+      }
+    },
+    "scroll": 55.357929515418505
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/superpowers.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 7.177033492822966
+  },
+  "01-编程笔记/04-专项研究/Ai/Claude Code/Agent Teams.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-4"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Obsidian/插件说明.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "scroll": 0
   }
 }
