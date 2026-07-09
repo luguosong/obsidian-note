@@ -37,5 +37,21 @@ npx skills@latest add mattpocock/skills
 | grill-me        | 用于非代码用途 |
 | grill-with-docs |         |
 
+修bug:
+
+| skill           | 描述  |
+| --------------- | --- |
+| tdd             |     |
+| diagnosing-bugs |     |
+
 ## CONTEXT.md
 
+建立一种共同语言,帮助 agent 解码项目中使用的术语。
+
+通过 grill-with-docs skill 实现 
+
+共同语言除了减少冗长之外还有很多其他好处：
+
+变量、函数和文件命名保持一致 ，使用共享语言
+因此， 代码库对 AI 代理更容易导航
+AI 代理还花费更少的 token（令牌）进行思考 ，因为它可以访问更简洁的语言
