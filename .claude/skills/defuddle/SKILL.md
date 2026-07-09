@@ -11,7 +11,7 @@ If not installed: `npm install -g defuddle`
 
 ## 默认输出目录
 
-**抓取的网页内容统一保存到 `网页裁剪/` 目录**（不要放进 `编程笔记/`，详见 AGENTS.md 的「网页裁剪约定」）。
+**抓取的网页内容统一保存到 `网页裁剪/` 目录**（不要放进 `01-编程笔记/`，详见 AGENTS.md 的「网页裁剪约定」）。
 
 - 文件名取网页核心主题（结合 defuddle 提取的 `-p title`），转为简短中文短语，去掉日期前缀、仓库 owner 前缀、特殊字符 `/ \ : * ? " < > |`。
   - 例：标题 `tanweai/pua: 你是一个曾经被寄予厚望的 P8 级工程师…` → 文件名 `pua.md`；标题 `DietrichGebert/ponytail: Makes your AI agent…` → 文件名 `ponytail README.md`。
