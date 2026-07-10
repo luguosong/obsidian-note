@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 2 课 · 主流程实战（v1.1）</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+  <header>
+    <p class="eyebrow">mattpocock/skills 系统课 · 第 2 课 · 基于 v1.1.0</p>
+    <h1>主流程实战：用 todo CLI 跑通 idea → ship</h1>
+    <p class="lede">
+      第 1 课给了地图。这节课用<strong>一个虚构项目</strong>（一个极简 todo CLI）把它走一遍——
+      每一步看<strong>做什么、问什么、产出什么、如何衔接</strong>。
+      走完，你就有了端到端跑通的肌肉记忆，而不是 5 个散点。
+    </p>
+  </header>
+
+  <section class="win">
+    <p><strong>这节课的收获：</strong>面对"我想做 X"，你能说出每一格该执行哪个 skill、产出什么文件、下一步怎么接——特别是 v1.1 的 <code>to-spec</code> → <code>to-tickets</code> 两步，以及 <code>implement</code> 内部的 tdd + code-review 闭环。</p>
+  </section>
+
+  <section>
+    <h2>演练载体：一个极简 todo CLI</h2>
+    <p>设想你有个小仓库 <code>todo-cli/</code>，已经能 <code>add</code> / <code>list</code>。现在你想加一个<strong>"把任务标记为完成"的功能</strong>。就这么简单一件事——但完整地走一遍主流程。</p>
+    <p class="source-line">主流程骨架（v1.1，来自 <code>ask-matt</code>）：<code>grill-with-docs</code> → <code>to-spec</code> → <code>to-tickets</code> → <code>implement</code>(驱动 <code>tdd</code>、收尾 <code>code-review</code>) → ship</p>
+  </section>
+
+  <section>
+    <h2>第 1 步 · <code>grill-with-docs</code>：对齐 + 沉淀共享语言</h2>
+    <p>有代码库 → 从 <code>grill-with-docs</code> 进。它的引擎是 v1.1 抽出的共享原语 <code>grilling</code>：一次只问一个问题、每个带推荐答案，<strong>事实去查代码库、决策留给你</strong>，达到共识前不往下做。</p>
+    <p>你会被这样追问（每题它会先给推荐答案，你确认或推翻）：</p>
+    <pre class="skel"><span class="c"># grilling 会问的问题样例（一次一个）</span>
+Q: "完成"是永久状态，还是可以再切回未完成？
+   推荐：可来回切换（todo 常见语义）。
+Q: 已完成的任务在 list 里怎么显示？
+   推荐：默认隐藏，加 --all 才显示。
+Q: 数据存哪？现状是 JSON 文件，要不要改？
+   推荐：沿用现有 JSON（先去读了一下 storage.ts，确认了格式）。
+Q: 完成动作要不要记时间戳 completed_at？
+   推荐：记，后面做统计要用。</pre>
+    <p>它边问边<strong>沉淀</strong>——这就是 <code>grill-with-docs</code> 区别于 <code>grill-me</code> 的地方（防失败模式 #2 verbosity）：</p>
+    <pre class="skel"><span class="c"># CONTEXT.md（项目领域词汇表，agent 每次会话都读）</span>
+## Task
+一条待办。状态在 <code>open</code> / <code>done</code> 间切换。
+- open：未完成，list 默认显示
+- done：已完成，仅在 list --all 显示，带 completed_at
+
+<span class="c"># ADR-0003（难撤销的决策，记成 ADR）</span>
+## 决定：状态机只有 open↔done 两态，不引入 in_progress
+## 因为：三态会把"完成"的语义复杂化，当前无需求支撑</pre>
+    <p>产出：一份对齐过的对话 + 更新过的 <code>CONTEXT.md</code> / ADR。下一步把这些思考固化成 spec。</p>
+  </section>
+
+  <section>
+    <h2>第 2 步的分支 · 需要 runnable 答案？→ <code>prototype</code> + <code>handoff</code></h2>
+    <p>grilling 到某个问题时，发现"光聊不清，得跑起来看"——比如你拿不准 <code>--all</code> 的输出要不要分组。这时走主干的一个<strong>分支</strong>：</p>
+    <ol>
+      <li><code>handoff</code> 把当前对话压成一份 handoff 文档（存到系统临时目录，不重复 spec/ADR 已有的）→ <strong>开新会话</strong>引用它；</li>
+      <li>新会话里 <code>prototype</code>：写个一次性的小程序，把"分组 vs 不分组"两种输出都跑出来给你看；</li>
+      <li><code>handoff</code> 把结论带回，在原始思路里引用它。</li>
+    </ol>
+    <blockquote><strong>铁律：</strong>原型<strong>从第一天就是一次性的</strong>——留答案，删代码。别把原型演进成产品。</blockquote>
+    <p>多数功能不绕这个分支，直接进第 3 步。</p>
+  </section>
+
+  <section>
+    <h2>第 3 步 · <code>to-spec</code>：把对话综合成 spec（不 interview）</h2>
+    <p>关键区别：<code>to-spec</code> <strong>不再 interview，只 synthesize</strong>——它把第 1 步已经聊过的东西整理成结构化 spec，发到 issue tracker 并打 <code>ready-for-agent</code> 标签。</p>
+    <p>它干的一件重要事（防失败模式 #4 ball of mud）：<strong>先和你商量要在哪些 seams 上测试</strong>：</p>
+    <pre class="skel"><span class="c"># to-spec 的 seams 讨论（优先用现有 seam、用最高 seam）</span>
+提议：在 CLI 入口层测（最高 seam，一次覆盖 parse→storage→render）。
+理由：已有 cli.test.ts 在这层，不用新建 seam。
+理想：全功能只跨这 1 个 seam——seam 越少越好。</pre>
+    <p>spec 模板的关键段（不写具体文件路径/代码，那些会很快过时）：</p>
+    <pre class="skel"><span class="c"># spec 关键段（to-spec 模板节选）</span>
+## Problem Statement
+用户无法把任务标记为完成，只能增删查。
+## User Stories
+1. 作为用户，我想把任务标记为完成，这样我能追踪进度
+2. 作为用户，我想用 --all 看到已完成任务，这样我能回顾
+## Implementation Decisions
+- 状态机：open ↔ done（见 ADR-0003）
+- 沿用现有 JSON storage，加 completed_at 字段
+## Testing Decisions
+- 只在 CLI seam 测外部行为，不测内部实现细节
+- 仿照现有 cli.test.ts 的风格</pre>
+  </section>
+
+  <section>
+    <h2>第 4 步 · <code>to-tickets</code>：拆成 tracer-bullet 纵切片</h2>
+    <p>把 spec 拆成<strong>纵切片</strong>——每片从 schema 到 UI 到 test 全打通、能独立验证、装得进一个新窗口。每片声明<strong>谁 block 它</strong>。</p>
+    <pre class="skel"><span class="c"># to-tickets 产出（发到 tracker，每片 ready-for-agent）</span>
+T1  完成/取消完成 + completed_at + CLI seam 测试
+    Blocked by: 无 — 可立即开始
+T2  list 默认隐藏 done，--all 显示
+    Blocked by: T1（依赖完成态语义）
+T3  --all 输出分组（done/open 分组显示）
+    Blocked by: T2</pre>
+    <p>它会把你拉进来确认：颗粒度合不合适？blocking edges 对不对？要不要合并/再拆？确认后才发。</p>
+
+    <div class="callout">
+      <h3>例外：wide refactor 不能硬塞进纵切</h3>
+      <p>如果某次变更是<strong>一个机械改动横扫全仓</strong>（改一个列名、改一个共享类型），blast radius 太大，没有纵切片能单独落地变绿。这时不切纵切，改成 <strong>expand–contract</strong>：先 expand（新旧并存，不破坏任何调用方）→ 分批 migrate（按包/目录，每批一个 ticket、都让 CI 绿）→ 最后 contract（删旧形式）。当连分批都无法单独变绿，就让它们共享一个集成分支，只在最终一个 ticket 兑现"变绿"。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>第 5 步 · <code>implement</code>：每 ticket 一个新会话（tdd + code-review）</h2>
+    <p><strong>每个 ticket 开一个全新会话</strong>，把 spec + 这一个 ticket 喂给 <code>implement</code>。它会：</p>
+    <ol class="steps">
+      <li>
+        <h3>在 pre-agreed seams 驱动 <code>tdd</code></h3>
+        <p>红 → 绿 → 重构，一片一片来。第 3 步商量的那个 CLI seam 在这里用上。定期 typecheck、单测，收尾跑一次全量测试。</p>
+      </li>
+      <li>
+        <h3>收尾跑 <code>code-review</code>（两轴，parallel sub-agents）</h3>
+        <p>自一个 fixed point 的 diff，两个 sub-agent <strong>并行</strong>跑、互不污染 context，最后并列报告<strong>不合并重排</strong>：</p>
+        <ul>
+          <li><strong>Standards</strong>：符不符合 repo 的编码标准 + 一套 Fowler smell baseline（《Refactoring》ch.3）。repo 标准覆盖 baseline；tooling 已管的不报。</li>
+          <li><strong>Spec</strong>：忠不忠实实现 originating spec——缺了什么、多了什么（scope creep）、实现得对不对。</li>
+        </ul>
+        <p>为什么要分两轴？因为<strong>一轴过另一轴可以挂</strong>：代码很规范但答非所问 = Standards 过、Spec 挂；答对了但破了规矩 = Spec 过、Standards 挂。分开报才不会被互相掩盖。</p>
+      </li>
+      <li>
+        <h3>提交到当前分支</h3>
+        <p>review 过了才提交。下一个 ticket 再开新会话，重来一次。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Context hygiene：什么时候别硬撑</h2>
+    <table>
+      <thead><tr><th>阶段</th><th>窗口策略</th></tr></thead>
+      <tbody>
+        <tr><td>第 1–3 步（grilling → spec → tickets）</td><td><strong>同一未打断窗口</strong>，中途别 compact / 清空——它们要建立在同一串思考上</td></tr>
+        <tr><td>每个 <code>implement</code></td><td><strong>全新窗口</strong>，从 ticket 起手</td></tr>
+        <tr><td>逼近 smart zone（~120k）还没到 <code>to-tickets</code></td><td><strong>别硬撑</strong>——<code>handoff</code> 换新会话继续</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="exercise">
+    <h2>练习 · 纵切 vs 横切</h2>
+    <form class="quiz" data-answer="B"
+      data-explain="tracer-bullet 是『纵切』——一片从 schema→API→UI→test 全打通、能独立验证。『先做完所有数据层，再做所有 API，再做 UI』是横切（按层切），违背 to-tickets 的纵切规则：每一层单独都不能 demo、不能验证，且往往装不进一个窗口。纵切保证每片端到端可工作。">
+      <p class="quiz-q">Q1. 你的 spec 有 3 个功能。下面哪种拆法符合 <code>to-tickets</code> 的纵切原则？</p>
+      <label class="opt"><input type="radio" name="q1" value="A"><span>先做完所有数据层改动，再做所有 CLI 改动，再做所有测试</span></label>
+      <label class="opt"><input type="radio" name="q1" value="B"><span>每个功能切成一片，每片自带数据层+CLI+测试、能独立验证</span></label>
+      <label class="opt"><input type="radio" name="q1" value="C"><span>把所有测试集中成一个 ticket 放最后</span></label>
+      <label class="opt"><input type="radio" name="q1" value="D"><span>把全部功能合成一个大 ticket 一次做完</span></label>
+      <output class="quiz-fb" hidden></output>
+    </form>
+  </section>
+
+  <section class="exercise">
+    <h2>练习 · context hygiene 决策</h2>
+    <form class="quiz" data-answer="C"
+      data-explain="smart zone（~120k）是模型仍锐利的上限。逼近它却还没到 to-tickets，意味着后续 degraded——别硬撑，handoff 换新会话继续。compact 是『同一会话里 summarize』，适合阶段间有意打断、不在意逐字历史时；这里还在主流程中段、需要保留思考链，fork 出去更安全。tdd / code-review 是 implement 阶段内部的事，解不了上下文快满的问题。">
+      <p class="quiz-q">Q2. 你在跑第 1–3 步，对话已经很長、接近 smart zone，但 <code>to-tickets</code> 还没跑完。该怎么做？</p>
+      <label class="opt"><input type="radio" name="q2" value="A"><span>硬撑着继续，反正还没崩</span></label>
+      <label class="opt"><input type="radio" name="q2" value="B"><span><code>/compact</code> 在同一会话里 summarize 后继续</span></label>
+      <label class="opt"><input type="radio" name="q2" value="C"><span><code>/handoff</code> 压成文档，开新会话引用它继续</span></label>
+      <label class="opt"><input type="radio" name="q2" value="D"><span>立刻 <code>tdd</code> 先把测试写了</span></label>
+      <output class="quiz-fb" hidden></output>
+    </form>
+  </section>
+
+  <section class="source">
+    <h2>推荐一手源</h2>
+    <ul>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/to-spec/SKILL.md">to-spec/SKILL.md</a></strong> —— spec 模板 + seams 讨论规则（优先用现有 seam、用最高 seam、理想只跨一个）。</li>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md">to-tickets/SKILL.md</a></strong> —— 纵切规则 + blocking edges + wide refactor 的 expand–contract 例外。</li>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/implement/SKILL.md">implement/SKILL.md</a></strong> —— 在 pre-agreed seams 驱动 tdd + 收尾 code-review。</li>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md">code-review/SKILL.md</a></strong> —— 两轴 parallel sub-agents + Fowler smell baseline + 为什么不合并重排。</li>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md">grilling/SKILL.md</a></strong> —— grill-with-docs 背后的引擎（一次一题、带推荐、确认 gate）。</li>
+    </ul>
+  </section>
+
+  <section class="followup">
+    <p><strong>有不清楚的地方？直接问我。</strong></p>
+    <p>比如可以追问："<code>to-spec</code> 和 <code>to-tickets</code> 为什么不合成一步？" "seam 到底怎么算'最高'？" "code-review 的 Fowler smell baseline 具体有哪些？" 都可以现在问。</p>
+  </section>
+
+  <footer>
+    <span>第 2 课 / 共 3 课</span>
+    <span><a href="0003-remaining-skills.html">下一课：剩余 skill 速览 —— 地图与工作流之外的那些 →</a></span>
+  </footer>
+
+</article>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

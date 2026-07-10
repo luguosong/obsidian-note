@@ -1,13 +1,12 @@
 ---
 分类:
-  - "网页裁剪"
-  - "[[mattpocock skills README]]"
-标题: "Ask Matt —— 工程技能路由器"
-描述: "询问哪个技能或流程适合你的情境。一个对本仓库中各技能的路由器。"
-来源: "C:\\Users\\10545\\.agents\\skills\\ask-matt\\SKILL.md"
-发布者: "本地-Matt Pocock"
+  - 网页裁剪
+标题: Ask Matt —— 工程技能路由器
+描述: 询问哪个技能或流程适合你的情境。一个对本仓库中各技能的路由器。
+来源: C:\Users\10545\.agents\skills\ask-matt\SKILL.md
+发布者: 本地-Matt Pocock
 发布时间:
-创建时间: "2026-07-10T09:40:08+08:00"
+创建时间: 2026-07-10T09:40:08+08:00
 ---
 
 # Ask Matt

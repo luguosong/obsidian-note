@@ -1,21 +1,25 @@
-# Mission: mattpocock/skills — 全局地图 → 工程闭环 → 知其所以然
+# Mission: mattpocock/skills — 全局地图 → 工作流实战 → 剩余 skill 用法
 
 ## Why
-我已经在 obsidian-note 里装了并用着 Matt Pocock 的几个 skill（`tdd` / `diagnosing-bugs` / `triage` / `to-prd` / `improve-codebase-architecture`），但**它们在我脑子里是散点**——我没有"什么场景该走哪条流、每个 skill 防的是哪类失败"的全局地图。结果是：该用 `grill-with-docs` 先对齐时直接开写，该 `handoff` 换会话时硬撑着干，该 `improve-codebase-architecture` 时放任代码腐化。痛点不在"不会某个 skill"，而在**没有一个串起它们的闭环心智模型**。建好这张地图，我就能在自己的真实项目里端到端跑通 idea→ship，而不是零散调单兵。
+我已经在 obsidian-note 里装了并用着 Matt Pocock 的几个 skill（`tdd` / `diagnosing-bugs` / `triage` / `improve-codebase-architecture`），但**它们在我脑子里是散点**——我没有"什么场景该走哪条流、每个 skill 防的是哪类失败"的全局地图，更没有端到端跑通过一次完整的开发工作流。v1.1（仓库已更新到 1.1.0）把规划 skills 重构成了 `to-spec` / `to-tickets`，新增了第三条 on-ramp `wayfinder`，还把 `grilling` 抽成了共享原语——这些变化我都没跟上。痛点不在"不会某个 skill"，而在**没有一个串起它们的开发闭环心智模型**。本次想解决两条线：①基本的开发工作流（idea→ship）每一步该执行哪个 skill、怎么执行；②主流程之外剩余 skill 的具体用法。
 
 ## Success looks like
 - 给一句真实场景，能立刻定位：它在主流程（idea→ship）的哪一段、该用哪个 skill、这个 skill 防的是 4 失败模式里的哪一个
-- 说清三条流的区别：**主流程**（idea→ship）、**两条 on-ramp**（`triage` / `diagnosing-bugs`）、**底层词汇层**（`domain-modeling` / `codebase-design`）——以及它们什么时候汇入主流程
+- 说清 **v1.1 主流程**：`grill-with-docs` → `to-spec` → `to-tickets` → `implement`（内部驱动 `tdd`、收尾 `code-review`）——以及它的两个分支（需 runnable 答案→`prototype`+`handoff`；是否多会话构建→完整 `to-spec`/`to-tickets` 或直接 `implement`）
+- 说清**三条 on-ramp**：`triage`（别人提的 issue）、`diagnosing-bugs`（难 bug）、`wayfinder`（巨大且模糊、一个会话装不下的工程）——以及它们各自怎么汇入主流程
+- 说清 `grilling` 是 model-invoked 的共享原语（带确认 gate），垫在 `grill-me` / `grill-with-docs` 下面
 - 说清 `user-invoked` vs `model-invoked` 这条轴意味着什么、`disable-model-invocation: true` 干什么
-- 能讲出 4 失败模式 ↔ 工程基本功（《实用程序员》/ DDD / Ousterhout 深模块）的映射——**知其所以然**
-- 在自己的代码库里真的跑一次完整闭环（grill-with-docs → to-prd → to-issues → implement → code-review），并知道每一步的 context hygiene 约束（smart zone、何时 handoff）
+- 能讲出 4 失败模式 ↔ 工程基本功（《实用程序员》/ DDD / Ousterhut 深模块）的映射——**知其所以然**
+- 知道剩余 skill（`prototype` / `research` / `domain-modeling` / `codebase-design` / `improve-codebase-architecture` / `setup-matt-pocock-skills` 等）各自的触发场景与产出
 
 ## Constraints
 - 用户是重度 Claude Code 用户（hookify / PUA / RTK / ponytail 全在跑），**同时在学 superpowers 触发机制课**——harness 机制、skill 调用模型这些不讲基础
 - 每节课短、可快速完成、有单一明确收获（teach 规则）
 - 中文授课；代码/标识符/术语保留原文
+- 工作流实战课用**虚构示例项目**（极简 todo CLI）演练，不污染真实仓库
+- 剩余 skill 速览颗粒度为**每个 skill 一小段（3-5 行）**，细节留后续单 skill 课
 
 ## Out of scope
 - **学写 skill**（`writing-great-skills` / SKILL.md 作者视角）——与 superpowers 课的"触发机制"重叠，这条线不开
-- 单个 skill 内部方法论的深挖（如 `tdd` 的 red-green-refactor 细节、`diagnosing-bugs` 的 6 步循环）——先解决"何时用、怎么串"，深挖是每个 skill 自己的后续课
+- 单个 skill 内部方法论的深挖（如 `tdd` 的 red-green-refactor 细节、`diagnosing-bugs` 的循环、`wayfinder` 的 fog-of-war 细节）——先解决"何时用、怎么串"，深挖是每个 skill 自己的后续课
 - 非 Matt Pocock 的 skill（superpowers / hookify / PUA / ponytail 等）的内部机制——只在"协同/优先级"涉及时提及

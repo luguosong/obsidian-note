@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第 1 课 · mattpocock/skills 全局地图</title>
+  <title>第 1 课 · mattpocock/skills 全局地图（v1.1）</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 <article>
 
   <header>
-    <p class="eyebrow">mattpocock/skills 系统课 · 第 1 课</p>
-    <h1>全局地图：4 失败模式 × 主流程 × 谁能调它</h1>
+    <p class="eyebrow">mattpocock/skills 系统课 · 第 1 课 · 基于 v1.1.0</p>
+    <h1>全局地图：4 失败模式 × 主流程 × 三条匝道 × 谁能调它</h1>
     <p class="lede">
-      你已经零散用过 <code>tdd</code> / <code>diagnosing-bugs</code> / <code>triage</code> / <code>to-prd</code> / <code>improve-codebase-architecture</code>。
+      你已经零散用过 <code>tdd</code> / <code>diagnosing-bugs</code> / <code>triage</code> / <code>improve-codebase-architecture</code>。
       这节课不教任何一个的细节——它给你<strong>把它们串起来的那张地图</strong>。
       仓库自带的 <code>ask-matt</code> 就是这张地图本身，而它建立在一个更深的判断上：所有 skill 都在防
       <strong>4 类 agent 失败模式</strong>。
@@ -58,7 +58,7 @@
           <td>4</td>
           <td><strong>Ball of mud</strong>（设计腐化）</td>
           <td>越加越难改，代码糊成一团</td>
-          <td><code>to-prd</code> / <code>improve-codebase-architecture</code></td>
+          <td><code>to-spec</code>（先想碰哪些模块）/ <code>improve-codebase-architecture</code></td>
           <td>《XP》"每天投资设计" + 《Ousterhout》深模块</td>
         </tr>
       </tbody>
@@ -88,19 +88,19 @@
           <td><strong>持有可复用的纪律</strong>（reusable discipline）</td>
         </tr>
         <tr>
-          <td>典型</td>
-          <td><code>ask-matt</code> <code>grill-with-docs</code> <code>to-prd</code> <code>to-issues</code> <code>triage</code> <code>improve-codebase-architecture</code></td>
-          <td><code>tdd</code> <code>diagnosing-bugs</code> <code>code-review</code> <code>prototype</code> <code>research</code> <code>domain-modeling</code> <code>codebase-design</code></td>
+          <td>典型（v1.1 engineering）</td>
+          <td><code>ask-matt</code> <code>grill-with-docs</code> <code>to-spec</code> <code>to-tickets</code> <code>implement</code> <code>wayfinder</code> <code>triage</code> <code>improve-codebase-architecture</code> <code>setup-matt-pocock-skills</code></td>
+          <td><code>grilling</code> <code>tdd</code> <code>diagnosing-bugs</code> <code>code-review</code> <code>prototype</code> <code>research</code> <code>domain-modeling</code> <code>codebase-design</code></td>
         </tr>
       </tbody>
     </table>
     <blockquote>一条铁律：<strong>user-invoked 可以调 model-invoked，但绝不能调另一个 user-invoked。</strong>user-invoked 是"流程入口"，彼此平级、互不嵌套。</blockquote>
-    <p>你已经熟悉的 <code>tdd</code> / <code>diagnosing-bugs</code> 是 model-invoked（纪律），<code>triage</code> / <code>to-prd</code> / <code>improve-codebase-architecture</code> 是 user-invoked（入口）。这条轴解释了"为什么有的要手点、有的会自己上"。</p>
+    <p>你已经熟悉的 <code>tdd</code> / <code>diagnosing-bugs</code> 是 model-invoked（纪律），<code>triage</code> / <code>improve-codebase-architecture</code> 是 user-invoked（入口）。这条轴解释了"为什么有的要手点、有的会自己上"。</p>
   </section>
 
   <section>
     <h2>3. 主流程：idea → ship（地图的主干）</h2>
-    <p>绝大多数真实工作走这条主线。把鼠标在每一步上停一下，看它防第几类失败：</p>
+    <p>绝大多数真实工作走这条主线（v1.1）。把鼠标在每一步上停一下，看它防第几类失败：</p>
 
     <div class="flow">
       <div class="flow-step">
@@ -109,59 +109,70 @@
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-step">
-        <span class="sk">to-prd</span>
-        <span class="防">对话→PRD<br>防 #4（先想碰哪些模块）</span>
+        <span class="sk">to-spec</span>
+        <span class="防">对话→spec<br>不 interview，只 synthesize<br>先想碰哪些模块（防 #4）</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-step">
-        <span class="sk">to-issues</span>
-        <span class="防">PRD→可独立认领的 issue<br>纵切，不按层切</span>
+        <span class="sk">to-tickets</span>
+        <span class="防">spec→tracer-bullet 纵切片<br>每片声明 blocking edges</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-step">
         <span class="sk">implement</span>
-        <span class="防">每 issue 开新会话<br>内部驱动 tdd（防 #3）<br>收尾跑 code-review</span>
+        <span class="防">每 ticket 开新会话<br>内部驱动 tdd（防 #3）<br>收尾跑 code-review</span>
       </div>
       <span class="flow-arrow">→</span>
       <div class="flow-step">
         <span class="sk">ship</span>
-        <span class="防">提交</span>
+        <span class="防">提交到当前分支</span>
       </div>
     </div>
 
     <p>主干上有<strong>两个分支</strong>（<code>ask-matt</code> 原话）：</p>
     <ul>
-      <li><strong>问题需要 runnable 答案？</strong>（状态/业务逻辑/得看一眼的 UI）→ 绕进 <code>prototype</code>，用 <code>handoff</code> 把上下文带出再带回。原型<strong>从第一天就是一次性的</strong>——留答案，删代码。</li>
-      <li><strong>多会话构建？</strong>是 → 走完整 <code>to-prd</code> → <code>to-issues</code>；否 → 直接 <code>implement</code>，同一窗口里干完。</li>
+      <li><strong>问题需要 runnable 答案？</strong>（状态/业务逻辑/得看一眼的 UI）→ 绕进 <code>prototype</code>，用 <code>handoff</code> 把上下文双向桥接（带出 → 新会话做原型 → 带回）。原型<strong>从第一天就是一次性的</strong>——留答案，删代码。</li>
+      <li><strong>多会话构建？</strong>是 → 走完整 <code>to-spec</code> → <code>to-tickets</code>；否 → 直接 <code>implement</code>，同一窗口里干完。</li>
     </ul>
 
     <h3>Context hygiene（主干的关键操作约束）</h3>
     <ul>
-      <li><strong>第 1–3 步保持同一个未打断的上下文窗口</strong>——grilling、PRD、issues 要建立在同一串思考上，中途别 compact / 清空。</li>
-      <li><strong>每个 issue 开全新会话</strong>跑 <code>implement</code>——issue 之间是独立的，别共享污染的上下文。</li>
-      <li>窗口逼近 <strong>smart zone</strong>（~120k token，模型仍锐利的上限）还没到 <code>to-issues</code>？<strong>别硬撑</strong>——<code>handoff</code> 换新会话继续。</li>
+      <li><strong>第 1–3 步保持同一个未打断的上下文窗口</strong>——grilling、spec、tickets 要建立在同一串思考上，中途别 compact / 清空。</li>
+      <li><strong>每个 ticket 开全新会话</strong>跑 <code>implement</code>——ticket 之间是独立的，别共享污染的上下文。</li>
+      <li>窗口逼近 <strong>smart zone</strong>（~120k token，模型仍锐利的上限）还没到 <code>to-tickets</code>？<strong>别硬撑</strong>——<code>handoff</code> 换新会话继续。</li>
     </ul>
+
+    <div class="callout">
+      <h3>底下垫着什么：<code>grilling</code> 是共享原语</h3>
+      <p>v1.1 把"relentless interview"抽成了一个独立的 model-invoked skill <code>grilling</code>——一次问一个问题、每个带推荐答案，事实去查代码库、决策留给你，且<strong>带确认 gate</strong>（达到共识前不 enact plan）。<code>grill-me</code>（productivity，无代码库）和 <code>grill-with-docs</code>（engineering，有代码库）都只是它的两种"壳"。所以主流程第 1 步的真正引擎是 <code>grilling</code>。</p>
+    </div>
   </section>
 
   <section>
-    <h2>4. 两条 on-ramp（匝道：汇入主干）</h2>
-    <p>有些起点不在"我有个想法"上，而是<strong>被动涌入</strong>的——它们走匝道汇入主干：</p>
+    <h2>4. 三条 on-ramp（匝道：汇入主干）</h2>
+    <p>有些起点不在"我有个想法"上，而是<strong>被动涌入</strong>或<strong>太大太模糊</strong>——它们走匝道汇入主干：</p>
     <table>
       <thead><tr><th>起点场景</th><th>匝道 skill</th><th>产出 / 汇入点</th></tr></thead>
       <tbody>
         <tr>
           <td><strong>别人提的</strong> bug 报告 / 功能请求堆着</td>
           <td><code>triage</code></td>
-          <td>把 raw issue 过一遍 triage 角色状态机 → 产出 agent-ready issue → <code>implement</code> 接</td>
+          <td>raw issue 过 triage 角色状态机 → 产出 agent-ready issue → <code>implement</code> 接</td>
         </tr>
         <tr>
           <td>线上炸了 / <strong>难 bug</strong>（抗第一眼、偶发、回归）</td>
           <td><code>diagnosing-bugs</code></td>
-          <td>先建<strong>紧反馈回路</strong>（一条就能在本 bug 上变红的命令）→ 修 + 回归测试；若根因是"没好 seam 锁 bug"，交给 <code>improve-codebase-architecture</code></td>
+          <td>先建<strong>紧反馈回路</strong>（一条能在本 bug 上变红的命令）→ 修 + 回归测试；根因若是"没好 seam 锁 bug"，交给 <code>improve-codebase-architecture</code></td>
+        </tr>
+        <tr>
+          <td><strong>巨大且模糊</strong>的工程——绿地项目或巨型功能，一个会话装不下</td>
+          <td><code>wayfinder</code></td>
+          <td>在 issue tracker 画一张调查 ticket 的<strong>共享地图</strong>，每会话只解一个<strong>决策</strong>（plan, don't do）→ 雾散后汇入 <code>to-spec</code>（或够小则直接 <code>implement</code>）</td>
         </tr>
       </tbody>
     </table>
-    <blockquote><strong>别犯这个错：</strong><code>to-issues</code> 产出的 issue 已经是 agent-ready 的，<strong>不要再 triage</strong>。<code>triage</code> 只处理<strong>你没创建的</strong> raw issue。</blockquote>
+    <blockquote><strong>别犯这个错：</strong><code>to-tickets</code> 产出的 ticket 已经是 agent-ready 的，<strong>不要再 triage</strong>。<code>triage</code> 只处理<strong>你没创建的</strong> raw issue。</blockquote>
+    <p><code>wayfinder</code> 是 v1.1 新晋的第三条匝道：当你连"问题都还说不清"时，先别急着 <code>grill-with-docs</code>——<code>grill-with-docs</code> 锐化的是<strong>一个会话能装下</strong>的想法，<code>wayfinder</code> 装的是<strong>装不下</strong>的那个。</p>
   </section>
 
   <section>
@@ -182,8 +193,9 @@
     <table>
       <thead><tr><th>你现在的情况</th><th>走这里</th></tr></thead>
       <tbody>
-        <tr><td>"我想做 X"，<strong>有</strong>代码库</td><td><code>grill-with-docs</code>（主流程入口）</td></tr>
+        <tr><td>"我想做 X"，<strong>有</strong>代码库，一个会话能装下</td><td><code>grill-with-docs</code>（主流程入口）</td></tr>
         <tr><td>"我想做 X"，<strong>没</strong>代码库</td><td><code>grill-me</code>（standalone，stateless）</td></tr>
+        <tr><td>想法<strong>太大太模糊</strong>，一个会话装不下</td><td><code>wayfinder</code>（画地图，逐个解决策）</td></tr>
         <tr><td>别人的 bug/需求堆着</td><td><code>triage</code></td></tr>
         <tr><td>难 bug / 线上炸了</td><td><code>diagnosing-bugs</code></td></tr>
         <tr><td>对话太长，想存档换新会话</td><td><code>handoff</code></td></tr>
@@ -197,35 +209,45 @@
 
   <section class="exercise">
     <h2>练习 · 把场景钉到地图上</h2>
-    <p>下面三句真实场景，该走哪个 skill？选完即时给反馈。这是本课的唯一目标——能钉对，地图就建好了。</p>
+    <p>下面四句真实场景，该走哪个 skill？选完即时给反馈。这是本课的唯一目标——能钉对，地图就建好了。</p>
 
     <form class="quiz" data-answer="A"
-      data-explain="triage 的 on-ramp 就是『别人提的 raw issue 堆』，过 triage 状态机产出 agent-ready issue 给 implement 接。关键限定词是『别人提的』——to-issues 处理的是你自己 PRD 拆出来的，不该再 triage。">
+      data-explain="triage 的 on-ramp 就是『别人提的 raw issue 堆』，过 triage 状态机产出 agent-ready issue 给 implement 接。关键限定词是『别人提的』——to-tickets 处理的是你自己 spec 拆出来的，不该再 triage。">
       <p class="quiz-q">Q1.「我刚接手一堆<strong>别人提的</strong> bug 报告和功能请求」——该走哪个 skill？</p>
       <label class="opt"><input type="radio" name="q1" value="A"><span><code>triage</code></span></label>
       <label class="opt"><input type="radio" name="q1" value="B"><span><code>diagnosing-bugs</code></span></label>
-      <label class="opt"><input type="radio" name="q1" value="C"><span><code>to-issues</code></span></label>
+      <label class="opt"><input type="radio" name="q1" value="C"><span><code>to-tickets</code></span></label>
       <label class="opt"><input type="radio" name="q1" value="D"><span><code>grill-with-docs</code></span></label>
       <output class="quiz-fb" hidden></output>
     </form>
 
     <form class="quiz" data-answer="C"
-      data-explain="主流程入口。『有代码库』→ grill-with-docs（stateful，沉淀 CONTEXT.md/ADR）；没代码库才用 grill-me。to-prd 是后面把对话变 PRD 那步，不是入口；implement 要等有了 issue 之后。">
-      <p class="quiz-q">Q2.「我有个<strong>完整代码库</strong>，想新加个功能」——第一步该走哪个？</p>
+      data-explain="主流程入口。『有代码库』→ grill-with-docs（stateful，沉淀 CONTEXT.md/ADR）；没代码库才用 grill-me。to-spec 是后面把对话综合成 spec 那步，不是入口；implement 要等有了 ticket 之后。">
+      <p class="quiz-q">Q2.「我有个<strong>完整代码库</strong>，想新加个功能，一个会话装得下」——第一步该走哪个？</p>
       <label class="opt"><input type="radio" name="q2" value="A"><span><code>grill-me</code></span></label>
-      <label class="opt"><input type="radio" name="q2" value="B"><span><code>to-prd</code></span></label>
+      <label class="opt"><input type="radio" name="q2" value="B"><span><code>to-spec</code></span></label>
       <label class="opt"><input type="radio" name="q2" value="C"><span><code>grill-with-docs</code></span></label>
       <label class="opt"><input type="radio" name="q2" value="D"><span><code>implement</code></span></label>
       <output class="quiz-fb" hidden></output>
     </form>
 
+    <form class="quiz" data-answer="B"
+      data-explain="wayfinder 是 v1.1 新晋的第三条 on-ramp，专治『巨大且模糊、一个会话装不下』——连问题都还说不清时用。它在 issue tracker 画一张调查 ticket 的共享地图，每会话只解一个决策（plan, don't do），雾散后汇入 to-spec 或直接 implement。grill-with-docs 锐化的是装得下的想法，装不下的是 wayfinder。">
+      <p class="quiz-q">Q3.「我要从零做一个新平台，但连<strong>该分哪些模块、先验什么</strong>都还没想清，肯定不止一个会话」——该走哪个？</p>
+      <label class="opt"><input type="radio" name="q3" value="A"><span><code>grill-with-docs</code></span></label>
+      <label class="opt"><input type="radio" name="q3" value="B"><span><code>wayfinder</code></span></label>
+      <label class="opt"><input type="radio" name="q3" value="C"><span><code>to-tickets</code></span></label>
+      <label class="opt"><input type="radio" name="q3" value="D"><span><code>triage</code></span></label>
+      <output class="quiz-fb" hidden></output>
+    </form>
+
     <form class="quiz" data-answer="A"
-      data-explain="tdd 是 model-invoked 的『单点行为测试先行』。implement 是 orchestrator（带起 tdd + 收尾 code-review），需要 PRD+issue 配合；你只要某个具体行为、不要整套 spec → 直接 tdd。code-review 是收尾审查，diagnosing-bugs 是先有 bug 再说。">
-      <p class="quiz-q">Q3.「我想给一个<strong>具体行为</strong>写测试先行的实现，但不需要整套 PRD」——直接用哪个？</p>
-      <label class="opt"><input type="radio" name="q3" value="A"><span><code>tdd</code></span></label>
-      <label class="opt"><input type="radio" name="q3" value="B"><span><code>implement</code></span></label>
-      <label class="opt"><input type="radio" name="q3" value="C"><span><code>code-review</code></span></label>
-      <label class="opt"><input type="radio" name="q3" value="D"><span><code>diagnosing-bugs</code></span></label>
+      data-explain="tdd 是 model-invoked 的『单点行为测试先行』。implement 是 orchestrator（带起 tdd + 收尾 code-review），需要 spec+ticket 配合；你只要某个具体行为、不要整套 spec → 直接 tdd。code-review 是收尾审查，diagnosing-bugs 是先有 bug 再说。">
+      <p class="quiz-q">Q4.「我想给一个<strong>具体行为</strong>写测试先行的实现，但不需要整套 spec」——直接用哪个？</p>
+      <label class="opt"><input type="radio" name="q4" value="A"><span><code>tdd</code></span></label>
+      <label class="opt"><input type="radio" name="q4" value="B"><span><code>implement</code></span></label>
+      <label class="opt"><input type="radio" name="q4" value="C"><span><code>code-review</code></span></label>
+      <label class="opt"><input type="radio" name="q4" value="D"><span><code>diagnosing-bugs</code></span></label>
       <output class="quiz-fb" hidden></output>
     </form>
   </section>
@@ -234,9 +256,9 @@
     <h2>诊断 · 一个常见误区</h2>
     <p>先想 30 秒，再点开。</p>
     <details>
-      <summary>我用 <code>to-prd</code> 把一份 PRD 拆成了 12 个 issue。现在该不该把它们丢进 <code>triage</code> 过一遍？</summary>
-      <p><strong>不该。</strong><code>triage</code> 只处理<strong>你没创建的</strong> raw issue——bug 报告、外部涌进来的需求。<code>to-issues</code> 产出的 issue <strong>已经是 agent-ready</strong> 的（有上下文、可独立认领），再 triage 是重复劳动、还可能把状态弄乱。</p>
-      <p>正确做法：每个 issue <strong>开一个新会话</strong>，把 PRD + 这一个 issue 喂给 <code>implement</code> 直接干。</p>
+      <summary>我用 <code>to-tickets</code> 把一份 spec 拆成了 12 个 ticket。现在该不该把它们丢进 <code>triage</code> 过一遍？</summary>
+      <p><strong>不该。</strong><code>triage</code> 只处理<strong>你没创建的</strong> raw issue——bug 报告、外部涌进来的需求。<code>to-tickets</code> 产出的 ticket <strong>已经是 agent-ready</strong> 的（自带 <code>ready-for-agent</code> 标签、可独立认领），再 triage 是重复劳动、还可能把状态弄乱。</p>
+      <p>正确做法：每个 ticket <strong>开一个新会话</strong>，把 spec + 这一个 ticket 喂给 <code>implement</code> 直接干。</p>
     </details>
   </section>
 
@@ -244,19 +266,19 @@
     <h2>推荐一手源</h2>
     <p>本课的每张表都从这两个文件直接画出来，回去精读它们：</p>
     <ul>
-      <li><strong><a href="https://github.com/mattpocock/skills/blob/master/skills/engineering/ask-matt/SKILL.md">skills/engineering/ask-matt/SKILL.md</a></strong> —— 仓库自带的路由器，就是本课这张图的原文。重点读"main flow"、"on-ramps"、"vocabulary underneath"三段。</li>
-      <li><strong><a href="https://github.com/mattpocock/skills/blob/master/README.md">README.md</a></strong> —— "Why These Skills Exist"四节，就是第 1 节那张 4 失败模式表的原文+书摘；末尾 Reference 是 user/model 轴的全表。</li>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md">skills/engineering/ask-matt/SKILL.md</a></strong> —— 仓库自带的路由器，就是本课这张图的原文。重点读"main flow"（v1.1：to-spec/to-tickets）、"on-ramps"（已含 wayfinder）、"vocabulary underneath"三段。</li>
+      <li><strong><a href="https://github.com/mattpocock/skills/blob/main/README.md">README.md</a></strong> —— "Why These Skills Exist"四节，就是第 1 节那张 4 失败模式表的原文+书摘；末尾 Reference 是 user/model 轴的全表（v1.1 已含 to-spec/to-tickets/implement/wayfinder）。</li>
     </ul>
   </section>
 
   <section class="followup">
     <p><strong>有不清楚的地方？直接问我。</strong></p>
-    <p>这是整门课的地基——一处含糊后面全歪。比如可以追问："那 <code>implement</code> 为什么不在 README 的 Reference 列表里？" "smart zone 我怎么判断快到了？" "grill-with-docs 凭什么是 Matt 说『最酷的技巧』？" 都可以现在问，也可以攒到下一课。</p>
+    <p>这是整门课的地基——一处含糊后面全歪。比如可以追问："那 <code>wayfinder</code> 和 <code>grill-with-docs</code> 到底什么时候切换？" "smart zone 我怎么判断快到了？" "<code>to-spec</code> 和 <code>to-tickets</code> 为什么拆成两步？" 都可以现在问，也可以攒到下一课。</p>
   </section>
 
   <footer>
-    <span>第 1 课 / 共 N 课</span>
-    <span><a href="0002-grill-with-docs.html">下一课：grill-with-docs —— 主流程入口，对齐 + 共享语言（"最酷的技巧"）→</a></span>
+    <span>第 1 课 / 共 3 课</span>
+    <span><a href="0002-main-flow-in-action.html">下一课：主流程实战 —— 用 todo CLI 跑通 grill-with-docs → to-spec → to-tickets → implement →</a></span>
   </footer>
 
 </article>

@@ -3020,11 +3020,11 @@
     "cursor": {
       "from": {
         "line": 13,
-        "ch": 0
+        "ch": 34
       },
       "to": {
         "line": 13,
-        "ch": 0
+        "ch": 34
       }
     },
     "expandedKeys": []
@@ -5261,7 +5261,7 @@
     "expandedKeys": []
   },
   "网页裁剪/mattpocock skills README.md": {
-    "scroll": 6.944444444444445,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 13,
@@ -7599,16 +7599,16 @@
         "ch": 0
       }
     },
-    "scroll": 5.578703703703703
+    "scroll": 14.546524972456849
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 49,
+        "line": 30,
         "ch": 0
       },
       "to": {
-        "line": 49,
+        "line": 30,
         "ch": 0
       }
     },
@@ -7616,7 +7616,7 @@
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 31.30721776681061
+    "scroll": 30.93611111111111
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7688,18 +7688,31 @@
   "网页裁剪/Ask Matt 工程技能路由器.md": {
     "cursor": {
       "from": {
-        "line": 27,
-        "ch": 24
+        "line": 11,
+        "ch": 0
       },
       "to": {
-        "line": 27,
-        "ch": 24
+        "line": 11,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-1"
     ],
-    "scroll": 40.62638888888889
+    "scroll": 0
+  },
+  "11-其它/电子印章管理平台/其它平台参考.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    }
   }
 }
