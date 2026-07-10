@@ -634,7 +634,7 @@
   "folderSortOverrides": {
     "网页裁剪": "created-desc",
     "附件": "created-asc",
-    "01-编程笔记/04-专项研究/Ai/推荐扩展": "filename-asc",
+    "01-编程笔记/04-专项研究/Ai/推荐扩展": "modified-desc",
     "01-编程笔记/04-专项研究/Obsidian": {
       "option": "property-asc",
       "propertyKey": "排序"

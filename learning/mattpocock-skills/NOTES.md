@@ -8,6 +8,7 @@
 - **没用过但高价值的**（后续重点）：`grill-with-docs` / `grill-me` / `grilling` / `to-spec` / `to-tickets` / `wayfinder` / `implement` / `handoff` / `code-review` / `prototype` / `setup-matt-pocock-skills`。
 - **明确排除**：学写 skill（`writing-great-skills`）——与 superpowers 课重叠。
 - **起手要求**：先建全局地图（ask-matt 路由 + 4 失败模式），再往下钻。
+- **课程网页视觉（全局约定）**：亮色主题统一用 **Solarized 暖米护眼配色**——`--bg #fdf6e3`（base3 温暖米黄底）+ `--fg #586e75`（base01 墨绿灰柔和正文，对比度 ~7.5:1 过 AAA）+ `--code-bg #eee8d5`（base2 代码底），强调色保留 teal `#0d9488`。**只改亮色**；暗色模式由 `prefers-color-scheme` 自动切换、保留原深色。该约定写在 `assets/style.css` 头部注释里，未来新建课程页 `<link>` 共享样式即自动遵循。
 
 ## v1.1 已确认决策（2026-07-10）
 

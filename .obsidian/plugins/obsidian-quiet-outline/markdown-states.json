@@ -7604,19 +7604,19 @@
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 30,
-        "ch": 0
+        "line": 37,
+        "ch": 17
       },
       "to": {
-        "line": 30,
-        "ch": 0
+        "line": 37,
+        "ch": 17
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 30.93611111111111
+    "scroll": 10.022779043280183
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7714,5 +7714,49 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/kami.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "网页裁剪/Kami README.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/taste-skill.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 1.937799043062201
   }
 }

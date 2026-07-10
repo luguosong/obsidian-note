@@ -1,45 +1,31 @@
 /* superpowers 课 · 共享样式
- * 设计取向：Tufte 式克制——窄正文栏、大行距、一种强调色、亮/暗双模、打印友好。
- * 这是工作区的第一个组件，每节课 <link> 它，让所有课看起来像一门课。*/
+ * 设计取向：Tufte 式克制——窄正文栏、大行距、一种强调色、打印友好。
+ * 【全局约定】夜间低亮度暖米护眼（旧纸级暖米底 + 中深墨绿灰正文）：
+ * Solarized base3(#fdf6e3) 夜里亮度仍接近白、会晃眼，故把底色压到 #e9dec3 一档；
+ * 强调块改「下沉式」（块底色比正文背景更暗），消除大面积亮斑。仍属浅色暖米，
+ * 不做暗色 / 黑底、不做跟随系统暗色自动切换。强调色 indigo，与 mattpocock（teal）区分。
+ * 每节课 <link> 它，让所有课看起来像一门课。*/
 
 :root {
-  --bg: #fbfbfa;
-  --fg: #1f2328;
-  --muted: #6b7280;
-  --faint: #9aa1ab;
-  --accent: #4f46e5;          /* indigo-600 */
-  --accent-soft: #eef2ff;
-  --rule: #e5e7eb;
-  --code-bg: #f3f4f6;
-  --code-fg: #b5391e;
-  --ok: #15803d;
-  --ok-bg: #ecfdf5;
-  --bad: #b91c1c;
-  --bad-bg: #fef2f2;
-  --warn-edge: #b45309;
+  /* —— 夜间低亮度暖米护眼（固定亮色，无暗色模式）—— */
+  --bg: #e9dec3;               /* 旧纸暖米底，亮度明显低于 base3，夜里不晃眼 */
+  --fg: #4d5b58;               /* 中深墨绿灰正文，柔和且对比达 WCAG AA */
+  --muted: #7f8a85;            /* 弱化注释色（随底色变暗同步下调） */
+  --faint: #a09c8c;
+  --accent: #3f4ea8;           /* indigo 降饱和降亮，夜里不刺眼 */
+  --accent-soft: #d8ccaa;      /* 下沉式强调底：比 bg 暗，夜里不形成亮斑 */
+  --rule: #d3c6a3;             /* 米色分隔线（随底色下调） */
+  --code-bg: #ddd0b0;          /* 代码块沉底，比 bg 暗一档 */
+  --code-fg: #8f3316;          /* 砖红降亮 */
+  --ok: #1f7a4d;
+  --ok-bg: #cfe3d0;            /* 状态块随基调压暗 */
+  --bad: #a02828;
+  --bad-bg: #e3d0cd;
+  --warn-edge: #9a5a09;
   --max: 700px;
   --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
           "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1115;
-    --fg: #e6e7ea;
-    --muted: #9ca3af;
-    --faint: #6b7280;
-    --accent: #a5b4fc;
-    --accent-soft: #1e1b3a;
-    --rule: #2a2f37;
-    --code-bg: #1a1d23;
-    --code-fg: #f0a78b;
-    --ok: #4ade80;
-    --ok-bg: #052e1a;
-    --bad: #f87171;
-    --bad-bg: #2a0f0f;
-    --warn-edge: #fbbf24;
-  }
 }
 
 * { box-sizing: border-box; }
