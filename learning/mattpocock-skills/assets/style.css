@@ -1,33 +1,33 @@
 /* mattpocock-skills 课 · 共享样式
- * 设计取向：Tufte 式克制——窄正文栏、大行距、一种强调色、打印友好。
- * 沿用 superpowers 课的版式，强调色改为 teal，与 superpowers 课（indigo）视觉区分。
+ * 设计取向：kami 设计语言——暖羊皮纸色相 + 墨蓝单一强调色 + 衬线主导层级 + 编辑节奏。
+ * 与 superpowers 课共用同一套 kami 护眼配色（两课统一墨蓝、视觉一致，靠内容区分）。
  * 这是工作区的第一个组件，每节课 <link> 它，让所有课看起来像一门课。
  *
- * 【全局约定】夜间低亮度暖米护眼（旧纸级暖米底 + 中深墨绿灰正文）：
- * Solarized base3(#fdf6e3) 夜里亮度仍接近白、会晃眼，故把底色压到 #e9dec3 一档；
- * 强调块改「下沉式」（块底色比正文背景更暗），消除大面积亮斑。仍属浅色暖米，
- * 不做暗色 / 黑底、不做跟随系统暗色自动切换。*/
+ * 【全局约定】采用 kami 视觉风格，但底色按 kami 羊皮纸压到护眼亮度（#e8e0cf，
+ * 明显暗于 kami 默认 #f5f4ed——后者夜里亮度仍接近白、会晃眼）。lesson 不调用 kami
+ * 引擎，仅把 kami 设计语言移植进本 css。强调块「下沉式」（块底比正文背景更暗）。
+ * 不做暗色 / 黑底、不跟随系统暗色切换。*/
 
 :root {
-  /* —— 夜间低亮度暖米护眼（固定亮色，无暗色模式）—— */
-  --bg: #e9dec3;               /* 旧纸暖米底，亮度明显低于 base3，夜里不晃眼 */
-  --fg: #4d5b58;               /* 中深墨绿灰正文，柔和且对比达 WCAG AA */
-  --muted: #7f8a85;            /* 弱化注释色（随底色变暗同步下调） */
-  --faint: #a09c8c;
-  --accent: #0b6a61;           /* teal 降亮（与 superpowers 的 indigo 区分） */
-  --accent-soft: #d8ccaa;      /* 下沉式强调底：比 bg 暗，夜里不形成亮斑 */
-  --rule: #d3c6a3;             /* 米色分隔线（随底色下调） */
-  --code-bg: #ddd0b0;          /* 代码块沉底，比 bg 暗一档 */
-  --code-fg: #8f3316;          /* 砖红降亮 */
-  --ok: #1f7a4d;
-  --ok-bg: #cfe3d0;            /* 状态块随基调压暗 */
-  --bad: #a02828;
-  --bad-bg: #e3d0cd;
-  --warn-edge: #9a5a09;
+  /* —— kami 设计语言 · 护眼亮度版（固定亮色，无暗色模式）—— */
+  --bg: #e8e0cf;               /* kami 羊皮纸色相，压到护眼亮度（≈0.74） */
+  --fg: #3a4a55;               /* 深墨蓝灰正文，呼应墨蓝，对比 ≈7:1 达 WCAG AA */
+  --muted: #6f7b82;            /* 暖灰副色 */
+  --faint: #9a9a92;
+  --accent: #1B365D;           /* kami 墨蓝，单一强调色 */
+  --accent-soft: #d6cbb0;      /* 下沉式强调底：比 bg 暗，夜里不形成亮斑 */
+  --rule: #d3c9b0;             /* 暖米分隔线 */
+  --code-bg: #ddd3bc;          /* 代码块沉底，比 bg 暗一档 */
+  --code-fg: #8f3316;          /* 砖红代码字 */
+  --ok: #2d6a4f;
+  --ok-bg: #d4e3d5;            /* 状态块降饱和 */
+  --bad: #8b3a3a;
+  --bad-bg: #e3d5d2;
+  --warn-edge: #8a5a2b;
   --max: 700px;
   --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-          "Microsoft YaHei", "Hiragino Sans GB", system-ui, sans-serif;
+  --sans: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC",
+          "Songti SC", STSong, SimSun, Charter, Georgia, Palatino, serif;
 }
 
 * { box-sizing: border-box; }
