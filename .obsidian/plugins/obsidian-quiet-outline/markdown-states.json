@@ -7758,5 +7758,49 @@
       }
     },
     "scroll": 1.937799043062201
+  },
+  "01-编程笔记/04-专项研究/Windows/PowerShell配置Claude多账号切换.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ],
+    "cursor": {
+      "from": {
+        "line": 78,
+        "ch": 67
+      },
+      "to": {
+        "line": 78,
+        "ch": 100
+      }
+    },
+    "scroll": 38.82083333333333
+  },
+  "01-编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-3-2",
+      "item-2-7",
+      "item-2-10",
+      "item-3-11",
+      "item-3-16",
+      "item-3-20",
+      "item-3-27",
+      "item-2-34",
+      "item-3-35",
+      "item-2-43"
+    ],
+    "cursor": {
+      "from": {
+        "line": 871,
+        "ch": 0
+      },
+      "to": {
+        "line": 871,
+        "ch": 0
+      }
+    },
+    "scroll": 921.1659012629162
   }
 }
