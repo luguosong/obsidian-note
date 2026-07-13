@@ -7616,7 +7616,7 @@
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 0
+    "scroll": 35.827017114914426
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7783,25 +7783,26 @@
       "item-3-2",
       "item-2-7",
       "item-2-10",
+      "item-3-11",
       "item-4-12",
       "item-4-16",
       "item-4-19",
       "item-4-24",
       "item-3-31",
-      "item-2-38",
-      "item-4-35"
+      "item-4-35",
+      "item-2-38"
     ],
     "cursor": {
       "from": {
-        "line": 793,
-        "ch": 0
+        "line": 792,
+        "ch": 9
       },
       "to": {
-        "line": 793,
-        "ch": 0
+        "line": 792,
+        "ch": 9
       }
     },
-    "scroll": 787.9443807164463
+    "scroll": 793.6784722222222
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
     "expandedKeys": [

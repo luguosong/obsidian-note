@@ -16,12 +16,21 @@ public class IncrementDemo {
         // 参与表达式（以赋值为例）——区别在此显现：
         //   ++a：先自增，再用新值
         //   a++：先用旧值，再自增
+
+        // a++ 直接用在表达式里：先取旧值参与运算，再自增
+        int a0 = 5;
+        System.out.println(a0++);     // 打印旧值 5，a0 随后自增为 6
+
         int a1 = 5;
-        int b1 = a1++;                // a1++：先用旧值 5 赋给 b1，a1 再自增
+        int b1 = a1++;                // a1++：先用旧值 5 赋给 b1，a1 再自增为 6
         System.out.println(b1);       // 5
 
         int a2 = 5;
         int b2 = ++a2;                // ++a2：a2 先自增为 6，再用新值赋给 b2
         System.out.println(b2);       // 6
+
+        int a3 = 5;
+        int b3 = 2 + a3++;            // 2 + 5（旧值）= 7，a3 随后自增为 6
+        System.out.println(b3);       // 7
     }
 }

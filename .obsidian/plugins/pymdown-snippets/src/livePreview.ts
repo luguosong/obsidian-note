@@ -7,8 +7,9 @@ import { readIncludedFile } from "./reader";
 
 // 预览态 widget：把 snippet 代码块渲染为外部文件内容（带 Prism 高亮）。
 // eq() 按 path 比较，path 不变就不重建（避免无谓重渲染）。
-// ignoreEvent(event) 按事件目标区分：点复制按钮→true（CM6 忽略，让 Obsidian
-//   复制处理器工作）；点代码区域→false（CM6 处理→光标进块→隐藏 widget→编辑态）。
+// ignoreEvent(event)：鼠标点 widget 任意位置→true（CM6 不抢光标、widget 保持；
+//   代码区可原生选中复制、复制按钮由 Obsidian 处理、caption 由自身监听器触发
+//   路径内联编辑）；键盘光标移入块仍照常隐藏 widget 进源码编辑。
 // updateDOM() 返回 false，DOM 由内部异步逻辑（fill）自行管理。
 class SnippetWidget extends WidgetType {
   constructor(
@@ -19,6 +20,9 @@ class SnippetWidget extends WidgetType {
     super();
   }
 
+  // CM6 EditorView：toDOM 时存入，供 caption 路径编辑时 dispatch 修改源码。
+  view: EditorView | null = null;
+
   eq(other: WidgetType): boolean {
     return other instanceof SnippetWidget && other.path === this.path;
   }
@@ -27,7 +31,9 @@ class SnippetWidget extends WidgetType {
     return false;
   }
 
-  toDOM(_view: EditorView): HTMLElement {
+  toDOM(view: EditorView): HTMLElement {
+    this.view = view;
+    ensureClickGuard(view);
     const container = document.createElement("div");
     container.className = "pymdown-snippet-widget";
     container.setText("加载中…");
@@ -35,25 +41,14 @@ class SnippetWidget extends WidgetType {
     return container;
   }
 
-  // 关键：决定 CM6 是否处理落在 widget 内的事件（eventBelongsToEditor 会
-  // 调用此方法，返回 true 时 CM6 认为事件"不属于编辑器"并忽略）。
-  // - 点复制按钮（含其内部 <svg> 图标）→ 返回 true：CM6 不移动光标、不隐藏
-  //   widget，Obsidian 的复制处理器正常工作。
-  // - 点代码区域 → 返回 false：CM6 处理事件 → 移动光标进块 → 隐藏 widget → 编辑态。
-  // （不能在 widget 容器上用捕获阶段 stopPropagation 拦截：CM6 的 mousedown
-  //  注册在 view.contentDOM——widget 的祖先——捕获阶段比 widget 更早收到事件，
-  //  stopPropagation 拦不住祖先上的监听器。）
   ignoreEvent(event: Event): boolean {
+    // 鼠标点击 widget 任意位置（代码区 / 复制按钮 / caption）一律返回 true：
+    // CM6 不移动光标、不隐藏 widget。代码区由浏览器原生支持选中/复制；复制按钮
+    // 由 Obsidian 复制处理器工作；caption 的路径编辑由自己的 click 监听器发起
+    // （见 attachPathEdit）。键盘光标移入块时仍照常隐藏 widget 进入源码编辑
+    // （inBlock 判定在 buildDecorations，与鼠标点击无关）。
     if (event.type === "mousedown" || event.type === "click" || event.type === "mouseup" || event.type === "pointerdown") {
-      const target = event.target;
-      // 用 Element（而非 HTMLElement）：复制按钮里的图标是 SVGSVGElement，
-      // 点击命中的是 <svg>/<path>，不是 HTMLElement。Element.closest 在
-      // SVG 与 HTML 元素上都可用，向上找到最近的 button.copy-code-button。
-      if (target instanceof Element) {
-        if (target.closest("button.copy-code-button, button[class*='copy']")) {
-          return true;
-        }
-      }
+      return true;
     }
     return false;
   }
@@ -66,6 +61,10 @@ class SnippetWidget extends WidgetType {
 
     container.empty();
     if (!result.ok) {
+      // 错误时也保留 caption：用户改到不存在的路径后，仍可点 caption 改回。
+      const caption = createSnippetCaption(this.path);
+      attachPathEdit(caption, this.path, this);
+      container.appendChild(caption);
       container.appendChild(buildErrorEl(this.path, result.error));
       return;
     }
@@ -99,7 +98,9 @@ class SnippetWidget extends WidgetType {
       // 定位、代码块内边距、背景等）作用域在 .markdown-rendered 上。widget
       // 在编辑器 DOM 内，默认拿不到这些样式，套上后原生代码块样式完整生效，
       // 与阅读视图/原生代码块外观一致。
-      container.appendChild(createSnippetCaption(this.path));
+      const caption = createSnippetCaption(this.path);
+      attachPathEdit(caption, this.path, this);
+      container.appendChild(caption);
       const mdWrap = document.createElement("div");
       mdWrap.className = "markdown-rendered";
       mdWrap.appendChild(pre);
@@ -111,6 +112,29 @@ class SnippetWidget extends WidgetType {
       container.appendChild(fallback);
     }
   }
+}
+
+// 在 .cm-editor（contentDOM 父）capture 阶段拦截 widget 内 pre 的 pointerdown/mousedown。
+// 原因：Obsidian 实时预览对 pre（代码内容）的点击会在 contentDOM capture 移光标进
+// fence（"点击代码块进编辑"），该处理器不经 widget.ignoreEvent，导致 widget 消失、
+// 无法选中复制代码。.cm-editor 比 contentDOM 更早 capture，stopPropagation 阻止
+// contentDOM 收到；只拦 pre（代码区），caption / 复制按钮不拦以保留原生行为；
+// 浏览器原生文本选中在 target 阶段工作，不依赖冒泡。CLICK_GUARD_KEY 去重，每个
+// editor 只注册一次。
+const CLICK_GUARD_KEY = "__pymdownSnippetClickGuard";
+function ensureClickGuard(view: EditorView): void {
+  const dom = view.dom as HTMLElement & { [k: string]: boolean };
+  if (dom[CLICK_GUARD_KEY]) return;
+  dom[CLICK_GUARD_KEY] = true;
+  const handler = (e: Event): void => {
+    const target = e.target;
+    if (target instanceof Element && target.closest(".pymdown-snippet-widget pre")) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    }
+  };
+  dom.addEventListener("pointerdown", handler, true);
+  dom.addEventListener("mousedown", handler, true);
 }
 
 function buildErrorEl(path: string, error: string): HTMLElement {
@@ -232,4 +256,108 @@ export function createSnippetViewPlugin(app: App, component: Component): Extensi
     },
     provide: (f) => EditorView.decorations.from(f),
   });
+}
+
+
+// caption 路径内联编辑：点击 caption → 路径文本变 input → 回车/失焦提交 →
+// dispatch 改写源码 --8<-- "path" → StateField update 重建 widget 读新文件。
+// 全程不隐藏代码块（不把光标放进源码块），实现"代码块常驻、路径可改"。
+// 仅实时预览注册；阅读视图的 caption 不加 editable class，保持只读。
+function attachPathEdit(
+  caption: HTMLElement,
+  oldPath: string,
+  widget: SnippetWidget
+): void {
+  caption.classList.add("pymdown-snippet-caption-editable");
+  caption.addEventListener("click", () => {
+    if (caption.classList.contains("editing")) return;
+    beginPathEdit(caption, oldPath, widget);
+  });
+}
+
+function beginPathEdit(
+  caption: HTMLElement,
+  oldPath: string,
+  widget: SnippetWidget
+): void {
+  caption.classList.add("editing");
+  const pathEl = caption.querySelector(".pymdown-snippet-caption-path");
+  if (!(pathEl instanceof HTMLElement)) {
+    caption.classList.remove("editing");
+    return;
+  }
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = oldPath;
+  input.className = "pymdown-snippet-caption-input";
+  input.spellcheck = false;
+  pathEl.replaceWith(input);
+  input.focus();
+  input.select();
+
+  let done = false;
+  const restore = (): void => {
+    if (done) return;
+    done = true;
+    input.replaceWith(pathEl);
+    caption.classList.remove("editing");
+  };
+  const commit = (): void => {
+    if (done) return;
+    const newPath = input.value.trim();
+    if (!newPath || newPath === oldPath) {
+      restore();
+      return;
+    }
+    const view = widget.view;
+    if (view && replacePathInView(view, input, newPath)) {
+      done = true; // dispatch 成功，文档变化触发 widget 重建，旧 input 随之销毁
+      return;
+    }
+    restore();
+  };
+  input.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      commit();
+    } else if (e.key === "Escape") {
+      e.preventDefault();
+      restore();
+    }
+  });
+  input.addEventListener("blur", () => commit());
+}
+
+// 用 input（widget 内元素）的 DOM 位置定位 widget 源码 range 起点：
+// posAtDOM 对 replace decoration 内元素返回 range.from（即 fence ```java 行起点），
+// --8<-- 在 fence 下一行；正则提取路径字面量位置后 dispatch 替换。
+function replacePathInView(
+  view: EditorView,
+  anchorEl: HTMLElement,
+  newPath: string
+): boolean {
+  // posAtDOM 对 block widget 内元素返回的位置可能落在 range.from 或 range.to
+  // 附近（方向不确定，实测落在闭合 fence 侧），不能假定 fenceLine.number+1 就是
+  // --8<-- 行。改为以 posAtDOM 位置为中心，向两侧扩散找 widget 内唯一的 --8<-- 行。
+  const p = view.posAtDOM(anchorEl);
+  const doc = view.state.doc;
+  const center = doc.lineAt(p).number;
+  const re = /^(\s*--8<--\s+")([^"]+)("\s*)$/;
+  for (let off = 0; off <= 5; off++) {
+    for (const n of [center + off, center - off]) {
+      if (n < 1 || n > doc.lines) continue;
+      const line = doc.line(n);
+      const m = re.exec(line.text);
+      if (m) {
+        const pathFrom = line.from + m[1].length;
+        const pathTo = pathFrom + m[2].length;
+        view.dispatch({
+          changes: { from: pathFrom, to: pathTo, insert: newPath },
+        });
+        return true;
+      }
+    }
+  }
+  return false;
 }

@@ -79,3 +79,24 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* caption 可点击编辑路径（仅实时预览加 editable class；阅读视图只读） */
+.pymdown-snippet-caption-editable {
+  cursor: pointer;
+}
+
+.pymdown-snippet-caption.editing {
+  cursor: text;
+}
+
+.pymdown-snippet-caption-input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: inherit;
+  background: var(--background-modifier-form-field, var(--background-primary));
+  border: 1px solid var(--interactive-accent);
+  border-radius: var(--radius-s);
+  padding: 0 var(--size-4-2);
+  outline: none;
+}
