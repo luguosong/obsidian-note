@@ -1,7 +1,7 @@
 import { App, Component, MarkdownRenderer } from "obsidian";
 import { Decoration, DecorationSet, EditorView, WidgetType } from "@codemirror/view";
 import { EditorState, Extension, StateField, Transaction } from "@codemirror/state";
-import { isSnippet } from "./snippet";
+import { isSnippet, createSnippetCaption } from "./snippet";
 import { resolveLanguage } from "./lang";
 import { readIncludedFile } from "./reader";
 
@@ -99,6 +99,7 @@ class SnippetWidget extends WidgetType {
       // 定位、代码块内边距、背景等）作用域在 .markdown-rendered 上。widget
       // 在编辑器 DOM 内，默认拿不到这些样式，套上后原生代码块样式完整生效，
       // 与阅读视图/原生代码块外观一致。
+      container.appendChild(createSnippetCaption(this.path));
       const mdWrap = document.createElement("div");
       mdWrap.className = "markdown-rendered";
       mdWrap.appendChild(pre);

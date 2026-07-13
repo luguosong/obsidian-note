@@ -52,3 +52,30 @@
 .pymdown-snippet-widget > .pymdown-snippet-error {
   margin: 0;
 }
+
+/* snippet 文件路径标题条：显示在被嵌入代码块正上方。
+   两条渲染路径（阅读视图 postProcessor / 实时预览 livePreview）共用。
+   纯展示，等宽字体，路径超长时尾部省略。 */
+.pymdown-snippet-caption {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-2);
+  padding: var(--size-4-1) var(--size-4-3);
+  margin: 0.4em 0 0.2em;
+  font-size: var(--font-smaller);
+  font-family: var(--font-monospace);
+  color: var(--text-muted);
+  background: var(--background-modifier-hover);
+  border-radius: var(--radius-s);
+  white-space: nowrap;
+}
+
+.pymdown-snippet-caption-icon {
+  flex-shrink: 0;
+  font-size: var(--font-small);
+}
+
+.pymdown-snippet-caption-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

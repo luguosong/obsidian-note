@@ -1,5 +1,5 @@
 import { App, Component, MarkdownPostProcessorContext, MarkdownRenderer } from "obsidian";
-import { isSnippet } from "./snippet";
+import { isSnippet, createSnippetCaption } from "./snippet";
 import { resolveLanguage } from "./lang";
 import { readIncludedFile } from "./reader";
 
@@ -52,7 +52,7 @@ async function renderSnippet(
   await MarkdownRenderer.renderMarkdown(md, temp, "", component);
   const newPre = temp.querySelector("pre");
   if (newPre) {
-    pre.replaceWith(newPre);
+    pre.replaceWith(createSnippetCaption(path), newPre);
   } else {
     // 极端兜底：渲染未产出 <pre>（理论上不会发生），原位保留并打日志。
     console.warn("pymdown-snippets: renderMarkdown 未产出 <pre>，原文保留", { path });
