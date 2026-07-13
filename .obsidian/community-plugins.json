@@ -7,10 +7,11 @@
   "obsidian-minimal-settings",
   "notebook-navigator",
   "templater-obsidian",
-  "pymdown-snippets",
   "obsidian-style-settings",
   "keyshots",
   "open-pwsh",
   "obsidian-tasks-plugin",
-  "table-editor-obsidian"
+  "table-editor-obsidian",
+  "pymdown-snippets",
+  "shiki-highlighter"
 ]

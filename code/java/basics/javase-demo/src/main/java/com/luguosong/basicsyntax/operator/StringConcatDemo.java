@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.operator;
 
 /**
  * 算术运算符 + 的字符串拼接：只要有一边是字符串就变成拼接，按从左到右执行。

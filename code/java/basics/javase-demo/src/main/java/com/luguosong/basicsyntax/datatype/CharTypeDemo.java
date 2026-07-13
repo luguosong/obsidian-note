@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 字符型 char：无符号 16 位整数，存储一个 Unicode 字符。

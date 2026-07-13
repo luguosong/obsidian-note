@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.operator;
 
 /**
  * 算术运算符：自增 ++ 与自减 --。单独成句时前缀后缀等价；参与表达式时区别显现。

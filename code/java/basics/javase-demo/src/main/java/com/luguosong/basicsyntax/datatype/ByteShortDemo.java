@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 整数型 byte/short：编译期常量在范围内才自动收窄；参与运算会提升为 int。

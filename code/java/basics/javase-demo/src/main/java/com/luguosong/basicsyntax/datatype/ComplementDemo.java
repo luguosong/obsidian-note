@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 整数的补码存储：Integer.toBinaryString 直接输出补码串。

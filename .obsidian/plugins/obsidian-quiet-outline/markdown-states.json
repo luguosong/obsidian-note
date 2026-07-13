@@ -7545,15 +7545,20 @@
   "11-其它/电子印章管理平台/电子印章基础知识.md": {
     "cursor": {
       "from": {
-        "line": 11,
-        "ch": 0
+        "line": 33,
+        "ch": 24
       },
       "to": {
-        "line": 11,
-        "ch": 0
+        "line": 37,
+        "ch": 30
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-4"
+    ],
+    "scroll": 15.792103639728563
   },
   "11-其它/电子印章管理平台/相关资源.md": {
     "cursor": {
@@ -7599,24 +7604,24 @@
         "ch": 0
       }
     },
-    "scroll": 9.00462962962963
+    "scroll": 5.648148148148148
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 37,
-        "ch": 17
+        "line": 47,
+        "ch": 18
       },
       "to": {
-        "line": 37,
-        "ch": 17
+        "line": 47,
+        "ch": 18
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 35.827017114914426
+    "scroll": 30.357
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7703,17 +7708,20 @@
     "scroll": 0
   },
   "11-其它/电子印章管理平台/其它平台参考.md": {
-    "expandedKeys": [],
+    "expandedKeys": [
+      "item-1-0"
+    ],
     "cursor": {
       "from": {
-        "line": 11,
-        "ch": 0
+        "line": 17,
+        "ch": 2
       },
       "to": {
-        "line": 11,
-        "ch": 0
+        "line": 17,
+        "ch": 2
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/kami.md": {
     "expandedKeys": [],
@@ -7794,15 +7802,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 792,
-        "ch": 9
+        "line": 627,
+        "ch": 3
       },
       "to": {
-        "line": 792,
-        "ch": 9
+        "line": 627,
+        "ch": 3
       }
     },
-    "scroll": 793.6784722222222
+    "scroll": 793.3847222222222
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
     "expandedKeys": [
@@ -7824,7 +7832,7 @@
         "ch": 0
       }
     },
-    "scroll": 166.70012626262627
+    "scroll": 164.5814393939394
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
     "expandedKeys": [
@@ -7839,6 +7847,22 @@
       },
       "to": {
         "line": 12,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
         "ch": 0
       }
     },

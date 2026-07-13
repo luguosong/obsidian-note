@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 浮点型 float/double：默认类型为 double，声明 float 必须加 F 后缀。

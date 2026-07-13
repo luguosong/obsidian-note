@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.variable;
 
 /**
  * 变量的作用域：成员变量、方法参数、局部变量、块作用域。

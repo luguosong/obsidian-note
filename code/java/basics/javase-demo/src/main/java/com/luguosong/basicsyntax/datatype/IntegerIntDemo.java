@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 整数型 int：整数默认类型，超出约 ±21 亿即编译报错；两个 int 运算结果仍为 int。

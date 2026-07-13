@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.variable;
 
 /**
  * 变量分类：静态变量（类变量）、实例变量、局部变量。

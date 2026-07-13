@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.operator;
 
 /**
  * 算术运算符：除法 / 与取模 %。整数相除截断取整；取模结果符号与被除数一致。

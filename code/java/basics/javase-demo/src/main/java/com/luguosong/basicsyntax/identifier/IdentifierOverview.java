@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.identifier;
 
 /**
  * 标识符总览：标识符可命名的元素——变量、方法、类、接口、枚举、注解、包、常量。

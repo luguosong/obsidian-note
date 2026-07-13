@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 浮点数不能精确表示十进制小数：0.1 + 0.2 不等于 0.3。

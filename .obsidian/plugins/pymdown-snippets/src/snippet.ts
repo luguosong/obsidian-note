@@ -1,3 +1,5 @@
+import { setIcon } from "obsidian";
+
 // 识别 pymdownx snippets 基础包含指令：
 //   --8<-- "path/to/file"
 // 规则（严格遵守 pymdownx 基础语法）：
@@ -24,7 +26,7 @@ export function createSnippetCaption(path: string): HTMLElement {
   cap.className = "pymdown-snippet-caption";
   const icon = document.createElement("span");
   icon.className = "pymdown-snippet-caption-icon";
-  icon.setText("📁");
+  setIcon(icon, "file-code");
   const pathEl = document.createElement("span");
   pathEl.className = "pymdown-snippet-caption-path";
   pathEl.setText(path);

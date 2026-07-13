@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.operator;
 
 /**
  * 算术运算符：基本四则运算 +、-、*。

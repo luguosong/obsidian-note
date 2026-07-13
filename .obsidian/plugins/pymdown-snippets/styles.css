@@ -72,12 +72,92 @@
 
 .pymdown-snippet-caption-icon {
   flex-shrink: 0;
-  font-size: var(--font-small);
+  display: inline-flex;
+  color: var(--text-muted);
+}
+
+.pymdown-snippet-caption-icon svg {
+  width: var(--size-4-3);
+  height: var(--size-4-3);
 }
 
 .pymdown-snippet-caption-path {
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+/* caption 上的「源码」按钮：进入源码模式（露 --8<-- 源码，可直接编辑路径或
+   删整块）。margin-left:auto 推到 caption 最右；hover 才完全不透明，平时半透
+   不抢视觉。svg 尺寸随 Obsidian size 变量。 */
+.pymdown-snippet-edit-btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-4-4);
+  height: var(--size-4-4);
+  color: var(--text-muted);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.12s ease, background 0.12s ease, color 0.12s ease;
+}
+
+.pymdown-snippet-edit-btn:hover {
+  opacity: 1;
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.pymdown-snippet-edit-btn svg {
+  width: var(--size-4-3);
+  height: var(--size-4-3);
+}
+
+/* 代码块复制按钮：右上角，hover 代码区显示，复制后高亮。pre 须 position:relative
+   （见上方 .pymdown-snippet-widget > .markdown-rendered > pre 规则）。*/
+.pymdown-snippet-widget .pymdown-copy-btn {
+  position: absolute;
+  top: var(--size-2-1);
+  right: var(--size-2-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-4-6);
+  height: var(--size-4-6);
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.12s ease, color 0.12s ease, background 0.12s ease;
+  z-index: 2;
+}
+
+.pymdown-snippet-widget .markdown-rendered:hover .pymdown-copy-btn,
+.pymdown-snippet-widget .pymdown-copy-btn:focus-visible {
+  opacity: 0.7;
+}
+
+.pymdown-snippet-widget .pymdown-copy-btn:hover {
+  opacity: 1;
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.pymdown-snippet-widget .pymdown-copy-btn svg {
+  width: var(--size-4-4);
+  height: var(--size-4-4);
+}
+
+.pymdown-snippet-widget .pymdown-copy-btn.copied {
+  opacity: 1;
+  color: var(--interactive-accent);
 }
 
 /* caption 可点击编辑路径（仅实时预览加 editable class；阅读视图只读） */

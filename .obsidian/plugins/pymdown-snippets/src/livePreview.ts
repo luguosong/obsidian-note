@@ -1,6 +1,14 @@
-import { App, Component, MarkdownRenderer } from "obsidian";
+import { App, Component, MarkdownRenderer, setIcon } from "obsidian";
 import { Decoration, DecorationSet, EditorView, WidgetType } from "@codemirror/view";
-import { EditorState, Extension, StateField, Transaction } from "@codemirror/state";
+import {
+  EditorSelection,
+  EditorState,
+  Extension,
+  Prec,
+  StateEffect,
+  StateField,
+  Transaction,
+} from "@codemirror/state";
 import { isSnippet, createSnippetCaption } from "./snippet";
 import { resolveLanguage } from "./lang";
 import { readIncludedFile } from "./reader";
@@ -9,11 +17,16 @@ import { readIncludedFile } from "./reader";
 // eq() 按 path 比较，path 不变就不重建（避免无谓重渲染）。
 // ignoreEvent(event)：鼠标点 widget 任意位置→true（CM6 不抢光标、widget 保持；
 //   代码区可原生选中复制、复制按钮由 Obsidian 处理、caption 由自身监听器触发
-//   路径内联编辑）；键盘光标移入块仍照常隐藏 widget 进源码编辑。
+//   路径内联编辑、源码按钮触发进入源码模式）。键盘光标移入块不再隐藏 widget——
+//   露源码编辑改为由 caption 上的「源码」按钮显式进入（见 attachEditButton）。
 // updateDOM() 返回 false，DOM 由内部异步逻辑（fill）自行管理。
 class SnippetWidget extends WidgetType {
   constructor(
     readonly path: string,
+    // widget 覆盖的源码 range：fence 起始行 from 到闭合 fence 行 to。
+    // 「源码」按钮进入编辑态时用它 dispatch 光标位置 + 标记编辑 range。
+    readonly from: number,
+    readonly to: number,
     readonly app: App,
     readonly component: Component
   ) {
@@ -33,7 +46,6 @@ class SnippetWidget extends WidgetType {
 
   toDOM(view: EditorView): HTMLElement {
     this.view = view;
-    ensureClickGuard(view);
     const container = document.createElement("div");
     container.className = "pymdown-snippet-widget";
     container.setText("加载中…");
@@ -43,10 +55,11 @@ class SnippetWidget extends WidgetType {
 
   ignoreEvent(event: Event): boolean {
     // 鼠标点击 widget 任意位置（代码区 / 复制按钮 / caption）一律返回 true：
-    // CM6 不移动光标、不隐藏 widget。代码区由浏览器原生支持选中/复制；复制按钮
-    // 由 Obsidian 复制处理器工作；caption 的路径编辑由自己的 click 监听器发起
-    // （见 attachPathEdit）。键盘光标移入块时仍照常隐藏 widget 进入源码编辑
-    // （inBlock 判定在 buildDecorations，与鼠标点击无关）。
+    // CM6 不就此事件移动光标或改变自身状态，把事件留给浏览器原生处理——代码区可
+    // 选中复制、复制按钮由 Obsidian 处理器工作、caption 的路径编辑由它自己的
+    // click 监听器发起（见 attachPathEdit）。注意 Obsidian 另有 contentDOM 上的
+    // 点击处理器会把光标移进 fence（不经 ignoreEvent），但 widget 装饰不再随光标
+    // 位置移除（见 buildDecorations），所以即便光标进了 fence，widget 依然常驻可见。
     if (event.type === "mousedown" || event.type === "click" || event.type === "mouseup" || event.type === "pointerdown") {
       return true;
     }
@@ -64,77 +77,78 @@ class SnippetWidget extends WidgetType {
       // 错误时也保留 caption：用户改到不存在的路径后，仍可点 caption 改回。
       const caption = createSnippetCaption(this.path);
       attachPathEdit(caption, this.path, this);
+      attachEditButton(caption, this);
       container.appendChild(caption);
       container.appendChild(buildErrorEl(this.path, result.error));
       return;
     }
 
-    // 用 MarkdownRenderer 渲染 fenced code block，复用 Obsidian 的 Prism
-    // 高亮管线，使实时预览的高亮效果与阅读视图、原生代码块完全一致。
-    // resolveLanguage: fence 语言无法从原 DOM 取（已被 widget 替换），
-    // 实时预览不解析 fence info string，统一按文件后缀推断语言。
+    // resolveLanguage: fence 语言无法从原 DOM 取（已被 widget 替换），实时预览
+    // 不解析 fence info string，统一按文件后缀推断语言。
     const tempCode = document.createElement("code");
     const lang = resolveLanguage(tempCode, this.path);
+
+    const caption = createSnippetCaption(this.path);
+    attachPathEdit(caption, this.path, this);
+    attachEditButton(caption, this);
+    container.appendChild(caption);
+
+    // 优先 Shiki：装了 obsidian-shiki-plugin 时用其内部 Shiki 实例高亮，与 LP
+    // 原生 / 阅读视图共用 --shiki-code-* CSS 变量、高亮完全一致。Shiki 插件会
+    // disable 内置 Prism，此时 renderMarkdown 的 code 退化为纯文本，必须走这条。
+    const shikiHtml = renderWithShiki(this.app, lang, result.content);
+    if (shikiHtml) {
+      const wrap = document.createElement("div");
+      wrap.className = "markdown-rendered";
+      // shikiHtml 来自 Shiki codeToHtml：代码文本已转义，输出仅 <pre>/<code>/<span style>，
+      // 无脚本/事件属性。用 template 解析（template 内容不执行脚本）后 append，安全。
+      const tpl = document.createElement("template");
+      tpl.innerHTML = shikiHtml;
+      wrap.appendChild(tpl.content);
+      const shikiPre = wrap.querySelector("pre");
+      if (shikiPre) {
+        attachCopyButton(shikiPre, result.content);
+        attachTextSelectionCopy(shikiPre);
+      }
+      container.appendChild(wrap);
+      return;
+    }
+
+    // 无 Shiki：回退 MarkdownRenderer（Obsidian 内置 Prism）。renderTarget 临时
+    // 挂载到 body 离屏处，让代码块 postProcessor（复制按钮等）正常工作后立刻移除。
     const fence = "```";
     const md = `${fence}${lang}\n${result.content}\n${fence}\n`;
-
-    // 用 createElement（而非 Obsidian 的 createDiv）：createDiv 在 document
-    // 上调用时会尝试 appendChild 到 document，触发 "Only one element on
-    // document allowed"。这里只需一个临时容器，不挂载到 DOM。
     const renderTarget = document.createElement("div");
-    await MarkdownRenderer.renderMarkdown(md, renderTarget, "", this.component);
+    renderTarget.style.cssText = "position:fixed;left:-9999px;top:0;visibility:hidden;";
+    document.body.appendChild(renderTarget);
+    try {
+      await MarkdownRenderer.renderMarkdown(md, renderTarget, "", this.component);
+    } finally {
+      renderTarget.remove();
+    }
     const pre = renderTarget.querySelector("pre");
     if (pre) {
-      // 语言标签：按文件后缀推断（resolveLanguage），用 Obsidian 原生的
-      // .code-block-flair class 渲染，定位在代码块右上角（与复制按钮并排），
-      // 外观随主题。renderMarkdown 默认不产出这个标签，需手动补。
+      // 补语言标签，套 .markdown-rendered 取原生代码块样式（复制按钮定位、内边距、
+      // 背景等作用域在 .markdown-rendered）。
       if (lang) {
         const flair = document.createElement("div");
         flair.className = "pymdown-lang-flair";
         flair.setText(lang);
         pre.appendChild(flair);
       }
-      // 套一层 .markdown-rendered：Obsidian 代码块的布局 CSS（复制按钮右上角
-      // 定位、代码块内边距、背景等）作用域在 .markdown-rendered 上。widget
-      // 在编辑器 DOM 内，默认拿不到这些样式，套上后原生代码块样式完整生效，
-      // 与阅读视图/原生代码块外观一致。
-      const caption = createSnippetCaption(this.path);
-      attachPathEdit(caption, this.path, this);
-      container.appendChild(caption);
+      attachCopyButton(pre, result.content);
+      attachTextSelectionCopy(pre);
       const mdWrap = document.createElement("div");
       mdWrap.className = "markdown-rendered";
       mdWrap.appendChild(pre);
       container.appendChild(mdWrap);
     } else {
-      // 极端兜底：renderMarkdown 未产出 <pre>（理论上不会发生），纯文本回退。
+      // 极端兜底：既无 Shiki 也无 <pre>，纯文本回退。
       const fallback = document.createElement("pre");
       fallback.createEl("code", { text: result.content });
       container.appendChild(fallback);
     }
   }
-}
-
-// 在 .cm-editor（contentDOM 父）capture 阶段拦截 widget 内 pre 的 pointerdown/mousedown。
-// 原因：Obsidian 实时预览对 pre（代码内容）的点击会在 contentDOM capture 移光标进
-// fence（"点击代码块进编辑"），该处理器不经 widget.ignoreEvent，导致 widget 消失、
-// 无法选中复制代码。.cm-editor 比 contentDOM 更早 capture，stopPropagation 阻止
-// contentDOM 收到；只拦 pre（代码区），caption / 复制按钮不拦以保留原生行为；
-// 浏览器原生文本选中在 target 阶段工作，不依赖冒泡。CLICK_GUARD_KEY 去重，每个
-// editor 只注册一次。
-const CLICK_GUARD_KEY = "__pymdownSnippetClickGuard";
-function ensureClickGuard(view: EditorView): void {
-  const dom = view.dom as HTMLElement & { [k: string]: boolean };
-  if (dom[CLICK_GUARD_KEY]) return;
-  dom[CLICK_GUARD_KEY] = true;
-  const handler = (e: Event): void => {
-    const target = e.target;
-    if (target instanceof Element && target.closest(".pymdown-snippet-widget pre")) {
-      e.stopPropagation();
-      e.stopImmediatePropagation();
-    }
-  };
-  dom.addEventListener("pointerdown", handler, true);
-  dom.addEventListener("mousedown", handler, true);
 }
 
 function buildErrorEl(path: string, error: string): HTMLElement {
@@ -146,15 +160,115 @@ function buildErrorEl(path: string, error: string): HTMLElement {
   return box;
 }
 
+// 用已装的 Shiki 插件（obsidian-shiki-plugin）内部 Shiki 实例把代码高亮成 HTML。
+// 返回的 <pre class="shiki"> 用 --shiki-code-* CSS 变量，与 LP 原生 / 阅读视图高亮
+// 完全一致（Shiki 插件 disable 了内置 Prism，widget 必须走这条才有高亮）。
+// 未装 Shiki、语言未加载、或渲染失败时返回 null（调用方回退 Prism）。
+// 注意：访问的是 Shiki 插件内部 API（plugins['shiki-highlighter'].highlighter.shiki），
+// 非公开契约；插件升级若改名需重新适配。
+function renderWithShiki(app: App, lang: string, code: string): string | null {
+  const plugins = (
+    app as unknown as { plugins?: { plugins?: Record<string, unknown> } }
+  ).plugins?.plugins;
+  const plugin = plugins?.["shiki-highlighter"] as
+    | {
+        highlighter?: {
+          shiki?: {
+            codeToHtml: (
+              code: string,
+              opts: { lang: string; theme: string }
+            ) => string;
+            getLoadedLanguages?: () => string[];
+            getLoadedThemes?: () => string[];
+          };
+        };
+      }
+    | undefined;
+  const shiki = plugin?.highlighter?.shiki;
+  if (!shiki || typeof shiki.codeToHtml !== "function") return null;
+  // 语言必须 Shiki 已加载，否则 codeToHtml 抛错；未加载则回退 Prism。
+  if (
+    shiki.getLoadedLanguages &&
+    !shiki.getLoadedLanguages().includes(lang)
+  ) {
+    return null;
+  }
+  const themes = shiki.getLoadedThemes ? shiki.getLoadedThemes() : [];
+  const theme = themes[0] ?? "obsidian-theme";
+  try {
+    return shiki.codeToHtml(code, { lang, theme });
+  } catch {
+    return null;
+  }
+}
+
+// 代码块右上角复制按钮：点击复制原始代码内容到剪贴板，复制后图标变 ✓ 反馈。
+// widget 用 Shiki codeToHtml / Prism 直接注入 pre，不经 Obsidian postProcessor
+// （不会有原生 .copy-code-button），故手动加。pre 须 position:relative（见 styles.css）。
+// 复制内容是 result.content（原始代码文本），不是高亮后的 HTML。
+function attachCopyButton(pre: HTMLElement, code: string): void {
+  const btn = document.createElement("button");
+  btn.className = "pymdown-copy-btn";
+  btn.type = "button";
+  btn.setAttribute("aria-label", "复制代码");
+  setIcon(btn, "copy");
+  btn.addEventListener("click", async (e: MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(code);
+      setIcon(btn, "check");
+      btn.classList.add("copied");
+      btn.setAttribute("aria-label", "已复制");
+      setTimeout(() => {
+        setIcon(btn, "copy");
+        btn.classList.remove("copied");
+        btn.setAttribute("aria-label", "复制代码");
+      }, 1500);
+    } catch {
+      // 剪贴板权限/焦点失败时静默（不打断用户）
+    }
+  });
+  pre.appendChild(btn);
+}
+
+// 框选 widget 代码复制：widget 在 CM6 contenteditable 编辑器内，鼠标框选时浏览器
+// Selection 有内容，但 Obsidian 的 Ctrl+C 读 CM6 EditorSelection（widget 不在文档流，
+// 仍是 collapsed 光标）→ 写入剪贴板为空。这里在 capture 阶段拦截 copy，用 window
+// Selection（浏览器选中的 widget 文本）写剪贴板，stopImmediatePropagation 阻止
+// Obsidian 的 copy handler 用 CM6 selection 覆盖。仅当选中文本非空时才拦截。
+function attachTextSelectionCopy(pre: HTMLElement): void {
+  pre.addEventListener(
+    "copy",
+    (e: ClipboardEvent) => {
+      const sel = window.getSelection();
+      const text = sel && sel.rangeCount > 0 ? sel.toString() : "";
+      if (text && e.clipboardData) {
+        e.preventDefault();
+        e.clipboardData.setData("text/plain", text);
+        e.stopImmediatePropagation();
+      }
+    },
+    true
+  );
+}
+
 // 扫描整个文档，把命中 snippet 指令的代码块整块替换为 SnippetWidget。
 // 不依赖 markdown 语法树节点名（版本易碎），改为按行扫描 ```/~~~ fence。
 // 扫描全文档（非视口）：StateField 只有 Transaction，没有视口概念，
 // 全文档扫描在 docChanged 时重算即可，snippet 笔记通常不大。
+//
+// widget 始终展示，不看光标位置：用户需求是「点代码块内容不做变化、允许复制
+// 查看」。Obsidian 点击代码会把光标移进 fence，但只要 widget 装饰常驻，它就覆盖
+// 源码、保持可见可选中复制。唯一露源码的入口是 caption 上的「源码」按钮——它
+// dispatch EnterEdit effect 把对应 range 的 from 记为 editingFrom，本函数扫描时
+// 命中 editingFrom 的 range 跳过（不创建 widget），露出 --8<-- 源码供直接编辑/删除；
+// 光标移出该 range 后 StateField 清除 editingFrom，widget 自动恢复。
 export function buildDecorations(
   state: EditorState,
-  cursorPos: number,
   app: App,
-  component: Component
+  component: Component,
+  editingFrom: number | null
 ): DecorationSet {
   const ranges: { from: number; to: number; widget: SnippetWidget }[] = [];
 
@@ -191,21 +305,15 @@ export function buildDecorations(
         if (path !== null) {
           const blockFrom = line.from;
           const blockTo = doc.line(endLineNo).to;
-          // 光标在该块范围内 → 隐藏 widget，露出原始文本可编辑。
-          // 区间下界用 blockFrom - 1：左键点击 widget 上沿时，CM6 的
-          // posAtCoords 常把光标解析到"块前一行末尾"（即 blockFrom-1，
-          // 前一行的换行处），而非 blockFrom。纳入这个位置才能正确隐藏。
-          // blockFrom > 0 时才有"块前位置"可言；块在文档首行则不前扩。
-          const hideFrom = blockFrom > 0 ? blockFrom - 1 : blockFrom;
-          const inBlock = cursorPos >= hideFrom && cursorPos <= blockTo;
-          if (inBlock) {
+          // editingFrom 命中：该 range 处于源码编辑态，露源码不创建 widget。
+          if (editingFrom !== null && blockFrom === editingFrom) {
             lineNo = endLineNo + 1;
             continue;
           }
           ranges.push({
             from: blockFrom,
             to: blockTo,
-            widget: new SnippetWidget(path, app, component),
+            widget: new SnippetWidget(path, blockFrom, blockTo, app, component),
           });
         }
         lineNo = endLineNo + 1;
@@ -235,29 +343,95 @@ export function buildDecorations(
 // StateField 的装饰是"静态"装饰集（EditorView.decorations.from(field)），
 // 允许包含 block 装饰。文档变更时在 update 里重算。
 //
-// update 的第一个参数是上一状态的装饰值：文档未变时直接返回它，
-// 避免无谓重算与闪烁；文档变了则重新扫描。
+// update 的第一个参数是上一状态的值：文档未变且编辑态未变时直接返回它，
+// 避免无谓重算与闪烁；文档变了或编辑态切换时重新扫描。
+//
+// 进入源码编辑态的 effect：payload = 该 snippet range 的 {from, to}。
+// 「源码」按钮 dispatch 它（见 attachEditButton / enterSourceMode）。
+const enterEditEffect = StateEffect.define<{ from: number; to: number }>();
+
+interface SnippetFieldState {
+  decorations: DecorationSet;
+  editing: { from: number; to: number } | null;
+}
+
 export function createSnippetViewPlugin(app: App, component: Component): Extension {
-  return StateField.define<DecorationSet>({
-    create(state) {
-      return buildDecorations(state, state.selection.main.head, app, component);
-    },
-    update(value, tr: Transaction) {
-      const docChanged = tr.docChanged;
-      const cursorMoved =
-        tr.startState.selection.main.head !== tr.state.selection.main.head;
-      if (!docChanged && !cursorMoved) return value;
-      return buildDecorations(
-        tr.state,
-        tr.state.selection.main.head,
-        app,
-        component
-      );
-    },
-    provide: (f) => EditorView.decorations.from(f),
+  // Prec.high：把 snippet 的 block widget 装饰提到最高优先级。Shiki / Expressive Code
+  // 等插件也用 block widget 替换 fence，同 range 冲突时 precedence 高者胜；不加会被
+  // 静默吞掉（--8<-- 直接显示源码）。提优先级后 --8<-- 块归本插件，其它普通代码块仍归 Shiki。
+  return Prec.high(
+    StateField.define<SnippetFieldState>({
+      create(state) {
+        return {
+          decorations: buildDecorations(state, app, component, null),
+          editing: null,
+        };
+      },
+      update(value, tr: Transaction) {
+        let editing = value.editing;
+        // 文档变化时把 editing range 位置随变更映射（编辑/删除后仍对齐同一块）
+        if (editing && tr.docChanged) {
+          editing = {
+            from: tr.changes.mapPos(editing.from),
+            to: tr.changes.mapPos(editing.to),
+          };
+        }
+        // 「源码」按钮 dispatch 的进入编辑态 effect
+        for (const e of tr.effects) {
+          if (e.is(enterEditEffect)) editing = e.value;
+        }
+        // 退出判定：编辑态下光标移出 range（点别处 / 方向键移出）→ 清除，widget 恢复
+        if (editing && (tr.selection || tr.docChanged)) {
+          const head = tr.state.selection.main.head;
+          if (head < editing.from || head > editing.to) editing = null;
+        }
+        const prevFrom = value.editing ? value.editing.from : null;
+        const curFrom = editing ? editing.from : null;
+        const decorations =
+          tr.docChanged || curFrom !== prevFrom
+            ? buildDecorations(tr.state, app, component, curFrom)
+            : value.decorations;
+        return { decorations, editing };
+      },
+      provide: (f: StateField<SnippetFieldState>) =>
+        EditorView.decorations.from(f, (s) => s.decorations),
+    })
+  );
+}
+
+
+// caption 上的「源码」按钮：点击 → dispatch enterEditEffect 进入源码编辑态 +
+// 把光标放进 fence（--8<-- 行），编辑器获焦。进入后 buildDecorations 跳过该 range
+// 露出 --8<-- 源码，用户可直接改路径或删整块；光标移出 range 自动退出、widget 恢复。
+// stopPropagation 避免冒泡到 caption 自身的路径编辑 click。
+function attachEditButton(caption: HTMLElement, widget: SnippetWidget): void {
+  const btn = caption.createEl("span", {
+    cls: "pymdown-snippet-edit-btn",
+    attr: { "aria-label": "切换到源码模式（编辑/删除源码）" },
+  });
+  setIcon(btn, "code");
+  btn.addEventListener("click", (e: MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const view = widget.view;
+    if (!view) return;
+    enterSourceMode(view, widget.from, widget.to);
   });
 }
 
+// 进入源码模式：光标定位到 fence 内 --8<-- 行起点（落在 [from,to] 内，不会立即
+// 触发退出判定），同时附带 enterEditEffect 让 StateField 把该 range 标记为编辑态。
+function enterSourceMode(view: EditorView, from: number, to: number): void {
+  const doc = view.state.doc;
+  const fenceLineNo = doc.lineAt(from).number;
+  const snippetLineNo = Math.min(fenceLineNo + 1, doc.lines);
+  const cursorPos = doc.line(snippetLineNo).from;
+  view.dispatch({
+    effects: enterEditEffect.of({ from, to }),
+    selection: EditorSelection.cursor(cursorPos),
+  });
+  view.focus();
+}
 
 // caption 路径内联编辑：点击 caption → 路径文本变 input → 回车/失焦提交 →
 // dispatch 改写源码 --8<-- "path" → StateField update 重建 widget 读新文件。

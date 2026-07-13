@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.identifier;
 
 /**
  * 标识符命名规则：合法字符、Unicode 支持、禁止数字开头/关键字、区分大小写。

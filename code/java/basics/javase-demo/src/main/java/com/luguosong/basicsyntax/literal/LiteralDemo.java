@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.literal;
 
 /**
  * 字面量（Literal）：源代码中值的直接表示，编译期即可确定类型和值。

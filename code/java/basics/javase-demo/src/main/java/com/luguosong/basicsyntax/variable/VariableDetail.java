@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.variable;
 
 /**
  * 变量使用细节：先声明后访问、一行声明多个变量、重名规则、类型匹配。

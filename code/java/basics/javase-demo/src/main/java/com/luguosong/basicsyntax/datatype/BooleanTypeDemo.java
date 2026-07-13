@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 布尔型 boolean：只有 true/false，不能与整数或其它类型互转。

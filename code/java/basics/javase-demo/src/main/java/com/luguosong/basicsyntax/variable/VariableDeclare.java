@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.variable;
 
 /**
  * 变量的声明、赋值与访问。

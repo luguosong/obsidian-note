@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.variable;
 
 /**
  * 变量三要素：数据类型、变量名、变量值。

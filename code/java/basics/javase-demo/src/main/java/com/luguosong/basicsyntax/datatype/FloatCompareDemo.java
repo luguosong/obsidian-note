@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 浮点数的 == 比较陷阱：浮点运算结果是近似值，不能用 == 做相等比较。

@@ -1,4 +1,4 @@
-package com.luguosong.basicsyntax;
+package com.luguosong.basicsyntax.datatype;
 
 /**
  * 整数型 long：表示超大整数，超 int 范围必须加 L 后缀。
