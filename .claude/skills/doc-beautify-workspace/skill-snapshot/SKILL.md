@@ -210,40 +210,6 @@ Obsidian 的大纲 / 目录（TOC）由标题**自动生成**——每一个 `##
 - 可以引用片段（按行号或命名区段），具体见 Pymdown Snippets 文档；最常用就是整文件引用。
 - 这样做的好处：代码是**真实可运行**的，笔记里看到的就是 `code/` 里跑得通的代码，不会和示例脱节。
 
-#### ⚠️ callout 内的 `--8<--` 不渲染，要移到 callout 外侧上部
-
-`--8<--` 代码块**放在 callout（`>` 引用块）内部不会渲染**——Obsidian 实时预览把 callout 渲染成 `cm-callout` 容器，会吞掉 Snippets 的 block widget，callout 内只剩 `--8<-- "..."` 源码字面。这是 Obsidian + Snippets 插件的已知限制，插件层面已确认无法在 callout 内渲染（不是语法错误，改 fence / 缩进都救不回来）。
-
-美化时遇到 callout 内的 `--8<--`，**把整个代码块移到 callout 外侧（上部）**，让代码正常渲染；callout 里只留说明文字。这是「内容位置移动」——不删内容、不改语义，属"动了不会错"的重组，可直接做、收尾报告里说明移了哪些代码块。
-
-改造前（`--8<--` 在 callout 内 → 不渲染，显示源码字面）：
-
-````markdown
-> [!warning] 浮点数精度
-> 浮点数不能精确表示十进制小数：
->
-> ```java
-> --8<-- "code/java/basics/javase-demo/src/main/java/.../FloatPrecisionDemo.java"
-> ```
->
-> 因此涉及金额应使用 BigDecimal。
-````
-
-改造后（`--8<--` 移到 callout 外侧上部 → 正常渲染）：
-
-````markdown
-```java
---8<-- "code/java/basics/javase-demo/src/main/java/.../FloatPrecisionDemo.java"
-```
-
-> [!warning] 浮点数精度
-> 浮点数不能精确表示十进制小数：
->
-> 因此涉及金额应使用 BigDecimal。
-````
-
-要点：移动的是**整个 `--8<--` 代码块**（含两端 fence 行），放到 callout **正上方**（紧邻，中间别插别的）；callout 内对应位置删掉代码块、只保留前后说明文字。只有 `--8<--`（Snippets 引用）需要这么处理——普通内联代码块（直接写代码、不引用文件）在 callout 内能正常渲染，不用移。
-
 ### 🚫 铁律：创建 `code/` 项目前必须先问用户
 
 **在 `code/` 下创建任何新项目之前，必须停下来用 AskUserQuestion 征得用户同意，并确认放置位置。** 不要静默创建项目。
@@ -309,5 +275,5 @@ HAVING AVG(salary) > 10000;
 - **TOC 自检（仅整篇模式）**：进 TOC 的标题都是独立知识模块（标签已降级粗体）、层级没超过三级、标题文字精简了吗？章节模式没动 TOC 结构吗？
 - **范围自检**：改的都在作用范围内？章节模式没动 frontmatter、没越界改其它节？
 - **询问自检**：非标准位置、`code/` 项目、占位文件名、来源不明——都问过用户了，没静默处理？
-- **代码自检**：代码 + 注释已讲清的，外部没有重复文字？没为 SQL / shell 误建项目？Snippets 路径是相对仓库根？**callout 内没有遗留 `--8<--`（已移到 callout 外侧上部）？**
+- **代码自检**：代码 + 注释已讲清的，外部没有重复文字？没为 SQL / shell 误建项目？Snippets 路径是相对仓库根？
 - **配图自检**：Mermaid 优先、没凑数、表格 / 标题能解决的没硬塞图？

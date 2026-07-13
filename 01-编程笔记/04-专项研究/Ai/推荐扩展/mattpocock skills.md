@@ -53,6 +53,17 @@ npx skills@latest add mattpocock/skills
 | ----------------------------- | ------------------- |
 | improve-codebase-architecture | 可以帮助你拯救已经变成一团糟的代码库。 |
 
+## 其它skill
+
+| skill | 触发方式 | 描述  |
+| ----- | ---- | --- |
+|       |      |     |
+|       |      |     |
+|       |      |     |
+|       |      |     |
+|       |      |     |
+|       |      |     |
+
 ## CONTEXT.md
 
 > [!note] 定义

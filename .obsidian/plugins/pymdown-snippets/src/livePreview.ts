@@ -278,7 +278,9 @@ export function buildDecorations(
 
   while (lineNo <= lineCount) {
     const line = doc.line(lineNo);
-    const fenceMatch = /^(\s*)(`{3,}|~{3,})(.*)$/.exec(line.text);
+    // callout（`>` 引用）内的 fence 每行带 `> ` 前缀；原正则只匹配空白前缀不匹配
+    // `>`，会漏掉 callout 内的 snippet。放宽到「空白 + 任意 `>` 序列」前缀。
+    const fenceMatch = /^( *(?:> *)*)(`{3,}|~{3,})(.*)$/.exec(line.text);
 
     if (fenceMatch) {
       const fenceChar = fenceMatch[2][0]; // ` 或 ~
@@ -286,7 +288,8 @@ export function buildDecorations(
       // 向下找匹配的结束 fence（同字符、长度 >= 起始 fence）
       let endLineNo = lineNo + 1;
       let foundEnd = false;
-      const endRe = new RegExp(`^\\s*(${fenceChar}{${fenceStr.length},})\\s*$`);
+      // 结束 fence 同样允许 callout 前缀（`> ```）
+      const endRe = new RegExp(`^ *(?:> *)*(${fenceChar}{${fenceStr.length},}) *$`);
       for (; endLineNo <= lineCount; endLineNo++) {
         if (endRe.test(doc.line(endLineNo).text)) {
           foundEnd = true;
@@ -298,11 +301,21 @@ export function buildDecorations(
         // 提取 fence 内部内容（去掉首尾 fence 行）
         const innerLines: string[] = [];
         for (let n = lineNo + 1; n < endLineNo; n++) {
-          innerLines.push(doc.line(n).text);
+          // 剥 callout 前缀（`> ` 等），让 isSnippet 匹配纯 --8<-- 行
+          innerLines.push(doc.line(n).text.replace(/^ *(?:> *)*/, ""));
         }
         const inner = innerLines.join("\n");
         const path = isSnippet(inner);
         if (path !== null) {
+          // callout（`>` 引用）内的 fence 跳过：Obsidian LP 把 callout 渲染成
+          // cm-callout block 容器，会吞掉我们的 block widget（实测 Prec.highest 也
+          // 赢不过内置 cm-callout），且 cm-callout content 渲染不经 postProcessor。
+          // 两头不讨好，干脆不创建——callout 内显示 --8<-- 源码，用户在 callout 外
+          // 用 --8<-- 才渲染代码。详见 CLAUDE.md「已知坑」。
+          if (/>/.test(fenceMatch[1])) {
+            lineNo = endLineNo + 1;
+            continue;
+          }
           const blockFrom = line.from;
           const blockTo = doc.line(endLineNo).to;
           // editingFrom 命中：该 range 处于源码编辑态，露源码不创建 widget。

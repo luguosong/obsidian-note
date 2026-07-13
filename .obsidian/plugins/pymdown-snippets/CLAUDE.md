@@ -81,6 +81,7 @@ rtk proxy obsidian plugin:reload id=pymdown-snippets
 ## 已知非显然坑（改相关逻辑前先想清楚）
 
 - **block widget 装饰抢占**：多个插件都用 block widget 替换 fence 时 precedence 决定胜负，静默失效不报错。→ `Prec.high`。
+- **callout（`>` 引用）内 `--8<--` 不渲染**：Obsidian LP 把 callout 渲染成 `cm-callout` block 容器（`markdown-rendered` div 渲染 content），**吞掉** callout 内的插件 block widget（实测 `Prec.highest` 也赢不过内置 cm-callout），且 cm-callout content 渲染**不经 postProcessor**。两头不讨好，无法在 callout 内渲染代码。`buildDecorations` 检测 callout fence（前缀含 `>`）**跳过**，callout 内显示 `--8<--` 源码——代码块须放 callout 外才渲染。别再花时间试 Prec 或 postProcessor 在 callout 内生效（已验证不可行）。
 - **Shiki disable 内置 Prism**：装 Shiki 后 `MarkdownRenderer.renderMarkdown` 的 code block 退化为纯文本（Shiki postProcessor 不接管 widget 的隔离 renderMarkdown）。→ `renderWithShiki` 直接调 `shiki.codeToHtml`。`selectNodeContents(pre)` 手动设 range 时 `Selection.toString()` 会返回空（anchor 是元素节点），真实鼠标框选（anchor=#text）正常——别被手动 probe 误导。
 - **CM6 `posAtDOM` 对 block widget 内元素**返回位置可能落在 range.from 或 range.to（方向不定）。`replacePathInView` 用 ±5 行扫描找 `--8<--` 行，别假定 `fenceLine.number+1`。
 - 反斜杠字面量经 Bash/Edit/Write 的 JSON 会被吞（`\uXXXX` / `\\`），需要时用 `chr(92)` 占位脚本。
