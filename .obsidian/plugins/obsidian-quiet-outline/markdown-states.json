@@ -3019,12 +3019,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 13,
-        "ch": 34
+        "line": 16,
+        "ch": 0
       },
       "to": {
-        "line": 13,
-        "ch": 34
+        "line": 16,
+        "ch": 0
       }
     },
     "expandedKeys": []
@@ -7793,14 +7793,54 @@
     ],
     "cursor": {
       "from": {
-        "line": 1051,
+        "line": 793,
         "ch": 0
       },
       "to": {
-        "line": 1051,
+        "line": 793,
         "ch": 0
       }
     },
-    "scroll": 1023.0298611111111
+    "scroll": 801.3565102471246
+  },
+  "01-编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-3",
+      "item-3-4",
+      "item-3-9",
+      "item-3-14",
+      "item-3-16",
+      "item-2-19"
+    ],
+    "cursor": {
+      "from": {
+        "line": 192,
+        "ch": 0
+      },
+      "to": {
+        "line": 192,
+        "ch": 0
+      }
+    },
+    "scroll": 166.70012626262627
+  },
+  "01-编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-9"
+    ],
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "scroll": 0
   }
 }
