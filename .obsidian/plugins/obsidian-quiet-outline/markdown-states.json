@@ -3019,12 +3019,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 17,
-        "ch": 0
+        "line": 19,
+        "ch": 19
       },
       "to": {
-        "line": 17,
-        "ch": 0
+        "line": 19,
+        "ch": 19
       }
     },
     "expandedKeys": []
@@ -7545,12 +7545,12 @@
   "11-其它/电子印章管理平台/电子印章基础知识.md": {
     "cursor": {
       "from": {
-        "line": 33,
-        "ch": 24
+        "line": 36,
+        "ch": 51
       },
       "to": {
-        "line": 37,
-        "ch": 30
+        "line": 36,
+        "ch": 51
       }
     },
     "expandedKeys": [
@@ -7558,7 +7558,7 @@
       "item-2-1",
       "item-2-4"
     ],
-    "scroll": 15.792103639728563
+    "scroll": 28.738888888888887
   },
   "11-其它/电子印章管理平台/相关资源.md": {
     "cursor": {
@@ -7604,24 +7604,24 @@
         "ch": 0
       }
     },
-    "scroll": 5.648148148148148
+    "scroll": 14.55408025247971
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 64,
-        "ch": 8
+        "line": 42,
+        "ch": 0
       },
       "to": {
-        "line": 64,
-        "ch": 8
+        "line": 42,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 0.6765375854214123
+    "scroll": 19.837209302325583
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7782,7 +7782,7 @@
         "ch": 100
       }
     },
-    "scroll": 38.82083333333333
+    "scroll": 53.69583333333333
   },
   "01-编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
     "expandedKeys": [
@@ -7817,22 +7817,23 @@
       "item-1-0",
       "item-2-3",
       "item-3-4",
-      "item-3-9",
+      "item-3-7",
+      "item-3-12",
       "item-3-14",
-      "item-3-16",
-      "item-2-19"
+      "item-2-16",
+      "item-2-22"
     ],
     "cursor": {
       "from": {
-        "line": 239,
+        "line": 29,
         "ch": 0
       },
       "to": {
-        "line": 239,
+        "line": 29,
         "ch": 0
       }
     },
-    "scroll": 140.7784090909091
+    "scroll": 13.574649298597194
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
     "expandedKeys": [
@@ -7920,6 +7921,70 @@
   },
   "01-编程笔记/03-Java/01-基础/02-JVM/栈帧执行过程.md": {
     "expandedKeys": [],
+    "scroll": 0
+  },
+  "05-历史/中国史/中国史.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/pua.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 11.916666666666666
+  },
+  "01-编程笔记/04-专项研究/Windows/Windows.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Windows/Windows开发环境概览.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
     "scroll": 0
   }
 }

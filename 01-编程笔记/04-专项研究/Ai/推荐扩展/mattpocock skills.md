@@ -43,8 +43,8 @@ npx skills@latest add mattpocock/skills
 
 | skill           | 触发方式 | 描述                                             |
 | --------------- | ---- | ---------------------------------------------- |
-| grill-me        |      | 用于非代码用途                                        |
-| grill-with-docs |      | 审查会话，同时构建你的项目领域模型，锐化术语并内联更新 CONTEXT.md 和 ADRs。 |
+| grill-me        | 手动触发 | 用于非代码用途                                        |
+| grill-with-docs | 手动触发 | 审查会话，同时构建你的项目领域模型，锐化术语并内联更新 CONTEXT.md 和 ADRs。 |
 |                 |      |                                                |
 
 ## 改善代码库
