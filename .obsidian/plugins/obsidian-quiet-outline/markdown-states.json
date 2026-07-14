@@ -7621,7 +7621,7 @@
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 27.927205428747687
+    "scroll": 0.6765375854214123
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7824,15 +7824,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 192,
+        "line": 239,
         "ch": 0
       },
       "to": {
-        "line": 192,
+        "line": 239,
         "ch": 0
       }
     },
-    "scroll": 164.5814393939394
+    "scroll": 140.7784090909091
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
     "expandedKeys": [
@@ -7874,18 +7874,18 @@
   "01-编程笔记/03-Java/01-基础/02-JVM/基础知识.md": {
     "cursor": {
       "from": {
-        "line": 20,
-        "ch": 383
+        "line": 48,
+        "ch": 61
       },
       "to": {
-        "line": 20,
-        "ch": 383
+        "line": 48,
+        "ch": 61
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 27.570686070686072
+    "scroll": 20.735733695652172
   },
   "01-编程笔记/03-Java/01-基础/02-JVM/02-JVM.md": {
     "expandedKeys": [
@@ -7901,5 +7901,25 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/04-专项研究/Obsidian/skill说明.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "scroll": 23.531784841075794
+  },
+  "01-编程笔记/03-Java/01-基础/02-JVM/栈帧执行过程.md": {
+    "expandedKeys": [],
+    "scroll": 0
   }
 }
