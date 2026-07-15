@@ -3019,12 +3019,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 19,
-        "ch": 19
+        "line": 1,
+        "ch": 5
       },
       "to": {
-        "line": 19,
-        "ch": 19
+        "line": 1,
+        "ch": 57
       }
     },
     "expandedKeys": []
@@ -7526,17 +7526,20 @@
         "line": 9,
         "ch": 0
       }
-    }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "11-其它/电子印章管理平台/平台搭建.md": {
     "cursor": {
       "from": {
-        "line": 13,
-        "ch": 9
+        "line": 11,
+        "ch": 52
       },
       "to": {
-        "line": 13,
-        "ch": 9
+        "line": 11,
+        "ch": 52
       }
     },
     "scroll": 0,
