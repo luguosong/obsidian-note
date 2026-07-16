@@ -3016,15 +3016,15 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 5.644444444444445,
+    "scroll": 0.7867298578199052,
     "cursor": {
       "from": {
-        "line": 31,
-        "ch": 0
+        "line": 23,
+        "ch": 13
       },
       "to": {
-        "line": 31,
-        "ch": 0
+        "line": 23,
+        "ch": 13
       }
     },
     "expandedKeys": []
@@ -8050,7 +8050,8 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [],
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/ponytail.md": {
     "expandedKeys": [
@@ -8066,6 +8067,21 @@
         "ch": 0
       }
     },
-    "scroll": 0
+    "scroll": 5.741626794258373
+  },
+  "01-编程笔记/01-基础知识/操作系统/操作系统.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
   }
 }
