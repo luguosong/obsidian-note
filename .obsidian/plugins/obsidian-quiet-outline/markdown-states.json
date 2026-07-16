@@ -3016,15 +3016,15 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 0,
+    "scroll": 5.644444444444445,
     "cursor": {
       "from": {
-        "line": 1,
-        "ch": 5
+        "line": 31,
+        "ch": 0
       },
       "to": {
-        "line": 1,
-        "ch": 57
+        "line": 31,
+        "ch": 0
       }
     },
     "expandedKeys": []
@@ -7561,7 +7561,7 @@
       "item-2-1",
       "item-2-4"
     ],
-    "scroll": 0
+    "scroll": 49.40555555555556
   },
   "11-其它/电子印章管理平台/相关资源.md": {
     "cursor": {
@@ -7612,19 +7612,19 @@
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 100,
-        "ch": 13
+        "line": 31,
+        "ch": 330
       },
       "to": {
-        "line": 100,
-        "ch": 13
+        "line": 31,
+        "ch": 330
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 62.776729559748425
+    "scroll": 33.21344848858729
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -8029,11 +8029,40 @@
     ],
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 35,
+        "ch": 2
+      },
+      "to": {
+        "line": 35,
+        "ch": 2
+      }
+    },
+    "scroll": 24.369917577000432
+  },
+  "01-编程笔记/04-专项研究/Windows/MemTest86.md": {
+    "cursor": {
+      "from": {
+        "line": 12,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 12,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/04-专项研究/Ai/推荐扩展/ponytail.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
         "ch": 0
       }
     },

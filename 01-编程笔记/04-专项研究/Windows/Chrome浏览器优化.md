@@ -27,3 +27,10 @@ chrome://flags/#disable-accelerated-video-decode
 - 禁用掉广告拦截
 
 ![[Pasted image 20260715091849.png]]
+
+ - 禁用 XTU（立即、可逆、零风险）。 管理员 PowerShell：                                                                                                                 
+ ```
+Stop-Service XTU3SERVICE                                                                                                                                                                 
+Set-Service XTU3SERVICE -StartupType Disabled 
+ ```
+  
