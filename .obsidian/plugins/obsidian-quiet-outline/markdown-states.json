@@ -3016,7 +3016,7 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 0.7867298578199052,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 23,
@@ -7612,19 +7612,19 @@
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 31,
-        "ch": 330
+        "line": 109,
+        "ch": 0
       },
       "to": {
-        "line": 31,
-        "ch": 330
+        "line": 109,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 33.21344848858729
+    "scroll": 68.93372319688109
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -8083,5 +8083,18 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/04-专项研究/Windows/Lenovo Vantage.md": {
+    "cursor": {
+      "from": {
+        "line": 19,
+        "ch": 95
+      },
+      "to": {
+        "line": 19,
+        "ch": 95
+      }
+    },
+    "expandedKeys": []
   }
 }
