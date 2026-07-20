@@ -9,7 +9,7 @@
 ---
 # skill说明
 
-本项目 `.zcode/skills` 目录下自定义的 10 个 AI skill，用于增强 Obsidian 笔记库的自动化处理能力。
+本项目自定义了 10 个 AI skill（源文件位于 `.claude/skills/`，`.zcode/skills/` 为同步镜像），用于增强 Obsidian 笔记库的自动化处理能力。
 
 ## Obsidian 基本操作
 
@@ -23,7 +23,7 @@
 
 | Skill      | 说明                                                                                           | 适用场景                | 来源                                                                  |
 | ---------- | -------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------- |
-| `defuddle` | 使用 Defuddle 从网页中提取干净的 Markdown，附加统一 frontmatter，**英文内容自动翻译为学术中文**，并统一保存到 `网页裁剪/` 目录 | 阅读在线文档、博客文章、新闻等网页内容 | 基于 [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) 的本仓库增强版 |
+| `defuddle` | 使用 Defuddle 从网页提取干净的 Markdown，附加统一 frontmatter，**英文内容自动翻译为学术中文**，图片下载到 `附件/` 并改写为 `![[]]` 嵌入，统一保存到 `网页裁剪/` 目录。**先查重**：抓取前比对 `网页裁剪/` 的 `来源` 字段，已裁剪过的页面直接复用旧笔记、只建双链，不重复抓取。 | 阅读、裁剪、归档在线文档、博客、GitHub README 等网页内容 | 基于 [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) 的本仓库增强版 |
 
 ## 笔记创建与整理
 
