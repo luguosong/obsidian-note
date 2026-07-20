@@ -3019,15 +3019,17 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 23,
-        "ch": 13
+        "line": 25,
+        "ch": 4
       },
       "to": {
-        "line": 23,
-        "ch": 13
+        "line": 25,
+        "ch": 4
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-2-0"
+    ]
   },
   "待办任务/待办任务1.md": {
     "scroll": 0,
@@ -7624,7 +7626,7 @@
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 68.93372319688109
+    "scroll": 61.65277777777778
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7777,15 +7779,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 78,
-        "ch": 67
+        "line": 45,
+        "ch": 0
       },
       "to": {
-        "line": 78,
-        "ch": 100
+        "line": 45,
+        "ch": 0
       }
     },
-    "scroll": 53.69583333333333
+    "scroll": 57.49208548745386
   },
   "01-编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
     "expandedKeys": [
@@ -7828,15 +7830,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 29,
+        "line": 209,
         "ch": 0
       },
       "to": {
-        "line": 29,
+        "line": 209,
         "ch": 0
       }
     },
-    "scroll": 13.574649298597194
+    "scroll": 128.225
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/官方插件镜像源.md": {
     "expandedKeys": [
@@ -7964,11 +7966,11 @@
     ],
     "cursor": {
       "from": {
-        "line": 10,
+        "line": 15,
         "ch": 0
       },
       "to": {
-        "line": 10,
+        "line": 15,
         "ch": 0
       }
     },
@@ -8100,15 +8102,46 @@
   "01-编程笔记/04-专项研究/Windows/安装的软件.md": {
     "cursor": {
       "from": {
-        "line": 30,
+        "line": 45,
+        "ch": 0
+      },
+      "to": {
+        "line": 45,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-2-1",
+      "item-1-0",
+      "item-2-8"
+    ],
+    "scroll": 9.55397148676171
+  },
+  "01-编程笔记/04-专项研究/Windows/Windows11开荒.md": {
+    "cursor": {
+      "from": {
+        "line": 46,
         "ch": 11
       },
       "to": {
-        "line": 30,
+        "line": 46,
         "ch": 11
       }
     },
-    "expandedKeys": [],
-    "scroll": 4.511278195488722
+    "scroll": 44.055544019933556,
+    "expandedKeys": []
+  },
+  "01-编程笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 0
   }
 }
