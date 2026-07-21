@@ -8,7 +8,7 @@
 - **没用过但高价值的**（后续重点）：`grill-with-docs` / `grill-me` / `grilling` / `to-spec` / `to-tickets` / `wayfinder` / `implement` / `handoff` / `code-review` / `prototype` / `setup-matt-pocock-skills`。
 - **明确排除**：学写 skill（`writing-great-skills`）——与 superpowers 课重叠。
 - **起手要求**：先建全局地图（ask-matt 路由 + 4 失败模式），再往下钻。
-- **课程网页视觉（全局约定）**：亮色主题统一用 **Solarized 暖米护眼配色**——`--bg #fdf6e3`（base3 温暖米黄底）+ `--fg #586e75`（base01 墨绿灰柔和正文，对比度 ~7.5:1 过 AAA）+ `--code-bg #eee8d5`（base2 代码底），强调色保留 teal `#0d9488`。**只改亮色**；暗色模式由 `prefers-color-scheme` 自动切换、保留原深色。该约定写在 `assets/style.css` 头部注释里，未来新建课程页 `<link>` 共享样式即自动遵循。
+- **课程网页视觉**：采用统一的 **kami 高对比护眼风格**（暖羊皮纸底 `#e8e0cf` + 近纯黑正文 `#121d24` ≈13:1 + 墨蓝强调 `#1B365D`，无暗色模式）。完整约定见 `learning/README.md`「课程网页视觉风格」，写在 `assets/style.css`，新建课程页 `<link>` 共享即遵循。2026-07-20 应用户反馈把正文从 ≈7:1 提到 ≈13:1。
 
 ## v1.1 已确认决策（2026-07-10）
 
@@ -16,14 +16,22 @@
 - **剩余 skill 速览颗粒度**：**每个 skill 一小段（3-5 行）**——触发场景 + 产出 + 一个关键约束/误区，细节留后续单 skill 课。
 - **源链接分支**：仓库默认分支是 `main`（已核实，非 master）。一手源 URL 用 `main`。
 
-## 教学路径（v1.1 版，本次会话交付前 3 课）
+## 教学路径（2026-07-20 重构后）
 
-1. **全局地图**（lesson 1）：4 失败模式 × 主流程 idea→ship（v1.1：grill-with-docs→to-spec→to-tickets→implement）× 三条 on-ramp（triage/diagnosing-bugs/**wayfinder**）× user/model 轴 × `grilling` 共享原语 —— 一张图定坐标
-2. **主流程实战**（lesson 2）：todo CLI 端到端走 grill-with-docs（对齐+共享语言）→ 分支（prototype+handoff）→ to-spec（含 seams）→ to-tickets（tracer-bullet 纵切 + wide refactor 例外）→ implement（tdd + code-review 两轴并行 sub-agents）+ context hygiene / smart zone / handoff
-3. **剩余 skill 速览**（lesson 3）：每个一小段——共享原语 grilling / standalone（grill-me, prototype, research, teach, writing-great-skills）/ 词汇层（domain-modeling, codebase-design）/ 代码库健康 improve-codebase-architecture / 前置 setup-matt-pocock-skills
-4. （后续课）两条老 on-ramp 深走：triage、diagnosing-bugs —— 用户已用过，只需在地图里点名，深挖留后续
-5. （后续课）wayfinder 单独深走：fog-of-war / frontier / 三种 ticket 类型 / HITL vs AFK
-6. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
+> 前 3 课曾为 全局地图 / 主流程实战 / 剩余 skill 速览。用户觉得 L1 与 L3 罗列重复、想更连贯精简 → **合并 L1+L3**（地图 + 全 skill 目录总表）、微调 L2、setup 顺延为 L3。
+
+1. **全局地图 + 全 skill 目录**（lesson 1，合并原 L1+L3）：4 失败模式 × 主干 + 三匝道 + user/model 轴 × `grilling` 原语 × **21 个 skill 一张总表**（分组 / 谁调 / 防 / 触发）——一课定坐标 + 参考卡。context hygiene 移交 L2；"我现在该用哪个"速查表与词汇层细节收敛进总表。
+2. **主流程实战**（lesson 2）：todo CLI 端到端走 grill-with-docs → 分支（prototype+handoff）→ to-spec（含 seams）→ to-tickets（纵切 + wide refactor 例外）→ implement（tdd + code-review 两轴并行）；**context hygiene / smart zone / handoff 的唯一出处**。
+3. **setup-matt-pocock-skills 深挖**（lesson 3，原 L4）：Phase 2 首站；"间接层" + 用户仓库 `docs/agents` 样本。
+4. （后续深挖，用户点单）triage / to-tickets / wayfinder / grill-with-docs / diagnosing-bugs …
+5. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
+
+## Phase 2 · 单 skill 深挖（2026-07-20 起）
+
+用户开启"逐个 skill 详细深挖"阶段（原路径里的"后续课"转为进行中）。约定：
+- 每课复用 kami 样式 + `quiz.js`；**优先锚定用户真实仓库/项目**当活教材。
+- **用户仓库 = 已完成 setup 的样本**：`docs/agents/{issue-tracker,triage-labels,domain}.md` 齐、根用 `CLAUDE.md`、GitHub tracker（PRs=no）、默认 5 标签、single-context。可复用为后续 triage / to-tickets / wayfinder 课的共同真实底座。
+- 深挖顺序由用户点单。已交付：**lesson 3 = setup-matt-pocock-skills**（原 lesson 4，重构后顺延；核心讲"间接层"：skills 写角色、setup 绑本仓现实）。
 
 ## v1.1 框架关键变更（写课注意）
 

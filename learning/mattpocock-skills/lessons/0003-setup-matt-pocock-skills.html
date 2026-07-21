@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 课 · setup-matt-pocock-skills 深挖</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">第 3 课 · 单 skill 深挖 ①</p>
+<h1><code>setup-matt-pocock-skills</code>：给整套 skill 铺一层间接层</h1>
+<p class="lede">从这一课起进入<strong>逐个 skill 深挖</strong>阶段。第一站选它，因为它是所有工程 skill 的<strong>前置</strong>——而且你的 <code>obsidian-note</code> 仓库其实已经躺着一份它的产物，正好当活教材。</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong>setup 不是"装东西"，而是给这套 skill 铺一层<strong>间接层</strong>。工程 skill 只认三个<strong>抽象角色</strong>（issue tracker / triage labels / domain docs），setup 把这三个角色<strong>一次性绑定到"你这个仓库的现实"</strong>——之后每个 skill 都不必知道你用 GitHub 还是 Linear、标签叫什么、<code>CONTEXT.md</code> 在哪。</p>
+</section>
+
+<section>
+<h2>1. 它是什么、何时跑</h2>
+<p>一个 <span class="tag user">user-invoked</span> 的前置 skill（<code>disable-model-invocation: true</code>——你手动敲，agent 不会自己触发）。它的定位只有一句：</p>
+<blockquote>Configure this repo for the engineering skills … <strong>Run once before first use</strong> of the other engineering skills.<br><span style="font-size:.85em">— setup-matt-pocock-skills / SKILL.md（description）</span></blockquote>
+<p>它是 <strong>prompt-driven，不是确定性脚本</strong>：<em>"Explore, present what you found, confirm with the user, then write."</em> 先探你的 repo、把发现摆给你看、你确认、它才动笔——不会闷头写。</p>
+</section>
+
+<section>
+<h2>2. 它配三样东西，产三个文件</h2>
+<p>三个角色，各绑一个 <code>docs/agents/</code> 文件；再在 <code>CLAUDE.md</code>／<code>AGENTS.md</code> 里放一个 <code>## Agent skills</code> 块当指针索引。</p>
+<table>
+<thead><tr><th>角色</th><th>配什么</th><th>产出文件</th><th>谁下游读它</th></tr></thead>
+<tbody>
+<tr><td><strong>issue tracker</strong></td><td>issue 存哪：GitHub（默认）/ GitLab / 本地 md / 其它</td><td><code>docs/agents/issue-tracker.md</code></td><td><code>to-tickets</code> · <code>triage</code> · <code>to-spec</code> · <code>qa</code> · <code>wayfinder</code></td></tr>
+<tr><td><strong>triage labels</strong></td><td>5 个规范角色 → 本仓实际标签串</td><td><code>docs/agents/triage-labels.md</code><br><span style="font-size:.82em;color:var(--muted)">（仅当 <code>triage</code> 已装）</span></td><td><code>triage</code></td></tr>
+<tr><td><strong>domain docs</strong></td><td><code>CONTEXT.md</code>／ADR 在哪；single vs multi-context</td><td><code>docs/agents/domain.md</code></td><td><code>grill-with-docs</code> · <code>improve-codebase-architecture</code> · <code>domain-modeling</code></td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>3. 核心洞察：为什么需要它 = 间接层</h2>
+<p>翻开任何一个工程 skill，它写的都是<strong>角色</strong>，不是命令：</p>
+<ul>
+<li>"publish to the issue tracker" —— 没说 <code>gh issue create</code></li>
+<li>"apply the <code>ready-for-agent</code> label" —— 没说你实际的标签串</li>
+<li>"read <code>CONTEXT.md</code>" —— 没说它在根目录还是 <code>src/*/</code></li>
+</ul>
+<p>setup 就是把这些角色<strong>解析成本仓现实</strong>：GitHub → <code>gh issue create</code>；<code>ready-for-agent</code> → 你的标签串；<code>CONTEXT.md</code> → 根目录路径。于是<strong>一份 skill 能跑遍所有 repo</strong>，可移植性正来自这层间接。</p>
+<div class="callout">
+<h3>你已经见过这个思想</h3>
+<p>这跟 <code>writing-great-skills</code> 里的 <strong>context pointer / single source of truth</strong> 是同一招，只是落在<strong>仓库配置层</strong>：skill 指向角色、角色在一个文件里绑定一次。改 tracker（GitHub→Linear）只改 <code>issue-tracker.md</code> 一处，不用动任何 skill。这也是为什么 <code>wayfinder</code> 等"通过 <code>CLAUDE.md</code> 指针解析 tracker doc，不写死路径"。</p>
+</div>
+</section>
+
+<section>
+<h2>4. 五步流程 + 两条关键规则</h2>
+<ol class="steps">
+<li><h3>Explore（探现状）</h3>读 <code>git remote</code>、<code>CLAUDE.md</code>／<code>AGENTS.md</code>、<code>CONTEXT.md</code>、<code>docs/adr/</code>、<code>docs/agents/</code>、<code>.scratch/</code>，并判断 <code>triage</code> 是否已装、有无 monorepo 信号。原则：<em>"Read whatever exists; don't assume."</em></li>
+<li><h3>Present &amp; ask（一节一问）</h3>逐节确认，每节<strong>先给推荐答案</strong>（一个词就能接受）；exploration 已定的节直接跳过，不啰嗦。</li>
+<li><h3>Confirm（先看再写）</h3>把三个文件草稿 + <code>## Agent skills</code> 块摆给你，<strong>让你先改再写</strong>。</li>
+<li><h3>Write（落盘）</h3>见下方"选文件规则"。<code>## Agent skills</code> 块已存在就<strong>原地更新</strong>、不追加重复。</li>
+<li><h3>Done</h3>告诉你哪些工程 skill 现在会读这些文件；以后直接改 <code>docs/agents/*.md</code> 即可，除非要换 tracker 才需重跑。</li>
+</ol>
+<p><strong>规则一 · 选哪个文件写 <code>## Agent skills</code>：</strong><code>CLAUDE.md</code> 优先 → 其次 <code>AGENTS.md</code> → 两者都无才问你建哪个。<strong>绝不</strong>在已有一个时创建另一个。</p>
+<p><strong>规则二 · 按需跳过整节：</strong><code>triage</code> 没装 → Section B（labels）<strong>整节跳过</strong>；domain 默认 <strong>single-context</strong> 直接写，只有探到 monorepo 信号才提 multi-context。</p>
+</section>
+
+<section>
+<h2>5. 你的仓库就是一份"已完成的 setup"</h2>
+<p>好消息：<code>obsidian-note</code> 里 <code>docs/agents/</code> 三个文件都在，根用的是 <code>CLAUDE.md</code>。逐一对照，你会认出上面每一条：</p>
+<table>
+<thead><tr><th>你的文件</th><th>绑定结果</th></tr></thead>
+<tbody>
+<tr><td><code>issue-tracker.md</code></td><td>GitHub（<code>luguosong/obsidian-note</code>），<em>PRs as a request surface: <strong>no</strong></em></td></tr>
+<tr><td><code>triage-labels.md</code></td><td>默认 5 标签原样（<code>needs-triage</code>…<code>wontfix</code>）</td></tr>
+<tr><td><code>domain.md</code></td><td><strong>single-context</strong>；<code>CONTEXT.md</code>／ADR 尚未创建——缺了就<strong>静默继续</strong>，留给 <code>domain-modeling</code> 惰性创建</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<h3>动手 30 秒</h3>
+<p>打开你自己的 <code>docs/agents/issue-tracker.md</code>，找到 <em>"PRs as a request surface: no"</em> 那一行——那就是 <code>triage</code> 会读的 flag。把它翻成 <code>yes</code>，<code>triage</code> 就会把外部 PR 也拉进队列。这一行，就是"间接层"最小的活样本。</p>
+</div>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="B" data-explain="它不生成 CONTEXT.md（那是 domain-modeling 惰性做的），也不给 issue 分类（那是 triage）；它只把 issue tracker / triage labels / domain docs 三个角色绑定到本仓。">
+<p class="quiz-q">1. 对 <code>setup-matt-pocock-skills</code> 最准确的一句描述是？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>一个把提交上来的 issue 自动分类的 skill</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>把三个抽象角色绑定到本仓现实的前置配置 skill</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>一个负责生成 CONTEXT.md 和 ADR 的 skill</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>一个安装并管理其它 skill 的包管理器</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="规则是 CLAUDE.md 优先、其次 AGENTS.md；两者都无才问你建哪个，绝不在已有一个时创建另一个。你的仓库正是用 CLAUDE.md。">
+<p class="quiz-q">2. 仓库同时有 <code>CLAUDE.md</code> 和 <code>AGENTS.md</code> 时，<code>## Agent skills</code> 块写进哪个？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>写进 <code>CLAUDE.md</code>（它优先）</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>写进 <code>AGENTS.md</code>（它优先）</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>两个文件里各写一份保持同步</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>新建一个 <code>SETUP.md</code> 单独存放</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="C" data-explain="domain.md 明确 &quot;proceed silently … don't flag their absence&quot;。CONTEXT.md / ADR 由 domain-modeling 在真正解析术语或决策时惰性创建，不在 setup 阶段预建。">
+<p class="quiz-q">3. <code>domain.md</code> 指向的 <code>CONTEXT.md</code> 此刻并不存在，skill 探索代码时该怎么办？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>停下来提示用户先把它创建出来</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>自动生成一个空的 <code>CONTEXT.md</code> 占位</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>静默继续，留给 <code>domain-modeling</code> 惰性创建</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>直接报错、中断本次探索流程</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<p>进任何单 skill 课前，先读它的 <code>SKILL.md</code>。本课最高优先级：</p>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md">setup-matt-pocock-skills / SKILL.md</a></strong> —— 五步流程 + 三节问答 + 选文件规则的权威源（本课全部论断的出处）。</li>
+<li><a href="https://github.com/mattpocock/skills/blob/main/docs/engineering/setup-matt-pocock-skills.md">docs/engineering/setup-matt-pocock-skills.md</a> —— 发布版说明（<code>https://www.aihero.dev/skills-setup-matt-pocock-skills</code>）。</li>
+<li><a href="https://github.com/mattpocock/skills/blob/main/CLAUDE.md">仓库 CLAUDE.md</a> —— "issue tracker 指针规则、<code>disable-model-invocation</code> = user-invoked"落地处。</li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点都可以直接问，例如：<em>"triage-labels.md 到底怎么被 triage 读？"</em>、<em>"我想把 issue tracker 换成本地 md，setup 会怎么改？"</em>、<em>"multi-context 的判定信号具体长什么样？"</em> —— 下一站深挖哪个 skill，也由你定。</p>
+</section>
+
+<footer>
+<span><a href="0002-main-flow-in-action.html">← 第 2 课 · 主流程实战</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

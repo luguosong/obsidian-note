@@ -1,4 +1,4 @@
-# Mission: mattpocock/skills — 全局地图 → 工作流实战 → 剩余 skill 用法
+# Mission: mattpocock/skills — 全局地图 → 工作流实战 → 剩余 skill 用法 → 单 skill 深挖
 
 ## Why
 我已经在 obsidian-note 里装了并用着 Matt Pocock 的几个 skill（`tdd` / `diagnosing-bugs` / `triage` / `improve-codebase-architecture`），但**它们在我脑子里是散点**——我没有"什么场景该走哪条流、每个 skill 防的是哪类失败"的全局地图，更没有端到端跑通过一次完整的开发工作流。v1.1（仓库已更新到 1.1.0）把规划 skills 重构成了 `to-spec` / `to-tickets`，新增了第三条 on-ramp `wayfinder`，还把 `grilling` 抽成了共享原语——这些变化我都没跟上。痛点不在"不会某个 skill"，而在**没有一个串起它们的开发闭环心智模型**。本次想解决两条线：①基本的开发工作流（idea→ship）每一步该执行哪个 skill、怎么执行；②主流程之外剩余 skill 的具体用法。
@@ -21,5 +21,5 @@
 
 ## Out of scope
 - **学写 skill**（`writing-great-skills` / SKILL.md 作者视角）——与 superpowers 课的"触发机制"重叠，这条线不开
-- 单个 skill 内部方法论的深挖（如 `tdd` 的 red-green-refactor 细节、`diagnosing-bugs` 的循环、`wayfinder` 的 fog-of-war 细节）——先解决"何时用、怎么串"，深挖是每个 skill 自己的后续课
+- ~~单个 skill 内部方法论的深挖~~ —— 已转为 **Phase 2（进行中，2026-07-20 起）**：全局地图 / 工作流三课交付后，用户开启"逐个 skill 详细深挖"，首站 `setup-matt-pocock-skills`（lesson 4）。深挖顺序由用户点单，见 LR-0003 与 NOTES。
 - 非 Matt Pocock 的 skill（superpowers / hookify / PUA / ponytail 等）的内部机制——只在"协同/优先级"涉及时提及
