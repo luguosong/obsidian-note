@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 7 课 · GNU、自由软件与 Linux 的诞生</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+  <p class="eyebrow">Linux 系统课 · 第 7 课 · Linux 是什么 ②</p>
+  <h1>GNU、自由软件与 Linux 的诞生</h1>
+  <p class="lede">
+    上一课末尾埋了个伏笔：<strong>正是 Unix 的商业封闭，催生了自由的 Linux。</strong>
+    这一课讲清那条线——Stallman 的<strong>自由软件运动</strong>造好了满地工具却缺个内核，Torvalds 1991 用<strong>这些工具</strong>写出了内核。
+    两半一合，才是你今天用的系统。所以它其实该叫 <strong>GNU/Linux</strong>。
+  </p>
+</header>
+
+<section class="win">
+  <p><strong>这节课的收获：</strong>你能说清 <strong>GNU / 自由软件 / GPL（copyleft）</strong> 是什么、「自由」为何不是「免费」；并讲出 Linux 的诞生——<strong>Torvalds 的内核 + GNU 的工具 = 完整系统</strong>，以及 GPL 为什么是让它滚雪球的引擎。</p>
+</section>
+
+<section>
+  <h2>1. Stallman 与 GNU：一场关于「自由」的运动</h2>
+  <p>1979 年后 Unix 被 AT&amp;T 商业封闭（上一课），激怒了 MIT 的黑客 <strong>Richard Stallman</strong>。<strong>1983 年</strong>他发起 <strong>GNU 计划</strong>——名字是个程序员式的递归玩笑：<strong>GNU = GNU's Not Unix</strong>（GNU 不是 Unix），目标是做一套<strong>完全自由的类 Unix 系统</strong>。<strong>1985 年</strong>他又成立 <strong>FSF</strong>（自由软件基金会）。</p>
+  <p>他说的<strong>「自由软件」（free software），free 指的是自由，不是免费</strong>——用他那句名言：</p>
+  <blockquote>"Free software" is a matter of liberty, not price. Think of <strong>"free speech"</strong>, not <strong>"free beer"</strong>.<br><span style="font-size:.85em">— Richard Stallman</span></blockquote>
+  <p>具体是四种自由：<strong>运行、复制、研究/修改（需源码）、再发行改进版</strong>。这就是为什么源码必须一起释出——不然你没法真正「修改」。</p>
+  <div class="callout">
+    <h3>纠正鸟哥一处小年份</h3>
+    <p>鸟哥写「1984 创立 GNU 与 FSF」。更准确的是：GNU 计划<strong>1983 年 9 月</strong>发起、次年开始开发；<strong>FSF 1985 年</strong>才成立。差不了几年，但顺序值得记清。</p>
+  </div>
+</section>
+
+<section>
+  <h2>2. GPL 与 copyleft：自由的「防护罩」</h2>
+  <p>光把源码放出来还不够——怕有人拿去改一改、做成<strong>闭源专利软件</strong>再卖，自由就断了。于是 Stallman 设计了 <strong>GPL</strong>（GNU General Public License）这张<strong>版权声明</strong>，核心机制叫 <strong>copyleft</strong>（著佐权，跟 copyright 唱反调）：</p>
+  <blockquote><strong>只要你用了 GPL 的代码，你的衍生作品也必须同样以 GPL 开源。</strong>自由像「传染」一样一代代传下去，谁也没法把它私有化。</blockquote>
+  <p>几个常被误解的点（鸟哥特意澄清过）：</p>
+  <ul>
+    <li><strong>自由软件可以卖钱</strong>：不能「单纯卖软件」，但可以卖<strong>服务、售后、手册</strong>——这正是 Linux 厂商的商业模式。</li>
+    <li><strong>你不能取消它的 GPL 授权</strong>，哪怕你大改过。</li>
+    <li>版本：<strong>GPLv2</strong>（1991）与 <strong>GPLv3</strong>（2007）——<strong>Linux 内核至今用 GPLv2</strong>。</li>
+  </ul>
+  <p>（顺带：1998 年 OSI 提出<strong>「开源」（open source）</strong>一词，绕开 free 的歧义、更亲商业。GPL 属于「传染性强」的一类；MIT/BSD/Apache 等<strong>宽松许可</strong>则允许闭源商用，这是后来公司更爱它们的原因。）</p>
+</section>
+
+<section>
+  <h2>3. Torvalds 1991：用 GNU 工具写出的内核</h2>
+  <p>芬兰的 <strong>Linus Torvalds</strong>，1988 年进赫尔辛基大学接触 Unix，但全校一台机器、要排队等终端，烦透了：「我何不自己搞一部？」他买了台 <strong>Intel 386</strong>，装上 <strong>Minix</strong>（Tanenbaum 教授写的教学用类 Unix，带源码）边用边学，还做了个著名的 <strong>386 多任务测试</strong>（三个小程序轮流输出 <code>ABABAB…</code>）。</p>
+  <p>不满 Minix 的封闭，<strong>1991 年</strong>他决定自己写内核。<strong>关键一步：他用的是 GNU 的工具</strong>——<code>gcc</code> 编译器 + <code>bash</code> shell（第 5 课：写程序要编译器和环境）。然后在 BBS 上发了那则传世帖子：</p>
+  <blockquote>I'm doing a (free) operating system (just a hobby, <strong>won't be big and professional like gnu</strong>) for 386(486) AT clones… I've currently ported <strong>bash</strong> and <strong>gcc</strong>…<br><span style="font-size:.85em">— Linus Torvalds, 1991（comp.os.minix）</span></blockquote>
+  <p>因为他放内核的 FTP 目录叫 <code>Linux</code>，大家就这么叫开了，首个公开版本是 <strong>0.02</strong>。他还让 Linux 遵循 <strong>POSIX</strong> 标准（内核与应用间的接口规范），从而天然能跑 Unix 上的软件——这个正确决定让 Linux 起步就体质优良。</p>
+</section>
+
+<section>
+  <h2>4. 合体：为什么叫「GNU/Linux」</h2>
+  <p>这里是全课的「aha」。到 1990 年，GNU 已经攒下 <code>gcc</code>、<code>bash</code>、Emacs 和一大堆工具——<strong>唯独内核（GNU Hurd）难产</strong>。而 Linux 恰好<strong>只是个内核、缺一圈工具</strong>。一套操作系统 = 内核 + 外围工具（第 5 课）：</p>
+  <blockquote><strong>GNU（有工具、缺内核）＋ Linux（是内核、缺工具）＝ 一套完整的自由类 Unix 系统。</strong><br>这就是 Stallman 坚持叫它 <strong>GNU/Linux</strong> 的理由。</blockquote>
+  <p>而 <strong>GPL 是让它滚雪球的引擎</strong>：因为开源，全球黑客志工能读码、写驱动、回馈补丁——从 Torvalds <strong>单人维护</strong> → <strong>志工涌入</strong> → <strong>分层分工</strong>（Alan Cox 等副手先测试再汇总），这群素未谋面的人被称为<strong>虚拟团队</strong>（后有 <code>kernel.org</code>）。进步快到「用户要虚拟内存，一周后新版就有了」。1994 年发布 <strong>1.0</strong>，吉祥物是企鹅 Tux。</p>
+  <div class="callout">
+    <h3>现代回响</h3>
+    <p>2005 年 Torvalds 又<strong>为管理内核协作亲手写了 Git</strong>——没错，你天天用的 Git 就是为 Linux 内核而生的。今天开源已无处不在：<strong>Linux 跑着几乎整个互联网服务器、Android（30 亿+ 设备，用 Linux 内核）、全部 Top500 超算、绝大多数云</strong>。这台雪球，1991 年从一个「just a hobby」滚起。</p>
+  </div>
+</section>
+
+<section>
+  <h2>5. 走一遍：你系统里哪些是 GNU、哪个是 Linux</h2>
+  <p>把「GNU/Linux」坐实。当你在终端里干活，其实是两拨东西在协作：</p>
+  <table>
+    <thead><tr><th>你接触的东西</th><th>其实来自</th><th>角色</th></tr></thead>
+    <tbody>
+      <tr><td>调度进程、管内存、驱动硬件</td><td><strong>Linux</strong></td><td>内核（第 5 课四大职责）</td></tr>
+      <tr><td><code>bash</code>（你敲命令的 shell）</td><td>GNU</td><td>外围工具</td></tr>
+      <tr><td><code>ls</code> / <code>cp</code> / <code>cat</code>（coreutils）</td><td>GNU</td><td>外围工具</td></tr>
+      <tr><td><code>gcc</code>（编译器）、glibc（C 库）</td><td>GNU</td><td>外围工具</td></tr>
+    </tbody>
+  </table>
+  <p>所以严格讲，<strong>「Linux」只是那个内核</strong>；你敲的绝大多数命令是 <strong>GNU</strong> 的工具。合起来才是 <strong>GNU/Linux</strong> 这套系统。时间线一眼看完：</p>
+  <ul>
+    <li><strong>1983</strong> GNU 发起 → <strong>1985</strong> FSF/GPL → <strong>1991</strong> Linux 0.02（用 GNU 工具写成）→ <strong>~1992</strong> GNU+Linux 合体 → <strong>1994</strong> Linux 1.0 → <strong>2005</strong> Git 诞生。</li>
+  </ul>
+  <p>下一课：一个内核，怎么长出<strong>成百上千个「发行版」</strong>——以及为什么本课的主线教材 CentOS 7 <strong>已经死了</strong>。</p>
+</section>
+
+<section class="exercise">
+  <h2>检索练习 · 五连 + 进阶</h2>
+  <p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+  <form class="quiz" data-answer="A" data-explain="GNU = GNU's Not Unix（递归缩写），目标是做一套完全自由的类 Unix 系统。它不是用汇编重写 Unix、不是商业专利、也不是给苹果做系统。">
+    <p class="quiz-q">1. GNU 是「GNU's Not Unix」的递归缩写，它的目标是？</p>
+    <label class="opt"><input type="radio" name="q1" value="A"><span>做一套完全自由的类 Unix 系统</span></label>
+    <label class="opt"><input type="radio" name="q1" value="B"><span>用汇编重写整个 Unix 内核</span></label>
+    <label class="opt"><input type="radio" name="q1" value="C"><span>把 Unix 变成商业专利软件</span></label>
+    <label class="opt"><input type="radio" name="q1" value="D"><span>给苹果电脑开发操作系统</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="B" data-explain="Stallman 强调 free 是自由（free speech）不是免费（free beer）——四种自由：运行、复制、研究修改、再发行。自由软件甚至可以卖钱（卖服务）。">
+    <p class="quiz-q">2. Stallman 说的「free software」里的 free 指的是？</p>
+    <label class="opt"><input type="radio" name="q2" value="A"><span>免费、不花一分钱</span></label>
+    <label class="opt"><input type="radio" name="q2" value="B"><span>自由，而非免费</span></label>
+    <label class="opt"><input type="radio" name="q2" value="C"><span>空闲、有空的时候</span></label>
+    <label class="opt"><input type="radio" name="q2" value="D"><span>免责、不负责任</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="C" data-explain="copyleft 的核心：用了 GPL 代码，衍生作品也必须以 GPL 开源，让自由「传染」下去、无法被私有化。它不禁止修改、不允许改成闭源、也不限于非商业。">
+    <p class="quiz-q">3. GPL 的 copyleft（著佐权）核心约束是？</p>
+    <label class="opt"><input type="radio" name="q3" value="A"><span>禁止任何人修改源码</span></label>
+    <label class="opt"><input type="radio" name="q3" value="B"><span>允许改成闭源商业软件</span></label>
+    <label class="opt"><input type="radio" name="q3" value="C"><span>衍生作品也必须以 GPL 开源</span></label>
+    <label class="opt"><input type="radio" name="q3" value="D"><span>只能用于学术非商业用途</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="C" data-explain="严格说 Linux 只是内核，而系统里绝大多数工具（bash/ls/gcc…）来自 GNU，二者合起来才是完整系统，故称 GNU/Linux。不是同公司、同一人或图形界面。">
+    <p class="quiz-q">4. 为什么严格说应该叫「GNU/Linux」？</p>
+    <label class="opt"><input type="radio" name="q4" value="A"><span>Linux 是 GNU 公司的产品</span></label>
+    <label class="opt"><input type="radio" name="q4" value="B"><span>两者由同一个人开发</span></label>
+    <label class="opt"><input type="radio" name="q4" value="C"><span>Linux 是内核，工具多来自 GNU</span></label>
+    <label class="opt"><input type="radio" name="q4" value="D"><span>GNU 是 Linux 的图形界面</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="D" data-explain="Torvalds 1991 写内核时用的是 GNU 的 gcc 编译器与 bash 环境（他 BBS 帖里明说 ported bash 和 gcc）。不是微软/苹果工具，也不是从零自造工具链。">
+    <p class="quiz-q">5. Torvalds 1991 写 Linux 内核时，用的编译器和 shell 来自？</p>
+    <label class="opt"><input type="radio" name="q5" value="A"><span>微软的开发工具</span></label>
+    <label class="opt"><input type="radio" name="q5" value="B"><span>自己从零写的工具链</span></label>
+    <label class="opt"><input type="radio" name="q5" value="C"><span>苹果提供的 Xcode</span></label>
+    <label class="opt"><input type="radio" name="q5" value="D"><span>GNU 的 gcc 与 bash</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <details>
+    <summary>进阶挑战：为什么说「你装的 Ubuntu，严格讲是 GNU/Linux 加上更多」？（先想，再展开）</summary>
+    <p>因为 <strong>Ubuntu ≠ Linux 本身</strong>。它由三层拼成：① <strong>Linux 内核</strong>（调度、内存、驱动硬件——第 5 课四大职责）；② <strong>GNU 的用户空间工具</strong>（bash、coreutils 的 ls/cp、gcc、glibc……你敲的命令几乎都是它）——这两层合起来就是「GNU/Linux」；③ 再叠上<strong>发行版特有的东西</strong>：包管理器（apt）、桌面环境（GNOME）、安装器、预装软件、配置与美化。所以「Linux」这个词日常被拿来指整套系统，但严格说：内核才是 Linux，工具是 GNU，剩下的是发行版加的料——这正是下一课的主题。</p>
+  </details>
+</section>
+
+<section class="source">
+  <h2>推荐一手源</h2>
+  <ul>
+    <li><strong><a href="https://www.gnu.org/gnu/linux-and-gnu.html">GNU 官方 · Linux and the GNU System</a></strong> —— Stallman 亲述「为什么叫 GNU/Linux」，本课「合体」论点的源头。<strong>本课首选精读。</strong></li>
+    <li><a href="https://www.gnu.org/philosophy/free-sw.html">GNU · What is Free Software（四种自由）</a> / <a href="https://opensource.org/osd">OSI · Open Source Definition</a> —— 自由/开源的权威定义。</li>
+    <li><a href="https://en.wikipedia.org/wiki/History_of_Linux">Wikipedia · History of Linux</a> —— Torvalds、Minix、BBS 帖、虚拟团队的时间线。</li>
+    <li><a href="https://linux.vbird.org/linux_basic/centos7/0110whatislinux.php">鸟哥 §1.1.3 / §1.2</a> —— 主线骨架（GNU/GPL/开源、Torvalds 发展）。史实扎实，仅个别年份（GNU/FSF）与核心版本需更新。</li>
+  </ul>
+</section>
+
+<section class="followup">
+  <h2>还不清楚就问我</h2>
+  <p>我是你这门课的老师。任何卡点直接问，例如：<em>「GPLv2 和 GPLv3 差在哪？」「为什么公司更爱 MIT 许可？」「GNU Hurd 现在还活着吗？」</em> 术语随时回查课程 <a href="../GLOSSARY.md">词汇表（GLOSSARY）</a>。</p>
+</section>
+
+<footer>
+  <span><a href="0006-unix-origins.html">← 第 6 课 · Unix 的诞生与哲学</a></span>
+  <span><a href="0008-kernel-vs-distro.html">下一课 · 第 8 课 · 内核 vs 发行版 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>

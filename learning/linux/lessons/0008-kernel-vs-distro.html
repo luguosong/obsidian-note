@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 8 课 · 内核 vs 发行版与现代版图</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+  <p class="eyebrow">Linux 系统课 · 第 8 课 · Linux 是什么 ③</p>
+  <h1>内核 vs 发行版：现代版图与 CentOS 之死</h1>
+  <p class="lede">
+    上一课我们说清了「Linux 严格讲只是内核」。可你平时装的是 Ubuntu、CentOS——那些是<strong>发行版</strong>。
+    这一课分清两者、看懂发行版的两大家族与现代版图，并正面处理一件事：<strong>本课主线教材 CentOS 7，已经死了。</strong>
+  </p>
+</header>
+
+<section class="win">
+  <p><strong>这节课的收获：</strong>你能分清<strong>内核 vs 发行版</strong>（发行版 = 内核 + GNU 工具 + 软件 + 包管理 + 安装器）、读懂内核版本号、说出发行版<strong>两大家族</strong>（RPM 系 / DPKG 系），并知道 <strong>CentOS 7 已 EOL、该换 Rocky/AlmaLinux</strong>。</p>
+</section>
+
+<section>
+  <h2>1. 内核 vs 发行版：别再说「我的 Linux 是 7.x」</h2>
+  <p>上一课坐实了：<strong>Linux 是内核</strong>，加上 GNU 工具才是 GNU/Linux。但内核 + 工具还是黑客级的一堆源码，普通人没法从零装（第 5/7 课）。于是社群和公司把它们打包成能「下一步下一步」装好的成品——这就是 <strong>发行版</strong>（distribution，简称 distro）：</p>
+  <blockquote><strong>发行版 = Linux 内核 + GNU 工具 + 一堆应用软件 + 包管理器 + 安装器 + 发行商自己的工具。</strong></blockquote>
+  <p>所以鸟哥特意纠正过一个常见说法：说「我的 <strong>Linux</strong> 是 7.x」是<strong>不准确</strong>的——<strong>7.x 是发行版（如 CentOS）的版本号，不是内核版本号</strong>。正确说法是「我用的是 CentOS 这个发行版，7.x 版」。内核版本和发行版版本，是<strong>两套编号</strong>。</p>
+</section>
+
+<section>
+  <h2>2. 内核版本号：从奇偶到时间制</h2>
+  <p>内核版本形如 <code>6.6.9</code>：<strong>主版本 . 次版本 . 补丁</strong>。但规则变过：</p>
+  <ul>
+    <li><strong>2.6 之前（旧规则）</strong>：次版本<strong>奇数 = 开发版</strong>、<strong>偶数 = 稳定版</strong>（如 2.5 开发、2.6 稳定）。</li>
+    <li><strong>3.0（2011）起（现规则）</strong>：<strong>废弃奇偶之分</strong>，改<strong>时间制</strong>——每约 9–10 周发一个次版本，全部都是稳定版；主版本号满了就进位（4→5→6…）。</li>
+  </ul>
+  <p>生产环境要选 <strong>LTS</strong>（长期支持）内核，维护约 <strong>6 年</strong>（如 6.1、6.6、6.12）。用 <code>uname -r</code> 就能查当前内核版本。</p>
+  <div class="callout">
+    <h3>纠偏鸟哥：内核早不是 4.0 了</h3>
+    <p>鸟哥停在 <strong>2015 年的 4.0</strong>。如今主线已经走到 <strong>6.x～7.x</strong>（2026），十年迭代了几代。所以看到老教材里的版本号，心里要有「这是十年前快照」的自觉——这正是本课处处纠偏的原因。</p>
+  </div>
+</section>
+
+<section>
+  <h2>3. 发行版两大家族：RPM 系 vs DPKG 系</h2>
+  <p>发行版有几百个，但主要按<strong>包管理器</strong>（装/删/更新软件的工具）分成两大家族，外加一撮独立派：</p>
+  <table>
+    <thead><tr><th>家族</th><th>包管理</th><th>代表发行版</th><th>典型场景</th></tr></thead>
+    <tbody>
+      <tr><td><strong>RPM 系</strong></td><td><code>rpm</code> / <code>dnf</code>（旧 <code>yum</code>）</td><td>RHEL、Fedora、<strong>Rocky</strong>、<strong>Alma</strong>、openSUSE</td><td>企业服务器</td></tr>
+      <tr><td><strong>DPKG 系</strong></td><td><code>dpkg</code> / <code>apt</code></td><td>Debian、Ubuntu、Mint</td><td>桌面、云、通用</td></tr>
+      <tr><td>独立派</td><td>各异</td><td>Arch（<code>pacman</code>、滚动更新）、Gentoo（源码编译）</td><td>折腾 / 学习 / 极客</td></tr>
+    </tbody>
+  </table>
+  <p>好消息：它们再不同，也都用 <a href="https://www.kernel.org/">kernel.org</a> 同一个内核、且遵循 <strong>FHS</strong>（文件系统目录标准）等规范——所以 <code>/etc</code>、<code>/home</code>、<code>/usr</code> 这些目录在哪个发行版里含义都一样（第 6 章会细讲 FHS）。<strong>换发行版，命令和目录八成通用</strong>，主要差在包管理器和自带工具。</p>
+</section>
+
+<section>
+  <h2>4. CentOS 之死：本课主线教材已经过时</h2>
+  <p>这是全课最重要的一处纠偏。<strong>CentOS Linux</strong> 曾是把 RHEL（Red Hat 企业版）源码<strong>免费重编译</strong>出来的社群版——和 RHEL 几乎一模一样却免费，一度是<strong>服务器界的宠儿</strong>，鸟哥这门课就基于它。但——</p>
+  <table>
+    <thead><tr><th>时间</th><th>发生了什么</th></tr></thead>
+    <tbody>
+      <tr><td><strong>2020-12</strong></td><td>红帽宣布<strong>终止 CentOS Linux</strong>，转向 <strong>CentOS Stream</strong>（变成 RHEL 的<strong>上游测试版</strong>，跑在 RHEL <em>前面</em>，不再是稳定克隆）</td></tr>
+      <tr><td><strong>2021-12-31</strong></td><td>CentOS Linux 8 EOL（提前「暴毙」，引发社群哗然）</td></tr>
+      <tr><td><strong>2024-06-30</strong></td><td><strong>CentOS Linux 7 EOL</strong> —— 本课教材的基线，正式停止支持</td></tr>
+    </tbody>
+  </table>
+  <p>社群的反击很快：两个<strong>RHEL 免费重编译版</strong>顶了上来，作为老 CentOS 的<strong>直接替代</strong>：</p>
+  <ul>
+    <li><strong>Rocky Linux</strong>（由 CentOS 联合创始人发起）</li>
+    <li><strong>AlmaLinux</strong>（由 CloudLinux 支持的社群项目）</li>
+  </ul>
+  <div class="callout">
+    <h3>对你意味着什么</h3>
+    <p><strong>跟着这门课学「原理」完全没问题</strong>——绝大多数命令、概念、目录结构十年未变，这也正是本课在做的事。但如果你要<strong>装机实操</strong>，别再装 CentOS 7（已无安全更新）：想要 RHEL 血统就选 <strong>Rocky / AlmaLinux</strong>，想要更主流通用就选 <strong>Ubuntu / Debian</strong>。</p>
+  </div>
+</section>
+
+<section>
+  <h2>5. 应用领域：Linux 到底在哪</h2>
+  <p>第 7 课说「开源无处不在」，这里具体化——也补上鸟哥 2015 版没有的大领域：</p>
+  <table>
+    <thead><tr><th>领域</th><th>Linux 的存在感</th></tr></thead>
+    <tbody>
+      <tr><td><strong>服务器 / 云</strong></td><td>几乎<strong>整个互联网</strong>、AWS/Azure/GCP 的绝大多数实例</td></tr>
+      <tr><td><strong>手机</strong></td><td><strong>Android</strong> 用 Linux 内核，30 亿+ 设备</td></tr>
+      <tr><td><strong>容器 / 云原生</strong> 🆕</td><td><strong>Docker / Kubernetes</strong> 的基石——2015 后爆发，鸟哥没赶上</td></tr>
+      <tr><td><strong>超算</strong></td><td>Top500 超级计算机<strong>100% 跑 Linux</strong></td></tr>
+      <tr><td>嵌入式 / IoT</td><td>路由器、树莓派、车机、智能家居</td></tr>
+      <tr><td>桌面</td><td>份额小，但开发者 / 极客的主力之一</td></tr>
+    </tbody>
+  </table>
+  <p>收束：<strong>你手里的安卓手机、你打开的每个网站背后的服务器、你以后要跑的每个 Docker 容器——底层几乎都是 Linux 内核。</strong>你学它，是在学这个时代的<strong>基础设施</strong>。第 1 章到此，Linux「是什么、从哪来、长什么样」已经清楚了。</p>
+</section>
+
+<section class="exercise">
+  <h2>检索练习 · 五连 + 进阶</h2>
+  <p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+  <form class="quiz" data-answer="C" data-explain="Linux 是内核，有自己的版本号（如 6.6）；7.x 是发行版（如 CentOS）的版本号。二者是两套编号，不能混为一谈。Linux 当然有版本、也不是 macOS。">
+    <p class="quiz-q">1. 「我的 Linux 是 7.x 版」这句话为什么不准确？</p>
+    <label class="opt"><input type="radio" name="q1" value="A"><span>Linux 根本没有版本号</span></label>
+    <label class="opt"><input type="radio" name="q1" value="B"><span>7.x 其实是内核版本号</span></label>
+    <label class="opt"><input type="radio" name="q1" value="C"><span>Linux 是内核，7.x 是发行版版本</span></label>
+    <label class="opt"><input type="radio" name="q1" value="D"><span>应该把它说成 macOS 才对</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="B" data-explain="3.0（2011）起废弃了「奇数开发/偶数稳定」，改为时间制发布，每约 9–10 周一个次版本、全部稳定。不是变严格、也不由发行商决定。">
+    <p class="quiz-q">2. 从 3.0（2011）起，内核版本号的「奇数开发 / 偶数稳定」规则？</p>
+    <label class="opt"><input type="radio" name="q2" value="A"><span>变得更加严格了</span></label>
+    <label class="opt"><input type="radio" name="q2" value="B"><span>已被废弃，改时间制</span></label>
+    <label class="opt"><input type="radio" name="q2" value="C"><span>只用于服务器版本</span></label>
+    <label class="opt"><input type="radio" name="q2" value="D"><span>由各发行商自行决定</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="A" data-explain="按包管理分两大家族：RPM 系（Red Hat/Fedora/Rocky…用 dnf）与 DPKG 系（Debian/Ubuntu…用 apt）。Windows/macOS、Android/iOS、x86/ARM 都不是「发行版家族」。">
+    <p class="quiz-q">3. Linux 发行版按包管理主要分两大家族，下列哪组正确对应？</p>
+    <label class="opt"><input type="radio" name="q3" value="A"><span>Red Hat/Fedora 与 Debian/Ubuntu</span></label>
+    <label class="opt"><input type="radio" name="q3" value="B"><span>Windows 与 macOS</span></label>
+    <label class="opt"><input type="radio" name="q3" value="C"><span>Android 与 iOS</span></label>
+    <label class="opt"><input type="radio" name="q3" value="D"><span>x86 与 ARM</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="B" data-explain="CentOS Linux 已被红帽终止，CentOS 7 于 2024-06-30 EOL、停止支持；替代是 Rocky/AlmaLinux。它曾广泛用于服务器、也不是 Debian 分支（它是 RHEL 重编译）。">
+    <p class="quiz-q">4. 关于本课主线教材 CentOS 7，下列哪项正确？</p>
+    <label class="opt"><input type="radio" name="q4" value="A"><span>仍是最新最推荐的版本</span></label>
+    <label class="opt"><input type="radio" name="q4" value="B"><span>已于 2024 年停止支持</span></label>
+    <label class="opt"><input type="radio" name="q4" value="C"><span>从来不能用于服务器</span></label>
+    <label class="opt"><input type="radio" name="q4" value="D"><span>是 Debian 的一个分支</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="C" data-explain="Android 底层用 Linux 内核。iOS/macOS 是苹果的 Darwin（BSD 系，第 6 课）、Windows 是微软自家内核，都不是 Linux。">
+    <p class="quiz-q">5. 下列哪个系统的底层是 Linux 内核？</p>
+    <label class="opt"><input type="radio" name="q5" value="A"><span>苹果 iOS</span></label>
+    <label class="opt"><input type="radio" name="q5" value="B"><span>微软 Windows</span></label>
+    <label class="opt"><input type="radio" name="q5" value="C"><span>谷歌 Android</span></label>
+    <label class="opt"><input type="radio" name="q5" value="D"><span>苹果 macOS</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <details>
+    <summary>进阶挑战：鸟哥这门课基于 CentOS 7，你现在要动手实操，该装什么发行版？为什么？（先想，再展开）</summary>
+    <p><strong>不要再装 CentOS 7</strong>——它 2024-06-30 已 EOL，不再有安全更新，装了就是个漏洞靶子。选择取决于目标：<strong>①想 100% 贴合鸟哥的 RHEL/CentOS 体验</strong>（同样 RPM/<code>dnf</code>、同样目录与命令）→ 装 <strong>Rocky Linux 或 AlmaLinux</strong>（RHEL 免费重编译，老 CentOS 的直接接班人）；<strong>②想更主流、资料最多、桌面/云都友好</strong> → 装 <strong>Ubuntu</strong>（DPKG 系，<code>apt</code>）。无论哪个，<strong>课里学的原理和绝大多数命令都通用</strong>——发行版只换了「包装」，内核与 GNU 工具是同一套。这正是「学原理不过时、装机要更新」的道理。</p>
+  </details>
+</section>
+
+<section class="source">
+  <h2>推荐一手源</h2>
+  <ul>
+    <li><strong><a href="https://www.centos.org/cl-vs-cs/">CentOS 官方 · CentOS Linux vs Stream</a> + <a href="https://endoflife.date/centos">endoflife.date/centos</a></strong> —— CentOS 终止、Stream 转向、各版本 EOL 日期的权威来源。<strong>本课「CentOS 之死」的一手依据。</strong></li>
+    <li><a href="https://www.kernel.org/">kernel.org</a> / <a href="https://www.kernel.org/releases.html">Active kernel releases</a> —— 当前内核版本与 LTS 列表的权威源。</li>
+    <li><a href="https://rockylinux.org/">Rocky Linux</a> / <a href="https://almalinux.org/">AlmaLinux</a> —— 两个 RHEL 重编译替代品的官网。</li>
+    <li><a href="https://linux.vbird.org/linux_basic/centos7/0110whatislinux.php">鸟哥 §1.2.5 / §1.2.6 / §1.3</a> —— 主线骨架（内核版本、发行版家族、应用）。注意：内核版本、CentOS 现状、容器/云原生均需按本课更新。</li>
+  </ul>
+</section>
+
+<section class="followup">
+  <h2>还不清楚就问我</h2>
+  <p>我是你这门课的老师。任何卡点直接问，例如：<em>「apt 和 dnf 到底差在哪？」「滚动更新 vs 定版发行怎么选？」「RHEL 收费，公司为什么还买？」</em> 术语随时回查课程 <a href="../GLOSSARY.md">词汇表（GLOSSARY）</a>。</p>
+</section>
+
+<footer>
+  <span><a href="0007-gnu-gpl-linux-birth.html">← 第 7 课 · GNU 与 Linux 的诞生</a></span>
+  <span><a href="0009-how-to-learn-linux.html">下一课 · 第 9 课 · 如何学 Linux →</a></span>
+</footer>
+
+</article>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 课 · 五大单元与冯诺依曼架构</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+  <p class="eyebrow">Linux 系统课 · 第 1 课 · 计算机概论 ①</p>
+  <h1>五大单元与冯诺依曼架构：一台计算机到底怎么跑起来</h1>
+  <p class="lede">
+    你天天用 Linux，但机器最底层其实只有一个朴素又惊人的主意：把「程序」也当成「数据」塞进同一块内存，让 CPU 一条一条取出来执行。
+    这一课把这个 <strong>1945 年的主意</strong>讲透——它是后面理解操作系统、进程、内存管理的<strong>地基</strong>。
+    我们以鸟哥第 0 章为骨架，但补上他没点破的名字、纠正几处过度简化。
+  </p>
+</header>
+
+<section class="win">
+  <p><strong>这节课的收获：</strong>你能画出计算机<strong>五大单元</strong>，并说清冯诺依曼「存储程序」思想 + CPU 的<strong>「取指→解码→执行→写回」</strong>循环——一句话：<em>程序和数据同住内存，CPU 逐条把它们取出来跑</em>。</p>
+</section>
+
+<section>
+  <h2>1. 计算机是什么：五大单元</h2>
+  <p>鸟哥给的定义很朴素：计算机就是「<strong>接受输入的指令与数据，经 CPU 的数学与逻辑运算处理后，产生或存储成有用的信息</strong>」。只要能输入、能输出、中间能算，那就是一部计算机——手机、ATM、Raspberry Pi 都算。</p>
+  <p>拆开机箱，真正重要的元件归成 <strong>五大单元</strong>（five units）。前两个对外，后三个是运算核心，其中<strong>控制单元与算术逻辑单元合封在 CPU 里</strong>：</p>
+  <table>
+    <thead><tr><th>单元</th><th>职责</th><th>类比（鸟哥的身体比喻）</th></tr></thead>
+    <tbody>
+      <tr><td><strong>输入单元</strong></td><td>把外界数据送进来（键盘、鼠标、触屏、传感器）</td><td>眼睛、耳朵</td></tr>
+      <tr><td><strong>输出单元</strong></td><td>把结果送出去（屏幕、打印机、喇叭）</td><td>嘴、手</td></tr>
+      <tr><td><strong>控制单元</strong>（Control Unit, CU）</td><td>取指令、解码、协调各单元——发号施令，不做算术</td><td rowspan="2">脑袋瓜子</td></tr>
+      <tr><td><strong>算术逻辑单元</strong>（Arithmetic Logic Unit, ALU）</td><td>真正做算术运算与逻辑判断的地方</td></tr>
+      <tr><td><strong>主存 / 内存</strong>（main memory, RAM）</td><td>存放<strong>当前正在运行</strong>的程序与数据</td><td>脑中「正在想」的内容</td></tr>
+    </tbody>
+  </table>
+  <p>关键的数据流向（记住这条，全课的骨架）：<br>
+  <strong>输入 → 主存 → CPU（读）→ 主存（写回）→ 输出</strong>。CPU 要处理的一切——<strong>不管是程序还是数据</strong>——都先躺在主存里，算完再写回主存。所有搬运都由 CPU 的控制单元发命令。</p>
+
+  <div class="callout">
+    <h3>鸟哥的身体类比（当记忆锚点）</h3>
+    <p>CPU = 脑；主存 = 脑中<strong>正在想</strong>的内容；硬盘 = 脑中<strong>沉睡的回忆</strong>（要用时得先搬回主存）；主板 = 神经系统（连接一切）；电源 = 心脏（供血）。这套比喻不精确，但帮你先立起骨架。<span style="font-size:.85em">— 鸟哥 §0.1.4 运作流程</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>2. 冯诺依曼架构：程序也是数据</h2>
+  <p>鸟哥把五大单元讲清了，却<strong>没点破它的名字</strong>。这套「五大单元 + 程序和数据放在同一块内存」的组织方式，就是 1945 年 John von Neumann 在《First Draft of a Report on the EDVAC》里确立的 <strong>冯诺依曼架构</strong>（von Neumann architecture），其核心叫 <strong>存储程序</strong>（stored-program）。</p>
+  <p>惊人之处在于：<strong>程序本身也以二进制存在内存里，和数据没有本质区别</strong>。这意味着——</p>
+  <ul>
+    <li>换个程序 = 往内存里装另一串二进制，<strong>无需改动任何硬件</strong>。</li>
+    <li>所以<strong>同一台机器</strong>既能跑浏览器、又能跑 Linux 内核、还能跑编译器——它们只是内存里不同的字节。</li>
+    <li>甚至「程序能生成、修改另一个程序」（编译器、JIT）也源于此：程序既是被执行的指令，也是能被读写的数据。</li>
+  </ul>
+  <p>再具体一点：<strong>一条指令本身也只是一串位</strong>——一个<strong>操作码</strong>（opcode，做什么，例如「加」）加上若干<strong>操作数</strong>（operand，对谁做，例如「用哪两个寄存器」）。CPU 取到的，就是这串位。</p>
+  <div class="callout">
+    <h3>对比：Harvard 架构</h3>
+    <p>另有一种 <strong>Harvard 架构</strong>（哈佛架构）把指令和数据分成两块独立内存、各走各的总线。它在单片机和 CPU 的<strong>缓存层</strong>里仍在用（下一节的伏笔）。但你桌面/服务器上的通用计算机，主内存模型是冯诺依曼。<span style="font-size:.85em">— 维基百科 von Neumann architecture</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>3. 取指→解码→执行→写回：CPU 的心跳</h2>
+  <p>鸟哥的「运作流程」是身体类比；真正的机制是 <strong>指令周期</strong>（instruction cycle）——CPU 不停重复的四步循环。理解它，你就理解了「计算机在跑」到底是什么意思：</p>
+  <div class="flow">
+    <div class="flow-step"><span class="sk">① 取指 fetch</span><span class="防">控制单元按 <strong>PC</strong> 记的地址，从内存取出下一条指令</span></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step"><span class="sk">② 解码 decode</span><span class="防">指令存入 <strong>IR</strong>，控制单元解码：看懂要干什么、取哪些数据</span></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step"><span class="sk">③ 执行 execute</span><span class="防">ALU 真正运算 / 判断（或读写内存、驱动设备）</span></div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step"><span class="sk">④ 写回 writeback</span><span class="防">结果写回寄存器或内存，PC 前进到下一条</span></div>
+  </div>
+  <p>循环里有两个关键<strong>寄存器</strong>（register，CPU 里最快最小的存储）：<strong>程序计数器</strong>（Program Counter, PC）记着「下一条指令在内存哪个地址」；取指后，指令被搬进<strong>指令寄存器</strong>（Instruction Register, IR）供解码。每跑完一条，PC 前进；遇到跳转/循环就<strong>改写 PC</strong>——这就是 <code>if</code>、<code>for</code>、函数调用在最底层的样子。</p>
+  <blockquote>这个循环每秒重复<strong>数十亿次</strong>（这正是「GHz」的含义）。你敲的每条命令、每个进程、整个操作系统，本质<strong>都是这个四步循环在跑</strong>。<br><span style="font-size:.85em">— 综合 Dive Into Systems §5.2 / Patterson &amp; Hennessy</span></blockquote>
+</section>
+
+<section>
+  <h2>4. 走一遍：<code>c = a + b</code> 在底层发生了什么</h2>
+  <p>把前三节拧成一个具体例子。设 <code>a</code>、<code>b</code>、<code>c</code> 是内存里的三个数；编译后的程序，就是内存里这样 <strong>4 条指令</strong>（简化的 load-store 写法，<code>R1/R2/R3</code> 为 CPU 寄存器）。每条都走一遍「取指→解码→执行→写回」：</p>
+  <ol class="steps">
+    <li><h3><code>LOAD R1, [a]</code></h3>执行阶段<strong>访存</strong>：把内存里的 a 搬进寄存器 R1（走总线，慢）</li>
+    <li><h3><code>LOAD R2, [b]</code></h3>同样四步：把 b 搬进 R2</li>
+    <li><h3><code>ADD R3, R1, R2</code></h3>执行阶段 <strong>ALU 真正做加法</strong>，和放进 R3（只碰寄存器，极快）</li>
+    <li><h3><code>STORE [c], R3</code></h3>写回<strong>内存</strong>：把 R3 的结果写进 c</li>
+  </ol>
+  <p>三个洞察，正好复盘全课：</p>
+  <ul>
+    <li><strong>程序也是数据</strong>：这 4 条指令和 a/b/c 一样躺在内存里，PC 依次走过它们——这就是存储程序。</li>
+    <li><strong>ALU 只在第 3 步真正「算」</strong>：其余 3 步都在搬数据。计算机大多数时间在<strong>搬运</strong>，不在运算。</li>
+    <li><strong>瓶颈就在眼前</strong>：两次 <code>LOAD</code> + 一次 <code>STORE</code> 全在挤 CPU↔内存总线——下一节量化它有多慢。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>5. 冯诺依曼瓶颈与内存墙：慢在哪、慢多少</h2>
+  <p>鸟哥反复强调「内存不足系统就很卡」「加大内存能提升性能」——<strong>观察是对的，但他没说透为什么</strong>。这一节补上「知其所以然」。</p>
+  <p>真相：CPU 和主存之间是<strong>一条共享总线</strong>（bus），指令和数据都得挤这条路；而且<strong>CPU 快、主存慢</strong>，CPU 常常在<strong>干等数据</strong>。这个结构性限制就叫 <strong>冯诺依曼瓶颈</strong>（von Neumann bottleneck）。</p>
+  <p>到底慢多少？给一组 2024 年的数量级（4 GHz CPU，一个时钟周期 ≈ 0.25 ns）：</p>
+  <table>
+    <thead><tr><th>存储层</th><th>约延迟</th><th>≈ 多少 CPU 周期</th></tr></thead>
+    <tbody>
+      <tr><td>寄存器 register</td><td>~0.25 ns</td><td>~1</td></tr>
+      <tr><td>L1 缓存 cache</td><td>~0.7 ns</td><td>~3</td></tr>
+      <tr><td>L2 缓存</td><td>~2.5 ns</td><td>~10</td></tr>
+      <tr><td>L3 缓存</td><td>~8 ns</td><td>~30</td></tr>
+      <tr><td><strong>主存 DRAM</strong></td><td><strong>~70 ns</strong></td><td><strong>~280</strong></td></tr>
+    </tbody>
+  </table>
+  <p>读一次主存 ≈ <strong>让 CPU 空等约 280 个周期</strong>——这段时间够它跑几百条寄存器内的指令了。CPU 逐年变快、内存却没跟上，这道持续拉大的鸿沟有个名字：<strong>内存墙</strong>（memory wall）。回看上一节的 <code>c=a+b</code>：真正的加法几乎免费，两次 <code>LOAD</code> 才是大头。</p>
+  <p>现代 CPU 用这些手段<strong>缓解</strong>它（不是消除）：</p>
+  <ul>
+    <li><strong>寄存器 + 多级缓存</strong>（L1/L2/L3 <strong>cache</strong>，缓存）：把近期要用的数据放在离 CPU 更近的快存里；指令缓存与数据缓存常分开，这里就<strong>借了 Harvard 架构的思路</strong>（呼应第 2 节）。</li>
+    <li><strong>流水线</strong>（pipeline）、<strong>多核</strong>：让 CPU 少等、多并行。</li>
+  </ul>
+  <p>于是鸟哥那句「加内存变快」就有了底层解释：数据老在<strong>慢速层</strong>之间来回搬时，系统就卡；内存够大、缓存命中高，CPU 才不空等。</p>
+  <div class="callout">
+    <h3>纠正一处教学简化</h3>
+    <p>第 1 节说「CPU 直接从主存读数据」，那是为了先立骨架的<strong>简化</strong>。真实的存储层级是 <code>CPU ↔ 寄存器 ↔ 缓存 ↔ 主存 ↔ SSD/硬盘</code>，越往下越大越慢。这条<strong>存储金字塔</strong>是<strong>第 3 课</strong>的主题（见<a href="../MISSION.md">课程路线</a>），本课先埋点。</p>
+  </div>
+</section>
+
+<section class="exercise">
+  <h2>检索练习 · 五连 + 进阶</h2>
+  <p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+  <form class="quiz" data-answer="B" data-explain="存储程序 = 把程序当作数据、以二进制和数据一同放进同一块内存；正因如此才能不改硬件就换程序。A/D 把它错放到硬盘/显存，C 混成了烧录进芯片。">
+    <p class="quiz-q">1. 冯诺依曼架构里「存储程序」（stored-program）指的是什么？</p>
+    <label class="opt"><input type="radio" name="q1" value="A"><span>程序与数据分开存放于硬盘分区</span></label>
+    <label class="opt"><input type="radio" name="q1" value="B"><span>程序与数据一同以二进制存内存</span></label>
+    <label class="opt"><input type="radio" name="q1" value="C"><span>程序由控制单元烧录进芯片内部</span></label>
+    <label class="opt"><input type="radio" name="q1" value="D"><span>程序运行时才复制进显卡显存中</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="C" data-explain="程序计数器 PC 是 CPU 内一个寄存器，专门记「下一条指令的内存地址」，每取一条便前进。ALU 只管算、RAM 是存放处、IO 管内外传输，都不负责记地址。">
+    <p class="quiz-q">2. 在「取指→解码→执行→写回」循环里，负责记住「下一条指令在内存哪个地址」的是？</p>
+    <label class="opt"><input type="radio" name="q2" value="A"><span>算术逻辑单元 ALU</span></label>
+    <label class="opt"><input type="radio" name="q2" value="B"><span>主存储器 RAM</span></label>
+    <label class="opt"><input type="radio" name="q2" value="C"><span>程序计数器 PC</span></label>
+    <label class="opt"><input type="radio" name="q2" value="D"><span>输入输出单元 IO</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="D" data-explain="根因是 CPU 与内存共用一条总线、内存又慢于 CPU（冯诺依曼瓶颈），CPU 常在等数据；加内存/加缓存就是减少在慢速层来回搬。A/B/C 都是常见的错误因果。">
+    <p class="quiz-q">3. 为什么「加内存」常能提升性能、现代 CPU 又要用缓存？根本原因是——</p>
+    <label class="opt"><input type="radio" name="q3" value="A"><span>内存越大 CPU 的主频就自动越高</span></label>
+    <label class="opt"><input type="radio" name="q3" value="B"><span>内存能代替 CPU 直接执行指令</span></label>
+    <label class="opt"><input type="radio" name="q3" value="C"><span>硬盘容量决定了内存的读写速度</span></label>
+    <label class="opt"><input type="radio" name="q3" value="D"><span>CPU 与内存间单一总线形成瓶颈</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="A" data-explain="ALU 只在第 3 条 ADD 那步真正做加法；两次 LOAD、一次 STORE 都是在 CPU 与内存间搬数据，取指/解码由控制单元完成。这正是「计算机大多时间在搬运而非运算」的直观证据。">
+    <p class="quiz-q">4. 在 <code>c = a + b</code> 的四条指令里，ALU 真正执行「加法」是在哪一步？</p>
+    <label class="opt"><input type="radio" name="q4" value="A"><span>第 3 条 <code>ADD R3,R1,R2</code></span></label>
+    <label class="opt"><input type="radio" name="q4" value="B"><span>第 1 条 <code>LOAD</code> 读 a 时</span></label>
+    <label class="opt"><input type="radio" name="q4" value="C"><span>第 4 条 <code>STORE</code> 写回时</span></label>
+    <label class="opt"><input type="radio" name="q4" value="D"><span>取指阶段由控制单元完成</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="C" data-explain="L1 缓存 ~0.7 ns、主存 DRAM ~70 ns，相差约 100 倍（约 280 个 CPU 周期）。这个持续拉大的鸿沟就是「内存墙」，也是多级缓存存在的根本理由。">
+    <p class="quiz-q">5. 相比访问 L1 缓存，读一次主存 DRAM 大约慢多少（数量级）？</p>
+    <label class="opt"><input type="radio" name="q5" value="A"><span>几乎一样、可忽略</span></label>
+    <label class="opt"><input type="radio" name="q5" value="B"><span>大约两三倍而已</span></label>
+    <label class="opt"><input type="radio" name="q5" value="C"><span>大约上百倍之多</span></label>
+    <label class="opt"><input type="radio" name="q5" value="D"><span>大约上百万倍</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <details>
+    <summary>进阶挑战：交换两个变量 <code>swap(a, b)</code> 在内存层面要几次访存？（先自己想，再展开）</summary>
+    <p>借一个临时量：<code>t=a; a=b; b=t;</code>。落到指令：<code>LOAD R1,[a]</code> → <code>LOAD R2,[b]</code> → <code>STORE [a],R2</code> → <code>STORE [b],R1</code>——共 <strong>2 次 LOAD + 2 次 STORE = 4 次访存</strong>，全程<strong>不用 ALU</strong>（交换是纯搬运）。看懂这点，你就明白为什么「减少访存 / 提高缓存命中」是性能优化的核心。</p>
+  </details>
+</section>
+
+<section class="source">
+  <h2>推荐一手源</h2>
+  <ul>
+    <li><strong><a href="https://diveintosystems.org/book/C5-Arch/von.html">Dive Into Systems · §5.2 The von Neumann Architecture</a></strong> —— 免费在线系统教材，本课最贴切的一手源：五大单元、存储程序、指令周期、冯诺依曼瓶颈一处讲全。<strong>本课首选精读。</strong></li>
+    <li><a href="https://linux.vbird.org/linux_basic/centos7/0105computers.php">鸟哥私房菜 · 第 0 章 计算机概论</a> —— 主线骨架（§0.1 五大单元 / 运作流程）。注意 2016 CentOS7 视角，硬件举例已旧。</li>
+    <li><a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann architecture — Wikipedia</a> —— 快速权威参考：存储程序、瓶颈、与 Harvard 架构对比。</li>
+  </ul>
+</section>
+
+<section class="followup">
+  <h2>还不清楚就问我</h2>
+  <p>我是你这门课的老师。任何卡点直接问，例如：<em>「程序凭什么能当数据存？」「缓存到底几层、怎么决定放什么？」「操作系统在这套硬件里算是什么？」</em> 术语随时回查课程 <a href="../GLOSSARY.md">词汇表（GLOSSARY）</a>。</p>
+</section>
+
+<footer>
+  <span><a href="../MISSION.md">课程使命 / 第 0 章路线</a></span>
+  <span><a href="0002-isa-risc-cisc-x86-arm.html">下一课 · 第 2 课 · CPU 深入 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>
