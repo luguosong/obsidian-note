@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>第 1 课 · 全局地图 + 全 skill 目录</title>
 <link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
 </head>
 <body>
 <article>
@@ -13,9 +15,9 @@
   <p class="eyebrow">mattpocock/skills 系统课 · 第 1 课 · 基于 v1.1.0</p>
   <h1>全局地图 + 全 skill 目录：一课定坐标</h1>
   <p class="lede">
-    你已经零散用过 <code>tdd</code> / <code>diagnosing-bugs</code> / <code>triage</code> / <code>improve-codebase-architecture</code>。
-    这节课不深挖任何一个——它给你<strong>把它们全串起来的那张图</strong>，外加一张<strong>覆盖全部 skill 的目录总表</strong>当参考卡。
-    仓库自带的 <code>ask-matt</code> 就是这张图本身，而图建立在一个更深的判断上：所有 skill 都在防 <strong>4 类 agent 失败模式</strong>。
+    你已经零散用过 <code>tdd</code> / <code>diagnosing-bugs</code> / <code>triage</code> / <code>improve-codebase-architecture</code>（依次是：测试驱动开发 / 诊断难 bug / 工单分诊 / 架构体检）。
+    这节课不深挖任何一个——它给你<strong>把它们全串起来的那张图</strong>，外加一张<strong>覆盖全部 skill（技能）的目录总表</strong>当参考卡。
+    仓库自带的 <code>ask-matt</code>（问 Matt · 路由器）就是这张图本身，而图建立在一个更深的判断上：所有 skill 都在防 <strong>4 类 agent（AI 代理）失败模式</strong>。
   </p>
 </header>
 
@@ -42,23 +44,23 @@
   <h2>2. 主干 + 三条匝道：工作怎么流动</h2>
   <p>绝大多数真实工作走这条主线（v1.1）。把每一步在心里对一下它防第几类失败：</p>
   <div class="flow">
-    <div class="flow-step"><span class="sk">grill-with-docs</span><span class="防">入口·对齐想法<br>防 #1+#2<br>沉淀 CONTEXT.md/ADR</span></div>
+    <div class="flow-step"><span class="sk">grill-with-docs（有库拷问）</span><span class="防">入口·对齐想法<br>防 #1+#2<br>沉淀 CONTEXT.md（领域上下文档）/ADR（架构决策记录）</span></div>
     <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">to-spec</span><span class="防">对话→spec<br>只 synthesize<br>谈 seams（防 #4）</span></div>
+    <div class="flow-step"><span class="sk">to-spec（转规格）</span><span class="防">对话→spec（规格）<br>只 synthesize（综合）<br>谈 seams（接缝，防 #4）</span></div>
     <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">to-tickets</span><span class="防">→纵切片<br>声明 blocking edges</span></div>
+    <div class="flow-step"><span class="sk">to-tickets（转工单）</span><span class="防">→纵切片<br>声明 blocking edges（阻塞依赖边）</span></div>
     <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">implement</span><span class="防">每 ticket 新会话<br>驱动 tdd（防 #3）<br>收尾 code-review</span></div>
+    <div class="flow-step"><span class="sk">implement（实现）</span><span class="防">每 ticket 新会话<br>驱动 tdd（防 #3）<br>收尾 code-review</span></div>
     <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">ship</span><span class="防">提交到当前分支</span></div>
+    <div class="flow-step"><span class="sk">ship（上线）</span><span class="防">提交到当前分支</span></div>
   </div>
-  <p>主干上有<strong>两个分支</strong>：需要 <strong>runnable 答案</strong>（状态/逻辑/UI 得跑起来看）→ 绕进 <code>prototype</code>，用 <code>handoff</code> 双向桥接（留答案删代码）；<strong>是否多会话构建</strong>→ 是则走完整 <code>to-spec</code>/<code>to-tickets</code>，否则同窗口直接 <code>implement</code>。（主流程如何一步步走，见<a href="0002-main-flow-in-action.html">第 2 课</a>。）</p>
+  <p>主干上有<strong>两个分支</strong>：需要 <strong>runnable（可运行的）答案</strong>（状态/逻辑/UI 得跑起来看）→ 绕进 <code>prototype</code>（原型），用 <code>handoff</code>（交接文档）双向桥接（留答案删代码）；<strong>是否多会话构建</strong>→ 是则走完整 <code>to-spec</code>/<code>to-tickets</code>，否则同窗口直接 <code>implement</code>。（主流程如何一步步走，见<a href="0002-main-flow-in-action.html">第 2 课</a>。）</p>
 
   <h3>三条匝道：不从"我有个想法"起步的入口</h3>
   <table>
     <thead><tr><th>起点</th><th>匝道</th><th>汇入</th></tr></thead>
     <tbody>
-      <tr><td><strong>别人提的</strong> bug / 需求堆着</td><td><code>triage</code></td><td>raw issue → agent-ready → <code>implement</code></td></tr>
+      <tr><td><strong>别人提的</strong> bug / 需求堆着</td><td><code>triage</code></td><td>raw issue（原始工单）→ agent-ready（可交 agent 执行）→ <code>implement</code></td></tr>
       <tr><td>线上炸了 / <strong>难 bug</strong></td><td><code>diagnosing-bugs</code></td><td>先建紧反馈回路 → 修 + 回归</td></tr>
       <tr><td><strong>巨大且模糊</strong>，一会话装不下</td><td><code>wayfinder</code></td><td>画共享地图，每会话解一个决策 → 汇入 <code>to-spec</code></td></tr>
     </tbody>
@@ -66,51 +68,53 @@
 
   <div class="callout">
     <h3>底下垫着：<code>grilling</code> 是共享原语</h3>
-    <p>v1.1 把"relentless interview"抽成独立的 model-invoked skill <code>grilling</code>——一次一题、每题带推荐答案，事实去查代码库、决策留给你，且<strong>带确认 gate</strong>（共识前不 enact plan）。<code>grill-me</code>（无代码库）和 <code>grill-with-docs</code>（有代码库）都只是它的两种壳。</p>
+    <p>v1.1 把"relentless interview（不停追问式访谈）"抽成独立的 model-invoked skill <code>grilling</code>——一次一题、每题带推荐答案，事实去查代码库、决策留给你，且<strong>带确认 gate（确认关卡）</strong>（共识前不 enact plan，即达成共识前不执行方案）。<code>grill-me</code>（无代码库）和 <code>grill-with-docs</code>（有代码库）都只是它的两种壳。</p>
   </div>
 </section>
 
 <section>
   <h2>3. 全 skill 目录总表（参考卡）</h2>
   <p>整套 skill 先按<strong>谁调</strong>分两组，组内按<strong>调用先后</strong>排——一眼看清"谁负责编排、谁是可复用纪律"，又能顺着用它的先后找到它。</p>
-  <p>README 沿这条轴把 skill 劈两半：<span class="tag user">user-invoked</span> 只能你手动打 <code>/名字</code>、负责<strong>编排流程</strong>（标志 <code>disable-model-invocation: true</code>）；<span class="tag model">model-invoked</span> 你或 agent 都能自动 reach、持有<strong>可复用的纪律</strong>。<strong>防</strong> 列对应上面 4 失败模式（"—" = 非防病，是基础设施 / 路由 / 学习）。</p>
+  <p>README 沿这条轴把 skill 劈两半：<span class="tag user">user-invoked</span>（用户手动触发）只能你手动打 <code>/名字</code>、负责<strong>编排流程</strong>（标志 <code>disable-model-invocation: true</code>，即禁止模型自动触发）；<span class="tag model">model-invoked</span>（模型自动触发）你或 agent 都能自动 reach（触达调用）、持有<strong>可复用的纪律</strong>。<strong>防</strong> 列对应上面 4 失败模式（"—" = 非防病，是基础设施 / 路由 / 学习）。</p>
   <blockquote>一条铁律：<strong>user-invoked 可以调 model-invoked，但绝不调另一个 user-invoked</strong>——入口彼此平级、互不嵌套。</blockquote>
 
   <h3><span class="tag user">user-invoked</span> · 你手动编排（按调用先后）</h3>
   <table>
-    <thead><tr><th>skill</th><th>分组</th><th>防</th><th>触发场景 / 产出（一句话）</th></tr></thead>
+    <thead><tr><th>skill</th><th>分组</th><th>防</th><th>状态</th><th>触发场景 / 产出（一句话）</th></tr></thead>
     <tbody>
-      <tr><td><code>setup-matt-pocock-skills</code></td><td>前置</td><td>—</td><td>repo 首次用工程 skill 前，配 tracker/labels/domain（<a href="0003-setup-matt-pocock-skills.html">第 3 课深挖</a>）</td></tr>
-      <tr><td><code>ask-matt</code></td><td>路由</td><td>—</td><td>"现在该用哪个 skill？" → 给你这张地图</td></tr>
-      <tr><td><code>grill-with-docs</code></td><td>主流程 ①入口</td><td>#1 #2</td><td>有代码库时对齐想法，边聊边沉淀 CONTEXT.md/ADR</td></tr>
-      <tr><td><code>to-spec</code></td><td>主流程 ②</td><td>#4</td><td>把对话综合成 spec（不 interview），谈定 seams</td></tr>
-      <tr><td><code>to-tickets</code></td><td>主流程 ③</td><td>#4</td><td>spec → tracer-bullet 纵切片 + blocking edges</td></tr>
-      <tr><td><code>implement</code></td><td>主流程 ④</td><td>#3</td><td>每 ticket 开新会话，驱动 tdd、收尾 code-review</td></tr>
-      <tr><td><code>triage</code></td><td>匝道</td><td>#1</td><td>别人提的 raw issue → agent-ready issue</td></tr>
-      <tr><td><code>wayfinder</code></td><td>匝道</td><td>#1 #4</td><td>巨大且模糊的工程：画地图，每会话只解一个决策</td></tr>
-      <tr><td><code>grill-me</code></td><td>standalone</td><td>#1</td><td>无代码库时锐化想法（stateless，不留痕）</td></tr>
-      <tr><td><code>improve-codebase-architecture</code></td><td>体检</td><td>#4</td><td>闲时给代码库体检，扫加深机会 → 生成 idea 进主流程</td></tr>
-      <tr><td><code>handoff</code></td><td>跨会话</td><td>—</td><td>上下文压成文档换新会话（双向桥接）</td></tr>
-      <tr><td><code>teach</code></td><td>standalone</td><td>—</td><td>跨会话学一个概念（就是本课）</td></tr>
-      <tr><td><code>writing-great-skills</code></td><td>standalone</td><td>—</td><td>写 / 编辑 skill（本课 out of scope）</td></tr>
+      <tr><td><code>setup-matt-pocock-skills</code>（首次配置）</td><td>前置</td><td>—</td><td><strong>有状态</strong> · 写 docs/agents 配置</td><td>repo 首次用工程 skill 前，配 tracker/labels/domain（<a href="0004-setup-matt-pocock-skills.html">第 4 课深挖</a>）</td></tr>
+      <tr><td><code>ask-matt</code>（路由）</td><td>路由</td><td>—</td><td><strong>无状态</strong> · 纯路由</td><td>"现在该用哪个 skill？" → 给你这张地图</td></tr>
+      <tr><td><code>grill-with-docs</code>（有库拷问）</td><td>主流程 ①入口</td><td>#1 #2</td><td><strong>有状态</strong> · 沉淀 CONTEXT.md/ADR</td><td>有代码库时对齐想法，边聊边沉淀 CONTEXT.md/ADR</td></tr>
+      <tr><td><code>to-spec</code>（转规格）</td><td>主流程 ②</td><td>#4</td><td><strong>有状态</strong>† · spec 发到 tracker</td><td>把对话综合成 spec（不 interview），谈定 seams</td></tr>
+      <tr><td><code>to-tickets</code>（转工单）</td><td>主流程 ③</td><td>#4</td><td><strong>有状态</strong>† · 票据落 tracker、逐张续</td><td>spec → tracer-bullet（曳光弹式）纵切片 + blocking edges</td></tr>
+      <tr><td><code>implement</code>（实现）</td><td>主流程 ④</td><td>#3</td><td><strong>无状态</strong> · 只实现 + 提交</td><td>每 ticket 开新会话，驱动 tdd、收尾 code-review</td></tr>
+      <tr><td><code>triage</code>（工单分诊）</td><td>匝道</td><td>#1</td><td><strong>有状态</strong> · 读回上次 triage notes</td><td>别人提的 raw issue → agent-ready issue</td></tr>
+      <tr><td><code>wayfinder</code>（探路）</td><td>匝道</td><td>#1 #4</td><td><strong>有状态</strong> · tracker 上维护 map</td><td>巨大且模糊的工程：画地图，每会话只解一个决策</td></tr>
+      <tr><td><code>grill-me</code>（无库拷问）</td><td>standalone</td><td>#1</td><td><strong>无状态</strong> · 不留痕</td><td>无代码库时锐化想法</td></tr>
+      <tr><td><code>improve-codebase-architecture</code>（架构体检）</td><td>体检</td><td>#4</td><td><strong>有状态</strong> · 写 CONTEXT.md/ADR</td><td>闲时给代码库体检，扫加深机会 → 生成 idea 进主流程</td></tr>
+      <tr><td><code>handoff</code>（交接）</td><td>跨会话</td><td>—</td><td><strong>有状态</strong>† · 写 handoff 文档换会话</td><td>上下文压成文档换新会话（双向桥接）</td></tr>
+      <tr><td><code>teach</code>（教学）</td><td>standalone</td><td>—</td><td><strong>有状态</strong> · 存教学工作区（跨会话续）</td><td>跨会话学一个概念（就是本课）</td></tr>
+      <tr><td><code>writing-great-skills</code>（写 skill）</td><td>standalone</td><td>—</td><td><strong>无状态</strong> · 纯参考</td><td>写 / 编辑 skill（本课 out of scope，范围外）</td></tr>
     </tbody>
   </table>
 
   <h3><span class="tag model">model-invoked</span> · 自动 reach 的纪律（按调用先后）</h3>
   <table>
-    <thead><tr><th>skill</th><th>分组</th><th>防</th><th>触发场景 / 产出（一句话）</th></tr></thead>
+    <thead><tr><th>skill</th><th>分组</th><th>防</th><th>状态</th><th>触发场景 / 产出（一句话）</th></tr></thead>
     <tbody>
-      <tr><td><code>grilling</code></td><td>共享原语</td><td>#1</td><td>relentless interview（一次一题+推荐+确认 gate），垫在 grill-* 下</td></tr>
-      <tr><td><code>prototype</code></td><td>分支</td><td>#1</td><td>设计得跑起来看 → 一次性小程序，留答案删代码</td></tr>
-      <tr><td><code>research</code></td><td>支援</td><td>#1</td><td>后台读一手源 → cited md 素材（带进 grill-with-docs）</td></tr>
-      <tr><td><code>tdd</code></td><td>implement 内</td><td>#3</td><td>单点行为测试先行（红→绿→重构）</td></tr>
-      <tr><td><code>code-review</code></td><td>implement 收尾</td><td>#3 #4</td><td>Standards + Spec 两轴 parallel sub-agents</td></tr>
-      <tr><td><code>diagnosing-bugs</code></td><td>匝道</td><td>#3</td><td>难 bug：先建能变红的紧反馈回路再修</td></tr>
-      <tr><td><code>domain-modeling</code></td><td>词汇层</td><td>#2</td><td>领域术语磨尖 + CONTEXT.md glossary + ADR</td></tr>
-      <tr><td><code>codebase-design</code></td><td>词汇层</td><td>#4</td><td>深模块词汇（depth / seam / adapter / leverage / locality）</td></tr>
+      <tr><td><code>grilling</code>（拷问原语）</td><td>共享原语</td><td>#1</td><td><strong>无状态</strong> · 纯访谈原语</td><td>relentless interview（一次一题+推荐+确认 gate），垫在 grill-* 下</td></tr>
+      <tr><td><code>prototype</code>（原型）</td><td>分支</td><td>#1</td><td><strong>无状态</strong>† · 一次性丢弃</td><td>设计得跑起来看 → 一次性小程序，留答案删代码</td></tr>
+      <tr><td><code>research</code>（调研）</td><td>支援</td><td>#1</td><td><strong>有状态</strong>† · findings 写入仓库</td><td>后台读一手源 → cited md 素材（带进 grill-with-docs）</td></tr>
+      <tr><td><code>tdd</code>（测试驱动）</td><td>implement 内</td><td>#3</td><td><strong>无状态</strong> · 会话内红绿循环</td><td>单点行为测试先行（红→绿→重构）</td></tr>
+      <tr><td><code>code-review</code>（代码评审）</td><td>implement 收尾</td><td>#3 #4</td><td><strong>无状态</strong> · 报告即对话输出</td><td>Standards + Spec 两轴 parallel sub-agents（并行子 agent）</td></tr>
+      <tr><td><code>diagnosing-bugs</code>（难 bug 诊断）</td><td>匝道</td><td>#3</td><td><strong>无状态</strong> · 会话内诊断</td><td>难 bug：先建能变红的紧反馈回路再修</td></tr>
+      <tr><td><code>domain-modeling</code>（领域建模）</td><td>词汇层</td><td>#2</td><td><strong>有状态</strong> · 持续写 CONTEXT.md/ADR</td><td>领域术语磨尖 + CONTEXT.md glossary + ADR</td></tr>
+      <tr><td><code>codebase-design</code>（模块设计）</td><td>词汇层</td><td>#4</td><td><strong>无状态</strong> · 纯词汇参考</td><td>深模块词汇（depth 深度 / seam 接缝 / adapter 适配 / leverage 杠杆 / locality 局部性）</td></tr>
     </tbody>
   </table>
   <blockquote><strong>词汇层的用法：</strong><code>domain-modeling</code>（领域语言）和 <code>codebase-design</code>（模块形状语言）不是流程节点——当问题是"<strong>词</strong>"而非"<strong>流程</strong>"时直接 reach，或让上面的 skill 带进来。</blockquote>
+
+  <p style="font-size:.86rem;color:var(--muted)"><strong>「状态」列说明：</strong>「有状态」= 把工件持久化到文件系统 / issue tracker，之后的运行或另一会话能<strong>读回续上</strong>（Matt 讲 teach 时的口径）；「无状态」= 会话内一次性变换、不留可续接状态。<strong>有/无状态与 user/model 是两条正交轴</strong>——user-invoked 里既有有状态（<code>teach</code>/<code>wayfinder</code>）也有无状态（<code>ask-matt</code>/<code>implement</code>）。带 <strong>†</strong> 为 borderline：<code>to-spec</code>/<code>to-tickets</code>（产出落 tracker 供下游 session 读回）、<code>handoff</code>（写文档给新会话）、<code>research</code>（findings 写入仓库）判为有状态；<code>prototype</code>（"throwaway from day one"）判为无状态。逐个 SKILL.md 核实，见 <a href="../learning-records/0009-stateful-stateless-column.md">学习记录 0009</a>。</p>
 </section>
 
 <section class="exercise">

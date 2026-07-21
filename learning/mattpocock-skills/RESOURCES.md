@@ -8,6 +8,9 @@
 - **[README.md](https://github.com/mattpocock/skills/blob/main/README.md)**（仓库根）
   为什么存在这套 skill：4 大 agent 失败模式（misalignment / verbosity / code-doesn't-work / ball-of-mud），每个模式对应修复 skill，并引用一本工程经典。末尾 Reference 是 skill 全表，按 **user-invoked / model-invoked** 分组，分 engineering / productivity 两桶。v1.1 起 `to-spec` / `to-tickets` / `implement` / `wayfinder` 均已列入 engineering user-invoked。**哲学课 + 选型课的一手源。**
 
+- **[▶ Learn anything with the /teach skill — Matt Pocock（YouTube, 13min）](https://www.youtube.com/watch?v=s5T5oQJcJ6U)**（teach 专题）
+  作者本人演示与设计自白，**teach 课最高优先的"看"一手源**：stateful vs stateless（0:39）、mission/resources（2:47）、HTML 课 + "quizzes 只是兜底"的反馈回路（3:30）、ZPD"不无聊也不发怵"（7:16）、**"不要把你钩在 agent 上，是要把你送去社区"的设计意图**（9:17–9:51）、onboarding 代码库用例（10:04）。teach 说明页：https://aihero.dev/s/1T2OM1 。
+
 - **[skills/engineering/ask-matt/SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md)**
   仓库自带的路由器——**"什么场景用哪个 skill"的权威地图**。讲清：主流程 idea→ship（v1.1：grill-with-docs → to-spec → to-tickets → implement）、三条 on-ramp（triage / diagnosing-bugs / **wayfinder**）、词汇层（domain-modeling / codebase-design）、跨会话（handoff / compact）、standalone（grill-me / prototype / research / teach / writing-great-skills）、前置（setup-matt-pocock-skills），以及 context hygiene / smart zone 约束。**全局地图课的一手源，必读。**
 
@@ -49,8 +52,10 @@
 ## Wisdom (Communities)
 
 - **[Matt Pocock 的 skills newsletter](https://www.aihero.dev/s/skills-newsletter)**（~60k 订阅）
-  skill 变更与新 skill 的官方发布渠道。用于：跟踪这套 skill 的演进。**用户是否订阅待确认。**
-- 待补：Matt Pocock 的社区入口（Discord / GitHub discussions）。用户如不愿加入社区，在此注明。
+  skill 变更与新 skill 的官方发布渠道。用于：跟踪这套 skill 的演进。**用户是否订阅待确认。** Matt 视频里给的更新订阅短链：https://aihero.dev/s/0DLqMU 。
+- **[mattpocock/skills · GitHub Discussions](https://github.com/mattpocock/skills/discussions)** —— **最贴本课的社区**（已核实：discussions 开启、56 帖，分 Announcements / General / Ideas / Polls / Q&A / Show and tell 六区；仓库 178k★ / 1k watch）。强 moderation（Matt 本人仓库）。用于：拿"我对某个 skill 的理解"当面验证、提改进、看 Q&A/issue 的一手争论——**测试技能的首选真实场**。
+- **[Matt Pocock 的 AI Hero Discord](https://www.aihero.dev/)**（Matt 本人运营，2025 活跃）—— 更宽的 AI 工程社区：AI 编码、agent 工作流、TypeScript、课程答疑。用于：把 skill 用到真实项目后的实战判断、和其他实践者交换做法。**邀请链接：https://aihero.dev/s/PhJrND**（Matt 在 teach 视频描述里给出）；亦可从 aihero.dev / X(@mattpocockuk) 进入。
+- 用户点单填此 Gap（2026-07-21），故已开放社区选项；本课推荐 **GitHub Discussions 为首选**（最贴主题）。如日后不愿加入，在此注明。
 
 ## Gaps
 

@@ -13,6 +13,7 @@
 - 中文；术语/标识符保留原文。
 - 每节课单一 tightly-scoped 收获，可快速完成。
 - 进度感要强（PUA 在跑，用户吃证据和闭环这套）。
+- 课程网页视觉：统一 kami「墨夜」暗色（约定见 `learning/README.md`「课程网页视觉风格」，写在 `assets/style.css`；2026-07-21 两门课整体由亮色切暗）。
 
 ## 会话内在模式（仅本次会话）
 - ponytail ultra + PUA alibaba + learning 输出风格同时在跑。
