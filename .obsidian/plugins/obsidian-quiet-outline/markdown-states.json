@@ -3020,11 +3020,11 @@
     "cursor": {
       "from": {
         "line": 37,
-        "ch": 89
+        "ch": 0
       },
       "to": {
         "line": 37,
-        "ch": 89
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -7609,7 +7609,7 @@
         "ch": 0
       }
     },
-    "scroll": 14.543259693417493
+    "scroll": 14.182574391343552
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
@@ -7626,7 +7626,7 @@
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 0
+    "scroll": 22.403488372093022
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -8044,12 +8044,12 @@
   "01-编程笔记/04-专项研究/Windows/MemTest86.md": {
     "cursor": {
       "from": {
-        "line": 12,
-        "ch": 0
+        "line": 10,
+        "ch": 2
       },
       "to": {
-        "line": 12,
-        "ch": 0
+        "line": 10,
+        "ch": 11
       }
     },
     "expandedKeys": [],
@@ -8097,17 +8097,18 @@
         "ch": 95
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [],
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Windows/安装的软件.md": {
     "cursor": {
       "from": {
-        "line": 23,
-        "ch": 0
+        "line": 9,
+        "ch": 7
       },
       "to": {
-        "line": 23,
-        "ch": 0
+        "line": 9,
+        "ch": 7
       }
     },
     "expandedKeys": [
@@ -8115,7 +8116,7 @@
       "item-2-2",
       "item-2-15"
     ],
-    "scroll": 10.783333333333333
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Windows/Windows11开荒.md": {
     "cursor": {
@@ -8128,7 +8129,7 @@
         "ch": 11
       }
     },
-    "scroll": 35.51576734407848,
+    "scroll": 0,
     "expandedKeys": []
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/Claude Code.md": {
@@ -8157,5 +8158,74 @@
         "ch": 17
       }
     }
+  },
+  "未分类笔记/测试.md": {
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Windows/本机环境.md": {
+    "cursor": {
+      "from": {
+        "line": 190,
+        "ch": 0
+      },
+      "to": {
+        "line": 190,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-15"
+    ],
+    "scroll": 158.1630236794171
+  },
+  "未分类笔记/Lenovo Vantage.md": {
+    "cursor": {
+      "from": {
+        "line": 8,
+        "ch": 0
+      },
+      "to": {
+        "line": 8,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/家庭服务器搭建/相关资源.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/家庭服务器搭建/未命名.md": {
+    "expandedKeys": []
+  },
+  "01-编程笔记/04-专项研究/家庭服务器搭建/外网访问.md": {
+    "cursor": {
+      "from": {
+        "line": 47,
+        "ch": 36
+      },
+      "to": {
+        "line": 47,
+        "ch": 36
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 43.53388782093984
   }
 }
