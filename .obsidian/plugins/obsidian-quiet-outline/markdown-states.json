@@ -3019,16 +3019,16 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 30,
-        "ch": 0
+        "line": 37,
+        "ch": 89
       },
       "to": {
-        "line": 30,
-        "ch": 0
+        "line": 37,
+        "ch": 89
       }
     },
     "expandedKeys": [
-      "item-2-0"
+      "item-2-1"
     ]
   },
   "待办任务/待办任务1.md": {
@@ -7609,7 +7609,7 @@
         "ch": 0
       }
     },
-    "scroll": 14.550909494232476
+    "scroll": 14.543259693417493
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
@@ -7626,7 +7626,7 @@
       "item-1-0",
       "item-2-4"
     ],
-    "scroll": 10.022779043280183
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7787,7 +7787,7 @@
         "ch": 0
       }
     },
-    "scroll": 0.49624060150375937
+    "scroll": 0
   },
   "01-编程笔记/03-Java/01-基础/01-JavaSE/基本语法.md": {
     "expandedKeys": [
@@ -8102,12 +8102,12 @@
   "01-编程笔记/04-专项研究/Windows/安装的软件.md": {
     "cursor": {
       "from": {
-        "line": 47,
-        "ch": 9
+        "line": 23,
+        "ch": 0
       },
       "to": {
-        "line": 47,
-        "ch": 9
+        "line": 23,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -8115,7 +8115,7 @@
       "item-2-2",
       "item-2-15"
     ],
-    "scroll": 20.222478120681714
+    "scroll": 10.783333333333333
   },
   "01-编程笔记/04-专项研究/Windows/Windows11开荒.md": {
     "cursor": {
