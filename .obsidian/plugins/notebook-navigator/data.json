@@ -512,13 +512,7 @@
     ]
   },
   "customVaultName": "",
-  "pinnedNotes": {
-    "01-编程笔记/04-专项研究/Windows/本机环境.md": {
-      "folder": true,
-      "tag": false,
-      "property": false
-    }
-  },
+  "pinnedNotes": {},
   "collapsedPinnedContexts": {},
   "fileIcons": {},
   "fileColors": {},

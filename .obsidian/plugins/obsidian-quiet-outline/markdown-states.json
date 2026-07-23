@@ -3019,12 +3019,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 37,
-        "ch": 0
+        "line": 32,
+        "ch": 4
       },
       "to": {
-        "line": 37,
-        "ch": 0
+        "line": 32,
+        "ch": 101
       }
     },
     "expandedKeys": [
@@ -8227,5 +8227,18 @@
       "item-1-0"
     ],
     "scroll": 43.53388782093984
+  },
+  "01-编程笔记/04-专项研究/Windows/wsl.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
   }
 }
