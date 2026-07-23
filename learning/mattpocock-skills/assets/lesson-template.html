@@ -75,6 +75,10 @@
   其它可选组件（用到再留，别自造）：
     步骤条   <ol class="steps"><li><h3>标题</h3>正文</li></ol>
     流程图   <div class="flow"><div class="flow-step"><span class="sk">skill</span><span class="防">说明</span></div><span class="flow-arrow">→</span> … </div>
+    mermaid  复杂 / 流程性内容：<head> 加 <script defer src="../assets/mermaid-init.js"></script>；
+             正文 <figure class="diagram"><pre class="mermaid"> …flowchart 图定义… </pre>
+             <figcaption>图注</figcaption></figure>。jsdelivr CDN + 墨夜暗色、容器已限宽 560px 居中；
+             可抄的完整实例见 lessons/0005-read-skill-boundaries.html。简单横向流程仍用上面的 .flow。
     角色标签 <span class="tag user">user-invoked</span> / <span class="tag model">model-invoked</span>
 -->
 

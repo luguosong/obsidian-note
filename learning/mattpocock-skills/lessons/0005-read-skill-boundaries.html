@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 5 课 · 控制边界（读懂 skill 管什么）</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">第 5 课 · 单 skill 深挖 ③ · 通用方法</p>
+<h1><code>控制边界</code>：读懂一个 skill「管什么 / 不管什么」——以 <code>teach</code> 为例</h1>
+<p class="lede">你上一课追问"<code>teach</code> 不控制课程网页风格？"——答案是对的，而这个问题背后藏着一个能迁移到<strong>任何 skill</strong> 的元技能：一眼看出它在哪里<strong>画线</strong>。</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong>读任何 skill，先把它的要求劈成三层——<strong>硬契约</strong>（锁死、必须照做）、<strong>软目标</strong>（只定调、不定死）、<strong>留白</strong>（压根不管、交你自定）。以 <code>teach</code> 为例：文件模型与账本规矩是<strong>硬契约</strong>，"好看 + 一致"是<strong>软目标</strong>，而<strong>课程的具体视觉风格</strong>（我们这门课的「墨夜」暗色）落在<strong>留白</strong>——teach 一个字都不管。</p>
+</section>
+
+<section>
+<h2>1. 用一个 skill 之前，先找它的"分界线"</h2>
+<p>读一个 skill 最常见的两种栽跟头：<strong>以为它什么都规定</strong>（于是不敢自由发挥，问"能不能换配色"）、或<strong>以为它什么都不管</strong>（于是踩了它锁死的规矩，比如去改只增不改的账本）。真正会用一个 skill ＝ <strong>知道它在哪画线</strong>：哪些必须照做、哪些留给你。</p>
+<p>好消息：这条线对<strong>任何 skill</strong> 都能用同一把尺子去找。本课用你最熟的 <a href="0003-teach-skill.html">teach</a>（你正被它教）当例子，但学到的是一套<strong>可迁移</strong>的读法——下次读 <code>triage</code>（分诊）、<code>wayfinder</code>（探路）也照套。</p>
+</section>
+
+<section>
+<h2>2. 把要求劈成三层：硬契约 / 软目标 / 留白</h2>
+<p>任何 skill 的要求，都能按"<strong>它管得多紧</strong>"落进三层（越往下越松）：</p>
+<table>
+<thead><tr><th>层</th><th>skill 的态度</th><th><code>teach</code> 里的例子</th></tr></thead>
+<tbody>
+<tr><td><strong>① 硬契约</strong><br>（锁死，必照做）</td><td>写死规则，不照做就<strong>破坏这个 skill 的运作</strong></td><td>工作区<strong>文件模型</strong>（谁管什么）· <strong>命名</strong>（<code>lessons</code>·<code>learning-records</code> 用 <code>0001-slug</code> 递增）· 各文件 <strong>FORMAT</strong>（格式）· <strong>账本规矩</strong>（<code>learning-records</code> 只增不改 + supersede）· 每课必备件（单一收获 / 绑 mission（使命）/ 荐一手源）</td></tr>
+<tr><td><strong>② 软目标</strong><br>（定调，不定死）</td><td>只给<strong>目标形容词</strong>，不给具体值</td><td>课要 <strong>beautiful（好看）· Tufte 风 · 打印友好 · 一致</strong>——给方向，不给任何配色 / 字号 / 布局</td></tr>
+<tr><td><strong>③ 留白</strong><br>（不管，你自定）</td><td>skill <strong>压根没提</strong>，整个交给工作区</td><td><strong>具体视觉风格</strong>（配色 / 字体 / 布局）· 教什么 / 顺序 / 深浅 · 语言 · 目录位置 · git 提交 · 组件怎么实现</td></tr>
+</tbody>
+</table>
+<p>一个类比：teach 像课程的<strong>「操作系统 + 施工规范」</strong>——规定"文件怎么摆、每课要有哪些承重结构、账本只能追加"，然后把"内容写什么、墙刷什么色"<strong>整个留给你和老师</strong>。所以同一个 teach，能长出你这门暗色硬核课，也能长出一门粉色瑜伽课。</p>
+</section>
+
+<section>
+<h2>3. 活样本：你的"暗色风格"为什么落在留白层</h2>
+<p>直接翻 teach 的 <code>SKILL.md</code>（技能定义文件），关于课"长什么样"<strong>全部</strong>只有两句：</p>
+<blockquote>A lesson should be <strong>beautiful</strong> — clean, readable typography… <strong>Think Tufte</strong>.（课要好看、排版清爽可读……走 Tufte 那种风）<br>A shared stylesheet is the first component every workspace earns… so the lessons look like <strong>one consistent course</strong> rather than a pile of one-offs.（共享样式表是每个工作区最先该有的组件……让各课看起来像同一门课，而非一堆各写各的）<br><span style="font-size:.85em">— skills/productivity/teach/SKILL.md</span></blockquote>
+<p>就这些。它只要求「<strong>好看 + 一致</strong>」（软目标），从不要求「<strong>长这样</strong>」。我们这门课的「<strong>墨夜</strong>」kami 暗色（近黑底＋暖白字＋暖金强调）是<strong>你和我在这个工作区自己定的</strong>——写死在 <code>assets/style.css</code>，约定记在 <code>NOTES.md</code>（偏好便签）的"写课视觉契约"和 <code>learning/README.md</code>。换个空目录重开一门 teach 课，完全可以是纯白学术风，teach 一个字都不拦。</p>
+<div class="callout">
+<h3>留白 ≠ 放任</h3>
+<p>teach 把风格留白，<strong>不等于</strong>让你每课乱来。软目标"<strong>一致</strong>"还在头上管着——所以我们才用<strong>一个共享 <code>style.css</code></strong> 把风格锁在一处（正是 SKILL.md 说的"shared stylesheet 是第一个该建的组件"）。<strong>留白由工作区自己立规矩填上</strong>：teach 不规定颜色，但我们的 NOTES「视觉契约」规定了——填留白的是你，不是放任。</p>
+</div>
+</section>
+
+<section>
+<h2>4. 可迁移技能：用"三问"给任何要求定层</h2>
+<p>下次读<strong>任何</strong> skill，遇到一条要求，就按顺序问这三句，落到哪层立刻清楚：</p>
+<ol class="steps">
+<li><h3>问一：不照做，会破坏这个 skill 的运作吗？</h3>会 → <strong>硬契约</strong>。（如改了只增不改的账本、课不绑 mission——skill 的机制就塌了）</li>
+<li><h3>问二：它给的是"目标形容词"还是"具体值"？</h3>只给形容词（beautiful / 一致 / 短）→ <strong>软目标</strong>。你按自己判断把它落成具体值。</li>
+<li><h3>问三：翻遍 <code>SKILL.md</code>，它压根没提？</h3>没提 → <strong>留白</strong>。工作区自己立规矩填上，并记进 <code>NOTES.md</code> / <code>README</code>，免得下次又即兴。</li>
+</ol>
+<figure class="diagram">
+<pre class="mermaid">
+flowchart TD
+  R(["读到 skill 的一条要求"]) --> Q1{"① 不照做会破坏<br/>skill 运作？"}
+  Q1 -->|会| H["硬契约<br/>必须照做"]
+  Q1 -->|不会| Q2{"② 给的是目标形容词、<br/>而非具体值？"}
+  Q2 -->|是| S["软目标<br/>你落成具体值"]
+  Q2 -->|否| Q3{"③ 翻遍 SKILL.md<br/>压根没提？"}
+  Q3 -->|没提| B["留白<br/>工作区自定，记进 NOTES"]
+  classDef hard fill:#2c2020,stroke:#e0928c,color:#e7e2d6;
+  classDef soft fill:#241f1a,stroke:#d9b45c,color:#e7e2d6;
+  classDef open fill:#1e2a24,stroke:#7fc9a0,color:#e7e2d6;
+  class H hard;
+  class S soft;
+  class B open;
+</pre>
+<figcaption>三问定层：一条要求顺着漏斗问下来，落到硬契约 / 软目标 / 留白</figcaption>
+</figure>
+<div class="callout">
+<h3>别和第 3 课的"三层改法模型"搞混</h3>
+<p>两个"三层"讲的是<strong>不同轴</strong>：<a href="0003-teach-skill.html">第 3 课</a>的<strong>三层改法</strong>讲"工作区文件<strong>怎么改</strong>"（教学事件 / 活真相 / 只增不改账本）；本课的<strong>三层控制边界</strong>讲"skill <strong>管多紧</strong>"（硬契约 / 软目标 / 留白）。一个管<strong>你</strong>怎么动文件，一个管 <strong>skill</strong> 在哪画线。</p>
+</div>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="B" data-explain="SKILL.md 关于视觉只说 beautiful / Think Tufte / 用共享 stylesheet 保持一致（软目标），从不规定具体配色布局（留白）；我们的暗色是本工作区自定，不是 teach 的要求。">
+<p class="quiz-q">1. 关于课程网页的<strong>视觉风格</strong>，<code>teach</code> 的真实态度是？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>规定必须用暗色、近黑底配暖金强调</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>只要求"好看且一致"，具体样式留白</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>完全不在乎好不好看、随便排版就行</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>必须严格照 Tufte 原书的白底版式</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="C" data-explain="给了目标形容词 readable、却没给具体值 → 软目标：你按判断落成具体格式。它没"没提"（所以不是留白），也不会"破坏运作"（所以不是硬契约）。">
+<p class="quiz-q">2. 某 skill 只说产出要 "readable"（可读）、没给任何格式规定。按三问法它落在哪层？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>硬契约——不照做就破坏 skill 运作</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>留白——skill 根本没提到这件事</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>软目标——给了形容词却没给具体值</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>无关层——这条要求可以直接忽略</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="账本只增不改 + supersede 是文件契约，改了就毁掉"理解如何演化"的留痕机制（硬契约）；配色 / 语言 / 深挖顺序都在留白层、工作区自定。">
+<p class="quiz-q">3. 下面哪一条动了就会<strong>破坏 <code>teach</code> 的运作</strong>（属于硬契约）？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>账本只增不改、被推翻只标 supersede</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>每节课程网页用什么配色和字体</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>究竟用中文还是英文来授课</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>先深挖 triage 还是先 wayfinder</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<p>验证"边界画在哪"，去 teach 自己的定义文件最直接。本课最高优先级：</p>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md">skills/productivity/teach/SKILL.md</a></strong> —— 本课全部论断的出处：视觉那两句（beautiful / Tufte / shared stylesheet）在此，硬契约的文件模型、每课必备件、教学哲学也在此。<strong>读它时刻意分辨每句是"规则"还是"形容词"</strong>，就是在练三问法。</li>
+<li>四个 <code>*-FORMAT.md</code>（<a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/MISSION-FORMAT.md">MISSION</a> / <a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/LEARNING-RECORD-FORMAT.md">LEARNING-RECORD</a> / <a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/RESOURCES-FORMAT.md">RESOURCES</a> / <a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/GLOSSARY-FORMAT.md">GLOSSARY</a>）—— <strong>硬契约里"格式"层</strong>的细则，每类文件的具体写法。</li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>"帮我拿 <code>triage</code> 走一遍三问法、划出它的三层？"</em>、<em>"把这套'三层 + 三问'补进 <a href="../reference/teach-learner-manual.html">参考卡</a>方便回查？"</em>、<em>"下一站深挖哪个 skill？"</em> ——随时回查见参考卡 · teach 学习者操作手册。</p>
+</section>
+
+<footer>
+<span><a href="0004-setup-matt-pocock-skills.html">← 第 4 课 · setup-matt-pocock-skills 深挖</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

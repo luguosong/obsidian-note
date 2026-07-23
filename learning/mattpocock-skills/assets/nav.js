@@ -9,7 +9,8 @@
     { file: "0001-the-global-map.html", n: "1", t: "全局地图 + 全 skill 目录" },
     { file: "0002-main-flow-in-action.html", n: "2", t: "主流程实战" },
     { file: "0003-teach-skill.html", n: "3", t: "teach 深挖" },
-    { file: "0004-setup-matt-pocock-skills.html", n: "4", t: "setup-matt-pocock-skills 深挖" }
+    { file: "0004-setup-matt-pocock-skills.html", n: "4", t: "setup-matt-pocock-skills 深挖" },
+    { file: "0005-read-skill-boundaries.html", n: "5", t: "读懂 skill 的控制边界" }
   ];
 
   function build() {

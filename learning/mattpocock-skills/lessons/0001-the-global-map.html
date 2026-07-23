@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 <script defer src="../assets/toc.js"></script>
 <script defer src="../assets/nav.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
 </head>
 <body>
 <article>
@@ -43,17 +44,26 @@
 <section>
   <h2>2. 主干 + 三条匝道：工作怎么流动</h2>
   <p>绝大多数真实工作走这条主线（v1.1）。把每一步在心里对一下它防第几类失败：</p>
-  <div class="flow">
-    <div class="flow-step"><span class="sk">grill-with-docs（有库拷问）</span><span class="防">入口·对齐想法<br>防 #1+#2<br>沉淀 CONTEXT.md（领域上下文档）/ADR（架构决策记录）</span></div>
-    <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">to-spec（转规格）</span><span class="防">对话→spec（规格）<br>只 synthesize（综合）<br>谈 seams（接缝，防 #4）</span></div>
-    <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">to-tickets（转工单）</span><span class="防">→纵切片<br>声明 blocking edges（阻塞依赖边）</span></div>
-    <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">implement（实现）</span><span class="防">每 ticket 新会话<br>驱动 tdd（防 #3）<br>收尾 code-review</span></div>
-    <span class="flow-arrow">→</span>
-    <div class="flow-step"><span class="sk">ship（上线）</span><span class="防">提交到当前分支</span></div>
-  </div>
+  <figure class="diagram wide">
+<pre class="mermaid">
+flowchart TD
+  IDEA(["我有个想法"]) --> G["grill-with-docs<br/>对齐想法 · 防 #1+#2<br/>沉淀 CONTEXT.md / ADR"]
+  G --> RUN{"需要 runnable<br/>（可运行）答案？"}
+  RUN -->|是| P["prototype + handoff<br/>桥接：留答案、删代码"]
+  RUN -->|否| SPEC["to-spec<br/>对话→spec，只 synthesize<br/>谈 seams · 防 #4"]
+  P --> SPEC
+  SPEC --> MULTI{"多会话构建？"}
+  MULTI -->|是| T["to-tickets<br/>拆纵切片 · 声明阻塞边"]
+  MULTI -->|否| IMPL["implement<br/>每 ticket 新会话<br/>tdd 防 #3 · 收尾 code-review"]
+  T --> IMPL
+  IMPL --> SHIP(["ship · 提交当前分支"])
+  classDef edge fill:#1e2a24,stroke:#7fc9a0,color:#e7e2d6;
+  classDef branch fill:#211d18,stroke:#a9a291,color:#e7e2d6;
+  class IDEA,SHIP edge;
+  class P branch;
+</pre>
+  <figcaption>主流程主干（节点内标注防哪类失败）＋ 两个分支决策点：横看主干，遇菱形处分叉</figcaption>
+  </figure>
   <p>主干上有<strong>两个分支</strong>：需要 <strong>runnable（可运行的）答案</strong>（状态/逻辑/UI 得跑起来看）→ 绕进 <code>prototype</code>（原型），用 <code>handoff</code>（交接文档）双向桥接（留答案删代码）；<strong>是否多会话构建</strong>→ 是则走完整 <code>to-spec</code>/<code>to-tickets</code>，否则同窗口直接 <code>implement</code>。（主流程如何一步步走，见<a href="0002-main-flow-in-action.html">第 2 课</a>。）</p>
 
   <h3>三条匝道：不从"我有个想法"起步的入口</h3>

@@ -22,10 +22,11 @@
 
 1. **全局地图 + 全 skill 目录**（lesson 1，合并原 L1+L3）：4 失败模式 × 主干 + 三匝道 + user/model 轴 × `grilling` 原语 × **21 个 skill 一张总表**（分组 / 谁调 / 防 / 触发）——一课定坐标 + 参考卡。context hygiene 移交 L2；"我现在该用哪个"速查表与词汇层细节收敛进总表。
 2. **主流程实战**（lesson 2）：todo CLI 端到端走 grill-with-docs → 分支（prototype+handoff）→ to-spec（含 seams）→ to-tickets（纵切 + wide refactor 例外）→ implement（tdd + code-review 两轴并行）；**context hygiene / smart zone / handoff 的唯一出处**。
-3. **teach 深挖**（lesson 3，Phase 2 ①）：元技能自指——用本工作区当活教材，讲「两个交流对象（老师=agent / 社区=RESOURCES Wisdom）+ 后续问题路由到哪个文件」；工作区**首建 `reference/`**，落地首张参考卡 `teach-learner-manual.html`。
+3. **teach 深挖**（lesson 3，Phase 2 ①）：元技能自指——用本工作区当活教材，讲「两个交流对象（老师=agent / 社区=有真人的真实场所，入口记在 RESOURCES 的 Wisdom 区、非文档本身）+ 后续问题路由到哪个文件」；工作区**首建 `reference/`**，落地首张参考卡 `teach-learner-manual.html`。（2026-07-23 应用户提问修正原「社区=RESOURCES Wisdom」等号谬误，见 LR-0018）
 4. **setup-matt-pocock-skills 深挖**（lesson 4）：工程 skill 前置；"间接层" + 用户仓库 `docs/agents` 样本。
-5. （后续深挖，用户点单）triage / to-tickets / wayfinder / grill-with-docs / diagnosing-bugs …
-6. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
+5. **读懂 skill 的控制边界**（lesson 5，Phase 2 ③ · 通用方法）：由用户"teach 不控制课程网页风格？"的追问生长出的可迁移元技能——把任何 skill 的要求劈成「硬契约 / 软目标 / 留白」三层 + "三问"定层法；已进 GLOSSARY「控制边界」。可复用于后续 skill 深挖（如给 triage 划三层）。
+6. （后续深挖，用户点单）triage / to-tickets / wayfinder / grill-with-docs / diagnosing-bugs …
+7. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
 
 ## Phase 2 · 单 skill 深挖（2026-07-20 起）
 
@@ -54,9 +55,10 @@
 > 目的：后续每节课都稳定落在同一套 kami 视觉上（配色约定见 `learning/README.md`）。风格由**文件锁定** + 本契约**强制**，不靠每次即兴。
 
 1. **从模板起手（固化布局）**：复制 `assets/lesson-template.html` 到 `lessons/000N-<slug>.html` 再填。**统一布局＝墨夜暖金暗色 · 满宽 · 左课程导航 · 右 TOC · 底部 prev/next**，勿逐课改。新建课完整步骤（含 ① 登记进 `nav.js` 的 `LESSONS` ② 设 footer prev/next）见模板顶部注释。
-2. **样式唯一来源 = `assets/style.css`**：每课只 `<link rel="stylesheet" href="../assets/style.css">` + `<script defer src="../assets/quiz.js">` + `<script defer src="../assets/toc.js">`（右侧 TOC）+ `<script defer src="../assets/nav.js">`（左侧课程导航；**新增课时改 `nav.js` 里的 `LESSONS` 数组这一处**）。**禁止**在课里写 `<style>`、**禁止**内联配色/字号（个别一次性微调如 `font-size:.85em` 可留）、**禁止**自造颜色。
+2. **样式唯一来源 = `assets/style.css`**：每课只 `<link rel="stylesheet" href="../assets/style.css">` + `<script defer src="../assets/quiz.js">` + `<script defer src="../assets/toc.js">`（右侧 TOC）+ `<script defer src="../assets/nav.js">`（左侧课程导航；**新增课时改 `nav.js` 里的 `LESSONS` 数组这一处**）。含图的课再加一件 `<script defer src="../assets/mermaid-init.js">`（见第 8 条）。**禁止**在课里写 `<style>`、**禁止**内联配色/字号（个别一次性微调如 `font-size:.85em` 可留）、**禁止**自造颜色。
 3. **只用既有组件类**：`.eyebrow` `.lede` `.win` `.callout` `.exercise` `.quiz`/`.opt`/`.quiz-fb` `.flow`/`.flow-step` `.steps` `.tag`(`.user`/`.model`) `.source` `.followup`，以及 `section h2`、`table`、`blockquote`、`pre`/`code`、`footer`。够用。
 4. **要新视觉先加类**：确实缺组件时，把新类**加进 `assets/style.css`**（复用现有 `:root` 变量）再引用；绝不在单课写一次性样式，免得下节课又造个不一样的。
 5. **配色/字体/宽度只由 `:root` 变量决定**：改基调 → 改 `style.css` 的 `:root`（`--bg`/`--fg`/`--accent`/`--sans`/`--max`…）→ 同步 `learning/README.md` 视觉段 → 这里记一笔；**不在单课改**。
 6. **固定结构顺序**：`header`(`.eyebrow`+`h1`+`.lede`) → `.win` → 若干 `section`(`h2` 带序号) → `.exercise`(`.quiz` 三连) → `.source` → `.followup` → `footer`(上一课 / 使命)。
 7. **固定 `<head>`**：`lang="zh-CN"` + charset + viewport + `<title>第 N 课 · …</title>` + 上述两个 `<link>`/`<script>`。
+8. **复杂 / 流程性内容用 mermaid（共享组件，2026-07-23 起）**：判定流程、结构关系等"画出来更好懂"的内容用 mermaid，别堆文字墙。**含图的课**才在 `<head>` 末尾补一行 `<script defer src="../assets/mermaid-init.js"></script>`（不含图的课不引）；正文放 `<figure class="diagram"><pre class="mermaid"> …flowchart… </pre><figcaption>图注</figcaption></figure>`。硬规则：① 配置全在 `assets/mermaid-init.js`（jsdelivr CDN + 墨夜暗色，配色对齐 `:root`；断网降级为源码文本、内容不丢），**别在单课写 mermaid 配置**；② 图容器已由 `style.css` 限宽 **560px 居中**（信息多的大图用 `.diagram.wide` 放宽到 760px；满宽布局会把图拉爆，勿删限宽）；③ 三态语义色沿用课程——锁死/危险=红(`--bad`)、定调/强调=金(`--accent`)、正向/自由=绿(`--ok`)，用 `classDef` 指定；④ **简单横向流程仍用 `.flow`**，别用 mermaid 杀鸡；⑤ 图服务单一收获，别堆与 ZPD 无关的复杂图。可抄的实例见 `lessons/0005-read-skill-boundaries.html`。

@@ -215,6 +215,44 @@ td code { font-size: 0.84em; }
   font-weight: 600;
 }
 
+/* —— mermaid 图（配 assets/mermaid-init.js；复杂 / 流程性内容用它，简单横向流程仍可用 .flow） —— */
+figure.diagram { margin: 1.8rem auto; max-width: 560px; }
+figure.diagram.wide { max-width: 760px; }
+figure.diagram figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+pre.mermaid {
+  margin: 0;
+  padding: 1.3rem 1rem;
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--bg));
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-align: center;
+  line-height: normal;
+  overflow-x: auto;
+}
+pre.mermaid svg { max-width: 100%; height: auto; }
+/* 渲染完成前 / CDN 失败时：降级显示图的源码文本，内容不丢 */
+pre.mermaid:not([data-processed]) {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--faint);
+  white-space: pre;
+}
+pre.mermaid[data-mermaid-failed]::before {
+  content: "（此图需联网渲染；以下为图的源码）";
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
 /* —— 练习块 —— */
 .exercise {
   border: 1px solid var(--rule);
@@ -347,6 +385,7 @@ footer a { font-weight: 500; }
   body { font-size: 11pt; background: #fff; color: #000; }
   article { padding: 1rem; max-width: 100%; }
   .opt, details, .flow-step { border-color: #ccc; }
+  pre.mermaid { background: #fff; border-color: #ccc; }
   a { color: #000; text-decoration: underline; }
   footer { border-color: #ccc; }
 }
