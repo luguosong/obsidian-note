@@ -7624,10 +7624,15 @@
     },
     "expandedKeys": [
       "item-1-0",
+      "item-2-2",
+      "item-2-4",
+      "item-2-18",
       "item-2-6",
-      "item-2-2"
+      "item-2-9",
+      "item-2-11",
+      "item-2-13"
     ],
-    "scroll": 19.09186046511628
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7849,15 +7854,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 87,
-        "ch": 136
+        "line": 86,
+        "ch": 3
       },
       "to": {
-        "line": 87,
-        "ch": 131
+        "line": 86,
+        "ch": 13
       }
     },
-    "scroll": 58.03194444444444
+    "scroll": 58.020833333333336
   },
   "01-编程笔记/03-Java/01-基础/01-JavaSE/相关资源.md": {
     "expandedKeys": [
