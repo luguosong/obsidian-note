@@ -94,6 +94,14 @@ _Avoid_: 索引、目录
 `setup-matt-pocock-skills` 的核心思想：skill 只写**抽象角色**（issue tracker / triage labels / domain docs），setup 把角色一次性绑定到"你这个仓库的现实"，于是一份 skill 跑遍所有 repo。
 _Avoid_: 配置、适配层
 
+**triage（分诊）· 状态机**：
+把 issue / 外部 PR 推过一台小状态机的 on-ramp skill（user-invoked）。给每个 issue 打**两维正交**标签——**category**（`bug`/`enhancement`，回答"是什么"）+ **state**（下条 5 个，回答"卡在哪"）；恰好各一。它只认 canonical role name（规范角色名），真实标签串靠 `triage-labels.md`（由 setup 写）翻译——正是间接层落在 triage 上。
+_Avoid_: 分类、打标签（太泛）；把 setup 当成"用标签的人"
+
+**5 个状态角色（Five state roles）**：
+triage 状态机的 5 格，每个 issue 恰好落一个：`needs-triage`（待评估·默认起点）/ `needs-info`（等 reporter 补料）/ `ready-for-agent`（规格全、AFK agent 可接，贴 agent brief）/ `ready-for-human`（规格全但须人做）/ `wontfix`（不做·关闭）。流向：未打标签→`needs-triage`→分岔四态；`needs-info` 收到 reporter 回复退回 `needs-triage`；maintainer 可随时越权。
+_Avoid_: 笼统说"5 个标签"（丢了"状态机"语义）；与 category 的 `bug`/`enhancement` 混为一维
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。

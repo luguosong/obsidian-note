@@ -25,8 +25,10 @@
 3. **teach 深挖**（lesson 3，Phase 2 ①）：元技能自指——用本工作区当活教材，讲「两个交流对象（老师=agent / 社区=有真人的真实场所，入口记在 RESOURCES 的 Wisdom 区、非文档本身）+ 后续问题路由到哪个文件」；工作区**首建 `reference/`**，落地首张参考卡 `teach-learner-manual.html`。（2026-07-23 应用户提问修正原「社区=RESOURCES Wisdom」等号谬误，见 LR-0018）
 4. **setup-matt-pocock-skills 深挖**（lesson 4）：工程 skill 前置；"间接层" + 用户仓库 `docs/agents` 样本。
 5. **读懂 skill 的控制边界**（lesson 5，Phase 2 ③ · 通用方法）：由用户"teach 不控制课程网页风格？"的追问生长出的可迁移元技能——把任何 skill 的要求劈成「硬契约 / 软目标 / 留白」三层 + "三问"定层法；已进 GLOSSARY「控制边界」。可复用于后续 skill 深挖（如给 triage 划三层）。
-6. （后续深挖，用户点单）triage / to-tickets / wayfinder / grill-with-docs / diagnosing-bugs …
-7. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
+6. **triage 的 5 个状态标签**（lesson 6，Phase 2 ④）：应用户"triage-labels.md 5 个标签有什么用 + 还没懂 setup"的提问——接上 setup（写字典）↔ triage（用字典）分工；5 个＝triage 状态机的 state 角色（与 category `bug`/`enhancement` 正交），mermaid 画状态机流向。GLOSSARY 增「triage 状态机 / 5 个状态角色」两条。
+7. **skill 生态管的文件全景**（lesson 7，宏观地图）：应用户"宏观捋一下这套 skill 管哪几块文件"——4 块区域（配置层 / 领域层 / 工单层 / `.out-of-scope`）× 谁写谁读 × 3 种维护模式（一次性脚手架 / 活真相原地改 / 只增不改账本）。一手源直读 setup + domain-modeling + grill-with-docs + triage 的 SKILL.md。
+8. （后续深挖，用户点单）to-tickets / wayfinder / grill-with-docs / diagnosing-bugs …；或把 lesson 7 全景做成 `reference/` 参考卡
+9. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
 
 ## Phase 2 · 单 skill 深挖（2026-07-20 起）
 
