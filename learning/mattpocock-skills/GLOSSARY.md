@@ -102,6 +102,14 @@ _Avoid_: 分类、打标签（太泛）；把 setup 当成"用标签的人"
 triage 状态机的 5 格，每个 issue 恰好落一个：`needs-triage`（待评估·默认起点）/ `needs-info`（等 reporter 补料）/ `ready-for-agent`（规格全、AFK agent 可接，贴 agent brief）/ `ready-for-human`（规格全但须人做）/ `wontfix`（不做·关闭）。流向：未打标签→`needs-triage`→分岔四态；`needs-info` 收到 reporter 回复退回 `needs-triage`；maintainer 可随时越权。
 _Avoid_: 笼统说"5 个标签"（丢了"状态机"语义）；与 category 的 `bug`/`enhancement` 混为一维
 
+**长期记忆 / 工作记忆（记忆二分）**：
+把 skill 生态管的 4 块文件区沿"读多久"劈成两类——**长期记忆**（配置层 / 领域层 / `.out-of-scope`，读好几年，即第 7 课那三种维护模式）；**工作记忆**（工单层 `.scratch/` 或 issues，用完即冻、只在该 feature 在途/评审时读）。工单层不是第四种长期模式，它是唯一的工作记忆。
+_Avoid_: 缓存 / 持久化（太泛）；把工单层当第四种长期维护模式
+
+**提升（Promotion）**：
+工单退役前，把值得长期留的东西从工作记忆抬进长期记忆的动作——架构 why→ADR、术语→`CONTEXT.md`、实现→代码、被拒 enhancement→`.out-of-scope`、prototype 结论→真代码。正因有它，工单层才敢"用完即弃"。
+_Avoid_: 归档 / 备份（那是原样搬运；提升是"蒸馏 keepers 再抬走"）
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。

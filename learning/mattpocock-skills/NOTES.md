@@ -27,8 +27,10 @@
 5. **读懂 skill 的控制边界**（lesson 5，Phase 2 ③ · 通用方法）：由用户"teach 不控制课程网页风格？"的追问生长出的可迁移元技能——把任何 skill 的要求劈成「硬契约 / 软目标 / 留白」三层 + "三问"定层法；已进 GLOSSARY「控制边界」。可复用于后续 skill 深挖（如给 triage 划三层）。
 6. **triage 的 5 个状态标签**（lesson 6，Phase 2 ④）：应用户"triage-labels.md 5 个标签有什么用 + 还没懂 setup"的提问——接上 setup（写字典）↔ triage（用字典）分工；5 个＝triage 状态机的 state 角色（与 category `bug`/`enhancement` 正交），mermaid 画状态机流向。GLOSSARY 增「triage 状态机 / 5 个状态角色」两条。
 7. **skill 生态管的文件全景**（lesson 7，宏观地图）：应用户"宏观捋一下这套 skill 管哪几块文件"——4 块区域（配置层 / 领域层 / 工单层 / `.out-of-scope`）× 谁写谁读 × 3 种维护模式（一次性脚手架 / 活真相原地改 / 只增不改账本）。一手源直读 setup + domain-modeling + grill-with-docs + triage 的 SKILL.md。
-8. （后续深挖，用户点单）to-tickets / wayfinder / grill-with-docs / diagnosing-bugs …；或把 lesson 7 全景做成 `reference/` 参考卡
-9. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
+8. **ADR 会不会膨胀**（lesson 8，Phase 2 · 领域层深挖）：应用户"`docs/adr/` 只增不改会不会膨胀、agent 怎么读"——三重防线：写入三条件硬闸门（长得慢）/ agent 从不整本读（文件名即索引，读取策略在配置层 `domain.md`）/ 规模化按 bounded context 分片。superseded 僵尸近零成本。含 mermaid 漏斗图。接 lesson 7「只增不改账本」+ lesson 2 context hygiene + lesson 1 DDD。**开篇 primer 回填**：应用户追问"ADR 是什么"补了「一份 ADR 长什么样」（定义+模板+实物+why+Nygard 来历），原 5 节顺延为 2–6。
+9. **工单层是工作记忆**（lesson 9，Phase 2 · 工单层深挖）：应用户"`.scratch/` 工单层只有活跃时有价值吗、干完就不再读/维护了吗"——**改写 lesson 7 存储模型**：四块区沿"读多久"劈成 长期记忆（配置/领域/`.out-of-scope`，即三模式）vs 工作记忆（工单层，用完冻结）。工单层非第四种长期模式。`.scratch/` 实物结构 + 生命周期（活跃→ship→冻结退役）+ **提升（promotion）机制**（keepers 死前抬进长期层）。含 mermaid 提升图。GLOSSARY 增「记忆二分」「提升」两条。
+10. （后续深挖，用户点单）domain-modeling 主体（sharpen 词汇四手法）/ to-tickets（tracer-bullet 纵切）/ wayfinder（map）/ grill-with-docs / diagnosing-bugs …；或把 lesson 8 三重防线、lesson 9 记忆二分做成 `reference/` 参考卡
+11. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
 
 ## Phase 2 · 单 skill 深挖（2026-07-20 起）
 
