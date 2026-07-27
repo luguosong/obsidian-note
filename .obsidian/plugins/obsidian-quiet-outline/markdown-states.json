@@ -7578,7 +7578,8 @@
     },
     "expandedKeys": [
       "item-1-0"
-    ]
+    ],
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Ai/Ai.md": {
     "expandedKeys": [
@@ -7614,12 +7615,12 @@
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 29,
-        "ch": 4
+        "line": 57,
+        "ch": 0
       },
       "to": {
-        "line": 29,
-        "ch": 28
+        "line": 57,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -7632,7 +7633,7 @@
       "item-2-11",
       "item-2-13"
     ],
-    "scroll": 11.999317385326453
+    "scroll": 28.191666666666666
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -8284,7 +8285,7 @@
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 0,
+    "scroll": 6.651884700665189,
     "cursor": {
       "from": {
         "line": 10,

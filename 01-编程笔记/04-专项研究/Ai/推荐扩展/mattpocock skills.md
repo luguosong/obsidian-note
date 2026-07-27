@@ -55,6 +55,8 @@ npx skills@latest add mattpocock/skills
 
 将一大块工作规划为在问题跟踪器上作为共享的调查工单地图，超过单次 Agent 会话能容纳的量 — 将它们一次解决一个，直到前往目标的路径清晰为止。
 
+
+
 ## 编写规格说明
 
 ### to-spec（手动，原/to-prd）
