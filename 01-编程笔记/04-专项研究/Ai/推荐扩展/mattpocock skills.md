@@ -31,11 +31,11 @@ npx skills@latest add mattpocock/skills
 
 为工程技能配置此仓库（issue tracker、分流标签、领域文档布局）。在使用其它工程技能之前，每个仓库运行一次，会就以下三项配置做决策：
 
-| 配置项 | 相关 skill | 说明 |
-|---|---|---|
-| Issue 跟踪器 | to-tickets / triage / to-spec / qa | 决定去哪读写 issue |
-| triage 状态标签 | triage | 5 个状态用哪套字符串，需匹配实际配置的名字 |
-| domain 文档布局 | improve-codebase-architecture / diagnosing-bugs / tdd | `CONTEXT.md` + `docs/adr/` 怎么放，供这些 skill 学领域语言 |
+| 配置项         | 相关 skill                                              | 说明                                                                                                                                                                    |
+| ----------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Issue 跟踪器   | to-tickets / triage / to-spec / qa                    | 用于存 spec 和 tickets                                                                                                                                                    |
+| triage 状态标签 | triage                                                | 5 个状态用哪套字符串，需匹配实际配置的名字<br><br>needs-triage：等待评估<br>needs-info：信息不足没法往下走<br>ready-for-agent：规格完整，agent 可以直接接手开做<br>ready-for-human：规格完整，但必须人来做<br>wontfix：不做——已实现过、或被拒 |
+| domain 文档布局 | improve-codebase-architecture / diagnosing-bugs / tdd | `CONTEXT.md` + `docs/adr/` <br><br>                                                                                                                                   |
 
 ## 询问该用哪个 skill
 
