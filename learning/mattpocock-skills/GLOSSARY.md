@@ -110,6 +110,14 @@ _Avoid_: 缓存 / 持久化（太泛）；把工单层当第四种长期维护�
 工单退役前，把值得长期留的东西从工作记忆抬进长期记忆的动作——架构 why→ADR、术语→`CONTEXT.md`、实现→代码、被拒 enhancement→`.out-of-scope`、prototype 结论→真代码。正因有它，工单层才敢"用完即弃"。
 _Avoid_: 归档 / 备份（那是原样搬运；提升是"蒸馏 keepers 再抬走"）
 
+**文档漂移（Doc drift）**：
+文档**落后于代码**——不是旧条目被改脏（ADR 条目不可变、改不脏历史），而是**覆盖度 / 时效**掉队：`docs/adr/` **漏记 supersede**（做了新决策却没写 superseding ADR，集合成不完整历史，旧条目仍真但过时）+ `CONTEXT.md` **术语滞后**（代码改了概念名、字典没同步，字典主动说谎）。多人协作、别人不写 ADR 时的主要风险形态。
+_Avoid_: 失真 / 过期（笼统，丢了"改不脏 vs 掉队"的区分）
+
+**重新对齐（Reconciliation）**：
+把漂移补回来的**拉取式**动作：`improve-codebase-architecture` / `grill-with-docs` 经 `domain-modeling`，走 `git log --oneline` 找 commit 热点（正是别人那批提交落点）→ cross-reference 代码 → 回补漏记的 ADR、刷新 `CONTEXT.md`。只在**你下次动工该区域时**发生，非主动全仓扫描；配 domain.md 的 flag conflict / gap 信号让漂移先**显形**。
+_Avoid_: 同步 / 校正（丢了"拉取式、按动工区触发"的机制）
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。

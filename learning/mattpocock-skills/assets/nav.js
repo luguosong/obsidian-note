@@ -14,7 +14,8 @@
     { file: "0006-triage-state-machine.html", n: "6", t: "triage 的 5 个状态标签" },
     { file: "0007-managed-files-map.html", n: "7", t: "skill 生态管的文件全景" },
     { file: "0008-adr-scaling.html", n: "8", t: "docs/adr/ 会不会膨胀" },
-    { file: "0009-ticket-layer-working-memory.html", n: "9", t: "工单层是工作记忆" }
+    { file: "0009-ticket-layer-working-memory.html", n: "9", t: "工单层是工作记忆" },
+    { file: "0010-collab-doc-drift.html", n: "10", t: "多人协作下文档会不会失真" }
   ];
 
   function build() {

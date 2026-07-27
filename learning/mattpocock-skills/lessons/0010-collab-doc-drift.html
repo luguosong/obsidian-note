@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 10 课 · 多人协作下 docs/adr/ 会不会失真</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">第 10 课 · 单 skill 深挖 · 领域层（多人协作）</p>
+<h1>别人不用 ADR / skills 提交一大批改动，我的 <code>docs/adr/</code> 会「失真」吗？</h1>
+<p class="lede">前三课（<a href="0007-managed-files-map.html">7</a> / <a href="0008-adr-scaling.html">8</a> / <a href="0009-ticket-layer-working-memory.html">9</a>）都是<strong>单人视角</strong>——文件区谁写谁读、ADR 会不会膨胀、工单层用完即冻。可现实是<strong>多人维护</strong>：另一个同事一口气推了一大批提交，却<strong>既没写 ADR、也没用这套 skill</strong>。你精心攒的 <code>docs/adr/</code> 会不会就此<strong>失真</strong>、开始骗人？</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong>别人的提交<strong>改不脏你已有的 ADR 条目</strong>——ADR 是「当时为什么这么定」的<strong>只增账本</strong>，谁也重写不了历史。真正会掉队的是<strong>覆盖度 / 时效</strong>：ADR <strong>漏记了 supersede</strong>（集合成了不完整历史），<code>CONTEXT.md</code> <strong>术语滞后</strong>（字典与代码打架）。而这种「<strong>文档漂移</strong>」是<strong>可见的</strong>（skill 拿文档核对代码、矛盾就举旗）且<strong>可回补的</strong>（<code>improve-codebase-architecture</code> 走 <code>git log</code> 找热点回补）；再加上 agent 从不整本读、只读你正在动工的区，没人碰的旧文档代价≈0。</p>
+</section>
+
+<section>
+<h2>1. 先分清「失真」到底指什么：改不脏 vs 会掉队</h2>
+<p>「失真」这个词其实混了两件性质完全不同的事，先拆开。</p>
+<p><strong>第一件：旧 ADR 条目会不会被别人改脏？——不会。</strong>回<a href="0008-adr-scaling.html">第 8 课</a>、<a href="0009-ticket-layer-working-memory.html">第 9 课</a>：ADR 是<strong>只增账本</strong>、是<strong>长期记忆</strong>里不可变的历史记录。<code>ADR-0005</code> 记的是「<em>某年某月，我们为了 X、在权衡 Y 后选了 Z</em>」——这是一句<strong>时间戳事实</strong>。同事再怎么改代码，也<strong>改写不了当年那个决策发生过</strong>。所以不存在「旧条目被悄悄篡改成假话」这回事。</p>
+<p><strong>第二件：文档会不会落后于代码？——会，而且两种介质漂法不同。</strong>这才是「失真」的真身。领域层其实是<strong>两种介质</strong>（回<a href="0007-managed-files-map.html">第 7 课</a>的维护模式），别人不同步时，它们各以不同方式掉队：</p>
+<table>
+<thead><tr><th>介质</th><th>它本该是什么</th><th>别人不同步时怎么漂</th><th>漂移签名</th></tr></thead>
+<tbody>
+<tr>
+<td><strong><code>docs/adr/</code></strong><br>（只增账本）</td>
+<td>某时某人「为什么这么定」的<strong>历史决策</strong></td>
+<td>做了个<strong>新的架构决策</strong>，却没写一条 superseding ADR</td>
+<td><strong>漏记 supersede</strong>：ADR <strong>集合</strong>成了<strong>不完整历史</strong>——旧条目<strong>仍是真的</strong>，只是<strong>过时</strong>了（没有 <code>ADR-0012</code> 记下这次推翻）</td>
+</tr>
+<tr>
+<td><strong><code>CONTEXT.md</code></strong><br>（活的真相 / 术语表）</td>
+<td>镜像<strong>当前现实</strong>的领域术语表</td>
+<td>在代码里改了某个概念名，却没同步字典</td>
+<td><strong>术语滞后</strong>：字典<strong>主动说谎</strong>——字典还写 <code>Order</code>，代码早已是 <code>Purchase</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout">
+<h3>一句话把「失真」摆正</h3>
+<p>失真 <strong>≠</strong>「旧条目被改脏」（ADR 不可变，改不脏）；失真 <strong>=</strong>「<strong>文档落后于代码</strong>」——ADR 的<strong>覆盖度缺口</strong>（漏记的 supersede）+ <code>CONTEXT.md</code> 的<strong>术语滞后</strong>。认清这一点，下面两节就是在讲：这种掉队<strong>为什么不会悄悄发生</strong>、以及<strong>怎么补回来</strong>。</p>
+</div>
+</section>
+
+<section>
+<h2>2. 为什么不会「悄悄」失真：三道让漂移显形的闸</h2>
+<p>关键不在「阻止别人制造漂移」（你管不了别人怎么提交），而在<strong>漂移一旦存在，就一定会被摆上桌，而不是默默腐蚀你的判断</strong>。这套 skill 有三道机制专门干这件事——前两道就写在<strong>你自己的</strong> <code>docs/agents/domain.md</code> 里。</p>
+<ol class="steps">
+<li><h3>Cross-reference with code（拿文档核对代码）</h3><code>domain-modeling</code> skill 的<strong>硬动作</strong>之一：你一说「某处怎么工作」，它就去核对代码是否同意，<strong>发现矛盾当场质问</strong>。原文：<em>"Your code cancels entire Orders, but you just said partial cancellation is possible — which is right?"</em>（你的代码取消的是整个 Order，可你刚说支持部分取消，到底哪个对？）——同事埋下的漂移，会在这一步变成<strong>一个被追问的问题</strong>。</li>
+<li><h3>Flag ADR conflicts（与 ADR 冲突就举旗）</h3>你的 <code>domain.md</code> 白纸黑字：<em>"If your output contradicts an existing ADR, surface it explicitly rather than silently overriding."</em>（若你的产出与现存 ADR 矛盾，<strong>显式点出、别静默覆盖</strong>。）于是当你在同事改过的区域动工、代码与一条<strong>过时的</strong> ADR 打架时，agent 不会闷头照旧 ADR 办，而是举旗：<em>「与 ADR-0005 冲突——但代码似乎已经改了，这条像是过时了。」</em></li>
+<li><h3>Glossary gap 信号（字典里没有 = 信号）</h3>同样在你的 <code>domain.md</code>：需要的概念<strong>不在字典里</strong>，就是个信号——要么你在造项目不用的词（该收手），要么<strong>真有缺口</strong>（记给 <code>domain-modeling</code>）。同事新引入、却没进 <code>CONTEXT.md</code> 的术语，会以「<strong>缺口</strong>」的形式浮上来。</li>
+</ol>
+<p>三道闸的共性：把漂移从「<strong>悄悄的、我以为文档还准</strong>」变成「<strong>显形的、被举旗的分歧</strong>」。你至少<strong>知道</strong>这里对不上了。</p>
+</section>
+
+<section>
+<h2>3. 漂移可回补：reconciliation 专盯别人那批提交的热点</h2>
+<p>显形之后怎么补？这套 skill 有一个<strong>专门吃「别人改了一大批、文档没跟上」</strong>的入口——<code>improve-codebase-architecture</code>（user-invoked）。它的 Explore 第一步，几乎是为你这个问题量身定的：</p>
+<blockquote>walk back a good stretch of the commit history (<code>git log --oneline</code>) to find the codebase's hot spots — the files and areas that keep coming up... Read the project's domain glossary (<code>CONTEXT.md</code>) and any ADRs in the area you're touching first.<br><span style="font-size:.85em">— improve-codebase-architecture / SKILL.md</span></blockquote>
+<p>翻译成人话：它<strong>回溯 commit 历史找热点</strong>——而热点<strong>正是同事那批提交砸下去的地方</strong>；先读该区的 <code>CONTEXT.md</code> + ADR，再 grill 出摩擦，<strong>inline 更新领域模型</strong>：新术语补进 <code>CONTEXT.md</code>、load-bearing（承重）的新决策 offer 一条 ADR。这就是把<strong>漏记的 ADR 回补、把滞后的字典刷新</strong>的「<strong>重新对齐（reconciliation）</strong>」。同一份 SKILL.md 还点明 ADR 的定位——<em>"ADRs record decisions this command should not re-litigate"</em>（ADR 记的是<strong>不该重翻</strong>的决策），可见 ADR 是给未来当<strong>护栏</strong>的，不是代码状态的镜子。</p>
+<p>另一条更轻的入口：<code>grill-with-docs</code>（它本体就是「<code>grilling</code> + <code>domain-modeling</code>」）。你下次在该区域<strong>规划新活</strong>时，<code>domain-modeling</code> 的 cross-reference 会自动拿 ADR / <code>CONTEXT.md</code> 核对当前代码，<strong>顺手</strong>把漂移补掉。</p>
+<figure class="diagram wide">
+<pre class="mermaid">
+flowchart TB
+  CO["同事一批提交<br/>（不写 ADR · 不用 skills）"]
+  CO -->|"漏记 supersede"| ADRD["ADR 集合：不完整历史<br/>旧条目仍真、只是过时"]
+  CO -->|"术语没同步"| CTXD["CONTEXT.md：术语滞后<br/>字典与代码打架"]
+  ADRD --> WORK["你下次在该区域<br/>动工 / 规划"]
+  CTXD --> WORK
+  WORK -->|"cross-reference 代码 · flag conflict · gap 信号"| SUR["漂移显形<br/>被举旗，不是静默腐蚀"]
+  SUR -->|"improve-codebase-architecture 走 git log 找热点"| FIX["回补 ADR · 刷新 CONTEXT.md<br/>重新对齐（reconciliation）"]
+  classDef bad fill:#2c2020,stroke:#e0928c,color:#e7e2d6;
+  classDef gold fill:#241f1a,stroke:#d9b45c,color:#e7e2d6;
+  classDef ok fill:#1e2a24,stroke:#7fc9a0,color:#e7e2d6;
+  class CO,ADRD,CTXD bad;
+  class WORK,SUR gold;
+  class FIX ok;
+</pre>
+<figcaption>红＝漂移（同事提交 + 两种介质各自掉队）；金＝你经过该区时漂移被举旗显形；绿＝走 <code>git log</code> 热点回补、重新对齐。漂移不是终点，是一个会被下一次经过治好的<strong>回路</strong>。</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>4. 诚实的边界：它是「拉取式」的，剩下的是社会问题</h2>
+<p>别把这套机制想成全自动的护城河。它是 <strong>pull-based / lazy（拉取式 / 惰性）</strong>的：漂移在<strong>你下次动工该区域时</strong>被修，<strong>不会主动全仓扫描</strong>。没人碰的角落会一直旧着——但这恰恰<strong>不危险</strong>：回<a href="0008-adr-scaling.html">第 8 课</a>，agent <strong>只读「动工区相关的 ADR」、从不整本读</strong>，所以没人读的旧 ADR <strong>代价≈0</strong>。真正要命的场景是「<strong>我正要在这块动工、而这块的文档旧了</strong>」——而这块恰好被第 2 节三道闸 + 第 3 节 reconciliation 全覆盖。</p>
+<div class="callout">
+<h3>skill 管不了的那一半：去社区练</h3>
+<p>这套 skill <strong>没法强迫同事去写 ADR</strong>。让<strong>全队的 ADR 长期保持完整</strong>是<strong>社会 / 流程</strong>问题——PR 评审门禁、把「更新 ADR / <code>CONTEXT.md</code>」写进 definition-of-done、团队对 Nygard 式 ADR 的共识。这类判断属于「<strong>智慧</strong>」，去 <a href="https://github.com/mattpocock/skills/discussions">GitHub Discussions</a> / AI Hero Discord 这些<strong>有真人的场</strong>问真实团队怎么做（入口记在 <a href="../RESOURCES.md">RESOURCES.md</a> 的 Wisdom 区）。skill 给你的是：漂移<strong>改不脏历史、会显形、可回补</strong>；团队纪律给你的是：漂移<strong>少发生</strong>。</p>
+</div>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="A" data-explain="ADR 是只增账本、旧条目不可变（改不脏历史）；漂移是「做了新决策却没写 superseding ADR」→ 集合成不完整历史、旧条目仍真但过时。不会被自动改写，也不至于整份作废；说「毫无影响」则忽略了覆盖度掉队。">
+<p class="quiz-q">1. 同事推了一大批不带 ADR 的改动，对你已有 ADR 条目最准确的影响是？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>改不脏旧条目，但集合可能漏记 supersede 而过时</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>旧条目会被自动改写，以便与最新代码保持一致</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>整个目录立刻作废，必须删掉后从头重建一遍</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>毫无影响，ADR 与代码的任何变化都完全无关</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="B" data-explain="domain-modeling 的 cross-reference + 你 domain.md 的 flag ADR conflicts，就是「核对代码、矛盾就举旗」让漂移显形。A/D 不是这套机制，且违背「从不整本读」；C 是团队 CI 门禁，skill 管不了别人提交。">
+<p class="quiz-q">2. 下面哪个是让「文档漂移」显形、而非悄悄腐蚀的机制？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>每次提交都自动全仓重扫、并重写全部 ADR 条目</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>skill 拿文档核对代码，发现矛盾就当场举旗质问</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>CI 在合并之前强制同事补齐对应那条 ADR 记录</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>agent 把整个目录读进上下文再逐条与代码比对</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="improve-codebase-architecture 的 Explore 第一步就是走 git log --oneline 找 hot spots（正是那批提交落点），读该区 ADR/CONTEXT、grill、inline 回补。B 太低效；C 不落盘、留不住；D 毁掉决策历史——ADR 的价值恰在保留 why。">
+<p class="quiz-q">3. 同事那批提交造成的漂移，靠什么「重新对齐」回补最贴切？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>improve-codebase-architecture 走 git log 找热点回补</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>手动逐个 diff 全部历史提交、再一条条改文档</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>等下一次全员会议、把决策口头同步一遍就行</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>删掉旧 ADR，让文档永远只描述最新的代码</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<p>先读第一条——「拿文档核对代码」是漂移显形的心脏；其余按需核验：</p>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md">domain-modeling / SKILL.md</a></strong> —— 漂移显形的心脏：<em>Cross-reference with code</em>（拿代码核对说法、矛盾即质问）+ <em>Challenge against the glossary</em>（术语冲突当场点出）+ ADR 三条件。<strong>最高优先「读」。</strong></li>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/SKILL.md">improve-codebase-architecture / SKILL.md</a></strong> —— 回补入口：Explore 走 <code>git log --oneline</code> 找 hot spots、先读该区 ADR/CONTEXT，<em>"ADRs record decisions this command should not re-litigate"</em>。</li>
+<li><strong>你自己的 <code>docs/agents/domain.md</code></strong> —— 读取端<strong>活样本</strong>：<em>Flag ADR conflicts</em>（矛盾显式点出、不静默覆盖）+ glossary gap 是信号。这套课讲的机制，你仓库里已经配好了。</li>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md">grill-with-docs / SKILL.md</a></strong> —— 更轻的入口：本体＝<code>grilling</code> + <code>domain-modeling</code>，规划新活时顺手 cross-reference 补漂移。</li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>「深挖 <code>domain-modeling</code> 主体——challenge / sharpen / scenario / cross-reference 这四手法平时怎么用？」</em>、<em>「把这套『文档漂移 / reconciliation』做成一张 <code>reference/</code> 参考卡？」</em>、<em>「多上下文（<code>CONTEXT-MAP.md</code>）下，同事改了<strong>另一个</strong> context 的代码，会不会波及我这边？」</em>、<em>「团队怎么用 PR 门禁强制补 ADR——该去社区问哪一类问题？」</em> —— 下一站由你点单。随时回查见 <a href="../RESOURCES.md">RESOURCES.md</a>。</p>
+</section>
+
+<footer>
+<span><a href="0009-ticket-layer-working-memory.html">← 第 9 课 · 工单层是工作记忆</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

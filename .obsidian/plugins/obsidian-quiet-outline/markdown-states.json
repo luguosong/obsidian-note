@@ -3016,15 +3016,15 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 0,
+    "scroll": 14.467592366536458,
     "cursor": {
       "from": {
-        "line": 43,
-        "ch": 55
+        "line": 47,
+        "ch": 0
       },
       "to": {
-        "line": 43,
-        "ch": 55
+        "line": 47,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -7614,12 +7614,12 @@
   "01-编程笔记/04-专项研究/Ai/推荐扩展/mattpocock skills.md": {
     "cursor": {
       "from": {
-        "line": 37,
-        "ch": 107
+        "line": 29,
+        "ch": 4
       },
       "to": {
-        "line": 37,
-        "ch": 107
+        "line": 29,
+        "ch": 28
       }
     },
     "expandedKeys": [
@@ -7632,7 +7632,7 @@
       "item-2-11",
       "item-2-13"
     ],
-    "scroll": 12.694444444444445
+    "scroll": 11.999317385326453
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -8263,5 +8263,37 @@
       "item-1-0"
     ],
     "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Ai/Claude Code/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 14,
+        "ch": 53
+      },
+      "to": {
+        "line": 14,
+        "ch": 53
+      }
+    },
+    "scroll": 0
+  },
+  "网页裁剪/Claude Code 更新日志.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
   }
 }
