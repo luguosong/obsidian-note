@@ -30,8 +30,9 @@
 8. **ADR 会不会膨胀**（lesson 8，Phase 2 · 领域层深挖）：应用户"`docs/adr/` 只增不改会不会膨胀、agent 怎么读"——三重防线：写入三条件硬闸门（长得慢）/ agent 从不整本读（文件名即索引，读取策略在配置层 `domain.md`）/ 规模化按 bounded context 分片。superseded 僵尸近零成本。含 mermaid 漏斗图。接 lesson 7「只增不改账本」+ lesson 2 context hygiene + lesson 1 DDD。**开篇 primer 回填**：应用户追问"ADR 是什么"补了「一份 ADR 长什么样」（定义+模板+实物+why+Nygard 来历），原 5 节顺延为 2–6。
 9. **工单层是工作记忆**（lesson 9，Phase 2 · 工单层深挖）：应用户"`.scratch/` 工单层只有活跃时有价值吗、干完就不再读/维护了吗"——**改写 lesson 7 存储模型**：四块区沿"读多久"劈成 长期记忆（配置/领域/`.out-of-scope`，即三模式）vs 工作记忆（工单层，用完冻结）。工单层非第四种长期模式。`.scratch/` 实物结构 + 生命周期（活跃→ship→冻结退役）+ **提升（promotion）机制**（keepers 死前抬进长期层）。含 mermaid 提升图。GLOSSARY 增「记忆二分」「提升」两条。
 10. **多人协作下文档会不会失真**（lesson 10，Phase 2 · 领域层深挖）：应用户"项目多人维护、别人推一大批提交却不写 ADR/不用 skills，我的 `docs/adr/` 会失真吗"——把 7/8/9 单人视角推到**多人协作**。**核心 reframe**：失真 ≠ 旧条目被改脏（ADR 只增账本、不可变），= 文档落后于代码；两介质两签名（ADR 漏记 supersede / CONTEXT.md 术语滞后）。三道显形闸（cross-reference with code / flag ADR conflicts / glossary gap，前两道在用户自己 domain.md）+ reconciliation 回补（improve-codebase-architecture 走 `git log` 找热点，正是那批提交落点）。诚实边界：pull-based/lazy、没人碰的旧文档代价≈0、全队完整性是社会问题→社区。含 mermaid 漂移回路图。GLOSSARY 增「文档漂移」「重新对齐」两条。
-11. （后续深挖，用户点单）domain-modeling 主体（sharpen 词汇四手法——8/9/10 已反复引用其片段，自然收束点）/ to-tickets（tracer-bullet 纵切）/ wayfinder（map）/ grill-with-docs / diagnosing-bugs …；或把 lesson 8 三重防线、lesson 9 记忆二分、lesson 10 文档漂移合成 `reference/` 参考卡
-12. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
+11. **wayfinder 深挖**（lesson 11，Phase 2 · 第三条匝道）：应用户点单——三条匝道里唯一还没深挖、且跑在主流程**之前**专治"一个会话装不下"的巨大模糊工程。核心 **plan, don't do**（决策票、产 decisions 不产 deliverables，一会话一决策）；判据 `grill-with-docs`（装得下）vs `wayfinder`（装不下）；决策票 vs `to-tickets` 纵切片对照（决定 vs 建造）；地图=索引不是仓库 + fog of war（开票判据＝能否"精确说出问题"≠"能否答"）+ frontier + Out of scope；四票类型 × HITL/AFK；**汇流补全**：雾散接 `to-spec`（收拢 linked decisions）→ `to-tickets` → `implement`，直连 implement 仅当 effort 其实很小。含 mermaid 迷雾回路图。GLOSSARY 增 "### wayfinder" 五条。
+12. （后续深挖，用户点单）domain-modeling 主体（sharpen 词汇四手法——8/9/10 + 11 已反复引用其片段，自然收束点）/ to-tickets（tracer-bullet 纵切）/ diagnosing-bugs（补齐最后一条匝道）/ grill-with-docs …（wayfinder 已交付）；或把 lesson 8 三重防线、lesson 9 记忆二分、lesson 10 文档漂移、lesson 11 决策票vs纵切片 合成 `reference/` 参考卡
+13. （后续课）在自己真实项目里跑一次完整闭环（实战收尾）
 
 ## Phase 2 · 单 skill 深挖（2026-07-20 起）
 

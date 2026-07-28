@@ -118,6 +118,28 @@ _Avoid_: 失真 / 过期（笼统，丢了"改不脏 vs 掉队"的区分）
 把漂移补回来的**拉取式**动作：`improve-codebase-architecture` / `grill-with-docs` 经 `domain-modeling`，走 `git log --oneline` 找 commit 热点（正是别人那批提交落点）→ cross-reference 代码 → 回补漏记的 ADR、刷新 `CONTEXT.md`。只在**你下次动工该区域时**发生，非主动全仓扫描；配 domain.md 的 flag conflict / gap 信号让漂移先**显形**。
 _Avoid_: 同步 / 校正（丢了"拉取式、按动工区触发"的机制）
 
+### wayfinder（第三条匝道）· 决策地图
+
+**wayfinder（探路者）**：
+第三条匝道（user-invoked）：给一个**太大（一个 agent 会话装不下）且有雾（到终点的路还看不见）**的工程，在 issue tracker 上画一张**决策票的共享地图**、一次解一个决策把雾推开。判据：`grill-with-docs` 磨的是一会话装得下的想法，`wayfinder` 专治装不下的——普通清晰 feature 别用。雾散尽即**汇入 `to-spec`**。
+_Avoid_: 规划 / 大纲（丢了"太大+有雾+画地图"的触发与形态）；用在边界清楚的普通 feature 上
+
+**plan, don't do（只规划、不动手）**：
+`wayfinder` 的铁律：每张票解一个**决策**、产出 **decisions 不是 deliverables**，地图上不做构建。"想直接动手了"是**走到地图边缘、该移交**的信号，不是就地开建的许可（除非 effort 在 `## Notes` 显式声明把执行纳入）。
+_Avoid_: 只计划不执行（口语化，丢了"产决策 vs 产交付物"的锚）
+
+**终点（Destination）**：
+这张地图要找到的路的**尽头**——一份待交接的 spec / 一个开工前要锁的决策 / 一次就地改造。**命名终点是画图的第一个动作**，因为它**定 scope**、塑造每一张票。
+_Avoid_: 目标 / 需求（太泛，丢了"定 scope"的职责）
+
+**决策票 / 地图（Decision ticket / Map）**：
+**地图**＝一个打 `wayfinder:map` 标签的 issue，是决策的**索引不是仓库**（只 gist + 链接、决策只住在票里），体固定五段（Destination / Notes / Decisions so far / Not yet specified / Out of scope）。**决策票**＝地图的子 issue，一个**装得进一个会话**的问题，带 `wayfinder:<type>`（`grilling` 默认 / `research` / `prototype` / `task`）× HITL 或 AFK。
+_Avoid_: 把决策抄进地图体（违背"索引不是仓库"）；把决策票当成 `to-tickets` 的构建纵切片
+
+**战争迷雾 / 前沿（Fog of war / Frontier）**：
+**战争迷雾**＝地图**故意留白**的部分（写在 **Not yet specified** 段）：你隐约知道要来、却还钉不下来的决策；解一张票就推开前方的雾、把能说清的**毕业成新票**。**开票还是留雾的唯一判据**：你能不能把问题**精确说出来**（≠能不能答出来）——利了就开票（哪怕被阻塞），说不利就留雾、别预切。**前沿**＝开着·未阻塞·未认领的票，已知世界的边缘。越过终点的活进 **Out of scope**（永不毕业），不是雾。
+_Avoid_: 把"能不能答"当开票门槛；把 Out of scope 和 Not yet specified 混为一谈
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。
