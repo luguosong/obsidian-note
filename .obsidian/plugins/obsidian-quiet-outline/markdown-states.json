@@ -3019,12 +3019,12 @@
     "scroll": 14.467592366536458,
     "cursor": {
       "from": {
-        "line": 47,
-        "ch": 0
+        "line": 41,
+        "ch": 2
       },
       "to": {
-        "line": 47,
-        "ch": 0
+        "line": 41,
+        "ch": 2
       }
     },
     "expandedKeys": [
@@ -7633,7 +7633,7 @@
       "item-2-11",
       "item-2-13"
     ],
-    "scroll": 33.50646551724138
+    "scroll": 28.191666666666666
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7822,7 +7822,7 @@
         "ch": 0
       }
     },
-    "scroll": 784.6999748436714
+    "scroll": 779.1518573902093
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
     "expandedKeys": [
@@ -8286,6 +8286,21 @@
       "item-1-0"
     ],
     "scroll": 6.651884700665189,
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/03-Java/01-基础/01-JavaSE/01-JavaSE.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
     "cursor": {
       "from": {
         "line": 10,
