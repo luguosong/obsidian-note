@@ -3016,15 +3016,15 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 22.370833333333334,
+    "scroll": 0.976303317535545,
     "cursor": {
       "from": {
-        "line": 61,
-        "ch": 51
+        "line": 12,
+        "ch": 0
       },
       "to": {
-        "line": 61,
-        "ch": 51
+        "line": 12,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -7545,7 +7545,9 @@
       }
     },
     "scroll": 0,
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "11-其它/电子印章管理平台/电子印章基础知识.md": {
     "cursor": {
@@ -7568,18 +7570,23 @@
   "11-其它/电子印章管理平台/相关资源.md": {
     "cursor": {
       "from": {
-        "line": 16,
-        "ch": 0
+        "line": 192,
+        "ch": 5
       },
       "to": {
-        "line": 16,
-        "ch": 0
+        "line": 192,
+        "ch": 17
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-16",
+      "item-2-12",
+      "item-2-8",
+      "item-2-5",
+      "item-2-2"
     ],
-    "scroll": 0
+    "scroll": 120.78914141414141
   },
   "01-编程笔记/04-专项研究/Ai/Ai.md": {
     "expandedKeys": [
@@ -7633,7 +7640,7 @@
       "item-2-11",
       "item-2-13"
     ],
-    "scroll": 36.04965753424658
+    "scroll": 47.96175200493523
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/最佳实践.md": {
     "expandedKeys": [
@@ -7809,15 +7816,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 403,
-        "ch": 5
+        "line": 405,
+        "ch": 0
       },
       "to": {
-        "line": 403,
-        "ch": 11
+        "line": 405,
+        "ch": 0
       }
     },
-    "scroll": 217.18477074235807
+    "scroll": 408.32819140563515
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
     "expandedKeys": [
@@ -8355,5 +8362,53 @@
       }
     },
     "scroll": 91.03967391304347
+  },
+  "01-编程笔记/04-专项研究/Obsidian/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 0
+      },
+      "to": {
+        "line": 15,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Linux/Linux.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Git/Git.md": {
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 0
+      },
+      "to": {
+        "line": 16,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 0
   }
 }
