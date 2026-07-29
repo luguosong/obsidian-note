@@ -3016,7 +3016,7 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 14.467592366536458,
+    "scroll": 22.370833333333334,
     "cursor": {
       "from": {
         "line": 41,
@@ -7814,15 +7814,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 787,
-        "ch": 0
+        "line": 788,
+        "ch": 9
       },
       "to": {
-        "line": 787,
-        "ch": 0
+        "line": 788,
+        "ch": 9
       }
     },
-    "scroll": 779.1518573902093
+    "scroll": 779.2522036832993
   },
   "01-编程笔记/04-专项研究/Ai/Claude Code/已安装扩展.md": {
     "expandedKeys": [
@@ -7887,18 +7887,18 @@
   "01-编程笔记/03-Java/01-基础/02-JVM/基础知识.md": {
     "cursor": {
       "from": {
-        "line": 48,
-        "ch": 61
+        "line": 49,
+        "ch": 0
       },
       "to": {
-        "line": 48,
-        "ch": 61
+        "line": 49,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 20.735733695652172
+    "scroll": 14.264199655765921
   },
   "01-编程笔记/03-Java/01-基础/02-JVM/02-JVM.md": {
     "expandedKeys": [
@@ -8311,5 +8311,19 @@
         "ch": 0
       }
     }
+  },
+  "learning/mattpocock-skills/learning-records/0011-right-side-toc.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 0
+      },
+      "to": {
+        "line": 3,
+        "ch": 0
+      }
+    },
+    "scroll": 0
   }
 }

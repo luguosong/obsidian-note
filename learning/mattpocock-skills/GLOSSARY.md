@@ -140,6 +140,24 @@ _Avoid_: 把决策抄进地图体（违背"索引不是仓库"）；把决策票
 **战争迷雾**＝地图**故意留白**的部分（写在 **Not yet specified** 段）：你隐约知道要来、却还钉不下来的决策；解一张票就推开前方的雾、把能说清的**毕业成新票**。**开票还是留雾的唯一判据**：你能不能把问题**精确说出来**（≠能不能答出来）——利了就开票（哪怕被阻塞），说不利就留雾、别预切。**前沿**＝开着·未阻塞·未认领的票，已知世界的边缘。越过终点的活进 **Out of scope**（永不毕业），不是雾。
 _Avoid_: 把"能不能答"当开票门槛；把 Out of scope 和 Not yet specified 混为一谈
 
+### improve-codebase-architecture · 架构深化
+
+**improve-codebase-architecture（架构深化）**：
+user-invoked skill，治 4 失败模式里的 **ball-of-mud**。一条**三步**流程：Explore（走 `git log` 找热点、逐条过删除测试）→ 产一份**候选卡 HTML 报告**（写临时目录、不落仓库）→ 对你**挑中的那一张**卡跑 `grilling`。产**决策 / 设计、不产代码**；要落地再接 `to-tickets` → `implement`。
+_Avoid_: 当成 code-review 或重构工具（它不改码）；当成一次性报告（报告只是第 ② 步、后面还有 grilling loop）
+
+**深化机会（Deepening opportunity）**：
+报告里的每一张候选卡＝把一个**浅模块**改造成**深模块**的重构机会。目标是 testability（可测）＋ AI-navigability（AI 可导航）。挑一张深挖，不是每张都跑，也不是 `wayfinder`——范围已利、无雾可拨，用 `grilling` 即可。
+_Avoid_: 泛说"优化 / 重构项"（丢了"浅→深"的方向）；把每张卡都开成 wayfinder 决策票
+
+**深模块 / 浅模块（Deep / shallow module）**：
+`codebase-design` 词汇层。**深**＝小接口 + 大实现（调用者得 **leverage**（杠杆）、维护者得 **locality**（局部性、改动收在一处））；**浅**＝大接口 + 薄实现、只做转发（要避的）。术语须原样用，别漂成 component / service / API / boundary。
+_Avoid_: 用 组件 / 服务 / 接口(API) / 边界 替换这套词（一致性正是重点）
+
+**删除测试（Deletion test）**：
+判一个模块是浅是深的探针：想象把它**删掉**——复杂度**凭空消失**＝纯转发壳（浅，正是深化目标）；复杂度在 **N 个调用点重现**＝它在挣钱（深，别动）。配套两把尺："接口即测试面"、"一个 adapter 只是假想接缝、两个才是真接缝"。
+_Avoid_: 和"有没有测试 / 覆盖率"混为一谈（它测的是模块形状，不是测试多少）
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。

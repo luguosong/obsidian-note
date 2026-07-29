@@ -16,7 +16,8 @@
     { file: "0008-adr-scaling.html", n: "8", t: "docs/adr/ 会不会膨胀" },
     { file: "0009-ticket-layer-working-memory.html", n: "9", t: "工单层是工作记忆" },
     { file: "0010-collab-doc-drift.html", n: "10", t: "多人协作下文档会不会失真" },
-    { file: "0011-wayfinder-map.html", n: "11", t: "wayfinder：给巨大模糊工程画决策地图" }
+    { file: "0011-wayfinder-map.html", n: "11", t: "wayfinder：给巨大模糊工程画决策地图" },
+    { file: "0012-improve-codebase-architecture.html", n: "12", t: "improve-codebase-architecture：报告之后怎么走" }
   ];
 
   function build() {
