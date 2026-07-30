@@ -1291,19 +1291,22 @@
     ]
   },
   "CLAUDE.md": {
-    "scroll": 24.593243243243244,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 32,
-        "ch": 0
+        "line": 37,
+        "ch": 16
       },
       "to": {
-        "line": 32,
-        "ch": 0
+        "line": 37,
+        "ch": 19
       }
     },
     "expandedKeys": [
-      "item-1-0"
+      "item-1-0",
+      "item-2-3",
+      "item-2-7",
+      "item-2-16"
     ]
   },
   "_temp_extract.md": {
@@ -1581,7 +1584,7 @@
     ]
   },
   "README.md": {
-    "scroll": 18.668478260869566,
+    "scroll": 16.46195652173913,
     "cursor": {
       "from": {
         "line": 1,
@@ -3057,7 +3060,9 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "网页裁剪/llm-wiki 1.md": {
     "scroll": 0,
@@ -8286,7 +8291,7 @@
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 6.651884700665189,
+    "scroll": 0,
     "cursor": {
       "from": {
         "line": 10,
@@ -8435,11 +8440,11 @@
     "cursor": {
       "from": {
         "line": 8,
-        "ch": 13
+        "ch": 0
       },
       "to": {
         "line": 8,
-        "ch": 13
+        "ch": 0
       }
     },
     "scroll": 0
@@ -8462,7 +8467,7 @@
         "ch": 21
       }
     },
-    "scroll": 11.116666666666667
+    "scroll": 48.61005331302361
   },
   "01-编程笔记/04-专项研究/家庭服务器搭建/家庭服务器搭建.md": {
     "expandedKeys": [
@@ -8498,12 +8503,12 @@
   "未分类笔记/claude code已安装的扩展和配置.md": {
     "cursor": {
       "from": {
-        "line": 211,
-        "ch": 0
+        "line": 184,
+        "ch": 23
       },
       "to": {
-        "line": 211,
-        "ch": 0
+        "line": 184,
+        "ch": 23
       }
     },
     "expandedKeys": [
@@ -8512,9 +8517,11 @@
       "item-3-4",
       "item-3-7",
       "item-2-19",
-      "item-2-25"
+      "item-2-25",
+      "item-3-11",
+      "item-3-17"
     ],
-    "scroll": 195.1070460704607
+    "scroll": 156.646484375
   },
   "01-编程笔记/04-专项研究/Linux/相关资源.md": {
     "expandedKeys": [
@@ -8557,11 +8564,11 @@
     ],
     "cursor": {
       "from": {
-        "line": 9,
+        "line": 20,
         "ch": 0
       },
       "to": {
-        "line": 9,
+        "line": 20,
         "ch": 0
       }
     }
@@ -8655,15 +8662,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 444,
+        "line": 423,
         "ch": 0
       },
       "to": {
-        "line": 444,
+        "line": 423,
         "ch": 0
       }
     },
-    "scroll": 419.41875
+    "scroll": 420.9630057803468
   },
   "未分类笔记/Java概述.md": {
     "expandedKeys": [
@@ -8681,7 +8688,7 @@
         "ch": 0
       }
     },
-    "scroll": 172.52291666666667
+    "scroll": 177.56315104166666
   },
   "01-编程笔记/03-Java/01-基础/01-JavaSE/概述.md": {
     "expandedKeys": [
@@ -8727,5 +8734,414 @@
       }
     },
     "scroll": 0
+  },
+  "01-编程笔记/Java/Java学习路线.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Java/JavaSE.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/Java/JVM.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "05-历史/中国史/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/编程智能体.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ],
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 9
+      },
+      "to": {
+        "line": 16,
+        "ch": 9
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Obsidian/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Obsidian/插件说明.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "未分类笔记/SubAgent.md": {
+    "expandedKeys": []
+  },
+  "01-编程笔记/Java/Java.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/电子印章管理平台/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-5",
+      "item-2-8",
+      "item-2-12",
+      "item-2-16"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 3.5608308605341246
+  },
+  "01-编程笔记/密码学/相关资源.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Obsidian/skill说明.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Obsidian/Obsidian.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 0
+      },
+      "to": {
+        "line": 16,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Java/JavaSE/Java概述.md": {
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-4",
+      "item-2-6"
+    ]
+  },
+  "01-编程笔记/Java/JavaSE/JavaSE.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/Java/JavaSE/Java基础语法.md": {
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-3-2",
+      "item-2-7",
+      "item-2-10",
+      "item-3-11",
+      "item-4-15",
+      "item-2-18"
+    ]
+  },
+  "01-编程笔记/Java/JVM/JVM.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 5
+      },
+      "to": {
+        "line": 6,
+        "ch": 5
+      }
+    }
+  },
+  "01-编程笔记/Java/JVM/字节码解读.md": {
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "未分类笔记/MemTest86.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/Windows/PowerShell配置Claude多账号切换.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Windows/常见问题和优化/PowerShell配置Claude多账号切换.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ]
+  },
+  "01-编程笔记/计算机组成原理/进制与数制转换.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5",
+      "item-2-8"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/计算机组成原理/原码反码补码.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/mattpocock skills.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-5",
+      "item-2-7",
+      "item-2-9"
+    ],
+    "cursor": {
+      "from": {
+        "line": 47,
+        "ch": 0
+      },
+      "to": {
+        "line": 47,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Windows/安装的软件/安装的软件.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Windows/常见问题和优化/常见问题和优化.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/Ai.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/智能体扩展.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    }
   }
 }

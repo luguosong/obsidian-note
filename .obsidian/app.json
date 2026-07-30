@@ -8,5 +8,6 @@
   "newFileFolderPath": "未分类笔记",
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "strictLineBreaks": true
+  "strictLineBreaks": true,
+  "tabSize": 4
 }
