@@ -38,7 +38,7 @@ obsidian-note/
 `01-编程笔记/` 采用**「目录即分类」**的组织方式（配合 Obsidian Notebook Navigator 插件，按文件夹分组显示）：**笔记放在哪个目录，就属于哪个分类**——分类完全由物理位置决定，不靠 `分类` 字段。
 
 1. **分类 = 目录**：`01-编程笔记/` 下的每个主题子目录（`Java/`、`Ai/`、`Docker/`、`前端/` 等）就是一个分类。一篇笔记归属哪个分类，看它放在哪个目录——`01-编程笔记/Java/JVM.md` 属于 Java 分类。Notebook Navigator 按 `noteGrouping: folder` 把同目录的笔记归到一组显示。
-2. **「文件夹笔记」当 MOC 用**：Notebook Navigator 的 folder notes 功能已启用（`enableFolderNotes: true`）。每个分类目录可有**一张与目录同名的笔记**（如 `Java/Java.md`）作为该分类的 **MOC/索引页**，用正文 wikilink 串起目录内的笔记。MOC **按需创建**：仅当一个目录的笔记多到值得索引（≥2 篇）时才建，0-1 篇的目录不建空 MOC。文件夹笔记在列表中隐藏（`hideFolderNoteInList: true`），点目录即打开它。注意：**分类仍由目录决定，文件夹笔记只是导航件，不是分类依据**。
+2. **「文件夹笔记」当 MOC 用**：Notebook Navigator 的 folder notes 功能已启用（`enableFolderNotes: true`）。每个分类目录都有**一张与目录同名的笔记**（如 `Java/Java.md`）作为该分类的 **MOC/索引页**，用正文 wikilink 串起目录内的笔记。**空分类目录也建占位 MOC**（只有 frontmatter + 一级标题 + 一句话主题说明），作为 Notebook Navigator 的「点目录即打开」入口，待后续笔记迁入再补全索引。文件夹笔记在列表中隐藏（`hideFolderNoteInList: true`），点目录即打开它。注意：**分类仍由目录决定，文件夹笔记只是导航件，不是分类依据**。MOC 链路与外观由 `doc-vault-sync` skill 定期同步（见 `.zcode/skills/doc-vault-sync`）。
 3. **笔记间的关联用正文 wikilink**：分类只管「物理放哪」；笔记与笔记之间的语义关联（例如 `JavaSE.md` 作为索引、用 `- [[Java概述]]` 串起子主题）写在**正文**里，用 `[[笔记名]]` 表达。这是新结构下笔记间唯一的显式关联方式——没有 `关联笔记` 字段，需要关联就在正文写 wikilink。
 4. **frontmatter 不承载分类**：分类不靠 frontmatter 字段，所以模版里没有 `分类` / `关联笔记` 字段。frontmatter 只放元数据（`描述` / `排序` / `分组` / `创建时间`），其中 `排序` 供 Notebook Navigator 在目录内手动排序（`manualSortPropertyKey: "排序"`）。
 5. **顶层学科分区带编号，`01-编程笔记/` 内部主题目录不带编号**：顶层分区（`01-编程笔记`、`02-数学` … `11-其它`）用「编号-名称」控制显示顺序；`01-编程笔记/` 内部的主题子目录（`Java`、`Ai`、`计算机组成原理`）直接用主题名，**按字母序显示**。⚠️ Notebook Navigator **不支持子目录手动排序**——子目录只能字母升/降序（只有仓库根级目录支持拖拽手排，存于 `rootFolderOrder`）。所以内部主题目录的顺序就是字母序；若某主题确需置顶/自定义顺序，**唯一杠杆是给目录名加数字前缀**（默认不加，接受字母序）。

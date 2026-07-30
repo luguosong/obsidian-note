@@ -6,7 +6,6 @@
 ---
 # Windows
 
-- [[本机环境]]
+- [[安装的软件]]
+- [[常见问题和优化]]
 - [[wsl]]
-- [[PowerShell配置Claude多账号切换]]
-- [[localhost连接Docker服务慢的IPv6问题]]

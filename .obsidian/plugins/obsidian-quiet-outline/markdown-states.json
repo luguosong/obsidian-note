@@ -9143,5 +9143,72 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/电子印章管理平台/电子印章管理平台.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 12,
+        "ch": 0
+      },
+      "to": {
+        "line": 12,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/电子印章管理平台/平台搭建.md": {
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 0
+      },
+      "to": {
+        "line": 16,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
+  },
+  "01-编程笔记/01-编程笔记.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Windows/Windows.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/编程智能体/编程智能体.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
   }
 }
