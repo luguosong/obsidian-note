@@ -1,6 +1,4 @@
 ---
-分类:
-关联笔记:
 描述:
 排序:
 分组:
@@ -76,10 +74,10 @@ npx skills@latest add mattpocock/skills
 
 ### setup-matt-pocock-skills
 
-| 问题（issue）跟踪器   |                                                                                                                                                                 |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 分诊（triage）标签词汇 | needs-triage 还没评估<br>needs-info 卡在等 reporter（提报人）补料，信息不足没法往下走<br>ready-for-agent 规格完整 agent 可以直接接手开做<br>ready-for-human 规格完整，但必须人来做<br>wontfix **不做**——已实现过、或被拒 |
-| 领域（domain）文档   |                                                                                                                                                                 |
+| 问题（issue）跟踪器<br>docs/agents/issue-tracker.md   |                                                                                                                                                                 |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 分诊（triage）标签词汇<br>docs/agents/triage-labels.md | needs-triage 还没评估<br>needs-info 卡在等 reporter（提报人）补料，信息不足没法往下走<br>ready-for-agent 规格完整 agent 可以直接接手开做<br>ready-for-human 规格完整，但必须人来做<br>wontfix **不做**——已实现过、或被拒 |
+| 领域（domain）文档<br>docs/agents/domain.md          | CONTEXT.md<br><br>docs/adr/                                                                                                                                     |
 
 ## 询问应该使用哪个skill
 
