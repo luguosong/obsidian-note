@@ -7601,7 +7601,8 @@
         "line": 10,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/04-专项研究/Ai/推荐扩展/推荐扩展.md": {
     "expandedKeys": [
@@ -8224,18 +8225,18 @@
   "01-编程笔记/04-专项研究/家庭服务器搭建/外网访问.md": {
     "cursor": {
       "from": {
-        "line": 47,
-        "ch": 36
+        "line": 18,
+        "ch": 0
       },
       "to": {
-        "line": 47,
-        "ch": 36
+        "line": 18,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 35.10964959184401
+    "scroll": 14.488636363636363
   },
   "01-编程笔记/04-专项研究/Windows/wsl.md": {
     "cursor": {
@@ -8410,5 +8411,63 @@
       "item-1-0"
     ],
     "scroll": 0
+  },
+  "01-编程笔记/04-专项研究/Ai/未命名.md": {
+    "expandedKeys": []
+  },
+  "01-编程笔记/04-专项研究/Ai/编程智能体.md": {
+    "cursor": {
+      "from": {
+        "line": 20,
+        "ch": 0
+      },
+      "to": {
+        "line": 20,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ],
+    "scroll": 0
+  },
+  "未分类笔记/claude code.md": {
+    "expandedKeys": []
+  },
+  "未分类笔记/mattpocock skills.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-5",
+      "item-2-7",
+      "item-2-9"
+    ],
+    "cursor": {
+      "from": {
+        "line": 85,
+        "ch": 4
+      },
+      "to": {
+        "line": 85,
+        "ch": 12
+      }
+    },
+    "scroll": 54.52435723951285
+  },
+  "01-编程笔记/04-专项研究/家庭服务器搭建/家庭服务器搭建.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    }
   }
 }

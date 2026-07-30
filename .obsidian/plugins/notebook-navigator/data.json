@@ -561,10 +561,6 @@
     "01-编程笔记/03-Java/02-服务端开发/05-微服务": "network",
     "01-编程笔记/04-专项研究": "microscope",
     "01-编程笔记/04-专项研究/Ai": "sparkles",
-    "01-编程笔记/04-专项研究/Ai/Claude Code": "terminal",
-    "01-编程笔记/04-专项研究/Ai/Github Copilot Cil": "github",
-    "01-编程笔记/04-专项研究/Ai/Github Copilot App": "bot",
-    "01-编程笔记/04-专项研究/Ai/推荐扩展": "puzzle",
     "01-编程笔记/04-专项研究/Docker": "container",
     "01-编程笔记/04-专项研究/设计模式": "binary",
     "01-编程笔记/04-专项研究/Windows": "bootstrap-icons:windows",
@@ -623,10 +619,6 @@
     "01-编程笔记/03-Java/02-服务端开发/05-微服务": "#f59e0b",
     "01-编程笔记/04-专项研究": "#8b5cf6",
     "01-编程笔记/04-专项研究/Ai": "#10b981",
-    "01-编程笔记/04-专项研究/Ai/Claude Code": "#6366f1",
-    "01-编程笔记/04-专项研究/Ai/Github Copilot Cil": "#0ea5e9",
-    "01-编程笔记/04-专项研究/Ai/Github Copilot App": "#8b5cf6",
-    "01-编程笔记/04-专项研究/Ai/推荐扩展": "#ec4899",
     "01-编程笔记/04-专项研究/Docker": "#0891b2",
     "01-编程笔记/04-专项研究/设计模式": "#ec4899",
     "01-编程笔记/04-专项研究/Windows": "#3b82f6",
@@ -646,12 +638,7 @@
   "folderSortOverrides": {
     "网页裁剪": "created-desc",
     "附件": "created-asc",
-    "01-编程笔记/04-专项研究/Ai/推荐扩展": "modified-desc",
     "01-编程笔记/04-专项研究/Obsidian": {
-      "option": "property-asc",
-      "propertyKey": "排序"
-    },
-    "01-编程笔记/04-专项研究/Ai/Claude Code": {
       "option": "property-asc",
       "propertyKey": "排序"
     },

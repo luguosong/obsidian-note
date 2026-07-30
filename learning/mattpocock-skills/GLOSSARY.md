@@ -158,6 +158,20 @@ _Avoid_: 用 组件 / 服务 / 接口(API) / 边界 替换这套词（一致性�
 判一个模块是浅是深的探针：想象把它**删掉**——复杂度**凭空消失**＝纯转发壳（浅，正是深化目标）；复杂度在 **N 个调用点重现**＝它在挣钱（深，别动）。配套两把尺："接口即测试面"、"一个 adapter 只是假想接缝、两个才是真接缝"。
 _Avoid_: 和"有没有测试 / 覆盖率"混为一谈（它测的是模块形状，不是测试多少）
 
+### ask-matt · 拓扑与跨会话
+
+**flow（流程）/ 拓扑角色**：
+ask-matt 把整套 skill 按"<strong>在流动里起什么结构作用</strong>"（而非"是什么 skill"）劈成四种拓扑角色——**主流程**（一条主干，idea→ship）/ **匝道**（不从想法起步、**汇入**主干）/ **独立 standalone**（跑在主干外、不汇入）/ **词汇层**（横向垫在底下、非流程节点）。一句结构定义钉死："A flow is a path through the skills... one main flow, and two on-ramps merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath."
+_Avoid_: 把 skill 平铺成清单看（丢了"结构作用"维度）；用"是什么"代替"汇不汇入主干"判匝道 vs 独立
+
+**汇入点（Merge point）**：
+每条匝道在主干**汇回**的具体站点——三者各不相同、且都**不是 to-tickets**：`triage` → `implement`（产出已 agent-ready，不经 to-spec）；`diagnosing-bugs` → **多在原地闭环**（建紧反馈回路→修+回归即结），只在 post-mortem 发现"无好 seam"时把那块**架构**交 `improve-codebase-architecture`；`wayfinder` → `to-spec`（hands off, doesn't build），直连 implement 仅当 effort 真很小。
+_Avoid_: 笼统说"匝道汇入主流程"（丢了各站不同）；让任何匝道汇入 to-tickets（那是 to-spec 紧邻下游、只接自己从 spec 来的 ticket）
+
+**fork / continue（分叉 / 原地续）**：
+跨会话换会话/减负的两种动作判据——`/handoff`＝**fork**（压成 markdown、开**新会话**引用，逐字历史全留；线程满 / 岔进 prototype 时用）；`/compact`＝**continue**（留**同一会话**、摘要早期轮次；阶段间有意打断、不在意逐字时用）。原文铁律 "`/handoff` forks; `/compact` continues."；警告**别在阶段中途 compact**（agent 会 lose its way）。原型绕行回路里 handoff 用**两次双向**、两次都是 fork。
+_Avoid_: 把 fork/continue 当同义减负（一个换会话、一个不换，解决的问题不同）
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。
