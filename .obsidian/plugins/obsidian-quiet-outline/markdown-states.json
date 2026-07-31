@@ -3019,15 +3019,15 @@
     "expandedKeys": []
   },
   "待办任务/待办任务.md": {
-    "scroll": 0.5909090909090909,
+    "scroll": 0,
     "cursor": {
       "from": {
-        "line": 12,
-        "ch": 22
+        "line": 3,
+        "ch": 0
       },
       "to": {
-        "line": 12,
-        "ch": 22
+        "line": 3,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -9083,15 +9083,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 110,
-        "ch": 0
+        "line": 52,
+        "ch": 2
       },
       "to": {
-        "line": 110,
-        "ch": 0
+        "line": 52,
+        "ch": 16
       }
     },
-    "scroll": 49.791666666666664
+    "scroll": 0
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
