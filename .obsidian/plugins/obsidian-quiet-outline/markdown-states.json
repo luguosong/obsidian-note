@@ -9082,25 +9082,25 @@
     ],
     "cursor": {
       "from": {
-        "line": 47,
-        "ch": 0
+        "line": 45,
+        "ch": 11
       },
       "to": {
-        "line": 47,
-        "ch": 0
+        "line": 45,
+        "ch": 2
       }
     },
-    "scroll": 0
+    "scroll": 13.702008928571429
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 11,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 11,
         "ch": 0
       }
     }

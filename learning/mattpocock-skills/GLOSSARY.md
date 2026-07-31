@@ -140,6 +140,20 @@ _Avoid_: 把决策抄进地图体（违背"索引不是仓库"）；把决策票
 **战争迷雾**＝地图**故意留白**的部分（写在 **Not yet specified** 段）：你隐约知道要来、却还钉不下来的决策；解一张票就推开前方的雾、把能说清的**毕业成新票**。**开票还是留雾的唯一判据**：你能不能把问题**精确说出来**（≠能不能答出来）——利了就开票（哪怕被阻塞），说不利就留雾、别预切。**前沿**＝开着·未阻塞·未认领的票，已知世界的边缘。越过终点的活进 **Out of scope**（永不毕业），不是雾。
 _Avoid_: 把"能不能答"当开票门槛；把 Out of scope 和 Not yet specified 混为一谈
 
+### wayfinder · 生命周期与工件落点
+
+**规范工件（Canonical artifact）**：
+`wayfinder` 认定的唯一真身——那个打 `wayfinder:map` 标签的 **issue**（不是文件）。它 physically lives 在哪由仓库配的 tracker 决定（tracker-specific）：GitHub tracker → 是 GitHub issue、仓库零文件；local-markdown tracker → 才落成 `.scratch/` 下的 `.md`。
+_Avoid_: 把地图当成一份固定的 `.md` 文件（只有本地 tracker 才这样）
+
+**tracker 工件 vs 仓库文件（工件介质二分）**：
+读任何一步「产生什么」时先问它落在哪种介质——**tracker 上的 issue**（map / 票 / spec / ticket）还是 **git 里的文件**（源码 / `CONTEXT.md` / `.scratch/`）。`wayfinder` 刻意几乎只产前者：全程在 issue 上打转，真·文件树的改动被推到最右的 `implement`（提交源码/测试）才发生——这是 `plan, don't do` 的物理证据。唯一例外是命名终点时 `domain-modeling` 惰性写的 `CONTEXT.md`/ADR。
+_Avoid_: 默认「skill 的产物 = 文件」（wayfinder 的产物是 issue）
+
+**throwaway 分支（Throwaway branch）**：
+`research` / `prototype` 票的代码 / 笔记产物**刻意扔在 out-of-main 的一次性分支**（如 `research/<name>`），票里只留 context pointer，绝不 paste 进地图、也不进 main——「assets linked, not pasted」。所以 prototype 写了代码 ≠ main 文件树变了。
+_Avoid_: 把 prototype / research 的产物当成落进主分支的交付物
+
 ### improve-codebase-architecture · 架构深化
 
 **improve-codebase-architecture（架构深化）**：

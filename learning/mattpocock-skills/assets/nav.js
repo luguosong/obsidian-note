@@ -18,7 +18,8 @@
     { file: "0010-collab-doc-drift.html", n: "10", t: "多人协作下文档会不会失真" },
     { file: "0011-wayfinder-map.html", n: "11", t: "wayfinder：给巨大模糊工程画决策地图" },
     { file: "0012-improve-codebase-architecture.html", n: "12", t: "improve-codebase-architecture：报告之后怎么走" },
-    { file: "0013-ask-matt-topology.html", n: "13", t: "ask-matt：拓扑与跨会话" }
+    { file: "0013-ask-matt-topology.html", n: "13", t: "ask-matt：拓扑与跨会话" },
+    { file: "0014-wayfinder-lifecycle.html", n: "14", t: "wayfinder：完整执行生命周期" }
   ];
 
   function build() {
