@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · 记忆二分：长期记忆 vs 工作记忆</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查</p>
+<h1>记忆二分 · 长期记忆 vs 工作记忆</h1>
+<p class="lede">一张卡回答：skill 生态管的四块文件区，其实沿「读多久」分两类记忆——工单层为什么<strong>用完即冻</strong>、又靠什么<strong>兜底</strong>。配套 <a href="../lessons/0009-ticket-layer-working-memory.html">第 9 课</a>，适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>四块区 → 两类记忆</h2>
+<table>
+<thead><tr><th>记忆类型</th><th>哪些区域</th><th>维护特征</th><th>读取时机</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>长期记忆</strong><br>（读好几年）</td>
+<td>① 配置层<br>② 领域层（<code>CONTEXT.md</code> · <code>docs/adr/</code>）<br>④ <code>.out-of-scope/</code></td>
+<td>第 7 课那<strong>三种模式</strong>：一次性脚手架 / 活的真相 / 只增不改账本</td>
+<td>随时被相关 skill 读，跨越很多 feature</td>
+</tr>
+<tr>
+<td><strong>工作记忆</strong><br>（用完冻结）</td>
+<td>③ 工单层（<code>.scratch/</code> 或 issues · spec · ticket）</td>
+<td><strong>第四种：用后冻结</strong>——不属于上面三种长期模式</td>
+<td>只在<strong>该 feature 在途 / 评审</strong>时读</td>
+</tr>
+</tbody>
+</table>
+<p style="color:var(--muted);font-size:.92rem">关键澄清：工单层<strong>不是</strong>第四种长期维护模式；它是唯一的工作记忆——把一份工作从 idea 运到 ship 的临时台面，运到就收台。</p>
+</section>
+
+<section>
+<h2>工单层生命周期：活跃 → ship → 冻结退役</h2>
+<ol class="steps">
+<li><h3>活跃在途</h3><code>spec.md</code> → 纵切 ticket → 逐片 <code>implement</code>，frontier（阻塞全清的）被一片片消费。</li>
+<li><h3>ship</h3>最后一片纵切过 <code>code-review</code>、合并。这个 feature 的工作结束。</li>
+<li><h3>冻结退役</h3>GitHub → issue <strong><code>close</code></strong>（不删），冻成历史、和 PR/commit 链在一起；<code>.scratch/</code> → 目录留原地，一张计划快照。都是<strong>「写一次就冻结」</strong>，非活文档。</li>
+</ol>
+<pre><code>.scratch/&lt;feature-slug&gt;/
+├── spec.md                ← to-spec 产出
+└── issues/
+    ├── 01-&lt;slug&gt;.md        ← 一条纵切片一份文件
+    └── 02-&lt;slug&gt;.md        ← blockers-first 编号</code></pre>
+</section>
+
+<section>
+<h2>为什么敢「用完即弃」——靠「提升（promotion）」兜底</h2>
+<p>工单敢做成一次性，正因<strong>值得长期留的东西，在 ticket 死之前已被抬进长期层</strong>。这个动作 = 提升：</p>
+<table>
+<thead><tr><th>在途产生的东西</th><th>提升到哪个长期层</th></tr></thead>
+<tbody>
+<tr><td>架构级的「为什么这么定」</td><td><strong>ADR</strong>（领域层，读好几年）</td></tr>
+<tr><td>新确立的领域术语</td><td><strong><code>CONTEXT.md</code></strong>（活的真相）</td></tr>
+<tr><td>干出来的代码本身</td><td>代码库（实现落地）</td></tr>
+<tr><td>被拒的 enhancement</td><td><strong><code>.out-of-scope/</code></strong>（只增不改账本）</td></tr>
+<tr><td>prototype 的验证结论</td><td>折进真代码 + issue 留 context pointer</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<h3>提升的活样本：<code>prototype</code></h3>
+<p>它收尾第一句就是提升：「Fold any validated decision into the real code… The main branch keeps only the validated decision.」<strong>结论被提升、载体被丢弃</strong>——正是工单层的缩影。所以 ticket 是可丢弃的载体：keepers 卸货进长期层后，空车退役即可。</p>
+</div>
+<p style="color:var(--muted);font-size:.92rem">提升 ≠ 归档/备份（那是原样搬运）；提升是「蒸馏 keepers 再抬走」。</p>
+</section>
+
+<footer>
+<span><a href="../lessons/0009-ticket-layer-working-memory.html">← 第 9 课 · 工单层是工作记忆</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

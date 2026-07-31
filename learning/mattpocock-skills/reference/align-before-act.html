@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · 「先对齐后动手」家法 · 一道闸，三处同源</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查 · 横向主题</p>
+<h1>「先对齐后动手」家法 · 一道闸，三处同源</h1>
+<p class="lede">这套 skill 反复用同一条家法——把「对齐 / 决策」和「动手 / 交付」用<strong>一道闸</strong>严格隔开。这张卡把三处最清晰的同源实例串起来：<a href="../lessons/0017-grilling-primitive.html">grilling</a> · <a href="../lessons/0011-wayfinder-map.html">wayfinder</a> · <a href="../lessons/0018-to-spec-synthesize.html">to-spec</a>。适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>一句话家法</h2>
+<div class="win">
+<p><strong>先对齐、后动手：在「达成共识 / 拍定决策」之前，绝不跨过那道闸去「执行 / 交付」。</strong>这是 4 失败模式 <strong>#1 misalignment（没做对你要的）</strong>的直接解药——大多数返工，都源于没做对你要的，而不是没做好。</p>
+</div>
+</section>
+
+<section>
+<h2>三处同源：各守闸的一段</h2>
+<table>
+<thead><tr><th>skill（课）</th><th>这道闸长什么样</th><th>一手源措辞</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>grilling · 确认闸门</strong><br><a href="../lessons/0017-grilling-primitive.html">第 17 课</a></td>
+<td>访谈到共识<strong>之前</strong>不动手——闸在<strong>对齐的末端</strong></td>
+<td><em>"Do not act on it until I confirm we have reached a shared understanding."</em></td>
+</tr>
+<tr>
+<td><strong>wayfinder · plan, don't do</strong><br><a href="../lessons/0011-wayfinder-map.html">第 11</a>·<a href="../lessons/0014-wayfinder-lifecycle.html">14 课</a></td>
+<td>地图上只<strong>决策不建造</strong>——「想动手」＝走到闸边、该移交</td>
+<td><em>"produce decisions, not deliverables"</em>；想 just do the work＝该 hand off 的信号</td>
+</tr>
+<tr>
+<td><strong>to-spec · 不 interview 只 synthesize</strong><br><a href="../lessons/0018-to-spec-synthesize.html">第 18 课</a></td>
+<td>对齐<strong>已在上游做完</strong>，它只定格、<strong>不再重问</strong></td>
+<td><em>"Do NOT interview the user — just synthesize what you already know."</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>闸的形状：同一道闸，三个位置</h2>
+<div class="flow">
+<div class="flow-step"><span class="sk">对齐侧</span><span class="防">问 · 决策 · 共识</span></div>
+<span class="flow-arrow">‖ 闸 ‖</span>
+<div class="flow-step"><span class="sk">动手侧</span><span class="防">建 · 交付 · 执行</span></div>
+</div>
+<ul>
+<li><strong>grilling</strong> 把闸<strong>钉在对齐末端</strong>：共识确认前，右侧一步都不迈。</li>
+<li><strong>wayfinder</strong> 让<strong>整张地图都待在闸的左侧</strong>：只产决策；越到右侧就是「该移交给主流程」的信号。</li>
+<li><strong>to-spec</strong> 站在<strong>闸的右侧起点</strong>：左侧（访谈对齐）上游已做完，它不回头重做，只把共识<strong>定格</strong>成 spec 往下传。</li>
+</ul>
+<p style="color:var(--muted);font-size:.92rem">连起来：<code>grill-with-docs</code>（问到共识·闸左）→ 过闸 → <code>to-spec</code>（定格·闸右起点）→ <code>to-tickets</code> → <code>implement</code>（建·闸右）。<code>wayfinder</code> 是跑在主流程<strong>之前</strong>、专门待在闸左把一片有雾的大地决策清楚的匝道。</p>
+</section>
+
+<section>
+<h2>还有回声 · 别和「信号在先」混</h2>
+<ul>
+<li><strong>第四处回声</strong>：<a href="../lessons/0019-to-tickets-slices.html"><code>to-tickets</code></a> 的 <strong>quiz-the-user</strong>——切好的纵切片先给你过目（granularity / blocking），<strong>迭代到你批准才发布</strong>。同一道闸：批准（对齐）在发布（动手）之前。</li>
+<li><strong>别混：这不是「信号在先」家法</strong>。<a href="../lessons/0002-main-flow-in-action.html"><code>tdd</code></a> 的<strong>红 before 绿</strong>、<a href="../lessons/0015-diagnosing-bugs-loop.html"><code>diagnosing-bugs</code></a> 的<strong>「没有能亮红的命令就不进 Phase 2」</strong>，守的是<strong>「先有可验证的信号、再动手」</strong>——那是<strong>反馈回路</strong>家法。两者互补但不同：<strong>本家法要的是「人类的共识 / 决策」在先，那家法要的是「可自动验证的信号」在先。</strong></li>
+</ul>
+</section>
+
+<footer>
+<span>相关课：<a href="../lessons/0017-grilling-primitive.html">L17</a> · <a href="../lessons/0011-wayfinder-map.html">L11</a>/<a href="../lessons/0014-wayfinder-lifecycle.html">L14</a> · <a href="../lessons/0018-to-spec-synthesize.html">L18</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

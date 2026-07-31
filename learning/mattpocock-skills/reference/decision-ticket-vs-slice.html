@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · 决策票 vs 纵切片</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查</p>
+<h1><code>wayfinder</code> 决策票 vs <code>to-tickets</code> 纵切片</h1>
+<p class="lede">一张卡分清两种「票」——它们<strong>根本不是一种东西</strong>：一个在「决定」（路还有雾），一个在「建造」（路已清）。配套 <a href="../lessons/0011-wayfinder-map.html">第 11 课</a>，适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>对照表</h2>
+<table>
+<thead><tr><th></th><th><code>wayfinder</code> 的决策票</th><th><code>to-tickets</code> 的纵切片</th></tr></thead>
+<tbody>
+<tr><td><strong>前提</strong></td><td>路还<strong>看不清</strong>（有雾）</td><td>路<strong>已清</strong>，只等拆着建</td></tr>
+<tr><td><strong>每张票是</strong></td><td>一个待拍板的<strong>问题</strong>（decision）</td><td>一条 <code>schema→API→UI→test</code> 打通的 <strong>tracer-bullet 纵切片</strong></td></tr>
+<tr><td><strong>解它 =</strong></td><td><strong>决定</strong>（decide）</td><td><strong>建造</strong>（execute）</td></tr>
+<tr><td><strong>产出</strong></td><td>decisions（决策）</td><td>deliverables（可运行的切片）</td></tr>
+<tr><td><strong>处在</strong></td><td>匝道，主流程<strong>之前</strong></td><td>主流程内（<code>to-spec</code> 紧邻下游）</td></tr>
+</tbody>
+</table>
+<p style="color:var(--muted);font-size:.92rem">原文佐证：wayfinder 的票是「questions whose resolution is a <strong>decision, not slices of a build to execute</strong>」。</p>
+</section>
+
+<section>
+<h2>一句话记牢</h2>
+<div class="win">
+<p><strong><code>wayfinder</code> 在替你「决定」，<code>to-tickets</code> 在替你「建造」。</strong>所以 <code>wayfinder</code> 是<strong>匝道</strong>、跑在主流程<strong>前面</strong>，而不是主流程的替代——雾散尽才移交给 <code>to-spec</code> → <code>to-tickets</code> → <code>implement</code>。</p>
+</div>
+</section>
+
+<section>
+<h2>两个易错点</h2>
+<ol class="steps">
+<li><h3>别把决策票当纵切片</h3>决策票<strong>不是</strong>「一段要去实现的构建」。「想直接动手了」是<strong>走到地图边缘、该移交</strong>的信号，不是就地开建的许可（除非 effort 在 <code>## Notes</code> 显式声明把执行纳入）。</li>
+<li><h3>开票 vs 留雾的判据</h3>判据是<strong>你能不能把问题精确说出来</strong>（≠能不能答出来）：利了就开票——哪怕被阻塞、眼下动不了也开；说不利就留在 <strong>Not yet specified</strong> 的雾里，<strong>别预切</strong>。</li>
+</ol>
+</section>
+
+<footer>
+<span><a href="../lessons/0011-wayfinder-map.html">← 第 11 课 · wayfinder 决策地图</a></span>
+<span><a href="../reference/wayfinder-lifecycle-map.html">相关：wayfinder 生命周期卡</a></span>
+</footer>
+
+</article>
+</body>
+</html>

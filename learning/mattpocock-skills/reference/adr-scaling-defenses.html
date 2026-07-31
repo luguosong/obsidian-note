@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · ADR 三重防线</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查</p>
+<h1><code>docs/adr/</code> 只增不改，为什么不膨胀 · 三重防线</h1>
+<p class="lede">一张卡回答：一份 ADR 长什么样、以及「只增不改」为什么<strong>不等于</strong>「越读越慢」。配套 <a href="../lessons/0008-adr-scaling.html">第 8 课</a>，适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>一份 ADR 长什么样</h2>
+<p><strong>ADR = Architecture Decision Record（架构决策记录）</strong>：一份记「某架构决策 + 为什么」的<strong>极小 markdown</strong>，住在 <code>docs/adr/</code>、顺序编号，模板就一个标题 + <strong>1–3 句</strong>（背景 / 决定 / 为什么）。它补的是代码不说的那个 <strong>why</strong>。</p>
+<pre><code># 订单写模型采用事件溯源
+
+订单写模型走 event sourcing，读模型投影进 Postgres。
+因为需要完整的订单变更审计流水；代价是读取侧要额外维护投影。</code></pre>
+<p style="color:var(--muted);font-size:.92rem">业界通行实践（Michael Nygard，约 2011），非本 skill 独创；<code>domain-modeling</code> 只是纳进来再加一道更严的「三条件」闸门。</p>
+</section>
+
+<section>
+<h2>防线一 · 写入有硬闸门 → 长得极慢</h2>
+<p>ADR <strong>不是决策日志</strong>。一个决策<strong>三条同时成立</strong>才够格写，缺一即跳过：</p>
+<ol class="steps">
+<li><h3>难以逆转（hard to reverse）</h3>以后改主意代价实打实。容易回退的别写。</li>
+<li><h3>不解释会困惑（surprising without context）</h3>未来读者看代码会问「当初为啥这么干」。不奇怪的没人问。</li>
+<li><h3>是真权衡的结果（real trade-off）</h3>当时有真实备选，你为具体理由选了这个。没备选就没什么可记。</li>
+</ol>
+<p>对比：commit log 每次提交都长、learning-records 每课都长（事件流）；ADR 有闸门，<strong>绝大多数决策进不来</strong>，只以架构级步子前进——成熟仓库<strong>好几年才攒几十份</strong>，每份 1–3 句，加起来不过几页纸。</p>
+</section>
+
+<section>
+<h2>防线二 · agent 从不整本读（文件名即索引）</h2>
+<p>读取策略白纸黑字写在配置层你自己的 <code>docs/agents/domain.md</code>：「read ADRs that touch <strong>the area you're about to work in</strong>」。文件名 <code>0001-event-sourced-orders.md</code>（<strong>编号 + 决策短名</strong>）<strong>本身就是索引</strong>：</p>
+<div class="flow">
+<div class="flow-step"><span class="sk">列目录</span><span class="防">一串文件名 · 便宜</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">比对标题</span><span class="防">拿当前任务关键词</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">只 open 命中</span><span class="防">正文按需 · 昂贵</span></div>
+</div>
+<p style="color:var(--muted);font-size:.92rem">这是 progressive disclosure（渐进披露），也是第 2 课 context hygiene / smart zone 的落地——随机寻址，不是顺序加载。哪怕 500 份 ADR，一次也只碰三五份。</p>
+</section>
+
+<section>
+<h2>防线三 · 真到规模，按 bounded context 分片</h2>
+<p>仓库根出现 <code>CONTEXT-MAP.md</code> = 多上下文仓库，ADR 跟着 <strong>bounded context 切开、各回各家</strong>：</p>
+<pre><code>/
+├── CONTEXT-MAP.md
+├── docs/adr/                 ← 只放跨系统全局决策
+└── src/
+    ├── ordering/docs/adr/    ← 只属于 ordering
+    └── billing/docs/adr/     ← 只属于 billing</code></pre>
+<p>在 billing 干活的 agent 只读 <code>src/billing/docs/adr/</code> + root 全局那几份，<strong>永不碰 ordering</strong>。<code>CONTEXT-MAP.md</code> 负责路由——那个「会膨胀的大目录」一开始就按 context 切成小格。这是 DDD 领域边界物理化。</p>
+</section>
+
+<section>
+<h2>superseded「僵尸 ADR」= 近零成本</h2>
+<p>被推翻的旧决策<strong>不删</strong>，只在 <code>Status</code> 标 <code>superseded by ADR-NNNN</code>。因读取是「文件名随机寻址 + area 过滤」：agent 要么按标题划过，要么打开时 <code>Status</code> 那行<strong>立刻把它转指到新 ADR</strong>。历史留住，又不污染当下阅读。</p>
+<p style="color:var(--muted);font-size:.92rem">一句话：<strong>写入被闸门卡到极慢 + 读取从不整本 + 规模化按 context 分片</strong>——三重防线让「只增不改」保住历史却不牺牲可读性。</p>
+</section>
+
+<footer>
+<span><a href="../lessons/0008-adr-scaling.html">← 第 8 课 · docs/adr 会不会膨胀</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

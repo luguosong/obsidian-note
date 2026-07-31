@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 19 课 · to-tickets：tracer-bullet 纵切片</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">mattpocock/skills 系统课 · 第 19 课 · 单 skill 深挖 · 主流程第三步 · 主流程四步全通 · 基于 v1.1.0</p>
+<h1>把一份 spec 切成「一条条能独立跑通的细线」——<code>to-tickets</code> 的 tracer-bullet 纵切片</h1>
+<p class="lede">主流程 <code>grill-with-docs</code> → <a href="0018-to-spec-synthesize.html"><code>to-spec</code></a> → <strong><code>to-tickets</code></strong> → <code>implement</code> 的第三步、也是最后一块拼图。<a href="0018-to-spec-synthesize.html">上一课</a>把想法定格成了一份 spec；这节看 <code>to-tickets</code> 怎么把这份 spec <strong>切成一片片可独立建造、可独立验证的工单</strong>——切的方向，是这门 skill 的全部要害。</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong><code>to-tickets</code> 把 spec 切成 <strong>tracer-bullet（曳光弹）纵切片</strong>——每一片都是一条<strong>又窄又完整</strong>、穿透<strong>所有层（schema→API→UI→test）</strong>的细线，<strong>自己就能 demo / 验证</strong>、<strong>装得进一个全新的上下文窗口</strong>；片与片之间用 <strong>blocking edges（阻塞边）</strong>串起依赖，然后<strong>沿 frontier（前沿）一次只做一片</strong>、每片交给 <code>implement</code>、片间清空上下文。<strong>唯一的例外是 wide refactor（大范围重构）</strong>——一次机械变更却波及全仓、没有纵切能保持绿色，这时改用 <strong>expand–contract（先扩后缩）</strong>时序。</p>
+</section>
+
+<section>
+<h2>1. 核心：什么是 tracer-bullet 纵切片</h2>
+<p>「曳光弹」这个比喻的精髓是：<strong>先打一条能看见弹道的完整细线，而不是先把某一层堆满</strong>。一手源给纵切片定了四条规矩：</p>
+<blockquote>Each slice cuts a <strong>narrow but COMPLETE path through every layer</strong> (schema, API, UI, tests) — vertical, NOT a horizontal slice of one layer · A completed slice is <strong>demoable or verifiable on its own</strong> · Each slice is <strong>sized to fit in a single fresh context window</strong> · Any prefactoring should be done first.<br><span style="font-size:.85em">— to-tickets / SKILL.md</span></blockquote>
+<ul>
+<li><strong>又窄又完整、穿透每一层</strong>：一片薄薄地贯穿 schema → API → UI → 测试，是一条<strong>竖切</strong>，不是把「所有 schema」当一片、「所有 API」当另一片的<strong>横切</strong>。</li>
+<li><strong>自己就能 demo / 验证</strong>：做完这一片，就有一个<strong>能演示、能验证</strong>的端到端行为，不是一堆还拼不起来的零件。</li>
+<li><strong>装得进一个全新上下文窗口</strong>：一片的大小以「一个 fresh context 能吃下」为准——正好交给一次 <code>implement</code>。</li>
+<li><strong>prefactor 先行</strong>：需要的预重构先做（"make the change easy, then make the easy change"，先把改动变容易，再做那个容易的改动）。</li>
+</ul>
+<div class="callout">
+<h3>纵 vs 横：这正是 <code>tdd</code> 那条反模式的同一课</h3>
+<p><a href="0002-main-flow-in-action.html">第 2 课 <code>tdd</code></a> 的反模式 <strong>horizontal slicing（横切）</strong>——「先写所有测试、再写所有实现」——测的是<strong>想象的</strong>行为。<code>to-tickets</code> 的纵切是同一枚硬币：每片一条 tracer bullet、端到端打通、可独立验证，<strong>回应上一片教给你的东西</strong>。切错方向（横切），后面每一步都会歪。</p>
+</div>
+</section>
+
+<section>
+<h2>2. blocking edges + frontier：一次只做一片</h2>
+<p>切好的片不是一盘散沙——每片要声明<strong>它被哪些片阻塞</strong>（blocked by）。没有 blocker 的片可以立刻开工；这些「blocker 全清、可立刻做」的片，就是 <strong>frontier（前沿）</strong>。</p>
+<figure class="diagram wide">
+<pre class="mermaid">
+flowchart LR
+  Spec["spec / plan / 对话"] --> Cut["to-tickets 竖切<br/>每片穿透 schema→API→UI→test"]
+  Cut --> S1["片1（无 blocker）<br/>frontier · 可立刻做"]
+  Cut --> S2["片2 blocked by 片1"]
+  Cut --> S3["片3 blocked by 片1"]
+  S1 -->|"完成 · 解阻塞"| S2
+  S1 --> S3
+  S1 -->|"一次一片"| IMP["implement<br/>片间清空上下文"]
+  S2 -.-> IMP
+  S3 -.-> IMP
+  classDef gold fill:#241f1a,stroke:#d9b45c,color:#e7e2d6;
+  classDef ok fill:#1e2a24,stroke:#7fc9a0,color:#e7e2d6;
+  class Cut gold;
+  class S1,IMP ok;
+</pre>
+<figcaption>金＝竖切动作；绿＝frontier 片（无 blocker、可立刻做）+ 交 <code>implement</code>。<strong>沿 frontier 一次只做一片、每片交 <code>implement</code>、片间清空上下文</strong>；纯线性依赖时，frontier 就是从上到下一片片推。</figcaption>
+</figure>
+<p>这正好接上<a href="0009-ticket-layer-working-memory.html">第 9 课</a>：<code>to-tickets</code> 产出的这些工单就是<strong>工单层（工作记忆）</strong>；frontier 被一片片消费，ship 后整批冻结退役。<strong>一次一片 + 片间清空上下文</strong>，也是<a href="0002-main-flow-in-action.html">第 2 课 context hygiene（上下文卫生）</a>的直接落地——每片装进一个干净窗口，不让上一片的杂音污染下一片。</p>
+</section>
+
+<section>
+<h2>3. 唯一例外：wide refactor 走 expand–contract</h2>
+<p>纵切不是万能的。有一种活<strong>天生切不成纵片</strong>——一手源叫它 <strong>wide refactor（大范围重构）</strong>：</p>
+<blockquote>A wide refactor is <strong>one mechanical change</strong> — rename a column, retype a shared symbol — whose <strong>blast radius fans across the whole codebase</strong>, so a single edit breaks thousands of call sites at once and no vertical slice can land green.<br><span style="font-size:.85em">— to-tickets / SKILL.md</span></blockquote>
+<p>一次机械变更（改列名、换一个共享符号的类型），<strong>爆炸半径横扫全仓</strong>：一改就同时打断上千个调用点，<strong>没有哪条纵切能一次落地还保持绿色</strong>。硬塞进 tracer bullet 只会全红。改用 <strong>expand–contract（先扩后缩）</strong>时序：</p>
+<div class="flow">
+<div class="flow-step"><span class="sk">expand 扩</span><span class="防">新形态与旧并存<br/>什么都不破</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">migrate 迁</span><span class="防">按爆炸半径分批<br/>每批一 ticket·阻塞于 expand<br/>旧形态还在→CI 保绿</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">contract 缩</span><span class="防">删旧形态<br/>阻塞于所有 migrate 批</span></div>
+</div>
+<p>先 <strong>expand</strong>：把新形态<strong>加在旧的旁边</strong>，什么都不破。再 <strong>migrate</strong>：把调用点<strong>按爆炸半径分批</strong>（按包、按目录）迁过去，<strong>每一批是一个 ticket、阻塞于 expand</strong>，因为旧形态还在，<strong>批与批之间 CI 始终绿</strong>。最后 <strong>contract</strong>：等没有调用者了，<strong>删掉旧形态</strong>，这个 ticket 阻塞于每一个 migrate 批。</p>
+<p style="color:var(--muted);font-size:.92rem">再狠一点——连分批都无法各自保绿时，仍保留这个序列，但让它们共享一条 integration branch（集成分支），全部阻塞于一个最后的 integrate-and-verify（集成并验证）ticket，绿色只在那里兑现。</p>
+</section>
+
+<section>
+<h2>4. 发布 + 主流程四步全通</h2>
+<p>切好、跟你确认（present 成编号列表：Title / Blocked by / What it delivers，问你 granularity 对不对、blocking 边对不对、要不要合并或再拆，迭代到你批准）之后，<strong>发布到配置的 tracker</strong>——工单内容一样，只是阻塞边的形状随 tracker 变（接<a href="0014-wayfinder-lifecycle.html">第 14 课</a>）：</p>
+<table>
+<thead><tr><th>tracker</th><th>发布形态</th></tr></thead>
+<tbody>
+<tr><td><strong>GitHub</strong>（你的仓库）</td><td>一片一个 <strong>issue</strong>、按依赖 blockers-first、用原生 blocking/sub-issue、贴 <code>ready-for-agent</code></td></tr>
+<tr><td><strong>本地 markdown</strong></td><td><code>.scratch/&lt;feature-slug&gt;/issues/&lt;NN&gt;-&lt;slug&gt;.md</code>，从 <code>01</code> 起 blockers-first 编号</td></tr>
+</tbody>
+</table>
+<p>然后<strong>沿 frontier 一次一片、每片用 <code>/implement</code>、片间清空上下文</strong>；<strong>不要 close 或改动任何 parent issue</strong>。同款硬纪律：<strong>别写具体文件路径/代码</strong>（会 stale，例外仍是 prototype 编码决策的 snippet）——和 <a href="0018-to-spec-synthesize.html"><code>to-spec</code></a>、<code>CONTEXT.md</code> 一条心。</p>
+<div class="callout">
+<h3>至此，主流程 idea→ship 四步全通</h3>
+<p>你现在把主干四步都单独拆过了——把它们连起来看最后一眼：</p>
+<div class="flow">
+<div class="flow-step"><span class="sk">grill-with-docs</span><span class="防">问→共识<br/>沉 CONTEXT/ADR</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">to-spec</span><span class="防">综合成 spec<br/>勾 seam</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">to-tickets</span><span class="防">切纵片<br/>+ blocking</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">implement</span><span class="防">frontier 一次一片<br/>tdd + code-review</span></div>
+</div>
+<p style="margin-bottom:0">每一步<strong>只做自己那一格</strong>：问 / 综合 / 切 / 建。越界就是信号——比如 <code>to-spec</code> 又在访谈、或 <code>to-tickets</code> 切成了横片。</p>
+</div>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="C" data-explain="tracer-bullet 纵切：每片是又窄又完整、穿透所有层（schema→API→UI→test）的竖切，自己就能 demo/验证、装进一个上下文窗口。C 正是。A 是横切（一层一片），正是 tdd 反模式 horizontal slicing；B 把『大』当好（该装进一个 fresh context）；D 是 wayfinder 决策票（决定，不是建造的切片）。">
+<p class="quiz-q">1. <code>to-tickets</code> 切出来的一片 tracer-bullet 纵切片，长什么样？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>先把所有 schema 做完成一片，API 再成另一片</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>尽量大而全的一片，一次覆盖整个 feature</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>又窄又完整、穿透所有层、自己就能验证的一条细线</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>一个待拍板的决策问题，解它等于做一个决定</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="B" data-explain="wide refactor（改列名/换共享符号类型）爆炸半径横扫全仓、一改断上千调用点，没纵切能 land green，是纵切的唯一例外→走 expand–contract：先加新形态与旧并存（不破）、按爆炸半径分批迁移（每批阻塞于 expand、旧形态在故 CI 保绿）、最后删旧形态（阻塞于所有迁移批）。A 硬塞纵切会全红；C 一次性全改会断上千处；D 跳过测试不是这里的做法。">
+<p class="quiz-q">2. 遇到「改一个共享列名、波及全仓上千调用点」的 wide refactor，<code>to-tickets</code> 怎么处理？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>硬塞进一片 tracer-bullet 纵切片，一次切干净</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>走 expand–contract：新旧并存→分批迁移→最后删旧</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>一个提交里把上千调用点全改完，快刀斩乱麻</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>先跳过测试改完，等最后再补回所有测试</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="发布后沿 frontier（blocker 全清的片）一次只做一片、每片交 /implement、片间清空上下文（context hygiene）；且不 close/改任何 parent issue。B 违反一次一片 + 清上下文；C 该 blockers-first 而非无视依赖；D 恰恰相反——parent issue 不能动。">
+<p class="quiz-q">3. 工单发布到 tracker 后，正确的推进方式是？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>沿 frontier 一次一片、每片交 <code>implement</code>、片间清空上下文</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>把所有片一次性丢给 <code>implement</code> 并行推进</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>无视 blocking 边，从编号最大的片倒着做</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>每做完一片就顺手 close 掉 parent 父 issue</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<p>先读第一条——本课每个论断的出处；其余按需核验：</p>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md">to-tickets / SKILL.md</a></strong> —— 纵切四规矩（narrow-but-complete / demoable / one context / prefactor first）+ blocking edges & frontier + <strong>wide refactor 的 expand–contract 例外</strong>（含分批共享 integration branch）+ 发布两形态（GitHub issue / <code>.scratch/*.md</code>）+ quiz-the-user + 不写路径/代码纪律。<strong>最高优先「读」。</strong></li>
+<li><strong><a href="0002-main-flow-in-action.html">第 2 课 <code>tdd</code></a> / <a href="0009-ticket-layer-working-memory.html">第 9 课工单层</a></strong> —— 对照：横切反模式（纵切的反面）；to-tickets 产出的工单＝工作记忆、frontier 消费、ship 冻结。</li>
+<li><strong><a href="../reference/decision-ticket-vs-slice.html">参考卡 · 决策票 vs 纵切片</a></strong> —— 一眼分清 <code>to-tickets</code> 的纵切片（建造·路清）和 <code>wayfinder</code> 的决策票（决定·有雾）。</li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>「给我的真实 feature 现场切一遍 tracer-bullet 纵切片、画出 blocking 图？」</em>、<em>「<code>expand–contract</code> 的『共享 integration branch』那档，什么时候才需要动用？」</em>、<em>「主流程四步全通了——现在拿一个我的真实想法，从 <code>grill-with-docs</code> 一路走到 <code>implement</code> 跑一遍完整闭环？」</em> —— 下一站由你点单。随时回查见 <a href="../reference/to-tickets-slices.html">参考卡</a>、<a href="../RESOURCES.md">RESOURCES.md</a> 与 <a href="../GLOSSARY.md">GLOSSARY.md</a>。</p>
+</section>
+
+<footer>
+<span><a href="0018-to-spec-synthesize.html">← 第 18 课 · to-spec：综合成 spec 与接缝</a></span>
+<span><a href="0020-code-review-two-axes.html">第 20 课 · code-review：两轴并行审查 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>

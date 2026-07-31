@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · wayfinder 执行生命周期 · 阶段落点</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查</p>
+<h1><code>wayfinder</code> 执行生命周期 · 工件落点</h1>
+<p class="lede">一张卡回答：<code>wayfinder</code> 从起手到 ship，<strong>每一步的产物落在哪种介质</strong>、<strong>动不动你的仓库文件树</strong>。配套 <a href="../lessons/0014-wayfinder-lifecycle.html">第 14 课</a>，适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>一条主线：工件介质二分</h2>
+<p>读任何一步「产生什么」，先分它落在哪种介质——<strong>tracker 上的 issue</strong>（map / 票 / spec / ticket）还是 <strong>git 里的文件</strong>（源码 / <code>CONTEXT.md</code> / <code>.scratch/</code>）。<code>wayfinder</code> 刻意<strong>几乎只产前者</strong>：全程在 issue 上打转，<strong>真·文件树的改动被推到最右的 <code>implement</code></strong> 才发生。这就是 <code>plan, don't do</code> 的物证。</p>
+<div class="flow">
+<div class="flow-step"><span class="sk">wayfinder</span><span class="防">决策地图 + 票 = issue<br>（+惰性 CONTEXT/ADR）</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">to-spec</span><span class="防">spec = issue</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">to-tickets</span><span class="防">纵切片 = issue</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">implement</span><span class="防">源码/测试<br>→ 提交分支 ✅</span></div>
+</div>
+<p style="color:var(--muted);font-size:.92rem">介质位移：<strong>tracker 决策</strong> → <strong>spec/ticket issues</strong> → <strong>已提交代码</strong>。真·文件只在最右一格落地。</p>
+</section>
+
+<section>
+<h2>阶段落点总表</h2>
+<table>
+<thead><tr><th>阶段 · skill</th><th>动作</th><th>产物</th><th>介质</th><th>改 main 文件树？</th></tr></thead>
+<tbody>
+<tr><td><code>wayfinder</code> · Chart</td><td>命名终点（grilling + domain-modeling）</td><td><code>CONTEXT.md</code> / <code>docs/adr/*.md</code>（惰性）</td><td>仓库文件</td><td><strong>是</strong>（惟一常态）</td></tr>
+<tr><td><code>wayfinder</code> · Chart</td><td>建地图 + 子票 + 连 blocking</td><td><code>wayfinder:map</code> issue + 子 issue</td><td>GitHub issue</td><td>否</td></tr>
+<tr><td><code>wayfinder</code> · Chart/Work</td><td>解 research 票</td><td>findings Markdown</td><td>throwaway <code>research/&lt;name&gt;</code> 分支</td><td>否</td></tr>
+<tr><td><code>wayfinder</code> · Work</td><td>解 prototype 票</td><td>一次性代码 + context pointer</td><td>out-of-main throwaway 分支</td><td>否</td></tr>
+<tr><td><code>wayfinder</code> · Work</td><td>解 task 票</td><td>真实操作 + facts</td><td>外部系统 / 票 comment</td><td>否</td></tr>
+<tr><td><code>wayfinder</code> · Work</td><td>记录 &amp; 毕业雾</td><td>resolution comment + close + Decisions-so-far 追行</td><td>GitHub issue</td><td>否</td></tr>
+<tr><td>↓ 汇流 <code>to-spec</code></td><td>综合成 spec（读 CONTEXT/ADR）</td><td>spec + <code>ready-for-agent</code></td><td>GitHub issue</td><td>否</td></tr>
+<tr><td><code>to-tickets</code></td><td>拆 tracer-bullet 纵切片</td><td>ticket（原生 blocking）</td><td>GitHub issue（本地 tracker 则 <code>.scratch/*.md</code>）</td><td>否<span style="font-size:.85em">（GitHub）</span></td></tr>
+<tr><td><code>implement</code></td><td>驱动 <code>/tdd</code> 建 + 提交</td><td><strong>源码 + 测试文件</strong></td><td>当前分支（提交）</td><td><strong>是 ✅</strong></td></tr>
+<tr><td><code>code-review</code></td><td>Standards + Spec 两轴审</td><td>审查报告</td><td>输出（非文件）</td><td>否</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>四种票的产物落点</h2>
+<table>
+<thead><tr><th>票类型 <code>wayfinder:&lt;type&gt;</code></th><th>解它产生什么</th><th>落在哪</th></tr></thead>
+<tbody>
+<tr><td><code>grilling</code>（默认 · HITL）</td><td>对话拍板一个决策；可能再调 domain-modeling</td><td>决策进 issue；术语/ADR 惰性写仓库文件</td></tr>
+<tr><td><code>research</code>（AFK）</td><td>findings Markdown</td><td>throwaway <code>research/&lt;name&gt;</code> 分支（不进 main）</td></tr>
+<tr><td><code>prototype</code>（HITL）</td><td>一次性代码，验证「长啥样/怎么跑」</td><td>out-of-main 分支 + 票上挂 context pointer</td></tr>
+<tr><td><code>task</code>（HITL/AFK）</td><td>唯一「做事」票：开账号/供权限/搬数据</td><td>动外部系统；facts 记进票</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>三条铁律 + 判据</h2>
+<ul>
+<li><strong>介质随 tracker 而变（tracker-specific）</strong>：「wayfinder 产生哪些文件」<strong>无唯一答案</strong>。<strong>GitHub tracker</strong>（你的仓库）→ map/票是 issue、仓库零文件；<strong>local-markdown tracker</strong> → 才落成 <code>.scratch/*.md</code>。</li>
+<li><strong>真·文件在 <code>implement</code> 才落地</strong>：整条弧上，源码/测试文件<strong>第一次也是唯一一次</strong>被提交到分支，是 <code>implement</code> 驱动 <code>/tdd</code> 那步。此前全在 issue（+ domain 惰性文件 + throwaway 分支）里打转。</li>
+<li><strong>雾散 → 移交，不开建</strong>：默认汇入 <code>to-spec</code>（把 linked decisions 收拢成可构建 plan）→ <code>to-tickets</code> → <code>implement</code>。<strong>只有 effort 其实很小时</strong>才可跳过 <code>to-spec</code> 直连 <code>implement</code>（代价：丢掉「收拢」、丢票里细节）。</li>
+</ul>
+<p style="color:var(--muted);font-size:.92rem">一句话闭合：<code>wayfinder</code> 先「决定」（issue）→ <code>to-spec</code>/<code>to-tickets</code> 把决定变「构建片」（issue）→ <code>implement</code> 才「建」（提交文件）。</p>
+</section>
+
+<footer>
+<span><a href="../lessons/0014-wayfinder-lifecycle.html">← 第 14 课 · wayfinder 完整执行生命周期</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

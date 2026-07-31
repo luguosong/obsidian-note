@@ -350,3 +350,24 @@ footer a { font-weight: 500; }
   a { color: #000; text-decoration: underline; }
   footer { border-color: #ccc; }
 }
+
+/* —— 细窄暖调滚动条（墨夜暗色）· 固化约定（2026-07-31，与 mattpocock-skills 课统一）——
+   默认滚动条（尤其 Windows）又粗又亮，破坏暗色侧栏观感。侧栏 nav / 右侧 TOC / 代码块 pre
+   统一收窄成暖调细条：静止 --rule 极淡 → 悬停 panel --faint → 悬停 thumb --accent 金。
+   透明边框 + background-clip:padding-box → 对 --bg 与 --code-bg 不同底色都自适应。 */
+.coursenav, .toc, pre { scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+.coursenav::-webkit-scrollbar,
+.toc::-webkit-scrollbar,
+pre::-webkit-scrollbar { width: 8px; height: 8px; }
+.coursenav::-webkit-scrollbar-track,
+.toc::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-track { background: transparent; }
+.coursenav::-webkit-scrollbar-thumb,
+.toc::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb { background-color: var(--rule); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+.coursenav:hover::-webkit-scrollbar-thumb,
+.toc:hover::-webkit-scrollbar-thumb,
+pre:hover::-webkit-scrollbar-thumb { background-color: var(--faint); }
+.coursenav::-webkit-scrollbar-thumb:hover,
+.toc::-webkit-scrollbar-thumb:hover,
+pre::-webkit-scrollbar-thumb:hover { background-color: var(--accent); }

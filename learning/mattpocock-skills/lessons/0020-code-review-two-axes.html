@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 20 课 · code-review：两轴并行审查</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">mattpocock/skills 系统课 · 第 20 课 · 单 skill 深挖 · 主流程收尾 · 基于 v1.1.0</p>
+<h1>提交前的最后一道闸——<code>code-review</code> 的两条正交轴</h1>
+<p class="lede">主流程 <code>grill-with-docs</code> → <code>to-spec</code> → <code>to-tickets</code> → <code>implement</code> 的<strong>收尾</strong>：<a href="0019-to-tickets-slices.html">上一课</a> <code>implement</code> 每做完一片 tracer-bullet，末尾都会调 <code>/code-review</code> 再提交。这节看这道闸怎么把「代码合不合规范」和「代码对不对需求」<strong>拆成两条互不干扰的轴</strong>来审——以及为什么<strong>非拆不可</strong>。</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong><code>code-review</code> 审的是「某个固定点到 HEAD」的 diff，沿<strong>两条刻意分开的轴</strong>：<strong>Standards（标准轴）</strong>——代码合不合这个仓库的编码规范 + 一套 Fowler 坏味道基线；<strong>Spec（规格轴）</strong>——代码忠不忠实地实现了那个 originating issue / spec。两轴作为<strong>并行子 agent（parallel sub-agents）</strong>跑、<strong>互不污染上下文</strong>，最后<strong>并列报告、绝不合并也不重排</strong>。因为一个改动<strong>能过一轴、却栽在另一轴</strong>——合并只会让一轴<strong>掩盖</strong>另一轴。</p>
+</section>
+
+<section>
+<h2>1. 两轴是什么，为什么非拆不可</h2>
+<p><code>code-review</code> 是 <strong>model-invoked</strong>（<code>implement</code> 收尾自动调它；你也能手动「review 从某点到现在的改动」）。它把审查劈成两条<strong>正交</strong>的轴：</p>
+<table>
+<thead><tr><th>轴</th><th>问的问题</th><th>参照物</th></tr></thead>
+<tbody>
+<tr><td><strong>Standards</strong></td><td>代码<strong>怎么写</strong>——合不合规范？</td><td>仓库文档化的编码标准 + <strong>Fowler 坏味道基线</strong></td></tr>
+<tr><td><strong>Spec</strong></td><td>代码<strong>做对没有</strong>——忠实实现需求了吗？</td><td>originating issue / spec / PRD</td></tr>
+</tbody>
+</table>
+<p>为什么一定要分开？因为一个改动可以<strong>在一条轴上满分、在另一条轴上不及格</strong>：</p>
+<blockquote>Code that follows every standard but implements the wrong thing → <strong>Standards pass, Spec fail.</strong><br>Code that does exactly what the issue asked but breaks the project's conventions → <strong>Spec pass, Standards fail.</strong><br><span style="font-size:.85em">— code-review / SKILL.md</span></blockquote>
+<div class="callout">
+<h3>回声：这和 <code>triage</code> 的两维正交是同一种智慧</h3>
+<p><a href="0006-triage-state-machine.html">第 6 课 <code>triage</code></a> 给 issue 打的是两<strong>维正交</strong>标签——category（是什么）× state（卡在哪），各答各的、互不替代。<code>code-review</code> 的两轴同理：<strong>「写得对不对」和「做得对不对」是两个独立问题</strong>，拿一个去衡量另一个只会误判。分开报告，就是不让「代码很漂亮」掩盖「做错了东西」，也不让「功能没错」掩盖「一身坏味道」。</p>
+</div>
+</section>
+
+<section>
+<h2>2. 机制：parallel sub-agents，不合并、不重排</h2>
+<p>两轴不是先后跑、也不是混在一个脑子里跑，而是<strong>各起一个 <code>general-purpose</code> 子 agent、并行跑</strong>——一手源点破关键：</p>
+<blockquote>Both axes run as <strong>parallel sub-agents</strong> so they don't pollute each other's context, then this skill aggregates their findings.<br><span style="font-size:.85em">— code-review / SKILL.md</span></blockquote>
+<p>为什么要并行独立？因为如果同一个 agent 先想 Standards 再想 Spec，前一轴的判断会<strong>污染</strong>后一轴（「我刚夸过这段代码干净，大概也实现对了吧」）。分成两个互不通气的子 agent，各自只带自己那一轴的 brief，才能<strong>各说各话、互不影响</strong>。</p>
+<p>聚合时的纪律同样硬：<strong>并列放在 <code>## Standards</code> 和 <code>## Spec</code> 两个标题下，逐字或轻度清理，绝不 merge（合并）、绝不 rerank（重排）。</strong>收尾只给一行小结：每轴各几条 finding、每轴<strong>内部</strong>最糟的一条是什么——<strong>但不跨轴评「哪条最严重」</strong>。因为跨轴重排，正是「分轴」要防的那件事：</p>
+<div class="flow">
+<div class="flow-step"><span class="sk">fixed point → HEAD 的 diff</span><span class="防">一份输入</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">Standards 子 agent</span><span class="防">规范 + 坏味道</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">Spec 子 agent</span><span class="防">对不对需求</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">并列聚合</span><span class="防">不合并·不重排</span></div>
+</div>
+</section>
+
+<section>
+<h2>3. Standards 轴的底牌：Fowler 坏味道基线</h2>
+<p>Standards 轴不只看仓库<strong>写下来</strong>的规范——就算仓库<strong>什么都没文档化</strong>，它也<strong>永远</strong>额外带一套 <strong>Fowler「代码坏味道」基线</strong>（出自《重构》第 3 章）。这直接接上 <a href="0001-the-global-map.html">第 1 课 4 失败模式</a>里的 <strong>#4 ball-of-mud（设计腐化）</strong>。基线里有 12 个坏味道，每个都是「<em>是什么 → 怎么修</em>」，比如：</p>
+<table>
+<thead><tr><th>坏味道</th><th>是什么 → 怎么修</th></tr></thead>
+<tbody>
+<tr><td><strong>Mysterious Name</strong></td><td>名字没揭示它干什么 → 改名；起不出诚实的名，说明设计浑浊</td></tr>
+<tr><td><strong>Feature Envy</strong></td><td>一个方法总伸手去够别的对象的数据 → 把方法搬到它眼馋的数据那边</td></tr>
+<tr><td><strong>Primitive Obsession</strong></td><td>用基本类型/字符串顶替一个该有自己类型的领域概念 → 给概念立个小类型</td></tr>
+<tr><td><strong>Shotgun Surgery</strong></td><td>一个逻辑改动逼你散弹式地改一堆文件 → 把一起变的东西收进一个模块</td></tr>
+</tbody>
+</table>
+<p style="color:var(--muted);font-size:.92rem">还有 Duplicated Code / Data Clumps / Repeated Switches / Divergent Change / Speculative Generality / Message Chains / Middle Man / Refused Bequest——共 12 个。</p>
+<div class="callout">
+<h3>两条铁律绑住这套基线</h3>
+<ul>
+<li><strong>仓库覆盖基线（repo overrides）</strong>：仓库文档化的标准<strong>永远赢</strong>——它若认可某种做法，就把基线里对应的坏味道<strong>压掉</strong>。这正是<a href="0004-setup-matt-pocock-skills.html">第 4 课「间接层」</a>：<code>setup</code> 写下的仓库现实，凌驾于通用基线之上。</li>
+<li><strong>永远是判断题（judgement call）</strong>：每个坏味道只是带标签的<strong>启发式</strong>（「possible Feature Envy」），<strong>不是硬违规</strong>；而且 <strong>tooling（linter/formatter）已经强制的，一律跳过</strong>——评审只花在工具管不了的地方。</li>
+</ul>
+</div>
+<p style="color:var(--muted);font-size:.92rem">对比：documented-standard（文档化标准）的违反<strong>可以</strong>是硬违规；baseline smell 则<strong>永远</strong>是判断题。两者别混。</p>
+</section>
+
+<section>
+<h2>4. 跑起来：钉固定点、找 spec、并列出报告</h2>
+<p>三个机制细节把这道闸落地：</p>
+<ol class="steps">
+<li><h3>钉 fixed point（固定点）</h3>你给一个固定点——commit SHA / 分支 / tag / <code>main</code> / <code>HEAD~5</code>。审的是 <code>git diff &lt;fixed-point&gt;...HEAD</code>（<strong>三点</strong>，即和 merge-base 比）。开跑前先确认这个 ref 解析得出、且 diff 非空——<strong>坏 ref / 空 diff 要在这里就失败</strong>，别等两个子 agent 跑起来才发现。</li>
+<li><h3>找 spec 来源（Spec 轴要用）</h3>按顺序找：commit message 里的 issue 引用（<code>#123</code> / <code>Closes #45</code>）→ 走 <a href="0014-wayfinder-lifecycle.html"><code>docs/agents/issue-tracker.md</code></a> 取；你传的路径；<code>docs/</code>·<code>specs/</code>·<code>.scratch/</code> 下匹配分支/feature 的 spec；都没有就问你。<strong>确实没有 spec，Spec 轴就跳过、报「no spec available」</strong>——Standards 轴照跑。</li>
+<li><h3>并列聚合出报告</h3><code>## Standards</code> 和 <code>## Spec</code> 两段并列，逐字/轻清理；<strong>不合并不重排</strong>；收尾一行：每轴 finding 数 + 每轴内最糟，不跨轴选唯一赢家。</li>
+</ol>
+<div class="callout">
+<h3>要点：<code>implement</code> 跑完，你<strong>不用</strong>再手动跑一次</h3>
+<p><code>implement</code> 的收尾步骤本身就写着「<em>Once done, use <code>/code-review</code> to review the work</em>」——顺序是 <strong><code>tdd</code> → 测试 → <code>code-review</code> → 提交</strong>，这道闸<strong>在提交前自动过一遍</strong>（每片 tracer-bullet 各一次，fixed point 是当片起点）。所以主流程里它是<strong>自动的</strong>。</p>
+<p>你<strong>手动</strong>跑 <code>code-review</code>，是为了<strong>换一个 fixed point / 换一个范围</strong>审别的 diff——正如它 description 说的「review <strong>a branch, a PR</strong>, or <strong>since X</strong>」：比如一条 feature 分支<strong>跨了好几片纵切</strong>、你想把<strong>整条分支对 <code>main</code></strong> 整体再审一遍，或审别人的 PR / 一段 WIP。<strong>不是因为 <code>implement</code> 漏跑了，而是因为你要审的范围不一样。</strong></p>
+</div>
+<figure class="diagram wide">
+<pre class="mermaid">
+flowchart TB
+  FP["钉 fixed point<br/>git diff &lt;point&gt;...HEAD（三点·merge-base）"] --> CHK{"ref 解析得出<br/>且 diff 非空？"}
+  CHK -->|"否"| FAIL["就地失败<br/>别进子 agent"]
+  CHK -->|"是"| SPLIT["两轴各起一个 general-purpose 子 agent"]
+  SPLIT --> ST["Standards 子 agent<br/>仓库规范 + Fowler 坏味道基线<br/>（repo 覆盖 · 判断题 · 跳过 tooling 管的）"]
+  SPLIT --> SP["Spec 子 agent<br/>缺失/多做/做错，各引 spec 原句<br/>（无 spec → 跳过）"]
+  ST --> AGG["并列聚合<br/>## Standards / ## Spec<br/>不 merge · 不 rerank"]
+  SP --> AGG
+  classDef gold fill:#241f1a,stroke:#d9b45c,color:#e7e2d6;
+  classDef ok fill:#1e2a24,stroke:#7fc9a0,color:#e7e2d6;
+  classDef bad fill:#2c2020,stroke:#e0928c,color:#e7e2d6;
+  class SPLIT gold;
+  class AGG ok;
+  class FAIL bad;
+</pre>
+<figcaption>一份 diff 输入，两条正交轴各起一个<strong>互不污染</strong>的子 agent（金），最后<strong>并列聚合、不合并不重排</strong>（绿）；坏 ref / 空 diff 要在进子 agent<strong>之前</strong>就地失败（红）。</figcaption>
+</figure>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="B" data-explain="两轴正交：Standards（怎么写·合不合规范+Fowler 基线）× Spec（做对没·忠不忠实实现 issue）。B 正是。A 把两轴说成先后阶段（其实并行）；C 只剩一轴（漏了 Spec）；D 是 diagnosing-bugs/tdd 的活，不是 code-review 的两轴。">
+<p class="quiz-q">1. <code>code-review</code> 的两条轴分别审什么？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>先审安全漏洞、再审性能，分两个阶段跑</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>Standards（合不合规范）× Spec（对不对需求）</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>只审是否符合仓库编码规范这一条轴</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>先造能亮红的回路、再最小化复现这个 bug</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="C" data-explain="两轴作为 parallel sub-agents 跑、互不污染 context；聚合时并列在 ## Standards / ## Spec 下、绝不 merge 也不 rerank——因为一个改动能过一轴失另一轴，合并/重排会让一轴掩盖另一轴。C 正是。A 违反『不合并』；B 违反『不跨轴选唯一赢家』；D 违反『并行独立、互不污染』。">
+<p class="quiz-q">2. 两轴的结果，<code>code-review</code> 怎么处理？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>合并成一份统一清单，去重后按严重度排序</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>跨两轴挑出全局最严重的一条，作为结论</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>并列在两个标题下，不合并、不重排</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>让一个 agent 先审完一轴，再接着审另一轴</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="Standards 轴永远额外带 Fowler 坏味道基线（即使仓库没文档），两条铁律：repo overrides（文档化标准赢、认可的 smell 压掉）+ always a judgement call（每个 smell 是启发式非硬违规，tooling 管的跳过）。A 正是。B 说反了（是 repo 覆盖 baseline，不是 baseline 覆盖 repo）；C 把 smell 当硬违规（错，是判断题）；D 漏了 baseline（就算没文档也带基线）。">
+<p class="quiz-q">3. 关于 Standards 轴的 Fowler 坏味道基线，正确的是？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>就算仓库没文档也带基线；但仓库标准覆盖它、且每条都是判断题</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>基线永远压过仓库自己的标准，冲突时以基线为准</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>基线里每个坏味道都是硬违规，命中即必须打回</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>只有仓库写了 CODING_STANDARDS 才审，否则不带基线</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<p>先读第一条——本课每个论断的出处；其余按需核验：</p>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md">code-review / SKILL.md</a></strong> —— 两轴（Standards/Spec）+ parallel sub-agents 不污染 + 钉 fixed point（三点 diff）+ spec 来源顺序 + <strong>12 个 Fowler 坏味道全表</strong> + 两铁律（repo overrides / judgement call）+ 聚合不 merge 不 rerank + 「Why two axes」。<strong>最高优先「读」。</strong></li>
+<li><strong>《重构》第 3 章「代码的坏味道」（Fowler）</strong> —— Standards 轴基线的原典；<a href="0001-the-global-map.html">第 1 课</a>失败模式 #4 ball-of-mud 引的正是它。</li>
+<li><strong><a href="0006-triage-state-machine.html">第 6 课 <code>triage</code></a> / <a href="0019-to-tickets-slices.html">第 19 课</a></strong> —— 对照：triage 的两维正交是同一种「别拿一个维度衡量另一个」；code-review 是 <code>implement</code>（主流程收尾）每片提交前的质量闸。</li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>「12 个 Fowler 坏味道能不能挨个给我配一个真实例子？」</em>、<em>「<code>git diff a...b</code> 三点和 <code>a..b</code> 两点到底差在哪、为什么 code-review 用三点？」</em>、<em>「主流程全讲完了——现在拿我一个真实想法，从 <code>grill-with-docs</code> 走到 <code>code-review</code> 跑一遍完整闭环？」</em> —— 下一站由你点单。随时回查见 <a href="../reference/code-review-two-axes.html">参考卡</a>、<a href="../RESOURCES.md">RESOURCES.md</a> 与 <a href="../GLOSSARY.md">GLOSSARY.md</a>。</p>
+</section>
+
+<footer>
+<span><a href="0019-to-tickets-slices.html">← 第 19 课 · to-tickets：tracer-bullet 纵切片</a></span>
+<span><a href="0006-triage-state-machine.html">第 6 课 · triage 的 5 个状态标签 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>

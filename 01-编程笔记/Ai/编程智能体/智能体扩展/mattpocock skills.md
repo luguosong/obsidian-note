@@ -74,16 +74,35 @@ npx skills@latest add mattpocock/skills
 
 ### setup-matt-pocock-skills
 
-| 问题（issue）跟踪器<br>docs/agents/issue-tracker.md   |                                                                                                                                                                 |
+| 问题（issue）跟踪器<br>docs/agents/issue-tracker.md   | CONTEXT.md<br><br>docs/adr                                                                                                                                      |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 分诊（triage）标签词汇<br>docs/agents/triage-labels.md | needs-triage 还没评估<br>needs-info 卡在等 reporter（提报人）补料，信息不足没法往下走<br>ready-for-agent 规格完整 agent 可以直接接手开做<br>ready-for-human 规格完整，但必须人来做<br>wontfix **不做**——已实现过、或被拒 |
 | 领域（domain）文档<br>docs/agents/domain.md          | CONTEXT.md<br><br>docs/adr/                                                                                                                                     |
+
 
 ## 询问应该使用哪个skill
 
 ### ask-matt
 
 询问哪种技能或流程适合你的情况。在此仓库中通过路由（router）在各项技能之间进行选择。
+
+## 开发工作流
+
+### grill-with-docs
+
+对齐想法，沉淀 CONTEXT.md / ADR
+
+### to-spec
+
+如果是 grill-with-docs ，则将对话转为spec。
+
+### to-tickets
+
+用于需要多会话构建的场景
+
+### implement
+
+每个 ticket 开一个新会话，独立实现，防上下文爆炸。
 
 ## 仓库优化
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · seam（接缝）· 一个概念，四门 skill</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查 · 横向主题</p>
+<h1><code>seam</code>（接缝）· 一个概念，四门 skill 从不同角度接力</h1>
+<p class="lede">和别的卡不同——这张不压一门 skill，而是把 <strong>seam（接缝）</strong>这一根线，横着串过<a href="../lessons/0012-improve-codebase-architecture.html">第 12</a>·<a href="../lessons/0018-to-spec-synthesize.html">18</a>·<a href="../lessons/0002-main-flow-in-action.html">2</a>·<a href="../lessons/0015-diagnosing-bugs-loop.html">15 课</a>。适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>一句话定义（Michael Feathers）</h2>
+<div class="win">
+<p><strong>seam ＝ 能在别处改变行为、而不必在那处动刀的地方；也就是一个模块的<em>接口所在的位置</em>。</strong>「把接缝放在哪」本身是一个设计决策，和「接缝后面放什么」是两回事。</p>
+</div>
+<p style="color:var(--muted);font-size:.92rem">配套一句尺：<strong>interface 就是 test surface（测试面）</strong>——调用者和测试<strong>跨的是同一条缝</strong>。要测到「接口<em>之后</em>」，多半是模块形状不对。⚠️ 别叫它 <code>boundary</code>（已被 DDD 的 bounded context 占用）——说 <strong>seam</strong> 或 <strong>interface</strong>。</p>
+</section>
+
+<section>
+<h2>四门 skill × seam：各接一棒</h2>
+<table>
+<thead><tr><th>skill（课）</th><th>对 seam 干什么</th><th>关键判据 / 措辞</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>codebase-design</strong><br><a href="../lessons/0012-improve-codebase-architecture.html">第 12 课</a></td>
+<td><strong>命名它</strong>——给出 seam 的定义与词汇（深/浅模块、leverage/locality）</td>
+<td>把接缝<strong>放哪</strong>是独立设计决策；深模块＝小接口后藏大量行为，测试就贴接口</td>
+</tr>
+<tr>
+<td><strong>to-spec</strong><br><a href="../lessons/0018-to-spec-synthesize.html">第 18 课</a></td>
+<td><strong>决定它</strong>——主流程里<strong>第一次</strong>勾出测试接缝并跟你确认</td>
+<td>四偏好：<strong>现有优先 · 位置最高 · 数量最少（理想一个）· 跟你确认</strong></td>
+</tr>
+<tr>
+<td><strong>tdd</strong><br><a href="../lessons/0002-main-flow-in-action.html">第 2 课</a>（<code>implement</code> 内）</td>
+<td><strong>在它上面测</strong>——只在 pre-agreed（事先约定）的 seam 上写测试</td>
+<td>观察行为、不伸手进内部；<strong>未确认的接缝上不写测试</strong></td>
+</tr>
+<tr>
+<td><strong>diagnosing-bugs</strong><br><a href="../lessons/0015-diagnosing-bugs-loop.html">第 15 课</a></td>
+<td><strong>要求它 correct</strong>——回归测试要有能复现 bug 的正确接缝</td>
+<td>太浅＝虚假信心；<strong>没有 correct seam 本身＝一个（架构）发现</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>串成一条线</h2>
+<div class="flow">
+<div class="flow-step"><span class="sk">codebase-design</span><span class="防">命名（什么/放哪）</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">to-spec</span><span class="防">决定（勾+确认·首次）</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">tdd</span><span class="防">在其上测（pre-agreed）</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">diagnosing-bugs</span><span class="防">要求 correct（否则举架构）</span></div>
+</div>
+<p style="color:var(--muted);font-size:.92rem">同一个「在哪观察行为」的问题被四门 skill 接力：<code>to-spec</code> 是主流程里的<strong>起点</strong>；<code>diagnosing-bugs</code> 发现接缝不对时，把那块<strong>架构</strong>交回 <code>improve-codebase-architecture</code>（用的正是 codebase-design 词汇）——回到第一棒，闭环。</p>
+</section>
+
+<section>
+<h2>判接缝的两把尺（codebase-design）</h2>
+<ul>
+<li><strong>deletion test（删除测试）</strong>：想象把模块删掉——复杂度<strong>凭空消失</strong>＝纯转发壳（浅，接缝可疑）；复杂度在 <strong>N 个调用点重现</strong>＝它在挣钱（深，接缝真实）。</li>
+<li><strong>一个 adapter＝假想接缝，两个＝真接缝</strong>：除非真有东西<strong>跨接缝变化</strong>，否则别引入接缝。</li>
+<li><strong>internal seam vs external seam</strong>：external＝模块接口那条（调用者 + 测试跨它）；internal＝实现私有、给它自己的测试用。深模块内部可以有很多可换的小件，只是<strong>不进接口</strong>。</li>
+</ul>
+</section>
+
+<footer>
+<span>相关课：<a href="../lessons/0012-improve-codebase-architecture.html">L12</a> · <a href="../lessons/0018-to-spec-synthesize.html">L18</a> · <a href="../lessons/0002-main-flow-in-action.html">L2</a> · <a href="../lessons/0015-diagnosing-bugs-loop.html">L15</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

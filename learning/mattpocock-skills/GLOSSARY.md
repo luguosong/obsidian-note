@@ -186,6 +186,88 @@ _Avoid_: 笼统说"匝道汇入主流程"（丢了各站不同）；让任何匝
 跨会话换会话/减负的两种动作判据——`/handoff`＝**fork**（压成 markdown、开**新会话**引用，逐字历史全留；线程满 / 岔进 prototype 时用）；`/compact`＝**continue**（留**同一会话**、摘要早期轮次；阶段间有意打断、不在意逐字时用）。原文铁律 "`/handoff` forks; `/compact` continues."；警告**别在阶段中途 compact**（agent 会 lose its way）。原型绕行回路里 handoff 用**两次双向**、两次都是 fork。
 _Avoid_: 把 fork/continue 当同义减负（一个换会话、一个不换，解决的问题不同）
 
+### diagnosing-bugs · 紧反馈回路
+
+**diagnosing-bugs（诊断 bug · 第三条匝道）**：
+治 4 失败模式 #3 code-doesn't-work 的匝道，**model-invoked**（说「debug this / 报错了 / 好慢」就触发，无 `disable-model-invocation`）。六阶段纪律，重心全在 Phase 1；多数**原地闭环**（建回路 → 修 + 回归即结），只在复盘发现架构问题时把那块**架构**（非 bug）交 `improve-codebase-architecture`（且在修完之后）。
+_Avoid_: 当成「靠灵感/经验猜原因」的调试；把 bug 本身交给 improve-arch（交的是架构）
+
+**紧反馈回路 / red-capable（tight feedback loop）**：
+Phase 1 的产物、也是「This is the skill」的那个 it：一条能对**这个 bug 亮红灯**、绿于修复后的 pass/fail 信号。完成判据＝报得出**一条已跑过一次的命令**，四条全中——**red-capable**（驱动真实 bug 路径、断言用户确切症状，非「没崩就算过」）· 确定 · 快（秒级）· agent 可无人值守跑。铁律「No red-capable command, no Phase 2」；十种造法按优劣排序（failing test → … → HITL bash 兜底），有了还要 tighten（更快/更利/更确定）。
+_Avoid_: 把「没报错就算过」当红灯；先读代码建理论再谈回路（正是本 skill 要防的失败）
+
+**correct seam（正确接缝）· 无 seam 即发现**：
+能在**真实 bug 触发的调用点**上复现 bug 模式的测试接缝。Phase 5 只在有 correct seam 时才先写回归测试；seam 太浅（单调用者测多调用者 bug）＝虚假信心。**没有 correct seam 本身就是一个发现**——架构在阻止 bug 被锁死，记下、Phase 6 复盘若确属架构问题则交 improve-codebase-architecture。
+_Avoid_: 在浅 seam 硬写回归测试图个安心；和 tdd 的「pre-agreed seam」混（这里强调的是「够不够深到复现 bug」）
+
+### domain-modeling · 主动建模四手法
+
+**domain-modeling（主动建模 · 词汇层）**：
+治 4 失败模式 #2 verbosity 的**词汇层** skill（model-invoked）——**主动**建 / 磨领域模型（DDD ubiquitous language / 统一语言），产物是 `CONTEXT.md`（术语表）+ ADR（决策）。关键分野：**读 `CONTEXT.md` 取词 = 被动消费**（任何 skill 的一行习惯，不是它）；**改变模型 = 主动建模**（挑战词 / 拍决策 / 发现代码与说法打架，才触发它）。`grill-with-docs = grilling + domain-modeling`。
+_Avoid_: 把「读字典取词」当成用了这门 skill；把它当被动文档消费
+
+**四手法（Four techniques）**：
+domain-modeling 在会话中磨利模型的四个动作，各司一职——**challenge**（用户的词与 `CONTEXT.md` 冲突 → 当场点出）· **sharpen**（模糊 / 过载词 → 提精确规范词，如 account = Customer 还是 User）· **scenario**（编具体边缘场景压测概念间的关系边界）· **cross-reference**（拿代码核对用户说法、矛盾当场掀出——即第 10 课三道显形闸的第一道）。
+_Avoid_: 笼统说「和用户讨论术语」（丢了四手各自的触发与动作）
+
+**CONTEXT.md 写法纪律**：
+`CONTEXT.md` 是**术语表 only**——只装**本项目特有**的领域术语（通用编程概念不收）· 定义 **tight**（1–2 句、说它**是什么**不说做什么）· **opinionated**（多词同义挑最佳、其余列 `_Avoid_`）· 词一结晶就 **inline 写**不攒批 · 无实现细节 / 不是 spec / 不是草稿本 · 文件**惰性 create**。ADR 则三条件闸门 sparingly（接第 8 课）。
+_Avoid_: 往 CONTEXT.md 塞模块路径 / 决策理由 / 代码（那些分别属于代码 · ADR · 代码）
+
+### grilling · 共享原语深挖
+
+**确认闸门（Confirmation gate）**：
+`grilling` 承重的第四条规则——在用户**明确确认**「达成共识」之前，**绝不 enact（执行）任何计划**。它把「对齐」与「动手」用一道闸严格隔开，是 4 失败模式 #1 **misalignment** 的直接解药。同源精神：`wayfinder` 的 plan-don't-do、`to-spec` 的「不 interview 只 synthesize」都各自守住「先对齐、后动手」。
+_Avoid_: 把它当「多问几轮」；未确认共识就按推荐答案开动
+
+**薄包装 / 组合（Thin wrapper）**：
+`grilling` 是可复用积木，两个 user-invoked 的 `grill-*` 本体各只一行、是它的薄壳——`grill-me` ＝裸 `grilling`（productivity，不碰码）；`grill-with-docs` ＝ `grilling` + `domain-modeling`（engineering，边问边沉 `CONTEXT.md`/ADR）。`grilling` 本身不归任何桶，还被 `wayfinder`（命名终点 / `grilling` 票型）、`improve-codebase-architecture`（对挑中的卡）拿去当积木。
+_Avoid_: 把 grill-me / grill-with-docs 当两个独立大 skill（它们只是同一原语的薄包装）
+
+### to-spec · 综合与接缝
+
+**to-spec（定格 · 不 interview 只 synthesize）**：
+主流程第二步（user-invoked）：把**已达共识的对话**综合成一份 spec 发到 issue tracker、贴 `ready-for-agent`。招牌是 **"Do NOT interview — just synthesize what you already know"**——访谈在上游 `grill-with-docs` 做完（`grilling` 确认闸门已达共识），它只**定格**、不再问。spec 模板七段（Problem/Solution/User Stories 长列/Implementation Decisions/Testing Decisions/Out of Scope/Further Notes），**不写具体文件路径/代码**（会 stale；例外：prototype 编码决策的 snippet）。
+_Avoid_: 让它再访谈一轮（那说明上游 grill 没做够）；往 spec 里钉死文件路径 / 贴能跑的实现
+
+**seam（接缝）· 勾 seam 四偏好**：
+观察行为、又不伸手进内部的**公共测试边界**——测试就贴在这里。`to-spec` 是整条主流程**第一次**把「在哪测」定下来的地方，四偏好：**现有优先 · 位置最高 · 数量最少（理想一个）· 跟用户确认**。这根线贯穿：to-spec 勾并确认 → `tdd` 在 **pre-agreed seam** 上测（implement）→ `diagnosing-bugs` 要 **correct seam**（够深到复现 bug）→ codebase-design 用 **deletion test** 判深浅（一个 adapter 是假想接缝、两个才是真接缝）。
+_Avoid_: 新开而非复用接缝、扎进内部低层、接缝越多越好（全反了）
+
+### to-tickets · 纵切片与 expand–contract
+
+**tracer-bullet 纵切片（Vertical slice）**：
+`to-tickets`（主流程第三步）把 spec 切出的工单单位——一条**又窄又完整、穿透所有层（schema→API→UI→test）的竖切**，**自己就能 demo/验证**、**装进一个 fresh context 窗口**、prefactor 先行。与**横切**（一层一片，即 tdd 反模式 horizontal slicing）相反。每片声明 **blocking edges**；blocker 全清的片＝**frontier**，沿 frontier **一次一片、每片交 `implement`、片间清空上下文**。产出即工单层（工作记忆）。
+_Avoid_: 横切（按层切）；一片装不进一个上下文窗口；和 wayfinder 决策票混（那是决定不是建造）
+
+**wide refactor · expand–contract（大范围重构 · 先扩后缩）**：
+纵切的**唯一例外**：一次**机械变更**（改列名 / 换共享符号类型）**爆炸半径横扫全仓**、一改断上千调用点，没纵切能 land green。改走三段——**expand**（新形态与旧并存、不破）→ **migrate**（按爆炸半径分批、每批一 ticket 阻塞于 expand、旧形态在故 CI 保绿）→ **contract**（删旧形态、阻塞于所有 migrate 批）。分批也无法各自保绿时，共享一条 integration branch、全阻塞于最后的 integrate-and-verify。
+_Avoid_: 把普通 feature 当 wide refactor；硬把机械大改塞进一片纵切（会全红）
+
+### code-review · 两轴并行
+
+**code-review（两轴并行审查）**：
+主流程收尾（model-invoked，`implement` 每片提交前自动调）：审 `git diff <fixed-point>...HEAD`（**三点**·merge-base）沿两条**正交轴**——**Standards**（合不合仓库规范 + Fowler 坏味道基线）× **Spec**（忠不忠实实现 originating issue/spec）。两轴作 **parallel sub-agents** 跑、**互不污染 context**，聚合时并列在 `## Standards`/`## Spec` 下、**绝不 merge 不 rerank**（一个改动能过一轴失另一轴，合并会让一轴掩盖另一轴）。无 spec → Spec 轴跳过、Standards 照跑。
+_Avoid_: 合并两轴清单 / 跨轴选唯一最严重（那正是分轴要防的）；和 triage 两维正交搞混（那个是给 issue 打标签）
+
+**Fowler 坏味道基线（Smell baseline）· repo overrides / judgement call**：
+Standards 轴**永远**额外带的一套 Fowler《重构》ch.3 的 12 个坏味道（Mysterious Name / Feature Envy / Primitive Obsession / Shotgun Surgery / Duplicated Code / Data Clumps / Repeated Switches / Divergent Change / Speculative Generality / Message Chains / Middle Man / Refused Bequest），即使仓库零文档也带。两铁律：**repo overrides**（仓库文档化标准赢、认可的 smell 压掉——即第 4 课间接层）；**always a judgement call**（每个 smell 是带标签的启发式「possible X」非硬违规，tooling 已强制的一律跳过）。documented-standard 违反可硬、baseline smell 永远判断题。
+_Avoid_: 把 baseline 当凌驾 repo 的硬规则；把 smell 当硬违规必打回
+
+### prototype · research · standalone 小件
+
+**prototype（一次性代码答一个问题）**：
+standalone skill（productivity）：写**扔掉的代码**回答**一个**设计问题——**问题决定形状**。第一步选分支：「逻辑/状态模型对不对」→ **LOGIC**（终端 app 推状态机过难 case）；「该长什么样」→ **UI**（一条路由几个差异极大的变体切换）。**选错分支＝整个原型白做**（歧义且无人问→按周围代码默认、顶部写明假设）。六规矩＝一次性标明/一条命令/不持久化/跳过打磨/摊开状态/捕获；**捕获＝promotion**（决策折进真代码、原型 commit 到 out-of-main throwaway 分支、主分支只留决策）。**HITL**。
+_Avoid_: 把原型当生产代码打磨/持久化/合进主分支；选错 LOGIC↔UI 分支
+
+**research（后台查一手源）**：
+standalone skill（productivity）：起一个**后台 agent**查资料、**让你继续干活它一边读（AFK）**。三铁律——①只认**一手源**（官方文档/源码/规格/第一方 API），不吃二手转述、每条论断追回拥有它的源；②写进**一份带引用的 Markdown**；③按仓库既有约定存、没有就找合理处并说明。是 RESOURCES「一手源优先·不信参数记忆」的机器化身。与 prototype 分工：**research 去读（查外部事实·AFK）/ prototype 去造（试个便宜东西·HITL）**。
+_Avoid_: 吃二手转述/凭参数记忆作答；把它当 HITL 或当汇入主流程的匝道（它 standalone·AFK）
+
+**resolving-merge-conflicts（解合并冲突 · 工具）**：
+engineering 桶的**工具类** skill（model-invoked，正卡着 merge/rebase 冲突时用），不在主流程/匝道骨架里。要害：**冲突＝两个意图相撞**，先**追每边的一手源（commit/PR/issue）懂 WHY** 再解——**能保则两意图都保**，不兼容选**匹配 merge 目标**的、记 trade-off。铁律：**不发明新行为 · 绝不 `--abort` · 永远解完**；收尾**跑项目检查（typecheck→测试→格式化）**修好 merge 弄坏的再 commit（rebase 则续到底）。
+_Avoid_: 凭手感挑一边/揉出第三种新行为（franken-merge）/停在「能编译·无冲突标记」就收/`--abort` 撤退
+
 ## 术语歧义（明确约定）
 
 - **"skill" 有两义**：本表里，**Skill（教学法）**＝teach 三支柱里"靠练习变持久的能力"；**skill（框架）**＝一个 Matt Pocock 技能单元（一份 `SKILL.md`）。靠上下文区分，易混时补一字——"教学法的技能" vs "某个 skill"。

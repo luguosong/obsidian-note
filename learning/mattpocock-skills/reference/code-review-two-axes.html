@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · code-review 两轴 + Fowler 12 味</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查</p>
+<h1><code>code-review</code> · 两轴并行 + Fowler 12 坏味道</h1>
+<p class="lede">一张卡钉死：审查的<strong>两条正交轴</strong>怎么跑、Standards 轴那套 <strong>12 个 Fowler 坏味道</strong>全表、以及绑住它的两条铁律。配套 <a href="../lessons/0020-code-review-two-axes.html">第 20 课</a>，适合打印贴墙。</p>
+</header>
+
+<section>
+<h2>一条主线：两轴正交，不合并不重排</h2>
+<div class="win">
+<p>审「fixed-point → HEAD」的 diff，沿<strong>两条刻意分开的正交轴</strong>：<strong>Standards</strong>（怎么写·合不合规范 + Fowler 基线）× <strong>Spec</strong>（做对没·忠不忠实实现 issue）。两轴作 <strong>parallel sub-agents</strong> 跑、<strong>互不污染 context</strong>，聚合时<strong>并列不 merge、不 rerank</strong>——因为一个改动能过一轴失另一轴，合并会让一轴<strong>掩盖</strong>另一轴。</p>
+</div>
+<table>
+<thead><tr><th>轴</th><th>问什么</th><th>参照</th><th>过/失</th></tr></thead>
+<tbody>
+<tr><td><strong>Standards</strong></td><td>怎么写·合规范？</td><td>仓库规范 + Fowler 基线</td><td>合规范但做错东西＝Standards 过·Spec 失</td></tr>
+<tr><td><strong>Spec</strong></td><td>做对没·实现对？</td><td>originating issue / spec</td><td>做对但破坏约定＝Spec 过·Standards 失</td></tr>
+</tbody>
+</table>
+<p style="color:var(--muted);font-size:.92rem">model-invoked：<code>implement</code> 每片提交前自动调（顺序 tdd→测试→code-review→提交）。<strong>手动跑</strong>只为换 fixed point / 范围（整条分支对 <code>main</code>、别人 PR、review since X）。</p>
+</section>
+
+<section>
+<h2>Fowler 12 坏味道基线（Standards 轴）</h2>
+<p>就算仓库零文档，Standards 轴也<strong>永远</strong>带这套（《重构》ch.3 · 治 ball-of-mud）。每条读「<em>是什么 → 怎么修</em>」：</p>
+<table>
+<thead><tr><th>坏味道</th><th>是什么 → 怎么修</th></tr></thead>
+<tbody>
+<tr><td><strong>Mysterious Name</strong></td><td>名字没揭示它干什么/存什么 → 改名；起不出诚实名＝设计浑浊</td></tr>
+<tr><td><strong>Duplicated Code</strong></td><td>同一逻辑形状在多处出现 → 抽出共享形状、两处都调</td></tr>
+<tr><td><strong>Feature Envy</strong></td><td>方法总够别的对象的数据多过自己的 → 把方法搬到它眼馋的数据那边</td></tr>
+<tr><td><strong>Data Clumps</strong></td><td>同几个字段/参数总一起旅行 → 打包成一个类型、传它</td></tr>
+<tr><td><strong>Primitive Obsession</strong></td><td>用基本类型/字符串顶替该有自己类型的领域概念 → 给概念立小类型</td></tr>
+<tr><td><strong>Repeated Switches</strong></td><td>同一 switch/if 级联对同一类型反复出现 → 换多态，或两处共享一张 map</td></tr>
+<tr><td><strong>Shotgun Surgery</strong></td><td>一个逻辑改动逼你散弹式改一堆文件 → 把一起变的收进一个模块</td></tr>
+<tr><td><strong>Divergent Change</strong></td><td>一个模块因几件不相关的事被反复改 → 拆开、让每个模块只为一个原因变</td></tr>
+<tr><td><strong>Speculative Generality</strong></td><td>为 spec 没提的需求加的抽象/参数/钩子 → 删掉、inline 回去到真需求出现</td></tr>
+<tr><td><strong>Message Chains</strong></td><td>长长的 <code>a.b().c().d()</code> 导航、调用者不该依赖 → 藏到第一个对象的一个方法后</td></tr>
+<tr><td><strong>Middle Man</strong></td><td>一个类/函数大多只是往下转发 → 砍掉、直接调真正的目标</td></tr>
+<tr><td><strong>Refused Bequest</strong></td><td>子类/实现忽略或覆盖了继承来的大部分 → 弃继承、改用组合</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>绑住基线的两条铁律</h2>
+<ul>
+<li><strong>repo overrides（仓库覆盖基线）</strong>：仓库文档化的标准<strong>永远赢</strong>——它认可的做法，把基线里对应 smell <strong>压掉</strong>。（＝间接层：<code>setup</code> 写下的仓库现实凌驾通用基线。）</li>
+<li><strong>always a judgement call（永远判断题）</strong>：每个 smell 只是带标签的<strong>启发式</strong>（「possible Feature Envy」），<strong>不是硬违规</strong>；<strong>tooling 已强制的（linter/formatter）一律跳过</strong>。</li>
+</ul>
+<p style="color:var(--muted);font-size:.92rem">对比：documented-standard 的违反<strong>可以</strong>是硬违规；baseline smell <strong>永远</strong>是判断题。两者别混。</p>
+</section>
+
+<section>
+<h2>跑起来的三步</h2>
+<div class="flow">
+<div class="flow-step"><span class="sk">钉 fixed point</span><span class="防">git diff &lt;point&gt;...HEAD<br/>三点·merge-base<br/>坏 ref/空 diff 就地失败</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">找 spec 来源</span><span class="防">commit issue 引用→tracker<br/>/路径/docs·specs·.scratch<br/>无则 Spec 轴跳过</span></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step"><span class="sk">并列聚合</span><span class="防">## Standards / ## Spec<br/>不 merge·不 rerank<br/>每轴内最糟·不跨轴选</span></div>
+</div>
+</section>
+
+<footer>
+<span><a href="../lessons/0020-code-review-two-axes.html">← 第 20 课 · code-review：两轴并行审查</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>

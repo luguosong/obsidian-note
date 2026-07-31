@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 17 课 · grilling：共享原语与确认闸门</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">mattpocock/skills 系统课 · 第 17 课 · 单 skill 深挖 · 共享原语 · 基于 v1.1.0</p>
+<h1>那台「把你逼到想清楚为止」的访谈机——<code>grilling</code> 原语与确认闸门</h1>
+<p class="lede"><code>grilling</code>（拷问）你已在 <a href="0011-wayfinder-map.html">wayfinder</a>、<a href="0012-improve-codebase-architecture.html">improve-codebase-architecture</a>、<a href="0016-domain-modeling.html">grill-with-docs</a> 里反复撞见——它是那台「一次一问、逼到共识才罢休」的机器。<a href="0016-domain-modeling.html">上一课</a>讲透了 <code>grill-with-docs</code> 的一半（<code>domain-modeling</code>）；这节补上<strong>另一半、也是最底层的那块</strong>：<code>grilling</code> 本身。</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong><code>grilling</code> 是一个<strong>极小的、可复用的 model-invoked 原语</strong>（v1.1 专门抽出来的），只有<strong>四条规则</strong>：①沿决策树一支支<strong>relentless（不留情）</strong>追问、每题给<strong>推荐答案</strong>；②<strong>一次只问一个</strong>；③<strong>事实自己去查环境、决策留给你</strong>；④<strong>达成共识前绝不动手</strong>（confirmation gate，确认闸门——承重的那条）。两个 <code>grill-*</code> 只是它的<strong>薄包装</strong>：<code>grill-me</code> ＝裸 <code>grilling</code>；<code>grill-with-docs</code> ＝ <code>grilling</code> + <code>domain-modeling</code>（边问边沉 <code>CONTEXT.md</code>/ADR）。它还垫在 <code>wayfinder</code>、<code>improve-codebase-architecture</code> 底下。</p>
+</section>
+
+<section>
+<h2>1. 定位：为什么把它抽成一个原语</h2>
+<p><code>grilling</code> 是 <strong>model-invoked</strong>（你说「grill 我一下 / 帮我压一压这个想法」就触发，无 <code>disable-model-invocation</code>）。v1.1 的一个关键重构，就是把这套「relentless interview（不留情访谈）」从各处<strong>抽成一个独立的共享原语</strong>——因为好几个 skill 都要用它「先把想法逼清楚」这件事。抽出来之后，它<strong>不归 engineering / productivity 任何一桶</strong>，而是作为<strong>底层件</strong>被上层反复引用。</p>
+<div class="callout">
+<h3>它有多小？——整份 SKILL.md 就一段</h3>
+<p><code>grilling</code> 的 SKILL.md <strong>正文只有四句话</strong>。这正是「原语」的样子：<strong>小、单一职责、可被组合</strong>。它不试图沉文档（那是 <code>domain-modeling</code> 的活）、不试图画地图（那是 <code>wayfinder</code>）——它只干一件事：<strong>把一个想法拷问到共识</strong>。别的 skill 需要这一步时，就把它<strong>拿去当积木</strong>。</p>
+</div>
+</section>
+
+<section>
+<h2>2. 四条规则：这台访谈机怎么运转</h2>
+<p>逐条拆开一手源（全文就这四句）：</p>
+<ol class="steps">
+<li><h3>Relentless + 决策树，每题给推荐答案</h3><em>"Interview me relentlessly… Walk down each branch of the decision tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer."</em> 不是随便聊——是<strong>沿决策树一支支往下走、把决策间的依赖一一解开</strong>，而且每问一题都<strong>先给出它推荐的答案</strong>（让你在「同意 / 改」之间轻松表态，而非从零构造）。</li>
+<li><h3>一次只问一个</h3><em>"Ask the questions one at a time, waiting for feedback on each question before continuing. Asking multiple questions at once is bewildering."</em> 一次一个、等你答完再继续。一口气抛一堆问题<strong>令人晕头转向</strong>——这条是 <code>grilling</code> 体验的命脉。</li>
+<li><h3>事实自己查，决策留给你</h3><em>"If a fact can be found by exploring the environment (filesystem, tools, etc.), look it up rather than asking me. The decisions, though, are mine."</em> 能靠翻文件 / 用工具查到的<strong>事实</strong>，它<strong>自己去查</strong>、不拿来烦你；只有<strong>决策</strong>（要你拍板的）才一条条摆到你面前。<strong>别让 agent 替你决策，也别让它拿事实来考你。</strong></li>
+<li><h3>确认闸门：共识前不动手</h3><em>"Do not act on it until I confirm we have reached a shared understanding."</em> 这是<strong>承重的一条</strong>：在你<strong>明确确认</strong>「我们达成共识了」之前，它<strong>绝不 enact（执行）任何计划</strong>。它把「对齐」和「动手」<strong>用一道闸严格隔开</strong>——正是 4 失败模式 #1 <strong>misalignment（没做对你要的）</strong>的直接解药。</li>
+</ol>
+</section>
+
+<section>
+<h2>3. 同一原语，两种薄包装</h2>
+<p>两个你会<strong>手动敲</strong>（user-invoked，都带 <code>disable-model-invocation</code>）的 <code>grill-*</code> skill，本体都只有<strong>一行</strong>——薄到几乎透明：</p>
+<table>
+<thead><tr><th></th><th><code>grill-me</code></th><th><code>grill-with-docs</code></th></tr></thead>
+<tbody>
+<tr><td><strong>本体（整份 SKILL.md）</strong></td><td>「Run a <code>/grilling</code> session.」</td><td>「Run a <code>/grilling</code> session, using the <code>/domain-modeling</code> skill.」</td></tr>
+<tr><td><strong>= 什么</strong></td><td>裸 <code>grilling</code></td><td><code>grilling</code> + <code>domain-modeling</code></td></tr>
+<tr><td><strong>桶</strong></td><td>productivity（无代码库）</td><td>engineering（有代码库）</td></tr>
+<tr><td><strong>额外产物</strong></td><td>无——只把想法问清</td><td><strong>边问边沉</strong> <code>CONTEXT.md</code> / ADR</td></tr>
+<tr><td><strong>典型场景</strong></td><td>压一个纯想法 / 计划（不碰码）</td><td>主流程开头：磨 feature + 立领域文档</td></tr>
+</tbody>
+</table>
+<p>这就是<strong>组合模式</strong>：<code>grilling</code> 是可复用积木，<code>grill-me</code> / <code>grill-with-docs</code> 只是<strong>把它（和 <code>domain-modeling</code>）拼一下</strong>的薄壳。<a href="0016-domain-modeling.html">上一课</a>那句 <strong><code>grill-with-docs = grilling + domain-modeling</code></strong>，现在两半都认全了。</p>
+</section>
+
+<section>
+<h2>4. grilling 出没地图：它不止在两个 grill-* 里</h2>
+<p>把「同一原语在不同宿主里」一次性归位——你之前撞见的那些 <code>grilling</code>，其实都是这块积木被别处拿去用：</p>
+<table>
+<thead><tr><th>宿主 skill</th><th><code>grilling</code> 在那儿干什么</th></tr></thead>
+<tbody>
+<tr><td><code>grill-me</code> / <code>grill-with-docs</code></td><td>本体——裸用 / 配 <code>domain-modeling</code> 用</td></tr>
+<tr><td><a href="0011-wayfinder-map.html"><code>wayfinder</code></a> · Chart 命名终点</td><td>跑 <code>grilling</code> + <code>domain-modeling</code> 把 destination 拍下来</td></tr>
+<tr><td><a href="0011-wayfinder-map.html"><code>wayfinder</code></a> · <code>grilling</code> 票型</td><td><strong>默认</strong>票型：一次一问地解一个决策（HITL）</td></tr>
+<tr><td><a href="0012-improve-codebase-architecture.html"><code>improve-codebase-architecture</code></a> · 第 3 步</td><td>对你<strong>挑中的那一张</strong>候选卡跑 <code>grilling</code>（范围已利、无雾）</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<h3>回扣第 12 课那句澄清：<code>improve-arch</code> 用的是 <code>grilling</code>、不是 <code>wayfinder</code></h3>
+<p>第 12 课特意点破——架构深化对挑中的卡跑的是 <strong><code>grilling</code></strong>（范围已明、无雾可拨），<strong>不是</strong> <code>wayfinder</code>。现在你从原语这头看得更清楚：<code>grilling</code> 是「把一个已聚焦的问题问到共识」；<code>wayfinder</code> 是「给一片有雾的大地画决策地图」。前者是积木，后者是工程。别再混。</p>
+</div>
+<figure class="diagram wide">
+<pre class="mermaid">
+flowchart TB
+  G{{"grilling · 共享原语（model-invoked）<br/>①relentless 决策树·给推荐答案 ②一次一问<br/>③事实查环境·决策留用户 ④确认闸门：共识前不动手"}}
+  GM["grill-me<br/>= 裸 grilling（productivity）"] --> G
+  GWD["grill-with-docs<br/>= grilling + domain-modeling（engineering）"] --> G
+  WF["wayfinder · 命名终点 / grilling 票型"] --> G
+  IA["improve-codebase-architecture · 对挑中的卡"] --> G
+  G -. "④ 达成共识前" .-> GATE["不 enact 任何计划<br/>（misalignment 的解药）"]
+  classDef gold fill:#241f1a,stroke:#d9b45c,color:#e7e2d6;
+  classDef bad fill:#2c2020,stroke:#e0928c,color:#e7e2d6;
+  class G gold;
+  class GATE bad;
+</pre>
+<figcaption>金＝<code>grilling</code> 原语本体（四条规则）；四个宿主都<strong>向下引用</strong>它当积木；红＝承重的确认闸门（共识前不动手）。<code>grill-with-docs</code> 比 <code>grill-me</code> 多挂一个 <code>domain-modeling</code>，其余宿主各取所需。</figcaption>
+</figure>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="C" data-explain="grilling 第三条：能靠翻文件/用工具查到的『事实』它自己查、不烦你；只有需要你拍板的『决策』才一条条摆给你。C 正是这条分工。A 违反『一次一问』；B 违反『事实自己查』（把事实拿来考你）；D 违反确认闸门 + 决策留用户（它不该替你决策、也不该未共识就动手）。">
+<p class="quiz-q">1. <code>grilling</code> 过程中，agent <strong>正确</strong>的做法是？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>一口气把所有相关问题列全，让你批量回答</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>把能查到的事实也做成问题，考你是否清楚</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>事实自己查环境，只把要你拍板的决策逐一提出</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>替你把决策都定了，边定边动手往前推</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="B" data-explain="确认闸门（第四条）：Do not act until I confirm we have reached a shared understanding——达成共识、你明确确认之前，绝不 enact 任何计划。它把『对齐』和『动手』用一道闸隔开，正是 4 失败模式 #1 misalignment 的解药。A/C/D 都在『你确认共识之前就动手』，破坏了这道闸。">
+<p class="quiz-q">2. <code>grilling</code> 那条<strong>承重</strong>的确认闸门，规定的是？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>每问三题就停下来，让你确认一次要不要继续</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>在你确认达成共识之前，绝不执行任何计划</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>先按推荐答案动手，你不满意再回头改</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>共识达成后仍要等 code-review 通过才动手</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="两个 grill-* 都是薄包装：grill-me = 裸 grilling（productivity，不碰码）；grill-with-docs = grilling + domain-modeling（engineering，边问边沉 CONTEXT.md/ADR）。所以差别就是『多挂一个 domain-modeling、因而多产领域文档』。B 说反了（有 docs 的是 grill-with-docs）；C 错在 grilling 本身就带确认闸门、两者都有；D 的 to-tickets 跟这俩无关。">
+<p class="quiz-q">3. <code>grill-me</code> 和 <code>grill-with-docs</code> 的<strong>唯一实质差别</strong>是？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>后者多挂一个 <code>domain-modeling</code>，边问边沉 <code>CONTEXT.md</code>/ADR</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>前者会沉领域文档，后者只在内存里问不落盘</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>只有后者带确认闸门，前者问完直接开动手</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>后者会顺手把结论拆成 <code>to-tickets</code> 纵切片</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<p>先读第一条——它短到能一口气读完，是本课每句话的出处：</p>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md">grilling / SKILL.md</a></strong> —— 整份就四句话：relentless + 决策树 + 推荐答案 / 一次一问 / 事实查环境·决策留用户 / <strong>确认闸门</strong>。<strong>最高优先「读」。</strong></li>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md">grill-me</a> / <a href="https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md">grill-with-docs</a> 的 SKILL.md</strong> —— 各一行，坐实「薄包装」：前者 = 裸 <code>grilling</code>，后者 = <code>grilling</code> + <code>domain-modeling</code>。</li>
+<li><strong><a href="0016-domain-modeling.html">第 16 课</a> / <a href="0012-improve-codebase-architecture.html">第 12 课</a></strong> —— 对照：第 16 课是 <code>grill-with-docs</code> 的另一半；第 12 课澄清了 <code>improve-arch</code> 用 <code>grilling</code> 而非 <code>wayfinder</code>，本课从原语这头把它讲透。</li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>「<code>grill-with-docs</code> 一次会话里，<code>grilling</code> 的追问和 <code>domain-modeling</code> 的沉文档是怎么<strong>交替</strong>发生的？」</em>、<em>「确认闸门和 <code>wayfinder</code> 的『plan, don't do』、<code>to-spec</code> 的『不 interview 只 synthesize』是什么关系？」</em>、<em>「把 <code>grilling</code> 四条规则做成一张 <code>reference/</code> 参考卡？」</em>、<em>「现在能不能真的 grill 我一个真实决策，走一遍看看？」</em> —— 下一站由你点单。随时回查见 <a href="../reference/align-before-act.html">「先对齐后动手」家法卡</a>、<a href="../RESOURCES.md">RESOURCES.md</a> 与 <a href="../GLOSSARY.md">GLOSSARY.md</a>。</p>
+</section>
+
+<footer>
+<span><a href="0002-main-flow-in-action.html">← 第 2 课 · 主流程实战</a></span>
+<span><a href="0016-domain-modeling.html">第 16 课 · domain-modeling：主动建模四手法 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>
