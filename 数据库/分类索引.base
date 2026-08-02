@@ -10,8 +10,11 @@ filters:
             - 'file.folder.endsWith(file.basename)'
 
 views:
-  - type: table
+  - type: list
     name: "目录索引"
+    sort:
+      - property: 排序
+        direction: ASC
     order:
       - file.name
       - 描述
