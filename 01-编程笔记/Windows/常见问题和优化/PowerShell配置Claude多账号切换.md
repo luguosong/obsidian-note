@@ -2,6 +2,7 @@
 描述: 通过 PowerShell 函数模拟 bash 的命令级环境变量前置，实现 claude / claude-a / claude-b 多账号切换。
 排序:
 分组:
+分类: "[[常见问题和优化]]"
 创建时间: 2026年07月01日
 ---
 # PowerShell配置Claude多账号切换

@@ -2,6 +2,7 @@
 描述: Windows 上 JDBC/应用用 localhost 连本地 Docker 发布的端口(MySQL/Redis 等)每次卡约 21 秒，换成 127.0.0.1 秒连。根因是 localhost 优先解析到 IPv6 ::1，而 Docker Desktop 的端口代理不响应 ::1 回环。
 排序:
 分组:
+分类: "[[常见问题和优化]]"
 创建时间: 2026年07月03日
 ---
 # localhost 连接 Docker 服务慢的 IPv6 问题

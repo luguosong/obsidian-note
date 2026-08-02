@@ -1,0 +1,18 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - 'file.path != this.file.path'
+    - or:
+        - 'file.folder == this.file.folder'
+        - and:
+            - 'file.inFolder(this.file.folder)'
+            - 'file.folder.split("/").length == this.file.folder.split("/").length + 1'
+            - 'file.folder.endsWith(file.basename)'
+
+views:
+  - type: table
+    name: "目录索引"
+    order:
+      - file.name
+      - 描述
+      - 创建时间
