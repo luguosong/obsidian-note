@@ -9083,12 +9083,12 @@
     ],
     "cursor": {
       "from": {
-        "line": 52,
-        "ch": 2
+        "line": 46,
+        "ch": 148
       },
       "to": {
-        "line": 52,
-        "ch": 16
+        "line": 46,
+        "ch": 148
       }
     },
     "scroll": 0
@@ -9202,6 +9202,19 @@
     }
   },
   "01-编程笔记/Ai/编程智能体/编程智能体.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "02-数学/02-数学.md": {
     "expandedKeys": [],
     "cursor": {
       "from": {

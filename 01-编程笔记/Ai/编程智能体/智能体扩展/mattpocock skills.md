@@ -21,30 +21,30 @@ npx skills@latest add mattpocock/skills
 
 ### Mattpocock Skills
 
-| skill                         | 描述                                                                                                       |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------- |
-| ask-matt                      | 询问哪种技能或流程适合你的情况。在此仓库中通过路由（router）在各项技能之间进行选择。                                                            |
-| code-review                   |                                                                                                          |
-| codebase-design               |                                                                                                          |
-| diagnosing-bugs               |                                                                                                          |
-| domain-modeling               |                                                                                                          |
-| grill-me                      |                                                                                                          |
-| grill-with-docs               |                                                                                                          |
-| grilling                      |                                                                                                          |
-| handoff                       |                                                                                                          |
-| implement                     |                                                                                                          |
-| improve-codebase-architecture |                                                                                                          |
-| prototype                     |                                                                                                          |
-| research                      |                                                                                                          |
-| resolving-merge-conflicts     |                                                                                                          |
-| setup-matt-pocock-skills      | 为工程技能配置该仓库——<br><br>设置其问题（issue）跟踪器、<br>分诊（triage）标签词汇，<br>以及领域（domain）文档布局。<br><br>在其他工程技能首次使用之前仅需运行一次。 |
-| tdd                           |                                                                                                          |
-| teach                         |                                                                                                          |
-| to-spec                       |                                                                                                          |
-| to-tickets                    |                                                                                                          |
-| triage                        |                                                                                                          |
-| wayfinder                     |                                                                                                          |
-| writing-great-skills          |                                                                                                          |
+| skill                         | 描述                                                                                                       | 说明      |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------- | ------- |
+| ask-matt                      | 询问哪种技能或流程适合你的情况。在此仓库中通过路由（router）在各项技能之间进行选择。                                                            | 手动触发    |
+| code-review                   |                                                                                                          |         |
+| codebase-design               |                                                                                                          |         |
+| diagnosing-bugs               |                                                                                                          |         |
+| domain-modeling               |                                                                                                          |         |
+| grill-me                      |                                                                                                          | 通用工作流工具 |
+| grill-with-docs               |                                                                                                          | 手动触发    |
+| grilling                      |                                                                                                          |         |
+| handoff                       |                                                                                                          | 通用工作流工具 |
+| implement                     |                                                                                                          | 手动触发    |
+| improve-codebase-architecture |                                                                                                          | 手动触发    |
+| prototype                     |                                                                                                          |         |
+| research                      |                                                                                                          |         |
+| resolving-merge-conflicts     |                                                                                                          |         |
+| setup-matt-pocock-skills      | 为工程技能配置该仓库——<br><br>设置其问题（issue）跟踪器、<br>分诊（triage）标签词汇，<br>以及领域（domain）文档布局。<br><br>在其他工程技能首次使用之前仅需运行一次。 | 手动触发    |
+| tdd                           |                                                                                                          |         |
+| teach                         |                                                                                                          | 通用工作流工具 |
+| to-spec                       |                                                                                                          | 手动触发    |
+| to-tickets                    |                                                                                                          | 手动触发    |
+| triage                        |                                                                                                          | 手动触发    |
+| wayfinder                     |                                                                                                          | 手动触发    |
+| writing-great-skills          |                                                                                                          | 通用工作流工具 |
 
 ### 其它
 
