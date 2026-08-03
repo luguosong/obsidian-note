@@ -8916,11 +8916,11 @@
     ],
     "cursor": {
       "from": {
-        "line": 16,
+        "line": 15,
         "ch": 0
       },
       "to": {
-        "line": 16,
+        "line": 15,
         "ch": 0
       }
     },
@@ -8929,11 +8929,11 @@
   "01-编程笔记/Java/JavaSE/Java概述.md": {
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 7,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 7,
         "ch": 0
       }
     },
@@ -8941,7 +8941,8 @@
       "item-1-0",
       "item-2-4",
       "item-2-6"
-    ]
+    ],
+    "scroll": 0
   },
   "01-编程笔记/Java/JavaSE/JavaSE.md": {
     "cursor": {
@@ -9186,7 +9187,8 @@
         "line": 6,
         "ch": 0
       }
-    }
+    },
+    "scroll": 3.5608308605341246
   },
   "01-编程笔记/Windows/Windows.md": {
     "expandedKeys": [],
@@ -9223,6 +9225,19 @@
       },
       "to": {
         "line": 6,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/Claude Code.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
         "ch": 0
       }
     }
