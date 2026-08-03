@@ -143,6 +143,7 @@
       "search": true,
       "reveal": false,
       "descendants": true,
+      "groupExpansion": false,
       "sort": true,
       "appearance": true,
       "newNote": true
@@ -224,7 +225,9 @@
   "defaultListMode": "compact",
   "includeDescendantNotes": false,
   "defaultFolderSort": "filename-asc",
+  "defaultFolderSortPropertyKey": "",
   "propertySortKey": "",
+  "propertyGroupKey": "",
   "propertySortSecondary": "title",
   "manualSortPropertyKey": "排序",
   "manualSortGroupHeaderProperty": "",
@@ -256,9 +259,13 @@
   "frontmatterCreatedField": "",
   "frontmatterModifiedField": "",
   "frontmatterDateFormat": "",
-  "showFileIconUnfinishedTask": false,
+  "showFileTaskProgress": true,
+  "showFileTaskProgressBar": true,
+  "showFileTaskProgressCount": true,
+  "hideFileTaskProgressWhenComplete": false,
   "showFileBackgroundUnfinishedTask": false,
   "unfinishedTaskBackgroundColor": "#ef000050",
+  "unfinishedTaskBackgroundColorDark": "#ef000050",
   "showFileIcons": true,
   "useFolderIconForFiles": true,
   "showFilenameMatchIcons": false,
@@ -271,6 +278,7 @@
   "showFilePreview": true,
   "skipHeadingsInPreview": true,
   "skipCodeBlocksInPreview": true,
+  "skipCalloutsInPreview": false,
   "stripHtmlInPreview": true,
   "stripLatexInPreview": true,
   "previewRows": 2,
@@ -310,6 +318,7 @@
   "calendarEnabled": false,
   "calendarPlacement": "left-sidebar",
   "calendarConfirmBeforeCreate": true,
+  "calendarShowHiddenItems": false,
   "calendarLocale": "system-default",
   "calendarWeekendDays": "sat-sun",
   "calendarMonthHeadingFormat": "full",
@@ -509,8 +518,13 @@
     ]
   },
   "customVaultName": "",
-  "pinnedNotes": {},
-  "collapsedPinnedContexts": {},
+  "pinnedNotes": {
+    "01-编程笔记/Windows/安装的软件/本机环境.md": {
+      "folder": true,
+      "tag": false,
+      "property": false
+    }
+  },
   "fileIcons": {},
   "fileColors": {},
   "fileBackgroundColors": {},
@@ -660,7 +674,7 @@
     "#404040",
     "#404040"
   ],
-  "lastShownVersion": "3.2.4",
+  "lastShownVersion": "3.3.2",
   "rootFolderOrder": [],
   "rootTagOrder": [],
   "rootPropertyOrder": []

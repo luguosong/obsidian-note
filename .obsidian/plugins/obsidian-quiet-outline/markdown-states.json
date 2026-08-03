@@ -3022,11 +3022,11 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 3,
+        "line": 9,
         "ch": 0
       },
       "to": {
-        "line": 3,
+        "line": 9,
         "ch": 0
       }
     },
@@ -8588,7 +8588,7 @@
         "ch": 0
       }
     },
-    "scroll": 32.479166666666664
+    "scroll": 0
   },
   "01-编程笔记/Windows/本机环境.md": {
     "expandedKeys": [
@@ -8832,11 +8832,11 @@
     ],
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 7,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 7,
         "ch": 0
       }
     },
@@ -8869,15 +8869,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 331,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 331,
         "ch": 0
       }
     },
-    "scroll": 3.5608308605341246
+    "scroll": 0
   },
   "01-编程笔记/密码学/相关资源.md": {
     "expandedKeys": [
@@ -8901,14 +8901,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 6,
-        "ch": 0
+        "line": 37,
+        "ch": 5
       },
       "to": {
-        "line": 6,
-        "ch": 0
+        "line": 37,
+        "ch": 5
       }
-    }
+    },
+    "scroll": 8.234375
   },
   "01-编程笔记/Obsidian/Obsidian.md": {
     "expandedKeys": [
@@ -9078,34 +9079,37 @@
       "item-1-0",
       "item-2-2",
       "item-2-5",
-      "item-2-7",
-      "item-2-14",
-      "item-2-9"
+      "item-3-6",
+      "item-3-16",
+      "item-2-25",
+      "item-3-26",
+      "item-3-31"
     ],
     "cursor": {
       "from": {
-        "line": 46,
-        "ch": 148
+        "line": 109,
+        "ch": 0
       },
       "to": {
-        "line": 46,
-        "ch": 148
+        "line": 109,
+        "ch": 0
       }
     },
-    "scroll": 0
+    "scroll": 69.49259259259259
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 10,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 10,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/Windows/常见问题和优化/常见问题和优化.md": {
     "expandedKeys": [],
@@ -9144,17 +9148,18 @@
         "line": 9,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/电子印章管理平台/电子印章管理平台.md": {
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 12,
+        "line": 10,
         "ch": 0
       },
       "to": {
-        "line": 12,
+        "line": 10,
         "ch": 0
       }
     },
@@ -9163,32 +9168,34 @@
   "01-编程笔记/电子印章管理平台/平台搭建.md": {
     "cursor": {
       "from": {
-        "line": 22,
+        "line": 24,
         "ch": 0
       },
       "to": {
-        "line": 22,
+        "line": 24,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 6
+    "scroll": 0
   },
   "01-编程笔记/01-编程笔记.md": {
-    "expandedKeys": [],
+    "expandedKeys": [
+      "item-1-0"
+    ],
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 17,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 17,
         "ch": 0
       }
     },
-    "scroll": 3.5608308605341246
+    "scroll": 8.282904322486644
   },
   "01-编程笔记/Windows/Windows.md": {
     "expandedKeys": [],
@@ -9241,5 +9248,164 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/操作系统/操作系统.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/计算机网络/计算机网络.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/电子印章管理平台/其它平台参考.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 15,
+        "ch": 2
+      },
+      "to": {
+        "line": 14,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "10-文学/10-文学.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "02-数学/初中数学.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "02-数学/初中数学/初中数学.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
+  },
+  "02-数学/高中数学/高中数学.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/数据结构/数据结构.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 2
+      },
+      "to": {
+        "line": 7,
+        "ch": 2
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/数据结构/数据结构与算法.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 9
+      },
+      "to": {
+        "line": 7,
+        "ch": 9
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/Obsidian/已安装的插件.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ],
+    "scroll": 1.8918918918918919
+  },
+  "01-编程笔记/Windows/安装的软件/本机环境.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-15"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
   }
 }

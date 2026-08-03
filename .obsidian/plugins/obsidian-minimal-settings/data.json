@@ -3,7 +3,6 @@
   "darkStyle": "minimal-dark",
   "lightScheme": "minimal-default-light",
   "darkScheme": "minimal-flexoki-dark",
-  "editorFont": "",
   "lineHeight": 1.5,
   "lineWidth": 40,
   "lineWidthWide": 50,
@@ -29,5 +28,6 @@
   "underlineExternal": true,
   "folding": true,
   "lineNumbers": true,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "editorFont": ""
 }

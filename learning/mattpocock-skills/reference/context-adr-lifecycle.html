@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>参考卡 · CONTEXT.md 与 ADR 的产生和更新时机</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">参考卡 · 长期回查</p>
+<h1><code>CONTEXT.md</code> 与 ADR：什么时候产生、什么时候更新</h1>
+<p class="lede">一张卡钉死一件事——<strong>何时新建</strong>这两个文件、<strong>何时动它们</strong>。配套 <a href="../lessons/0008-adr-scaling.html">第 8</a> · <a href="../lessons/0016-domain-modeling.html">16 课</a>，适合打印贴墙。前提一句话先说死：<strong>读</strong> <code>CONTEXT.md</code> 取词是任何 skill 的一行习惯（被动消费），<strong>不是</strong>本卡讲的纪律——本卡讲的是 <code>domain-modeling</code> 在<strong>主动改模型</strong>时<strong>写</strong>它们的规矩。</p>
+</header>
+
+<section>
+<h2>0. 先画线：读 ≠ 写</h2>
+<table>
+<thead><tr><th>被动消费（不触发本卡）</th><th>主动建模（触发本卡全部规则）</th></tr></thead>
+<tbody>
+<tr>
+<td>你<strong>读</strong> <code>CONTEXT.md</code> 让命名对齐术语——<code>tdd</code> 写测试前读、<code>diagnosing-bugs</code> 探码前读、<code>to-spec</code> 引用已有措辞。任何 skill 的一行习惯。</td>
+<td>你正在<strong>改变模型</strong>：逼出一个词的精确定义、拍下一个架构决策、发现代码和说法打架。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>This skill is for when you're <strong>changing the model</strong>, not just consuming it.<br><span style="font-size:.85em">— domain-modeling / SKILL.md</span></blockquote>
+<p style="color:var(--muted);font-size:.92rem">下面所有「产生 / 更新」规则，<strong>只在右栏（主动建模）发生时</strong>才适用。左栏一行习惯，不产生也不更新这两个文件。</p>
+</section>
+
+<section>
+<h2>1. 总纲：三种动作，三条规则</h2>
+<p>两件产物加起来只有<strong>三种文件动作</strong>，每条一条铁律：</p>
+<table>
+<thead><tr><th>动作</th><th>作用于</th><th>规则</th><th>触发时机（一句话）</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>create · 新建文件</strong></td>
+<td>两者</td>
+<td><strong>lazy 惰性</strong></td>
+<td>第一次有东西可写才建：第一个术语 resolved 时建 <code>CONTEXT.md</code>；第一份够格 ADR 来时建 <code>docs/adr/</code>。<strong>没东西就永远不建。</strong></td>
+</tr>
+<tr>
+<td><strong>inline update · 当场改</strong></td>
+<td><code>CONTEXT.md</code></td>
+<td><strong>不攒批</strong></td>
+<td>一个术语刚 resolved（拍板）就当场写进去，<em>don't batch — capture as they happen</em>。</td>
+</tr>
+<tr>
+<td><strong>append · 追加不改</strong></td>
+<td>ADR</td>
+<td><strong>sparing + 只增</strong></td>
+<td>三条件全中才追加；写完<strong>不改旧文</strong>，推翻＝新建一份＋旧的标 <code>superseded</code>。</td>
+</tr>
+</tbody>
+</table>
+<div class="callout">
+<h3>为什么 CONTEXT 用「当场改」、ADR 用「只追加」</h3>
+<p><code>CONTEXT.md</code> 是<strong>活的真相</strong>——术语含义会随理解变精确，所以 inline 更新；ADR 是<strong>只增账本</strong>——决策的历史本身有价值，所以旧决策不抹，只标被取代。两种文件，两种相反的更新哲学。</p>
+</div>
+</section>
+
+<section>
+<h2>2. <code>CONTEXT.md</code>：产生与更新</h2>
+<ol class="steps">
+<li><h3>产生 · lazy</h3>根 <code>CONTEXT.md</code> 在<strong>第一个术语被 resolved</strong>（拍下精确定义）时才建。在此之前没文件、不预建空壳。</li>
+<li><h3>更新 · inline，逐个当场写</h3>一个术语一结晶就立刻写进<strong>同一次会话</strong>，<strong>不攒到一批再写</strong>。这些词从哪来——<code>domain-modeling</code> 的四手法：<strong>challenge</strong>（用户词与字典冲突）/ <strong>sharpen</strong>（模糊词磨利）/ <strong>scenario</strong>（场景压测逼出边界）产出<strong>术语条目</strong>；<strong>cross-reference</strong>（拿代码核对说法）发现说法与代码打架时<strong>回补</strong>对齐。</li>
+</ol>
+<p>装什么 / 不装什么（写法纪律）：只装<strong>本项目特有</strong>的领域术语，定义 <strong>tight</strong>（1–2 句、说它<strong>是什么</strong>不说它做什么），<strong>opinionated</strong>（多词同义挑最佳、其余列 <code>_Avoid_</code>）。</p>
+<table>
+<thead><tr><th>该写进 <code>CONTEXT.md</code> ✅</th><th>不该写 ❌</th></tr></thead>
+<tbody>
+<tr>
+<td>本项目特有、刚被四手法逼出精确定义的领域词</td>
+<td>通用编程概念（超时、错误类型）——即便项目在用</td>
+</tr>
+<tr>
+<td>多词同义时挑定的规范词 + <code>_Avoid_</code> 易混词</td>
+<td>模块路径 / 函数签名 / 实现细节（那是代码）</td>
+</tr>
+<tr>
+<td> </td>
+<td>选这个词背后的架构权衡理由（那是 ADR）</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>3. ADR：产生与更新</h2>
+<ol class="steps">
+<li><h3>产生 · sparing，三条件同时全中才 offer</h3>一个决策<strong>三条全成立</strong>才够格写 ADR，缺一即跳过：
+<ul>
+<li><strong>hard to reverse</strong>（难以逆转）——以后改主意代价实打实；容易回退的别写。</li>
+<li><strong>surprising without context</strong>（不解释会困惑）——未来读者看代码会问「为啥这么干」；不奇怪的没人问。</li>
+<li><strong>real trade-off</strong>（真权衡）——当时有真实备选，你为具体理由选了这个；没备选就没什么可记。</li>
+</ul>
+第一个够格决策来时才 lazy 建 <code>docs/adr/</code>。</li>
+<li><h3>够格清单 · 什么样的决策值得写</h3>架构形态 · context 之间的集成模式 · 带 <strong>lock-in</strong> 的技术选型 · 边界与范围决策 · 刻意偏离显眼路径 · 代码里看不见的约束 · <strong>非显然</strong>的否决备选（被否决这件事本身不明显时才记）。</li>
+<li><h3>更新 · append-only，不改旧文</h3>决策被推翻 <strong>不删不改</strong>原 ADR，而是<strong>新建一份</strong>，旧的在 <code>Status</code> 行标 <code>superseded by ADR-NNNN</code>。Status 取值：<code>proposed | accepted | deprecated | superseded by ADR-NNNN</code>。</li>
+</ol>
+<p style="color:var(--muted);font-size:.92rem">模板极小——一个标题 + <strong>1–3 句</strong>（背景 / 决定 / 为什么）。它补的是代码不说的那个 <em>why</em>。会不会膨胀见 <a href="adr-scaling-defenses.html">ADR 三重防线卡</a>。</p>
+</section>
+
+<section>
+<h2>4. 多上下文：何时拆 <code>CONTEXT-MAP.md</code></h2>
+<p>仓库根<strong>出现 <code>CONTEXT-MAP.md</code></strong> = 这是<strong>多上下文</strong>仓库。两件事跟着发生：</p>
+<ul>
+<li><code>CONTEXT-MAP.md</code> 路由到各 bounded context 各自的 <code>CONTEXT.md</code>，并含一个 <strong>Relationships</strong> 段，记录 context 之间如何交互（例如哪个发事件、哪个消费）。</li>
+<li>ADR 跟着 context 切：<strong>根 <code>docs/adr/</code> 只放跨系统全局决策</strong>，各 context 的 ADR 进 <code>src/&lt;context&gt;/docs/adr/</code>。在 <code>billing</code> 干活的 agent 不碰 <code>ordering</code> 的 ADR。</li>
+</ul>
+<p style="color:var(--muted);font-size:.92rem">何时拆＝领域本身长出多个 bounded context（不同统一语言、不同团队节奏），不是按文件数凑。</p>
+</section>
+
+<section>
+<h2>5. 一句话口诀</h2>
+<blockquote>没东西写就不建（lazy）；词一拍板当场进 <code>CONTEXT</code>（inline）；决策三条件全中才进 ADR（sparing）；ADR 只增、推翻新建不删旧的（superseded）。</blockquote>
+</section>
+
+<footer>
+<span><a href="../lessons/0016-domain-modeling.html">← 第 16 课 · domain-modeling 四手法</a></span>
+<span><a href="adr-scaling-defenses.html">ADR 三重防线卡 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>
