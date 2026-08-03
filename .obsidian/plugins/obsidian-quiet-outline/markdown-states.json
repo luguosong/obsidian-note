@@ -9081,21 +9081,20 @@
       "item-2-5",
       "item-3-6",
       "item-3-16",
-      "item-2-25",
       "item-3-26",
-      "item-3-31"
+      "item-2-25"
     ],
     "cursor": {
       "from": {
-        "line": 109,
+        "line": 94,
         "ch": 0
       },
       "to": {
-        "line": 109,
+        "line": 94,
         "ch": 0
       }
     },
-    "scroll": 69.49259259259259
+    "scroll": 64.96444444444444
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],

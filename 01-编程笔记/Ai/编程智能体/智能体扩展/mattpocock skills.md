@@ -22,28 +22,28 @@ npx skills@latest add mattpocock/skills
 
 | skill | 描述 | 说明 |
 | --- | --- | --- |
-| ask-matt | 询问哪种技能或流程适合你的情况。在此仓库中通过路由（router）在各项技能之间进行选择。 | `手动触发` |
+| ask-matt | 询问哪种技能或流程适合你的情况。在此仓库中通过路由（router）在各项技能之间进行选择。 | 手动触发 |
 | code-review | 按两个维度审查从固定点（commit、分支、标签或 merge-base）以来的变更——Standards（代码是否遵循了仓库的编码规范？）和 Spec（代码是否符合原始 issue/PRD 的要求？）。两个维度并行由子 agent 执行，并排汇报结果。当用户想审查分支、PR、进行中的变更，或要求"review since X"时使用。 | 模型自动触发 |
 | codebase-design | 设计深度模块的共享词汇表。当用户想设计或改进模块接口、寻找深化机会、决定接缝位置、让代码更易测试或更易被 AI 导航，或其它 skill 需要深度模块词汇时使用。 | 模型自动触发 |
 | diagnosing-bugs | 针对疑难 bug 和性能回归的诊断循环。当用户说"诊断"/"调试"，或报告某事崩溃/抛出异常/失败/变慢时使用。 | 模型自动触发 |
 | domain-modeling | 构建并打磨项目的领域模型。当用户想厘清领域术语或统一语言、记录架构决策，或其它 skill 需要维护领域模型时使用。 | 模型自动触发 |
-| grill-me | 对方案或设计进行穷追不舍的访谈，加以磨砺。 | 通用工作流工具，`手动触发` |
-| grill-with-docs | 对方案或设计进行穷追不舍的访谈，同时在访谈过程中持续创建文档（ADR 和词汇表）。 | `手动触发` |
+| grill-me | 对方案或设计进行穷追不舍的访谈，加以磨砺。 | 通用工作流工具，手动触发 |
+| grill-with-docs | 对方案或设计进行穷追不舍的访谈，同时在访谈过程中持续创建文档（ADR 和词汇表）。 | 手动触发 |
 | grilling | 对用户的方案、决策或想法展开穷追不舍的追问。当用户想压力测试自己的思路，或触发任意"grill"关键词时使用。 | 通用工作流工具 |
-| handoff | 将当前对话压缩成一份交接文档，供另一个 agent 接手使用。 | 通用工作流工具，`手动触发` |
-| implement | 根据规格或一组 ticket 实现一项工作。 | `手动触发` |
-| improve-codebase-architecture | 扫描代码库，寻找深化机会，以可视化 HTML 报告呈现，然后逐一审查你选中的条目。 | `手动触发` |
+| handoff | 将当前对话压缩成一份交接文档，供另一个 agent 接手使用。 | 通用工作流工具，手动触发 |
+| implement | 根据规格或一组 ticket 实现一项工作。 | 手动触发 |
+| improve-codebase-architecture | 扫描代码库，寻找深化机会，以可视化 HTML 报告呈现，然后逐一审查你选中的条目。 | 手动触发 |
 | prototype | 构建一个一次性原型来验证设计问题。当用户想检验状态模型或逻辑是否合理，或探索 UI 应长什么样时使用。 | 模型自动触发 |
 | research | 查阅高可信度的一手资料，将调研结论以 Markdown 文件形式记录到仓库中。当用户想调研某个话题、收集文档或 API 资料，或将调查工作委托给后台 agent 时使用。 | 模型自动触发 |
 | resolving-merge-conflicts | 当需要解决正在进行中的 git merge/rebase 冲突时使用。 | 模型自动触发 |
-| setup-matt-pocock-skills | 为工程技能配置该仓库——<br><br>设置其问题（issue）跟踪器、<br>分诊（triage）标签词汇，<br>以及领域（domain）文档布局。<br><br>在其他工程技能首次使用之前仅需运行一次。 | `手动触发` |
+| setup-matt-pocock-skills | 为工程技能配置该仓库——<br><br>设置其问题（issue）跟踪器、<br>分诊（triage）标签词汇，<br>以及领域（domain）文档布局。<br><br>在其他工程技能首次使用之前仅需运行一次。 | 手动触发 |
 | tdd | 测试驱动开发。当用户想先写测试再实现功能或修 bug、提到"红绿重构"，或需要集成测试时使用。 | 模型自动触发 |
-| teach | 在当前工作区内向用户传授新技能或新概念。 | 通用工作流工具，`手动触发` |
-| to-spec | 将当前对话整理成规格说明，并发布到项目 issue 跟踪器——无需访谈，直接综合已讨论内容即可。 | `手动触发` |
-| to-tickets | 将方案、规格或当前对话拆解成一组曳光弹 ticket，每个 ticket 声明其阻塞边，并发布到配置好的跟踪器——本地以每个 ticket 一个文件的形式用文本表达依赖边，或在真实跟踪器上使用原生阻塞链接。 | `手动触发` |
-| triage | 让 issue 和外部 PR 经历一套分诊角色的状态机——分类、核实，必要时追问，并撰写供 agent 使用的简报。 | `手动触发` |
-| wayfinder | 将规模庞大的工作——超过单个 agent 会话所能承载的——规划为 issue 跟踪器上的决策 ticket 共享地图，然后逐一解决，直到通往目标的路径清晰可见。 | `手动触发` |
-| writing-great-skills | 写作与编辑 skill 的参考指南——让 skill 行为可预期的词汇和原则。 | 通用工作流工具，`手动触发` |
+| teach | 在当前工作区内向用户传授新技能或新概念。 | 通用工作流工具，手动触发 |
+| to-spec | 将当前对话整理成规格说明，并发布到项目 issue 跟踪器——无需访谈，直接综合已讨论内容即可。 | 手动触发 |
+| to-tickets | 将方案、规格或当前对话拆解成一组曳光弹 ticket，每个 ticket 声明其阻塞边，并发布到配置好的跟踪器——本地以每个 ticket 一个文件的形式用文本表达依赖边，或在真实跟踪器上使用原生阻塞链接。 | 手动触发 |
+| triage | 让 issue 和外部 PR 经历一套分诊角色的状态机——分类、核实，必要时追问，并撰写供 agent 使用的简报。 | 手动触发 |
+| wayfinder | 将规模庞大的工作——超过单个 agent 会话所能承载的——规划为 issue 跟踪器上的决策 ticket 共享地图，然后逐一解决，直到通往目标的路径清晰可见。 | 手动触发 |
+| writing-great-skills | 写作与编辑 skill 的参考指南——让 skill 行为可预期的词汇和原则。 | 通用工作流工具，手动触发 |
 
 ### 其它
 
@@ -79,9 +79,9 @@ npx skills@latest add mattpocock/skills
 
 | 配置项                  | 文档                           | 内容                                                                                                                               |
 | -------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 问题跟踪器（issue tracker） | docs/agents/issue-tracker.md | `triage`/`to-spec`/`to-tickets` 据此决定往哪发 issue——可选 `gh`（GitHub）/ `glab`（GitLab）/ 本地 markdown 写到 `.scratch/` / 自定义工作流。本仓库用 GitHub。 |
-| 分诊标签（triage）         | docs/agents/triage-labels.md | 默认 5 个标签（见下）                                                                                                                     |
-| 领域文档（domain）         | docs/agents/domain.md        | CONTEXT.md + docs/adr/（ADR）                                                                                                      |
+| 问题跟踪器（`issue tracker`） | `docs/agents/issue-tracker.md` | `triage`/`to-spec`/`to-tickets` 据此决定往哪发 issue——可选 `gh`（GitHub）/ `glab`（GitLab）/ 本地 markdown 写到 `.scratch/` / 自定义工作流。本仓库用 GitHub。 |
+| 分诊标签（`triage`）         | `docs/agents/triage-labels.md` | 默认 5 个标签（见下）                                                                                                                     |
+| 领域文档（`domain`）         | `docs/agents/domain.md`        | `CONTEXT.md` + `docs/adr/`（ADR）                                                                                                      |
 
 分诊（triage）标签词汇：
 
@@ -93,33 +93,37 @@ npx skills@latest add mattpocock/skills
 
 #### ask-matt 询问应该使用哪个 skill
 
-询问哪种技能或流程适合你的情况。在此仓库中通过路由（router）在各项技能之间进行选择。
+询问哪种技能或流程适合你的情况。在此仓库中通过路由（`router`）在各项技能之间进行选择。
 
 #### grill-with-docs 有库拷问
 
-对齐想法，边聊边沉淀 CONTEXT.md / ADR（Architecture Decision Record，架构决策记录）。
+对齐想法，边聊边沉淀 `CONTEXT.md` / ADR（Architecture Decision Record，架构决策记录）。
 
-是否多会话构建 → 是则走完整 `to-spec`/`to-tickets`/`implement`；否则同窗口直接 `implement`。
+是否多会话构建 → 是则走完整 `to-spec` / `to-tickets` / `implement`；否则同窗口直接 `implement`。
 
 #### wayfinder 探路
 
-巨大且模糊，一个会话装不下。每会话解一个决策 → 汇入 to-spec。
+巨大且模糊，一个会话装不下。每会话解一个决策 → 汇入 `to-spec`。
 
-`在问题跟踪器（issue tracker）`上维护 map。
-
+在问题跟踪器（`issue tracker`）上维护 `map`。
 
 #### to-spec
 
-将对话转为 spec，发到`问题跟踪器（issue tracker）`。
+将对话转为 spec，发到问题跟踪器（`issue tracker`）。
 
-wayfinder也会创建`问题跟踪器（issue tracker）` ,如果是基于wayfinder创建to-spec，建议创建在一个新的文件夹中，不要复用wayfinder产生的问题跟踪器文件夹。
+意义：把散落决策收拢成无歧义 `plan`——不做的话决策散在各处，`implement` 可能看不全。活小到「不需收拢」时，可跳过 `to-spec`，从 `grill-with-docs` 直接 `implement`（此时也不需 `to-tickets`）。
+
+`wayfinder` 与 `to-tickets` 默认共用同一 `.scratch/<slug>/` 文件夹（编号续接、不撞车）；想分离可给 `to-spec` 另起 slug。
+
 #### to-tickets
 
-用于需要多会话构建的场景。
+用于需要多会话构建的场景——切成装得进一个 `context` 的纵切片。
 
 #### implement
 
 每个 ticket 开一个新会话，独立实现，防上下文爆炸。驱动 `tdd`、收尾 `code-review`。
+
+如果任务足够小，`grill-with-docs` 结束后可直接 `implement`，不需要走 `to-spec` 和 `to-tickets`。
 
 #### triage 别人提的 bug 需求堆着
 
@@ -127,13 +131,13 @@ wayfinder也会创建`问题跟踪器（issue tracker）` ,如果是基于wayfin
 
 #### improve-codebase-architecture 仓库优化
 
-写 CONTEXT.md / ADR（Architecture Decision Record，架构决策记录）。
+扫描代码库找深化机会 → 可视化 HTML 报告 → 逐一审查选中条目。
 
 ### 模型自动触发
 
 #### domain-modeling 领域建模
 
-领域术语磨尖 + CONTEXT.md glossary + ADR（Architecture Decision Record，架构决策记录）。
+领域术语磨尖 + `CONTEXT.md` glossary + ADR（架构决策记录）。
 
 #### prototype
 
@@ -153,15 +157,15 @@ Standards + Spec 两轴 parallel sub-agents（并行子 agent）。
 
 #### research 调研
 
-后台读一手源 → cited md 素材（带进 grill-with-docs）。
+后台读一手源 → cited md 素材（带进 `grill-with-docs`）。
 
 #### codebase-design
 
-深模块词汇（depth 深度 / seam 接缝 / adapter 适配 / leverage 杠杆 / locality 局部性）。
+深模块词汇（`depth` 深度 / `seam` 接缝 / `adapter` 适配 / `leverage` 杠杆 / `locality` 局部性）。
 
 #### resolving-merge-conflicts
 
-通过逐段（hunk）处理正在进行的 git 合并（merge）或变基（rebase）冲突，依据追溯到各方主要来源（primary source）的意图进行解决，然后完成该操作——决不使用 --abort。
+通过逐段（`hunk`）处理正在进行的 git 合并（merge）或变基（rebase）冲突，依据追溯到各方主要来源（primary source）的意图进行解决，然后完成该操作——决不使用 `--abort`。
 
 ## 生产力
 
@@ -187,4 +191,4 @@ Standards + Spec 两轴 parallel sub-agents（并行子 agent）。
 
 #### grilling 拷问原语
 
-一次一题 + 推荐 + 确认 gate。
+一次一题 + 推荐 + 确认 `gate`。
