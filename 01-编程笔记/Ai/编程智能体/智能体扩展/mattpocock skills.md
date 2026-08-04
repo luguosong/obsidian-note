@@ -77,11 +77,11 @@ npx skills@latest add mattpocock/skills
 
 为工程技能配置该仓库的三个决策，结果落到 `docs/agents/` 下的三个文件：
 
-| 配置项                  | 文档                           | 内容                                                                                                                               |
-| -------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 配置项                    | 文档                             | 内容                                                                                                                               |
+| ---------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | 问题跟踪器（`issue tracker`） | `docs/agents/issue-tracker.md` | `triage`/`to-spec`/`to-tickets` 据此决定往哪发 issue——可选 `gh`（GitHub）/ `glab`（GitLab）/ 本地 markdown 写到 `.scratch/` / 自定义工作流。本仓库用 GitHub。 |
 | 分诊标签（`triage`）         | `docs/agents/triage-labels.md` | 默认 5 个标签（见下）                                                                                                                     |
-| 领域文档（`domain`）         | `docs/agents/domain.md`        | `CONTEXT.md` + `docs/adr/`（ADR）                                                                                                      |
+| 领域文档（`domain`）         | `docs/agents/domain.md`        | `CONTEXT.md` + `docs/adr/`（ADR）                                                                                                  |
 
 分诊（triage）标签词汇：
 
