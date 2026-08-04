@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 25 课 · improve-codebase-architecture 三步细节</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+<p class="eyebrow">第 25 课 · 单 skill 深挖 · 架构深化全流程</p>
+<h1><code>improve-codebase-architecture</code> 三步细节：Explore 找什么 / 报告卡长什么样 / Grill 副作用何时触发</h1>
+<p class="lede"><a href="0012-improve-codebase-architecture.html">第 12 课</a>建立了「三步框架」（Explore → 报告 → Grill）和核心判断（只挑一张、用 grilling 不用 wayfinder）。这一课往框架里填血肉：Explore 子 agent 具体找什么摩擦信号、报告每张卡有哪 6 个字段、Grill 的三个 inline 副作用各自在什么条件下触发。读完就能核对一次真实跑出的报告是否合规。</p>
+</header>
+
+<section class="win">
+<p><strong>一句话收获：</strong>Explore 先做范围决策（有方向直取、没方向跑 <code>git log</code>），再用 5 类摩擦信号找候选；报告每张卡有 6 个固定字段，故意在这一步<strong>不提接口</strong>；Grill 的三个 inline 副作用各有精确触发条件，不是每次 Grill 都全跑。</p>
+</section>
+
+<section>
+<h2>1. Explore：先决定看哪里，再决定看什么</h2>
+<p>Explore 分两层——<strong>范围决策</strong>在前，<strong>摩擦扫描</strong>在后。范围决策的规则很简单：</p>
+
+<table>
+<thead><tr><th>条件</th><th>做什么</th></tr></thead>
+<tbody>
+<tr>
+  <td>用户指定了方向（某个模块、子系统、某个痛点）</td>
+  <td><strong>直接取用户说的方向</strong>，跳过 git log 推断</td>
+</tr>
+<tr>
+  <td>用户没指定方向</td>
+  <td>走 <code>git log --oneline</code>，找<strong>热点</strong>——近期反复出现的文件和区域；改动很分散没热点，就扩网</td>
+</tr>
+</tbody>
+</table>
+
+<p>SKILL.md 的原则：<em>"Scope before you scan — YAGNI. Deepening a module pays off by making future changes to it easier, so put extra weight on the parts of the codebase that have recently changed."</em></p>
+
+<p>范围定了，子 agent 开始有机地探索——不走死板 checklist，而是找<strong>摩擦感</strong>。SKILL.md 列了 5 类摩擦信号：</p>
+
+<ol class="steps">
+<li>
+  <h3>概念太分散</h3>
+  <p>理解一个概念需要在很多小模块之间跳来跳去——locality（局部性）差的典型症状。</p>
+</li>
+<li>
+  <h3>接口过于复杂（浅模块）</h3>
+  <p>模块的接口几乎和它的实现一样复杂，没有给调用者提供 leverage（杠杆）。</p>
+</li>
+<li>
+  <h3>为了可测性提取纯函数，但 bug 藏在调用方式里</h3>
+  <p>纯函数本身无状态好测，但真正的 bug 发生在调用上下文里——locality 缺失的另一种形态。</p>
+</li>
+<li>
+  <h3>模块之间跨 seam（接缝）泄漏耦合</h3>
+  <p>模块间的边界没有真正隔离，一侧的实现细节渗透到另一侧。</p>
+</li>
+<li>
+  <h3>未被测试或难以通过现有接口测试</h3>
+  <p>测试写不进去，多半是接口形状不对——「接口即测试面」（the interface is the test surface）。</p>
+</li>
+</ol>
+
+<div class="callout">
+<h3>删除测试（deletion test）是通用探针</h3>
+<p>遇到可疑的模块，SKILL.md 给的快速判断方法：<em>"想象把它删掉——复杂度凭空消失就是个转发壳（浅，该深化）；复杂度在 N 个调用点重新冒出来就是在挣钱（深，别动）。"</em>这个探针在摩擦扫描的任意时刻都可以用，不是只用一次。</p>
+</div>
+</section>
+
+<section>
+<h2>2. 报告：候选卡的 6 个字段 + 两条硬约束</h2>
+<p>Explore 结束后，agent 把候选写成一份自包含 HTML 文件，<strong>写到 OS 临时目录</strong>（<code>$TMPDIR</code> → <code>/tmp</code> → <code>%TEMP%</code>，命名 <code>architecture-review-&lt;timestamp&gt;.html</code>），打开给你看并报告绝对路径。<strong>不落仓库</strong>。</p>
+
+<p>每张候选卡有 6 个固定字段：</p>
+
+<table>
+<thead><tr><th>字段</th><th>填什么</th></tr></thead>
+<tbody>
+<tr><td><strong>Files</strong>（文件范围）</td><td>涉及哪些文件 / 模块</td></tr>
+<tr><td><strong>Problem</strong>（问题）</td><td>当前架构为什么产生摩擦——用 codebase-design 词汇（浅/深/seam/leverage/locality）描述，不用 service/component/API</td></tr>
+<tr><td><strong>Solution</strong>（方案）</td><td>会有什么变化，用平白英语描述</td></tr>
+<tr><td><strong>Benefits</strong>（收益）</td><td>用 locality 和 leverage 解释收益，以及测试会如何改善</td></tr>
+<tr><td><strong>Before / After 图</strong></td><td>并排可视化：展示「浅」的现状和「深化」后的结构；每张卡独立绘制</td></tr>
+<tr><td><strong>Recommendation strength</strong>（推荐强度）</td><td>三档之一：<code>Strong</code> / <code>Worth exploring</code> / <code>Speculative</code>，渲染成 badge</td></tr>
+</tbody>
+</table>
+
+<p>报告结尾有一个 <strong>Top recommendation</strong> 段——agent 建议先从哪张卡入手及原因。这是懒得权衡时的起点（见第 12 课）。</p>
+
+<p>两条硬约束：</p>
+<ul>
+<li><strong>Do NOT propose interfaces yet</strong>（不在报告里提接口）——接口的具体设计在第 ③ 步 Grill 里敲定；报告只描述问题和方向，不做接口决策。文件写好后，agent 只问一句：<em>"Which of these would you like to explore?"</em></li>
+<li><strong>ADR 冲突要标注，但只在摩擦真实时才浮出</strong>——如果某张候选卡和已有 ADR 有矛盾，用警告 callout 标注（"contradicts ADR-0007 — but worth reopening because…"）；但理论上被 ADR 禁止的重构<strong>不逐条列出</strong>，只在摩擦严重到值得重开 ADR 时才写进卡。</li>
+</ul>
+</section>
+
+<section>
+<h2>3. Grill：三个 inline 副作用的精确触发条件</h2>
+<p>你挑中一张卡后，agent 跑 <a href="0017-grilling-primitive.html">/grilling</a>（见<a href="0017-grilling-primitive.html">第 17 课</a>）拷问决策树。这期间有三个 inline 副作用，<strong>不是每次 Grill 都全触发</strong>——各有各的条件：</p>
+
+<table>
+<thead><tr><th>副作用</th><th>触发条件</th><th>做什么</th></tr></thead>
+<tbody>
+<tr>
+  <td>更新 <code>CONTEXT.md</code></td>
+  <td>深化后的模块用了 <code>CONTEXT.md</code> 里没有的概念名，<strong>或</strong>对话中磨利了某个模糊术语</td>
+  <td>当场运行 <code>/domain-modeling</code>，把新概念 / 精确后的术语加进 <code>CONTEXT.md</code>（文件不存在就懒创建）</td>
+</tr>
+<tr>
+  <td>提议写 ADR</td>
+  <td>你用一个<strong>承重理由</strong>否掉了某张卡——该理由将来真会被未来探索者需要来避免重复建议</td>
+  <td>agent 询问：<em>"要不要记成一条 ADR，免得下次架构审查又提它？"</em> ——<strong>只在理由有持久价值时才提</strong>；"现在不值得做"这类临时理由不记，自明理由也不记</td>
+</tr>
+<tr>
+  <td>比较接口方案（design-it-twice）</td>
+  <td>想对深化后模块的几种<strong>接口画法</strong>做比较</td>
+  <td>运行 <code>/codebase-design</code> 的 design-it-twice（并行子 agent 模式），同时探索两种接口设计再汇报</td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout">
+<h3>Grill 的产出是决策 / 设计，不是代码</h3>
+<p>SKILL.md 在 grilling loop 之后就停了——这条 skill 不规定下游。三步跑完，你拿到的是一个设计决策。落地走主流程：<code>to-spec</code> → <code>to-tickets</code> → <code>implement</code>。单个小而清晰、seam 在 Grill 里已定的深化，可跳过 <code>to-spec</code> 直连 <code>to-tickets</code>（它能直接吃当前对话）；较大或多 ticket 则走 <code>to-spec</code> 先产 spec 文档。</p>
+</div>
+</section>
+
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="B" data-explain="SKILL.md 原文：「If the user named a direction — a module, a subsystem, a pain point — take it, and skip the inference below」。用户给了方向就直接用，不走 git log；git log 是「用户没指定方向」时的兜底。A 是反的；C 是错的（两者互斥，不并行）；D 同样反了优先级。">
+<p class="quiz-q">1. Explore 阶段，什么时候才跑 <code>git log --oneline</code> 找热点？</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>每次都先跑 git log，再看用户有没有方向</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>用户没有指定方向时才跑，有方向就直接取</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>两者并行——同时跑 git log 同时听用户方向</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>只有用户指定了方向，才额外跑 git log 验证</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="C" data-explain="SKILL.md 明确：「Do NOT propose interfaces yet」——报告写完之后 agent 只问「想探索哪一个？」。接口设计在第 ③ 步 grilling loop 里做，不在报告里做。A（Before/After 图）是卡的必要字段，报告里有；B（ADR 冲突标注）合规（有摩擦才标）；D（Top recommendation 段）是报告结尾的固定内容。只有 C 是被明确禁止在报告阶段做的。">
+<p class="quiz-q">2. 下面哪项是报告阶段（步骤②）<strong>明确禁止</strong>做的？</p>
+<label class="opt"><input type="radio" name="q2" value="A"><span>为每张卡画 Before/After 对比图</span></label>
+<label class="opt"><input type="radio" name="q2" value="B"><span>标注与已有 ADR 矛盾的候选卡</span></label>
+<label class="opt"><input type="radio" name="q2" value="C"><span>提出深化后模块的接口设计方案</span></label>
+<label class="opt"><input type="radio" name="q2" value="D"><span>在报告结尾写 Top recommendation</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<form class="quiz" data-answer="A" data-explain="ADR 副作用只在「用承重理由否掉某张卡」时触发，且只记「将来真会被需要的」理由。SKILL.md 原话：「Only offer when the reason would actually be needed by a future explorer to avoid re-suggesting the same thing — skip ephemeral reasons（临时理由）and self-evident ones（自明理由）」。B（新名词进 CONTEXT.md）是另一个副作用（不是 ADR）；C（接受候选继续 grill）没有 ADR 触发条件；D（「以后再说」）是临时理由，SKILL.md 明确跳过不记。">
+<p class="quiz-q">3. Grill 阶段，什么情况下才向维护者提议记一条 ADR？</p>
+<label class="opt"><input type="radio" name="q3" value="A"><span>你用承重理由否掉了某张卡，且该理由对未来探索者有持久价值</span></label>
+<label class="opt"><input type="radio" name="q3" value="B"><span>深化后的模块用了 CONTEXT.md 里没有的新概念名</span></label>
+<label class="opt"><input type="radio" name="q3" value="C"><span>你接受了某张卡、打算继续深化它的接口设计</span></label>
+<label class="opt"><input type="radio" name="q3" value="D"><span>你觉得这张卡现在做不合适，说「以后再说」</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+</section>
+
+<section class="source">
+<h2>推荐一手源</h2>
+<ul>
+<li><strong><a href="https://github.com/mattpocock/skills/blob/main/engineering/improve-codebase-architecture/SKILL.md" target="_blank" rel="noopener">improve-codebase-architecture/SKILL.md</a></strong> —— 完整三步流程：Explore 范围决策 + 5 类摩擦信号；候选卡 6 字段 + "Do NOT propose interfaces yet"；grilling loop 三个 inline 副作用的触发条件。<strong>最高优先「读」。</strong></li>
+</ul>
+</section>
+
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>「Explore 的 5 个摩擦信号里，哪种在实际代码库里最常见？」「design-it-twice 模式具体是怎么跑的？」「什么样的理由算「承重理由」、什么算「临时理由」？」</em></p>
+</section>
+
+<footer>
+<span><a href="0012-improve-codebase-architecture.html">← 第 12 课 · improve-codebase-architecture 框架总览</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+<span><a href="0007-managed-files-map.html">第 7 课 · skill 生态管的文件全景 →</a></span>
+</footer>
+
+</article>
+</body>
+</html>

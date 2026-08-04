@@ -26,12 +26,14 @@
     ] },
     { g: "④ 三条匝道", items: [
       { file: "0006-triage-state-machine.html", n: "6", t: "triage 的 5 个状态标签" },
+      { file: "0024-triage-full-flow.html", n: "24", t: "triage：完整执行流水线" },
       { file: "0015-diagnosing-bugs-loop.html", n: "15", t: "diagnosing-bugs：紧反馈回路" },
       { file: "0011-wayfinder-map.html", n: "11", t: "wayfinder：决策地图" },
       { file: "0014-wayfinder-lifecycle.html", n: "14", t: "wayfinder：完整执行生命周期" }
     ] },
     { g: "⑤ 词汇层与架构", items: [
-      { file: "0012-improve-codebase-architecture.html", n: "12", t: "improve-codebase-architecture" }
+      { file: "0012-improve-codebase-architecture.html", n: "12", t: "improve-codebase-architecture" },
+      { file: "0025-improve-arch-full-process.html", n: "25", t: "improve-codebase-architecture：三步细节" }
     ] },
     { g: "⑥ 领域层 / 文件全景", items: [
       { file: "0007-managed-files-map.html", n: "7", t: "skill 生态管的文件全景" },

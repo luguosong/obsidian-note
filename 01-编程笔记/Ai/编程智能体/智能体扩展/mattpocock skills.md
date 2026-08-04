@@ -133,6 +133,8 @@ npx skills@latest add mattpocock/skills
 
 扫描代码库找深化机会 → 可视化 HTML 报告 → 逐一审查选中条目。
 
+HTML 报告中可能存在多个方向，选择其中一个方向->grilling->产决策->接 `to-tickets`->implement。HTML 报告中的其它方向直接丢弃掉，下次有架构改进需求时，重新 `/improve-codebase-architecture`，"丢弃"其余方向不是浪费，代码库会继续演化，下次扫描时那些方向要么摩擦更清晰了（更容易 Grill），要么已经因为其他改动自然消失了。
+
 ### 模型自动触发
 
 #### domain-modeling 领域建模
@@ -147,9 +149,20 @@ npx skills@latest add mattpocock/skills
 
 单点行为测试先行（红→绿→重构）。
 
+你知道要**建什么**，没有 bug → tdd；
 #### diagnosing-bugs 修 bug
 
 难 bug：先建能变红的紧反馈回路再修。
+
+你面对的是**已经坏了的东西** → diagnosing-bugs。
+
+| 对比项      | **tdd**                 | **diagnosing-bugs**           |
+| -------- | ----------------------- | ----------------------------- |
+| **场景**   | 正向建新功能 / 新代码            | 已有的东西坏了 / bug 难找              |
+| **触发**   | 开始实现一个 ticket           | "debug this" / 报告了 bug / 性能回归 |
+| **第一步**  | 先写失败的测试（红）              | 先造一条能「亮红灯」的紧反馈回路              |
+| **防的失败** | 写完不知对不对、覆盖不够            | 读代码→猜原因→改错地方（直觉陷阱）            |
+| **流程位置** | 主流程 `implement` 阶段的内部纪律 | 三条匝道之一，bug 出现时的入口             |
 
 #### code-review
 

@@ -1,0 +1,19 @@
+<mxfile host="Electron">
+  <diagram name="第 1 页" id="Hne0zn87wU4Ay9Q962a6">
+    <mxGraphModel dx="1212" dy="1185" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Xd1siv89fmnjkyaYrJl6-1" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="Vertical Container" vertex="1">
+          <mxGeometry height="162" width="293" x="355" y="321" as="geometry" />
+        </mxCell>
+        <mxCell id="Xd1siv89fmnjkyaYrJl6-3" parent="1" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="测试" vertex="1">
+          <mxGeometry height="60" width="120" x="44" y="431" as="geometry" />
+        </mxCell>
+        <mxCell id="Xd1siv89fmnjkyaYrJl6-4" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;" value="测试" vertex="1">
+          <mxGeometry height="30" width="60" x="422" y="395" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

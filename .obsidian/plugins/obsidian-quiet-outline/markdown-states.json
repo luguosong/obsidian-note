@@ -3022,12 +3022,12 @@
     "scroll": 0,
     "cursor": {
       "from": {
-        "line": 9,
-        "ch": 0
+        "line": 14,
+        "ch": 5
       },
       "to": {
-        "line": 9,
-        "ch": 0
+        "line": 14,
+        "ch": 5
       }
     },
     "expandedKeys": [
@@ -8860,12 +8860,7 @@
   },
   "01-编程笔记/电子印章管理平台/相关资源.md": {
     "expandedKeys": [
-      "item-1-0",
-      "item-2-2",
-      "item-2-5",
-      "item-2-8",
-      "item-2-12",
-      "item-2-16"
+      "item-1-0"
     ],
     "cursor": {
       "from": {
@@ -8930,12 +8925,12 @@
   "01-编程笔记/Java/JavaSE/Java概述.md": {
     "cursor": {
       "from": {
-        "line": 7,
-        "ch": 0
+        "line": 98,
+        "ch": 18
       },
       "to": {
-        "line": 7,
-        "ch": 0
+        "line": 98,
+        "ch": 18
       }
     },
     "expandedKeys": [
@@ -8943,7 +8938,7 @@
       "item-2-4",
       "item-2-6"
     ],
-    "scroll": 0
+    "scroll": 44.349144126486344
   },
   "01-编程笔记/Java/JavaSE/JavaSE.md": {
     "cursor": {
@@ -8961,11 +8956,11 @@
   "01-编程笔记/Java/JavaSE/Java基础语法.md": {
     "cursor": {
       "from": {
-        "line": 6,
+        "line": 43,
         "ch": 0
       },
       "to": {
-        "line": 6,
+        "line": 43,
         "ch": 0
       }
     },
@@ -8978,7 +8973,8 @@
       "item-3-11",
       "item-4-15",
       "item-2-18"
-    ]
+    ],
+    "scroll": 50.129557291666664
   },
   "01-编程笔记/Java/JVM/JVM.md": {
     "expandedKeys": [],
@@ -9081,21 +9077,21 @@
       "item-2-5",
       "item-3-6",
       "item-3-16",
-      "item-3-26",
       "item-2-25",
+      "item-3-26",
       "item-3-31"
     ],
     "cursor": {
       "from": {
-        "line": 94,
-        "ch": 0
+        "line": 111,
+        "ch": 36
       },
       "to": {
-        "line": 94,
-        "ch": 0
+        "line": 111,
+        "ch": 36
       }
     },
-    "scroll": 61.55185185185185
+    "scroll": 89.2031990521327
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
@@ -9168,18 +9164,18 @@
   "01-编程笔记/电子印章管理平台/平台搭建.md": {
     "cursor": {
       "from": {
-        "line": 24,
+        "line": 55,
         "ch": 0
       },
       "to": {
-        "line": 24,
+        "line": 55,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 0
+    "scroll": 10.984375
   },
   "01-编程笔记/01-编程笔记.md": {
     "expandedKeys": [
@@ -9247,7 +9243,8 @@
         "line": 7,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/操作系统/操作系统.md": {
     "expandedKeys": [],
@@ -9407,5 +9404,63 @@
       }
     },
     "scroll": 0
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/claude code已安装的扩展和配置.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-3",
+      "item-3-4",
+      "item-3-8",
+      "item-3-12",
+      "item-2-20",
+      "item-2-26"
+    ],
+    "cursor": {
+      "from": {
+        "line": 96,
+        "ch": 0
+      },
+      "to": {
+        "line": 96,
+        "ch": 0
+      }
+    },
+    "scroll": 73.86380435637336
+  },
+  "01-编程笔记/电子印章管理平台/电子印章基础知识.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-4"
+    ],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "scroll": 13.481760277938623
+  },
+  "未分类笔记/drawio桌面端配置探索.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-6"
+    ],
+    "cursor": {
+      "from": {
+        "line": 83,
+        "ch": 0
+      },
+      "to": {
+        "line": 83,
+        "ch": 0
+      }
+    },
+    "scroll": 60.19591261451727
   }
 }

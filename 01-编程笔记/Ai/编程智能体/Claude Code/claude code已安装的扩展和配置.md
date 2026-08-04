@@ -9,7 +9,7 @@
 
 
 > [!info] 说明
-> 本文记录本机 Windows 环境下 Claude Code **全局**（user scope）扩展——插件 / MCP / Hooks / 模型代理的来源、版本、能力、触发与配置位置。==2026-07-30 核对==：`claude --version` `2.1.220`、`node --version` `v24.18.0`（npm/npx `12.0.1`）、`rtk --version` `0.42.4`、`~/.claude/plugins/installed_plugins.json`（==10 插件==全启用：自上次核对以来卸载 `kami`、新增 3 个 LSP 语言服务器插件 `jdtls-lsp` / `typescript-lsp` / `pyright-lsp`）、`~/.claude/settings.json`（`effortLevel: xhigh`、`autoUpdatesChannel: latest`）、`~/.claude.json` 顶层 `mcpServers`（==2 个==，`idea` / `web-search-prime` 已移除）、`~/.claude/skills/`（==23 个 Matt Pocock skills 符号链接==）。仅覆盖全局扩展，不含项目级 `.claude/skills`（如 `defuddle`、`doc-*`、`obsidian-*`）。
+> 本文记录本机 Windows 环境下 Claude Code **全局**（user scope）扩展——插件 / MCP / Hooks / 模型代理的来源、版本、能力、触发与配置位置。==2026-08-04 核对==：`claude --version` `2.1.220`、`node --version` `v24.18.0`（npm/npx `12.0.1`）、`rtk --version` `0.42.4`、`~/.claude/plugins/installed_plugins.json`（==11 插件==全启用：自上次核对以来新增 `open-code-review` 代码审查插件 v1.0.0，其余版本不变）、`~/.claude/settings.json`（`effortLevel: xhigh`、`autoUpdatesChannel: latest`）、`~/.claude.json` 顶层 `mcpServers`（==2 个==：zai-mcp-server / zread）、`~/.claude/skills/`（==23 个 Matt Pocock skills 符号链接==）。仅覆盖全局扩展，不含项目级 `.claude/skills`（如 `defuddle`、`doc-*`、`obsidian-*`）。
 > **组织方式**：每个扩展独占一个标题——插件按功能归入 `###` 分类、其下每个插件一个 `####` 标题；手写扩展各占一个 `###`。==用 Obsidian 大纲（TOC）按标题速查==。各插件的斜杠命令明细不在本文重复列举。
 
 ## 环境基线
@@ -66,12 +66,12 @@ sequenceDiagram
     CC-->>U: 回复
 ```
 
-## 一、插件（10 个）
+## 一、插件（11 个）
 
 > [!tip] 配置位置（所有插件共用）
 > - 清单：`~/.claude/plugins/installed_plugins.json`
-> - 启用开关：`~/.claude/settings.json` 的 `enabledPlugins`（10 个全部 `true`）
-> - 市场源：`~/.claude/plugins/known_marketplaces.json` + `settings.json` 的 `extraKnownMarketplaces`（==`claude-plugins-official` 官方、`ponytail` 两家==；`kami` 市场源已随插件移除）
+> - 启用开关：`~/.claude/settings.json` 的 `enabledPlugins`（11 个全部 `true`）
+> - 市场源：`~/.claude/plugins/known_marketplaces.json` + `settings.json` 的 `extraKnownMarketplaces`（==`claude-plugins-official` 官方、`ponytail`、`open-code-review` 三家==；`kami` 市场源已随插件移除）
 
 ### 工作流与行为约束
 
@@ -93,6 +93,16 @@ sequenceDiagram
 - **触发**：手动
 - **作用与用法**：用对话生成防错 hooks；`/hookify` 从当前会话分析行为并生成规则，`/hookify:list` 查看已配置规则，`/hookify:configure` 启停规则，`/hookify:help` 帮助。
 - **提供的 Sub-Agents**：`hookify:conversation-analyzer`。
+
+#### open-code-review
+
+> 官方仓库：[alibaba/open-code-review](https://github.com/alibaba/open-code-review)
+
+- **来源 / 版本**：`open-code-review` / v1.0.0
+- **提供**：2 cmds（`/open-code-review:review`、`/open-code-review:delegate-review`）
+- **触发**：手动
+- **作用与用法**：对 git diff 做 AI 代码审查——支持工作区改动 / 分支区间 / 单提交，逐文件并发分析 + 代码库搜索 + 深度上下文审查。`review` 由 OCR 自主选文件并自动应用修复，`delegate-review` 把审查委托给 host agent 执行（OCR 只管选文件与规则）。
+- **与其它「代码审查」的区分**：本插件（alibaba OCR）≠ 全局 Matt Pocock `code-review` skill（按 [[#全局手写 Skills（Matt Pocock 全家桶）]] 标准 / 规格双轴审查）≠ Claude Code 内置 `/code-review` `/review`。三者各成一路。
 
 ### 设计与开发辅助
 
@@ -228,10 +238,10 @@ sequenceDiagram
 - **配置位置**：`~/.claude/settings.json` 的 `statusLine` → `pwsh -NoProfile -File C:/Users/10545/.claude/statusline.ps1`（==由原 bash 脚本 `statusline-command.sh` 改为 PowerShell 脚本 `statusline.ps1`==）
 - **作用**：每次渲染状态栏时执行该脚本。
 
-## 现状评估（2026-07-30 核对）
+## 现状评估（2026-08-04 核对）
 
 > [!summary] 速查
-> - **插件 10 个（全启用）**：ponytail 4.8.4、hookify、frontend-design、skill-creator、claude-md-management 1.0.0、context7、security-guidance 2.0.6、jdtls-lsp 1.0.0、typescript-lsp 1.0.0、pyright-lsp 1.0.0（==`kami` 已卸载==）。
+> - **插件 11 个（全启用）**：ponytail 4.8.4、hookify、frontend-design、skill-creator、claude-md-management 1.0.0、context7、security-guidance 2.0.6、jdtls-lsp 1.0.0、typescript-lsp 1.0.0、pyright-lsp 1.0.0、open-code-review 1.0.0（==`kami` 已卸载==）。
 > - **MCP 3 个**：顶层手写 2（zai-mcp-server、zread）+ context7 插件 1（==`idea`、`web-search-prime` 已移除==）。
 > - **全局手写 skills 23 个**：Matt Pocock 全家桶（符号链接挂载）。
 > - **Hooks / 脚本**：PreToolUse[Bash] 仅 `rtk` 改写；SessionStart 含 ponytail；security-guidance 13 事件钩子；statusLine 脚本。
