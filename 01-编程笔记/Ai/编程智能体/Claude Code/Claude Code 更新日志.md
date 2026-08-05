@@ -1,12 +1,13 @@
 ---
 分类:
-  - "网页裁剪"
-标题: "Claude Code 更新日志（CHANGELOG）"
-描述: "Claude Code 是一款驻于终端的智能编程工具，能理解代码库，通过自然语言命令执行日常任务、解释复杂代码并处理 Git 工作流程，帮助开发者更快编写代码。"
-来源: "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
-发布者: "GitHub-anthropics"
+  - 网页裁剪
+标题: Claude Code 更新日志（CHANGELOG）
+描述: Claude Code 是一款驻于终端的智能编程工具，能理解代码库，通过自然语言命令执行日常任务、解释复杂代码并处理 Git 工作流程，帮助开发者更快编写代码。
+来源: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
+发布者: GitHub-anthropics
 发布时间:
-创建时间: "2026-07-27T14:02:13+08:00"
+创建时间: 2026-07-27T14:02:13+08:00
+排序: 2000
 ---
 
 > [!tip] 维护说明（更新方法）

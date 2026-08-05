@@ -16,6 +16,10 @@
         {
           "type": "note",
           "path": "待办任务/待办任务.md"
+        },
+        {
+          "type": "note",
+          "path": "01-编程笔记/电子印章管理平台/电子印章管理平台.md"
         }
       ],
       "navRainbow": {
@@ -618,9 +622,17 @@
   "folderBackgroundColors": {},
   "folderSortOverrides": {
     "网页裁剪": "created-desc",
-    "附件": "created-asc",
+    "附件": "created-desc",
     "未分类笔记": "created-desc",
     "01-编程笔记/Obsidian": {
+      "option": "property-asc",
+      "propertyKey": "排序"
+    },
+    "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇": {
+      "option": "property-asc",
+      "propertyKey": "排序"
+    },
+    "01-编程笔记/Ai/编程智能体/Claude Code": {
       "option": "property-asc",
       "propertyKey": "排序"
     }

@@ -1291,22 +1291,21 @@
     ]
   },
   "CLAUDE.md": {
-    "scroll": 0,
+    "scroll": 91.12468982630273,
     "cursor": {
       "from": {
-        "line": 37,
-        "ch": 16
+        "line": 31,
+        "ch": 28
       },
       "to": {
-        "line": 37,
-        "ch": 19
+        "line": 31,
+        "ch": 33
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-3",
-      "item-2-7",
-      "item-2-16"
+      "item-2-4",
+      "item-2-9"
     ]
   },
   "_temp_extract.md": {
@@ -3344,18 +3343,15 @@
     "scroll": 93.06944444444444,
     "cursor": {
       "from": {
-        "line": 9,
-        "ch": 0
+        "line": 0,
+        "ch": 9
       },
       "to": {
-        "line": 9,
-        "ch": 0
+        "line": 0,
+        "ch": 9
       }
     },
-    "expandedKeys": [
-      "item-1-0",
-      "item-2-7"
-    ]
+    "expandedKeys": []
   },
   "编程笔记/Obsidian/Obsidian.md": {
     "scroll": 0,
@@ -9072,26 +9068,22 @@
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/mattpocock skills.md": {
     "expandedKeys": [
-      "item-1-0",
       "item-2-2",
-      "item-2-5",
+      "item-1-0",
       "item-3-6",
-      "item-3-16",
-      "item-2-25",
-      "item-3-26",
-      "item-3-31"
+      "item-2-5"
     ],
     "cursor": {
       "from": {
-        "line": 111,
-        "ch": 36
+        "line": 46,
+        "ch": 0
       },
       "to": {
-        "line": 111,
-        "ch": 36
+        "line": 46,
+        "ch": 0
       }
     },
-    "scroll": 89.2031990521327
+    "scroll": 35.149272612270714
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
@@ -9164,18 +9156,18 @@
   "01-编程笔记/电子印章管理平台/平台搭建.md": {
     "cursor": {
       "from": {
-        "line": 55,
+        "line": 51,
         "ch": 0
       },
       "to": {
-        "line": 55,
+        "line": 51,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 10.984375
+    "scroll": 19.898423504120387
   },
   "01-编程笔记/01-编程笔记.md": {
     "expandedKeys": [
@@ -9197,11 +9189,11 @@
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 11,
+        "line": 10,
         "ch": 0
       },
       "to": {
-        "line": 11,
+        "line": 10,
         "ch": 0
       }
     }
@@ -9468,13 +9460,312 @@
       "item-1-0",
       "item-2-2",
       "item-2-8",
-      "item-2-11",
-      "item-2-15",
-      "item-3-18",
-      "item-2-22",
-      "item-2-26",
-      "item-2-29"
+      "item-2-12",
+      "item-2-16",
+      "item-3-19",
+      "item-2-23",
+      "item-2-27",
+      "item-2-30"
     ],
-    "scroll": 131.93797986714557
+    "scroll": 22.351895734597157,
+    "cursor": {
+      "from": {
+        "line": 51,
+        "ch": 0
+      },
+      "to": {
+        "line": 51,
+        "ch": 0
+      }
+    }
+  },
+  "learning/README.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 10.881510416666666
+  },
+  "01-编程笔记/Linux/Linux.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/未命名.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/鸟哥Linux私房菜.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 12
+      },
+      "to": {
+        "line": 7,
+        "ch": 12
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/测试.md": {
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/未命名.md": {
+    "expandedKeys": []
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/基础篇.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 5
+      },
+      "to": {
+        "line": 7,
+        "ch": 5
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 1.8918918918918919
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第零章 计算机概论.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-8",
+      "item-2-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第一章 Linux是什么与如何学习.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 77.77083333333333
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第三章 安装CentOS 7.x.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5",
+      "item-2-15"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 230.88033175355451
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第九章 vim程序编辑器.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-15",
+      "item-2-8",
+      "item-2-3",
+      "item-2-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 330.5127388535032
+  },
+  "01-编程笔记/Windows/wsl.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 26.839622641509436
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第十七章 认识系统服务(daemons).md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 172.6766690340909
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第四章 首次登录与线上求助.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-6",
+      "item-2-11"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 239.4580965909091
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第五章 Linux的文件权限与目录配置.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2",
+      "item-2-7"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 432.01953125
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第三章 安装Rocky Linux 9.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5",
+      "item-2-15"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 23.78071607356622
+  },
+  "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第四章 首次登录与在线帮助.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-6",
+      "item-2-11"
+    ],
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "scroll": 187.919921875
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/未命名.md": {
+    "expandedKeys": []
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/安装和配置.md": {
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/Claude Code 更新日志.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    }
   }
 }
