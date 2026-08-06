@@ -8,7 +8,9 @@
 # mattpocock skills
 
 - [仓库地址](https://github.com/mattpocock/skills)
+- [文档](https://www.aihero.dev/skills)
 - [[mattpocock-skills v1.2.0 发布说明]]
+- [[mattpocock skills v1.2.0 新技能发布-Youtube]]
 ## 安装
 
 ```shell

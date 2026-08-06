@@ -1,0 +1,79 @@
+<mxfile host="Electron">
+  <diagram name="SES-Signature签章数据结构" id="sessig-structure">
+    <mxGraphModel dx="-264" dy="-157" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="root" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1b2a44;strokeColor=#4f93d6;strokeWidth=2;fontColor=#dbeafe;fontStyle=1;" value="&lt;b&gt;toSign 签章信息&lt;/b&gt;&lt;br&gt;&lt;i&gt;TBS_Sign&lt;/i&gt;" vertex="1">
+          <mxGeometry height="56" width="180" x="20" y="242" as="geometry" />
+        </mxCell>
+        <mxCell id="version" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;version&lt;/b&gt;&lt;br&gt;版本号（与印章 version 一致）" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="eseal" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#4f93d6;fontColor=#dbeafe;" value="&lt;b&gt;eseal&lt;/b&gt;&lt;br&gt;所用电子印章（SESeal）" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="timeInfo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;timeInfo&lt;/b&gt;&lt;br&gt;签章时间" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="dataHash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;dataHash&lt;/b&gt;&lt;br&gt;原文杂凑值" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="propertyInfo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;propertyInfo&lt;/b&gt;&lt;br&gt;原文属性" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="extDatas" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;extDatas 自定义数据&lt;/b&gt;&lt;br&gt;&lt;i&gt;OPTIONAL&lt;/i&gt;" vertex="1">
+          <mxGeometry height="50" width="220" x="240" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ver" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="version">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="270" />
+              <mxPoint x="238.68" y="45" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_eseal" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#4f93d6;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="eseal">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="270" />
+              <mxPoint x="210" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ti" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="timeInfo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="270" />
+              <mxPoint x="210" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_dh" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="dataHash">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="270" />
+              <mxPoint x="210" y="315" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_pi" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="propertyInfo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="270" />
+              <mxPoint x="210" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ext" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="extDatas">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="270" />
+              <mxPoint x="238.68" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

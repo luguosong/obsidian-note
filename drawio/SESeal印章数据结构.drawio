@@ -1,0 +1,233 @@
+<mxfile host="Electron">
+  <diagram name="SESeal印章数据结构" id="eselal-structure">
+    <mxGraphModel dx="-431" dy="-360" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="root" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1b2a44;strokeColor=#4f93d6;strokeWidth=2;fontColor=#dbeafe;fontStyle=1;" value="&lt;b&gt;eSealInfo 印章信息&lt;/b&gt;&lt;br&gt;&lt;i&gt;TBS_ESeal&lt;/i&gt;" vertex="1">
+          <mxGeometry height="56" width="180" x="20" y="692" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#162238;strokeColor=#3d6699;fontColor=#c9d8e8;fontStyle=1;" value="&lt;b&gt;header 印章头&lt;/b&gt;&lt;br&gt;&lt;i&gt;SES_Header&lt;/i&gt;" vertex="1">
+          <mxGeometry height="56" width="170" x="265" y="107" as="geometry" />
+        </mxCell>
+        <mxCell id="esID" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;esID&lt;/b&gt;&lt;br&gt;电子印章标识（唯一编码）" vertex="1">
+          <mxGeometry height="50" width="200" x="250" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="property" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#162238;strokeColor=#3d6699;fontColor=#c9d8e8;fontStyle=1;" value="&lt;b&gt;property 印章属性&lt;/b&gt;&lt;br&gt;&lt;i&gt;SES_ESPropertyInfo&lt;/i&gt;" vertex="1">
+          <mxGeometry height="56" width="219" x="240.5" y="557" as="geometry" />
+        </mxCell>
+        <mxCell id="picture" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#162238;strokeColor=#3d6699;fontColor=#c9d8e8;fontStyle=1;" value="&lt;b&gt;picture 印章图像&lt;/b&gt;&lt;br&gt;&lt;i&gt;SES_ESPictrueInfo&lt;/i&gt;" vertex="1">
+          <mxGeometry height="56" width="203" x="248.5" y="1052" as="geometry" />
+        </mxCell>
+        <mxCell id="extDatas" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#162238;strokeColor=#3d6699;fontColor=#c9d8e8;fontStyle=1;" value="&lt;b&gt;extDatas 自定义数据&lt;/b&gt;&lt;br&gt;&lt;i&gt;OPTIONAL&lt;/i&gt;" vertex="1">
+          <mxGeometry height="56" width="200" x="250" y="1277" as="geometry" />
+        </mxCell>
+        <mxCell id="h_id" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;ID&lt;/b&gt;&lt;br&gt;固定值 &quot;ES&quot;" vertex="1">
+          <mxGeometry height="50" width="170" x="562" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="h_ver" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;version&lt;/b&gt;&lt;br&gt;版本号（v4 取 4）" vertex="1">
+          <mxGeometry height="50" width="170" x="562" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="h_vid" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;Vid&lt;/b&gt;&lt;br&gt;厂商 ID" vertex="1">
+          <mxGeometry height="50" width="170" x="562" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="p_type" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;type&lt;/b&gt;&lt;br&gt;印章类型" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="p_name" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;name&lt;/b&gt;&lt;br&gt;印章名称" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="p_clt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;certListType&lt;/b&gt;&lt;br&gt;证书列表类型（1=证书，2=证书杂凑值）" vertex="1">
+          <mxGeometry height="50" width="296" x="499" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="p_cl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#4f93d6;fontColor=#dbeafe;" value="&lt;b&gt;certList&lt;/b&gt;&lt;br&gt;签章者证书列表（SES_CertList，见 §1.2）" vertex="1">
+          <mxGeometry height="50" width="281" x="506.5" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="p_cd" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;createDate&lt;/b&gt;&lt;br&gt;制作时间" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="p_vs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;validStart&lt;/b&gt;&lt;br&gt;有效期起始" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="p_ve" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;validEnd&lt;/b&gt;&lt;br&gt;有效期终止" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="pic_type" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;type&lt;/b&gt;&lt;br&gt;图像类型（GIF/BMP/JPG/PNG/SVG）" vertex="1">
+          <mxGeometry height="50" width="241" x="526.5" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="pic_data" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;data&lt;/b&gt;&lt;br&gt;图像数据" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="pic_w" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;width&lt;/b&gt;&lt;br&gt;显示宽度（mm）" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="pic_h" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;height&lt;/b&gt;&lt;br&gt;显示高度（mm）" vertex="1">
+          <mxGeometry height="50" width="200" x="547" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_e" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c1320;strokeColor=#3d6699;fontColor=#c9d8e8;" value="&lt;b&gt;ExtData&lt;/b&gt;&lt;br&gt;extnID / critical / extnValue" vertex="1">
+          <mxGeometry height="50" width="220" x="537" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="e_r_h" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="header">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="720" />
+              <mxPoint x="230.5" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_r_es" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="esID">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="720" />
+              <mxPoint x="230.5" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_r_p" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="property">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="720" />
+              <mxPoint x="210" y="585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_r_pic" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="picture">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="720" />
+              <mxPoint x="230.5" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_r_ext" edge="1" parent="1" source="root" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="extDatas">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="720" />
+              <mxPoint x="230.5" y="1305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_h_id" edge="1" parent="1" source="header" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="h_id">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="135" />
+              <mxPoint x="489" y="45" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_h_ver" edge="1" parent="1" source="header" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="h_ver">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="135" />
+              <mxPoint x="489" y="135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_h_vid" edge="1" parent="1" source="header" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="h_vid">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="135" />
+              <mxPoint x="489" y="225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_type" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_type">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="489" y="315" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_name" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_name">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="489" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_clt" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_clt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="469.5" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_cl" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#4f93d6;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_cl">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="489" y="585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_cd" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_cd">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="489" y="675" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_vs" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_vs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="489" y="765" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_p_ve" edge="1" parent="1" source="property" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="p_ve">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="585" />
+              <mxPoint x="489" y="855" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_pic_type" edge="1" parent="1" source="picture" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="pic_type">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="1080" />
+              <mxPoint x="489" y="945" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_pic_data" edge="1" parent="1" source="picture" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="pic_data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="1080" />
+              <mxPoint x="489" y="1035" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_pic_w" edge="1" parent="1" source="picture" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="pic_w">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="1080" />
+              <mxPoint x="489" y="1125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_pic_h" edge="1" parent="1" source="picture" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="pic_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="1080" />
+              <mxPoint x="489" y="1215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ext_e" edge="1" parent="1" source="extDatas" style="rounded=1;html=1;endArrow=none;strokeColor=#3d6699;curved=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;edgeStyle=orthogonalEdgeStyle;" target="ext_e">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469.5" y="1305" />
+              <mxPoint x="489" y="1305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

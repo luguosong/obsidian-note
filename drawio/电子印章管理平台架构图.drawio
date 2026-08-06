@@ -1,0 +1,115 @@
+<mxfile host="Electron">
+  <diagram name="第 1 页" id="Hne0zn87wU4Ay9Q962a6">
+    <mxGraphModel dx="2627" dy="974" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#ffffff, #0d1117)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Xd1siv89fmnjkyaYrJl6-1" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="信任支撑系统（S1）" vertex="1">
+          <mxGeometry height="162" width="293" x="1313" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-2" parent="Xd1siv89fmnjkyaYrJl6-1" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="取印章根证书、唯一赋码" vertex="1">
+          <mxGeometry height="30" width="166" x="18" y="47" as="geometry" />
+        </mxCell>
+        <mxCell id="Xd1siv89fmnjkyaYrJl6-5" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="印章管理系统（S2）" vertex="1">
+          <mxGeometry height="162" width="293" x="955" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="Xd1siv89fmnjkyaYrJl6-6" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="印章制作系统（S3）" vertex="1">
+          <mxGeometry height="162" width="293" x="955" y="604" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-1" parent="Xd1siv89fmnjkyaYrJl6-6" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="录入申请、发起制作" vertex="1">
+          <mxGeometry height="30" width="141" x="11" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="7ANmuRG-VB8PfliQJRJr-1" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="状态发布系统（S4）" vertex="1">
+          <mxGeometry height="162" width="293" x="1313" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-4" parent="7ANmuRG-VB8PfliQJRJr-1" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="推送印章状态（变更须签名）" vertex="1">
+          <mxGeometry height="33" width="179" x="16" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="7ANmuRG-VB8PfliQJRJr-2" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="接入检测系统（S5）" vertex="1">
+          <mxGeometry height="162" width="293" x="528" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7ANmuRG-VB8PfliQJRJr-3" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="印章应用系统（S6,签章/验章组件）" vertex="1">
+          <mxGeometry height="162" width="293" x="955" y="796" as="geometry" />
+        </mxCell>
+        <mxCell id="7ANmuRG-VB8PfliQJRJr-4" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="CA（S7,证书认证机构）" vertex="1">
+          <mxGeometry height="162" width="293" x="1671" y="522" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-3" parent="7ANmuRG-VB8PfliQJRJr-4" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="取所有者证书（一证一章）" vertex="1">
+          <mxGeometry height="33" width="171" x="18" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="7ANmuRG-VB8PfliQJRJr-5" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="USB-Key / 密码机（S8）" vertex="1">
+          <mxGeometry height="162" width="293" x="2029" y="512" as="geometry" />
+        </mxCell>
+        <mxCell id="7ANmuRG-VB8PfliQJRJr-6" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="时间戳服务（S9）" vertex="1">
+          <mxGeometry height="162" width="293" x="955" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-5" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#d6b656;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="使用主体（R2）" vertex="1">
+          <mxGeometry height="335" width="418" x="40" y="562" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-19" parent="NOAhLSRQdoy0RAAuLZBD-5" style="swimlane;startSize=0;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="111" width="258" x="15" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-20" parent="NOAhLSRQdoy0RAAuLZBD-19" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="交付 SESeal（USB-Key/加密包）" vertex="1">
+          <mxGeometry height="33" width="209" x="12" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-7" parent="NOAhLSRQdoy0RAAuLZBD-19" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="制章申请" vertex="1">
+          <mxGeometry height="30" width="73" x="27" y="17" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-21" edge="1" parent="1" source="NOAhLSRQdoy0RAAuLZBD-6" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;endArrow=open;endFill=0;" target="NOAhLSRQdoy0RAAuLZBD-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-22" connectable="0" parent="NOAhLSRQdoy0RAAuLZBD-21" style="edgeLabel;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;" value="6" vertex="1">
+          <mxGeometry relative="1" x="0.3507" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-6" parent="1" style="swimlane;rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#d6b656;strokeWidth=2;align=center;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontStyle=1;labelBackgroundColor=none;fillColor=none;startSize=32;shadow=0;autosizeText=0;" value="制章机构（R1）" vertex="1">
+          <mxGeometry height="162" width="367" x="528" y="616" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-8" parent="NOAhLSRQdoy0RAAuLZBD-6" style="rounded=0;sketch=1;jiggle=1;curveFitting=1;strokeColor=#6c8ebf;strokeWidth=2;align=left;verticalAlign=top;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=none;fillColor=none;" value="提交申领/变更/挂失/注销/续期/PIN 重置材料" vertex="1">
+          <mxGeometry height="30" width="297" x="10" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-9" edge="1" parent="1" source="NOAhLSRQdoy0RAAuLZBD-7" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;endArrow=open;endFill=0;" target="NOAhLSRQdoy0RAAuLZBD-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-11" connectable="0" parent="NOAhLSRQdoy0RAAuLZBD-9" style="edgeLabel;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.1085" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-10" edge="1" parent="1" source="NOAhLSRQdoy0RAAuLZBD-8" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;endArrow=open;endFill=0;" target="NOAhLSRQdoy0RAAuLZBD-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-12" connectable="0" parent="NOAhLSRQdoy0RAAuLZBD-10" style="edgeLabel;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;" value="2" vertex="1">
+          <mxGeometry relative="1" x="0.0111" y="-2" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-13" edge="1" parent="1" source="NOAhLSRQdoy0RAAuLZBD-1" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;endArrow=open;endFill=0;" target="NOAhLSRQdoy0RAAuLZBD-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-14" connectable="0" parent="NOAhLSRQdoy0RAAuLZBD-13" style="edgeLabel;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;" value="3" vertex="1">
+          <mxGeometry relative="1" x="0.0896" y="-3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-15" edge="1" parent="1" source="NOAhLSRQdoy0RAAuLZBD-2" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;endArrow=open;endFill=0;" target="NOAhLSRQdoy0RAAuLZBD-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-16" connectable="0" parent="NOAhLSRQdoy0RAAuLZBD-15" style="edgeLabel;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;" value="4" vertex="1">
+          <mxGeometry relative="1" x="0.0776" y="9" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-17" edge="1" parent="1" source="NOAhLSRQdoy0RAAuLZBD-1" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;endArrow=open;endFill=0;" target="7ANmuRG-VB8PfliQJRJr-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOAhLSRQdoy0RAAuLZBD-18" connectable="0" parent="NOAhLSRQdoy0RAAuLZBD-17" style="edgeLabel;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=LXGW WenKai;fontSize=14;fontColor=default;fontStyle=0;labelBackgroundColor=default;" value="5" vertex="1">
+          <mxGeometry relative="1" x="0.4655" y="34" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
