@@ -9068,22 +9068,21 @@
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/mattpocock skills.md": {
     "expandedKeys": [
-      "item-2-2",
+      "item-2-5",
       "item-1-0",
-      "item-3-6",
-      "item-2-5"
+      "item-2-2"
     ],
     "cursor": {
       "from": {
-        "line": 46,
-        "ch": 0
+        "line": 73,
+        "ch": 2
       },
       "to": {
-        "line": 46,
-        "ch": 0
+        "line": 73,
+        "ch": 2
       }
     },
-    "scroll": 35.149272612270714
+    "scroll": 27.214969595031697
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
@@ -9156,18 +9155,18 @@
   "01-编程笔记/电子印章管理平台/平台搭建.md": {
     "cursor": {
       "from": {
-        "line": 51,
+        "line": 14,
         "ch": 0
       },
       "to": {
-        "line": 51,
+        "line": 14,
         "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 19.898423504120387
+    "scroll": 30.560475604756046
   },
   "01-编程笔记/01-编程笔记.md": {
     "expandedKeys": [
@@ -9467,7 +9466,7 @@
       "item-2-27",
       "item-2-30"
     ],
-    "scroll": 22.351895734597157,
+    "scroll": 17.30924170616114,
     "cursor": {
       "from": {
         "line": 51,
@@ -9767,5 +9766,35 @@
         "ch": 0
       }
     }
+  },
+  "网页裁剪/mattpocock-skills v1.2.0 发布说明.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 59.428385416666664
+  },
+  "08-地理/08-地理.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 0
   }
 }
