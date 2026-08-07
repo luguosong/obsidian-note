@@ -9,7 +9,8 @@
     "inline-code",
     "headings",
     "callout-compact",
-    "table-width"
+    "table-width",
+    "code-edit-button"
   ],
   "showRibbon": true,
   "nativeMenus": false

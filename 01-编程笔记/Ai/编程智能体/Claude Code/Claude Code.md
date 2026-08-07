@@ -7,4 +7,5 @@
 ---
 # Claude Code
 
-![[数据库/分类索引.base]]
+- [官方文档](https://code.claude.com/docs/zh-CN/overview) [英文](https://code.claude.com/docs/en/overview)
+- [[Claude Code 更新日志]]

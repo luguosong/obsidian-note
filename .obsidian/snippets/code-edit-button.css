@@ -1,0 +1,15 @@
+/*
+ * 代码块「编辑模式」按钮（.edit-block-button）强制常显
+ *
+ * 背景：
+ *   - Minimal 主题在普通实时预览（非 Cards 视图）里把原生 .edit-block-button 设为 opacity:0；
+ *   - Shiki Highlighter 的 expressive-code 浮层又把悬停时本应显现的按钮视觉盖住
+ *     （Shiki 仅加了 pointer-events:all 维持点击穿透，故「能点不能看」）。
+ * 本片段强制按钮常显，并提层到 Shiki 浮层之上。
+ *
+ * 启用路径：设置 → 外观 → CSS 代码片段 → 勾选 code-edit-button
+ */
+.markdown-source-view.mod-cm6 .edit-block-button {
+  opacity: 1 !important;
+  z-index: 10;
+}

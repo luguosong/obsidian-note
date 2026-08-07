@@ -42,8 +42,28 @@
 
 <section>
   <h2>2. 安装</h2>
-  <p>一条命令全局安装：</p>
-  <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+  <h3>方式 A：Windows 官方安装脚本（推荐，无需手动装 Node）</h3>
+  <p>在 PowerShell 中运行：</p>
+  <pre><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+  <p>脚本自动处理依赖，安装完成后即可使用 <code>claude</code> 命令。</p>
+
+  <h3>方式 B：通过包管理器（需已有 Node.js v18+）</h3>
+  <table>
+    <thead><tr><th>包管理器</th><th>命令</th></tr></thead>
+    <tbody>
+      <tr><td><strong>npm</strong></td><td><code>npm install -g @anthropic-ai/claude-code</code></td></tr>
+      <tr><td><strong>pnpm</strong></td><td><code>pnpm add -g @anthropic-ai/claude-code</code></td></tr>
+      <tr><td><strong>yarn</strong></td><td><code>yarn global add @anthropic-ai/claude-code</code></td></tr>
+    </tbody>
+  </table>
+
+  <h3>方式 C：macOS / Linux（Homebrew）</h3>
+  <pre><code>brew install claude</code></pre>
+
+  <h3>方式 D：免安装临时体验</h3>
+  <pre><code>npx @anthropic-ai/claude-code</code></pre>
+
   <p>安装完成后验证：</p>
   <pre><code>claude --version</code></pre>
   <p>如果输出版本号（如 <code>1.x.x</code>），安装成功。</p>

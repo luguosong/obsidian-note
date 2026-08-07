@@ -4,7 +4,7 @@
   "trashOption": "local",
   "attachmentFolderPath": "附件",
   "readableLineLength": false,
-  "newFileLocation": "folder",
+  "newFileLocation": "current",
   "newFileFolderPath": "未分类笔记",
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,

@@ -8857,19 +8857,20 @@
   },
   "01-编程笔记/电子印章管理平台/相关资源.md": {
     "expandedKeys": [
+      "item-2-12",
       "item-1-0"
     ],
     "cursor": {
       "from": {
-        "line": 331,
-        "ch": 0
+        "line": 236,
+        "ch": 44
       },
       "to": {
-        "line": 331,
-        "ch": 0
+        "line": 236,
+        "ch": 44
       }
     },
-    "scroll": 0
+    "scroll": 208.23815165876778
   },
   "01-编程笔记/密码学/相关资源.md": {
     "expandedKeys": [
@@ -8990,16 +8991,16 @@
   "01-编程笔记/Java/JVM/字节码解读.md": {
     "cursor": {
       "from": {
-        "line": 7,
-        "ch": 0
+        "line": 67,
+        "ch": 2
       },
       "to": {
-        "line": 7,
-        "ch": 0
+        "line": 67,
+        "ch": 2
       }
     },
     "expandedKeys": [],
-    "scroll": 30.42608173076923
+    "scroll": 38.731770833333336
   },
   "未分类笔记/MemTest86.md": {
     "cursor": {
@@ -9229,11 +9230,11 @@
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 7,
+        "line": 11,
         "ch": 0
       },
       "to": {
-        "line": 7,
+        "line": 11,
         "ch": 0
       }
     },
@@ -9418,7 +9419,7 @@
         "ch": 0
       }
     },
-    "scroll": 73.86380435637336
+    "scroll": 58.61071428571428
   },
   "01-编程笔记/电子印章管理平台/电子印章基础知识.md": {
     "expandedKeys": [
@@ -9745,14 +9746,16 @@
     "cursor": {
       "from": {
         "line": 9,
-        "ch": 0
+        "ch": 5
       },
       "to": {
         "line": 9,
-        "ch": 0
+        "ch": 5
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [
+      "item-1-0"
+    ]
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/Claude Code 更新日志.md": {
     "expandedKeys": [
@@ -9767,7 +9770,8 @@
         "line": 11,
         "ch": 0
       }
-    }
+    },
+    "scroll": 48.23163507109005
   },
   "网页裁剪/mattpocock-skills v1.2.0 发布说明.md": {
     "cursor": {
@@ -9830,5 +9834,48 @@
       "item-2-0"
     ],
     "scroll": 71.62326388888889
+  },
+  "05-历史/编程史/未命名.md": {
+    "expandedKeys": []
+  },
+  "05-历史/编程史/编程史.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 41
+      },
+      "to": {
+        "line": 10,
+        "ch": 41
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "05-历史/编程史/C语言.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    }
+  },
+  "05-历史/编程史/Java.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
   }
 }
