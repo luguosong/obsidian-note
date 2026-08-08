@@ -388,13 +388,17 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 | `++` | 自增 | `a++` / `++a` | 自身 +1 |
 | `--` | 自减 | `a--` / `--a` | 自身 −1 |
 
-**基本四则运算** —— `+` `-` `*` 与常规数学运算一致：
+#### 基本四则运算
+
+`+` `-` `*` 与常规数学运算一致：
 
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/ArithmeticBasicDemo.java"
 ```
 
-**除法 `/` 与取模 `%`** —— 两个最易踩坑的运算：
+#### 除法 `/` 与取模 `%`
+
+两个最易踩坑的运算：
 
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/DivisionModuloDemo.java"
@@ -403,16 +407,27 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 > [!warning] 整数除法是截断，不是四舍五入
 > `7 / 2` 得 `3`，既不是 `3.5` 也不是 `4`。两个 `int` 相除结果必为 `int`，直接丢掉小数部分。需要小数结果时，至少让一个操作数为浮点数（如 `7 / 2.0`）。
 
-**`+` 的字符串拼接** —— `+` 两边都是数字则求和；==只要有一边是字符串，就变成拼接==，且按从左到右顺序执行：
+#### `+` 的字符串拼接
+
+`+` 两边都是数字则求和；==只要有一边是字符串，就变成拼接==，且按从左到右顺序执行：
 
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/StringConcatDemo.java"
 ```
 
-**自增 `++` 与自减 `--`** —— 变量自身 ±1。单独成句时 `++a` 与 `a++` 完全等价；==参与表达式时区别才显现==：
+#### 自增 `++` 与自减 `--`
+
+变量自身 ±1。单独成句时 `++a` 与 `a++` 完全等价；==参与表达式时区别才显现==：
 
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/IncrementDemo.java"
+```
+
+> [!question] 经典面试题：`i = i++` 的结果是多少？
+> 后缀 `i++` 表达式的值是自增**前**的旧值，而赋值发生在自增之后——旧值会覆盖掉刚才的自增。对比前缀 `j = ++j` 看差异：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/IncrementPitfallDemo.java"
 ```
 
 ### 关系运算符
