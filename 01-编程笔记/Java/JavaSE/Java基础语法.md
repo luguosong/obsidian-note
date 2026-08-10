@@ -681,10 +681,77 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 
 ## 控制语句
 
-控制语句：用于控制程序的执行流程，改变程序执行的次序。 ① 分支语句 1. if语句 2. switch语句 ② 循环语句 1. for循环 I 2. while循环 3. do while循环 ③ 跳转语句 1. break语句 2. continue语句
+> [!note] 定义
+> `控制语句`用于控制程序的执行流程，改变语句默认「从上往下逐行执行」的次序。按作用分为三类：
+
+| 分类 | 语句 | 作用 |
+|---|---|---|
+| 分支（选择） | `if`、`switch` | 按条件选择执行哪一段代码 |
+| 循环 | `for`、`while`、`do-while` | 满足条件时重复执行某段代码 |
+| 跳转 | `break`、`continue` | 中断循环或跳过本次循环 |
 
 ### if语句
 
+> [!note] 定义
+> `if语句`根据==布尔表达式==的真假决定是否执行某段代码，是最基础的分支语句。共有四种写法。
 
+**① 单分支**：布尔表达式为 `true` 才执行分支，为 `false` 则整块跳过。
+
+```java
+if (布尔表达式) {
+    分支;
+}
+```
+
+**② 双分支 `if-else`**：`true` 执行分支 1，`false` 执行分支 2，两者==必执行其一==。
+
+```java
+if (布尔表达式) {
+    分支1;
+} else {
+    分支2;
+}
+```
+
+**③ 多分支 `if-else if`**：从上往下依次判断，命中第一个 `true` 就执行对应分支、整个 if 立即结束；若全为 `false`，则==一个分支都不执行==。
+
+```java
+if (布尔表达式1) {
+    分支1;
+} else if (布尔表达式2) {
+    分支2;
+} else if (布尔表达式3) {
+    分支3;
+}
+```
+
+**④ 多分支带 `else` 兜底**：在③基础上补一个最后的 `else`——前面条件全为 `false` 时执行它，因此==一定会命中某个分支==。
+
+```java
+if (布尔表达式1) {
+    分支1;
+} else if (布尔表达式2) {
+    分支2;
+} else {
+    分支3;
+}
+```
+
+完整可运行示例（按成绩评级）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/IfDemo.java"
+```
+
+> [!tip] 大括号别省
+> 单条分支语句语法上可省略 `{}`（如 `if (x > 0) foo();`），但==建议始终写 `{}`==：日后往分支里加第二行时，漏加括号会让新行脱离 if 控制，是新手常见 bug。
+
+### switch语句
+
+switch语句完整格式： switch(expression) {case value1://当expression的值等于value1时，执行这里的代码 break; case value2://当expression的值等于value2时，执行这里的代码 break; case value3://当expression的值等于value3时，执行这里的代码 break;|…default://当expression的值与所有的case语句都不匹配时，执行这里的代码}
+
+expression执行完必须是int或枚举类型的值。
+
+default可以省略，
 
 ## 方法
