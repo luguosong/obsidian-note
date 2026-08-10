@@ -9889,15 +9889,16 @@
   "01-编程笔记/电子印章管理平台/wasm授权研究.md": {
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 62
+        "line": 12,
+        "ch": 161
       },
       "to": {
-        "line": 10,
-        "ch": 62
+        "line": 12,
+        "ch": 161
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [],
+    "scroll": 2.7509727626459144
   },
   "网页裁剪/深圳市统一电子印章管理平台.md": {
     "expandedKeys": [
