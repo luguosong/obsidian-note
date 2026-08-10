@@ -8956,12 +8956,12 @@
   "01-编程笔记/Java/JavaSE/Java基础语法.md": {
     "cursor": {
       "from": {
-        "line": 754,
-        "ch": 12
+        "line": 752,
+        "ch": 46
       },
       "to": {
-        "line": 754,
-        "ch": 12
+        "line": 752,
+        "ch": 46
       }
     },
     "expandedKeys": [
@@ -9079,20 +9079,20 @@
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/mattpocock skills.md": {
     "expandedKeys": [
-      "item-2-2",
-      "item-1-0"
+      "item-1-0",
+      "item-2-2"
     ],
     "cursor": {
       "from": {
-        "line": 13,
-        "ch": 5
+        "line": 22,
+        "ch": 0
       },
       "to": {
-        "line": 13,
-        "ch": 5
+        "line": 22,
+        "ch": 0
       }
     },
-    "scroll": 29.443200931556476
+    "scroll": 26.649113443231254
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
@@ -9933,5 +9933,52 @@
       "item-1-0"
     ],
     "scroll": 1.8123569794050343
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/Claude Code 官方插件市场.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-3",
+      "item-2-13",
+      "item-2-20",
+      "item-2-25",
+      "item-2-30"
+    ],
+    "cursor": {
+      "from": {
+        "line": 472,
+        "ch": 0
+      },
+      "to": {
+        "line": 472,
+        "ch": 0
+      }
+    },
+    "scroll": 460.55525936599423
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/未命名.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 0
+      },
+      "to": {
+        "line": 3,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/guizang-ppt-skill.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 60
+      },
+      "to": {
+        "line": 11,
+        "ch": 60
+      }
+    },
+    "expandedKeys": []
   }
 }

@@ -750,8 +750,11 @@ if (布尔表达式1) {
 
 switch语句完整格式： switch(expression) {case value1://当expression的值等于value1时，执行这里的代码 break; case value2://当expression的值等于value2时，执行这里的代码 break; case value3://当expression的值等于value3时，执行这里的代码 break;|…default://当expression的值与所有的case语句都不匹配时，执行这里的代码}
 
-expression执行完必须是int或枚举类型的值。
+expression执行完必须是int或枚举类型的值。case后面只能跟字面量，不能跟变量。
 
 default可以省略，
 
+switch和if如何选择：switch能完成的，if也都能完成，但if更加灵活。switch更适合某个值的判断，if语句更适合区间。
+
+如果case分支不写break;的后果
 ## 方法
