@@ -748,13 +748,61 @@ if (布尔表达式1) {
 
 ### switch语句
 
-switch语句完整格式： switch(expression) {case value1://当expression的值等于value1时，执行这里的代码 break; case value2://当expression的值等于value2时，执行这里的代码 break; case value3://当expression的值等于value3时，执行这里的代码 break;|…default://当expression的值与所有的case语句都不匹配时，执行这里的代码}
+> [!note] 定义
+> `switch语句`根据==表达式的值==匹配对应的 `case` 分支执行，适合对==离散的固定值==做多分支选择。
 
-expression执行完必须是int或枚举类型的值。case后面只能跟字面量，不能跟变量。
+基本格式：匹配到某个 `case` 就从那里开始执行，`break` 跳出整个 switch，`default` 兜底处理所有 case 都不匹配的情况。
 
-default可以省略，
+```java
+switch (表达式) {
+    case 值1:
+        分支1;
+        break;
+    case 值2:
+        分支2;
+        break;
+    default: // 与所有 case 都不匹配时执行
+        兜底分支;
+}
+```
 
-switch和if如何选择：switch能完成的，if也都能完成，但if更加灵活。switch更适合某个值的判断，if语句更适合区间。
+`switch` 后表达式支持 `byte`、`short`、`char`、`int` 及其包装类、`String`（JDK 7 起）、枚举；`case` 后只能跟==字面量==（不能是变量），且类型要与表达式一致或能自动转换。
 
-如果case分支不写break;的后果
+> [!tip] switch 还是 if？
+> `switch` 能做的 `if` 都能做，反之不一定。**`switch` 更适合判断某个离散值，`if` 更适合判断范围 / 区间。**
+
+**case 穿透**：`case` 分支不写 `break`，程序会「击穿」继续执行后面的 `case`，直到遇到 `break` 或 switch 结束——漏写 `break` 是常见 bug，而「有意的穿透」正好用来做 **case 合并**（多个值共用一段逻辑）。
+
+下面的示例涵盖传统写法的 `break`、case 穿透、case 合并与 `default`：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/SwitchDemo.java"
+```
+
+> [!warning] 使用注意
+> 1. `case` 后的值必须是==字面量==，不能是变量。
+> 2. `case` 值的类型要与 `switch` 表达式一致，或能自动转换。
+> 3. 传统写法中每个 `case` 分支通常以 `break` 结尾，避免意外的 case 穿透。
+> 4. 建议保留 `default` 分支处理特殊情况（省略也不会编译报错）。
+> 5. `default` 可放在 switch 块任意位置，但通常放在所有 `case` 最后，可读性更好。
+
+#### JDK 12 新语法
+
+JDK 12 起，switch 引入箭头写法 `case 值 -> ...`：==分支不会穿透、无需 `break`==，可用逗号合并多个值、用 `{}` 包裹多条语句，代码更简洁。
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/SwitchArrowDemo.java"
+```
+
+
+### for语句
+
+for循环语句的语法结构： for(初始化表达式；条件表达式；更新表达式){循环体；天初始化表达式最先执行，并且只执行1次。条件表达式的执行结果必须是一个布尔类型的值。更新表达式一般是负责更新某个变量值的。（只有更新了某个变量值，条件表达式才有机会变成fa1se。循环终止。)
+
+//for后面小括号中的三个表达式都不是必须的。//注意：这个是死循环。这是一个最简单的for循环。/*for(;;){System.out.println("死循环"); 天*///比较常见的很普通的for循环. for(int i = 0; i < 10; i++){System.out.println("i = " + i);}
+
+
+
+
+
 ## 方法
