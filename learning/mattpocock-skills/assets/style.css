@@ -405,7 +405,7 @@ pre::-webkit-scrollbar-thumb:hover { background-color: var(--accent); }
 
 /* —— 打印 —— */
 @media print {
-  .toc, .coursenav { display: none !important; }
+  .toc, .coursenav, .dzoom-overlay, .dzoom-open { display: none !important; }
   body { font-size: 11pt; background: #fff; color: #000; }
   article { padding: 1rem; max-width: 100%; }
   .opt, details, .flow-step { border-color: #ccc; }
@@ -413,3 +413,48 @@ pre::-webkit-scrollbar-thumb:hover { background-color: var(--accent); }
   a { color: #000; text-decoration: underline; }
   footer { border-color: #ccc; }
 }
+
+/* —— 图示缩放 · 可复用组件（配 assets/diagram-zoom.js）——
+   点 figure.diagram 右上「⛶ 放大」或点图本身 → 全屏浮层：
+   滚轮缩放(对准光标) / 拖拽平移 / 按钮 −/+/1:1 / Esc·✕·点背景 关闭。纯原生、墨夜基调。 */
+figure.diagram { position: relative; }
+figure.diagram .dzoom-open {
+  position: absolute; top: 6px; right: 6px; z-index: 2;
+  font: 600 0.72rem/1 var(--sans); color: var(--muted);
+  background: color-mix(in srgb, var(--accent-soft) 70%, var(--bg));
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: 0.32rem 0.52rem; cursor: zoom-in;
+  opacity: 0; transition: opacity .12s, color .12s, border-color .12s;
+}
+figure.diagram:hover .dzoom-open, figure.diagram .dzoom-open:focus-visible { opacity: 1; }
+figure.diagram .dzoom-open:hover { color: var(--accent); border-color: var(--accent); }
+figure.diagram pre.mermaid { cursor: zoom-in; }
+
+.dzoom-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; flex-direction: column;
+  background: color-mix(in srgb, var(--bg) 86%, #000);
+  backdrop-filter: blur(2px);
+}
+.dzoom-bar {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--accent-soft) 45%, var(--bg));
+}
+.dzoom-hint { margin-right: auto; color: var(--faint); font: 0.78rem/1 var(--sans); }
+.dzoom-btn {
+  min-width: 2rem; height: 2rem; padding: 0 0.6rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  font: 700 0.95rem/1 var(--sans); color: var(--fg);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 7px; cursor: pointer;
+  transition: color .12s, border-color .12s;
+}
+.dzoom-btn:hover { color: var(--accent); border-color: var(--accent); }
+.dzoom-btn.dzoom-close { color: var(--muted); }
+.dzoom-stage {
+  flex: 1; position: relative; overflow: hidden;
+  cursor: grab; touch-action: none;
+}
+.dzoom-stage.dragging { cursor: grabbing; }
+.dzoom-content { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
+.dzoom-content svg { display: block; max-width: none !important; }
