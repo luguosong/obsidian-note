@@ -8981,7 +8981,7 @@
       "item-3-43",
       "item-3-46"
     ],
-    "scroll": 878.5229952918316
+    "scroll": 871.5597515121792
   },
   "01-编程笔记/Java/JVM/JVM.md": {
     "expandedKeys": [],
@@ -9044,7 +9044,17 @@
     "expandedKeys": [
       "item-1-0",
       "item-2-2"
-    ]
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
   },
   "01-编程笔记/计算机组成原理/进制与数制转换.md": {
     "expandedKeys": [
@@ -9114,11 +9124,11 @@
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 12,
+        "line": 10,
         "ch": 0
       },
       "to": {
-        "line": 12,
+        "line": 10,
         "ch": 0
       }
     }
@@ -9207,7 +9217,8 @@
         "line": 10,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/Ai/编程智能体/编程智能体.md": {
     "expandedKeys": [],
@@ -9428,7 +9439,7 @@
         "ch": 0
       }
     },
-    "scroll": 58.61071428571428
+    "scroll": 0
   },
   "01-编程笔记/电子印章管理平台/电子印章基础知识.md": {
     "expandedKeys": [
@@ -9982,5 +9993,22 @@
       }
     },
     "expandedKeys": []
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/PowerShell配置Claude多账号切换.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-2"
+    ],
+    "cursor": {
+      "from": {
+        "line": 76,
+        "ch": 67
+      },
+      "to": {
+        "line": 76,
+        "ch": 100
+      }
+    },
+    "scroll": 63.37257281553398
   }
 }
