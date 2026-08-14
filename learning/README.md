@@ -40,3 +40,4 @@ teach 课程**贴着归属项目放**。本目录放**个人 / 跨项目**课程
 - `linux/` — 系统学 Linux：以鸟哥私房菜 CentOS7 为章节主线、用现代可靠源纠偏，彻底搞懂从计算机底层到操作系统的原理（进行中，第 1 课已完成）
 - `superpowers/` — 何时用哪个 skill + 自动触发机制（进行中，第 1 课已完成）
 - `mattpocock-skills/` — Matt Pocock 的 skills：全局地图 → 工程闭环 → 知其所以然（前序会话所建；进行中，第 1 课已完成）
+- `module-federation/` — 从零到原理：吃透 Module Federation（模块联邦）的运行原理与相关技术（JS 模块系统 / 打包 / 运行时加载 / shared）（进行中，第 1 课已完成）

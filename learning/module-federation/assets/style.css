@@ -1,0 +1,460 @@
+/* mattpocock-skills 课 · 共享样式
+ * 设计取向：kami 设计语言——暖羊皮纸色相 + 墨蓝单一强调色 + 衬线主导层级 + 编辑节奏。
+ * 与 superpowers 课共用同一套 kami 护眼配色（两课统一墨蓝、视觉一致，靠内容区分）。
+ * 这是工作区的第一个组件，每节课 <link> 它，让所有课看起来像一门课。
+ *
+ * 【全局约定】采用 kami 视觉风格，但把 kami 羊皮纸底翻成墨夜暗底（#16181b，
+ * 近黑暖炭、非纯黑，避免发光晕）。lesson 不调用 kami
+ * 引擎，仅把 kami 设计语言移植进本 css。强调块「上浮式」（块底比正文背景更亮）。
+ * 固定暗色墨夜底、不跟随系统亮色切换（@media print 仍白底黑字）。*/
+
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css');
+
+:root {
+  /* —— kami 设计语言 · 墨夜暗色版（固定暗色，不跟随系统亮色）—— */
+  --bg: #16181b;               /* 近黑暖炭底，非纯黑（避免发光晕 halation） */
+  --fg: #e7e2d6;               /* 暖白正文（呼应羊皮纸色相），对比 ≈13:1 */
+  --muted: #a9a291;            /* 暖灰副色（lede/表头/边注），对比 ≈7:1 */
+  --faint: #7c7566;
+  --accent: #d9b45c;           /* 提亮墨蓝（浅天蓝），暗底才跳得出，单一强调色 → 暖金（amber），与暖白正文和陶土代码同一暖调 */
+  --accent-soft: #2b2620;      /* 上浮式强调底：比 bg 亮且偏暖，与暖金强调同调 */
+  --rule: #332e28;             /* 冷灰分隔线 → 暖灰分隔线 */
+  --code-bg: #241f1a;          /* 代码块浮底（暖调），比 bg 亮一档 */
+  --code-fg: #e6a37f;          /* 柔陶土代码字（呼应砖红，降饱和提亮） */
+  --ok: #7fc9a0;
+  --ok-bg: #1e2a24;            /* 暗色状态块 */
+  --bad: #e0928c;
+  --bad-bg: #2c2020;
+  --warn-edge: #c79a5a;
+  --max: none;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  --sans: "LXGW WenKai", "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC",
+          "Songti SC", STSong, SimSun, Charter, Georgia, Palatino, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+article {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 4rem clamp(1.25rem, 4vw, 3.5rem) 6rem;
+}
+
+/* —— 标题区 —— */
+header { margin-bottom: 2.5rem; }
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.lede strong { color: var(--fg); }
+
+/* —— 正文 —— */
+section { margin: 2.5rem 0; }
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+  padding-top: 0.5rem;
+}
+
+h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+
+p { margin: 0 0 1.1rem; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 650; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 1rem 1.1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+pre code { background: none; color: inherit; padding: 0; }
+
+/* —— 内嵌小节（如"底下垫着什么"提示框）—— */
+.callout {
+  margin: 1.6rem 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--code-bg) 45%, var(--bg));
+}
+.callout h3 { margin-top: 0; color: var(--accent); }
+.callout p:last-child { margin-bottom: 0; }
+
+/* —— 步骤编号条（主流程实战课用）—— */
+.steps { list-style: none; padding-left: 0; counter-reset: step; margin: 1.4rem 0; }
+.steps > li {
+  position: relative;
+  padding: 0.2rem 0 0.2rem 2.6rem;
+  margin: 1.1rem 0;
+  counter-increment: step;
+}
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0; top: 0.1rem;
+  width: 1.7rem; height: 1.7rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.82rem;
+  font-family: var(--mono);
+}
+.steps h3 { margin: 0 0 0.4rem; }
+
+/* —— 骨架文件预览（实战课用）—— */
+pre.skel { font-size: 0.78rem; line-height: 1.55; }
+pre.skel .c { color: var(--muted); }
+
+/* —— 一句话收获 —— */
+.win {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  margin: 2rem 0;
+}
+.win p { margin: 0; }
+
+/* —— 列表 —— */
+ul, ol { padding-left: 1.3rem; margin: 0 0 1.1rem; }
+li { margin: 0.35rem 0; }
+
+/* —— 表格 —— */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 0.5rem 0 1.2rem;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--rule);
+}
+th { font-weight: 650; color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+tr:last-child td { border-bottom: none; }
+td code { font-size: 0.84em; }
+
+/* —— 主流程图（lesson 1 用） —— */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.4rem;
+  margin: 1rem 0 1.4rem;
+}
+.flow-step {
+  flex: 1 1 auto;
+  min-width: 7rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  background: var(--bg);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.flow-step .sk { font-family: var(--mono); color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.flow-step .防 { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; }
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--faint);
+  font-weight: 600;
+}
+
+/* —— mermaid 图（配 assets/mermaid-init.js；复杂 / 流程性内容用它，简单横向流程仍可用 .flow） —— */
+figure.diagram { margin: 1.8rem auto; max-width: 560px; }
+figure.diagram.wide { max-width: 760px; }
+figure.diagram figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+pre.mermaid {
+  margin: 0;
+  padding: 1.3rem 1rem;
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--bg));
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-align: center;
+  line-height: normal;
+  overflow-x: auto;
+}
+pre.mermaid svg { max-width: 100%; height: auto; }
+/* 渲染完成前 / CDN 失败时：降级显示图的源码文本，内容不丢 */
+pre.mermaid:not([data-processed]) {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--faint);
+  white-space: pre;
+}
+pre.mermaid[data-mermaid-failed]::before {
+  content: "（此图需联网渲染；以下为图的源码）";
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+/* —— 练习块 —— */
+.exercise {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  margin: 2rem 0;
+  background: color-mix(in srgb, var(--accent-soft) 30%, var(--bg));
+}
+.exercise h2 { margin-top: 0; padding-top: 0; }
+.exercise > p:first-of-type { color: var(--muted); }
+
+/* —— 测验 —— */
+.quiz { margin: 1.5rem 0; }
+.quiz-q { font-weight: 600; margin-bottom: 0.8rem; }
+
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  margin: 0.4rem 0;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+  line-height: 1.5;
+}
+.opt:hover { border-color: var(--accent); }
+.opt input { margin: 0.3rem 0 0; accent-color: var(--accent); flex: none; }
+
+.opt.correct { border-color: var(--ok); background: var(--ok-bg); }
+.opt.wrong   { border-color: var(--bad); background: var(--bad-bg); }
+.opt.dimmed  { opacity: 0.5; }
+
+.quiz-fb {
+  display: block;
+  margin-top: 0.8rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.quiz-fb.ok  { background: var(--ok-bg); color: var(--ok); }
+.quiz-fb.bad { background: var(--bad-bg); color: var(--bad); }
+
+/* —— 可折叠（诊断题） —— */
+details {
+  margin: 1rem 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+}
+summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+details[open] summary { margin-bottom: 0.6rem; }
+
+/* —— 引用 / 边注 —— */
+blockquote {
+  margin: 1.2rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--muted);
+}
+
+/* —— 一手源 / 追问 / 页脚 区块 —— */
+.source, .followup {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+}
+.followup {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  border: none;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+footer a { font-weight: 500; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+.tag.user { background: var(--accent-soft); color: var(--accent); }
+.tag.model { background: var(--code-bg); color: var(--muted); }
+
+/* —— 右侧 TOC（toc.js 注入；仅宽屏显示，正文预留右侧间距）—— */
+.toc { display: none; }
+.toc-title { margin: 0 0 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.toc-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--rule); }
+.toc-list li { margin: 0; }
+.toc-list a { display: block; padding: 0.32rem 0 0.32rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; color: var(--muted); font-size: 0.82rem; line-height: 1.45; text-decoration: none; transition: color .12s, border-color .12s; }
+.toc-list a:hover { color: var(--accent); }
+.toc-list a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 600; }
+@media (min-width: 1200px) {
+  .toc { display: block; position: fixed; top: 4.5rem; right: 1.5rem; width: 12.5rem; max-height: 78vh; overflow-y: auto; padding: 0.1rem 0.2rem 0.4rem 0; }
+  article { padding-right: 15rem; }
+}
+
+/* —— 左侧课程导航（nav.js 注入；仅宽屏显示，正文预留左侧间距）—— */
+.coursenav { display: none; }
+.coursenav-title { margin: 0 0 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.coursenav-group { margin: 0.85rem 0 0.2rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; color: var(--accent); }
+.coursenav-group:first-of-type { margin-top: 0.15rem; }
+.coursenav-list { list-style: none; margin: 0; padding: 0; }
+.coursenav-list li { margin: 0.15rem 0; }
+.coursenav-list a { display: flex; gap: 0.5rem; align-items: baseline; padding: 0.4rem 0.7rem; border-radius: 6px; color: var(--muted); font-size: 0.84rem; line-height: 1.35; text-decoration: none; transition: color .12s, background .12s; }
+.coursenav-list a:hover { color: var(--accent); background: var(--accent-soft); }
+.coursenav-list a.active { color: var(--fg); background: var(--accent-soft); font-weight: 600; }
+.cn-n { font-family: var(--mono); font-size: 0.74rem; font-weight: 700; color: var(--accent); }
+@media (min-width: 1200px) {
+  .coursenav { display: block; position: fixed; top: 4.5rem; left: 1.5rem; width: 15rem; max-height: 78vh; overflow-y: auto; }
+  article { padding-left: 18rem; }
+}
+
+/* —— 细窄暖调滚动条（墨夜暗色）· 固化约定 ——————————————————————
+   默认滚动条（尤其 Windows）又粗又亮，破坏暗色侧栏观感。侧栏 nav / 右侧 TOC / 代码块
+   统一收窄成暖调细条：静止极淡（--rule），悬停 panel 转灰（--faint），悬停 thumb 转金（--accent）。
+   透明边框 + background-clip:padding-box → 对 --bg 与 --code-bg 不同底色都自适应。
+   新组件若自带滚动，把选择器追加到下面即可（保持全站滚动条一致）。 */
+.coursenav, .toc, pre { scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+.coursenav::-webkit-scrollbar,
+.toc::-webkit-scrollbar,
+pre::-webkit-scrollbar { width: 8px; height: 8px; }
+.coursenav::-webkit-scrollbar-track,
+.toc::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-track { background: transparent; }
+.coursenav::-webkit-scrollbar-thumb,
+.toc::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb { background-color: var(--rule); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+.coursenav:hover::-webkit-scrollbar-thumb,
+.toc:hover::-webkit-scrollbar-thumb,
+pre:hover::-webkit-scrollbar-thumb { background-color: var(--faint); }
+.coursenav::-webkit-scrollbar-thumb:hover,
+.toc::-webkit-scrollbar-thumb:hover,
+pre::-webkit-scrollbar-thumb:hover { background-color: var(--accent); }
+
+/* —— 打印 —— */
+@media print {
+  .toc, .coursenav, .dzoom-overlay, .dzoom-open { display: none !important; }
+  body { font-size: 11pt; background: #fff; color: #000; }
+  article { padding: 1rem; max-width: 100%; }
+  .opt, details, .flow-step { border-color: #ccc; }
+  pre.mermaid { background: #fff; border-color: #ccc; }
+  a { color: #000; text-decoration: underline; }
+  footer { border-color: #ccc; }
+}
+
+/* —— 图示缩放 · 可复用组件（配 assets/diagram-zoom.js）——
+   点 figure.diagram 右上「⛶ 放大」或点图本身 → 全屏浮层：
+   滚轮缩放(对准光标) / 拖拽平移 / 按钮 −/+/1:1 / Esc·✕·点背景 关闭。纯原生、墨夜基调。 */
+figure.diagram { position: relative; }
+figure.diagram .dzoom-open {
+  position: absolute; top: 6px; right: 6px; z-index: 2;
+  font: 600 0.72rem/1 var(--sans); color: var(--muted);
+  background: color-mix(in srgb, var(--accent-soft) 70%, var(--bg));
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: 0.32rem 0.52rem; cursor: zoom-in;
+  opacity: 0; transition: opacity .12s, color .12s, border-color .12s;
+}
+figure.diagram:hover .dzoom-open, figure.diagram .dzoom-open:focus-visible { opacity: 1; }
+figure.diagram .dzoom-open:hover { color: var(--accent); border-color: var(--accent); }
+figure.diagram pre.mermaid { cursor: zoom-in; }
+
+.dzoom-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; flex-direction: column;
+  background: color-mix(in srgb, var(--bg) 86%, #000);
+  backdrop-filter: blur(2px);
+}
+.dzoom-bar {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--accent-soft) 45%, var(--bg));
+}
+.dzoom-hint { margin-right: auto; color: var(--faint); font: 0.78rem/1 var(--sans); }
+.dzoom-btn {
+  min-width: 2rem; height: 2rem; padding: 0 0.6rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  font: 700 0.95rem/1 var(--sans); color: var(--fg);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 7px; cursor: pointer;
+  transition: color .12s, border-color .12s;
+}
+.dzoom-btn:hover { color: var(--accent); border-color: var(--accent); }
+.dzoom-btn.dzoom-close { color: var(--muted); }
+.dzoom-stage {
+  flex: 1; position: relative; overflow: hidden;
+  cursor: grab; touch-action: none;
+}
+.dzoom-stage.dragging { cursor: grabbing; }
+.dzoom-content { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
+.dzoom-content svg { display: block; max-width: none !important; }

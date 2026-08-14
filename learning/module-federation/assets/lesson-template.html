@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+  课程页模板 · 固定布局 & 稳定风格（mattpocock-skills 课）
+
+  === 固化的统一布局（所有课一致，勿逐课改）===
+    墨夜暖金暗色 · 满宽正文 · 左「课程」导航(nav.js) · 右「本课目录」TOC(toc.js) · 底部 prev/next。
+    视觉全来自 ../assets/style.css，交互来自 toc.js / nav.js / quiz.js（head 里那 4 行，别删）。
+
+  === 新建课程标准流程 ===
+    1. 复制本文件 → ../lessons/000N-<slug>.html，替换所有【…】占位。
+    2. 正文按下方结构填；用 h2 分节（右侧 TOC 自动从 h2 生成）。
+    3. 把新课登记进 ../assets/nav.js 的 LESSONS 数组（左侧导航才会出现它）。
+    4. 设好底部 footer 的「← 上一课」与「下一课 →」链接。
+
+  === 硬规则（详见 NOTES.md「写课视觉契约」）===
+    · 样式唯一来源 = ../assets/style.css；禁止写 <style>、禁止内联配色/字号
+      （个别一次性微调如 <span style="font-size:.85em"> 允许）。
+    · 只用下面出现过的组件类；缺组件先加类进 style.css，别在单课自造样式。
+    · ../assets/ 路径在 assets/ 和 lessons/ 下都成立，复制后无需改。
+    · 英文术语/文件名/缩写首次出现，后加中文括号注解（如 mission（使命）、ZPD（最近发展区）、RESOURCES.md（资源清单）），降低阅读压力；同课首次注即可，注解用 GLOSSARY 中文名。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 N 课 · 【标题】</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/quiz.js"></script>
+<script defer src="../assets/diagram-zoom.js"></script>
+</head>
+<body>
+<article>
+
+<!-- ① 标题区：eyebrow（第几课·阶段）+ h1（可含 <code>）+ lede（一句话钩子） -->
+<header>
+<p class="eyebrow">第 N 课 · 【阶段，例：单 skill 深挖 ③】</p>
+<h1>【标题，可含 <code>skill-name</code>】</h1>
+<p class="lede">【一句话钩子：这课解决什么、为什么此刻学它。可用 <strong>强调</strong>。】</p>
+</header>
+
+<!-- ② 一句话收获：每课必有，单一明确 win -->
+<section class="win">
+<p><strong>一句话收获：</strong>【本课唯一的 tangible win】</p>
+</section>
+
+<!-- ③ 正文小节：h2 带序号；按需取用下面的组件，缺了别自造样式 -->
+<section>
+<h2>1. 【小节标题】</h2>
+<p>【正文。内链别的课 <a href="0001-xxx.html">第 1 课</a>，一手源用 <a href="https://…">外链</a>。】</p>
+
+<!-- 提示框（可选） -->
+<div class="callout">
+<h3>【提示标题】</h3>
+<p>【补充 / 旁注】</p>
+</div>
+</section>
+
+<section>
+<h2>2. 【小节标题】</h2>
+
+<!-- 表格（可选） -->
+<table>
+<thead><tr><th>【列】</th><th>【列】</th></tr></thead>
+<tbody>
+<tr><td>【…】</td><td>【…】</td></tr>
+</tbody>
+</table>
+
+<!-- 一手源引用（可选） -->
+<blockquote>【原文引用】<br><span style="font-size:.85em">— 出处</span></blockquote>
+</section>
+
+<!--
+  其它可选组件（用到再留，别自造）：
+    步骤条   <ol class="steps"><li><h3>标题</h3>正文</li></ol>
+    流程图   <div class="flow"><div class="flow-step"><span class="sk">skill</span><span class="防">说明</span></div><span class="flow-arrow">→</span> … </div>
+    mermaid  复杂 / 流程性内容：<head> 加 <script defer src="../assets/mermaid-init.js"></script>；
+             正文 <figure class="diagram"><pre class="mermaid"> …flowchart 图定义… </pre>
+             <figcaption>图注</figcaption></figure>。jsdelivr CDN + 墨夜暗色、容器已限宽 560px 居中；
+             可抄的完整实例见 lessons/0005-read-skill-boundaries.html。简单横向流程仍用上面的 .flow。
+             每张 <figure class="diagram"> 默认带「⛶ 放大」全屏缩放（diagram-zoom.js 已在 head，无需额外引）。
+    角色标签 <span class="tag user">user-invoked</span> / <span class="tag model">model-invoked</span>
+-->
+
+<!-- ④ 检索练习：每课三连；quiz.js 选中即判。data-answer=正确项字母，data-explain=解析。选项字数尽量等长，别靠格式泄题 -->
+<section class="exercise">
+<h2>检索练习 · 三连</h2>
+<p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+<form class="quiz" data-answer="B" data-explain="【解析：为什么 B 对、别的为什么错】">
+<p class="quiz-q">1. 【题干】</p>
+<label class="opt"><input type="radio" name="q1" value="A"><span>【选项 A】</span></label>
+<label class="opt"><input type="radio" name="q1" value="B"><span>【选项 B（正解）】</span></label>
+<label class="opt"><input type="radio" name="q1" value="C"><span>【选项 C】</span></label>
+<label class="opt"><input type="radio" name="q1" value="D"><span>【选项 D】</span></label>
+<output class="quiz-fb" hidden></output>
+</form>
+
+<!-- 再复制两题：name 改 q2 / q3 -->
+</section>
+
+<!-- ⑤ 推荐一手源：最高信任的「读 / 看」资源，带出处 -->
+<section class="source">
+<h2>推荐一手源</h2>
+<ul>
+<li><strong><a href="https://…">【一手源标题】</a></strong> —— 【它是什么、覆盖什么、何时查它】。</li>
+</ul>
+</section>
+
+<!-- ⑥ 追问区：提醒「不清楚就问老师」+ 指参考卡 -->
+<section class="followup">
+<h2>还不清楚就问我</h2>
+<p>我是你这门课的老师。任何卡点直接问，例如：<em>【示例问题】</em>。随时回查见 <a href="../reference/【卡片】.html">参考卡</a>。</p>
+</section>
+
+<!-- ⑦ 页脚：上一课 + 使命 -->
+<footer>
+<span><a href="000M-xxx.html">← 第 M 课 · 【上一课标题】</a></span>
+<span><a href="../MISSION.md">课程使命 / 路径</a></span>
+</footer>
+
+</article>
+</body>
+</html>
