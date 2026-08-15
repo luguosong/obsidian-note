@@ -878,4 +878,18 @@ do {
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/DoWhileDemo.java"
 ```
 
+
+### 跳转语句
+
+#### break语句
+
+1. 出现在switch语句用来终止switch语句的执行。 2. 出现在循环中，用来终止循环的执行。 3. break；用来终止离它最近的循环。 4. break循环标记；用来终止指定的循环。
+
+##### break语句与return语句
+
+1. break;终止循环。 2. return;终止方法。
+
+#### continue语句
+
+1. 终止当前本次循环，直接进入下一次循环继续执行。 2. continue；终止当前本次循环，直接进入离它最近的循环继续。 3. continue循环标记；终止当前本次循环，直接进入指定的循环继续。
 ## 方法
