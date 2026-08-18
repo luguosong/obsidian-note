@@ -881,15 +881,53 @@ do {
 
 ### 跳转语句
 
+> [!note] 定义
+> `跳转语句`在循环 / switch 的执行过程中直接改变流程走向：`break` ==终止==循环，`continue` ==跳过==本次循环、直接进入下一次。
+
 #### break语句
 
-1. 出现在switch语句用来终止switch语句的执行。 2. 出现在循环中，用来终止循环的执行。 3. break；用来终止离它最近的循环。 4. break循环标记；用来终止指定的循环。
+| 用法 | 作用 |
+|---|---|
+| switch 中的 `break` | 终止整个 switch 语句（见 [[#switch语句]]） |
+| 循环中的 `break;` | 终止==离它最近==的一层循环 |
+| `break 标签名;` | 终止==标签指定==的那层循环 |
+
+完整可运行示例（终止最近一层、嵌套中只跳内层、带标签跳出指定循环）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/BreakDemo.java"
+```
 
 ##### break语句与return语句
 
-1. break;终止循环。 2. return;终止方法。
+| 语句 | 终止范围 |
+|---|---|
+| `break;` | 只终止==循环==，循环后面的代码仍会执行 |
+| `return;` | 终止==整个方法==，循环后面的代码不再执行 |
+
+完整可运行示例（两个方法条件相同，对比循环后代码的执行差异）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/BreakVsReturnDemo.java"
+```
 
 #### continue语句
 
-1. 终止当前本次循环，直接进入下一次循环继续执行。 2. continue；终止当前本次循环，直接进入离它最近的循环继续。 3. continue循环标记；终止当前本次循环，直接进入指定的循环继续。
+| 用法 | 作用 |
+|---|---|
+| `continue;` | 终止==本次==循环，直接进入离它==最近==循环的下一次 |
+| `continue 标签名;` | 终止本次循环，直接进入==标签指定==循环的下一次 |
+
+完整可运行示例（跳过本次、嵌套中只作用内层、带标签跳到指定循环）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/ContinueDemo.java"
+```
+
 ## 方法
+
+方法是什么，有什么用： ① 方法（Method）是一段可以被重复利用的代码片段。 ②一个方法一般都是一个独立的功能。 ③ 在C语言中叫做函数(Function)。
+
+### 如果不使用方法存在的问题
+
+日/*在这个程序当中，我不会使用方法，请分析，程序这样写有什么问题？缺点是什么?*/public class MethodTest01{日 public static void main(String[] args){//需求1：请编写程序计算100和200的和。 int a = 100; int b = 200; int c = a + b; System.out.println(a + "+" + b + "=" + c);//需求2:请编写程序计算666和888的和。 int i = 666; int j = 888; int m = i + j; System.out.println(i + "+" + j + "=" + m); I 1}}
