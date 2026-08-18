@@ -30,6 +30,9 @@ wsl # 直接进入默认虚拟机
 
 ```
 
+安装时会让你设置用户名：
+![[Pasted image 20260818162016.png]]
+
 将wsl移动到指定硬盘：
 
 ```shell
@@ -91,6 +94,8 @@ netsh interface portproxy add v4tov4 listenport=4000 listenaddress=0.0.0.0 conne
 ### 镜像模式（mirrored）
 
 Win11 22H2+。把宿主机网卡镜像进 Linux，共享 IP、端口直通，宿主机与 WSL 直接用 `127.0.0.1` 互通，无需端口转发。
+
+`C:\Users\10545\.wslconfig`
 
 ```ini
 [wsl2]

@@ -117,6 +117,7 @@ Java 源代码由一连串==词法元素==（token）构成，其中最基础的
 | | | | | |
 |---|---|---|---|---|
 | `const` | `goto` | | | |
+
 ### 字面量
 
 > [!note] 定义
@@ -163,6 +164,7 @@ Java 源代码由一连串==词法元素==（token）构成，其中最基础的
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/variable/ScopeDemo.java"
 ```
+
 ### 变量分类
 
 > [!note] 定义
@@ -189,6 +191,7 @@ mindmap
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/variable/VariableDemo.java"
 ```
+
 ## 数据类型
 
 Java 是==强类型语言==：每个变量在使用前必须声明类型，且类型在编译期就确定。
@@ -252,7 +255,7 @@ Java 是==强类型语言==：每个变量在使用前必须声明类型，且�
 
 #### 浮点型
 
-`float`（单精度，精确到7位小数）和 `double`（双精度，精确到15位小数），遵循 IEEE 754 标准。
+`float`（单精度，6~7 位有效数字）和 `double`（双精度，15 位有效数字），遵循 IEEE 754 标准。
 
 **默认类型与后缀** —— 浮点字面量==默认是`double`==。声明 `float` 必须加 `F` 后缀：
 
@@ -341,7 +344,6 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 | **UTF-16** | Unicode 编码 | 2 或 4 字节变长 | 2 字节 | ==2 字节== | BMP 字符 2 字节；超出 BMP（emoji、生僻字）用代理对占 4 字节 |
 | **UTF-32** | Unicode 编码 | 4 字节定长 | 4 字节 | 4 字节 | 每字符固定 4 字节，最占空间 |
 
-
 中国及港台地区有一套独立的汉字编码标准，按收录范围从小到大演进，开发中文应用、处理历史数据时常会遇到：
 
 | 编码 | 全称 | 收录范围 | 汉字字节 | 演进关系 |
@@ -400,7 +402,7 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/ArithmeticBasicDemo.java"
 ```
 
-#### 除法 `/` 与取模 `%`
+#### 除法 / 与取模 %
 
 两个最易踩坑的运算：
 
@@ -411,7 +413,7 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 > [!warning] 整数除法是截断，不是四舍五入
 > `7 / 2` 得 `3`，既不是 `3.5` 也不是 `4`。两个 `int` 相除结果必为 `int`，直接丢掉小数部分。需要小数结果时，至少让一个操作数为浮点数（如 `7 / 2.0`）。
 
-#### `+` 的字符串拼接
+#### + 的字符串拼接
 
 `+` 两边都是数字则求和；==只要有一边是字符串，就变成拼接==，且按从左到右顺序执行：
 
@@ -419,7 +421,7 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/operator/StringConcatDemo.java"
 ```
 
-#### 自增 `++` 与自减 `--`
+#### 自增 ++ 与自减 --
 
 变量自身 ±1。单独成句时 `++a` 与 `a++` 完全等价；==参与表达式时区别才显现==：
 
@@ -678,7 +680,6 @@ char 的取值范围 `0 ~ 65535` 即 Unicode 基本多文种平面（BMP），�
 > [!tip] 记不住就加括号
 > 除了「乘除高于加减」「关系高于逻辑」这些直觉，其它优先级不必硬记——用小括号显式表达运算意图，既避免踩坑又提升可读性。
 
-
 ## 控制语句
 
 > [!note] 定义
@@ -766,7 +767,7 @@ switch (表达式) {
 }
 ```
 
-`switch` 后表达式支持 `byte`、`short`、`char`、`int` 及其包装类、`String`（JDK 7 起）、枚举；`case` 后只能跟==字面量==（不能是变量），且类型要与表达式一致或能自动转换。
+`switch` 后表达式支持 `byte`、`short`、`char`、`int` 及其包装类、`String`（JDK 7 起）、枚举；`case` 后只能跟==编译期常量==（字面量或 `final` 常量，不能是普通变量），且类型要与表达式一致或能自动转换。
 
 > [!tip] switch 还是 if？
 > `switch` 能做的 `if` 都能做，反之不一定。**`switch` 更适合判断某个离散值，`if` 更适合判断范围 / 区间。**
@@ -780,7 +781,7 @@ switch (表达式) {
 ```
 
 > [!warning] 使用注意
-> 1. `case` 后的值必须是==字面量==，不能是变量。
+> 1. `case` 后的值必须是==编译期常量==（字面量或 `final` 常量），不能是普通变量。
 > 2. `case` 值的类型要与 `switch` 表达式一致，或能自动转换。
 > 3. 传统写法中每个 `case` 分支通常以 `break` 结尾，避免意外的 case 穿透。
 > 4. 建议保留 `default` 分支处理特殊情况（省略也不会编译报错）。
@@ -793,7 +794,6 @@ JDK 12 起，switch 引入箭头写法 `case 值 -> ...`：==分支不会穿透�
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/SwitchArrowDemo.java"
 ```
-
 
 ### for语句
 
@@ -878,7 +878,6 @@ do {
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/DoWhileDemo.java"
 ```
 
-
 ### 跳转语句
 
 > [!note] 定义
@@ -926,8 +925,165 @@ do {
 
 ## 方法
 
-方法是什么，有什么用： ① 方法（Method）是一段可以被重复利用的代码片段。 ②一个方法一般都是一个独立的功能。 ③ 在C语言中叫做函数(Function)。
+> [!note] 定义
+> `方法`（Method）是一段可以被重复利用的代码片段，通常对应一个独立的功能。在 C 语言中称为`函数`（Function）。
 
 ### 如果不使用方法存在的问题
 
-日/*在这个程序当中，我不会使用方法，请分析，程序这样写有什么问题？缺点是什么?*/public class MethodTest01{日 public static void main(String[] args){//需求1：请编写程序计算100和200的和。 int a = 100; int b = 200; int c = a + b; System.out.println(a + "+" + b + "=" + c);//需求2:请编写程序计算666和888的和。 int i = 666; int j = 888; int m = i + j; System.out.println(i + "+" + j + "=" + m); I 1}}
+先看一段不用方法的代码——两次求和逻辑相同，却各写了一遍：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/method/NoMethodDemo.java"
+```
+
+> [!warning] 问题
+> 代码复用性差：相同功能写了一遍又一遍，冗余且难以维护。
+
+### 方法的作用
+
+把重复的求和逻辑封装成一个方法，一次定义、多次调用：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/method/SumMethodDemo.java"
+```
+
+> [!tip] 方法的价值
+> 方法把可复用的代码封装成独立的功能单元：需要时直接调用，改逻辑也只需改一处。
+
+### 方法的定义与调用
+
+**语法格式**如下——修饰符列表、返回值类型、方法名、形参列表、方法体五部分：
+
+```java
+[修饰符列表] 返回值类型 方法名(形式参数列表) {
+    方法体;
+}
+```
+
+各组成部分说明：
+
+| 组成部分 | 说明 |
+|---|---|
+| 修饰符列表 | 可选；目前统一写 `public static`（后续章节展开） |
+| 返回值类型 | 任意数据类型（基本 / 引用，如 `int`、`String`），或 `void` 表示无返回值——**不能空着不写** |
+| 方法名 | 合法标识符即可，小驼峰命名，一般为动词、见名知意，如 `sum`、`login`、`logout`、`deleteUser` |
+| 形式参数列表 | 简称==形参==，0~N 个，多个用逗号隔开；形参是局部变量，起决定作用的是==类型==（形参名随意） |
+| 方法体 | 大括号内的 Java 语句，遵循==自上而下==的执行顺序 |
+
+> [!note] 返回值与 return
+> - 返回值类型**不是** `void` 时，方法结束前必须用 `return 值;` 返回数据；接收返回值的变量类型要与返回值==一致==（或可自动 / 强制转换）。
+> - 返回值类型**是** `void` 时，不能写 `return 值;`；可以写 `return;` 提前终止方法，也可以不写（视业务而定）。
+> - 只要 `return` 执行，方法立即结束。
+> - 对有返回值的方法，调用者可以选择接收，也可以不接收。
+
+**方法的调用**：当方法带 `static` 修饰时，通过`类名.方法名(实际参数列表)`调用。实参（==实际参数==）与形参必须==一一对应==：
+
+- 类型一一对应
+- 个数一一对应
+
+### 方法执行内存分析
+
+方法==只定义、不调用，不会分配内存空间==。方法真正占用内存发生在调用的瞬间：
+
+- **方法调用**：在栈（stack）内存中为该方法分配活动场所，此时发生==压栈==。
+- **方法结束**：释放该方法占用的内存空间，此时发生==弹栈==。
+
+```mermaid
+flowchart LR
+    A["方法调用前<br/>栈内存"] -->|"调用方法<br/>压栈：分配活动场所"| B["方法执行中<br/>栈内存 + 活动场所"]
+    B -->|"方法结束<br/>弹栈：释放"| C["方法结束后<br/>栈内存"]
+```
+
+> [!note] 方法的字节码存在哪
+> 从 Java 8 开始，方法的字节码指令存储在==元空间==（Metaspace）中，元空间使用的是本地内存。
+
+### 方法重载
+
+方法重载（overload）是==编译阶段==的一种机制（静态多态）：同一个类中允许多个同名方法，编译期即根据参数列表确定调用哪一个。
+
+> [!note] 构成方法重载的条件
+> 需同时满足：
+> 1. 在同一个类中
+> 2. 方法名相同
+> 3. 参数列表不同——类型不同、个数不同、顺序不同，任一即可
+
+完整可运行示例（参数类型不同、个数不同、顺序不同，编译期各自绑定到对应版本）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/method/OverloadDemo.java"
+```
+
+> [!warning] 与返回值类型无关
+> 仅返回值类型不同、参数列表相同，==不构成==重载，编译报错——编译期无法仅凭返回值区分该调用哪个方法。
+
+> [!tip] 何时用 & 好处
+> 同一个类中，多个功能相似的方法建议用重载（同名）。好处：简化调用、便于维护、代码美观。
+
+### 方法递归
+
+> [!tip] 使用要点
+> - 递归必须有明确的==结束条件==，否则会无限递归。
+> - 递归和循环都能实现时，==优先选择循环==——递归更耗费内存。
+
+> [!question] 待深入
+> - 什么是方法的递归调用？
+> - 递归时内存是如何变化的？
+> - 递归有结束条件，就一定不会栈内存溢出吗？
+> - 实际开发中使用递归发生栈内存溢出，该怎么办？
+
+## 包（package）和import
+
+### 包（package）
+
+> [!note] 定义
+> `包`（package）是 Java 的类管理机制：不同的类放在不同的包下，==便于管理、便于维护==。
+
+**语法格式**——package 语句只能写==1 行==，且必须写在 java 源码的==第一行==（有效代码行，注释除外）：
+
+```java
+package 包名;
+```
+
+**定义包之后的编译与运行**：
+
+| 操作 | 命令 | 说明 |
+|---|---|---|
+| 带包编译 | `javac -d . PackageTest01.java` | 语法：`javac -d 生成目录 源文件路径`，`.` 表示当前目录，编译器自动按包名创建目录结构 |
+| 带包运行 | `java org.apache.struts.PackageTest01` | 必须使用==完整类名==（包名 + 类名） |
+
+> [!warning] 完整类名带包名
+> 一旦定义了 package，类的完整类名 = ==包名 + 类名==。运行时必须带包名，否则找不到类。
+
+也可以不带 `-d` 编译后手动创建目录、移动 class 文件——麻烦，不推荐。
+
+> [!note] 包命名规范
+> - 所有包名全部==小写==
+> - 公司域名倒序 + 项目名 + 模块名 + 功能名，如 `com.powernode.oa.epmgt.service`
+
+### 包对方法调用的影响
+
+同一个包的类：直接用 `类名.方法名(实参)` 调用；不同包的类：不用 import 时，必须写==完整类名==。
+
+完整可运行示例（同包直接用类名、跨包用完整类名调用）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/pkg/PackageCallDemo.java"
+```
+
+### import
+
+A 类中使用 B 类，A 类和 B 类==不在同一个包==下时，就需要在 A 类中用 `import` 语句引入 B 类；引入后用简单类名调用，不必再写完整类名。
+
+> [!note] import 语法规则
+> - 位置：只能出现在==package 语句之下、class 定义之前==
+> - import 语句可以编写多个
+> - `java.lang` 包下的类（如 `System`、`String`）编译器==自动引入==，不需要手动引入
+> - 支持模糊导入（通配符）：`import java.util.*;`
+> - 支持静态导入：`import static java.lang.System.*;`——导入静态成员后，调用时可不写类名
+
+完整可运行示例（import 后用简单类名调用、java.lang 自动引入、静态导入省略类名）：
+
+```java
+--8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/pkg/ImportDemo.java"
+```
+

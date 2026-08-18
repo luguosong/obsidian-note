@@ -5,7 +5,8 @@
   var LESSONS = [
     { file: "0001-install-and-setup.html", n: "1", t: "安装与基本配置" },
     { file: "0002-core-workflow.html",     n: "2", t: "核心工作流与基本用法" },
-    { file: "0003-install-internals.html", n: "3", t: "安装原理深入：irm | iex 与 npm" }
+    { file: "0003-install-internals.html", n: "3", t: "安装原理深入：irm | iex 与 npm" },
+    { file: "0004-hooks-foundations.html", n: "4", t: "Hooks 基础：生命周期自动化" }
   ];
 
   function build() {

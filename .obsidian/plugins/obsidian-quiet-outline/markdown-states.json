@@ -8939,7 +8939,7 @@
       "item-2-4",
       "item-2-6"
     ],
-    "scroll": 41.861979166666664
+    "scroll": 40.906192870201096
   },
   "01-编程笔记/Java/JavaSE/JavaSE.md": {
     "cursor": {
@@ -8957,35 +8957,19 @@
   "01-编程笔记/Java/JavaSE/Java基础语法.md": {
     "cursor": {
       "from": {
-        "line": 932,
-        "ch": 329
+        "line": 1036,
+        "ch": 3
       },
       "to": {
-        "line": 932,
-        "ch": 329
+        "line": 1036,
+        "ch": 20
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-1",
-      "item-3-2",
-      "item-4-3",
-      "item-2-8",
-      "item-2-11",
-      "item-3-12",
-      "item-4-16",
-      "item-2-19",
-      "item-3-20",
-      "item-3-27",
-      "item-3-35",
-      "item-2-41",
-      "item-3-43",
-      "item-3-46",
-      "item-3-48",
-      "item-4-49",
-      "item-2-52"
+      "item-2-59"
     ],
-    "scroll": 920.4967447916666
+    "scroll": 1061.9934895833333
   },
   "01-编程笔记/Java/JVM/JVM.md": {
     "expandedKeys": [],
@@ -9094,21 +9078,18 @@
     }
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/mattpocock skills.md": {
-    "expandedKeys": [
-      "item-1-0",
-      "item-2-2"
-    ],
+    "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 22,
+        "line": 137,
         "ch": 0
       },
       "to": {
-        "line": 22,
+        "line": 137,
         "ch": 0
       }
     },
-    "scroll": 14.006510416666666
+    "scroll": 0
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
@@ -9421,15 +9402,16 @@
         "ch": 0
       }
     },
-    "scroll": 0
+    "scroll": 21.030038402304818
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/claude code已安装的扩展和配置.md": {
     "expandedKeys": [
-      "item-1-0",
-      "item-2-3",
       "item-3-4",
+      "item-2-3",
+      "item-1-0",
       "item-3-8",
       "item-3-12",
+      "item-3-16",
       "item-2-20",
       "item-2-26"
     ],
@@ -9443,7 +9425,7 @@
         "ch": 0
       }
     },
-    "scroll": 0
+    "scroll": 217.98635519915803
   },
   "01-编程笔记/电子印章管理平台/电子印章基础知识.md": {
     "expandedKeys": [
@@ -9665,15 +9647,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 7,
-        "ch": 0
+        "line": 93,
+        "ch": 18
       },
       "to": {
-        "line": 7,
-        "ch": 0
+        "line": 93,
+        "ch": 18
       }
     },
-    "scroll": 0
+    "scroll": 72.36508396062536
   },
   "01-编程笔记/Linux/鸟哥Linux私房菜/基础篇/第十七章 认识系统服务(daemons).md": {
     "expandedKeys": [
@@ -9999,7 +9981,8 @@
         "ch": 60
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [],
+    "scroll": 0
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/PowerShell配置Claude多账号切换.md": {
     "expandedKeys": [
@@ -10013,10 +9996,10 @@
       },
       "to": {
         "line": 76,
-        "ch": 100
+        "ch": 99
       }
     },
-    "scroll": 66.88672941633799
+    "scroll": 125.67380562475172
   },
   "05-历史/中国史/未命名.md": {
     "expandedKeys": []

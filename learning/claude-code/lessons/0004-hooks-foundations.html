@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 4 课 · Hooks 基础：确定性的生命周期自动化</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/toc.js"></script>
+<script defer src="../assets/nav.js"></script>
+<script defer src="../assets/mermaid-init.js"></script>
+</head>
+<body>
+<article>
+
+<header>
+  <p class="eyebrow">Claude Code 系统课 · 第 4 课</p>
+  <h1>Hooks 基础：确定性的生命周期自动化</h1>
+  <p class="lede">
+    你在 <a href="https://docs.anthropic.com/en/docs/claude-code/memory" target="_blank">CLAUDE.md</a> 里写「改完代码<strong>必须</strong>跑一遍 lint」，
+    但 Claude 有时就是忘了——因为那只是一句<strong>建议</strong>，模型可以不听。
+    <strong>Hook 不一样：它是一段在生命周期固定节点<em>必然运行</em>的代码。</strong>
+    这节课把 hook 的运行机制拆开——<strong>何时触发</strong>（生命周期）、<strong>怎么接线</strong>（三层配置）、
+    <strong>怎么裁决</strong>（stdin/stdout 协议）——建立能自己写护栏、审计、自动格式化的底层认知。
+  </p>
+</header>
+
+<section class="win">
+  <p><strong>一句话收获：</strong>hook = 在 Claude Code 生命周期的某个<strong>事件</strong>上，用 <strong>matcher</strong> 过滤后运行你的<strong>处理器</strong>；
+  Claude Code 通过 <strong>stdin 喂给它一段 JSON 上下文</strong>，处理器再用<strong>退出码</strong>或<strong>回吐的 JSON</strong> 告诉 Claude Code「放行、拦截、还是往上下文里塞点料」。这是<strong>确定性</strong>的控制，不是求模型配合。</p>
+</section>
+
+<section>
+  <h2>1. 为什么要用 hook：建议 vs 保证</h2>
+  <p>Claude Code 有两种「让它按规矩办事」的路子，强度天差地别：</p>
+  <table>
+    <thead><tr><th></th><th>CLAUDE.md / 提示词</th><th>Hook</th></tr></thead>
+    <tbody>
+      <tr><td><strong>本质</strong></td><td>喂给<strong>模型</strong>的一段文字建议</td><td>由 Claude Code <strong>运行时执行的代码</strong></td></tr>
+      <tr><td><strong>可靠性</strong></td><td>概率性——模型可能忽略、忘记、误解</td><td><strong>确定性</strong>——只要事件触发就必然运行</td></tr>
+      <tr><td><strong>能否强制</strong></td><td>不能真正阻止一个动作</td><td><strong>能</strong>——可直接拦下一次工具调用</td></tr>
+      <tr><td><strong>适合</strong></td><td>风格偏好、背景知识、软约定</td><td>硬规则：护栏、审计、自动格式化</td></tr>
+    </tbody>
+  </table>
+  <p>官方文档把 hook 定义为「在 Claude Code 生命周期特定节点<strong>自动执行</strong>的用户自定义 shell 命令、HTTP 端点或 LLM 提示」<a href="https://docs.anthropic.com/en/docs/claude-code/hooks" target="_blank" class="cite">[docs: Hooks reference]</a>。关键词是<strong>自动</strong>与<strong>确定</strong>——它把「希望 Claude 做 X」变成「X 一定会发生」。</p>
+
+  <div class="callout">
+    <h3>一个判断标准</h3>
+    <p>「这条规则被违反一次，我能接受吗？」——能接受（如命名风格）→ 写进 CLAUDE.md；<strong>不能接受</strong>（如「禁止 <code>rm -rf</code>」「密钥不许进日志」「提交前必须过测试」）→ 写成 hook。</p>
+  </div>
+</section>
+
+<section>
+  <h2>2. 生命周期：hook 在「何时」触发</h2>
+  <p>Claude Code 一次会话里有很多可挂载的<strong>事件</strong>。它们按触发频率分成三档<strong>节奏（cadence）</strong>——先记住节奏，再记具体事件名，就不会乱：</p>
+  <table>
+    <thead><tr><th>节奏</th><th>典型事件</th><th>一句话</th></tr></thead>
+    <tbody>
+      <tr><td><strong>每会话一次</strong></td><td><code>SessionStart</code> / <code>SessionEnd</code></td><td>会话开始 / 结束时各触发一次</td></tr>
+      <tr><td><strong>每轮一次</strong></td><td><code>UserPromptSubmit</code> / <code>Stop</code></td><td>你每提交一次提问、Claude 每答完一轮</td></tr>
+      <tr><td><strong>每次工具调用</strong></td><td><code>PreToolUse</code> / <code>PostToolUse</code></td><td>agentic loop 里每调一次工具，前后各一次</td></tr>
+    </tbody>
+  </table>
+
+  <figure class="diagram">
+    <pre class="mermaid">
+flowchart TD
+  A["SessionStart<br/>（每会话一次）"] --> B["UserPromptSubmit<br/>（每轮一次·你提交提问）"]
+  B --> C["PreToolUse<br/>（工具执行前·可拦截）"]
+  C --> D["工具执行"]
+  D --> E["PostToolUse<br/>（工具成功后）"]
+  E -->|"还要再调工具"| C
+  E -->|"没有更多工具"| F["Stop<br/>（每轮一次·可拦回继续）"]
+  F -->|"进入下一轮"| B
+  F --> G["SessionEnd<br/>（每会话一次）"]
+  classDef gate fill:#2b2620,stroke:#d9b45c,color:#e7e2d6;
+  class C,F gate;
+    </pre>
+    <figcaption>会话（外）→ 轮次（中）→ 工具循环（内）三层嵌套；金色框是能「拦截/改写」的闸门事件</figcaption>
+  </figure>
+
+  <p>这只是最常用的 6 个。实际事件目录有 <strong>约 30 个</strong>——还包括 <code>SubagentStart/Stop</code>（子代理）、<code>PreCompact</code>（压缩上下文前）、<code>Notification</code>（通知）、<code>PermissionRequest</code>（权限裁决）、<code>FileChanged</code>（文件变动）等<a href="https://docs.anthropic.com/en/docs/claude-code/hooks#hook-events" target="_blank" class="cite">[docs: Hook events]</a>。<strong>先吃透这 6 个骨架事件，其余按需查表即可。</strong></p>
+</section>
+
+<section>
+  <h2>3. 配置骨架：三层嵌套</h2>
+  <p>hook 写在 JSON 设置文件里，结构永远是<strong>三层嵌套</strong><a href="https://docs.anthropic.com/en/docs/claude-code/hooks#configuration" target="_blank" class="cite">[docs: Configuration]</a>：</p>
+  <ol>
+    <li><strong>事件</strong>（如 <code>PreToolUse</code>）—— 挂在哪个生命周期节点</li>
+    <li><strong>matcher 组</strong>（如 <code>"Bash"</code>）—— 过滤「什么时候才真的触发」</li>
+    <li><strong>处理器 handler</strong>（如 <code>type:"command"</code> + 一条命令）—— 匹配后跑什么</li>
+  </ol>
+
+  <pre><code>{
+  "hooks": {
+    "PreToolUse": [                         // ① 事件
+      {
+        "matcher": "Bash",                  // ② matcher：只对 Bash 工具
+        "hooks": [
+          {
+            "type": "command",              // ③ 处理器：跑一条命令
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/block-rm.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+  <h3>matcher 怎么匹配</h3>
+  <p>matcher 的值决定匹配方式<a href="https://docs.anthropic.com/en/docs/claude-code/hooks#matcher-patterns" target="_blank" class="cite">[docs: Matcher patterns]</a>：</p>
+  <table>
+    <thead><tr><th>写法</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td><code>"*"</code> / <code>""</code> / 省略</td><td>匹配该事件的<strong>每一次</strong>触发</td></tr>
+      <tr><td><code>"Bash"</code></td><td>精确匹配单个工具名</td></tr>
+      <tr><td><code>"Edit|Write"</code></td><td>匹配 Edit <strong>或</strong> Write（`|` 分隔多个）</td></tr>
+      <tr><td><code>"mcp__memory__.*"</code></td><td>正则：某个 MCP 服务器的全部工具</td></tr>
+    </tbody>
+  </table>
+  <p>注意：<strong>只有工具类事件</strong>（<code>PreToolUse</code>/<code>PostToolUse</code> 等）按<strong>工具名</strong>匹配；<code>SessionStart</code> 按「怎么启动的」匹配、<code>UserPromptSubmit</code> 干脆不支持 matcher（每次都触发）。matcher 匹配的字段各事件不同。</p>
+
+  <h3>写在哪 = 作用范围</h3>
+  <table>
+    <thead><tr><th>位置</th><th>范围</th><th>能否随仓库共享</th></tr></thead>
+    <tbody>
+      <tr><td><code>~/.claude/settings.json</code></td><td>你的所有项目</td><td>否（本机私有）</td></tr>
+      <tr><td><code>.claude/settings.json</code></td><td>单个项目</td><td><strong>能</strong>，可提交进 repo</td></tr>
+      <tr><td><code>.claude/settings.local.json</code></td><td>单个项目</td><td>否（默认 gitignore）</td></tr>
+    </tbody>
+  </table>
+  <p>把团队护栏放进 <code>.claude/settings.json</code> 提交，全组自动生效；个人实验放 <code>settings.local.json</code>，不污染仓库<a href="https://docs.anthropic.com/en/docs/claude-code/hooks#hook-locations" target="_blank" class="cite">[docs: Hook locations]</a>。</p>
+
+  <div class="callout">
+    <h3>Windows 用户：让 hook 跑 PowerShell</h3>
+    <p>命令处理器默认用系统 shell。在 Windows 上给处理器加 <code>"shell": "powershell"</code>，即可用 PowerShell 跑（自动优先 <code>pwsh.exe</code>，回退 <code>powershell.exe</code>）。引用项目根用 <code>$env:CLAUDE_PROJECT_DIR</code>，<strong>别写裸的 <code>$CLAUDE_PROJECT_DIR</code></strong>——PowerShell 会当成未定义变量解析成 <code>$null</code><a href="https://docs.anthropic.com/en/docs/claude-code/hooks#windows-powershell-tool" target="_blank" class="cite">[docs: Windows PowerShell tool]</a>。</p>
+    <pre><code>{
+  "type": "command",
+  "shell": "powershell",
+  "command": "&amp; \"$env:CLAUDE_PROJECT_DIR\\.claude\\hooks\\check.ps1\""
+}</code></pre>
+  </div>
+</section>
+
+<section>
+  <h2>4. 通信协议：stdin 进，退出码 / JSON 出</h2>
+  <p>这是 hook 最「底层」也最该吃透的一环。Claude Code 与你的脚本之间是一场<strong>结构化对话</strong><a href="https://docs.anthropic.com/en/docs/claude-code/hooks#hook-input-and-output" target="_blank" class="cite">[docs: Hook input and output]</a>：</p>
+
+  <figure class="diagram">
+    <pre class="mermaid">
+flowchart LR
+  CC["Claude Code<br/>事件触发"] -->|"stdin：一段 JSON 上下文"| H["你的 hook 脚本"]
+  H -->|"退出码 0 / 2 / 其它"| J["Claude Code 裁决"]
+  H -->|"stdout：JSON 决策（可选）"| J
+  J --> R["放行 / 拦截 / 注入上下文 / 改写"]
+  classDef ok fill:#1e3a24,stroke:#5c9a63,color:#d6f0da;
+  class R ok;
+    </pre>
+    <figcaption>输入走 stdin，输出走「退出码 + stdout 的 JSON」两条并行通道</figcaption>
+  </figure>
+
+  <h3>① 输入：stdin 上的 JSON</h3>
+  <p>脚本从 stdin 读到一段 JSON，含<strong>公共字段</strong>（<code>session_id</code>、<code>cwd</code>、<code>permission_mode</code>、<code>hook_event_name</code>…）加<strong>事件专属字段</strong>。以一次拦 Bash 的 <code>PreToolUse</code> 为例：</p>
+  <pre><code>{
+  "session_id": "abc123",
+  "cwd": "/home/user/my-project",
+  "permission_mode": "default",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": { "command": "npm test", "description": "Run test suite" },
+  "tool_use_id": "toolu_01ABC..."
+}</code></pre>
+
+  <h3>② 输出通道 A：退出码</h3>
+  <p>最简单的回话方式就是<strong>退出码</strong><a href="https://docs.anthropic.com/en/docs/claude-code/hooks#exit-code-output" target="_blank" class="cite">[docs: Exit code output]</a>：</p>
+  <table>
+    <thead><tr><th>退出码</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td><code>0</code></td><td>成功放行。stdout 一般只进调试日志（<strong>例外</strong>：<code>UserPromptSubmit</code>/<code>SessionStart</code> 的纯文本 stdout 会被当作上下文塞给 Claude）</td></tr>
+      <tr><td><code>2</code></td><td><strong>阻断</strong>。<code>PreToolUse</code>→拦下工具调用；<code>UserPromptSubmit</code>→丢弃提问；<code>Stop</code>→不许停、继续对话。stderr 作为阻断原因</td></tr>
+      <tr><td>其它</td><td>非阻断错误：动作照常进行，转录里留一条 hook 报错提示</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <h3>⚠️ 想拦截就必须 <code>exit 2</code>，不是 <code>exit 1</code></h3>
+    <p>Unix 习惯用 <code>1</code> 表示失败，但 Claude Code <strong>只认 <code>2</code> 作为阻断信号</strong>。裸用 <code>exit 1</code> 会被当成「非阻断错误」——动作照样放行。策略护栏务必用 <code>exit 2</code><a href="https://docs.anthropic.com/en/docs/claude-code/hooks#exit-code-2" target="_blank" class="cite">[docs: Exit code 2]</a>。</p>
+  </div>
+
+  <h3>③ 输出通道 B：stdout 上的 JSON（更强的控制）</h3>
+  <p>退出码只能「拦/不拦」。想要<strong>富控制</strong>——指定放行/拒绝/升级问用户、往上下文注入信息、甚至改写工具参数——就往 stdout 打印一段 JSON。Claude Code 在<strong>任何退出码</strong>下都会读它<a href="https://docs.anthropic.com/en/docs/claude-code/hooks#json-output" target="_blank" class="cite">[docs: JSON output]</a>。不同事件用不同的决策字段：</p>
+  <table>
+    <thead><tr><th>事件</th><th>决策字段</th><th>作用</th></tr></thead>
+    <tbody>
+      <tr><td><code>PreToolUse</code></td><td><code>hookSpecificOutput.permissionDecision</code></td><td><code>allow</code>/<code>deny</code>/<code>ask</code>——放行、拒绝、或升级给用户确认</td></tr>
+      <tr><td><code>PostToolUse</code>、<code>Stop</code> 等</td><td>顶层 <code>decision: "block"</code> + <code>reason</code></td><td>阻断并把 <code>reason</code> 反馈给 Claude</td></tr>
+      <tr><td>多数事件</td><td><code>hookSpecificOutput.additionalContext</code></td><td>把一段文字注入 Claude 的上下文窗口</td></tr>
+    </tbody>
+  </table>
+  <p>这就是第 2 节图里那两个金色闸门（<code>PreToolUse</code>/<code>Stop</code>）的能力来源。一个「禁止 <code>rm -rf</code>」的 <code>PreToolUse</code> 处理器长这样：</p>
+  <pre><code>#!/bin/bash
+# .claude/hooks/block-rm.sh
+COMMAND=$(jq -r '.tool_input.command')          # 从 stdin JSON 取命令
+
+if echo "$COMMAND" | grep -q 'rm -rf'; then
+  jq -n '{
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "deny",                # 拒绝这次调用
+      permissionDecisionReason: "Destructive command blocked by hook"
+    }
+  }'
+else
+  exit 0                                          # 无决策：走正常权限流程
+fi</code></pre>
+  <p>（这些 Bash 例子用 <code>jq</code> 解析 JSON，需先装好 <code>jq</code> 并在 PATH 里。）</p>
+</section>
+
+<section>
+  <h2>5. 决策速查：谁能拦、谁只能听</h2>
+  <p>不是每个事件都能「拦截」。按能力分三类，写 hook 前先对号入座<a href="https://docs.anthropic.com/en/docs/claude-code/hooks#decision-control" target="_blank" class="cite">[docs: Decision control]</a>：</p>
+  <table>
+    <thead><tr><th>能力</th><th>代表事件</th><th>能做什么</th></tr></thead>
+    <tbody>
+      <tr><td><strong>能拦截 / 改写</strong></td><td><code>PreToolUse</code>、<code>UserPromptSubmit</code>、<code>Stop</code></td><td>拒绝动作、改写工具参数、拦住 Claude 别停</td></tr>
+      <tr><td><strong>只能注入上下文</strong></td><td><code>SessionStart</code>、<code>PostToolUse</code></td><td>往上下文塞信息（分支名、CI 结果、项目规则），不能拦</td></tr>
+      <tr><td><strong>纯副作用</strong></td><td><code>SessionEnd</code>、<code>Notification</code></td><td>只用来记日志、清理、发通知，无决策权</td></tr>
+    </tbody>
+  </table>
+  <p>所以「自动 lint」用 <code>PostToolUse</code>（改完文件后跑，把结果注入上下文让 Claude 自己修）；「禁危险命令」用 <code>PreToolUse</code>（执行前拦）；「审计日志」挂 <code>SessionEnd</code> 或任意事件（纯记录）——<strong>选事件的依据，就是你需要哪一档能力</strong>。</p>
+</section>
+
+<section>
+  <h2>6. 安全：hook 是拿你权限跑的代码</h2>
+  <div class="callout">
+    <h3>务必先审再用</h3>
+    <p>命令 hook <strong>以你的完整用户权限执行 shell 命令</strong>，能读写/删除你账号能碰的任何文件。把 hook 加进配置前，务必<strong>读懂并测试</strong>每一条命令<a href="https://docs.anthropic.com/en/docs/claude-code/hooks#security-considerations" target="_blank" class="cite">[docs: Security considerations]</a>。</p>
+  </div>
+  <p>两条最该记住的实践：</p>
+  <ul>
+    <li><strong>工作区信任门槛</strong>：交互式会话里，Claude Code 会等你对该目录点了「信任」才运行任何设置文件里的 hook；但 <code>claude -p</code>（headless）<strong>不弹信任对话框</strong>——克隆别人仓库跑 <code>-p</code> 前，先审它的 <code>.claude/</code>，或用 <code>--settings '{"disableAllHooks": true}'</code> 关掉。</li>
+    <li><strong>脚本卫生</strong>：变量一律加引号 <code>"$VAR"</code>、防路径穿越（查 <code>..</code>）、用绝对路径、避开 <code>.env</code>/<code>.git/</code>/密钥等敏感文件。</li>
+  </ul>
+</section>
+
+<section class="exercise">
+  <h2>检索练习 · 三连</h2>
+  <p>选中即判。答错会揭示正解与解析——错一次记得更牢。</p>
+
+  <form class="quiz" data-answer="C"
+    data-explain="CLAUDE.md 是喂给模型的文字建议，模型可能忽略或忘记，是概率性的；hook 是 Claude Code 在生命周期节点确定性执行的代码，只要事件触发就必然运行，还能真正拦下一个动作。这是「建议」与「保证」的本质区别。">
+    <p class="quiz-q">Q1. 把规则写成 hook 而非写进 CLAUDE.md，最本质的收益是？</p>
+    <label class="opt"><input type="radio" name="q1" value="A"><span>hook 能让模型回答得更快更省 token</span></label>
+    <label class="opt"><input type="radio" name="q1" value="B"><span>hook 里的中文说明比 CLAUDE.md 更详细</span></label>
+    <label class="opt"><input type="radio" name="q1" value="C"><span>hook 是确定性执行的代码，触发即必然运行</span></label>
+    <label class="opt"><input type="radio" name="q1" value="D"><span>hook 会自动同步到团队每个人的机器上</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="B"
+    data-explain="Claude Code 只认退出码 2 作为阻断信号：PreToolUse 脚本 exit 2 会拦下这次工具调用。裸用 exit 1 会被当成非阻断错误、动作照样放行；exit 0 是成功放行。策略护栏务必用 exit 2，或用 stdout 的 JSON permissionDecision:deny。">
+    <p class="quiz-q">Q2. 一个 <code>PreToolUse</code> 脚本以 <code>exit 2</code> 结束，会发生什么？</p>
+    <label class="opt"><input type="radio" name="q2" value="A"><span>什么都不拦，仅在调试日志里记一条</span></label>
+    <label class="opt"><input type="radio" name="q2" value="B"><span>拦下这次工具调用，阻止它被执行</span></label>
+    <label class="opt"><input type="radio" name="q2" value="C"><span>让 Claude 立刻结束本轮并停止回答</span></label>
+    <label class="opt"><input type="radio" name="q2" value="D"><span>把该工具的参数替换成脚本的输出</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+
+  <form class="quiz" data-answer="A"
+    data-explain="hook 配置永远是三层嵌套：事件（PreToolUse）→ matcher 组（过滤何时触发，如按工具名 Bash）→ 处理器（匹配后跑什么，如 type:command 的脚本）。matcher 的作用就是「过滤」，不是运行代码本身。">
+    <p class="quiz-q">Q3. 在 hook 三层配置里，<code>matcher</code> 这一层的职责是？</p>
+    <label class="opt"><input type="radio" name="q3" value="A"><span>过滤这个事件在什么条件下才真的触发</span></label>
+    <label class="opt"><input type="radio" name="q3" value="B"><span>定义匹配后到底要运行哪一条命令</span></label>
+    <label class="opt"><input type="radio" name="q3" value="C"><span>选择这个 hook 要挂到哪个生命周期上</span></label>
+    <label class="opt"><input type="radio" name="q3" value="D"><span>决定脚本从退出码还是从 JSON 回话</span></label>
+    <output class="quiz-fb" hidden></output>
+  </form>
+</section>
+
+<section class="source">
+  <h2>推荐一手源</h2>
+  <ul>
+    <li><strong><a href="https://docs.anthropic.com/en/docs/claude-code/hooks-guide" target="_blank">官方文档：Automate actions with hooks（快速上手）</a></strong> —— 带完整可跑示例的入门指南。<em>本课最推荐先读这一篇动手跑一个。</em></li>
+    <li><strong><a href="https://docs.anthropic.com/en/docs/claude-code/hooks" target="_blank">官方文档：Hooks reference（参考手册）</a></strong> —— 全部事件的输入 schema、退出码、JSON 输出、matcher 规则的权威出处，本课全部事实的来源。</li>
+    <li><strong><a href="https://github.com/anthropics/claude-code/blob/main/examples/hooks/bash_command_validator_example.py" target="_blank">Bash 命令校验器示例（官方仓库）</a></strong> —— 一个真实可读的 <code>PreToolUse</code> 校验脚本，照着改就能落地。</li>
+  </ul>
+</section>
+
+<section class="followup">
+  <h2>还不清楚就问我</h2>
+  <p>我是你这门课的老师，任何卡点直接问。例如：
+    <em>「帮我写一个『每次改完 <code>.py</code> 就自动跑 ruff format』的 PostToolUse hook（Windows PowerShell 版）。」
+    「<code>additionalContext</code> 注入的文字，和我直接写在 CLAUDE.md 里有什么不同？」
+    「我想要一个提交前必须过测试的 <code>Stop</code> hook，它怎么『拦住 Claude 别停』？」</em>
+  </p>
+</section>
+
+<footer>
+  <span><a href="0003-install-internals.html">← 第 3 课 · 安装原理深入</a></span>
+  <span><a href="0005-hooks-recipes.html">第 5 课 · Hooks 实战食谱（待创建）→</a></span>
+</footer>
+
+</article>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
