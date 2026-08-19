@@ -527,6 +527,11 @@
       "folder": true,
       "tag": false,
       "property": false
+    },
+    "01-编程笔记/Ai/编程智能体/智能体扩展/Claude Code 官方插件市场.md": {
+      "folder": true,
+      "tag": false,
+      "property": false
     }
   },
   "fileIcons": {},
@@ -637,6 +642,14 @@
       "propertyKey": "排序"
     },
     "01-编程笔记/Ai/编程智能体/智能体扩展": {
+      "option": "property-asc",
+      "propertyKey": "排序"
+    },
+    "01-编程笔记/Java/JavaSE": {
+      "option": "property-asc",
+      "propertyKey": "排序"
+    },
+    "01-编程笔记/Java/JVM": {
       "option": "property-asc",
       "propertyKey": "排序"
     }

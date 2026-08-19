@@ -1,6 +1,6 @@
 ---
 描述:
-排序:
+排序: 3000
 分组:
 分类: "[[JavaSE]]"
 创建时间: 2026年07月30日
@@ -82,7 +82,7 @@ Java 源代码由一连串==词法元素==（token）构成，其中最基础的
 
 | | | | | |
 |---|---|---|---|---|
-| `class` | `interface` | `enum`（JDK 5.0 新增） | `record`（JDK 16，记录类） | `value`（JDK 26 预览，值类） |
+| `class` | `interface` | `enum`（JDK 5.0 新增） | `record`（JDK 16，记录类） | `value`（JDK 28 预览，值类） |
 | `extends` | `implements` | `sealed`（JDK 17，密封类） | `permits`（JDK 17，授权子类型） | `non-sealed`（JDK 17，取消密封） |
 | `new` | `this` | `super` | `instanceof` | |
 
@@ -787,9 +787,9 @@ switch (表达式) {
 > 4. 建议保留 `default` 分支处理特殊情况（省略也不会编译报错）。
 > 5. `default` 可放在 switch 块任意位置，但通常放在所有 `case` 最后，可读性更好。
 
-#### JDK 12 新语法
+#### JDK 14 新语法
 
-JDK 12 起，switch 引入箭头写法 `case 值 -> ...`：==分支不会穿透、无需 `break`==，可用逗号合并多个值、用 `{}` 包裹多条语句，代码更简洁。
+switch 箭头写法 `case 值 -> ...` 经 JDK 12–13 两轮预览后在 JDK 14 转正：==分支不会穿透、无需 `break`==，可用逗号合并多个值、用 `{}` 包裹多条语句，代码更简洁。
 
 ```java
 --8<-- "code/java/basics/javase-demo/src/main/java/com/luguosong/basicsyntax/controlflow/SwitchArrowDemo.java"
