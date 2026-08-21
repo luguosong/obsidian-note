@@ -9108,7 +9108,7 @@
         "ch": 19
       }
     },
-    "scroll": 0
+    "scroll": 1.8918918918918919
   },
   "01-编程笔记/Windows/安装的软件/安装的软件.md": {
     "expandedKeys": [],
@@ -10166,19 +10166,20 @@
   "01-编程笔记/Java/JavaSE/面向对象.md": {
     "cursor": {
       "from": {
-        "line": 9,
-        "ch": 3
+        "line": 83,
+        "ch": 0
       },
       "to": {
-        "line": 9,
-        "ch": 12
+        "line": 83,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-1"
+      "item-2-1",
+      "item-2-5"
     ],
-    "scroll": 33.966738349408296
+    "scroll": 61.86553381744861
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10211,5 +10212,35 @@
       }
     },
     "expandedKeys": []
+  },
+  "01-编程笔记/家庭服务器搭建/家庭服务器搭建.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/家庭服务器搭建/外网访问.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 18.798669950738915
   }
 }
