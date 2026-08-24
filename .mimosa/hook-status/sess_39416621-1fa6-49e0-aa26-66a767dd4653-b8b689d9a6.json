@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-08-24T03:25:44.602Z",
+  "sessionId": "sess_39416621-1fa6-49e0-aa26-66a767dd4653",
+  "event": "PostToolUse",
+  "toolName": "Edit",
+  "file": "C:/Users/10545/.zcode/cli/memories/projects/obsidian-note-5921db19d62750bf/memory/MEMORY.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 9,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

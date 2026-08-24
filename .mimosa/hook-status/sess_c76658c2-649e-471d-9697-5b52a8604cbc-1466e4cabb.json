@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-08-24T03:06:37.154Z",
+  "sessionId": "sess_c76658c2-649e-471d-9697-5b52a8604cbc",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "code/java/basics/javase-demo/src/main/java/com/luguosong/oop/DefineClassDemo.java",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 28,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}
