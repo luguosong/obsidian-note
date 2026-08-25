@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "- path:分类索引.base - path:附件  - path:learning  - path:docs  - path:code  ",
+  "search": "- path:分类索引.base - path:附件  - path:docs  - path:code  ",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,

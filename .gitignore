@@ -140,4 +140,7 @@ pids/
 .env.*
 !.env.example
 
+# Mimosa 安全扫描的本地状态、历史与报告（工具产物，无需同步）
+.mimosa/
+
 待办任务/
