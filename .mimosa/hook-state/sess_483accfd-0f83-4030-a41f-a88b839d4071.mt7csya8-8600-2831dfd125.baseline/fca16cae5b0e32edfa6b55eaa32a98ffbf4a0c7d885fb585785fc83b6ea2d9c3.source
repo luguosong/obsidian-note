@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pwsh -NoProfile -Command \"\n\\\\$ErrorActionPreference='Stop';\n\\\\$tokens=\\\\$null; \\\\$errors=\\\\$null;\n[void][System.Management.Automation.Language.Parser]::ParseFile\\('E:\\\\code-base\\\\personal\\\\obsidian-note\\\\code\\\\research\\\\windows\\\\claude-account-switcher.ps1', [ref]\\\\$tokens, [ref]\\\\$errors\\);\nif \\(\\\\$errors -and \\\\$errors.Count\\) { \\\\$errors | ForEach-Object { Write-Host \\('ERROR: ' + \\\\$_.Message + ' @ line ' + \\\\$_.Extent.StartLineNumber\\) }; exit 1 } else { Write-Host 'OK: 语法校验通过' }\n\")",
+      "Bash(pwsh -NoProfile -Command \"\n. 'E:\\\\code-base\\\\personal\\\\obsidian-note\\\\code\\\\research\\\\windows\\\\claude-account-switcher.ps1'\nWrite-Host '--- 列出账号 ---'\ncca\nWrite-Host '--- 切换到 b ---'\ncca b\nWrite-Host '--- 当前 \\\\$script:ClaudeCurrent ---'\n\\\\$script:ClaudeCurrent\nWrite-Host '--- 未知账号 ---'\ncca zzz\nWrite-Host '--- claude 函数是否已定义 ---'\n\\(Get-Command claude -ErrorAction SilentlyContinue\\).CommandType\n\")",
+      "Bash([ -f \"$PROFILE\" ])",
+      "Read(//c/Users/10545/Documents/PowerShell/**)",
+      "Bash(pwsh -NoProfile -Command \"Get-Command claude*, cca -ErrorAction SilentlyContinue | Select-Object Name, CommandType | Format-Table -AutoSize\")",
+      "Bash(pwsh -NoProfile -File \"C:\\\\Users\\\\10545\\\\AppData\\\\Local\\\\Temp\\\\test-claude-switcher.ps1\")",
+      "Bash(pwsh -Command \"Get-Command claude-b, claude-a, cca, claude -ErrorAction SilentlyContinue | Select-Object Name, CommandType | Format-Table -AutoSize\")",
+      "Bash(pwsh -File \"C:\\\\Users\\\\10545\\\\AppData\\\\Local\\\\Temp\\\\test-claude-profile.ps1\")"
+    ]
+  },
+  "enabledPlugins": {
+    "drawio@drawio": true
+  }
+}

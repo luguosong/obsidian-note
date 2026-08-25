@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-08-24T14:56:32.256Z",
+  "sessionId": "sess_483accfd-0f83-4030-a41f-a88b839d4071",
+  "event": "PostToolUse",
+  "toolName": "Edit",
+  "file": "C:/Users/10545/.zcode/cli/memories/projects/obsidian-note-5921db19d62750bf/memory/javase-note-chapter-polishing.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 8,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}
