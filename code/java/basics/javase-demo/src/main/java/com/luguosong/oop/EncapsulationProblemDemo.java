@@ -2,7 +2,7 @@ package com.luguosong.oop;
 
 /**
  * 不使用封装的问题：属性对外暴露，外部程序可以随意访问和修改，数据不安全。
- * 对应笔记：面向对象 → 面向对象-封装性 → 不使用封装的问题
+ * 对应笔记：面向对象 → 封装性 → 不使用封装的问题
  */
 public class EncapsulationProblemDemo {
 

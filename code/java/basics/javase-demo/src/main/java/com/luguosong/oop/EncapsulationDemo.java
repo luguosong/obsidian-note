@@ -2,7 +2,7 @@ package com.luguosong.oop;
 
 /**
  * 封装的实现：第一步属性私有化（private），第二步对外提供 getter/setter 并在 setter 中拦截非法值。
- * 对应笔记：面向对象 → 面向对象-封装性 → 封装的实现
+ * 对应笔记：面向对象 → 封装性 → 封装的实现
  */
 public class EncapsulationDemo {
 

@@ -17,22 +17,22 @@ public class ProcedureDriveDemo {
     }
 
     static void start() {
-        System.out.println("1. 启动汽车");  // 1. 启动汽车
+        System.out.println("1. 启动汽车");
     }
 
     static void pressClutch() {
-        System.out.println("2. 踩离合");  // 2. 踩离合
+        System.out.println("2. 踩离合");
     }
 
     static void shiftGear() {
-        System.out.println("3. 挂挡");  // 3. 挂挡
+        System.out.println("3. 挂挡");
     }
 
     static void releaseClutch() {
-        System.out.println("4. 松离合");  // 4. 松离合
+        System.out.println("4. 松离合");
     }
 
     static void accelerate() {
-        System.out.println("5. 踩油门，车走了");  // 5. 踩油门，车走了
+        System.out.println("5. 踩油门，车走了");
     }
 }

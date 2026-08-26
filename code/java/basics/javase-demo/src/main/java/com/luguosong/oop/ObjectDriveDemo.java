@@ -22,11 +22,11 @@ public class ObjectDriveDemo {
 class Car {
 
     void start() {
-        System.out.println("汽车启动");  // 汽车启动
+        System.out.println("汽车启动");
     }
 
     void run() {
-        System.out.println("汽车行驶，车走了");  // 汽车行驶，车走了
+        System.out.println("汽车行驶，车走了");
     }
 }
 
