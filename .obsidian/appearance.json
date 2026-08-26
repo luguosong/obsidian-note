@@ -10,7 +10,8 @@
     "headings",
     "callout-compact",
     "table-width",
-    "code-edit-button"
+    "code-edit-button",
+    "emoji-color"
   ],
   "showRibbon": true,
   "nativeMenus": false

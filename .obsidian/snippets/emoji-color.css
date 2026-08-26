@@ -1,0 +1,17 @@
+/* 修复 emoji 单色显示（Windows + Source Code Pro + 霞鹜文楷）：
+   根因：Source Code Pro 自带 ☕ 🤖 等部分 emoji 的单色窄字形，
+   排在字体链前面把彩色表情字体截胡，导致渲染成黑白。
+   方案：用 @font-face + unicode-range 定义只代理 emoji 码位的 EmojiFix，
+   置于字体链最前——emoji 一律走本机彩色字体 Segoe UI Emoji，
+   字母/数字/中文不在其 unicode-range 内，完全跳过、排版不受影响。 */
+@font-face {
+  font-family: "EmojiFix";
+  src: local("Segoe UI Emoji");
+  unicode-range: U+1F000-1FAFF, U+2600-27BF, U+2B00-2BFF, U+FE0F;
+}
+
+body {
+  --font-interface-override: "EmojiFix", "Source Code Pro", "Segoe UI Emoji", "LXGW WenKai" !important;
+  --font-text-override: "EmojiFix", "Source Code Pro", "Segoe UI Emoji", "LXGW WenKai" !important;
+  --font-monospace-override: "EmojiFix", "Source Code Pro", "Segoe UI Emoji", "LXGW WenKai" !important;
+}
