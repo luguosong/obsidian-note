@@ -9782,12 +9782,12 @@
   "01-编程笔记/Ai/编程智能体/Claude Code/安装和配置.md": {
     "cursor": {
       "from": {
-        "line": 9,
-        "ch": 5
+        "line": 19,
+        "ch": 0
       },
       "to": {
-        "line": 9,
-        "ch": 5
+        "line": 19,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -10359,19 +10359,19 @@
   "01-编程笔记/Ai/编程智能体/智能体扩展/awesome-design-md.md": {
     "cursor": {
       "from": {
-        "line": 140,
-        "ch": 0
+        "line": 74,
+        "ch": 73
       },
       "to": {
-        "line": 140,
-        "ch": 0
+        "line": 74,
+        "ch": 73
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-2"
     ],
-    "scroll": 100.25651041666667
+    "scroll": 7.780114722753346
   },
   "05-历史/编程史/图灵.md": {
     "expandedKeys": [
