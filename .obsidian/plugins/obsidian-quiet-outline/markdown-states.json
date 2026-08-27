@@ -9159,9 +9159,7 @@
     }
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/智能体扩展.md": {
-    "expandedKeys": [
-      "item-1-0"
-    ],
+    "expandedKeys": [],
     "cursor": {
       "from": {
         "line": 21,
@@ -9880,12 +9878,12 @@
   "05-历史/编程史/编程史.md": {
     "cursor": {
       "from": {
-        "line": 394,
-        "ch": 8
+        "line": 54,
+        "ch": 11
       },
       "to": {
-        "line": 394,
-        "ch": 8
+        "line": 54,
+        "ch": 11
       }
     },
     "expandedKeys": [
@@ -9918,46 +9916,48 @@
       "item-2-54",
       "item-2-56",
       "item-2-58",
-      "item-2-60",
-      "item-2-63",
-      "item-2-65",
-      "item-2-69",
+      "item-2-61",
+      "item-2-64",
+      "item-2-67",
       "item-2-72",
-      "item-2-74",
-      "item-2-76",
+      "item-2-77",
       "item-2-79",
-      "item-2-81",
+      "item-2-82",
       "item-2-85",
       "item-2-88",
-      "item-2-92",
+      "item-2-90",
       "item-2-95",
-      "item-2-99",
+      "item-2-98",
       "item-2-102",
       "item-2-105",
-      "item-2-108",
-      "item-2-110",
-      "item-2-114",
-      "item-2-116",
-      "item-2-120",
-      "item-2-122",
+      "item-2-109",
+      "item-2-112",
+      "item-2-115",
+      "item-2-119",
+      "item-2-121",
       "item-2-125",
       "item-2-127",
-      "item-2-129",
       "item-2-131",
       "item-2-133",
       "item-2-137",
       "item-2-139",
       "item-2-141",
       "item-2-143",
-      "item-2-147",
+      "item-2-145",
       "item-2-149",
+      "item-2-151",
       "item-2-153",
-      "item-2-157",
-      "item-2-160",
+      "item-2-155",
+      "item-2-159",
+      "item-2-161",
       "item-2-163",
-      "item-2-167"
+      "item-2-168",
+      "item-2-172",
+      "item-2-175",
+      "item-2-178",
+      "item-2-182"
     ],
-    "scroll": 379.998046875
+    "scroll": 35.36328109105428
   },
   "05-历史/编程史/C语言.md": {
     "expandedKeys": [],
@@ -10263,7 +10263,7 @@
       "item-3-30",
       "item-2-34"
     ],
-    "scroll": 559.5217784520232
+    "scroll": 7
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10317,15 +10317,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 7,
-        "ch": 0
+        "line": 16,
+        "ch": 2
       },
       "to": {
-        "line": 7,
-        "ch": 0
+        "line": 16,
+        "ch": 12
       }
     },
-    "scroll": 18.798669950738915
+    "scroll": 29.89409722222222
   },
   "01-编程笔记/Ai/编程智能体/Codex/Codex.md": {
     "cursor": {
@@ -10372,5 +10372,69 @@
       "item-2-2"
     ],
     "scroll": 100.25651041666667
+  },
+  "05-历史/编程史/图灵.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "05-历史/编程史/计算机硬件.md": {
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 42.182291666666664
+  },
+  "05-历史/编程史/理查德·斯托曼.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 2
+      },
+      "to": {
+        "line": 7,
+        "ch": 9
+      }
+    },
+    "scroll": 0
+  },
+  "05-历史/编程史/肯·汤普逊.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 1.8918918918918919
   }
 }
