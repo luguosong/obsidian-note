@@ -1,70 +1,17 @@
 {
-	"nodes": [
-		{
-			"id": "g0a1jvm0001",
-			"type": "group",
-			"x": 0,
-			"y": 40,
-			"width": 1200,
-			"height": 660,
-			"label": "JVM（JDK8+）"
-		},
-		{
-			"id": "g1a2stack001",
-			"type": "group",
-			"x": 30,
-			"y": 110,
-			"width": 280,
-			"height": 530,
-			"label": "VM Stack"
-		},
-		{
-			"id": "g2a3heap0001",
-			"type": "group",
-			"x": 360,
-			"y": 110,
-			"width": 470,
-			"height": 530,
-			"label": "Heap"
-		},
-		{
-			"id": "g3a4meta0001",
-			"type": "group",
-			"x": 880,
-			"y": 110,
-			"width": 290,
-			"height": 530,
-			"label": "Metaspace"
-		},
-		{
-			"id": "n1staticvar01",
-			"type": "text",
-			"x": 645,
-			"y": 140,
-			"width": 165,
-			"height": 150,
-			"color": "2",
-			"text": "类的静态变量\ncountry = 『中国』"
-		},
-		{
-			"id": "n2classes0001",
-			"type": "text",
-			"x": 900,
-			"y": 140,
-			"width": 250,
-			"height": 230,
-			"text": "ChineseTest.class\nString.class\nChinese.class\nSystem.class\n……"
-		}
+	"nodes":[
+		{"id":"g0a1jvm0001","type":"group","x":0,"y":40,"width":1200,"height":660,"label":"JVM（JDK8+）"},
+		{"id":"g1a2stack001","type":"group","x":30,"y":110,"width":280,"height":530,"label":"VM Stack"},
+		{"id":"g2a3heap0001","type":"group","x":360,"y":110,"width":470,"height":530,"label":"Heap"},
+		{"id":"g3a4meta0001","type":"group","x":880,"y":110,"width":290,"height":530,"label":"Metaspace"},
+		{"id":"n1staticvar01","type":"text","x":645,"y":140,"width":165,"height":150,"color":"2","text":"类的静态变量\ncountry = 『中国』"},
+		{"id":"n2classes0001","type":"text","x":900,"y":140,"width":250,"height":230,"text":"ChineseTest.class\nString.class\nChinese.class\nSystem.class\n……"}
 	],
-	"edges": [
-		{
-			"id": "e1linksvclasses",
-			"fromNode": "n1staticvar01",
-			"fromSide": "right",
-			"fromEnd": "none",
-			"toNode": "n2classes0001",
-			"toSide": "left",
-			"toEnd": "none"
-		}
-	]
+	"edges":[
+		{"id":"e1linksvclasses","fromNode":"n1staticvar01","fromSide":"right","fromEnd":"none","toNode":"n2classes0001","toSide":"left","toEnd":"none"}
+	],
+	"metadata":{
+		"version":"1.0-1.0",
+		"frontmatter":{}
+	}
 }

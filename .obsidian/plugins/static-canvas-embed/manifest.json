@@ -1,0 +1,9 @@
+{
+	"id": "static-canvas-embed",
+	"name": "Static Canvas Embed",
+	"version": "0.1.0",
+	"minAppVersion": "1.10.0",
+	"description": "Render embedded .canvas files as read-only static previews, like images. Click to open the original canvas.",
+	"author": "luguosong",
+	"isDesktopOnly": false
+}

@@ -1,0 +1,75 @@
+/* Static Canvas Embed：静态 canvas 预览的样式 */
+
+.sce-root {
+	width: 100%;
+}
+
+.sce-board {
+	position: relative;
+	width: 100%;
+	container-type: inline-size;
+	overflow: hidden;
+	border-radius: 8px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-primary);
+	cursor: pointer;
+}
+
+.sce-board:hover {
+	border-color: var(--background-modifier-border-hover);
+}
+
+.sce-edges {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.sce-node {
+	position: absolute;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+/* group 节点：透明底 + 边框，标签在左上角（仿 Obsidian Canvas） */
+.sce-group {
+	border: 2px solid var(--sce-color, var(--background-modifier-border-hover));
+	border-radius: 8px;
+}
+
+.sce-group-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.3em 0.6em;
+	font-size: var(--sce-text-size);
+	line-height: 1.2;
+	color: var(--sce-color, var(--text-faint));
+	white-space: nowrap;
+}
+
+/* text / file 等卡片节点 */
+.sce-card {
+	background: var(--background-primary);
+	border: 2px solid var(--sce-color, var(--background-modifier-border-hover));
+	border-radius: 6px;
+}
+
+.sce-text-body {
+	padding: 0.4em 0.6em;
+	font-size: var(--sce-text-size);
+	line-height: 1.45;
+	color: var(--text-normal);
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.sce-error {
+	padding: 8px 12px;
+	border: 1px dashed var(--background-modifier-border);
+	border-radius: 6px;
+	color: var(--text-faint);
+	font-size: 13px;
+}

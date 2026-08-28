@@ -1,8 +1,6 @@
 [
   "obsidian-git",
   "obsidian-quiet-outline",
-  "mermaid-popup",
-  "obsidian-image-toolkit",
   "obsidian-minimal-settings",
   "notebook-navigator",
   "templater-obsidian",
@@ -11,5 +9,7 @@
   "open-pwsh",
   "table-editor-obsidian",
   "pymdown-snippets",
-  "shiki-highlighter"
+  "static-canvas-embed",
+  "shiki-highlighter",
+  "unified-media-preview"
 ]

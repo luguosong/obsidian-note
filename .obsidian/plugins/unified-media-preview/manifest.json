@@ -1,0 +1,9 @@
+{
+	"id": "unified-media-preview",
+	"name": "Unified Media Preview",
+	"version": "0.1.0",
+	"minAppVersion": "1.10.0",
+	"description": "Click images, Mermaid diagrams and embedded canvases to preview them in a zoomable, pannable lightbox.",
+	"author": "luguosong",
+	"isDesktopOnly": false
+}

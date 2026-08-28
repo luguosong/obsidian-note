@@ -1,0 +1,185 @@
+/* Unified Media Preview：全屏灯箱预览（图片 / Mermaid / Canvas） */
+
+.ump-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	background: rgba(0, 0, 0, 0.78);
+}
+
+.ump-stage {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	cursor: grab;
+	user-select: none;
+}
+
+.ump-stage.ump-dragging {
+	cursor: grabbing;
+}
+
+.ump-content {
+	transform-origin: center center;
+	will-change: transform;
+	line-height: 0;
+}
+
+.ump-content .ump-img {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 92vw;
+	max-height: 92vh;
+	box-shadow: 0 0 48px rgba(0, 0, 0, 0.55);
+	-webkit-user-drag: none;
+}
+
+.ump-content svg {
+	display: block;
+}
+
+.ump-content .sce-board {
+	cursor: default;
+	box-shadow: 0 0 48px rgba(0, 0, 0, 0.55);
+}
+
+.ump-toolbar {
+	position: absolute;
+	bottom: 28px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 6px;
+	padding: 6px 8px;
+	border-radius: 10px;
+	background: rgba(40, 40, 40, 0.85);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	z-index: 2;
+}
+
+.ump-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 6px;
+	background: rgba(40, 40, 40, 0.75);
+	color: var(--text-normal);
+	cursor: pointer;
+}
+
+.ump-btn:hover {
+	background: rgba(80, 80, 80, 0.95);
+}
+
+/* 悬停媒体区块时右上角的快捷按钮条 */
+.ump-hovbar {
+	position: fixed;
+	z-index: 9990;
+	display: flex;
+	gap: 4px;
+	padding: 4px;
+	border-radius: 8px;
+	background: rgba(40, 40, 40, 0.85);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	user-select: none;
+}
+
+.ump-hovbar .ump-btn {
+	width: 26px;
+	height: 26px;
+}
+
+/* Obsidian 1.9+ 原生在图片/mermaid 嵌入右上角提供「放大 / 编辑这个区块」按钮，
+   与本插件按钮重复且相互遮挡；仅对我们接管的三类媒体隐藏原生按钮，
+   PDF / 视频等未接管的嵌入仍用原生按钮 */
+.internal-embed.image-embed > .embed-actions,
+.internal-embed.sce-root > .embed-actions,
+.cm-embed-block.cm-lang-mermaid > .embed-actions,
+div:has(> .mermaid) > .embed-actions {
+	display: none !important;
+}
+
+/* 图片 / canvas 嵌入顶部的文件路径条（仿代码块嵌入） */
+/* Minimal 把 .image-embed 设为 flex row，会把标头排到图片左侧；
+   带标头时改回块级，让标头在图片上方（图片仍为自然尺寸、上限 100%） */
+.internal-embed.image-embed:has(> .ump-file-header) {
+	display: block !important;
+}
+
+.ump-file-header {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--font-monospace, monospace);
+	font-size: var(--font-smallest, 11px);
+	line-height: 1.6;
+	color: var(--text-faint);
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-bottom: none;
+	border-radius: 8px 8px 0 0;
+	padding: 2px 6px 2px 10px;
+	user-select: none;
+}
+
+.ump-file-header-text {
+	flex: 1;
+	min-width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ump-file-header-copy {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	border-radius: 4px;
+	color: var(--text-faint);
+	cursor: pointer;
+}
+
+.ump-file-header-copy:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.ump-file-header-copy.ump-copied {
+	color: var(--text-success, #57a773);
+}
+
+.internal-embed.sce-root > .sce-board {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* 笔记内三类媒体不出现横向滚动条（作用域限笔记视图，不影响灯箱原始尺寸） */
+.markdown-source-view .mermaid svg,
+.markdown-preview-view .mermaid svg {
+	max-width: 100%;
+	height: auto;
+}
+
+.internal-embed.image-embed img {
+	max-width: 100%;
+	height: auto;
+}
+
+.internal-embed.sce-root,
+.internal-embed.sce-root .sce-board {
+	max-width: 100%;
+}
