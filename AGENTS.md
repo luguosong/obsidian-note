@@ -18,7 +18,6 @@ obsidian-note/
 ├── 未分类笔记/             # 收件箱：临时想法与零散知识点（暂存区，非正式分类）
 ├── 网页裁剪/               # 从网页抓取/裁剪保存的内容
 ├── 数据库/                 # .base 聚合索引（含共享 分类索引.base，见「Base 目录索引」）
-├── Excalidraw/             # Excalidraw 画板
 ├── 附件/                   # 图片、PDF 等资源
 ├── 模版/                   # Templater 笔记模版
 ├── 待办任务/               # 任务清单（见 .gitignore，不纳入版本控制）
@@ -119,7 +118,7 @@ obsidian-note/
 
 ## 工作偏好
 
-- 涉及创建/编辑 `.md`、`.base`、`.canvas`、Excalidraw 等 Obsidian 文件时，优先调用对应 skill（`obsidian-markdown`、`obsidian-bases`、`obsidian-canvas-creator`、`excalidraw-diagram` 等）。
+- 涉及创建/编辑 `.md`、`.base`、`.canvas` 等 Obsidian 文件时，优先调用对应 skill（`obsidian-markdown`、`obsidian-bases`、`obsidian-canvas-creator`、`mermaid-visualizer` 等）；配图优先用 Mermaid（Obsidian 原生渲染）。
 - 提供网页 URL 时，优先用 `defuddle` skill 提取干净内容再整理入库。
 - 不确定分类或位置时，默认按上文「笔记落点」处理（收件箱兜底），拿不准先问用户。
 
