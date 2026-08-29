@@ -1,14 +1,25 @@
 {
 	"nodes":[
-		{"id":"g0a1jvm0001","type":"group","x":0,"y":40,"width":1200,"height":660,"label":"JVM（JDK8+）"},
-		{"id":"g1a2stack001","type":"group","x":30,"y":110,"width":280,"height":530,"label":"VM Stack"},
-		{"id":"g2a3heap0001","type":"group","x":360,"y":110,"width":470,"height":530,"label":"Heap"},
-		{"id":"g3a4meta0001","type":"group","x":880,"y":110,"width":290,"height":530,"label":"Metaspace"},
-		{"id":"n1staticvar01","type":"text","x":645,"y":140,"width":165,"height":150,"color":"2","text":"类的静态变量\ncountry = 『中国』"},
-		{"id":"n2classes0001","type":"text","x":900,"y":140,"width":250,"height":230,"text":"ChineseTest.class\nString.class\nChinese.class\nSystem.class\n……"}
+		{"id":"g0a1jvm0001","type":"group","x":0,"y":40,"width":1200,"height":660,"label":"JVM 运行时数据区（JDK8+）"},
+		{"id":"g2a3heap0001","type":"group","x":360,"y":110,"width":470,"height":530,"label":"堆"},
+		{"id":"g3a4meta0001","type":"group","x":880,"y":110,"width":290,"height":530,"label":"元空间（Metaspace）"},
+		{"id":"w0leftwall001","type":"text","x":50,"y":215,"width":20,"height":380,"text":" "},
+		{"id":"w0rightwall01","type":"text","x":270,"y":215,"width":20,"height":380,"text":" "},
+		{"id":"w0bottomwall","type":"text","x":50,"y":595,"width":240,"height":20,"text":" "},
+		{"id":"n0stacklbl01","type":"text","x":50,"y":115,"width":110,"height":40,"text":"**虚拟机栈**"},
+		{"id":"n0frame00001","type":"text","x":75,"y":290,"width":190,"height":110,"text":"栈帧：main()\n局部变量 c1、c2\n（存对象地址）"},
+		{"id":"n3obj1c10001","type":"text","x":385,"y":150,"width":200,"height":100,"text":"**c1 对象**\n成员变量 name = 『张三』"},
+		{"id":"n4obj2c20001","type":"text","x":385,"y":290,"width":200,"height":100,"text":"**c2 对象**\n成员变量 name = 『李四』"},
+		{"id":"n5staticvar1","type":"text","x":640,"y":220,"width":170,"height":110,"color":"2","text":"**静态变量（仅一份）**\ncountry = 『中国』"},
+		{"id":"n7captdiff01","type":"text","x":385,"y":440,"width":425,"height":100,"color":"5","text":"**核心区别**\n成员变量 name：每个对象一份，随对象创建\n静态变量 country：全类仅一份，随类加载初始化"},
+		{"id":"n6chiclass01","type":"text","x":905,"y":150,"width":240,"height":80,"text":"Chinese.class\n（类结构信息）"}
 	],
 	"edges":[
-		{"id":"e1linksvclasses","fromNode":"n1staticvar01","fromSide":"right","fromEnd":"none","toNode":"n2classes0001","toSide":"left","toEnd":"none"}
+		{"id":"e1refc1obj001","fromNode":"n0frame00001","fromSide":"right","fromEnd":"none","toNode":"n3obj1c10001","toSide":"left","toEnd":"arrow"},
+		{"id":"e2refc2obj001","fromNode":"n0frame00001","fromSide":"right","fromEnd":"none","toNode":"n4obj2c20001","toSide":"left","toEnd":"arrow"},
+		{"id":"e3share1obj1","fromNode":"n3obj1c10001","fromSide":"right","fromEnd":"none","toNode":"n5staticvar1","toSide":"left","toEnd":"arrow","label":"共享"},
+		{"id":"e4share2obj2","fromNode":"n4obj2c20001","fromSide":"right","fromEnd":"none","toNode":"n5staticvar1","toSide":"left","toEnd":"arrow","label":"共享"},
+		{"id":"e5stattoclass","fromNode":"n5staticvar1","fromSide":"right","fromEnd":"none","toNode":"n6chiclass01","toSide":"left","toEnd":"none","label":"随类加载初始化"}
 	],
 	"metadata":{
 		"version":"1.0-1.0",
