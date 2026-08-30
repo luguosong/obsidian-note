@@ -42,14 +42,27 @@ function sideVector(side) {
 	}
 }
 
-/* 仿 Obsidian Canvas 的贝塞尔连线 */
-function edgePath(a, b, fromSide, toSide) {
+/* 仿 Obsidian Canvas 的贝塞尔连线，附带两端方向（供箭头定向） */
+function edgeGeom(a, b, fromSide, toSide) {
 	const [x1, y1] = sidePoint(a, fromSide);
 	const [x2, y2] = sidePoint(b, toSide);
 	const off = Math.min(Math.hypot(x2 - x1, y2 - y1) * 0.3, 80);
 	const [ax, ay] = sideVector(fromSide);
 	const [bx, by] = sideVector(toSide);
-	return `M ${x1} ${y1} C ${x1 + ax * off} ${y1 + ay * off}, ${x2 + bx * off} ${y2 + by * off}, ${x2} ${y2}`;
+	return {
+		d: `M ${x1} ${y1} C ${x1 + ax * off} ${y1 + ay * off}, ${x2 + bx * off} ${y2 + by * off}, ${x2} ${y2}`,
+		x1, y1, x2, y2,
+		out: [ax, ay],
+		in: [-bx, -by],
+	};
+}
+
+/* 以 (px,py) 为尖端、沿单位方向 (dx,dy) 的箭头三角形顶点串 */
+function arrowPoints(px, py, dx, dy, len) {
+	const wing = len * 0.5;
+	const bx = px - dx * len;
+	const by = py - dy * len;
+	return `${px},${py} ${bx - dy * wing},${by + dx * wing} ${bx + dy * wing},${by - dx * wing}`;
 }
 
 class StaticPreview extends Component {
@@ -127,12 +140,26 @@ class StaticPreview extends Component {
 			const a = byId.get(e.fromNode);
 			const b = byId.get(e.toNode);
 			if (!a || !b) continue;
-			const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-			path.setAttribute('d', edgePath(a, b, e.fromSide || 'right', e.toSide || 'left'));
-			path.setAttribute('fill', 'none');
+			const g = edgeGeom(a, b, e.fromSide || 'right', e.toSide || 'left');
 			const stroke = colorOf(e.color) || 'var(--background-modifier-border-hover)';
+			const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+			path.setAttribute('d', g.d);
+			path.setAttribute('fill', 'none');
 			path.setAttribute('style', `stroke:${stroke};stroke-width:2px;vector-effect:non-scaling-stroke;`);
 			svg.appendChild(path);
+			/* 箭头与画布等比缩放（和文字 cqw 一致），常规宽度下屏幕约 8~10px */
+			const len = W * 0.013;
+			const ends = [
+				['toEnd', g.x2, g.y2, g.in],
+				['fromEnd', g.x1, g.y1, g.out],
+			];
+			for (const [key, px, py, dir] of ends) {
+				if (e[key] !== 'arrow') continue;
+				const head = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+				head.setAttribute('points', arrowPoints(px, py, dir[0], dir[1], len));
+				head.setAttribute('style', `fill:${stroke};`);
+				svg.appendChild(head);
+			}
 		}
 
 		/* 节点：group 先画（垫底），其余后画 */
