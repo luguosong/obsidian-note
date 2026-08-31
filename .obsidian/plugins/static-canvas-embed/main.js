@@ -23,14 +23,21 @@ function colorOf(v) {
 	return '';
 }
 
-/* 节点某边中点的画布坐标 */
-function sidePoint(n, side) {
+/* 节点某边锚点：offset 为沿边长的分数偏移（-0.5~0.5，0 = 中点），原生画布会忽略该扩展字段 */
+function sidePoint(n, side, offset) {
+	let x, y, alongX = 0, alongY = 0;
 	switch (side) {
-		case 'left': return [n.x, n.y + n.height / 2];
-		case 'right': return [n.x + n.width, n.y + n.height / 2];
-		case 'top': return [n.x + n.width / 2, n.y];
-		default: return [n.x + n.width / 2, n.y + n.height];
+		case 'left': x = n.x; y = n.y + n.height / 2; alongY = n.height; break;
+		case 'right': x = n.x + n.width; y = n.y + n.height / 2; alongY = n.height; break;
+		case 'top': x = n.x + n.width / 2; y = n.y; alongX = n.width; break;
+		default: x = n.x + n.width / 2; y = n.y + n.height; alongX = n.width; break;
 	}
+	if (offset) {
+		const t = Math.max(-0.5, Math.min(0.5, Number(offset) || 0));
+		x += alongX * t;
+		y += alongY * t;
+	}
+	return [x, y];
 }
 
 function sideVector(side) {
@@ -43,9 +50,9 @@ function sideVector(side) {
 }
 
 /* 仿 Obsidian Canvas 的贝塞尔连线，附带两端方向（供箭头定向） */
-function edgeGeom(a, b, fromSide, toSide) {
-	const [x1, y1] = sidePoint(a, fromSide);
-	const [x2, y2] = sidePoint(b, toSide);
+function edgeGeom(a, b, fromSide, toSide, fromOffset, toOffset) {
+	const [x1, y1] = sidePoint(a, fromSide, fromOffset);
+	const [x2, y2] = sidePoint(b, toSide, toOffset);
 	const off = Math.min(Math.hypot(x2 - x1, y2 - y1) * 0.3, 80);
 	const [ax, ay] = sideVector(fromSide);
 	const [bx, by] = sideVector(toSide);
@@ -63,6 +70,12 @@ function arrowPoints(px, py, dx, dy, len) {
 	const bx = px - dx * len;
 	const by = py - dy * len;
 	return `${px},${py} ${bx - dy * wing},${by + dx * wing} ${bx + dy * wing},${by - dx * wing}`;
+}
+
+/* 行内 markdown：转义 HTML 后仅解析 **加粗** */
+function mdInline(t) {
+	return t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+		.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
 
 class StaticPreview extends Component {
@@ -111,6 +124,8 @@ class StaticPreview extends Component {
 			root.createDiv({ cls: 'sce-error', text: `无法渲染 Canvas：${this.file.basename}` });
 			return;
 		}
+		/* 浅色复刻模式：metadata.sce.light = true（画布白底深色文字，贴参考图） */
+		if (data && data.metadata && data.metadata.sce && data.metadata.sce.light) root.addClass('sce-light');
 
 		/* 包围盒（留边距），所有坐标转为百分比，随容器等比缩放 */
 		let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
@@ -130,28 +145,28 @@ class StaticPreview extends Component {
 		const board = root.createDiv({ cls: 'sce-board' });
 		board.setAttribute('style', `aspect-ratio:${W} / ${H};`);
 
-		/* 连线层（在节点下方） */
+		/* 连线层（在节点下方）。viewBox 与画布坐标同系（含负数），边才能对准节点 */
 		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 		svg.setAttribute('class', 'sce-edges');
-		svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+		svg.setAttribute('viewBox', `${minX} ${minY} ${W} ${H}`);
 		svg.setAttribute('preserveAspectRatio', 'none');
 		board.appendChild(svg);
 		for (const e of (data.edges || [])) {
 			const a = byId.get(e.fromNode);
 			const b = byId.get(e.toNode);
 			if (!a || !b) continue;
-			const g = edgeGeom(a, b, e.fromSide || 'right', e.toSide || 'left');
+			const g = edgeGeom(a, b, e.fromSide || 'right', e.toSide || 'left', e.fromOffset, e.toOffset);
 			const stroke = colorOf(e.color) || 'var(--background-modifier-border-hover)';
 			const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 			path.setAttribute('d', g.d);
 			path.setAttribute('fill', 'none');
-			path.setAttribute('style', `stroke:${stroke};stroke-width:2px;vector-effect:non-scaling-stroke;`);
+			path.setAttribute('style', `stroke:${stroke};stroke-width:2.5px;vector-effect:non-scaling-stroke;`);
 			svg.appendChild(path);
 			/* 箭头与画布等比缩放（和文字 cqw 一致），常规宽度下屏幕约 8~10px */
 			const len = W * 0.013;
 			const ends = [
 				['toEnd', g.x2, g.y2, g.in],
-				['fromEnd', g.x1, g.y1, g.out],
+				['fromEnd', g.x1, g.y1, [-g.out[0], -g.out[1]]],
 			];
 			for (const [key, px, py, dir] of ends) {
 				if (e[key] !== 'arrow') continue;
@@ -170,14 +185,19 @@ class StaticPreview extends Component {
 				`top:${py(n.y - minY)}`,
 				`width:${px(n.width || 0)}`,
 				`height:${py(n.height || 0)}`,
-				`--sce-text-size:${(isGroup ? 12 : 16) / W * 100}cqw`,
+				`--sce-text-size:${(isGroup ? 14 : (n.fontSize || 18)) / W * 100}cqw`,
 			].join(';'));
 			const color = colorOf(n.color);
-			if (color) el.setAttribute('style', el.getAttribute('style') + `;--sce-color:${color};`);
+			if (color) {
+				el.setAttribute('style', el.getAttribute('style') + `;--sce-color:${color};`);
+				/* 自定义 hex = 实底填充模式（贴参考图样式）；预设号 = Obsidian 描边风格 */
+				if (color[0] === '#') el.addClass('sce-fill');
+			}
 			if (isGroup) {
 				if (n.label) el.createDiv({ cls: 'sce-group-label', text: n.label });
 			} else if (n.type === 'text') {
-				el.createDiv({ cls: 'sce-text-body', text: n.text || '' });
+				const body = el.createDiv({ cls: 'sce-text-body' });
+				body.innerHTML = mdInline(n.text || '');
 			} else {
 				/* file / link 等类型：显示文件名或链接兜底 */
 				el.createDiv({

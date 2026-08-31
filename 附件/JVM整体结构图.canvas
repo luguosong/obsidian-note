@@ -1,34 +1,35 @@
 {
 	"nodes":[
-		{"id":"g0rtda00001","type":"group","x":-660,"y":180,"width":1000,"height":560,"label":"运行时数据区（Run-Time Data Areas）"},
-		{"id":"g1marea00001","type":"group","x":-610,"y":410,"width":400,"height":270,"color":"1","label":"方法区（Method Area）"},
-		{"id":"n0classfile01","type":"text","x":-660,"y":-40,"width":240,"height":90,"color":"4","text":".class\n字节码文件"},
-		{"id":"n1classload1","type":"text","x":-140,"y":-50,"width":380,"height":110,"color":"4","text":"类加载子系统\n（Class Loader Subsystem）"},
-		{"id":"n2heap000001","type":"text","x":-610,"y":270,"width":400,"height":100,"color":"1","text":"堆\n（Heap）"},
-		{"id":"n3pool000001","type":"text","x":-580,"y":490,"width":340,"height":120,"text":"运行时常量池\n（Run-Time Constant Pool）"},
-		{"id":"n4pcreg00001","type":"text","x":-150,"y":270,"width":440,"height":100,"color":"3","text":"程序计数器\n（The pc Register）"},
-		{"id":"n5jvmstack01","type":"text","x":-150,"y":410,"width":440,"height":110,"color":"3","text":"Java 虚拟机栈\n（Java Virtual Machine Stacks）"},
-		{"id":"n6natstack01","type":"text","x":-150,"y":560,"width":440,"height":110,"color":"3","text":"本地方法栈\n（Native Method Stacks）"},
-		{"id":"n7execeng001","type":"text","x":-610,"y":880,"width":400,"height":110,"color":"4","text":"执行引擎\n（Execution Engine）"},
-		{"id":"n8jni000001","type":"text","x":-150,"y":880,"width":440,"height":110,"color":"4","text":"本地方法接口：JNI\n（Native Method Interface）"},
-		{"id":"n9natlib0001","type":"text","x":470,"y":880,"width":320,"height":110,"color":"4","text":"本地方法库\n（Native Method Library）"},
-		{"id":"nalegendpr01","type":"text","x":-60,"y":1060,"width":220,"height":70,"color":"3","text":"线程私有的"},
-		{"id":"nblegendsh01","type":"text","x":-60,"y":1160,"width":220,"height":70,"color":"1","text":"线程共享的"}
+		{"id":"g0rtda00001","type":"group","x":26,"y":217,"width":902,"height":412,"color":"#E2E6EC","label":"Run-Time Data Areas （运行时数据区）"},
+		{"id":"g1marea00001","type":"group","x":86,"y":438,"width":280,"height":154,"color":"#E34C4C","label":"Method Area （方法区）"},
+		{"id":"n0classfile01","type":"text","x":238,"y":48,"width":106,"height":110,"color":"#76CF41","fontSize":15,"text":".class\n字节码文件"},
+		{"id":"n1classload1","type":"text","x":510,"y":48,"width":414,"height":110,"color":"#76CF41","text":"Class Loader Subsystem\n（类加载子系统）"},
+		{"id":"n2heap000001","type":"text","x":84,"y":282,"width":282,"height":142,"color":"#E34C4C","text":"Heap （堆）"},
+		{"id":"n3pool000001","type":"text","x":101,"y":505,"width":256,"height":72,"color":"#E34C4C","fontSize":16,"text":"Run-Time Constant Pool\n（运行时常量池）"},
+		{"id":"n4pcreg00001","type":"text","x":436,"y":282,"width":446,"height":80,"color":"#DBC133","text":"The pc Register （程序计数器）"},
+		{"id":"n5jvmstack01","type":"text","x":438,"y":392,"width":446,"height":88,"color":"#DBC133","text":"Java Virtual Machine Stacks\n（Java虚拟机栈）"},
+		{"id":"n6natstack01","type":"text","x":436,"y":510,"width":450,"height":80,"color":"#DBC133","text":"Native Method Stacks\n（本地方法栈）"},
+		{"id":"n7execeng001","type":"text","x":30,"y":698,"width":328,"height":110,"color":"#76CF41","text":"Execution Engine\n（执行引擎）"},
+		{"id":"n8jni000001","type":"text","x":474,"y":698,"width":360,"height":110,"color":"#76CF41","text":"Native Method Interface\n（本地方法接口：JNI）"},
+		{"id":"n9natlib0001","type":"text","x":928,"y":698,"width":284,"height":110,"color":"#76CF41","text":"Native Method Library\n（本地方法库）"},
+		{"id":"nalegendpr01","type":"text","x":424,"y":868,"width":212,"height":24,"color":"#DBC133","fontSize":14,"text":"线程私有的"},
+		{"id":"nblegendsh01","type":"text","x":424,"y":910,"width":212,"height":28,"color":"#E34C4C","fontSize":14,"text":"线程共享的"}
 	],
 	"edges":[
-		{"id":"e1class2ldr01","color":"#999999","fromNode":"n0classfile01","fromSide":"right","fromEnd":"none","toNode":"n1classload1","toSide":"left","toEnd":"arrow"},
-		{"id":"e2artda2ldr01","color":"#999999","fromNode":"n1classload1","fromSide":"bottom","fromEnd":"none","toNode":"g0rtda00001","toSide":"top","toEnd":"arrow"},
-		{"id":"e2bldr2rtda01","color":"#999999","fromNode":"g0rtda00001","fromSide":"right","fromEnd":"none","toNode":"n1classload1","toSide":"right","toEnd":"arrow"},
-		{"id":"e3artda2exe01","color":"#999999","fromNode":"g0rtda00001","fromSide":"bottom","fromEnd":"none","toNode":"n7execeng001","toSide":"top","toEnd":"arrow"},
-		{"id":"e3bexe2rtda01","color":"#999999","fromNode":"n7execeng001","fromSide":"left","fromEnd":"none","toNode":"g0rtda00001","toSide":"bottom","toEnd":"arrow"},
-		{"id":"e4artda2jni01","color":"#999999","fromNode":"g0rtda00001","fromSide":"bottom","fromEnd":"none","toNode":"n8jni000001","toSide":"top","toEnd":"arrow"},
-		{"id":"e4bjni2rtda01","color":"#999999","fromNode":"n8jni000001","fromSide":"left","fromEnd":"none","toNode":"g0rtda00001","toSide":"bottom","toEnd":"arrow"},
-		{"id":"e5aexe2jni001","color":"#999999","fromNode":"n7execeng001","fromSide":"right","fromEnd":"none","toNode":"n8jni000001","toSide":"left","toEnd":"arrow"},
-		{"id":"e5bjni2exe001","color":"#999999","fromNode":"n8jni000001","fromSide":"bottom","fromEnd":"none","toNode":"n7execeng001","toSide":"bottom","toEnd":"arrow"},
-		{"id":"e6lib2jni0001","color":"#999999","fromNode":"n9natlib0001","fromSide":"left","fromEnd":"none","toNode":"n8jni000001","toSide":"right","toEnd":"arrow"}
+		{"id":"e1class2ldr01","color":"#6E6E6E","fromNode":"n0classfile01","fromSide":"right","fromEnd":"none","toNode":"n1classload1","toSide":"left","toEnd":"arrow"},
+		{"id":"e2artda2ldr01","color":"#6E6E6E","fromNode":"n1classload1","fromSide":"bottom","fromOffset":0,"fromEnd":"none","toNode":"g0rtda00001","toSide":"top","toOffset":0.266,"toEnd":"arrow"},
+		{"id":"e2bldr2rtda01","color":"#6E6E6E","fromNode":"g0rtda00001","fromSide":"top","fromOffset":0.2916,"fromEnd":"none","toNode":"n1classload1","toSide":"bottom","toOffset":0.0556,"toEnd":"arrow"},
+		{"id":"e3artda2exe01","color":"#6E6E6E","fromNode":"g0rtda00001","fromSide":"bottom","fromOffset":-0.2716,"fromEnd":"none","toNode":"n7execeng001","toSide":"top","toOffset":0.1159,"toEnd":"arrow"},
+		{"id":"e3bexe2rtda01","color":"#6E6E6E","fromNode":"n7execeng001","fromSide":"top","fromOffset":-0.1616,"fromEnd":"none","toNode":"g0rtda00001","toSide":"bottom","toOffset":-0.3725,"toEnd":"arrow"},
+		{"id":"e4artda2jni01","color":"#6E6E6E","fromNode":"g0rtda00001","fromSide":"bottom","fromOffset":0.2472,"fromEnd":"none","toNode":"n8jni000001","toSide":"top","toOffset":0.1278,"toEnd":"arrow"},
+		{"id":"e4bjni2rtda01","color":"#6E6E6E","fromNode":"n8jni000001","fromSide":"top","fromOffset":-0.1694,"fromEnd":"none","toNode":"g0rtda00001","toSide":"bottom","toOffset":0.1286,"toEnd":"arrow"},
+		{"id":"e5aexe2jni001","color":"#6E6E6E","fromNode":"n7execeng001","fromSide":"right","fromOffset":0.1273,"fromEnd":"none","toNode":"n8jni000001","toSide":"left","toOffset":0.1273,"toEnd":"arrow"},
+		{"id":"e5bjni2exe001","color":"#6E6E6E","fromNode":"n8jni000001","fromSide":"left","fromOffset":-0.1818,"fromEnd":"none","toNode":"n7execeng001","toSide":"right","toOffset":-0.1818,"toEnd":"arrow"},
+		{"id":"e6lib2jni0001","color":"#6E6E6E","fromNode":"n9natlib0001","fromSide":"left","fromEnd":"none","toNode":"n8jni000001","toSide":"right","toEnd":"arrow"}
 	],
 	"metadata":{
 		"version":"1.0-1.0",
-		"frontmatter":{}
+		"frontmatter":{},
+		"sce":{"light":true}
 	}
 }

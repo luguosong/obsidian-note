@@ -46,21 +46,26 @@
 	padding: 0.3em 0.6em;
 	font-size: var(--sce-text-size);
 	line-height: 1.2;
-	color: var(--sce-color, var(--text-faint));
+	font-weight: 600;
+	color: var(--sce-color, var(--text-muted));
 	white-space: nowrap;
 }
 
-/* text / file 等卡片节点 */
+/* text / file 等卡片节点：文字水平垂直居中（贴参考图标签样式） */
 .sce-card {
+	display: flex;
+	align-items: center;
 	background: var(--background-primary);
 	border: 2px solid var(--sce-color, var(--background-modifier-border-hover));
 	border-radius: 6px;
 }
 
 .sce-text-body {
+	width: 100%;
 	padding: 0.4em 0.6em;
 	font-size: var(--sce-text-size);
 	line-height: 1.45;
+	text-align: center;
 	color: var(--text-normal);
 	white-space: pre-wrap;
 	word-break: break-word;
@@ -69,7 +74,80 @@
 .sce-error {
 	padding: 8px 12px;
 	border: 1px dashed var(--background-modifier-border);
-	border-radius: 6px;
+	border-radius: 8px;
 	color: var(--text-faint);
 	font-size: 13px;
+}
+
+/* 复刻模式：canvas metadata.sce.light = true。排版贴参考图，配色随明暗主题切换 */
+.sce-light .sce-board {
+	font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
+}
+
+.sce-light .sce-card {
+	border-radius: 3px;
+}
+
+.sce-light .sce-text-body {
+	font-weight: 700;
+}
+
+.sce-light .sce-group {
+	border-radius: 4px;
+}
+
+/* 浅色主题：白底像素复刻 */
+.theme-light .sce-light .sce-board {
+	background: #fafafc;
+}
+
+.theme-light .sce-light .sce-card {
+	background: #ffffff;
+}
+
+.theme-light .sce-light .sce-text-body {
+	color: #2f2f2f;
+}
+
+.theme-light .sce-light .sce-group-label {
+	color: #2f2f2f;
+	font-weight: 700;
+}
+
+/* 暗色主题：同一布局，色块转暗色调（底色混入主题底色、描边用原色、亮色文字） */
+.theme-dark .sce-node.sce-fill {
+	background: color-mix(in srgb, var(--sce-color) 30%, var(--background-primary));
+	border-color: var(--sce-color);
+}
+
+.theme-dark .sce-fill .sce-text-body {
+	color: var(--text-normal);
+}
+
+.theme-dark .sce-group.sce-fill {
+	background: color-mix(in srgb, var(--sce-color) 16%, var(--background-primary));
+	border-color: color-mix(in srgb, var(--sce-color) 55%, var(--background-primary));
+}
+
+.theme-dark .sce-group.sce-fill .sce-group-label {
+	color: var(--sce-color);
+}
+
+/* 实底填充模式：节点 color 为自定义 hex（预设号仍是 Obsidian 描边风格） */
+.sce-node.sce-fill {
+	background: var(--sce-color);
+	border-color: rgba(0, 0, 0, 0.45);
+}
+
+.sce-fill .sce-text-body {
+	color: #2f2f2f;
+}
+
+.sce-group.sce-fill {
+	background: var(--sce-color);
+	border-color: rgba(0, 0, 0, 0.3);
+}
+
+.sce-group.sce-fill .sce-group-label {
+	color: #2f2f2f;
 }
