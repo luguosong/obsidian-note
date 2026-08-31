@@ -4,7 +4,7 @@
   "monospaceFontFamily": "Source Code Pro,LXGW WenKai",
   "baseFontSizeAction": true,
   "cssTheme": "Minimal",
-  "baseFontSize": 16,
+  "baseFontSize": 15,
   "enabledCssSnippets": [
     "inline-code",
     "headings",

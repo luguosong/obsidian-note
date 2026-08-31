@@ -1,4 +1,4 @@
-/* Unified Media Preview：全屏灯箱预览（图片 / Mermaid / Canvas） */
+/* Unified Media Preview：全屏灯箱预览（图片 / Mermaid / Canvas）+ 悬停按钮条（含代码块） */
 
 .ump-overlay {
 	position: fixed;
@@ -107,6 +107,15 @@ div:has(> .mermaid) > .embed-actions {
 	display: none !important;
 }
 
+/* 代码块按钮由悬停按钮条接管：隐藏 shiki（expressive-code）原生复制按钮
+   （阅读视图与 live preview 均渲染）与 live preview 里代码块的原生编辑按钮组；
+   阅读视图本就没有代码块编辑按钮 */
+.markdown-source-view .expressive-code .copy,
+.markdown-preview-view .expressive-code .copy,
+.markdown-source-view .cm-preview-code-block .embed-actions {
+	display: none !important;
+}
+
 /* 图片 / canvas 嵌入顶部的文件路径条（仿代码块嵌入） */
 /* Minimal 把 .image-embed 设为 flex row，会把标头排到图片左侧；
    带标头时改回块级，让标头在图片上方（图片仍为自然尺寸、上限 100%） */
@@ -158,7 +167,8 @@ div:has(> .mermaid) > .embed-actions {
 	color: var(--text-normal);
 }
 
-.ump-file-header-copy.ump-copied {
+/* 复制成功反馈（按钮条按钮 / 文件路径条复制按钮通用） */
+.ump-copied {
 	color: var(--text-success, #57a773);
 }
 

@@ -8958,12 +8958,12 @@
   "01-编程笔记/Java/JavaSE/Java基础语法.md": {
     "cursor": {
       "from": {
-        "line": 930,
+        "line": 18,
         "ch": 0
       },
       "to": {
-        "line": 930,
-        "ch": 0
+        "line": 20,
+        "ch": 3
       }
     },
     "expandedKeys": [
@@ -8987,7 +8987,7 @@
       "item-2-52",
       "item-2-59"
     ],
-    "scroll": 1086.2006071444143
+    "scroll": 1054.754716981132
   },
   "01-编程笔记/Java/JVM/JVM.md": {
     "expandedKeys": [],
@@ -9164,12 +9164,12 @@
     ],
     "cursor": {
       "from": {
-        "line": 19,
-        "ch": 0
+        "line": 27,
+        "ch": 104
       },
       "to": {
-        "line": 19,
-        "ch": 0
+        "line": 27,
+        "ch": 104
       }
     },
     "scroll": 3.7735849056603774
@@ -9784,11 +9784,11 @@
   "01-编程笔记/Ai/编程智能体/Claude Code/安装和配置.md": {
     "cursor": {
       "from": {
-        "line": 19,
+        "line": 27,
         "ch": 0
       },
       "to": {
-        "line": 19,
+        "line": 27,
         "ch": 0
       }
     },
@@ -10056,7 +10056,7 @@
         "ch": 0
       }
     },
-    "scroll": 460.55525936599423
+    "scroll": 496.34292932205636
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/未命名.md": {
     "expandedKeys": [],
@@ -10347,7 +10347,8 @@
         "ch": 0
       }
     },
-    "expandedKeys": []
+    "expandedKeys": [],
+    "scroll": 0
   },
   "01-编程笔记/Ai/编程智能体/Codex/未命名.md": {
     "expandedKeys": []
@@ -10380,7 +10381,7 @@
       "item-1-0",
       "item-2-2"
     ],
-    "scroll": 7.780114722753346
+    "scroll": 3.8529915442833533
   },
   "05-历史/编程史/图灵.md": {
     "expandedKeys": [
@@ -10505,7 +10506,8 @@
         "line": 7,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/Ai/agent开发/未命名.md": {
     "expandedKeys": []
@@ -10513,22 +10515,71 @@
   "01-编程笔记/Ai/agent开发/基础知识.md": {
     "cursor": {
       "from": {
-        "line": 45,
-        "ch": 0
+        "line": 22,
+        "ch": 8
       },
       "to": {
-        "line": 45,
-        "ch": 0
+        "line": 22,
+        "ch": 8
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-3"
     ],
-    "scroll": 10.526041666666666
+    "scroll": 19.425925052527226
   },
   "箭头临时验证.md": {
     "expandedKeys": [],
     "scroll": 0
+  },
+  "01-编程笔记/Ai/agent开发/Agent框架选型.md": {
+    "cursor": {
+      "from": {
+        "line": 50,
+        "ch": 175
+      },
+      "to": {
+        "line": 50,
+        "ch": 106
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-10"
+    ],
+    "scroll": 24.93961352657005
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/OpenMAIC.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "tmp-ump-regression.md": {
+    "expandedKeys": [],
+    "scroll": 0,
+    "cursor": {
+      "from": {
+        "line": 4,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 3
+      }
+    }
+  },
+  "tmp-ump-mermaid-test.md": {
+    "expandedKeys": []
   }
 }

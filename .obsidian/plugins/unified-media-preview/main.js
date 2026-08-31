@@ -2,7 +2,8 @@
  * Unified Media Preview
  * 点击普通图片 / Mermaid 图表 / 内嵌 Canvas（static-canvas-embed 渲染的 .sce-board）
  * 弹出全屏灯箱：滚轮以光标为锚点缩放、拖拽平移、双击或按钮重置、Esc 关闭。
- * 悬停媒体区块时右上角浮现「放大查看 / 编辑此区块」按钮。
+ * 悬停图片 / Mermaid / Canvas / 代码块（shiki-highlighter 渲染的 expressive-code）
+ * 时右上角浮现按钮条；代码块提供「复制 / 编辑此区块」，不参与灯箱。
  */
 'use strict';
 
@@ -185,6 +186,9 @@ function mediaAt(t) {
 	if (mermaid && mermaid.querySelector('svg')) return { type: 'mermaid', el: mermaid };
 	const img = t.closest('img');
 	if (img && img.src && !img.closest('a')) return { type: 'img', el: img };
+	/* 代码块（shiki 渲染的 expressive-code），阅读视图与 live preview 均接管 */
+	const fig = t.closest('.expressive-code figure.frame');
+	if (fig) return { type: 'code', el: fig };
 	return null;
 }
 
@@ -211,31 +215,46 @@ function showHovbar(m) {
 		if (!b.querySelector('svg')) setIcon(b, fallback);
 		b.addEventListener('click', (e) => {
 			e.stopPropagation();
-			fn();
+			fn(b);
 		});
 		return b;
 	};
-	mk('scan', 'maximize', '放大查看', () => {
-		openLightbox((content) => FILLS[m.type](content, m.el));
-	});
-	if (m.type === 'canvas') {
-		/* Canvas 有两种编辑逻辑：改笔记里的嵌入语法，或跳转到 .canvas 原件 */
-		mk('pencil', 'edit-3', '编辑嵌入', () => {
+	if (m.type === 'code') {
+		mk('copy', 'copy', '复制代码', (b) => copyCodeBlock(m, b));
+		mk('pencil', 'edit-3', '编辑此区块', () => {
 			hideHovbar();
 			editMedia(m);
-		});
-		mk('external-link', 'link', '打开原件', () => {
-			hideHovbar();
-			openOriginal(m);
 		});
 	} else {
-		mk('pencil', 'edit-3', m.type === 'mermaid' ? '编辑源码' : '编辑嵌入', () => {
-			hideHovbar();
-			editMedia(m);
+		mk('scan', 'maximize', '放大查看', () => {
+			openLightbox((content) => FILLS[m.type](content, m.el));
 		});
+		if (m.type === 'canvas') {
+			/* Canvas 有两种编辑逻辑：改笔记里的嵌入语法，或跳转到 .canvas 原件 */
+			mk('pencil', 'edit-3', '编辑嵌入', () => {
+				hideHovbar();
+				editMedia(m);
+			});
+			mk('external-link', 'link', '打开原件', () => {
+				hideHovbar();
+				openOriginal(m);
+			});
+		} else {
+			mk('pencil', 'edit-3', m.type === 'mermaid' ? '编辑源码' : '编辑嵌入', () => {
+				hideHovbar();
+				editMedia(m);
+			});
+		}
 	}
 	document.body.appendChild(root);
 	hovbar = { root, target: m.el };
+}
+
+/* 代码块复制：直接写 pre 的文本（对勾反馈即真实复制结果），
+   不依赖 shiki 内部 DOM 结构 */
+function copyCodeBlock(m, btn) {
+	const pre = m.el.querySelector('pre');
+	copyWithFeedback(pre ? pre.textContent : '', btn);
 }
 
 /* ---------- 「编辑此区块」：定位并选中编辑器中的区块源码 ---------- */
@@ -349,8 +368,8 @@ function locateByCM(cm, m) {
 	const anchor = m.el.closest('.cm-embed-block') || m.el;
 	const pos = cm.posAtDOM(anchor, 0);
 	const doc = cm.state.doc;
-	if (m.type === 'mermaid') {
-		/* 从小部件位置回退到起始围栏行，再走到闭合围栏 */
+	if (m.type === 'mermaid' || m.type === 'code') {
+		/* 从小部件位置回退到起始围栏行，再走到闭合围栏（mermaid 与普通代码块同理） */
 		let start = doc.lineAt(pos).number;
 		while (start > 1 && !doc.line(start).text.trimStart().startsWith('```')) start--;
 		let end = start + 1;
@@ -379,14 +398,30 @@ function locateByText(text, m) {
 		let idx = -1;
 		if (scope) idx = Array.prototype.indexOf.call(scope.querySelectorAll('.mermaid'), m.el);
 		const re = /```mermaid[^\n]*\n[\s\S]*?```/g;
-		let i = 0;
-		let mm;
-		while ((mm = re.exec(text))) {
-			if (i === idx || idx < 0) return { from: toLineCh(text, mm.index), to: toLineCh(text, mm.index + mm[0].length) };
-			i++;
-		}
-		return null;
+		const matches = Array.from(text.matchAll(re));
+		const pick = idx >= 0 ? matches[idx] : matches[0];
+		if (!pick) return null;
+		return { from: toLineCh(text, pick.index), to: toLineCh(text, pick.index + pick[0].length) };
 	}
+	/* 代码块：按块文本内容寻址匹配源码围栏；不数 figure 序号，
+	   避开 mermaid 等不经 EC 渲染的围栏造成的序号错位；
+	   同文本块重复出现时，用渲染序中同文本块的出现次数对齐 */
+	const pre = m.el.querySelector('pre');
+	const body = pre ? pre.textContent.replace(/\n+$/, '') : '';
+	if (!body) return null;
+	const cand = Array.from(text.matchAll(/```[^\n]*\n([\s\S]*?)```/g))
+		.filter((mm) => (mm[1] || '').replace(/\n+$/, '') === body);
+	if (!cand.length) return null;
+	let dup = 0;
+	if (scope) {
+		for (const f of scope.querySelectorAll('.expressive-code figure.frame')) {
+			if (f === m.el) break;
+			const t = (f.querySelector('pre') || {}).textContent || '';
+			if (t.replace(/\n+$/, '') === body) dup++;
+		}
+	}
+	const target = cand[Math.min(dup, cand.length - 1)];
+	return { from: toLineCh(text, target.index), to: toLineCh(text, target.index + target[0].length) };
 	/* 嵌入语法：按同名嵌入在视图内的先后次数对齐到第 k 处出现 */
 	const name = embedNameFor(m);
 	if (!name) return null;
@@ -444,6 +479,24 @@ function fallbackCopy(text, done) {
 	done();
 }
 
+/* 写剪贴板并在按钮上做对勾反馈；写入失败（如失焦限制）走 fallbackCopy 兜底。
+   文件路径条复制按钮与代码块复制按钮共用 */
+function copyWithFeedback(text, btn) {
+	const done = () => {
+		setIcon(btn, 'check');
+		btn.addClass('ump-copied');
+		setTimeout(() => {
+			setIcon(btn, 'copy');
+			btn.removeClass('ump-copied');
+		}, 1200);
+	};
+	try {
+		navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done));
+	} catch (e) {
+		fallbackCopy(text, done);
+	}
+}
+
 function buildHeader(embed) {
 	const bar = document.createElement('div');
 	bar.className = HEADER_CLS;
@@ -457,20 +510,7 @@ function buildHeader(embed) {
 	btn.addEventListener('click', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		const done = () => {
-			setIcon(btn, 'check');
-			btn.addClass('ump-copied');
-			setTimeout(() => {
-				setIcon(btn, 'copy');
-				btn.removeClass('ump-copied');
-			}, 1200);
-		};
-		const value = bar.dataset.path || '';
-		try {
-			navigator.clipboard.writeText(value).then(done, () => fallbackCopy(value, done));
-		} catch (err) {
-			fallbackCopy(value, done);
-		}
+		copyWithFeedback(bar.dataset.path || '', btn);
 	});
 	return bar;
 }
@@ -501,14 +541,14 @@ function scheduleDecorate() {
 
 class UnifiedMediaPreviewPlugin extends Plugin {
 	onload() {
-		/* 点击媒体 → 灯箱（放大查看按钮也复用此路径） */
+		/* 点击媒体 → 灯箱（放大查看按钮也复用此路径）；代码块不参与灯箱 */
 		this.registerDomEvent(document, 'click', (evt) => {
 			if (active) return;
 			if (evt.button !== 0 || evt.ctrlKey || evt.metaKey || evt.shiftKey || evt.altKey) return;
 			const t = evt.target;
 			if (!(t instanceof Element) || t.closest('.ump-overlay') || t.closest('.ump-hovbar')) return;
 			const m = mediaAt(t);
-			if (!m) return;
+			if (!m || m.type === 'code') return;
 			evt.preventDefault();
 			evt.stopPropagation();
 			openLightbox((content) => FILLS[m.type](content, m.el));
