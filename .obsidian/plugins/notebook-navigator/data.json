@@ -667,6 +667,10 @@
     "01-编程笔记/Java/JVM": {
       "option": "property-asc",
       "propertyKey": "排序"
+    },
+    "01-编程笔记/设计模式": {
+      "option": "property-asc",
+      "propertyKey": "排序"
     }
   },
   "folderTreeSortOverrides": {},

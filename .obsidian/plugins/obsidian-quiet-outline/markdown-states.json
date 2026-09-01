@@ -8987,7 +8987,7 @@
       "item-2-52",
       "item-2-59"
     ],
-    "scroll": 1054.754716981132
+    "scroll": 1069.58284003767
   },
   "01-编程笔记/Java/JVM/JVM.md": {
     "expandedKeys": [],
@@ -9210,15 +9210,15 @@
     ],
     "cursor": {
       "from": {
-        "line": 17,
-        "ch": 0
+        "line": 11,
+        "ch": 36
       },
       "to": {
-        "line": 17,
-        "ch": 0
+        "line": 11,
+        "ch": 36
       }
     },
-    "scroll": 8.282904322486644
+    "scroll": 8.585221421215241
   },
   "01-编程笔记/Windows/Windows.md": {
     "expandedKeys": [],
@@ -9401,19 +9401,19 @@
   "01-编程笔记/Obsidian/已安装的插件.md": {
     "cursor": {
       "from": {
-        "line": 7,
-        "ch": 0
+        "line": 46,
+        "ch": 2
       },
       "to": {
-        "line": 7,
-        "ch": 0
+        "line": 46,
+        "ch": 15
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-1"
     ],
-    "scroll": 5.660377358490566
+    "scroll": 6.443835616438356
   },
   "01-编程笔记/Windows/安装的软件/本机环境.md": {
     "expandedKeys": [
@@ -9530,15 +9530,15 @@
     "expandedKeys": [],
     "cursor": {
       "from": {
-        "line": 7,
+        "line": 12,
         "ch": 0
       },
       "to": {
-        "line": 7,
+        "line": 12,
         "ch": 0
       }
     },
-    "scroll": 0
+    "scroll": 5.7534246575342465
   },
   "01-编程笔记/Linux/鸟哥Linux私房菜/未命名.md": {
     "expandedKeys": [],
@@ -10247,12 +10247,12 @@
   "01-编程笔记/Java/JavaSE/面向对象.md": {
     "cursor": {
       "from": {
-        "line": 603,
-        "ch": 3
+        "line": 828,
+        "ch": 0
       },
       "to": {
-        "line": 603,
-        "ch": 3
+        "line": 828,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -10264,9 +10264,13 @@
       "item-2-19",
       "item-2-24",
       "item-3-30",
-      "item-2-34"
+      "item-2-34",
+      "item-2-38",
+      "item-3-41",
+      "item-2-45",
+      "item-3-46"
     ],
-    "scroll": 644.9139730005916
+    "scroll": 805.4926896036832
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10304,7 +10308,7 @@
       "item-2-3",
       "item-2-11"
     ],
-    "scroll": 98.83684292622056
+    "scroll": 98.09670481970895
   },
   "01-编程笔记/家庭服务器搭建/家庭服务器搭建.md": {
     "expandedKeys": [],
@@ -10595,5 +10599,79 @@
     },
     "expandedKeys": [],
     "scroll": 0
+  },
+  "01-编程笔记/设计模式/设计模式.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/设计模式/未命名.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 0
+      },
+      "to": {
+        "line": 3,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/设计模式/设计模式概述.md": {
+    "cursor": {
+      "from": {
+        "line": 25,
+        "ch": 0
+      },
+      "to": {
+        "line": 25,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 0
+  },
+  "01-编程笔记/设计模式/创建型-单例.md": {
+    "cursor": {
+      "from": {
+        "line": 16,
+        "ch": 314
+      },
+      "to": {
+        "line": 16,
+        "ch": 314
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 23.704414217887848
+  },
+  "01-编程笔记/Windows/wsl/WSL搬家.md": {
+    "cursor": {
+      "from": {
+        "line": 104,
+        "ch": 82
+      },
+      "to": {
+        "line": 104,
+        "ch": 82
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 64.30277777777778
   }
 }
