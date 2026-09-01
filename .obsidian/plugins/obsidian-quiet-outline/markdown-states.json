@@ -9164,12 +9164,12 @@
     ],
     "cursor": {
       "from": {
-        "line": 27,
-        "ch": 104
+        "line": 17,
+        "ch": 142
       },
       "to": {
-        "line": 27,
-        "ch": 104
+        "line": 17,
+        "ch": 142
       }
     },
     "scroll": 3.7735849056603774
@@ -10063,11 +10063,11 @@
     "cursor": {
       "from": {
         "line": 3,
-        "ch": 0
+        "ch": 38
       },
       "to": {
         "line": 3,
-        "ch": 0
+        "ch": 38
       }
     }
   },
@@ -10247,12 +10247,12 @@
   "01-编程笔记/Java/JavaSE/面向对象.md": {
     "cursor": {
       "from": {
-        "line": 601,
-        "ch": 14
+        "line": 603,
+        "ch": 3
       },
       "to": {
-        "line": 601,
-        "ch": 14
+        "line": 603,
+        "ch": 3
       }
     },
     "expandedKeys": [
@@ -10266,7 +10266,7 @@
       "item-3-30",
       "item-2-34"
     ],
-    "scroll": 618.641236671817
+    "scroll": 644.9139730005916
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10290,12 +10290,12 @@
   "01-编程笔记/Java/JVM/JVM概述.md": {
     "cursor": {
       "from": {
-        "line": 77,
-        "ch": 36
+        "line": 71,
+        "ch": 3
       },
       "to": {
-        "line": 77,
-        "ch": 36
+        "line": 71,
+        "ch": 7
       }
     },
     "expandedKeys": [
@@ -10304,7 +10304,7 @@
       "item-2-3",
       "item-2-11"
     ],
-    "scroll": 38.026888798928766
+    "scroll": 98.83684292622056
   },
   "01-编程笔记/家庭服务器搭建/家庭服务器搭建.md": {
     "expandedKeys": [],
@@ -10549,7 +10549,7 @@
       "item-2-1",
       "item-2-10"
     ],
-    "scroll": 24.93961352657005
+    "scroll": 24.9840979092363
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/OpenMAIC.md": {
     "cursor": {
@@ -10581,5 +10581,19 @@
   },
   "tmp-ump-mermaid-test.md": {
     "expandedKeys": []
+  },
+  "01-编程笔记/Ai/编程智能体/智能体扩展/Skills For Designers and Engineers.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 2
+      },
+      "to": {
+        "line": 10,
+        "ch": 2
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
   }
 }
