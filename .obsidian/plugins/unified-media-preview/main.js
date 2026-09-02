@@ -34,13 +34,19 @@ function openLightbox(fill) {
 	const stage = overlay.createDiv({ cls: 'ump-stage' });
 	const content = stage.createDiv({ cls: 'ump-content' });
 
+	/* 缩放应用器：默认整层 transform 缩放（图片/canvas 本是位图，够用）；
+	   fillMermaid 会替换为「改 SVG 布局尺寸 + transform 仅平移」——
+	   矢量内容按新尺寸重绘，任意倍数锐利，也避开暗色反相滤镜位图被拉伸 */
+	let applyZoom = null;
 	const apply = () => {
-		content.style.transform = `translate(${state.tx}px, ${state.ty}px) scale(${state.scale})`;
+		if (applyZoom) applyZoom(state);
+		else content.style.transform = `translate(${state.tx}px, ${state.ty}px) scale(${state.scale})`;
 	};
 	const zoomAt = (clientX, clientY, factor) => {
 		const r = content.getBoundingClientRect();
-		const cx = clientX - (r.left + r.width / 2);
-		const cy = clientY - (r.top + r.height / 2);
+		/* 光标相对布局中心的偏移：rect 中心已含当前平移，须扣回 */
+		const cx = clientX - (r.left + r.width / 2) + state.tx;
+		const cy = clientY - (r.top + r.height / 2) + state.ty;
 		const ns = Math.min(MAX_SCALE, Math.max(MIN_SCALE, state.scale * factor));
 		const k = ns / state.scale;
 		state.tx = cx - (cx - state.tx) * k;
@@ -55,7 +61,7 @@ function openLightbox(fill) {
 		apply();
 	};
 
-	fill(content);
+	applyZoom = fill(content) || null;
 
 	/* 滚轮缩放（以光标为锚点） */
 	overlay.addEventListener('wheel', (e) => {
@@ -162,6 +168,14 @@ function fillMermaid(content, mermaid) {
 	csvg.style.height = `${h}px`;
 	csvg.style.maxWidth = 'none';
 	content.appendChild(clone);
+	/* 缩放改走布局尺寸（viewBox 保证等比重绘），transform 只承担平移；
+	   无 viewBox 时坐标锚定像素、放大只会裁切，回退整层 transform 缩放 */
+	if (!svg.getAttribute('viewBox')) return;
+	return (state) => {
+		csvg.style.width = `${w * state.scale}px`;
+		csvg.style.height = `${h * state.scale}px`;
+		content.style.transform = `translate(${state.tx}px, ${state.ty}px)`;
+	};
 }
 
 function fillImg(content, img) {
