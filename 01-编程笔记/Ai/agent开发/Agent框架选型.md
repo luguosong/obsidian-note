@@ -32,19 +32,19 @@
 
 ### 多语言系（2 个）
 
-| 维度 | [Google ADK 2.0](https://google.github.io/adk-docs/) | [Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/) |
-| --- | --- | --- |
-| 定位 | 完整 Agent Framework + Runtime | 企业级 Agent Runtime |
-| 主要语言 | TS / Java / Python / Go / Kotlin | C# / Python / Go |
-| Harness 完整度 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| 多模型 | ✅ 很强 | ✅ |
-| Durable / Resume | ✅ 强 | ✅ 极强 |
-| HITL / 权限 | ✅ | ✅ 极强 |
-| Multi-Agent | ✅ | ✅ 极强 |
-| MCP | ✅ | ✅ |
-| Workflow / Graph | ✅ Graph | ✅ Graph |
-| Electron 适合度 | ⭐⭐⭐⭐⭐ | ⭐⭐ |
-| CAD Agent 适合度 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| 维度               | [Google ADK 2.0](https://google.github.io/adk-docs/) | [Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/) |
+| ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 定位               | 完整 Agent Framework + Runtime                         | 企业级 Agent Runtime                                                               |
+| 主要语言             | TS / Java / Python / Go / Kotlin                     | C# / Python / Go                                                                |
+| Harness 完整度      | ⭐⭐⭐⭐⭐                                                | ⭐⭐⭐⭐⭐                                                                           |
+| 多模型              | ✅ 很强                                                 | ✅                                                                               |
+| Durable / Resume | ✅ 强                                                  | ✅ 极强                                                                            |
+| HITL / 权限        | ✅                                                    | ✅ 极强                                                                            |
+| Multi-Agent      | ✅                                                    | ✅ 极强                                                                            |
+| MCP              | ✅                                                    | ✅                                                                               |
+| Workflow / Graph | ✅ Graph                                              | ✅ Graph                                                                         |
+| Electron 适合度     | ⭐⭐⭐⭐⭐                                                | ⭐⭐                                                                              |
+| CAD Agent 适合度    | ⭐⭐⭐⭐⭐                                                | ⭐⭐⭐⭐                                                                            |
 
 ### Python 系 · 通用 Deep / Runtime（2 个）
 
