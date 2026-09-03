@@ -12,3 +12,5 @@
 Linux 操作系统的日常使用、命令行与系统管理。笔记待整理迁入后在此汇总。
 
 ![[Pasted image 20260901110738.png]]
+
+-[鸟哥Linux私房菜优化版](https://luguosong.github.io/linux-tutorial/)

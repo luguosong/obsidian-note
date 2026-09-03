@@ -8987,7 +8987,7 @@
       "item-2-52",
       "item-2-59"
     ],
-    "scroll": 1069.58284003767
+    "scroll": 1028.999721810089
   },
   "01-编程笔记/Java/JVM/JVM.md": {
     "expandedKeys": [],
@@ -9401,19 +9401,19 @@
   "01-编程笔记/Obsidian/已安装的插件.md": {
     "cursor": {
       "from": {
-        "line": 46,
+        "line": 52,
         "ch": 2
       },
       "to": {
-        "line": 46,
-        "ch": 15
+        "line": 52,
+        "ch": 23
       }
     },
     "expandedKeys": [
       "item-1-0",
       "item-2-1"
     ],
-    "scroll": 6.443835616438356
+    "scroll": 27.4353811149033
   },
   "01-编程笔记/Windows/安装的软件/本机环境.md": {
     "expandedKeys": [
@@ -9538,7 +9538,7 @@
         "ch": 0
       }
     },
-    "scroll": 5.7534246575342465
+    "scroll": 6.635616438356164
   },
   "01-编程笔记/Linux/鸟哥Linux私房菜/未命名.md": {
     "expandedKeys": [],
@@ -10247,12 +10247,12 @@
   "01-编程笔记/Java/JavaSE/面向对象.md": {
     "cursor": {
       "from": {
-        "line": 980,
-        "ch": 333
+        "line": 960,
+        "ch": 29
       },
       "to": {
-        "line": 980,
-        "ch": 333
+        "line": 960,
+        "ch": 29
       }
     },
     "expandedKeys": [
@@ -10270,7 +10270,7 @@
       "item-2-45",
       "item-3-46"
     ],
-    "scroll": 971.0370544546428
+    "scroll": 950.5922712677975
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10286,7 +10286,7 @@
     "expandedKeys": [
       "item-1-0"
     ],
-    "scroll": 30.716694149206354
+    "scroll": 20.163888888888888
   },
   "01-编程笔记/Java/JVM/未命名.md": {
     "expandedKeys": []
@@ -10589,16 +10589,18 @@
   "01-编程笔记/Ai/编程智能体/智能体扩展/Skills For Designers and Engineers.md": {
     "cursor": {
       "from": {
-        "line": 10,
-        "ch": 2
+        "line": 46,
+        "ch": 37
       },
       "to": {
-        "line": 10,
-        "ch": 2
+        "line": 46,
+        "ch": 41
       }
     },
-    "expandedKeys": [],
-    "scroll": 0
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 12.6
   },
   "01-编程笔记/设计模式/设计模式.md": {
     "expandedKeys": [],
@@ -10706,6 +10708,52 @@
       "item-2-5",
       "item-2-15"
     ],
-    "scroll": 28.477643125783537
+    "scroll": 18.515731030228253
+  },
+  "excalidraw/Drawing 2026-09-03 16.37.50.excalidraw.md": {
+    "expandedKeys": [
+      "item-1-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
+  },
+  "excalidraw/安装验证.excalidraw.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "excalidraw/传参内存示意图.excalidraw.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 6,
+        "ch": 0
+      },
+      "to": {
+        "line": 6,
+        "ch": 0
+      }
+    }
   }
 }

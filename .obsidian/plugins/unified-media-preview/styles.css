@@ -42,7 +42,8 @@
 	display: block;
 }
 
-.ump-content .sce-board {
+.ump-content .sce-board,
+.ump-content > svg.excalidraw-svg {
 	cursor: default;
 	box-shadow: 0 0 48px rgba(0, 0, 0, 0.55);
 }
@@ -192,4 +193,36 @@ div:has(> .mermaid) > .embed-actions {
 .internal-embed.sce-root,
 .internal-embed.sce-root .sce-board {
 	max-width: 100%;
+}
+
+/* Excalidraw 嵌入：svg 固有 width=400（插件导出默认值）在笔记里偏小。
+   嵌入容器默认 shrink-to-fit（跟随固有宽），先把容器撑满正文宽；
+   内层 wrap 被 Excalidraw 插件/主题锁了 max-width:400px（svg 的 100% 相对它算），
+   同步放开为 100%；svg 再 width:100% 等比填满。作用域限笔记视图，不影响灯箱 */
+.markdown-source-view .internal-embed.image-embed:has(.excalidraw-svg),
+.markdown-preview-view .internal-embed.image-embed:has(.excalidraw-svg) {
+	display: block;
+	width: 100%;
+}
+
+.markdown-source-view .excalidraw-svg,
+.markdown-preview-view .excalidraw-svg {
+	max-width: 100% !important;
+}
+
+.markdown-source-view .excalidraw-svg svg,
+.markdown-preview-view .excalidraw-svg svg {
+	width: 100% !important;
+	height: auto !important;
+	/* 长图防溢出：高度锁视口上限，viewBox 内容经 preserveAspectRatio
+	   等比缩窄并居中（两侧透明留白），即「宽度自动压缩」 */
+	max-height: calc(100vh - 120px);
+}
+
+/* Excalidraw 图中英文统一霞鹜文楷：svg 是 DOM，直接覆盖 text 的
+   font-family（!important 压过元素属性/内部样式）；文楷字形宽度与
+   Excalidraw 原字体度量略有差异，个别标签可能轻微偏宽 */
+.markdown-source-view .excalidraw-svg svg text,
+.markdown-preview-view .excalidraw-svg svg text {
+	font-family: 'LXGW WenKai', 'LXGW WenKai Medium', sans-serif !important;
 }

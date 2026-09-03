@@ -19,6 +19,7 @@ obsidian-note/
 ├── 网页裁剪/               # 从网页抓取/裁剪保存的内容
 ├── 数据库/                 # .base 聚合索引（含共享 分类索引.base，见「Base 目录索引」）
 ├── 附件/                   # 图片、PDF 等资源
+├── excalidraw/             # Excalidraw 画图源文件（.excalidraw.md，插件存图目录）
 ├── 模版/                   # Templater 笔记模版
 ├── 待办任务/               # 任务清单（见 .gitignore，不纳入版本控制）
 ├── code/                   # 与笔记配套的代码示例（见「`code/` 代码示例目录」）

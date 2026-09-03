@@ -11,5 +11,7 @@
   "pymdown-snippets",
   "static-canvas-embed",
   "shiki-highlighter",
-  "unified-media-preview"
+  "unified-media-preview",
+  "obsidian-excalidraw-plugin",
+  "excalidraw-extras"
 ]

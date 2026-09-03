@@ -1,8 +1,9 @@
 /*
  * Unified Media Preview
  * 点击普通图片 / Mermaid 图表 / 内嵌 Canvas（static-canvas-embed 渲染的 .sce-board）
+ * / Excalidraw 嵌入图（obsidian-excalidraw-plugin 渲染的 svg.excalidraw-svg）
  * 弹出全屏灯箱：滚轮以光标为锚点缩放、拖拽平移、双击或按钮重置、Esc 关闭。
- * 悬停图片 / Mermaid / Canvas / 代码块（shiki-highlighter 渲染的 expressive-code）
+ * 悬停以上媒体及代码块（shiki-highlighter 渲染的 expressive-code）
  * 时右上角浮现按钮条；代码块提供「复制 / 编辑此区块」，不参与灯箱。
  */
 'use strict';
@@ -185,10 +186,28 @@ function fillImg(content, img) {
 	el.draggable = false;
 }
 
+/* Excalidraw 嵌入（svg.excalidraw-svg）自带内嵌字体 defs 与配色、无滤镜依赖，
+   克隆裸 svg 即可；有 viewBox 时与 mermaid 同款「改布局尺寸重绘」矢量缩放 */
+function fillExcalidraw(content, svg) {
+	const { w, h } = nodeSize(svg);
+	const clone = svg.cloneNode(true);
+	clone.style.width = `${w}px`;
+	clone.style.height = `${h}px`;
+	clone.style.maxWidth = 'none';
+	content.appendChild(clone);
+	if (!svg.getAttribute('viewBox')) return;
+	return (state) => {
+		clone.style.width = `${w * state.scale}px`;
+		clone.style.height = `${h * state.scale}px`;
+		content.style.transform = `translate(${state.tx}px, ${state.ty}px)`;
+	};
+}
+
 const FILLS = {
 	canvas: fillBoard,
 	mermaid: fillMermaid,
 	img: fillImg,
+	excalidraw: fillExcalidraw,
 };
 
 /* 识别点击/悬停目标属于哪种媒体；仅限笔记正文区 */
@@ -198,6 +217,10 @@ function mediaAt(t) {
 	if (board) return { type: 'canvas', el: board };
 	const mermaid = t.closest('.mermaid');
 	if (mermaid && mermaid.querySelector('svg')) return { type: 'mermaid', el: mermaid };
+	/* Excalidraw 嵌入：最终渲染物是 svg.excalidraw-svg（放 img 之前，
+	   其所在 image-embed 的选择优先级不受影响） */
+	const excSvg = t.closest('svg.excalidraw-svg');
+	if (excSvg) return { type: 'excalidraw', el: excSvg };
 	const img = t.closest('img');
 	if (img && img.src && !img.closest('a')) return { type: 'img', el: img };
 	/* 代码块（shiki 渲染的 expressive-code），阅读视图与 live preview 均接管 */
@@ -243,8 +266,8 @@ function showHovbar(m) {
 		mk('scan', 'maximize', '放大查看', () => {
 			openLightbox((content) => FILLS[m.type](content, m.el));
 		});
-		if (m.type === 'canvas') {
-			/* Canvas 有两种编辑逻辑：改笔记里的嵌入语法，或跳转到 .canvas 原件 */
+		if (m.type === 'canvas' || m.type === 'excalidraw') {
+			/* Canvas / Excalidraw 都有两种编辑逻辑：改笔记里的嵌入语法，或跳转打开原件 */
 			mk('pencil', 'edit-3', '编辑嵌入', () => {
 				hideHovbar();
 				editMedia(m);
@@ -301,17 +324,17 @@ function embedRe(name) {
 	);
 }
 
-/* 嵌入语法在源码里的检索名：图片取文件名，canvas 取嵌入 src */
+/* 嵌入语法在源码里的检索名：图片取文件名，canvas / excalidraw 取嵌入 src */
 function embedNameFor(m) {
 	if (m.type === 'img') return basenameOf(m.el.src);
-	if (m.type === 'canvas') {
+	if (m.type === 'canvas' || m.type === 'excalidraw') {
 		const embed = m.el.closest('.internal-embed');
 		return embed ? embed.getAttribute('src') || '' : '';
 	}
 	return null;
 }
 
-/* 跳转打开媒体原件（目前仅 canvas：打开 .canvas 画布文件） */
+/* 跳转打开媒体原件（canvas / excalidraw：openLinkText 由接管插件以对应视图打开） */
 function openOriginal(m) {
 	const name = embedNameFor(m);
 	if (name) {
@@ -393,7 +416,7 @@ function locateByCM(cm, m) {
 		const l2 = doc.line(end);
 		return { from: { line: l1.number - 1, ch: 0 }, to: { line: l2.number - 1, ch: l2.text.length } };
 	}
-	/* 图片/Canvas 嵌入：定位所在行，再选中行内的嵌入语法 */
+	/* Excalidraw / 图片 / Canvas 嵌入：定位所在行，再选中行内的嵌入语法 */
 	const name = embedNameFor(m);
 	const l = doc.lineAt(pos);
 	let pick = null;
@@ -417,6 +440,29 @@ function locateByText(text, m) {
 		if (!pick) return null;
 		return { from: toLineCh(text, pick.index), to: toLineCh(text, pick.index + pick[0].length) };
 	}
+	/* 嵌入语法（图片 / canvas / excalidraw）：按同名嵌入在视图内的先后次数对齐到第 k 处出现 */
+	if (m.type !== 'code') {
+		const name = embedNameFor(m);
+		if (!name) return null;
+		const found = Array.from(text.matchAll(embedRe(name)));
+		if (!found.length) return null;
+		let k = 0;
+		if (scope) {
+			if (m.type === 'img') {
+				for (const it of scope.querySelectorAll('img')) {
+					if (it === m.el) break;
+					if (basenameOf(it.src) === name) k++;
+				}
+			} else {
+				for (const e of scope.querySelectorAll('.internal-embed')) {
+					if (e.contains(m.el)) break;
+					if ((e.getAttribute('src') || '') === name) k++;
+				}
+			}
+		}
+		const pick = found[Math.min(k, found.length - 1)];
+		return { from: toLineCh(text, pick.index), to: toLineCh(text, pick.index + pick[0].length) };
+	}
 	/* 代码块：按块文本内容寻址匹配源码围栏；不数 figure 序号，
 	   避开 mermaid 等不经 EC 渲染的围栏造成的序号错位；
 	   同文本块重复出现时，用渲染序中同文本块的出现次数对齐 */
@@ -436,30 +482,6 @@ function locateByText(text, m) {
 	}
 	const target = cand[Math.min(dup, cand.length - 1)];
 	return { from: toLineCh(text, target.index), to: toLineCh(text, target.index + target[0].length) };
-	/* 嵌入语法：按同名嵌入在视图内的先后次数对齐到第 k 处出现 */
-	const name = embedNameFor(m);
-	if (!name) return null;
-	const re = embedRe(name);
-	const found = [];
-	let mm;
-	while ((mm = re.exec(text))) found.push(mm);
-	if (!found.length) return null;
-	let k = 0;
-	if (scope) {
-		if (m.type === 'img') {
-			for (const it of scope.querySelectorAll('img')) {
-				if (it === m.el) break;
-				if (basenameOf(it.src) === name) k++;
-			}
-		} else {
-			for (const e of scope.querySelectorAll('.internal-embed')) {
-				if (e.contains(m.el)) break;
-				if ((e.getAttribute('src') || '') === name) k++;
-			}
-		}
-	}
-	const pick = found[Math.min(k, found.length - 1)];
-	return { from: toLineCh(text, pick.index), to: toLineCh(text, pick.index + pick[0].length) };
 }
 
 /* ---------- 嵌入块顶部文件路径标头（仿代码块嵌入的路径条） ---------- */
