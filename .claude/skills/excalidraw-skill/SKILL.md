@@ -48,6 +48,7 @@ The CLI and MCP tools accept the same agent-friendly format and normalize it aut
 - **Arrow binding**: `"startElementId": "a"` / `"endElementId": "b"` — arrows auto-route to element edges.
 - **fontFamily**: pass a string name (`"helvetica"`, `"cascadia"`, `"excalifont"`, ...) or string number `"1"`–`"8"`.
 - **points**: both `[[x,y], ...]` tuples and `[{"x":..,"y":..}]` objects are accepted.
+- **Text width**: size a standalone text element's `width` to ≥ 1.3× the longest line's estimated rendered width. A tight `width` silently wraps long text, stacking the extra lines onto whatever sits below. Verify on the exported scene: one line measures `height ≈ fontSize × 1.25`; roughly double that means it wrapped.
 - **Patch updates**: in `apply`, update entries can use either direct fields (`{"id":"a","x":120}`) or a `set` object (`{"id":"a","set":{"x":120}}`). Do not mix both forms in one update entry.
 
 **Raw REST is stricter**: labels must be `"label": {"text": "..."}`, bindings must be `"start": {"id": "..."}` / `"end": {"id": "..."}`. Only worry about this when POSTing to the API directly.
@@ -119,13 +120,14 @@ Excalidraw diagrams are visual communication. If text is cut off, elements overl
 
 After each `add` / `apply` / `batch_create_elements`, take a screenshot and check:
 
-1. **Text truncation** — Is all label text fully visible? Truncated text means the shape is too small. Increase `width` and/or `height`.
+1. **Text truncation** — Is all label text fully visible? Truncated text means the shape is too small. Increase `width` and/or `height`. The sibling failure: a standalone text meant as one line but rendering stacked means its own `width` is too tight (see **Text width** under Element Format).
 2. **Overlap** — Do any shapes share the same space? Background zones must fully contain children with padding.
 3. **Arrow crossing** — Do arrows cut through unrelated elements? If yes, route them around using curved or elbowed arrows (see Arrow Routing below).
 4. **Arrow-label overlap** — Arrow labels sit at the midpoint. If they overlap a shape, shorten the label or adjust the arrow path.
 5. **Spacing** — At least 40px gap between elements. Cramped layouts are hard to read.
 6. **Readability** — Font size ≥ 16 for body text, ≥ 20 for titles.
 7. **Zone label placement** — If you used `text`/`label.text` on a background zone rectangle, the zone label will be centered in the middle of the zone, overlapping everything inside. Fix: delete the bound text element and add a free-standing text element at the top of the zone instead (see Layout Anti-Patterns above).
+8. **Final medium** — A canvas screenshot proves the canvas, not the deliverable. When the diagram is consumed through another renderer (an embed viewer, a converted file), verify it there as well: dedupe and caching can hide defects downstream that the screenshot shows clean.
 
 If you find any issue: **stop, fix it, re-screenshot, then continue.** Say "I see [issue], fixing it" rather than glossing over problems. Only proceed once all checks pass.
 
@@ -142,7 +144,7 @@ If you find any issue: **stop, fix it, re-screenshot, then continue.** Say "I se
 ### Steps (CLI shown; MCP tools are 1:1 — see cheatsheet)
 
 1. Plan your coordinate grid — map out tiers and x-positions before writing JSON. (MCP mode: call `read_diagram_guide` for colors/sizing; the same guidance lives in `references/cheatsheet.md`.)
-2. Optional fresh start: `npx -y mcp-excalidraw-server clear --yes`
+2. Fresh start: the canvas carries **one diagram at a time**, and `export` / `screenshot` capture the **entire** canvas — leftovers from a previous diagram ship inside the new file. `snapshot save <name>` the previous diagram before `clear --yes`; restore it later with `snapshot restore`.
 3. Create shapes and arrows in one call. Custom `id` fields (e.g. `"id": "auth-svc"`) make later updates easy:
    ```bash
    npx -y mcp-excalidraw-server add - <<'EOF'
@@ -267,6 +269,7 @@ Round-trips are safe: text-element block references follow the plugin's own id r
 - **Arrow not connecting?** Verify element IDs with `get <id>`. Make sure `startElementId`/`endElementId` match existing element IDs.
 - **Canvas in a bad state?** `snapshot save` first, then `clear --yes` and rebuild. Or `snapshot restore` to go back.
 - **Element won't update?** It may be locked — `arrange unlock --ids <id>` first.
+- **`add -` fails with `Bad control character in string literal` (or a JSON parse error) on a large CJK batch?** The shell heredoc corrupted the payload (observed in Windows Git Bash). Write the elements JSON to a file with your file tool and run `add <file>` instead.
 - **Duplicate text elements / element count doubling?** The frontend auto-sync timer periodically writes the full Excalidraw scene back to the server. Excalidraw internally generates a bound text element for every shape with a label; clearing and re-sending elements can re-inject cached bound texts. Clean up: `query --type text` to find elements with a `containerId`, `delete` the unwanted ones, wait a few seconds for auto-sync to settle. The safest prevention: **never put labels on background zone rectangles** — use free-standing text elements.
 
 ---
