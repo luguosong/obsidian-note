@@ -24,20 +24,20 @@
 
 ### AI 与 LLM 平台
 
-| 站点 | 风格特征 |
-| ---- | ---- |
-| [Claude](https://getdesign.md/claude/design-md) | Anthropic 的 AI 助手。暖赤陶色点缀、干净的编辑式排版 |
-| [Cohere](https://getdesign.md/cohere/design-md) | 企业级 AI 平台。鲜艳渐变、数据密集的仪表盘风格 |
-| [ElevenLabs](https://getdesign.md/elevenlabs/design-md) | AI 语音平台。暗色电影感 UI、声波美学 |
-| [Minimax](https://getdesign.md/minimax/design-md) | AI 模型提供商。大胆的暗色界面配霓虹点缀 |
-| [Mistral AI](https://getdesign.md/mistral.ai/design-md) | 开放权重 LLM 提供商。法式工程极简主义、紫色调 |
-| [Ollama](https://getdesign.md/ollama/design-md) | 本地运行 LLM。终端优先、单色极简 |
-| [OpenCode AI](https://getdesign.md/opencode.ai/design-md) | AI 编程平台。以开发者为中心的暗色主题 |
-| [Replicate](https://getdesign.md/replicate/design-md) | 通过 API 运行 ML 模型。干净的白色画布、代码为先 |
-| [Runway](https://getdesign.md/runwayml/design-md) | AI 创意工具平台。电影节式的编辑美学——电影感暗色首屏、纸白色阅读区、单一无衬线字体、纯黑药丸形 CTA |
-| [Together AI](https://getdesign.md/together.ai/design-md) | 开源 AI 基础设施。技术蓝图式设计 |
-| [VoltAgent](https://getdesign.md/voltagent/design-md) | AI 智能体框架。纯黑画布、翡翠绿点缀、终端原生风 |
-| [xAI](https://getdesign.md/x.ai/design-md) | 马斯克的 AI 实验室。冷峻单色、未来主义极简 |
+| 站点                                                        | 风格特征                                                  |
+| --------------------------------------------------------- | ----------------------------------------------------- |
+| [Claude](https://getdesign.md/claude/design-md)           | Anthropic 的 AI 助手。暖赤陶色点缀、干净的编辑式排版                     |
+| [Cohere](https://getdesign.md/cohere/design-md)           | 企业级 AI 平台。鲜艳渐变、数据密集的仪表盘风格                             |
+| [ElevenLabs](https://getdesign.md/elevenlabs/design-md)   | AI 语音平台。暗色电影感 UI、声波美学                                 |
+| [Minimax](https://getdesign.md/minimax/design-md)         | AI 模型提供商。大胆的暗色界面配霓虹点缀                                 |
+| [Mistral AI](https://getdesign.md/mistral.ai/design-md)   | 开放权重 LLM 提供商。法式工程极简主义、紫色调                             |
+| [Ollama](https://getdesign.md/ollama/design-md)           | 本地运行 LLM。终端优先、单色极简                                    |
+| [OpenCode AI](https://getdesign.md/opencode.ai/design-md) | AI 编程平台。以开发者为中心的暗色主题                                  |
+| [Replicate](https://getdesign.md/replicate/design-md)     | 通过 API 运行 ML 模型。干净的白色画布、代码为先                          |
+| [Runway](https://getdesign.md/runwayml/design-md)         | AI 创意工具平台。电影节式的编辑美学——电影感暗色首屏、纸白色阅读区、单一无衬线字体、纯黑药丸形 CTA |
+| [Together AI](https://getdesign.md/together.ai/design-md) | 开源 AI 基础设施。技术蓝图式设计                                    |
+| [VoltAgent](https://getdesign.md/voltagent/design-md)     | AI 智能体框架。纯黑画布、翡翠绿点缀、终端原生风                             |
+| [xAI](https://getdesign.md/x.ai/design-md)                | 马斯克的 AI 实验室。冷峻单色、未来主义极简                               |
 
 ### 开发者工具与 IDE
 
