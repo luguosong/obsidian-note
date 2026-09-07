@@ -9097,23 +9097,16 @@
   },
   "01-编程笔记/Ai/编程智能体/智能体扩展/mattpocock skills.md": {
     "expandedKeys": [
-      "item-1-0",
-      "item-2-2",
-      "item-2-5",
-      "item-3-6",
-      "item-3-16",
-      "item-2-25",
-      "item-3-26",
-      "item-3-31"
+      "item-1-0"
     ],
     "cursor": {
       "from": {
-        "line": 21,
-        "ch": 7
+        "line": 14,
+        "ch": 5
       },
       "to": {
-        "line": 21,
-        "ch": 7
+        "line": 14,
+        "ch": 5
       }
     },
     "scroll": 0
@@ -9164,12 +9157,12 @@
     ],
     "cursor": {
       "from": {
-        "line": 17,
-        "ch": 142
+        "line": 13,
+        "ch": 0
       },
       "to": {
-        "line": 17,
-        "ch": 142
+        "line": 13,
+        "ch": 0
       }
     },
     "scroll": 3.7735849056603774
@@ -9218,7 +9211,7 @@
         "ch": 36
       }
     },
-    "scroll": 8.646986771190592
+    "scroll": 0
   },
   "01-编程笔记/Windows/Windows.md": {
     "expandedKeys": [],
@@ -9779,22 +9772,34 @@
     "scroll": 187.919921875
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/未命名.md": {
-    "expandedKeys": []
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 3,
+        "ch": 0
+      },
+      "to": {
+        "line": 3,
+        "ch": 0
+      }
+    }
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/安装和配置.md": {
     "cursor": {
       "from": {
-        "line": 27,
+        "line": 60,
         "ch": 0
       },
       "to": {
-        "line": 27,
+        "line": 60,
         "ch": 0
       }
     },
     "expandedKeys": [
-      "item-1-0"
-    ]
+      "item-1-0",
+      "item-2-2"
+    ],
+    "scroll": 23.66887417218543
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/Claude Code 更新日志.md": {
     "expandedKeys": [
@@ -10247,12 +10252,12 @@
   "01-编程笔记/Java/JavaSE/面向对象.md": {
     "cursor": {
       "from": {
-        "line": 1164,
-        "ch": 30
+        "line": 1214,
+        "ch": 0
       },
       "to": {
-        "line": 1164,
-        "ch": 30
+        "line": 1214,
+        "ch": 0
       }
     },
     "expandedKeys": [
@@ -10270,9 +10275,10 @@
       "item-3-30",
       "item-3-46",
       "item-2-51",
-      "item-2-54"
+      "item-2-54",
+      "item-2-60"
     ],
-    "scroll": 1155.2416953192817
+    "scroll": 1193.469317100384
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10761,5 +10767,18 @@
   "super渲染测试.md": {
     "expandedKeys": [],
     "scroll": 0.6009389671361502
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/上下文与记忆.md": {
+    "cursor": {
+      "from": {
+        "line": 9,
+        "ch": 0
+      },
+      "to": {
+        "line": 9,
+        "ch": 0
+      }
+    },
+    "expandedKeys": []
   }
 }
