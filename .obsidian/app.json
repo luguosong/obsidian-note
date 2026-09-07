@@ -1,7 +1,7 @@
 {
   "promptDelete": false,
   "showLineNumber": true,
-  "trashOption": "local",
+  "trashOption": "none",
   "attachmentFolderPath": "附件",
   "readableLineLength": false,
   "newFileLocation": "current",
