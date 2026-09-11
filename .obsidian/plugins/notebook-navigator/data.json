@@ -667,7 +667,8 @@
     "01-编程笔记/设计模式": {
       "option": "property-asc",
       "propertyKey": "排序"
-    }
+    },
+    "excalidraw": "created-desc"
   },
   "folderTreeSortOverrides": {},
   "folderAppearances": {
@@ -678,6 +679,9 @@
       "groupBy": "date"
     },
     "未分类笔记": {
+      "groupBy": "date"
+    },
+    "excalidraw": {
       "groupBy": "date"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "skill_name": "excalidraw-skill",
+  "skill_name": "excalidraw-diagram",
   "evals": [
     {
       "id": 0,
@@ -29,6 +29,12 @@
       "id": 4,
       "prompt": "Using only the CLI, draw two labeled boxes ('Client', 'Server') connected by an arrow, then save the diagram into an Obsidian vault at /tmp/vault/diagrams/flow.excalidraw.md (assume /tmp/vault/.obsidian exists; create the diagrams folder if needed). Clear the canvas and re-import the saved file. Confirm the saved file is in the Obsidian Excalidraw plugin's markdown format (frontmatter + '# Excalidraw Data' + a '## Drawing' code block) rather than raw JSON, and that both boxes are back on the canvas after the re-import.",
       "expected_output": "flow.excalidraw.md written in the Obsidian new format (not raw .excalidraw JSON), format markers verified by reading the file, and the canvas restored with both labeled boxes and their arrow after `import --replace`.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Using the CLI, draw three labeled rectangles ('Client', 'Gateway', 'Service') plus a standalone text annotation, giving every element a custom id of your choosing. Export to an Obsidian vault as /tmp/vault/diagrams/net.excalidraw.md (assume /tmp/vault/.obsidian exists), then verify the exported file's '## Text Elements' section: one block ref per text element, no duplicate refs, every ref exactly 8 characters.",
+      "expected_output": "Custom ids are exactly 8 characters (e.g. lblCli001, not 'code'), so the exported Text Elements section parses cleanly: ref count matches the canvas text-element count (4), no duplicates, all refs 8 chars — the plugin's parser recognizes only exactly-8-char refs, and shorter ids glue their text into the next entry.",
       "files": []
     }
   ]

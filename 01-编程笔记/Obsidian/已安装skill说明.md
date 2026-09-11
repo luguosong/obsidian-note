@@ -7,7 +7,7 @@
 ---
 # 已安装skill说明
 
-本项目自定义了 9 个 AI skill（源文件位于 `.claude/skills/`，`.zcode/skills/` 为同步镜像），用于增强 Obsidian 笔记库的自动化处理能力。
+本项目自定义了 9 个 AI skill（源文件位于 `.claude/skills/`，`.zcode/skills/` 为指向它的目录联接 junction——两侧是同一份文件，只写 `.claude` 副本），用于增强 Obsidian 笔记库的自动化处理能力。
 
 ## Obsidian 基本操作
 
@@ -36,6 +36,6 @@
 
 | Skill                     | 说明                                                                                                                   | 适用场景                       | 来源                                                                                                |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------- |
-| `excalidraw-diagram`      | 从文本生成 Excalidraw 图表，输出 Obsidian 可用的 `.md` 文件。支持概念图、流程图、思维导图等多种类型。触发词："Excalidraw"、"画图"、"流程图"、"思维导图"、"可视化"、"diagram"。 | 将笔记内容可视化为手绘风格图表            | [axtonliu/axton-obsidian-visual-skills](https://github.com/axtonliu/axton-obsidian-visual-skills) |
+| `excalidraw-diagram`      | vault 中 Excalidraw 绘图的**唯一 skill**（v4.0.0，2026-09-10 合并原 excalidraw-skill 执行规范而来）：前半 vault 工作流——双导出（静态 SVG 嵌入产物进 `附件/`、`.excalidraw.md` 编辑源进 `excalidraw/`）、SVG 字体后处理、嵌入验证；后半绘图执行规范——`mcp-excalidraw-server` 实时画布 CLI、元素格式（元素 id 必须恰好 8 字符）、坐标规划、布局反模式、质检循环。仅当用户明确提到 Excalidraw 或增改既有 Excalidraw 图时触发，通用「画图 / 流程图」请求默认走 `mermaid-visualizer`。 | 将笔记内容可视化为手绘风格图表（如内存原理图、两阶段绑定图） | 起步于 [axtonliu/axton-obsidian-visual-skills](https://github.com/axtonliu/axton-obsidian-visual-skills)，执行规范并入自 [yctimlin/mcp_excalidraw](https://github.com/yctimlin/mcp_excalidraw)，本地深度改写 |
 | `mermaid-visualizer`      | 将文本转换为专业的 Mermaid 图表，用于演示和文档。内置语法错误防护（列表语法冲突、subgraph 命名、间距问题），确保在 Obsidian、GitHub 等平台正确渲染。支持流程图、系统架构、对比图、思维导图等。     | 制作技术文档流程图、系统架构图            | [axtonliu/axton-obsidian-visual-skills](https://github.com/axtonliu/axton-obsidian-visual-skills) |
 | `obsidian-canvas-creator` | 从文本创建 Obsidian Canvas 文件，支持 MindMap（思维导图）和 freeform（自由布局）两种模式。                                                       | 将文章、大纲等结构化内容转换为可交互的白板/思维导图 | [axtonliu/axton-obsidian-visual-skills](https://github.com/axtonliu/axton-obsidian-visual-skills) |
