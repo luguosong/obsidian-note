@@ -3,7 +3,7 @@ package com.luguosong.oop;
 /**
  * Object 类是所有类的根类：类体什么都不写（不显式继承任何类）就默认继承 Object，
  * 因此空类也能调用 toString()/hashCode()/equals() 等方法。
- * 对应笔记：面向对象 → 继承性 → Object类
+ * 对应笔记：面向对象 → Object类
  */
 public class ObjectRootDemo {
 

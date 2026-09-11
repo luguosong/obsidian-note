@@ -12,16 +12,7 @@
       "hiddenFileProperties": [],
       "navigationBanner": null,
       "periodicNotesFolder": "",
-      "shortcuts": [
-        {
-          "type": "note",
-          "path": "待办任务/待办任务.md"
-        },
-        {
-          "type": "note",
-          "path": "01-编程笔记/电子印章管理平台/电子印章管理平台.md"
-        }
-      ],
+      "shortcuts": [],
       "navRainbow": {
         "mode": "foreground",
         "balanceHueLuminance": true,
