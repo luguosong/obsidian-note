@@ -10286,7 +10286,7 @@
       "item-2-93",
       "item-3-96"
     ],
-    "scroll": 1807.5497793035802
+    "scroll": 1775.4654947916667
   },
   "01-编程笔记/Obsidian/已安装skill说明.md": {
     "cursor": {
@@ -10371,7 +10371,17 @@
     "scroll": 0
   },
   "01-编程笔记/Ai/编程智能体/Codex/未命名.md": {
-    "expandedKeys": []
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 0,
+        "ch": 0
+      },
+      "to": {
+        "line": 0,
+        "ch": 0
+      }
+    }
   },
   "01-编程笔记/Ai/编程智能体/Codex/安装和初始化配置.md": {
     "cursor": {
@@ -10788,5 +10798,21 @@
       }
     },
     "expandedKeys": []
+  },
+  "01-编程笔记/Ai/编程智能体/Codex/gpt5.6模型.md": {
+    "cursor": {
+      "from": {
+        "line": 68,
+        "ch": 20
+      },
+      "to": {
+        "line": 68,
+        "ch": 8
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "scroll": 38.824869791666664
   }
 }
