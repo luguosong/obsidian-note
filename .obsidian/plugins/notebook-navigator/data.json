@@ -582,7 +582,9 @@
     "02-数学/初中数学": "calculator",
     "02-数学/高中数学": "pi",
     "05-历史/中国史": "scroll",
-    "05-历史/编程史": "history"
+    "05-历史/编程史": "history",
+    "01-编程笔记/Java/单元测试": "flask-conical",
+    "01-编程笔记/Java/日志": "scroll-text"
   },
   "folderColors": {
     "网页裁剪": "#6b7280",
@@ -628,7 +630,9 @@
     "01-编程笔记/Windows/安装的软件": "#f59e0b",
     "01-编程笔记/Windows/常见问题和优化": "#22c55e",
     "01-编程笔记/Ai/编程智能体/Codex": "#f59e0b",
-    "excalidraw": "#78716c"
+    "excalidraw": "#78716c",
+    "01-编程笔记/Java/单元测试": "#22c55e",
+    "01-编程笔记/Java/日志": "#14b8a6"
   },
   "folderBackgroundColors": {},
   "folderSortOverrides": {
