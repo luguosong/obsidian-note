@@ -8854,7 +8854,8 @@
         "line": 10,
         "ch": 0
       }
-    }
+    },
+    "scroll": 0
   },
   "01-编程笔记/电子印章管理平台/相关资源.md": {
     "expandedKeys": [
@@ -9532,7 +9533,7 @@
         "ch": 0
       }
     },
-    "scroll": 6.635616438356164
+    "scroll": 13.036121298158445
   },
   "01-编程笔记/Linux/鸟哥Linux私房菜/未命名.md": {
     "expandedKeys": [],
@@ -9788,19 +9789,20 @@
   "01-编程笔记/Ai/编程智能体/Claude Code/安装和配置.md": {
     "cursor": {
       "from": {
-        "line": 14,
-        "ch": 5
+        "line": 66,
+        "ch": 0
       },
       "to": {
-        "line": 14,
-        "ch": 5
+        "line": 66,
+        "ch": 0
       }
     },
     "expandedKeys": [
       "item-1-0",
-      "item-2-2"
+      "item-2-2",
+      "item-2-4"
     ],
-    "scroll": 4.852054794520548
+    "scroll": 47.169921875
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/Claude Code 更新日志.md": {
     "expandedKeys": [
@@ -10843,7 +10845,7 @@
       "item-2-7",
       "item-3-10"
     ],
-    "scroll": 188.8482582796068
+    "scroll": 188.85296496948007
   },
   "01-编程笔记/Ai/编程智能体/ZCode/ZCode.md": {
     "expandedKeys": [],
@@ -10874,5 +10876,114 @@
       }
     },
     "scroll": 1.8918918918918919
+  },
+  "01-编程笔记/工作/工作.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/工作/电子印章管理平台/电子印章管理平台.md": {
+    "cursor": {
+      "from": {
+        "line": 10,
+        "ch": 0
+      },
+      "to": {
+        "line": 10,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [],
+    "scroll": 0
+  },
+  "01-编程笔记/工作/CAD审图/未命名.md": {
+    "expandedKeys": []
+  },
+  "01-编程笔记/工作/CAD审图/computer use原理，审图可参考.md": {
+    "cursor": {
+      "from": {
+        "line": 159,
+        "ch": 79
+      },
+      "to": {
+        "line": 159,
+        "ch": 79
+      }
+    },
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5"
+    ],
+    "scroll": 0
+  },
+  "01-编程笔记/工作/CAD审图/computer use原理（审图可参考）.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1"
+    ],
+    "cursor": {
+      "from": {
+        "line": 20,
+        "ch": 9
+      },
+      "to": {
+        "line": 20,
+        "ch": 9
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/Java/基础/基础.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/专题研究/设计模式/设计模式概述.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
+  },
+  "01-编程笔记/专题研究/设计模式/创建型-单例.md": {
+    "expandedKeys": [
+      "item-1-0"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    }
   }
 }
