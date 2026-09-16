@@ -10986,5 +10986,37 @@
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/计算机和操作系统/Windows/wsl/wsl.md": {
+    "expandedKeys": [],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 0
+  },
+  "01-编程笔记/计算机和操作系统/Windows/wsl/wsl基础知识.md": {
+    "expandedKeys": [
+      "item-1-0",
+      "item-2-1",
+      "item-2-5"
+    ],
+    "cursor": {
+      "from": {
+        "line": 7,
+        "ch": 0
+      },
+      "to": {
+        "line": 7,
+        "ch": 0
+      }
+    },
+    "scroll": 33.354509436395965
   }
 }
