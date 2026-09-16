@@ -10540,15 +10540,17 @@
     "scroll": 99.36631944444444
   },
   "01-编程笔记/Ai/agent开发/agent开发.md": {
-    "expandedKeys": [],
+    "expandedKeys": [
+      "item-1-0"
+    ],
     "cursor": {
       "from": {
-        "line": 7,
-        "ch": 0
+        "line": 13,
+        "ch": 7
       },
       "to": {
-        "line": 7,
-        "ch": 0
+        "line": 13,
+        "ch": 7
       }
     },
     "scroll": 0
@@ -11020,7 +11022,7 @@
     "scroll": 63.580357142857146
   },
   "01-编程笔记/Ai/编程智能体/Claude Code/安装和入门.md": {
-    "scroll": 62.697265625,
+    "scroll": 47.25097192224622,
     "expandedKeys": [
       "item-1-0",
       "item-2-2",
@@ -11029,13 +11031,28 @@
     ],
     "cursor": {
       "from": {
-        "line": 92,
-        "ch": 0
+        "line": 90,
+        "ch": 19
       },
       "to": {
-        "line": 92,
+        "line": 90,
         "ch": 0
       }
     }
+  },
+  "01-编程笔记/Ai/编程智能体/Claude Code/agentic loop.md": {
+    "cursor": {
+      "from": {
+        "line": 11,
+        "ch": 0
+      },
+      "to": {
+        "line": 11,
+        "ch": 0
+      }
+    },
+    "expandedKeys": [
+      "item-1-0"
+    ]
   }
 }
