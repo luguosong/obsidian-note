@@ -17,6 +17,7 @@ obsidian-note/
 ├── 数据库/                 # .base 聚合索引（含共享 分类索引.base，见「Base 目录索引」）
 ├── 附件/                   # 图片、PDF 等资源
 ├── excalidraw/             # Excalidraw 画图源文件（.excalidraw.md，插件存图目录）
+├── drawio/                 # drawio 桌面端画图源文件（.drawio + 导出的 .svg 成对存放）
 ├── 模版/                   # Templater 笔记模版
 ├── 待办任务/               # 任务清单（见 .gitignore，不纳入版本控制）
 ├── code/                   # 与笔记配套的代码示例（见「`code/` 代码示例目录」）

@@ -140,6 +140,9 @@ pids/
 .env.*
 !.env.example
 
+# drawio 桌面端编辑时产生的临时备份文件（`.$` 前缀）
+.$*.bkp
+
 # Mimosa 安全扫描的本地状态、历史与报告（工具产物，无需同步）
 .mimosa/
 
